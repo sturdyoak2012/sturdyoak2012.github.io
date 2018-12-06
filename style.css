@@ -25,9 +25,10 @@ a {
 
 img {
 	width: 75%;
-	margin: 0 auto;
+	display: block;
 	border-radius: 15px;
-
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #item {
