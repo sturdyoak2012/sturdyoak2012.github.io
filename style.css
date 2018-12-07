@@ -61,3 +61,8 @@ img {
 }
 .lb-loader {
 	display:none !important;
+
+.lightbox .lb-image {
+
+  border: 4px solid black !important;
+}
