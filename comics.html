@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<title>Comics</title>
+	<link rel="stylesheet" href="lib/css/lightbox.min.css">
 	<link rel="stylesheet" href="style.css">
 	<link href="lib/css/lightbox.css" rel="stylesheet">
 </head>
@@ -20,35 +21,39 @@
 	Most of the time xkcd comics have references that are so obscure that the comics just aren't funny!  Here are my comics, ordered chronologically.  Most not funny :(, being funny is easy but making jokes is insanely hard! (Use arrow keys for multi-part comics.)
 	<br><br>
 	<ul>
-		<li><a href="comics/001.jpg">league</a></li>
+		<li><a href="comics/001.jpg" data-lightbox="001" data-title="League">league</a></li>
 		<li>
+
 			this is harder than it looked on tv <a href="comics/002a.jpg" data-lightbox="002" data-title="this is harder than it looked on tv">(1)</a><a href="comics/002b.jpg" data-lightbox="002" data-title="this is harder than it looked on tv">(2)</a><a href="comics/002c.jpg" data-lightbox="002" data-title="this is harder than it looked on tv">(3)</a><a href="comics/002d.jpg" data-lightbox="002" data-title="this is harder than it looked on tv">(4)</a><a href="comics/002e.jpg" data-lightbox="002" data-title="this is harder than it looked on tv">(5)</a><a href="comics/002.JPG">(extended)</a>
 		</li>
 		<li>
-			<a href="comics/003.JPG">well shit</a>
+			<a href="comics/003.JPG" data-lightbox="003" data-title="Well, shit">well shit</a>
 		</li>
 		<li>
-			<a href="comics/004.JPG">box life</a>
+			<a href="comics/004.JPG" data-lightbox="004" data-title="Box Life">box life</a>
 		</li>
 		<li>
-			<a href="comics/005.JPG">that bastard!</a>
+			<a href="comics/005.JPG" data-lightbox="005" data-title="That bastard!">that bastard!</a>
 		</li>
 		<li>
-			<a href="comics/006.jpg">league revisited</a>
+			<a href="comics/006.jpg" data-lightbox="006" data-title="League Revisited">league revisited</a>
 		</li>
 		<li>
+
 			angular momentum <a href="comics/007a.jpg" data-lightbox="007" data-title="angular momentum">(1)</a><a href="comics/007b.jpg" data-lightbox="007" data-title="angular momentum">(2)</a>
 		</li>
 		<li>
 			abort abort <a href="comics/008a.jpg" data-lightbox="008" data-title="abort abort'">(1)</a><a href="comics/008b.jpg" data-lightbox="008" data-title="abort abort">(2)</a><a href="comics/008c.jpg" data-lightbox="008" data-title="abort abort">(3)</a><a href="comics/008d.jpg" data-lightbox="008" data-title="abort abort">(4)</a><a href="comics/008e.jpg" data-lightbox="008" data-title="abort abort">(5)</a>
+
 		</li>
+	</ul>
 </div>
 <script src="lib/js/jquery.min.js"></script>
 <script src="lib/js/lightbox.min.js"></script>
 <script>
-    lightbox.option({
-     albumLabel:"Image %1 of %2"
-    })
+	lightbox.option({
+		albumLabel:"Comic %1 of %2"
+	})
 </script>
 </body>
 
