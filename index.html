@@ -2,11 +2,12 @@
 <head>
 	<title>Jacob Nie</title>
 	<link rel="stylesheet" href="style.css">
+	<link href="lib/css/lightbox.css" rel="stylesheet">
 </head>
 <body>
 <div id="menu">
 	<h1 align="center"> <a href="index.html">Jacob Nie</a> </h1>
-	<p> Navigate: </p>
+	Navigate:
 	<ul>
 		<li><a href="about.html">About</a></li>
 		<li><a href="pictures.html">Pictures</a></li>
@@ -19,7 +20,7 @@
 	<h4> What's up?</h4>
 	From my trip in Kings Canyon National Park, photo taken between Sphinx and Brewer Col:
 	<br><br>
-	<a href="IMG_0054.JPG"><img src="IMG_0054.JPG" class="lefty"></a>
+	<a href="IMG_0054.JPG" data-lightbox="group" data-title="Kings Canyon NP"><img src="IMG_0054.JPG" class="lefty"></a>
 	<br><br><br><br>
 	For stuff about me you can see my <a href="about.html">about page</a>.
 	<br><br>
@@ -29,9 +30,17 @@
 	<br><br>
 	When I'm bored in class I draw small comics.  The collection is small right now (classes aren't <i>that</i> bad) but it will get larger once teachers stop breathing down my neck.  Find them <a href="comics.html">here</a>!
 	<br><br>
-	For the really boring stuff about me refer to my <a href="physics.html">physics page</a>.
+	For the really boring stuff refer to my <a href="physics.html">physics page</a>.
 
 </div>	
+
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
 </body>
 
 </html>

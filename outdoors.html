@@ -2,11 +2,12 @@
 <head>
 	<title>Outdoors</title>
 	<link rel="stylesheet" href="style.css">
+	<link href="lib/css/lightbox.css" rel="stylesheet">
 </head>
 <body>
 <div id="menu">
 	<h1 align="center"> <a href="index.html">Jacob Nie</a> </h1>
-	<p> Navigate: </p>
+	Navigate:
 	<ul>
 		<li><a href="about.html">About</a></li>
 		<li><a href="pictures.html">Pictures</a></li>
@@ -34,7 +35,7 @@
 		</ul>
 		I am still working on most of the trip reports, check out the ones that are up!
 		<br><br>
-		<img src="outdoors/happyisles.jpg" class="small lefty">
+		<a href="outdoors/happyisles.jpg"  data-lightbox="group1" data-title="Jeffery and I at Happy Isles"><img src="outdoors/happyisles.jpg" class="small lefty"></a>
 		<br>
 		Me and my friend Jeffery at Happy Isles!
 	</div>
@@ -46,7 +47,7 @@
 			<li><a href="outdoors/180606/180606.html">Mt. Shasta</a> (June '18) [did not summit]</li>
 		</ul>
 		<br>
-		<img src="outdoors/shasta.JPG" class = "small lefty">
+		<a href="outdoors/shasta.JPG"  data-lightbox="group1" data-title="Richard on Mt. Shasta below Misery Hill"><img src="outdoors/shasta.JPG" class = "small lefty"></a>
 		<br>
 		Richard on Mt. Shasta below Misery Hill
 	</div>
@@ -54,9 +55,19 @@
 		<h3>Cycling</h3>
 		Not much to say here... I like long hills!  Check out my <a href="https://www.strava.com/athletes/14549535">Strava profile</a>!  Here's a picture of my Felt:
 		<br><br>
-		<img src="outdoors/felty.JPG" class="small lefty">
+		<a href="outdoors/felty.JPG"  data-lightbox="group1" data-title="My Felt Bike"><img src="outdoors/felty.JPG" class="small lefty"></a>
 	</div>
 </div>
+
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</body>
+
 </body>
 
 </html>
