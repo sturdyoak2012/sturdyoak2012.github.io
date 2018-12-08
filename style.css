@@ -12,7 +12,9 @@
 }
 
 #menu li {
-	font-size: 30px;
+	margin: 10px;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
 a {
