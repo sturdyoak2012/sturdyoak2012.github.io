@@ -12,6 +12,10 @@
 	font-family: Comic Sans MS;
 }
 
+a:hover {
+	color: #003fff;
+}
+
 #menu li {
 	margin: 10px;
 	text-transform: uppercase;
@@ -24,7 +28,7 @@
 }
 
 a {
-	color: blue;
+	color: #2b82ff;
 	text-decoration: none;
 }
 
