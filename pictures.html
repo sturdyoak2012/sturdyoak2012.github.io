@@ -16,34 +16,43 @@
 	</ul>
 </div>
 <div id="page">
+
+	<div style="text-align:center;"><button id="btn">Random Image</button></div>
+	<br>
+
 	<img id="img">
 	<p id="caption">Loading...</p>
-	<button id="btn">Random Image</button>
+
 
 	<script src="lib/js/jquery.min.js"></script>
 	<script>
 		var images = 241; //number of images
 		var path = "pictures/img/";
 		
-		function displayRandomImage(num) {
+		function showImage(num) {
 			var num = num || window.location.hash.substring(1);
-			if (isNaN(num) || parseInt(num) < 1 || parseInt(num) > images) {
+			if (num == "" || num == "#" || isNaN(num) || parseInt(num) < 1 || parseInt(num) > images) {
 				//the hash is not a valid number
-				$("#btn").trigger("click");
-				return;
+
+				window.location.hash = randInt(1, images);
+				var num = num || window.location.hash.substring(1);
+
 			}
 			$("#img").attr("src", path + num + ".jpg");
 			$("#caption").text("Image " + num);
 			
 		}
-		
-		//Add a hashchange listener
-		$(window).on("hashchange", displayRandomImage);
-		
+
+		showImage();
+		$(window).on("hashchange", function() {
+			showImage();
+		})
 		//Add a click listener and also "click" the button once
 		$("#btn").click(function() {
-			window.location.hash = randInt(min, max);
-		}).trigger("click");
+			window.location.hash = randInt(1, images);
+
+
+		});
 		
 		function randInt(min, max) {
 		  min = Math.ceil(min);
