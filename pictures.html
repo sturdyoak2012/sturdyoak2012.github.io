@@ -2,6 +2,7 @@
 <head>
 	<title>Pictures</title>
 	<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 <div id="menu">
@@ -15,9 +16,47 @@
 	</ul>
 </div>
 <div id="page">
-	I'm trying to do this dumb thing where you can only see a random picture and not the whole shebang, but busy :(
+	<img id="img">
+	<p id="caption">Loading...</p>
+	<button id="btn">Random Image</button>
+
+	<script src="lib/js/jquery.min.js"></script>
+	<script>
+		var images = 241; //number of images
+		var path = "pictures/img/";
+		
+		function displayRandomImage(num) {
+			var num = num || window.location.hash.substring(1);
+			if (isNaN(num) || parseInt(num) < 1 || parseInt(num) > images) {
+				//the hash is not a valid number
+				$("#btn").trigger("click");
+				return;
+			}
+			$("#img").attr("src", path + num + ".jpg");
+			$("#caption").text("Image " + num);
+			
+		}
+		
+		//Add a hashchange listener
+		$(window).on("hashchange", displayRandomImage);
+		
+		//Add a click listener and also "click" the button once
+		$("#btn").click(function() {
+			window.location.hash = randInt(min, max);
+		}).trigger("click");
+		
+		function randInt(min, max) {
+		  min = Math.ceil(min);
+		  max = Math.floor(max) + 1;//change from exclusive max to inclusive max
+		  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+		}
+		
+		
+	</script>
+
 </div>
 
 </body>
+
 
 </html>
