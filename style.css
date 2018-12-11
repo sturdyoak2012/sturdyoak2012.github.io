@@ -85,3 +85,8 @@ img {
 
   border: 4px solid black !important;
 }
+
+#img {
+	width:auto;
+}
+
