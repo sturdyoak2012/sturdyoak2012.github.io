@@ -2,6 +2,15 @@
 <head>
 	<title>Spectrometer</title>
 	<link rel="stylesheet" href="../style.css">
+	<script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
 </head>
 <body>
 <div id="menu">
@@ -19,11 +28,17 @@
 I bought a seven dollar spectrometer on Amazon, really no more than a diffraction grating.  The objective will be to record the spectral lines using light sensitive photo paper, mostly since I have access to a darkroom at school.  We will see how it goes!
 <br><br>
 <h3>Plan</h3>
-I purchased a "EISCO quantitative spectrometer" from Amazon for seven dollars, and it appears to be nothing more than a diffraction grating and a 400-700 nm wavelength scale inside a box.  Everybody says to not use it for any serious work, so I'm going to see how much I can pull out of this thing.  I also purchased a good diaphragm for eight dollars, and it has slits of widths 0.075, 0.15, and 0.4 mm, along with a nice double slit that I might use some other time as well.  The purpose is to increase the resolution of the spectral lines.  I think the only limitation on the precision of my spectral lines is the quality of the diffraction grating, so we will have to see.
+I purchased a "EISCO quantitative spectrometer" from Amazon for seven dollars, and it appears to be nothing more than a diffraction grating and a 400-700 nm wavelength scale inside a box.  Everybody says to not use it for any serious work, so I'm going to see how much I can pull out of this thing.  I also purchased a good diaphragm for eight dollars, and it has slits of widths 0.075, 0.15, and 0.4 mm, along with a nice double slit that I might use some other time as well.  The purpose is to decrease the width of the spectral lines.  
 <br><br>
 I anticipate the major challenge being the calibration of the spectral lines.  Each photo paper strip will need to be placed in the same exact place for every setup, so that way I can line them all up and match some known spectral lines with their respective wavelengths.  If it's linear, I think it won't be too difficult.  
 <br><br>
 Light sensitive photo paper is usually not sensitive to red or orange light, so that already eliminates about a third of the spectrum.  Perhaps it will be sensitive to some ultraviolet wavelengths...  The sensitivity of the photo paper will be a difficult thing to get right I think.  However, there is no such thing as overexposing a spectral line, there can only be underexposing.  I just don't know how long I will have to expose the photo paper for, and I'm hoping it won't end up being on the order of minutes.  
+<h3>Update 1:</h3>
+The spectrometer I got will not suffice!  I misjudged its design and turns out I will definitely need at least two lenses to properly do this.  I will need to buy a larger diffraction grating and two convex lenses, then build it myself.  Here's a little illustration I made:
+<br><br>
+<img style="width:80%" src="spec_img/construction.svg">
+<br>
+The necessary offset of the second lens can be calculated using the equation $\lambda = d\sin\theta$, due to the path difference necessary for constructive interference.  
 </div>
 </div>
 </body>
