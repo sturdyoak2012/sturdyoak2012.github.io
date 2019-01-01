@@ -27,9 +27,62 @@ MathJax.Hub.Config({
 <div class="trip">
 	So while I was freezing in a cold sleeping bag, I tried to think warm thoughts and must have thought of African sunsets or something, because this interesting question came up in my mind!
 	<h3>Question</h3>
-	Jacob wants to know when the sun sets, so he checks google for the sunset time.  When he goes to watch the sunset, how much later is the actual sunset, taking into account atmospheric refraction?  Some assumptions: Earth is a perfect sphere, Jacob is super short and at latitude $L^{\circ}$ north and it is $n$ days after the winter solstice.
+	Jacob wants to know when the sun sets, so he checks google for the sunset time.  When he goes to watch the sunset, how much later is the actual sunset, taking into account atmospheric refraction?
 	<br><br>
 	<img src="atm_img/sunset.jpg">
+	<br><br>
+	<h3>My Answer</h3>
+	In order to do this, we're gonna need some data on the index of refraction of air at various temperatures and pressures.  It's possible that humidity and CO2 concentration will need to be taken into account as well.  <a href="https://aty.sdsu.edu/explain/atmos_refr/air_refr.html">This</a> site provides an extensive analysis of the existing literature.  However, I will simplify things and just use the equation given by <a href="http://www.kayelaby.npl.co.uk/general_physics/2_5/2_5_7.html">Kaye and Laby</a>:
+	$$ n = 1 + (2.7785\times 10^{-4})\times\dfrac{P(1+P(60.1-0.972 T)\times 10^{-10})}{96095.43(1+0.003661 T)}.$$
+	This gives the refractive index of dry air, $n$, for light with wavelength 550 nm, as a function of pressure $P$ Pa and temperature $T^{\circ}$ Celsius.  Now using the 1976 US Standard Atmosphere model, we can calculate the refractive index as a function of height:
+	<br><br>
+	<img style="width: 100%" src="atm_img/profile.svg">
+	<p>Mathematica plot</p>
+	<br><br>
+	Now on to the fun part!  Without an atmosphere, exactly half of the Earth is illuminated by the sun at any time.  The refractive properties of the atmosphere mean that a little bit more is illuminated.  We'd like to find how much time it takes from Jacob to go from the "theoretical" boundary of illumination to the real boundary of illumination.  That varies by latitude and time of year, so we'll tackle it later.  First, let's calculate how much more of Earth's surface is illuminated due to the refraction.
+	<br><br>
+	Light from the sun approaches the Earth as parallel rays and hits the boundary of the atmosphere, which we will assume to be located at the Karman line, $10^5$ meters above the surface of the Earth.  Then it refracts in the atmosphere, and the light rays hitting the boundary of illumination will be tangent to the surface of the Earth at that point. 
+	<br><br> 
+	<a href="atm_img/d1.svg" target="_blank"><img src="atm_img/d1.svg"></a>
+	<p>Click for bigger size</p>
+	<br><br>
+	Now we will trace the light ray backwards, starting from Jacob the observer, who is standing at the boundary of illumination, $\alpha$ to the left of the vertical.  Now we can describe any point on the path of the light ray using three variables: $\theta$ is its angular displacement from the observer with respect to the center of the Earth, $r$ is the distance from the center of the Earth, and $\phi$ is the angle that the light ray makes at that point with the tangent plane to the "shell" of air.
+	<br><br>
+	These three variables are related to each other.  At the observer's position, $\theta = 0,r=R_E,$ and $\phi = 0.$  At the point where the light ray leaves the atmosphere, $r = R_{\text{max}}.$  Since the light ray is horizontal when it leaves the atmosphere, $\theta - \phi = \alpha$ at that point.  
+	<br><br>
+	Now consider the atmosphere as being composed of concentric shells of air.  A shell with inner radius $r$ and outer radius $r+dr$ has air with an index of refraction $n(r).$  Consider how the path of the ray changes as light passes through one shell and through one shell boundary.
+	<br><br>
+	<a href="atm_img/d2.svg" style="width:40%;" target="_blank"><img src="atm_img/d2.svg"></a>
+	<p>Click for bigger size</p>
+	<br><br>
+	We let $\angle A = d\theta,\angle B = \dfrac{\pi}{2}+\phi,\angle C = \dfrac{\pi}{2}-\phi-d\theta.$  Application of law of sines gives
+	$$\dfrac{\sin\left(\pi/2 - \phi - d\theta\right)}{r} = \dfrac{\sin(\pi/2+\phi)}{r+dr}.$$
+	This gives
+	$$\phi + d\theta = \dfrac{\pi}{2} - \arcsin\left(\dfrac{r}{r+dr}\sin\left(\dfrac{\pi}{2}+\phi\right)\right),$$
+	and this the labelled angle on the left.  Snell's Law tells us that
+	$$n(r)\cos(\phi + d\theta) = n(r+dr)\cos(\phi+d\phi),$$
+	and solving and substituting gives
+	$$\phi + d\phi = \arccos\left(\dfrac{n(r)}{n(r+dr)}\cos\left(\dfrac{\pi}{2}-\arcsin\left(\dfrac{r}{r+dr}\sin\left(\dfrac{\pi}{2}+\phi\right)\right)\right)\right).$$
+	Some quick trigonometric identities simplifies this to
+	$$\phi + d\phi = \arccos\left(\dfrac{n(r)}{n(r+dr)}\cdot\dfrac{r}{r+dr}\cos\phi\right).\qquad(1)$$
+	Futhermore, returning to our equation for $\phi + d\theta$ gives us
+	$$d\theta = \dfrac{\pi}{2} - \phi - \arcsin\left(\dfrac{r}{r+dr}\cos\phi\right).\qquad(2)$$
+	So we've got these two coupled differential equations $(1)$ and $(2)$ that we easily write a program for, remembering our initial conditions for $r,\theta,$ and $\phi.$  This is inside the Mathematica notebook located at the bottom of this page!
+	<br><br>
+	The program returns $\alpha = \theta(r_{\text{max}}) - \phi(r_{\text{max}}) $ $= 0.0095 \text{ rad} = 0.53^{\circ} = 33'.$  The real figure will depend heavily on the local surface temperature, which was assumed to be constant but is actually highly variable.  This seems to agree with the uncited <a href="https://en.wikipedia.org/wiki/Atmospheric_refraction">Wikipedia</a> remark: "atmospheric refraction is nominally 34′ on the horizon".  See <a href="http://iopscience.iop.org/article/10.1086/132705">this</a> paper for some more discussion and observational data.  It also agrees well with the very complex algorithm in <a href="http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1967AJ.....72..235G&amp;data_type=PDF_HIGH&amp;whole_paper=YES&amp;type=PRINTER&amp;filetype=.pdf">this</a> paper, which gives a $37'$ refraction.    
+	<br><br>
+	So now how long will it take Jacob to move between the theoretical and real boundaries of illumination?  Well the "band" between these two boundaries is about $4.7\times 10^4$ meters wide, so that's about how much Jacob would have to move.  The actual required distance depends on the time of year.  In the spring or fall, it is close to that number, while the number would be closer to $5.1\times 10^4$ meters in summer or winter due to the tilt of Earth's axis.  Calculation gives us a time of about $1.8 \sec L,$ where $L$ is the latitude in radians.  At the equator, the sunset time would be off by about $1.8$ minutes, in Cupertino maybe about $2.3$ minutes, in Sweden maybe about $3.6$ minutes.  But above or near the Arctic circle, things get a little tricky and our approximating goes a bit awry so our Sweden figure might be a bit off.  However, you can be sure the number goes up with latitude!
+	<br><br>
+	So about how much is the error in our $.0095$ radian calculation?  We made the assumption that the surface temperature is about fifteen degrees Celsius.  We can skew all the temperature values by 20 degrees up or down and get a pretty good picture of how the answer would vary with a different surface temperature.  (This would affect the temperature in the stratosphere as well, which doesn't vary with location as much as the surface temperature.  However, the refractiveness of the stratosphere is significantly less, and the effect of the temperature on the stratosphere's index of refraction is also less.)  That tells us that the error in our $.0095$ radian reading should be somewhere around $.0005,$ which means that our calculated delay of the sunset would be off by ten or twenty seconds.  
+	<br><br>
+	<a href="atm_img/atm.nb">Here</a> is the link to the Mathematica notebook that I used to generate the plot and do some of the calculations.
+	<br><br>
+	This is original work, I used the equation for the index of refraction given by Kaye and Laby.  Then I used the atmospheric data from the US Standard Atmosphere, 1976 update.  I consult a few sources to compare my answer, Boris Garfinkel's 1967 paper, which uses much more advanced maths, and the 1990 paper from Bradley Schaefer and William Liller.
+	<br><br>
+	<img src="atm_img/green.JPG" style="width:auto;">
+	<p>A green flash!</p>
+	<br><br><br>
+
 </div>
 </div>
 </body>
