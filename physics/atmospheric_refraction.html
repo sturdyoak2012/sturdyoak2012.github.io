@@ -32,9 +32,9 @@ MathJax.Hub.Config({
 	<img src="atm_img/sunset.jpg">
 	<br><br>
 	<h3>My Answer</h3>
-	In order to do this, we're gonna need some data on the index of refraction of air at various temperatures and pressures.  It's possible that humidity and CO2 concentration will need to be taken into account as well.  <a href="https://aty.sdsu.edu/explain/atmos_refr/air_refr.html">This</a> site provides an extensive analysis of the existing literature.  However, I will simplify things and just use the equation given by <a href="http://www.kayelaby.npl.co.uk/general_physics/2_5/2_5_7.html">Kaye and Laby</a>:
+	In order to do this, we're gonna need some data on the index of refraction of air at various temperatures and pressures.  It's possible that humidity and CO2 concentration will need to be taken into account as well.  <a href="https://aty.sdsu.edu/explain/atmos_refr/air_refr.html">This</a> <a href="atm_img/aty.html">[backup]</a> site provides an extensive analysis of the existing literature.  However, I will simplify things and just use the equation given by <a href="http://www.kayelaby.npl.co.uk/general_physics/2_5/2_5_7.html">Kaye and Laby</a> <a href="atm_img/kay.html">[backup]</a>:
 	$$ n = 1 + (2.7785\times 10^{-4})\times\dfrac{P(1+P(60.1-0.972 T)\times 10^{-10})}{96095.43(1+0.003661 T)}.$$
-	This gives the refractive index of dry air, $n$, for light with wavelength 550 nm, as a function of pressure $P$ Pa and temperature $T^{\circ}$ Celsius.  Now using the 1976 US Standard Atmosphere model, we can calculate the refractive index as a function of height:
+	This gives the refractive index of dry air, $n$, for light with wavelength 550 nm, as a function of pressure $P$ Pa and temperature $T^{\circ}$ Celsius.  Now using the 1976 US Standard Atmosphere model (accessed via Mathematica), we can calculate the refractive index as a function of height:
 	<br><br>
 	<img style="width: 100%" src="atm_img/profile.svg">
 	<p>Mathematica plot</p>
@@ -46,11 +46,11 @@ MathJax.Hub.Config({
 	<a href="atm_img/d1.svg" target="_blank"><img src="atm_img/d1.svg"></a>
 	<p>Click for bigger size</p>
 	<br><br>
-	Now we will trace the light ray backwards, starting from Jacob the observer, who is standing at the boundary of illumination, $\alpha$ to the left of the vertical.  Now we can describe any point on the path of the light ray using three variables: $\theta$ is its angular displacement from the observer with respect to the center of the Earth, $r$ is the distance from the center of the Earth, and $\phi$ is the angle that the light ray makes at that point with the tangent plane to the "shell" of air.
+	Now we will trace the light ray backwards, starting from Jacob the observer, who is standing at the boundary of illumination, $\alpha$ to the left of the vertical.  We can describe any point on the path of the light ray using three variables: $\theta$ is its angular displacement from the observer with respect to the center of the Earth, $r$ is the distance from the center of the Earth, and $\phi$ is the angle that the light ray makes at that point with the tangent plane to the ground beneath it.
 	<br><br>
 	These three variables are related to each other.  At the observer's position, $\theta = 0,r=R_E,$ and $\phi = 0.$  At the point where the light ray leaves the atmosphere, $r = R_{\text{max}}.$  Since the light ray is horizontal when it leaves the atmosphere, $\theta - \phi = \alpha$ at that point.  
 	<br><br>
-	Now consider the atmosphere as being composed of concentric shells of air.  A shell with inner radius $r$ and outer radius $r+dr$ has air with an index of refraction $n(r).$  Consider how the path of the ray changes as light passes through one shell and through one shell boundary.
+	Now consider the atmosphere as being composed of concentric shells of air.  A shell with inner radius $r$ and outer radius $r+dr$ contains air with an index of refraction $n(r).$  Consider how the path of the ray changes as light passes through one shell and through one shell boundary.
 	<br><br>
 	<a href="atm_img/d2.svg" style="width:40%;" target="_blank"><img src="atm_img/d2.svg"></a>
 	<p>Click for bigger size</p>
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 	$$\dfrac{\sin\left(\pi/2 - \phi - d\theta\right)}{r} = \dfrac{\sin(\pi/2+\phi)}{r+dr}.$$
 	This gives
 	$$\phi + d\theta = \dfrac{\pi}{2} - \arcsin\left(\dfrac{r}{r+dr}\sin\left(\dfrac{\pi}{2}+\phi\right)\right),$$
-	and this the labelled angle on the left.  Snell's Law tells us that
+	and this is the labelled angle on the left.  Snell's Law tells us that
 	$$n(r)\cos(\phi + d\theta) = n(r+dr)\cos(\phi+d\phi),$$
 	and solving and substituting gives
 	$$\phi + d\phi = \arccos\left(\dfrac{n(r)}{n(r+dr)}\cos\left(\dfrac{\pi}{2}-\arcsin\left(\dfrac{r}{r+dr}\sin\left(\dfrac{\pi}{2}+\phi\right)\right)\right)\right).$$
@@ -69,7 +69,9 @@ MathJax.Hub.Config({
 	$$d\theta = \dfrac{\pi}{2} - \phi - \arcsin\left(\dfrac{r}{r+dr}\cos\phi\right).\qquad(2)$$
 	So we've got these two coupled differential equations $(1)$ and $(2)$ that we easily write a program for, remembering our initial conditions for $r,\theta,$ and $\phi.$  The full program is located in the Mathematica notebook linked below.
 	<br><br>
-	The program returns $\alpha = \theta(r_{\text{max}}) - \phi(r_{\text{max}}) $ $= 0.0095 \text{ rad} = 0.53^{\circ} = 33'.$  The real figure will depend heavily on the local surface temperature, which was assumed to be constant but is actually highly variable.  This seems to agree with the uncited <a href="https://en.wikipedia.org/wiki/Atmospheric_refraction">Wikipedia</a> remark: "atmospheric refraction is nominally 34′ on the horizon".  See <a href="atm_img/schaefer_liller.pdf">this</a> paper for some more discussion and observational data.  It also agrees well with the very complex algorithm in <a href="atm_img/garfinkel.pdf">this</a> paper, which gives a $37'$ refraction.    
+	Some remarks on computation speed: the large number of arcsin's necessary means that the computation is not very fast.  We can increase the calculation speed by making $dr$ as small as possible near the surface of the Earth, where most of the refraction happens.  We can afford to increase the size of $dr$ towards the edge of the atmosphere, and this sacrifices little accuracy.  
+	<br><br>
+	The program returns $\alpha = \theta(r_{\text{max}}) - \phi(r_{\text{max}}) $ $= 0.0095 \text{ rad} = 0.53^{\circ} = 33'.$  This seems to agree with the uncited <a href="https://en.wikipedia.org/wiki/Atmospheric_refraction">Wikipedia</a> remark: "atmospheric refraction is nominally 34′ on the horizon".  See <a href="atm_img/schaefer_liller.pdf">this</a> paper for some more discussion and observational data.  It also agrees well with the very complex algorithm in <a href="atm_img/garfinkel.pdf">this</a> paper, which gives a $37'$ refraction.    
 	<br><br>
 	So now how long will it take Jacob to move between the theoretical and real boundaries of illumination?  Well the "band" between these two boundaries is about $4.7\times 10^4$ meters wide, so that's about how much Jacob would have to move.  The actual required distance depends on the time of year.  In the spring or fall, it is close to that number, while the number would be closer to $5.1\times 10^4$ meters in summer or winter due to the tilt of Earth's axis.  Calculation gives us a time of about $1.8 \sec L,$ where $L$ is the latitude in radians.  At the equator, the sunset time would be off by about $1.8$ minutes, in Cupertino maybe about $2.3$ minutes, in Sweden maybe about $3.6$ minutes.  But above or near the Arctic circle, things get a little tricky and our approximating goes a bit awry so our Sweden figure might be a bit off.  However, you can be sure the number goes up with latitude!
 	<br><br>
@@ -81,7 +83,7 @@ MathJax.Hub.Config({
 	Remark: I also found it interesting that Schaefer's paper concluded that the margins of error in sunset timing meant that certain ideas in archaeoastronomy needed to be seriously reconsidered.  (They also saw a 14 second green flash!)
 	<br><br>
 	<h3>Generalization</h3>
-	Let's generalize!  So we've done all this calculation on the refraction of the atmosphere during sunset, how about at other times?  For example, when the sun is ten degrees above the horizon, how many degrees is it being refracted?  Luckily our math is easy to adjust for this generalization.  Instead the initial condition of $r = R_E$ and $\phi = 0,$ our initial condition is $r = R_E$ and $\phi = phi_0,$ where $phi_0$ could be anything from $0$ to $\frac{\pi}{2}.$
+	Let's generalize!  So we've done all this calculation on the refraction of the atmosphere during sunset, how about at other times?  For example, when the sun is ten degrees above the horizon, how many degrees is it being refracted?  Luckily our math is easy to adjust for this generalization.  Instead the initial condition of $r = R_E$ and $\phi = 0,$ our initial condition is $r = R_E$ and $\phi = \phi_0,$ where $\phi_0$ could be anything from $0$ to $\frac{\pi}{2}.$
 	<br><br>
 	<a href="atm_img/d3.svg"><img src="atm_img/d3.svg"></a>
 	<br><br>
