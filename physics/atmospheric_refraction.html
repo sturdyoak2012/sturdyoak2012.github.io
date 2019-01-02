@@ -67,16 +67,37 @@ MathJax.Hub.Config({
 	$$\phi + d\phi = \arccos\left(\dfrac{n(r)}{n(r+dr)}\cdot\dfrac{r}{r+dr}\cos\phi\right).\qquad(1)$$
 	Futhermore, returning to our equation for $\phi + d\theta$ gives us
 	$$d\theta = \dfrac{\pi}{2} - \phi - \arcsin\left(\dfrac{r}{r+dr}\cos\phi\right).\qquad(2)$$
-	So we've got these two coupled differential equations $(1)$ and $(2)$ that we easily write a program for, remembering our initial conditions for $r,\theta,$ and $\phi.$  This is inside the Mathematica notebook located at the bottom of this page!
+	So we've got these two coupled differential equations $(1)$ and $(2)$ that we easily write a program for, remembering our initial conditions for $r,\theta,$ and $\phi.$  The full program is located in the Mathematica notebook linked below.
 	<br><br>
-	The program returns $\alpha = \theta(r_{\text{max}}) - \phi(r_{\text{max}}) $ $= 0.0095 \text{ rad} = 0.53^{\circ} = 33'.$  The real figure will depend heavily on the local surface temperature, which was assumed to be constant but is actually highly variable.  This seems to agree with the uncited <a href="https://en.wikipedia.org/wiki/Atmospheric_refraction">Wikipedia</a> remark: "atmospheric refraction is nominally 34′ on the horizon".  See <a href="http://iopscience.iop.org/article/10.1086/132705">this</a> paper for some more discussion and observational data.  It also agrees well with the very complex algorithm in <a href="http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1967AJ.....72..235G&amp;data_type=PDF_HIGH&amp;whole_paper=YES&amp;type=PRINTER&amp;filetype=.pdf">this</a> paper, which gives a $37'$ refraction.    
+	The program returns $\alpha = \theta(r_{\text{max}}) - \phi(r_{\text{max}}) $ $= 0.0095 \text{ rad} = 0.53^{\circ} = 33'.$  The real figure will depend heavily on the local surface temperature, which was assumed to be constant but is actually highly variable.  This seems to agree with the uncited <a href="https://en.wikipedia.org/wiki/Atmospheric_refraction">Wikipedia</a> remark: "atmospheric refraction is nominally 34′ on the horizon".  See <a href="atm_img/schaefer_liller.pdf">this</a> paper for some more discussion and observational data.  It also agrees well with the very complex algorithm in <a href="atm_img/garfinkel.pdf">this</a> paper, which gives a $37'$ refraction.    
 	<br><br>
 	So now how long will it take Jacob to move between the theoretical and real boundaries of illumination?  Well the "band" between these two boundaries is about $4.7\times 10^4$ meters wide, so that's about how much Jacob would have to move.  The actual required distance depends on the time of year.  In the spring or fall, it is close to that number, while the number would be closer to $5.1\times 10^4$ meters in summer or winter due to the tilt of Earth's axis.  Calculation gives us a time of about $1.8 \sec L,$ where $L$ is the latitude in radians.  At the equator, the sunset time would be off by about $1.8$ minutes, in Cupertino maybe about $2.3$ minutes, in Sweden maybe about $3.6$ minutes.  But above or near the Arctic circle, things get a little tricky and our approximating goes a bit awry so our Sweden figure might be a bit off.  However, you can be sure the number goes up with latitude!
 	<br><br>
-	So about how much is the error in our $.0095$ radian calculation?  We made the assumption that the surface temperature is about fifteen degrees Celsius.  We can skew all the temperature values by 20 degrees up or down and get a pretty good picture of how the answer would vary with a different surface temperature.  (This would affect the temperature in the stratosphere as well, which doesn't vary with location as much as the surface temperature.  However, the refractiveness of the stratosphere is significantly less, and the effect of the temperature on the stratosphere's index of refraction is also less.)  That tells us that the error in our $.0095$ radian reading should be somewhere around $.0005,$ which means that our calculated delay of the sunset would be off by ten or twenty seconds.  
+	<h3>Analysis of error</h3>
+	So about how much is the error in our $.0095$ radian calculation?  We made the assumption that the surface temperature is about fifteen degrees Celsius.  We can skew all the temperature values by 20 degrees up or down and get a pretty good picture of how the answer would vary with a different surface temperature.  (This would affect the temperature in the stratosphere as well, which doesn't vary with location as much as the surface temperature.  However, the refractiveness of the stratosphere is significantly less, and the effect of the temperature on the stratosphere's index of refraction is also less.)  That tells us that the error due to temperature in our $.0095$ radian reading should be somewhere around $.0005,$ which means that our calculated delay of the sunset could be off by ten or twenty seconds. 
 	<br><br>
-	<a href="atm_img/atm.nb">Here</a> is the link to the Mathematica notebook that I used to generate the plot and do some of the calculations.
+	The observational data collected by William Liller at Vina del Mar, Chile in Schaefer and Liller's 1990 paper agrees well with my calculated error, which is perhaps an overestimation.  His average angle of refraction was $0.51^{\circ} = 31'$ and his standard deviation was $0.048^{\circ} = 0.288'$ over more than 70 observations.  
 	<br><br>
+	Remark: I also found it interesting that Schaefer's paper concluded that the margins of error in sunset timing meant that certain ideas in archaeoastronomy needed to be seriously reconsidered.  (They also saw a 14 second green flash!)
+	<br><br>
+	<h3>Generalization</h3>
+	Let's generalize!  So we've done all this calculation on the refraction of the atmosphere during sunset, how about at other times?  For example, when the sun is ten degrees above the horizon, how many degrees is it being refracted?  Luckily our math is easy to adjust for this generalization.  Instead the initial condition of $r = R_E$ and $\phi = 0,$ our initial condition is $r = R_E$ and $\phi = phi_0,$ where $phi_0$ could be anything from $0$ to $\frac{\pi}{2}.$
+	<br><br>
+	<a href="atm_img/d3.svg"><img src="atm_img/d3.svg"></a>
+	<br><br>
+	The refraction angle $R$ can be found to be $\theta + \phi_0 - \phi.$  Adjusting the initial condition for our program, we can plot the refraction angle for different altitudes in the sky.
+	<br><br>
+	<a href="atm_img/alt-ref.svg"><img src="atm_img/alt-ref.svg"></a>
+	<br><br>
+	Altitude (deg) is the height above the horizon that the <i>observer</i> measures, Refraction (arc-minutes) is how much lower in the sky the object actually is.
+	<br><br>
+	<h3>Next steps</h3>
+	Several potential improvements to my method of calculation could be made.  Instead of relying on the atmospheric profile of the 1976 US Standard Atmosphere, I could devise an algorithm that would use the atmospheric profiles above all the places that the light ray passes over.  Furthermore, I assume the layers in the atmosphere to spherically symmetric, when in reality, layers between areas of different pressures are often not exactly parallel to the ground below them.  If this is to be accounted for, then some degree of sideways refraction needs to be accounted for as well.  It's possible that the precision of weather observation is not great enough to account for this possibility.
+	<br><br>
+	<h3>Other</h3>
+	<a href="atm_img/atm.nb">Here</a> is the link to the Mathematica notebook that I used to generate the plots and do some of the calculations.
+	<br><br>
+	<h3>Sources</h3>
 	This is original work, I used the equation for the index of refraction given by Kaye and Laby.  Then I used the atmospheric data from the US Standard Atmosphere, 1976 update.  I consult a few sources to compare my answer, Boris Garfinkel's 1967 paper, which uses much more advanced maths, and the 1990 paper from Bradley Schaefer and William Liller.  My method of calculation appears to be similar to Cassini's 1662 work on atmospheric refraction, except he assumed a homogenous atmosphere.  
 	<br><br>
 	<img src="atm_img/green.JPG" style="width:auto;">
