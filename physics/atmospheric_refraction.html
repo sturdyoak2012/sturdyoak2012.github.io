@@ -25,6 +25,8 @@ MathJax.Hub.Config({
 </div>
 <div id="page">
 <div class="trip">
+	December 2018
+	<br><br>
 	So while I was freezing in a cold sleeping bag, I tried to think warm thoughts and must have thought of African sunsets or something, because this interesting question came up in my mind!
 	<h3>Question</h3>
 	Jacob wants to know when the sun sets, so he checks google for the sunset time.  When he goes to watch the sunset, how much later is the actual sunset, taking into account atmospheric refraction?
@@ -36,14 +38,14 @@ MathJax.Hub.Config({
 	$$ n = 1 + (2.7785\times 10^{-4})\times\dfrac{P(1+P(60.1-0.972 T)\times 10^{-10})}{96095.43(1+0.003661 T)}.$$
 	This gives the refractive index of dry air, $n$, for light with wavelength 550 nm, as a function of pressure $P$ Pa and temperature $T^{\circ}$ Celsius.  Now using the 1976 US Standard Atmosphere model (accessed via Mathematica), we can calculate the refractive index as a function of height:
 	<br><br>
-	<img style="width: 100%" src="atm_img/profile.svg">
+	<a href="atm_img/profile.svg"><img style="width: 100%" src="atm_img/profile.svg"></a>
 	<p>Mathematica plot</p>
 	<br><br>
 	Now on to the fun part!  Without an atmosphere, exactly half of the Earth is illuminated by the sun at any time.  The refractive properties of the atmosphere mean that a little bit more is illuminated.  We'd like to find how much time it takes from Jacob to go from the "theoretical" boundary of illumination to the real boundary of illumination.  That varies by latitude and time of year, so we'll tackle it later.  First, let's calculate how much more of Earth's surface is illuminated due to the refraction.
 	<br><br>
 	Light from the sun approaches the Earth as parallel rays and hits the boundary of the atmosphere, which we will assume to be located at the Karman line, $10^5$ meters above the surface of the Earth.  Then it refracts in the atmosphere, and the light rays hitting the boundary of illumination will be tangent to the surface of the Earth at that point. 
 	<br><br> 
-	<a href="atm_img/d1.svg" target="_blank"><img src="atm_img/d1.svg"></a>
+	<a href="atm_img/d1.svg" target="_blank"><img style="width:100%" src="atm_img/d1.svg"></a>
 	<p>Click for bigger size</p>
 	<br><br>
 	Now we will trace the light ray backwards, starting from Jacob the observer, who is standing at the boundary of illumination, $\alpha$ to the left of the vertical.  We can describe any point on the path of the light ray using three variables: $\theta$ is its angular displacement from the observer with respect to the center of the Earth, $r$ is the distance from the center of the Earth, and $\phi$ is the angle that the light ray makes at that point with the tangent plane to the ground beneath it.
@@ -52,7 +54,7 @@ MathJax.Hub.Config({
 	<br><br>
 	Now consider the atmosphere as being composed of concentric shells of air.  A shell with inner radius $r$ and outer radius $r+dr$ contains air with an index of refraction $n(r).$  Consider how the path of the ray changes as light passes through one shell and through one shell boundary.
 	<br><br>
-	<a href="atm_img/d2.svg" style="width:40%;" target="_blank"><img src="atm_img/d2.svg"></a>
+	<a href="atm_img/d2.svg" style="width:40%;" target="_blank"><img style="width:100%" src="atm_img/d2.svg"></a>
 	<p>Click for bigger size</p>
 	<br><br>
 	We let $\angle A = d\theta,\angle B = \dfrac{\pi}{2}+\phi,\angle C = \dfrac{\pi}{2}-\phi-d\theta.$  Application of law of sines gives
@@ -85,11 +87,14 @@ MathJax.Hub.Config({
 	<h3>Generalization</h3>
 	Let's generalize!  So we've done all this calculation on the refraction of the atmosphere during sunset, how about at other times?  For example, when the sun is ten degrees above the horizon, how many degrees is it being refracted?  Luckily our math is easy to adjust for this generalization.  Instead the initial condition of $r = R_E$ and $\phi = 0,$ our initial condition is $r = R_E$ and $\phi = \phi_0,$ where $\phi_0$ could be anything from $0$ to $\frac{\pi}{2}.$
 	<br><br>
-	<a href="atm_img/d3.svg"><img src="atm_img/d3.svg"></a>
+	<a href="atm_img/d3.svg"><img style="width:100%" src="atm_img/d3.svg"></a>
 	<br><br>
 	The refraction angle $R$ can be found to be $\theta + \phi_0 - \phi.$  Adjusting the initial condition for our program, we can plot the refraction angle for different altitudes in the sky.
 	<br><br>
-	<a href="atm_img/alt-ref.svg"><img src="atm_img/alt-ref.svg"></a>
+	<a href="atm_img/alt-ref.svg"><img style="width:100%" src="atm_img/alt-ref.svg"></a>
+	<br><br>
+	<a href="atm_img/alt-ref2.svg"><img style="width:100%" src="atm_img/alt-ref2.svg"></a>
+	<p>Closer view</p>
 	<br><br>
 	Altitude (deg) is the height above the horizon that the <i>observer</i> measures, Refraction (arc-minutes) is how much lower in the sky the object actually is.
 	<br><br>
