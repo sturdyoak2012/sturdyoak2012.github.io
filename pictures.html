@@ -18,53 +18,91 @@
 <div id="page">
 
 	<div style="text-align:center;"><button id="btn">Random Image</button></div>
+    
 	<br>
 
-	<img id="img">
+	<img id="img" alt="Unable to load the requested image">
+
 	<p id="caption">Loading...</p>
-
-
-	<script src="lib/js/jquery.min.js"></script>
-	<script>
-		var images = 360; //number of images
-		var path = "pictures/img/";
-		
-		function showImage(num) {
-			var num = num || window.location.hash.substring(1);
-			if (num == "" || num == "#" || isNaN(num) || parseInt(num) < 1 || parseInt(num) > images) {
-				//the hash is not a valid number
-
-				window.location.hash = randInt(1, images);
-				var num = num || window.location.hash.substring(1);
-
-			}
-			$("#img").attr("src", path + num + ".jpg");
-			$("#caption").text("Image " + num);
-			
-		}
-
-		showImage();
-		$(window).on("hashchange", function() {
-			showImage();
-		})
-		//Add a click listener and also "click" the button once
-		$("#btn").click(function() {
-			window.location.hash = randInt(1, images);
-
-
-		});
-		
-		function randInt(min, max) {
-		  min = Math.ceil(min);
-		  max = Math.floor(max) + 1;//change from exclusive max to inclusive max
-		  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-		}
-		
-		
-	</script>
-	<p>Want to know when/where a picture was taken?  Send me an email with the image number!</p>
+    <p>Want to know when/where a picture was taken?  Send me an email with the image number!</p>
 
 </div>
+
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/github-repo-crawler.min.js"></script>
+
+<script>
+
+
+
+    let path = "pictures/img/";
+
+    //if the hash exists load the image first
+    $("#img").attr("src", path + window.location.hash.substring(1) + ".jpg");
+    $("#caption").text("Image " + name);
+
+
+    let crawler = new GitHubRepoCrawler("sturdyoak2012", "sturdyoak2012.github.io");
+
+    crawler.onType("dir", function(dir) {
+        //skip the contents of folders named ignoreThisFolder
+        return {
+            enterDirectory:path.indexOf(dir.path) == 0 //as long as the path and the directory path start the same we can enter
+        }
+    });
+
+    let files = [];
+    let listener = function(file) {
+        files.push(file.name);
+    };
+    crawler.on(crawler.EXTENSION, "jpg", listener);
+
+    crawler.crawl(function() {
+
+
+        function showImage(num) {
+            var name = num || window.location.hash.substring(1);
+            if (name == "" || name == "#") {
+                //the hash is not a valid number
+
+                window.location.hash = files[randInt(1, files.length)];
+                let name = name || window.location.hash.substring(1);
+
+            }
+            $("#img").attr("src", path + name + ".jpg");
+            $("#caption").text("Image " + name);
+
+        }
+
+        showImage();
+        $(window).on("hashchange", function() {
+            showImage();
+        })
+
+        $("#btn").click(function() {
+            let newhash = files[randInt(1, files.length)].split(".");
+            newhash.pop();
+            newhash.join(".");
+
+            window.location.hash = newhash;
+        });
+
+        $("#btn").removeAttr("disabled")
+        $("#btn-text-indexing").addClass("hidden");
+        $("#btn-text-loaded").removeClass("hidden");
+
+        function randInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max) + 1;//change from exclusive max to inclusive max
+            return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+        }
+    });
+
+
+</script>
+
+
+
 
 </body>
 

@@ -94,3 +94,7 @@ img {
 	width: 85%;
 	margin: auto;
 }
+
+.hidden {
+    display:none;
+}
