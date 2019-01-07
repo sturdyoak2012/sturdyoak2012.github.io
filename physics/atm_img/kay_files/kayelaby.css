@@ -1,0 +1,203 @@
+/*------------------------------------------------------------------------
+
+  Kaye and Laby CSS Document
+
+  Created by Mike Wiltshire
+  Created on: 23 Aug 2004 1617hr
+
+  An updated changed and otherwise tweaked version of that created by DomexKaye and Laby CSS Document
+
+  Last Updated: 13 Jan 2004 1445hr
+
+  Update History:
+  07 Sept 2004 - Create new .xsmltxt class for use in copyright and feedback popups
+  13 Jan 2004 - creating new table style for 1.2.3 large table
+
+--------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------
+       these are the standard fonts and sizes for the whole site
+------------------------------------------------------------------------*/
+
+BODY {font-family: verdana, Helvetica, sans-serif; font-size: 10pt;}
+P {font-family: verdana, Helvetica, sans-serif; font-size: 10pt; line-height:14pt;}
+UL {color:#666666; list-style-image: url(/images/bullet.gif);}
+LI {padding-bottom: 0.5em;}
+TABLE {font-family: verdana, Helvetica, sans-serif; font-size: 10pt;}
+TD {font-family: verdana, Helvetica, sans-serif; font-size: 10pt;}
+tr {font-family: verdana, Helvetica, sans-serif; font-size: 10pt;}
+H1 {color: #120C8D; font-family: verdana, Helvetica, sans-serif; font-size: 18pt; font-weight: 200;}
+H2 {color: #120C8D; font-family: verdana, Helvetica, sans-serif; font-size: 14pt; font-weight: 200;}
+H3 {color: #120C8D; font-family: verdana, Helvetica, sans-serif; font-size: 12pt;}
+H4 {color: #120C8D; font-family: verdana, Helvetica, sans-serif; font-size: 10pt;}
+SUB {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt;}
+
+/*-----------------------------------------------------------------------
+                 Styles for Directory page links
+------------------------------------------------------------------------*/
+
+.smallerfarmer {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: small;}
+.largerfarmer {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: medium;}
+
+A:link.directorynav1 {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: medium;}
+A:visited.directorynav1 {color: #0033FF; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: medium;}
+A:hover.directorynav1 {color: #787878; font-size: medium;background-color: #E0EEEE; font-family: verdana, helvetica, sans-serif; text-decoration: underline; }
+
+.directorynav2on {color: #000000; background-color: #C6D0DD; font-family: verdana, helvetica, sans-serif; font-size: medium;}
+
+A:link.directorynav2off {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: medium;}
+A:visited.directorynav2off {color: #0033FF; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: medium;}
+A:hover.directorynav2off {color: #787878; background-color: #E0EEEE; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: medium;}
+
+A:link.headfootlinks {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small;}
+A:visited.headfootlinks {color: #0033FF; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small;}
+A:hover.headfootlinks {color: #330066; background-color: #E0EEEE; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small;}
+
+P.headfootlinks {color: #000000; font-family: verdana, helvetica, sans-serif; font-size: x-small;}
+P.foottext {color: #000000; font-family: verdana, helvetica, sans-serif; font-size: x-small; font-style: italic;}
+P.directoryitem {color: #000000; font-family: verdana, helvetica, sans-serif; font-size: medium; font-weight: 700;}
+
+P.headersearch {color: #000000; font-family: verdana, helvetica, sans-serif; font-size: x-small; font-style: italic; font-weight: bold;}
+
+A:link.headersearch
+A:visited.headersearch
+A:hover.headersearch
+
+font.kltitle {color: #000000; font-family: verdana, helvetica, sans-serif; font-size: 18pt;}
+font.kandltitleampersand {color: #333333; font-family: verdana, helvetica, sans-serif; font-size: 18pt;}
+font.kandltitledesc  {color: #333333; font-family: verdana, helvetica, sans-serif; font-size: small;}
+
+TD.bottommaincolour {background-color: #B4C0D6}
+TD.topmaincolour {background-color: #B4C0D6}
+TD.topurherecolour {background-color: #D2D9E6}
+
+A:link.section_listings_jumpmenu {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+A:visited.section_listings_jumpmenu {color: #0033FF; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+A:hover.section_listings_jumpmenu {color: #330066; background-color: #E0EEEE; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+
+A:link.chapter_listings_jumpmenu {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+A:visited.chapter_listings_jumpmenu {color: #0033FF; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+A:hover.chapter_listings_jumpmenu {color: #330066; background-color: #E0EEEE; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+
+A:link.jumplink {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+A:visited.jumplink {color: #0033FF; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+A:hover.jumplink {color: #330066; background-color: #E0EEEE; font-family: verdana, helvetica, sans-serif; text-decoration: underline; font-size: x-small; font-style: italic }
+
+
+/*-----------------------------------------------------------------------
+                  Styles for normal in page links
+------------------------------------------------------------------------*/
+
+A:link {color: #003399; font-family: verdana, helvetica, sans-serif; text-decoration: underline;}
+A:visited {color: #0033FF; font-family: verdana, helvetica, sans-serif; text-decoration: underline;}
+A:hover {color: #787878; background-color: #E0EEEE; font-family: verdana, helvetica, sans-serif; text-decoration: underline;}
+
+/*-----------------------------------------------------------------------
+                  these classes are for main side nav
+------------------------------------------------------------------------*/
+
+A:link.nav {color: #003399; font-family: verdana, helvetica, sans-serif; font-size: 10pt; text-decoration: none; display: block; width: 100%; height: 100%; padding: 3px;}
+A:visited.nav {color: #003399; font-family: verdana, helvetica, sans-serif; font-size: 10pt; text-decoration: none; display: block; width: 100%; height: 100%; padding: 3px;}
+A:hover.nav {color:#787878; background-color: #E0EEEE; font-family: verdana, helvetica, sans-serif; font-size: 10pt; text-decoration: none; display: block; width: 100%; height: 100%; padding: 3px;}
+
+/*-----------------------------------------------------------------------
+    Below are styles that apply to specific parts of a page or pages
+------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------
+
+  Kaye and Laby CSS Document
+
+  Update History:
+  22 August 2011 - onPageVersionInfo width changed from 12em to 14em in order to display date in a single line.
+
+--------------------------------------------------------------------------*/
+
+.pointer1 {color: #003399; font-family: verdana, helvetica, sans-serif; font-size: 12pt; text-decoration: none; font-weight: 700;}
+.navbullet1 {color: #003399; font-family: verdana, helvetica, sans-serif; font-size: 10pt; text-decoration: none;}
+.footer_text {color: #444444; font-family: verdana, helvetica, sans-serif; font-size: 7pt; text-decoration: none;}
+.serialnav {font-size: 7pt; margin: 0 0 0 0}
+
+.smltxt {font-size: x-small;}
+.xsmltxt {font-size: 10pt;}
+/*smallsup helps with formatting of 3.8.3 p299 superscript and comparative size with main characters*/
+.smallsup {font-size: 7pt;}
+
+.startpara {color:#4F4F4F;
+        font-weight:bold;
+}
+
+.quote{
+
+font-size:smaller;
+width:60%;
+display:block;
+padding:15px;
+background-color:#E6E6FA;
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+margin-left:30px;
+}
+
+.large{
+
+font-size:1.5em;
+font-weight: bold;
+}
+
+
+.versionNote {
+	font-size: x-small;
+	text-align: right;
+}
+
+#onPageVersionInfo {
+	text-align: center;
+	background-color: #cea;
+	width: 16em;
+	float: right;
+	margin: 0 1em;
+	padding: 0 1.2ex;
+}
+
+/*-----------------------------------------------------------------------
+                      CSS Table Elements
+------------------------------------------------------------------------*/
+
+.table{
+font-family:Arial, Helvetica, sans-serif;
+font-size:8pt;
+}
+
+.tablesub
+{
+font-family:Arial, Helvetica, sans-serif;
+font-size:7.8pt;
+}
+
+.tablesup
+{
+font-family:Arial, Helvetica, sans-serif;
+font-size:7.8pt;
+}
+
+.bodytext
+{font-family: verdana, Helvetica, sans-serif; font-size: 10pt; line-height:14pt;}
+
+.reference
+{font-family: verdana, Helvetica, sans-serif; font-size: 10pt;}
+
+.heading
+{font-family: verdana, Helvetica, sans-serif; font-size: 10pt;}
+
+.footer
+{font-family: verdana, Helvetica, sans-serif; font-size: 8pt;}
+
+/*-----------------------------------------------------------------------
+                      CSS Tables with Styles
+------------------------------------------------------------------------*/
+
+/* need to look into the styling of tables in Kaye and Laby using XHTML and CSS2 for better layout and styling */
+
