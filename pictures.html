@@ -18,7 +18,7 @@
 <div id="page">
 
 	<div style="text-align:center;"><button id="btn">Random Image</button></div>
-    
+
 	<br>
 
 	<img id="img" alt="Unable to load the requested image">
@@ -60,13 +60,17 @@
     crawler.crawl(function() {
 
 
-        function showImage(num) {
-            var name = num || window.location.hash.substring(1);
+        function showImage(name) {
+            name = name || window.location.hash.substring(1);
             if (name == "" || name == "#") {
                 //the hash is not a valid number
 
-                window.location.hash = files[randInt(1, files.length)];
-                let name = name || window.location.hash.substring(1);
+                let newhash = files[randInt(1, files.length)].split(".");
+                newhash.pop();
+                newhash.join(".");
+
+                window.location.hash = newhash;
+                name = name || window.location.hash.substring(1);
 
             }
             $("#img").attr("src", path + name + ".jpg");
