@@ -53,7 +53,7 @@
 
     let files = [];
     let listener = function(file) {
-        if (path.indexOf(dir.path) == 0) {
+        if (file.path.indexOf(path) == 0) {
             files.push(file.name);
         }
     };
