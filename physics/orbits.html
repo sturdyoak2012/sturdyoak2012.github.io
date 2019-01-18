@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+	<title>Orbits</title>
+	<link rel="stylesheet" href="../style.css">
+	<script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
+</head>
+<body>
+<div id="menu">
+	<h1 align="center"> <a href="../index.html">Jacob Nie</a> </h1>
+	<ul>
+		<li><a href="../about.html">About</a></li>
+		<li><a href="../pictures.html">Pictures</a></li>
+		<li><a href="../outdoors.html">Outdoors</a></li>
+		<li><a href="../comics.html">Comics</a></li>
+		<li><a href="../physics.html">Physics</a></li>
+	</ul>
+</div>
+<div id="page">
+<div class="trip">
+Some messing around with n-body simulations (very casual) 1/16/19
+<h3>Program</h3>
+Using MATLAB, I wrote a simple equal mass 3-body system simulation.  There are several options for the method of integration, I tried out these four: (Let $a(r)$ be the acceleration of the body when it has the position vector $r$, and $a,v,$ and $r$ are all vectors and $h$ is the time step)
+<ul>
+	<li>Euler's method: $k = a(r_i), $$v_{i+1} = v_i + kh, $$r_{i+1} = r + v_i h.$</li>
+	<li>Implicit midpoint method: $k = a(r_i), v_{i+1} = v_i + kh,$$r_{i+1} = r + \frac{1}{2}(v_i+v_{i+1})h$</li>
+	<li>Leapfrog method (Verlet velocity method): $k_1 = a(r_i), $$r_{i+1} = r_i + v_i h + \frac{1}{2}k_1 h^2, $$k_2 = a(r_{i+1}),$$ v_{i+1}=v_i+\frac{1}{2}(k_1+k_2)h$</li>
+	<li>4th-order Runge Kutta method: $k_{v1} = a(r_i),\quad$$k_{r1}=v_i,\quad$$k_{v2} = a(r_i+\frac{1}{2}k_{r1}h),\quad$$k_{r2}=v_i+\frac{1}{2}k_{v1}h,\quad$$k_{v3} = a(r_i + \frac{1}{2}k_{r2}h),\quad$$k_{r3} = v_i + \frac{1}{2}k_{v2}h,\quad$$k_{v4} = a(r_i + k_{r3}h),\quad$$k_{r4} = v_i + k_{v3}h,\quad$$v_{i+1} = v_i + \frac{1}{6}(k_{v1}+2k_{v2}+2k_{v3}+k_{v4})h,\quad$$r_{i+1} = r_i + \frac{1}{6}(k_{r1}+2k_{r2}+2k_{r3}+k_{r4})h.$</li>
+</ul>
+(In my algorithm I calculate acceleration using Newton's law of gravity assuming $G,M=1.$)
+
+My understanding of the math isn't really good enough to explain why one is better than the other, so I decided to test them against each other for a few cases.  Since the 3-body system is chaotic, the accuracy of the model matters quite a lot.  Here is a table comparing these 4 integration methods at different time-steps:
+<br><br>
+<img style="width:100%" src="orb_img/99.svg">
+<br><br>
+<a href="orb_img/99.svg">Full size.</a>  The initial conditions were:
+<ul>
+	<li>red: $r=(0,0,0),v=(0,-1,0)$</li>
+	<li>green: $r=(1,0,0),v=(0,0,0)$</li>
+	<li>blue: $r=(0.5,0,0),v=(0,1,0)$</li>
+</ul>
+As you can see, there is a lot of difference.  This is because the initial conditions were set up for three "close encounters," and these have the tendency to magnify any deviations.  The behavior of the system is pretty hard to predict mostly for that reason. 
+<br><br>
+The accuracy of each method can be tested against the simple case of a mass orbiting another, stationary, mass.  
+<br><br>
+<img style="width:100%" src="orb_img/circle.svg">
+<a href="orb_img/circle.svg">Full size.</a>  Key: green - correct orbit (circle); red - Runge Kutta; blue - leapfrog; blue* - midpoint; red* - Euler.
+<br><br>
+Initial conditions were $r=(-1,0,0),v=(0,1,0).$  Iterated over a time of 10 seconds with timestep 0.3 seconds.  Here it's clear that the Runge-Kutta method has the least error.  However, the leapfrog method has the advantage of remaining in a stable orbit, whereas the Runge-Kutta method tends to decay:
+<img style="width:100%" src="orb_img/12.svg">
+<br><br>
+<a href="orb_img/12.svg">Full size.</a>  Initial conditions: same as above.  Iterated over a time of 10000 seconds with timestep 0.3 seconds.  
+<br><br>
+An obvious next step is to look for some nicely periodic, bounded systems.  Here is one I stumbled upon:
+<br><br>
+Initial conditions: $r_a=(0,0,0), v_a = (0,-1.5,0), r_b = (0.5,0,0), v_b = (0, 1.5, 0), r_c = (1,0,0), v_c=(0,0,0)$
+<br><br>
+Animation:
+<br><br>
+<img style="width:auto" src="orb_img/asd.gif">
+
+
+
+
+
+
+
+
+</div>
+</div>
+</body>
