@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<title>Bucket</title>
+	<link href="../lib/css/lightbox.css" rel="stylesheet">
 	<link rel="stylesheet" href="../style.css">
 	<script type="text/javascript" async
   		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -25,17 +26,79 @@ MathJax.Hub.Config({
 </div>
 <div id="page">
 <div class="trip">
+	1/17/19 - I've had this <b>peach</b> of a problem in the back of my mind for a couple of years now, here's an attempt to get some of the math laid out.
 	<h3>Bucket problem</h3>
 	Jacob is camping in the mountains with his friends and, like a responsible citizen, fills up a bucket with water before he starts the fire for that night.  When he goes to the water spout to fill up his big orange Home Depot bucket (which has a glossy reflective interior), he notices that his headlamp makes a very strange reflection at the bottom of his bucket!  Perplexed, he decides to forget about it, saying "oh well I probably need to know like abstract linear calculus to figure out why this happens."  Which was wrong of him.
 	<br><br>
 	<img src="buck_img/rice.jpg" style="width:auto">
 	<br><br>
-	<p>a piece of paper laid down on the bottom of a metal rice cooker (contrast slider --------->+ to make it look cooler)</p>
+	<p>a piece of paper laid down on the bottom of a metal cylindrical rice cooker (contrast slider --------->+ to make it look cooler)</p>
 	<h3>Theoretical set-up</h3>
-	1/17/19 - As with any problem, we need to make some simplifying assumptions!  Suppose the light source is a height $h$ above the base of the bucket (radius $R$) and the bucket's walls extend arbitrarily high.  Furthermore, the light source is assumed to be very small, scattering light evenly in all directions.  Looking directly down into the bucket, the light source is offset from the center-axis by a distance $d.$  
+	As with any problem, we need to make some simplifying assumptions!  Suppose the light source is a height $h$ above the base of the bucket (radius $R$) and the bucket's walls extend arbitrarily high.  Furthermore, the light source is assumed to be very small, scattering light evenly in all directions.  Looking directly down into the bucket, the light source is offset from the center-axis by a distance $d.$  
 	<br><br>
 	<img src="buck_img/bucket.svg" style="width:50%">
+	<br><br>
+	<h3>Computer simulation</h3>
+	I wrote a simple piece of code to simulate the reflection of light inside the cylinder, plotting where the light hits.  I used MATLAB, and here is the pseudocode
+	<pre>
+  		<code>
+loop for # of iterations:
+  	set initial light position (always same)
+  	set initial light direction (randomized)
+  	loop until broken:
+  		store current position
+  		advance position using light direction and large step size
+  		check if the light is outside the bucket walls, if so
+  			reset position to the stored previous position
+  			loop until broken:
+  				store current position
+  				advance position using light direction and small step size (more precision)
+  				check if the light is outside the bucket walls, if so
+  					store previous position in original variable
+  					recalculate light direction (explained below)
+  					break
+		check if the light is below the bucket floor, if so
+			reset position to the stored previous position
+			loop until broken:
+				store current position
+				advance position using light direction and small step size
+				 if the light is below the bucket floor, if so
+					store previous position as final (i.e. where the light hits the bucket floor)
+					break
+					break parent loop
+  		</code>
+	</pre>
+	The direction of the light can be randomized using spherical coordinates: the direction can be described using two angles $\theta$ and $\alpha,$ the horizontal angular displacement from the $x$ axis and the angle of depression, respectively.  So it would look something like
+	<pre><code>
+theta = rand*2*pi
+alpha = rand*pi/2
+v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
+	</code></pre>
+	Changing the light direction based on how it reflects off the circular interior looks tricky but is quite easy.  Compressing the light position $\vec{x}$ and light direction vectors $\vec{v}$ into their solely their horizontal components, you can confirm that the new light direction is
+	$$\vec{v} - \frac{2\vec{v}\cdot \vec{x}}{\text{norm}(x)}\vec{x}.$$
+	Here are the results of the program (click to enlarge, arrow keys to compare):
+	<br><br>
+	<div style="margin: 0 auto; width: auto">
+	<a href="buck_img/scatterheat.png" data-lightbox="group1" data-title="scatter-heat map"><img src="buck_img/scatterheat.png" style="height: 100px; width: auto; display:inline-block;"></a> <a href="buck_img/scatterblue.png" data-lightbox="group1" data-title="10% of points"><img src="buck_img/scatterblue.png" style="height:100px; width: auto; display:inline-block;"></a> <a href="buck_img/scatterbluedense.png" data-lightbox="group1" data-title="33% of points"><img src="buck_img/scatterbluedense.png" style="height:100px; width:auto; display:inline-block;"></a></div><br><b>Click these pretty pictures!</b>
+	<br><br>
+	(I couldn't get it as a vectorized image because MATLAB crashed trying to save the figure, had to screenshot it.)  This heatmap scatter plot is the result of the program iterated 1 million times (for images 2&3 only a fraction of these were plotted) with the initial parameters <code>R = 1, d = 0.8, h = 2</code>.
+	<br><br>
+	Hopefully these three different visualizations of the data can give you some idea of the complex and interesting shapes, each of different intensity, formed in this extraordinarily simple configuration.
+	
+	<br><br>
+	<h3>Sources used:</h3>
+	<ul>
+		<li>MATLAB was used for the program and plotting, Inkscape for drawings</li>
+		<li>the MATLAB <a href="https://www.mathworks.com/matlabcentral/fileexchange/65024-densityscatter">densityscatter()</a> function by Jose Manuel Amigo was used to create the "heatmap"</li>
+	</ul>
+</div>
+</div>
 
-</div>
-</div>
+<script src="../lib/js/jquery.min.js"></script>
+<script src="../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
 </body>
