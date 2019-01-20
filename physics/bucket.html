@@ -79,17 +79,58 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
 	Here are the results of the program (click to enlarge, arrow keys to compare):
 	<br><br>
 	<div style="margin: 0 auto; width: auto">
-	<a href="buck_img/scatterheat.png" data-lightbox="group1" data-title="scatter-heat map"><img src="buck_img/scatterheat.png" style="height: 100px; width: auto; display:inline-block;"></a> <a href="buck_img/scatterblue.png" data-lightbox="group1" data-title="10% of points"><img src="buck_img/scatterblue.png" style="height:100px; width: auto; display:inline-block;"></a> <a href="buck_img/scatterbluedense.png" data-lightbox="group1" data-title="33% of points"><img src="buck_img/scatterbluedense.png" style="height:100px; width:auto; display:inline-block;"></a></div><br><b>Click these pretty pictures!</b>
+	<a href="buck_img/scatterheat.PNG" data-lightbox="group1" data-title="scatter-heat map"><img src="buck_img/scatterheat.PNG" style="height: 100px; width: auto; display:inline-block;"></a> <a href="buck_img/scatterblue.PNG" data-lightbox="group1" data-title="10% of points"><img src="buck_img/scatterblue.PNG" style="height:100px; width: auto; display:inline-block;"></a> <a href="buck_img/scatterbluedense.PNG" data-lightbox="group1" data-title="33% of points"><img src="buck_img/scatterbluedense.PNG" style="height:100px; width:auto; display:inline-block;"></a></div><br><b>Click these pretty pictures!</b>
 	<br><br>
 	(I couldn't get it as a vectorized image because MATLAB crashed trying to save the figure, had to screenshot it.)  This heatmap scatter plot is the result of the program iterated 1 million times (for images 2&3 only a fraction of these were plotted) with the initial parameters <code>R = 1, d = 0.8, h = 2</code>.
 	<br><br>
 	Hopefully these three different visualizations of the data can give you some idea of the complex and interesting shapes, each of different intensity, formed in this extraordinarily simple configuration.
-	
+	<h3>Mathematics</h3>
+	To understand the geometry of the shapes produced on the bottom of the bucket, it is first necessary to reduce the problem into a two-dimensional one.  How do we determine where the light ray is stopped by the bottom of the bucket?  Imagine it is simply travelling and reflecting in the plane of the circular cross section of the bucket.  Then after a time $t$ that is dependent on the height $h$ and angle of depression $\alpha,$ it will be stopped, and we record the point where it stops as a point of light on the bottom of the bucket.  
 	<br><br>
+	So the shapes formed in the bucket are closely related to the possible configurations of reflected light rays within the circle!  Given the set of all ray configurations (if you traced a ray and all its reflections within the circle), the "density" of lines in a certain area will increase the probability that the light ray is "stopped" within that area*.  If a point on the circle has a high likelihood of being the location where a light ray is "stopped," then it will form a shape on the bottom of the bucket.  So the problem of the ray "density" is essentially* equivalent to the problem of the shapes on the bucket.
+	<br><br>*This is not exactly true, the probability that a light ray is "stopped" only after a very long time is exceedingly small because $\alpha$ would have to very near zero when in fact the light rays are distributed uniformly over $\alpha$.  In other words, the "probabilities" we are speaking of are tied to the distribution of $\alpha$, which we will ignore here.  This does not affect our analysis of the shapes formed on the bottom of the bucket, but it would affect the intensities of the shapes formed on the bottom of the bucket.  
+	<br><br>
+	The very loose idea of the ray "density" can be formalized with the idea of envelopes.  For a set of curves (lines in this case), the envelope is a curve that is tangent to all the curves and formed by the points of tangency:
+	<br><br>
+	<img src="buck_img/envelope.gif" style="width:auto">
+	<p>(Image from wikipedia) a simple example of an envelope for a family of curves.</p>
+	<br><br>
+	Mathworld (link below) gives the mathematical definition as: for a family of curves parametrically represented by $f(t,)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<h3>Sources used:</h3>
 	<ul>
 		<li>MATLAB was used for the program and plotting, Inkscape for drawings</li>
 		<li>the MATLAB <a href="https://www.mathworks.com/matlabcentral/fileexchange/65024-densityscatter">densityscatter()</a> function by Jose Manuel Amigo was used to create the "heatmap"</li>
+		<li>My mathematical attempt was initially too complex (i.e. trig and polar coordinates) and overlooked a much better approach at the problem.  So a lot is inspired from these pages:
+			<ul>
+				<li><a href="https://physics.stackexchange.com/questions/306744/whats-the-cause-of-these-limacon-figures">Stack exchange</a></li>
+				<li><a href="http://mathworld.wolfram.com/CircleCatacaustic.html">MathWorld - Catacaustic</a></li>
+				<li><a href="http://mathworld.wolfram.com/Envelope.html">MathWorld - envelope</a></li>
+			</ul>
+		</li>
 	</ul>
 </div>
 </div>
