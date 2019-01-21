@@ -3,6 +3,13 @@
 	<title>Bucket</title>
 	<link href="../lib/css/lightbox.css" rel="stylesheet">
 	<link rel="stylesheet" href="../style.css">
+	<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  CommonHTML: { linebreaks: { automatic: true } },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
 	<script type="text/javascript" async
   		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 	</script>
@@ -90,12 +97,96 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
 	So the shapes formed in the bucket are closely related to the possible configurations of reflected light rays within the circle!  Given the set of all ray configurations (if you traced a ray and all its reflections within the circle), the "density" of lines in a certain area will increase the probability that the light ray is "stopped" within that area*.  If a point on the circle has a high likelihood of being the location where a light ray is "stopped," then it will form a shape on the bottom of the bucket.  So the problem of the ray "density" is essentially* equivalent to the problem of the shapes on the bucket.
 	<br><br>*This is not exactly true, the probability that a light ray is "stopped" only after a very long time is exceedingly small because $\alpha$ would have to very near zero when in fact the light rays are distributed uniformly over $\alpha$.  In other words, the "probabilities" we are speaking of are tied to the distribution of $\alpha$, which we will ignore here.  This does not affect our analysis of the shapes formed on the bottom of the bucket, but it would affect the intensities of the shapes formed on the bottom of the bucket.  
 	<br><br>
+	<div style="margin:0 auto; width: auto">
+		<a href="buck_img/reflectioni.PNG" data-lightbox="group2" data-title="set of all rays after one reflection"><img src="buck_img/reflectioni.PNG" style="height:100px; width:auto; display:inline-block;"></a> 
+		<a href="buck_img/reflectionii.PNG" data-lightbox="group2" data-title="set of all rays after two reflections"><img src="buck_img/reflectionii.PNG" style="height:100px; width: auto; display:inline-block;"></a>
+		<a href="buck_img/reflectioniii.PNG" data-lightbox="group2" datatitle="set of all rays after three reflections"><img src="buck_img/reflectioniii.PNG" style="height:100px; width: auto; display: inline-block;"></a></div><br><br>
+	(Generated in Geogebra with $d=0.8R,$ you can very clearly see that the shapes formed match those that form on the bottom of the bucket.  The first image is the set of all possible rays following one reflection inside the circle, the second image is the set of all possible rays following exactly two reflections inside the circle, and the third image is the set of all possible rays following exactly three reflections inside the circle.  You could continue on, but the successive images are not as visible on the bucket because it is not likely that a ray will have the space to reflect so many times.)
+	<br><br>
 	The very loose idea of the ray "density" can be formalized with the idea of envelopes.  For a set of curves (lines in this case), the envelope is a curve that is tangent to all the curves and formed by the points of tangency:
 	<br><br>
 	<img src="buck_img/envelope.gif" style="width:auto">
 	<p>(Image from wikipedia) a simple example of an envelope for a family of curves.</p>
 	<br><br>
-	Mathworld (link below) gives the mathematical definition as: for a family of curves parametrically represented by $f(t,)
+	In the three images presented above, the envelopes are very clearly visible.  Mathworld (link below) gives the mathematical definition as: for a one-parameter family of curves given by $U(x,y,c) = 0,$ the envelope is the set of points $(x,y)$ such that there exists a number $c$ where $\dfrac{\partial U}{\partial c} = 0$ and $U(x,y,c) = 0.$
+	<br><br>
+	We can use the simple example of the gif above.  The set of curves is given by 
+	$$ y + \dfrac{k}{1-k}x - k= 0$$
+	for $k\in(0,1)$ and $x\in(0,1).$ Simultaneously solving  $$\dfrac{\partial}{\partial k}\left(y+\dfrac{k}{1-k}x-k\right) = 0\qquad\text{ and }\qquad y + \dfrac{k}{1-k}x - k = 0,$$
+	we find $y=(1-\sqrt{x})^2,$ which is the red curve.
+
+
+	<br><br>
+	We are looking for a way to express the set of all possible ray reflections in a similar way as the range of a function of $x,y,$ and some other parameter.  We'd like to be able to find an algebraic way of expressing all possible ray reflections.  
+	<br><br>
+	Considering the angles involved in the problem, polar coordinates may seem like a good idea, but it didn't work out so well when I tried it.  Here's a method using the simple idea behind reflection and some degree of wishful thinking.  
+	<br><br>
+	The tricky part of the problem is algebraically expressing a reflection.  The reflected ray is simple the reflection of the original ray over the line connecting the center and the point of reflection.  We think: <i>this would be pretty easy if the line connecting the center and the point of reflection were the $x$-axis, then we just negate the function, yeah?</i>  Once that goes through your mind, the solution is pretty obvious and it just becomes algebra. 
+	<br><br>
+	(Another way to do this is with vectors, using the dot product.  It could even be easier, but the result is the same nonetheless.)
+	<br><br>
+	<img style="width:50%" src="buck_img/diagram.svg">
+	<br><br>
+	TLDR: switch coordinate frame to make reflection easy, then switch back.
+	<br><br>
+	Suppose the ray begins at the point $(0,-d)$ and it is directed towards a point on the circle given by $(R\cos\theta,R\sin\theta),$ then the line joining these two is
+	$$ y = -d + \dfrac{R\sin\theta+d}{R\cos\theta}x.$$
+	We use the rotation formulas:
+	$$\begin{align*}
+	x &= x'\cos\theta - y'\sin\theta\\
+	y &= x'\sin\theta + y'\cos\theta.
+	\end{align*}$$
+	So now the ray can be reexpressed as
+	$$\begin{align*}
+	x'\sin\theta + y'\cos\theta &= -d + \left(\sin\theta + \dfrac{d}{R}\right)(x'-y'\tan\theta)\\
+	y'\left(\cos\theta + \theta\theta\sin\theta + \dfrac{d\tan\theta}{R}\right) &= \dfrac{dx'}{R} - d\\
+	y'\left(\dfrac{R+d\sin\theta}{R\cos\theta}\right) &= \dfrac{dx'}{R} = d\\
+	y' &= \left(\dfrac{d\cos\theta}{R+d\sin\theta}\right)x' - \dfrac{dR\cos\theta}{R+d\sin\theta}.
+	\end{align*}
+	$$
+	Now the reflected ray is easily found to be
+	$$y' = \left(\dfrac{-d\cos\theta}{R+d\sin\theta}\right)x'+\dfrac{dR\cos\theta}{R+d\sin\theta}.$$
+	Using the rotation formulas:
+	$$\begin{align*}
+	x' &= x\cos\theta + y\sin\theta\\
+	y' &= -x\sin\theta + y\cos\theta
+	\end{align*}$$
+	Substituting:
+	$$\begin{align*}
+	-x\sin\theta + y\cos\theta &= \left(\dfrac{-d\cos\theta}{R+d\sin\theta}\right)(x\cos\theta + y\sin\theta) + \dfrac{dR\cos\theta}{R+d\sin\theta}\\
+	(x\sin\theta - y\cos\theta)(R+d\sin\theta) &= d\cos^2\theta x + d\sin\theta\cos\theta y - dR\cos\theta\\
+	(R\sin\theta + d(\sin^2\theta-\cos^2\theta))x + dR\cos\theta &= (R\cos\theta + 2d\sin\theta\cos\theta)y\\
+	y&= \dfrac{R\sin\theta - d\cos 2\theta}{R\cos\theta + d\sin 2\theta}x+\dfrac{dR\cos\theta}{R\cos\theta + d\sin 2\theta}
+	\end{align*}$$
+	as our equation for the reflected ray.  This can be confirmed:
+	<br><br>
+	<img style="width:50%"src="buck_img/ref.svg">
+	<p>Plot in Mathematica (excuse the half blue half orange circle!)</p>
+	So the set of all possible reflected rays can be given by
+	$$U(x,y,\theta)=(R\cos\theta + d\sin2\theta)y + (-R\sin\theta + d\cos 2\theta)x - d R \cos\theta = 0.$$
+	Differentiating with respect to $\theta$ and simultaneously solving the two resulting equations is unimaginably bad.  So we employ a clever trick: reparametrizing $U$ by making the substitution $t = e^{i\theta}.$  Now the curve family becomes a polynomial instead of a sum of several trigonometric functions.  With this new substitution we calculate
+	$$\begin{align*}
+	\cos\theta &= \dfrac{1}{2}(t+t^{-1})\\
+	\sin\theta &= \dfrac{i}{2}(t^{-1}-t)\\
+	\sin 2\theta &= \dfrac{i}{2}(t^{-2}-t^2)\\
+	\cos 2\theta &= \dfrac{1}{2}(t^2+t^{-2}).
+	\end{align*}$$
+	Substituting this, we find that we can reexpress $U$ as
+	$$U(x,y,t) = (dx-idy)t^4 + (Ry-dR+iRx)t^3+(Ry-dR-iRx)t+(dx+idy)=0.$$
+	Both $U=0$ and $\dfrac{\partial U}{\partial t} = 0$ for some $t$ to solve for the envelope.  Instead of directly solving for $t$ using some kind of quartic equation, we notice that this is only true if the polynomial $U(t)$ has a double root.  Hence, $U(t)$ must have a discriminant of zero.  Using the discriminant formula for a quartic polynomial, we can find that
+	$$-4 d^6 R^6 - 60 d^6 R^4 x^2 - 12 d^4 R^6 x^2 - 192 d^6 R^2 x^4 + 
+ 312 d^4 R^4 x^4 - 12 d^2 R^6 x^4 + 256 d^6 x^6 - 192 d^4 R^2 x^6 - 
+ 60 d^2 R^4 x^6 - 4 R^6 x^6 + 24 d^5 R^6 y - 192 d^5 R^4 x^2 y + 
+ 48 d^3 R^6 x^2 y + 384 d^5 R^2 x^4 y - 192 d^3 R^4 x^4 y + 
+ 24 d R^6 x^4 y + 48 d^6 R^4 y^2 - 60 d^4 R^6 y^2 - 
+ 384 d^6 R^2 x^2 y^2 + 600 d^4 R^4 x^2 y^2 - 72 d^2 R^6 x^2 y^2 + 
+ 768 d^6 x^4 y^2 - 576 d^4 R^2 x^4 y^2 - 72 d^2 R^4 x^4 y^2 - 
+ 12 R^6 x^4 y^2 - 192 d^5 R^4 y^3 + 80 d^3 R^6 y^3 + 
+ 768 d^5 R^2 x^2 y^3 - 384 d^3 R^4 x^2 y^3 + 48 d R^6 x^2 y^3 - 
+ 192 d^6 R^2 y^4 + 288 d^4 R^4 y^4 - 60 d^2 R^6 y^4 + 
+ 768 d^6 x^2 y^4 - 576 d^4 R^2 x^2 y^4 + 36 d^2 R^4 x^2 y^4 - 
+ 12 R^6 x^2 y^4 + 384 d^5 R^2 y^5 - 192 d^3 R^4 y^5 + 24 d R^6 y^5 + 
+ 256 d^6 y^6 - 192 d^4 R^2 y^6 + 48 d^2 R^4 y^6 - 4 R^6 y^6  =0$$
 
 
 
@@ -122,15 +213,17 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
 
 	<h3>Sources used:</h3>
 	<ul>
-		<li>MATLAB was used for the program and plotting, Inkscape for drawings</li>
+		<li>MATLAB was used for the program and plotting, Inkscape for drawings and diagrams, Geogebra used where cited</li>
+		<li>Mathematica was used for the heavy algebra towards the end.  The notebook can be found <a href="buck_img/bucket.nb">here.</a></li>
 		<li>the MATLAB <a href="https://www.mathworks.com/matlabcentral/fileexchange/65024-densityscatter">densityscatter()</a> function by Jose Manuel Amigo was used to create the "heatmap"</li>
-		<li>My mathematical attempt was initially too complex (i.e. trig and polar coordinates) and overlooked a much better approach at the problem.  So a lot is inspired from these pages:
+		<li>My mathematical attempt was initially too complex (i.e. polar coordinates) and overlooked a much better approach at the problem.  So a lot, the notion of catacaustics in particular, is inspired from these pages:
 			<ul>
 				<li><a href="https://physics.stackexchange.com/questions/306744/whats-the-cause-of-these-limacon-figures">Stack exchange</a></li>
 				<li><a href="http://mathworld.wolfram.com/CircleCatacaustic.html">MathWorld - Catacaustic</a></li>
 				<li><a href="http://mathworld.wolfram.com/Envelope.html">MathWorld - envelope</a></li>
 			</ul>
 		</li>
+		<li>The mathematical tricks employed when calculating the envelope were inspired by <a href="https://en.wikipedia.org/wiki/Envelope_(mathematics)">this</a> Wikipedia page.</li>
 	</ul>
 </div>
 </div>
