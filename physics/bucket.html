@@ -40,6 +40,12 @@ MathJax.Hub.Config({
 	<img src="buck_img/rice.jpg" style="width:auto">
 	<br><br>
 	<p>a piece of paper laid down on the bottom of a metal cylindrical rice cooker (contrast slider --------->+ to make it look cooler)</p>
+	<h3>Summary of approach</h3>
+	First, I use a computer simulation, programmed in MATLAB, to model the reflection of light inside the bucket.  
+	<br><br>
+	Next, I introduce the idea of the catacaustic as the mathematical basis for the shapes formed on the bucket.
+	<br><br>
+	Last, I solve for the catacaustic under various configurations of the light source and bucket.  
 	<h3>Theoretical set-up</h3>
 	As with any problem, we need to make some simplifying assumptions!  Suppose the light source is a height $h$ above the base of the bucket (radius $R$) and the bucket's walls extend arbitrarily high.  Furthermore, the light source is assumed to be very small, scattering light evenly in all directions.  Looking directly down into the bucket, the light source is offset from the center-axis by a distance $d.$  
 	<br><br>
@@ -187,29 +193,19 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
  768 d^6 x^2 y^4 - 576 d^4 R^2 x^2 y^4 + 36 d^2 R^4 x^2 y^4 - 
  12 R^6 x^2 y^4 + 384 d^5 R^2 y^5 - 192 d^3 R^4 y^5 + 24 d R^6 y^5 + 
  256 d^6 y^6 - 192 d^4 R^2 y^6 + 48 d^2 R^4 y^6 - 4 R^6 y^6  =0$$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 	is the formula for the envelope.  (Also known as the <b>catacaustic.</b>)  Here is it graphed in Mathematica:
+ 	<br><br>
+ 	<div style="margin:0 auto; width: auto">
+ 		<img src="buck_img/plot2.svg" style="display: inline-block; height:200px; width: auto">
+ 		<img src="buck_img/plot4.svg" style="display: inline-block; height:200px; width: auto">
+ 		<img src="buck_img/plot6.svg" style="display: inline-block; height:200px; width: auto">
+ 		<img src="buck_img/plot.svg" style="display: inline-block; height:200px; width: auto">
+ 		<img src="buck_img/plot1.svg" style="display: inline-block; height:200px; width: auto">
+ 	</div>
+ 	<br><br>
+ 	<p>Parameters: $R=1,\quad d=\{0.2,0.4,0.6,0.8,1.0\}$ from left to right</p>
+ 	<br><br>
+ 	And this matches really well with our simulation for $d=0.8$ above.  
 
 	<h3>Sources used:</h3>
 	<ul>
@@ -218,12 +214,11 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
 		<li>the MATLAB <a href="https://www.mathworks.com/matlabcentral/fileexchange/65024-densityscatter">densityscatter()</a> function by Jose Manuel Amigo was used to create the "heatmap"</li>
 		<li>My mathematical attempt was initially too complex (i.e. polar coordinates) and overlooked a much better approach at the problem.  So a lot, the notion of catacaustics in particular, is inspired from these pages:
 			<ul>
-				<li><a href="https://physics.stackexchange.com/questions/306744/whats-the-cause-of-these-limacon-figures">Stack exchange</a></li>
 				<li><a href="http://mathworld.wolfram.com/CircleCatacaustic.html">MathWorld - Catacaustic</a></li>
 				<li><a href="http://mathworld.wolfram.com/Envelope.html">MathWorld - envelope</a></li>
 			</ul>
 		</li>
-		<li>The mathematical tricks employed when calculating the envelope were inspired by <a href="https://en.wikipedia.org/wiki/Envelope_(mathematics)">this</a> Wikipedia page.</li>
+		<li>The mathematical tricks employed when calculating the envelope were from <a href="https://en.wikipedia.org/wiki/Envelope_(mathematics)">this</a> Wikipedia page.</li>
 	</ul>
 </div>
 </div>
