@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+	<title>180519</title>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="menu">
+	<h1 align="center"> <a href="../../index.html">Jacob Nie</a> </h1>
+	<ul>
+		<li><a href="../../about.html">About</a></li>
+		<li><a href="../../pictures.html">Pictures</a></li>
+		<li><a href="../../outdoors.html">Outdoors</a></li>
+		<li><a href="../../comics.html">Comics</a></li>
+		<li><a href="../../physics.html">Physics</a></li>
+	</ul>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Twenty Lakes Basin - September 2017</h1>
+<br><br>
+The annual Labor Day trip, back in the twenty lakes basin for some reason...  A very young group overall!  It's an eight mile loop that begins at the Saddlebag Lake resort just east of Tioga pass.
+<br><br>
+<a href="P1020310-2.jpg" data-lightbox="group"><img src="P1020310-2.jpg"></a>
+<p>Group photo</p>
+<br><br>
+The first day we walked a short distance from the trailhead, around Saddlebag Lake, and down to Lake Helen.  
+<br><br>
+<a href="IMG_20170902_150005-2.jpg" data-lightbox="group"><img src="IMG_20170902_150005-2.jpg"></a>
+<p>Saddlebag Lake</p>
+<br><br>
+<a href="IMG_8249-2.jpg" data-lightbox="group"><img src="IMG_8249-2.jpg"></a>
+<p>the guys took the altitude really hard, this was just 10 minutes in on flat terrain!</p>
+The guys were all feeling pretty bad from the long car ride and the altitude was kicking in for some.  Nobody really in a great mood on the first day except Jeffery and I!
+<br><br>
+<a href="image-2.jpg" data-lightbox="group"><img src="image-2.jpg"></a>
+<p>and thirty minutes in</p>
+<br><br>
+<a href="IMG_20170902_160246-2.jpg" data-lightbox="group"><img src="IMG_20170902_160246-2.jpg"></a>
+<p>Micah really paid for running around like this at the altitude --- pretty sick that night</p>
+<br><br>
+<a href="IMG_2650-2.jpg" data-lightbox="group"><img src="IMG_2650-2.jpg"></a>
+<p>Jeffery and I</p>
+<br><br>
+<a href="IMG_20170902_162816-2.jpg" data-lightbox="group"><img src="IMG_20170902_162816-2.jpg"></a>
+<p>Mt. Conness</p>
+<br><br>
+<a href="IMG_2670-2.jpg" data-lightbox="group"><img src="IMG_2670-2.jpg"></a>
+<p>Jeffery</p>
+<br><br>
+<a href="IMG_20170902_180701-2.jpg" data-lightbox="group"><img src="IMG_20170902_180701-2.jpg"></a>
+<p>Steven and the lake just south of Helen</p>
+<br><br>
+<a href="P1020192-2.jpg" data-lightbox="group"><img src="P1020192-2.jpg"></a>
+<p>We were surprised to see snow in September!</p>
+<br><br>
+<a href="IMG_2741-2.jpg" data-lightbox="group"><img src="IMG_2741-2.jpg"></a>
+<p>In the cave</p>
+<br><br>
+<a href="IMG_20170902_185940-2.jpg" data-lightbox="group"><img src="IMG_20170902_185940-2.jpg"></a>
+<p>North Peak at sunset</p>
+<br><br>
+For some reason the weather was practically identical to the previous year's, sans big wind.  We had a really nice sunset that evening.  Lots of guys sick that night, lots of "room service" from me and Jeffery.  (Honestly Jeffery wasn't feeling too well himself!)  We got up late the next day since most of the guys probably didn't sleep so well.  
+<br><br>
+<a href="IMG_2799-2.jpg" data-lightbox="group"><img src="IMG_2799-2.jpg"></a>
+<p>myself</p>
+<br><br>
+<a href="P1020260-2.jpg" data-lightbox="group"><img src="P1020260-2.jpg"></a>
+<p>weird snow patch</p>
+<br><br>
+<a href="IMG_2830-2.jpg" data-lightbox="group"><img src="IMG_2830-2.jpg"></a>
+<p>North Peak</p>
+<br><br>
+<a href="IMG_4756-2.jpg" data-lightbox="group"><img src="IMG_4756-2.jpg"></a>
+<p>Steven rocking those cool shades?!</p>
+<br><br>
+<a href="P1020317-2.jpg" data-lightbox="group"><img src="P1020317-2.jpg"></a>
+<p>Steelhead Lake -- the haze was really pretty</p>
+<br><br>
+<a href="IMG_4776-2.jpg" data-lightbox="group"><img src="IMG_4776-2.jpg"></a>
+<p>There was some really slick granite, and we were all sliding around on it with only our socks on.  Interestingly, our feet left behind these red streaks on the granite when we slid on it, and our socks turned very red as well.  Cause? not too sure, I'm noticing a similarity with watermelon snow though...</p>
+<br><br>
+<a href="IMG_4779-2.jpg" data-lightbox="group"><img src="IMG_4779-2.jpg"></a>
+<p>Our two brothers Thomas and Timothy!</p>
+<br><br>
+<a href="P1020343-2.jpg" data-lightbox="group"><img src="P1020343-2.jpg"></a>
+<p>Our communal dinner</p>
+<br><br>
+<a href="IMG_8399-2.jpg" data-lightbox="group"><img src="IMG_8399-2.jpg"></a>
+<p>Haha that's me in that green bag to the left of the tents...</p>
+<br><br><br><br><br><br>
+The next day we were outta there pretty quickly (I did get the guys lost for the second year in a row, in the exact same place as well..) and we were on the dam before we knew it!
+<br><br>
+<a href="photo.jpg" data-lightbox="group"><img src="photo.jpg"></a>
+<p>Saddlebag Lake dam</p>
+<br><br>
+<a href="IMG_8423-2.jpg" data-lightbox="group"><img src="IMG_8423-2.jpg"></a>
+<p>@ innout (tall asian male in the back is of no connection to our group fyi)</p>
+<br><br>
+Probably one of the better trips I've been on!
+<br><br><br><br><br><br><br><br><br>
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</body>
