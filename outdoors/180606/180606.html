@@ -4,6 +4,8 @@
 	<link rel="stylesheet" href="../../style.css">
 	<link href="../../lib/css/lightbox.css" rel="stylesheet">
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -26,16 +28,16 @@
       // Success!
       var data = JSON.parse(request.responseText);
       
-        firebase.database().ref("/test/").child(btoa(data.ip)).once("value").then(function(snapshot) {
-        	firebase.database().ref("/test/").child(btoa(data.ip)).update({
-        		visits:(snapshot.val().visits||0) + 1,
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
         		data:data,
 				lastVisit:{
 	          		page:window.location.pathname,
 	          		timestamp:new Date() + ""
 	          	}
 	        });
-	        firebase.database().ref("/test/").child(btoa(data.ip)).child("history").push({
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
 	          	page:window.location.pathname,
 	          	timestamp:new Date() + ""
 	          });
