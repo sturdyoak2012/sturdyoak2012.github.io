@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head>
+	<title>190420</title>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="menu">
+	<h1 align="center"> <a href="../../index.html">Jacob Nie</a> </h1>
+	<ul>
+		<li><a href="../../about.html">About</a></li>
+		<li><a href="../../pictures.html">Pictures</a></li>
+		<li><a href="../../outdoors.html">Outdoors</a></li>
+		<li><a href="../../comics.html">Comics</a></li>
+		<li><a href="../../physics.html">Physics</a></li>
+	</ul>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Castle Peak - April 2019</h1>
+<br><br>
+A short overnighter with some of the boy scouts, and a good chance to test out some new gear!  Participants: myself, Richard, Hagen, Jack, Mrs. Qiu, Mrs. Kao, and Mr. Liu.  Big thanks to Mr. Liu and Hagen's dad+brother especially for driving!  Some new gear I tried out: Scarpa Inverno (too warm haha, need to add more insoles to properly frontpoint), Black Diamond sabertooth crampons (old generation, the black ones, I messed with them in camp and they kept falling off the next day, oops!), Gregory Denali pro 115L (literally a whale, overkill but seems trusty and very comfortable with the 50 pounds I had on).
+<br><br>
+We began at the trailhead off I-80, then snowshoed about 2 miles to our campsite just below the pass west of Castle Peak.
+<br><br>
+<a href="1.jpg" data-lightbox="group"><img src="1.jpg"></a>
+<p>weird trailhead</p>
+<br><br>
+<a href="2.jpg" data-lightbox="group"><img src="2.jpg"></a>
+<br><br>
+<a href="3.jpg" data-lightbox="group"><img src="3.jpg"></a>
+<p>Sunset from camp</p>
+<br><br>
+We were at camp by about 2 pm, so we had a lot of time to kill.  We made nice snow walls for our tents, and Hagen even dug a little snow cave.  We also dug a premium cooking and seating area for the seven of us.  I told Jack the story of "Nate the snake," which he had never heard before.  I managed to drag it out for a whole hour, and he was not happy at the end!  We slept at 8pm, with the help of the melatonin I brought along.
+<br><br>
+We woke up at 4:00 the next day (3:30 for Hagen and I, not used to getting any more than 7 hours of sleep I guess), so it was a nice and fresh alpine start.  The snow was nice and firm, but my crampons kept falling off for the first hundred feet.  The previous night I had made them slightly larger because they weren't going on my boots properly (turns out I wasn't doing it right).  Seems like they were in the correct position previously.  I ditched them somewhere in the snow and came back for it once we were done.
+<br><br>
+<a href="4.jpg" data-lightbox="group"><img src="4.jpg"></a>
+<p>fresh start</p>
+<br><br>
+<a href="5.jpg" data-lightbox="group"><img src="5.jpg"></a>
+<br><br>
+<a href="6.jpg" data-lightbox="group"><img src="6.jpg"></a>
+<p>The moon was bright enough to see quite well at night!</p>
+<br><br>
+<a href="7.jpg" data-lightbox="group"><img src="7.jpg"></a>
+<br><br>
+<a href="8.jpg" data-lightbox="group"><img src="8.jpg"></a>
+<br><br>
+<a href="9.jpg" data-lightbox="group"><img src="9.jpg"></a>
+<br><br>
+<a href="10.jpg" data-lightbox="group"><img src="10.jpg"></a>
+<br><br>
+<a href="11.jpg" data-lightbox="group"><img src="11.jpg"></a>
+<br><br>
+<a href="12.jpg" data-lightbox="group"><img src="12.jpg"></a>
+<br><br>
+<a href="13.jpg" data-lightbox="group"><img src="13.jpg"></a>
+<br><br>
+<a href="14.jpg" data-lightbox="group"><img src="14.jpg"></a>
+<br><br>
+<a href="15.jpg" data-lightbox="group"><img src="15.jpg"></a>
+<br><br>
+Towards the end the slope angle began to exceed what some of us were comfortable with on our snowshoes.  I'd guess some snowshoes were just designed for more moderate terrain.  I think Mrs. Qiu slid down the slope for some distance when she tried to sit down, thankfully she managed to stop very quickly.  After that we called it quits and went back down.  We were about 150-200 feet off the summit.
+<br><br>
+The atmosphere was quite something to behold that day!  For the entire climb the wind was pelting us with the tiny snow crystals blowing off the slopes, and we were climbing within a litle cloud for most of the time.  As the sun rose, clouds began to develop on the hills below us, and their tops were tinted orange-pink in the sunrise.
+<br><br>
+<a href="castle peak.jpg" data-lightbox="group"><img src="castle peak.jpg"></a>
+<p>A beautiful Easter sunrise covered by fog!</p>
+<br><br>
+<a href="16.jpg" data-lightbox="group"><img src="16.jpg"></a>
+<br><br>
+<a href="17.jpg" data-lightbox="group"><img src="17.jpg"></a>
+<br><br>
+<a href="18.jpg" data-lightbox="group"><img src="18.jpg"></a>
+<br><br>
+We came back down to our campsite at around 9 and packed up and headed back to the trailhead by 11.
+<br><br>
+<a href="19.jpg" data-lightbox="group"><img src="19.jpg"></a>
+<br><br><br><br><br>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</body>
