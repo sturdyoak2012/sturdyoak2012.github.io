@@ -2,6 +2,7 @@
 <head>
 	<title>Bucket</title>
 	<link href="../lib/css/lightbox.css" rel="stylesheet">
+		<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
 	<link rel="stylesheet" href="../style.css">
 	<script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -68,22 +69,26 @@ MathJax.Hub.Config({
 </script>
 </head>
 <body>
+<div id="container">
 <div id="menu">
-	<h1 align="center"> <a href="../index.html">Jacob Nie</a> </h1>
-	<ul>
-		<li><a href="../about.html">About</a></li>
-		<li><a href="../pictures.html">Pictures</a></li>
-		<li><a href="../outdoors.html">Outdoors</a></li>
-		<li><a href="../physics.html">Physics</a></li>
-	</ul>
+	<a href='../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../physics.html'><div id='pages'><p>physics</p></div></a>
 </div>
 <div id="page">
-<div class="trip">
-	1/17/19 - I've had this <b>peach</b> of a problem in the back of my mind for a couple of years now, here's an attempt to get some of the math laid out.
+<div id = "trip">
+	<div style="height: 10vh"></div>
+	<img src="buck_img/IMG_1878.JPG" style="width: 20%; margin-left: 5%;">
+	<br>
+	An exhibit at the SF MOMA.
+	<br><br>
+	1/17/19 - I've had this problem in the back of my mind for a couple of years now, here's an attempt to get some of the math laid out.
 	<h3>Bucket problem</h3>
 	Jacob is camping in the mountains with his friends and, like a responsible citizen, fills up a bucket with water before he starts the fire for that night.  When he goes to the water spout to fill up his big orange Home Depot bucket (which has a glossy reflective interior), he notices that his headlamp makes a very strange reflection at the bottom of his bucket!  Perplexed, he decides to forget about it, saying "oh well I probably need to know like abstract linear calculus to figure out why this happens."  Which was wrong of him.
 	<br><br>
-	<img src="buck_img/rice.jpg" style="width:auto">
+	<img src="buck_img/rice.jpg">
 	<br><br>
 	<p>a piece of paper laid down on the bottom of a metal cylindrical rice cooker (contrast slider --------->+ to make it look cooler)</p>
 	<h3>Summary of approach</h3>
@@ -98,35 +103,8 @@ MathJax.Hub.Config({
 	<img src="buck_img/bucket.svg" style="width:50%">
 	<br><br>
 	<h3>Computer simulation</h3>
-	I wrote a simple piece of code to simulate the reflection of light inside the cylinder, plotting where the light hits.  I used MATLAB, and here is the pseudocode
-	<pre>
-  		<code>
-loop for # of iterations:
-  	set initial light position (always same)
-  	set initial light direction (randomized)
-  	loop until broken:
-  		store current position
-  		advance position using light direction and large step size
-  		check if the light is outside the bucket walls, if so
-  			reset position to the stored previous position
-  			loop until broken:
-  				store current position
-  				advance position using light direction and small step size (more precision)
-  				check if the light is outside the bucket walls, if so
-  					store previous position in original variable
-  					recalculate light direction (explained below)
-  					break
-		check if the light is below the bucket floor, if so
-			reset position to the stored previous position
-			loop until broken:
-				store current position
-				advance position using light direction and small step size
-				 if the light is below the bucket floor, if so
-					store previous position as final (i.e. where the light hits the bucket floor)
-					break
-					break parent loop
-  		</code>
-	</pre>
+	I wrote a simple piece of code to simulate the reflection of light inside the cylinder, plotting where the light hits.  
+	<br><br>
 	The direction of the light can be randomized using spherical coordinates: the direction can be described using two angles $\theta$ and $\alpha,$ the horizontal angular displacement from the $x$ axis and the angle of depression, respectively.  So it would look something like
 	<pre><code>
 theta = rand*2*pi
@@ -1402,4 +1380,5 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
      albumLabel:"Image %1 of %2"
     })
 </script>
+</div>
 </body>

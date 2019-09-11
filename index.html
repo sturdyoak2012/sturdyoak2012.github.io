@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <head>
 	<title>Jacob Nie</title>
-
+	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 	<link href="lib/css/lightbox.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<link rel="stylesheet" href="style.css">	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132703009-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -63,39 +62,59 @@
 </script>
 </head>
 <body>
+<div id="container">
 <div id="menu">
-	<h1 align="center"> <a href="index.html">Jacob Nie</a> </h1>
-	<ul>
-		<li><a href="about.html">About</a></li>
-		<li><a href="pictures.html">Pictures</a></li>
-		<li><a href="outdoors.html">Outdoors</a></li>
-		<li><a href="physics.html">Physics</a></li>
-	</ul>
+	<a href='index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='about.html'><div id='pages'><p>about</p></div></a>
+	<a href='pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='physics.html'><div id='pages'><p>physics</p></div></a>
 </div>
 <div id="page">
-	<h4>My website</h4>
-	From my trip in Kings Canyon National Park, photo taken between Cinder and Brewer Col:
-	<br><br>
-	<a href="IMG_0054.JPG" data-lightbox="group" data-title="Kings Canyon NP"><img src="IMG_0054.JPG" class="lefty"></a>
-	<br><br><br><br>
-	For stuff about me you can see my <a href="about.html">about page</a>.
-	<br><br>
-	If you'd like to see pictures you can find one on my <a href="pictures.html">pictures page</a>.
-	<ul>
+	<img style="width: 100%" src="cover.JPG">
+	<p>New Mexico</p>
 
-	</ul>
-	<br><br>
-	I like to do some outdoor stuff, like backpacking, climbing, and cycling.  If you'd like to see more stuff about that, including a lot of trip reports from my "travels", you can see my <a href="outdoors.html">outdoors page</a>.
+	<h3>Welcome to my website!</h3>
+	
+	Recent updates:
 	<ul>
-		<li><b>New:</b> (2/1/19) wrote a trip report for <a href="outdoors/170902/170902.html">Labor Day</a> trip two years ago.</li>
-		<li><b>New:</b> (4/22/19) wrote a trip report for <a href="outdoors/190420/190420.html">a climbing trip</a>
+		<li>2019 September:
+			<ul>
+				<li>Website Redesign!</li>
+				<li>
+					Labor Day Backpacking trip in Yosemite:<br>We hiked from Yosemite Valley up the Snow Creek Trail to Tenaya Lake and Olmsted Point.  We came back down via Clouds Rest.  (Trip report yet to be written...)
+				</li>
+			</ul>		
+		</li>
+		<li>2019 August: 
+			<ul>
+				<li>
+					JMT (cancelled)
+				</li>
+			</ul>
+		</li>
+		<li>
+			2019 July:
+			<ul>
+				<li>
+					Philmont High Adventure in New Mexico:<br>
+					A two week backpacking trip in northern NM with several guys from the troop.  (Trip report yet to be written...)
+				</li>
+			</ul>
+		</li>
+		<li>
+			2019 June:
+			<ul>
+				<li>
+					I climbed Mt. Shasta with Daniel, Richard, and Richard's dad.  It was great!  (Trip report yet to be written...)
+				</li>
+				<li>
+					I also attended the physics team training camp in Maryland.  (Maybe I will write something about it.)
+				</li>
+			</ul>
+		</li>
 	</ul>
-	<br><br>
-	For my science stuffs, go to -> <a href="physics.html">physics page</a>.
-	<ul>
-		<li><b>New:</b> <a href="physics/bucket.html">what shape do you see when you shine a light into a bucket?</a></li>
-	</ul>
-
+	<div style="height: 30vh"></div>
 </div>	
 
 <script src="lib/js/jquery.min.js"></script>
@@ -105,6 +124,7 @@
 		albumLabel:"Image %1 of %2"
     })
 </script>
+</div>
 </body>
 
 </html>

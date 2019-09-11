@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<title>Physics</title>
+		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 	<link rel="stylesheet" href="style.css">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132703009-1"></script>
@@ -61,21 +62,72 @@
 </script>
 </head>
 <body>
+<div id="container">
 <div id="menu">
-	<h1 align="center"> <a href="index.html">Jacob Nie</a> </h1>
-	<ul>
-		<li><a href="about.html">About</a></li>
-		<li><a href="pictures.html">Pictures</a></li>
-		<li><a href="outdoors.html">Outdoors</a></li>
-		<li><a href="physics.html">Physics</a></li>
-	</ul>
+	<a href='index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='about.html'><div id='pages'><p>about</p></div></a>
+	<a href='pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='physics.html'><div id='pages'><p>physics</p></div></a>
 </div>
 <div id="page">
+
+<div style="height: 10vh"></div>
+<h3>
+  My background:
+</h3>
+Earlier in my life, I spent a lot of time studying for mathematics competitions.  In my sophomore year of high school, I switched to studying physics, and that's what I've been doing since.  
+<br><br>
+Here my accomplishments in mathematics:
+<ul>
+  <li><a href="https://www.maa.org/sites/default/files/2017USAJMOScores.pdf"><u>USA Junior Mathematics Olympiad</u></a> (April 2017)
+    <br>Top 50 score
+
+  </li>
+  <li>
+    <a href="https://hmmt-archive.s3.amazonaws.com/tournaments/2018/feb/results/long.htm"><u>Harvard-MIT Math Tournament</u></a> (February 2018)
+    <br>36th place in combinatorics
+  </li>
+  <li>
+    <a href="https://sumo.stanford.edu/smt/2019/results.html"><u>Stanford Math Tournament</u></a> (March 2019)
+    <br>4th place in calculus
+  </li>
+</ul>
+Here are my accomplishments in physics:
+<ul>
+  <li>
+    <a href="https://www.aapt.org/physicsteam/2018/upload/2018-Semi-Finalists-Medals-2.pdf"><u>USA Physics Olympiad Silver Medal</u></a> (April 2018)
+    <br>Top 80 nationally
+  </li>
+  <li>
+    <a href="https://docs.google.com/spreadsheets/d/1IdAznEhIhcKHaJhNGWpVYNVCPBjo0wuCbpEluzCxOFI/edit?fbclid=IwAR1SnNU0eiwq2_oDnL52epdikdoU6TyvvrR7WnCwgQYnMymrLsAAurHxIKA#gid=0"><u>Princeton University Physics Competition</u></a> (November 2018)
+    <br>7th place overall
+  </li>
+  <li>
+    <a href="https://www.aapt.org/physicsteam/2019/upload/2019-Medal-Listing-52019.pdf"><u>USA Physics Olympiad Gold Medal</u></a> (April 2019)
+  </li>
+  <li>
+    <a href="https://aapt.org/physicsteam/2019/team.cfm"><u>USAPhO Team Training Camp Attendee</u></a> (June 2019)
+    <br>Top 20 nationally; held in Maryland for ten days to select the IPhO team
+  </li>
+</ul>
+
+<h4>Advice for physics competitions:</h4>
+Sometimes people come to me asking for book recommendations, or study strategies, or problem sources.  There are a lot of ways to approach physics competitions (and also a lot of better things you could do with your time...), but here is a strategy taken by most of the successful physics people I've talked to.
+<ol>
+  <li>Be good at math.  <br> For some reason, the upper echelons of high school physics competitions (and computer science) are populated almost entirely by students who were (or are) very successful in math competitions as well.  Take from that what you will, but to have a solid understanding of high school level physics, you should have, at the very least, a strong foundation in algebra, trigonometry (vectors too), and calculus.  These three are non-negotiable.</li>
+  <li>Study an introductory calculus-based mechanics book.  Practically everybody recommends <i>Physics</i> by Resnick, Halliday, and Krane.  Resnick, Halliday, and Walker or Young and Freedman (what I used) will function just as well, but they are written for a more basic audience.  Morin's books are too hard, come back to them later.</li>
+  <li>Do a lot of problems.  Preferably, you do problems as you go through your study of mechanics.  There are two kinds of problems: back-of-the-chapter problems that just require a simple plug-and-chug to help solidfy your toolset and really-tough problems that expand your problem solving capabilities.  Aim to do a good bit of both.  Really-tough problems should just be taken straight from the f=ma.  Use <a href="physics/packet.pdf">this pdf</a> to help you.  It lists problem difficulties and categorizes them, which is very useful for your preparation.  Your goal is to be able to consistently solve 20/25 correctly on the f=ma!</li>
+  <li>Study thermodynamics and electromagnetism (and waves and optics and some basic modern physics principles if you have the time).  The best book is, again, Resnick, Halliday, and Krane.  At this point, it should be your bible.  You can go through it chapter by chapter and you will do well on the USAPhO.  </li>
+  <li>Do a lot of problems.  At this point, you should be looking for USAPhO-level problems.  Do all of them (avoid reading solutions if you don't know how to solve them; this wastes valuable problems, just come back to these problems later).</li>
+  <li>Done with USAPhO problems? Look at IPhO, APhO (hardest ones), and Jaan Kalda's website.</li>
+</ol>
 
 
 <h3>
 	Projects:
 </h3>
+Here are some problems that I've looked at for fun.  
 <ul>
 	<li><a href="physics/atmospheric_refraction.html">Atmospheric refraction</a><br>How much later does the sun set due to the refraction of light in the atmosphere?<br>And a generalization to times other than sunset
 		<img src="physics/atm_img/sunset.jpg" style="width:100px"></li>
@@ -83,11 +135,12 @@
 	<li><a href="physics/bucket.html">Bucket problem</a><br>What shape does light form on the bottom of a bucket?  Some various approaches to this problem, using computer and analytical methods
 		<img src="physics/buck_img/rice.jpg" style="width:100px"></li>
 </ul>
-<br><br><br>
+<div style="height: 30vh"></div>
 
 
 </div>
 
+</div>
 </body>
 
 </html>

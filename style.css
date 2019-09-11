@@ -1,4 +1,4 @@
-#menu {
+/*#menu {
 	position:fixed;
 	width: 10%;
 	padding: 20px;
@@ -10,13 +10,88 @@
 	border-radius: 15px;
 	text-transform: uppercase;
 	font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue';
+}*/
+body {
+	font-family: 'Bookman Old Style';
+	font-size: 15px;
+	background-color: #fff6e8;
+}
+
+#container {
+	background-color: blue !important;
+	width: 750px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+	body{
+		font-size: 30px;
+	}
+	#jacob p {
+		font-size: 15px;
+	}
+}
+
+#menu {
+	position:fixed;
+	width: 225px;
+	float: left;
+	font-family: 'Bookman Old Style', 'Courier New';
+	text-align: center;
+	height: 97vh;
+	/*background-color: #EADEDA;*/
+	background-image: linear-gradient(to right, #EADEDA,#EADEDA,#EADEDA,#EADEDA,#EADEDA,transparent);
+
+}
+
+#jacob p {
+	font-size: 25px;
+	margin-top: 10vh;
+	margin-bottom: 8vh;
+	margin-left: 5%;
+	margin-right: 5%;
+	color: #823329;
+	font-weight: bold;
+	text-transform: lowercase;
+}
+
+#jacob p:hover {
+	color: #BFB8AD;
+}
+
+div #pages p {
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-left: 5px;
+	margin-right: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: #998888;
+	color: #EADEDA;
+	border: 2px solid #998888;
+	border-radius: 10px;
+	font-weight: normal;
+	font-size:15px;
+}
+
+div #pages {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#pages p:hover {
+	background-color: #BFB8AD;
+	font-weight: bold;
+	border: 2px solid #823329;
+	color: #823329;
 }
 
 a:hover {
 	color: #003fff;
 }
 
-#menu li {
+/*#menu li {
 	margin: 10px;
 	text-transform: uppercase;
 }
@@ -25,7 +100,7 @@ a:hover {
 	list-style-type: none;
 	padding:0;
 	margin:0;
-}
+}*/
 
 a {
 	color: #2b82ff;
@@ -41,12 +116,9 @@ img {
 }
 
 #page {
-	width: 60%;
-	display: block;
-	float:right;
-	vertical-align: top;
-	margin-top: 40px;
-	padding:20px;
+	float: left;
+	width: 500px;
+	margin-left: 250px;
 }
 
 
@@ -55,13 +127,13 @@ img {
 }
 
 .small {
-	width:30%;
+	width:50%;
 }
 
 .trip {
-	margin:0 auto;
-	width: 60%;
 	float: left;
+	margin-top: 10vh;
+	margin-bottom: 30vh;
 }
 
 .lefty {
@@ -86,14 +158,14 @@ img {
   border: 4px solid black !important;
 }
 
-#img {
-	height: 83%;
-	
+#img{
+	width: auto !important;
 }
 
 .math {
 	width: 85%;
 	margin: auto;
+
 }
 
 .hidden {
