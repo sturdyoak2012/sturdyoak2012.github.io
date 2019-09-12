@@ -41,7 +41,7 @@ body {
 	text-align: center;
 	height: 97vh;
 	/*background-color: #EADEDA;*/
-	background-image: linear-gradient(to right, #EADEDA,#EADEDA,#EADEDA,#EADEDA,#EADEDA,rgba(255,255,255,0) 0%);
+	background-image: linear-gradient(to right, #EADEDA,#EADEDA,#EADEDA,#EADEDA,#EADEDA,#ffffff 0%);
 
 }
 
