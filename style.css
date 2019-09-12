@@ -41,8 +41,8 @@ body {
 	text-align: center;
 	height: 97vh;
 	/*background-color: #EADEDA;*/
-	background-image: linear-gradient(to right, #EADEDA,#EADEDA,#EADEDA,#EADEDA,#EADEDA,transparent);
-
+	background-image: linear-gradient(to right, rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218, .0001));
+	border-left: 3px solid rgb(130, 51, 41, 1);
 }
 
 #jacob p {
