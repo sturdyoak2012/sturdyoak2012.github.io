@@ -42,7 +42,7 @@ body {
 	height: 97vh;
 	/*background-color: #EADEDA;*/
 	background-image: linear-gradient(to right, #EADEDA,#EADEDA,#EADEDA,#EADEDA,#EADEDA,#ffffff 0%);
-
+	border-left: 10px solid #823329;
 }
 
 #jacob p {
