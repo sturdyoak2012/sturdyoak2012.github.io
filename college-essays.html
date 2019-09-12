@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+	<title>College Essays</title>
+		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+	<link rel="stylesheet" href="style.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132703009-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132703009-1');
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='about.html'><div id='pages'><p>about</p></div></a>
+	<a href='pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+<div id="page">
+  <div style="height: 10vh"></div>
+  To the person reading, thanks for the feedback!
+  <br><br>
+  <h4>Table of contents:</h4>
+  <ul>
+    <li><a href="#commonapp">Common Application</a>
+      <ul>
+        <li>Describe a problem you've solved or a problem you'd like to solve. It can be an intellectual challenge, a research query, an ethical dilemma - anything that is of personal importance, no matter the scale. Explain its significance to you and what steps you took or could be taken to identify a solution.</li>
+      </ul>
+    </li>
+    <li>
+      <a href="#mit">Massachussetts Institute of Technology</a>
+      <ul>
+        <li><a href="#mit2">Prompt 4:</a> Describe the world you come from, for example, your family, clubs, school, community, city, or town.  How has that world shaped your dreams and aspirations?</li>
+      </ul>
+    </li>
+    <li>
+      <a href="#chicago">University of Chicago</a>
+      <ul>
+        <li><a href="#chicago1">Prompt 1:</a> How does the University of Chicago, as you know it now, satisfy your desire for a particular kind of learning, community, and future? Please address with some specificity your own wishes and how they relate to UChicago.</li>
+      </ul>
+    </li>
+  </ul>
+  <br><br>
+  <img src="dog.jpg">
+  <br><br>
+  <h4 id="commonapp">Common App Essay</h4>
+
+  My pen ran out of ink that night.  The figures of black on the pages of my notebook had been gradually fading for several pages now, and the ink had finally given up.  I didn’t really know what to do next, so I simply set the pen aside, next to my notebook, and leaned back into my swivel chair.  
+  <br><br>
+I put my feet onto the desk where the bright computer screen glowed, opened up to a pdf of a textbook.  I had been reading about various types of magnetic properties—ferromagnetic,  paramagnetic, etc.  It was dense, and I was tired.  It seemed like everybody in the house was asleep already—the hallways were dark, not even lit by the late-night light creeping through the cracks of the doors.  It had been like that a lot for the past few months.  But I couldn’t lose any precious time—the physics olympiad was only in two months now.    <br><br>
+I knew that I would be prepared, but frankly, I was dreading the next two months.  The lonely nights were starting to blur together, and I began to feel that the physics I studied did not incite the same tenacious curiosity it once did.   It felt forced—like squeezing an empty ketchup bottle.  <br><br>
+I stood up and walked around the house for a while.  I didn’t really know where to find another pen.  (I have a lot of different pens, but I had begun to use this one type exclusively.  I am picky sometimes.)  <br><br>
+I went to grab a glass of water and came back to stare at the diagrams of magnetic materials laid out on the screen.    <br><br>
+The water was just about room temperature, and I did not like that at all.  I finished it off and looked down into the bottom of my mug.  Interestingly, the light reflecting from my lamp did not just illuminate the bottom of the mug—it also reflected off the glossy interior and formed strange patterns inside the mug.  I tilted it back and forth, and the shapes on the bottom appeared to dance around in some exotic pirouette.  It was enchanting, just sitting there tilting that mug from side to side.  <br><br>
+Suddenly, those shapes brought me back to a moment from years and years prior, when I was on one of my first camping trips.  It was late at night, and I was filling up a large orange bucket with water to help put out the campfire.  I was completely alone, and right before I turned on the water, my headlamp swept the glossy interior of the orange bucket.  Those same, transient shapes appeared, lighting up the base of the bucket in dramatic fashion.  It pierced the darkness, and to this day, I still remember how amazed I was.  I was convinced that there had to be some mathematics behind it.  I turned on the water and the shapes disappeared, but I told myself that I’d figure out what they were, one day.  <br><br>
+I looked from the mug, back to the computer, and down to the scribbled notes I had been taking inside my notebook.  The shapes of the letters and numbers looked just as tired as the faded ink that they were written with.  What happened since that night?  What happened to the boy filling up water?  What happened to that young, unbridled curiosity?  <br><br>
+That January, I spent an entire weekend crunching algebra, and I had the equations by Sunday afternoon.  It was tedious, but I was fascinated.  <br><br>  <br><br>
+
+Later, some of my friends saw the work that I did, and I recall one of them asking, “Jacob, what’s the point of all this?  I mean it’s interesting but…”    <br><br>
+The truth is, there wasn’t really any purpose—it didn’t win me any awards, and it certainly wasn’t published.  However, it reignited my interest in a time when my physics seemed to lack any real flavor.  Now, physics captivates me.  It’s difficult, but it feels effortless—beautifully so.  <br><br>
+
+<br><br><br><br>
+
+<h4 id='mit'>Massachussetts Institute of Technology</h4>
+<h5 id='mit2'>Short Answer 4</h5>
+The summer after my junior year, I moved to a new house about ten miles from the home I had lived in for more than a decade.  <br><br>
+
+My first night in the new house was a foreign experience.  Waking up, I nearly broke my heels swinging my feet out of bed, since the bed was three feet closer to the ground now.  I blundered into closets trying to find the bathroom.  And as luck would have it, I had to open every single one of the 15 kitchen drawers before I could find the chopsticks. <br><br>
+
+Yes, many things have changed.  But there is one thing that the new house has inherited from the old home.  It's my bookshelf.  I've read most of the books, but other books have only been opened once or twice.  There's an entire shelf of physics textbooks, a section for math problem books, several American classics, some sci-fi, a few books by Richard Feynman, and a couple English translations of the Bible.  There's also a copy of David Copperfield that I've always been too intimidated to open... <br><br>
+
+As I examine the eclectic set of books that I've lived with my whole life, this thought sticks to me—these books shaped me.  My bookshelf not only shaped my intellectual interests, but it also inspired my lifelong aspiration for knowledge.  I love learning, and I want to do it for the rest of my life! <br><br> <br><br> <br><br>
+
+<h4 id='chicago'>University of Chicago</h4>
+<h5 id='chicago1'>Prompt 1</h5>
+I believe that, sometimes, the best way to learn science is by examining scientific history.  Isaac Newton used Kepler’s laws of planetary motion to arrive at his law of universal gravitation.  Kepler’s laws of planetary motion were determined using Tycho Brahe’s lifetime of celestial observation.  Brahe’s extremely accurate measurement techniques, without the aid of a telescope, were developed and refined through millennia of astronomical observations across nearly all ancient and medieval civilizations.  Just like that, the fundamentals of physics can be traced back to its most basic roots.  <br><br>
+
+Often, the historical basis of these theories are just as meaningful as the theories themselves.<br><br>
+
+When James Clerk Maxwell predicted the existence of electromagnetic waves, there was no apparent medium for the wave (that we now know to be light) to propagate through.  A theoretical medium was assigned to take the role of the light-propagator, and physicists called it “luminiferous aether,” or “ether.”  This ether was invisible, had no mass, and could not be detected, but it was how light made its way through space.  Later, Albert Michelson and Edward Morley disproved the existence of ether in their famous experiment, proving that light was a wave with no medium.  However, the path of this invisible substance through the annals of scientific history remains fascinating.  The Lorentz transformations derived by Hendrik Lorentz were calculations about the properties of ether.  Albert Einstein later restated these transformations to propose his special theory of relativity.  It’s ironic that a theory that has held up under a century of experimental result was based almost entirely upon an idea that was shown to be completely false.<br><br>
+
+Now, one of the most recent developments in modern physics, the Higgs Field, has been hailed as a reincarnation of that infamous “ether theory.”  I don’t understand any of the details, but it does show that old ideas, wrong as they might be, can still have meaning.  <br><br>
+
+I hope it’s clear now that I firmly believe in the importance of historical legacy as a means for shaping modern scientific thought.  This is why I want to be at the University of Chicago.  Some schools are just famous names that hold legendary status in culture, but the  University of Chicago holds legendary status in scientific history.  Michelson, the disprover of ether, was the first head of the University of  Chicago physics department.  His discovery paved the way for special relativity and modern-day notions about light.  Robert Millikan conducted his Nobel-winning oil drop experiment at the University of Chicago that calculated the charge and mass of the electron.  Of course, the first nuclear reactor, designed by Enrico Fermi, was built at the University of Chicago to demonstrate nuclear fission.  The effects of this demonstration for scientific history are obvious.  I want to be part of this scientific community that, like the ones that came before them, is not afraid to influence modern scientific thought in enormous ways.  <br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+<div style="height: 30vh"></div>
+
+
+
+
+</div>
+</div>
+</body>
