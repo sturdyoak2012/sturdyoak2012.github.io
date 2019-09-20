@@ -24,14 +24,6 @@ body {
 	margin-right: auto;
 }
 
-@media only screen and (max-width: 1000px) {
-	body{
-		font-size: 30px;
-	}
-	#jacob p {
-		font-size: 15px;
-	}
-}
 
 #menu {
 	position:fixed;
@@ -170,4 +162,13 @@ img {
 
 .hidden {
     display:none;
+}
+
+@media only screen and (max-width: 1000px) {
+	body #page{
+		font-size: 40px;
+	}
+	body #menu p{
+		font-size: 35px;
+	}
 }
