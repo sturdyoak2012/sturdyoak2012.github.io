@@ -87,15 +87,19 @@ MathJax.Hub.Config({
   <h4>Description of problem</h5>
     If you have ever used an hourglass, you should have noticed that the sand collecting on the bottom forms the shape of a cone.  When more sand falls onto the tip of the cone, the cone doesn't get steeper---instead, some of it slides down the slopes, such that the steepness of the cone remains approximately constant.  In other words, it is the maximum slope that the pile of sand can support without collapsing.  
     <br><br>
-    The angle from the critical slope to the horizontal angle is known as the <emph>angle of repose</emph>.  Common sense will tell us that the frictional properties of the granular material will affect the angle of repose.  However, the size of the grains should not affect the angle of repose.  Here, we explore how granular shape (sphericity, angularity, and/or roughness) affects the angle of repose.  
+    The angle from the critical slope to the horizontal angle is known as the <emph>angle of repose</emph>.  
+    <br><br>Common sense will tell us that the frictional properties of the granular material will affect the angle of repose.  However, the size of the grains should not affect the angle of repose. 
+    <br><Br>Here, we explore how granular shape (sphericity, angularity, and/or roughness) affects the angle of repose.  
     <br><br>
 <h4>Interesting geological significance</h5>
-    Above, I mentioned how physics tells us that the size of grains should not affect the angle of repose.  (The frictional forces required to hold each particle in its place increase at the same rate as the normal and gravitational forces that threaten to push each particle out of its place.)  We can extrapolate this fact into dimensions ranging from fine clay (that must be dry, of course... water causes electrostatic attractions between particles) and enormous boulders.
+    Above, I mentioned how physics tells us that the size of grains should not affect the angle of repose.  (The frictional forces required to hold each particle in its place increase at the same rate as the normal and gravitational forces that threaten to push each particle out of its place.)  
+    <br><br>
+    We can extrapolate this fact into dimensions ranging from fine clay (that must be dry, of course... water causes electrostatic attractions between particles) and enormous boulders.
     <br><br>
     The angle of repose displays itself prominently in scree and talus fields.  
     <br><br>
     <a href="rep_img/scree.jpg" data-lightbox="group"><img src="rep_img/scree.jpg" style="width: 40%"></a>
-    <p>scree field, Mt. Yamnuska</p>
+    <p>scree field, Mt. Yamnuska (from Wikipedia)</p>
     <br><br>
     Perhaps the intricacy of the problem is most obvious upon examination of these scree slopes.  Each individual rock is shaped and sized so differently, but when so many of them come together, they accumulate in a way that is incredibly consistent.  
     <br><br>
@@ -113,7 +117,15 @@ MathJax.Hub.Config({
     <b>Literature</b><br>
     We have some criteria for our method to quantify granular shape: our measure of shape has to be detailed enough to capture actual variance in the average shapes of different types of quasi-random granular shapes, but general enough to actually be able to classify enormously variable granular shapes.
     <br><br>
-    An examination of existing literature is revealing.  Measures of granular sphericity are well known and usually involve some examination of the major and minor axes of the grain.  Wadell (1932) proposes a definition of granular roughness by inscribing circles inside the corners of edges.  Krumbein (1941) proposes a chart to visually gauge granular roughness on a scale of 0 to 1.  Ehrlich and Weinberg (1970) propose a method of polar Fourier analysis to quantify granular roundness, angularity, and roughness.  Kaye (1978) and Orford/Whalley (1983) propose methods incorporating fractal dimensionality, similar to the more well known use of fractal dimensionality on seashores.  Modern papers have utilized scanning technologies and more advanced computational techniques to quantify roundness in different ways that utilize the extra dimensionality.  Since I don't have access to that technology, I will not consider them.
+    An examination of existing literature is revealing.  Measures of granular sphericity are well known and usually involve some examination of the major and minor axes of the grain.  
+    <bR><br>
+    Wadell (1932) proposes a definition of granular roughness by inscribing circles inside the corners of edges.  
+    <br><br>
+    Krumbein (1941) proposes a chart to visually gauge granular roughness on a scale of 0 to 1.  
+    <br><br>
+    Ehrlich and Weinberg (1970) propose a method of polar Fourier analysis to quantify granular roundness, angularity, and roughness.  
+    <br><br>Kaye (1978) and Orford/Whalley (1983) propose methods incorporating fractal dimensionality, similar to the more well known use of fractal dimensionality on seashores.  
+    <br><br>Modern papers have utilized scanning technologies and more advanced computational techniques to quantify roundness in different ways that utilize the extra dimensionality.  Since I don't have access to that technology, I will not consider them.
     <br><br>
     I have chosen Ehrlich and Weinberg's method of Fourier analysis for the following reasons:
     <ol>
@@ -164,6 +176,32 @@ MathJax.Hub.Config({
     <br><br>
     <a href="rep_img/fourier-ex.jpg" data-lightbox="group"><img src="rep_img/fourier-ex.jpg"></a>
     <p>Resulting plot</p>
+
+
+
+
+
+    <h4>Citations</h4>
+    <ul>
+      <li>
+        Ehrlich, Robert, and Bernhard Weinberg. "An Exact Method for Characterization of Grain Shape." <emph>Journal of Sedimentary Petrolog</emph> Vol. 40 (March 1970), 205-212. doi:10.1306/74d71f1e-2b21-11d7-8648000102c1865d. 
+      </li>
+      <li>
+        Kaye, B. H. "Specification of the ruggedness and/or texture of a fine particle profile by its fractal dimension." <emph>Powder Technology</emph> 21 (September/October 1978), 1-16. doi.org/10.1016/0032-5910(78)80103-X. 
+      </li>
+      <li>
+        Lenz, Kevin. "Yamnuska bottom cliff.jpg." <emph>Wikimedia Commons</emph>. 2006. https://commons.wikimedia.org/wiki/File:Yamnuska_bottom_cliff.jpg. 
+      </li>
+      <li>
+        Orford, J. D., and W. B. Whalley. "The use of the fractal dimension to quantify the morphology of irregular‐shaped particles." <emph>The Journal of the International Association of Sedimentologists</emph> 30 (October 1983), 655-668. doi.org/10.1111/j.1365-3091.1983.tb00700.x. 
+      </li>
+      <li>
+        Resentini, Alberto, Sergio AndÒ, and Eduardo Garzanti. "Quantifying Roundness of Detrital Minerals By Image Analysis: Sediment Transport, Shape Effects, and Provenance Implications." <emph>Journal of Sedimentary Research</emph> 88 (February 2018), 276-289. doi.org/10.2110/jsr.2018.12. 
+      </li>
+      <li>
+        Wadell, Hakon. "Volume, Shape, and Roundness of Rock Particles." <emph>The Journal of Geology</emph> 40 (July/August 1932), 443-451. doi.org/10.1086/623964. 
+      </li>
+    </ul>
 
 <div style="height: 40vh"></div>
   </div>
