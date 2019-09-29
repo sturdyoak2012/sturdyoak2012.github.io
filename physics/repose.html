@@ -83,7 +83,7 @@ MathJax.Hub.Config({
   <img src="rep_img/cover.jpg" style="width: 40%; margin-left: 5%;">
   <br>
   09/19 - This is a problem I have had in my mind for several years now.  
-  <h3>Angle of repose</h3>
+  <h3>Hourglass problem</h3>
   <h4>Description of problem</h4>
     If you have ever used an hourglass, you should have noticed that the sand collecting on the bottom forms the shape of a cone.  When more sand falls onto the tip of the cone, the cone doesn't get steeper---instead, some of it slides down the slopes, such that the steepness of the cone remains approximately constant.  In other words, it is the maximum slope that the pile of sand can support without collapsing.  
     <br><br>
@@ -164,18 +164,33 @@ MathJax.Hub.Config({
     Note: when $i=L,$ it cycles such that $i+1 = 1.$  And of course, $R_n = \sqrt{A_n^2 + B_n^2}.$
     <br><br>
     <b>Some notes on the image processing:</b><br>
-    I have a setup for capturing images of the sand grains.  MY DSLR takes photos through a student microscope (capable of 40x and 100x magnification).  The DSLR lens is removed and the microscope eyepiece is positioned so that the image is projected directly onto the DSLR sensor.  Some simple baffles are added to reduce the amount of stray light hitting the sensor.  
+    I have a setup for capturing images of the sand grains.  My DSLR takes photos through a student microscope (capable of 40x and 100x magnification).  The DSLR lens is removed and the microscope eyepiece is positioned so that the image is projected directly onto the DSLR sensor.  Some simple baffles are added to reduce the amount of stray light hitting the sensor.  
     <br><br>
     <a href="rep_img/setup1.JPG" data-lightbox="group"><img src="rep_img/setup1.JPG"></a>
     <br><br>
     <a href="rep_img/setup2.JPG" data-lightbox="group"><img src="rep_img/setup2.JPG"></a>
     <br><br>
-    The images are then uploaded to MATLAB, where I convert them to grayscale and apply an edge detection function that returns a matrix of ones and zeros (ones where edges are detected).  I found the Roberts method to be the most accurate so far.  Here is an example: 
-    <a href="rep_img/roberts-ex.jpg" data-lightbox="group"><img src="rep_img/roberts-ex.jpg"></a>
-    <p>Edge detection</p>
+    The images are then loaded onto MATLAB.  I adjust the image into grayscale, then binary form.  Then I use the <emph>bwboundaries</emph> function to calculate the boundaries of all the objects in the image.  I select the largest object's boundary, since there may be multiple (dust particles and stuff).  With that boundary, I have pixel coordinates for the granular edge, which I can then apply the above calculations on.
+    <h4>Testing the program on salt</h4>
+    <a href="rep_img/DSC_1256.JPG" data-lightbox="group"><img src="rep_img/DSC_1256.JPG"></a>
+    <p>Input image (note the extraneous objects that need to be ignored)</p>
     <br><br>
-    <a href="rep_img/fourier-ex.jpg" data-lightbox="group"><img src="rep_img/fourier-ex.jpg"></a>
-    <p>Resulting plot</p>
+    <a href="rep_img/salt.png" data-lightbox="group"><img src="rep_img/salt.png"></a>
+    <p>Adjusted image</p>
+    <br><br>
+    <a href="rep_img/saltbw.png" data-lightbox="group"><img src="rep_img/saltbw.png"></a>
+    <p>B/W conversion</p>
+    <br><br>
+    <a href="rep_img/saltf.png" data-lightbox="group"><img src="rep_img/saltf.png"></a>
+    <p>Fourier plot (N=30, L~100).  Ignore the rotation, that is due to some errors in the code that don't affect the final result.</p>
+    <br><br>
+    Salt grains have a very consistent shape (rounded squares), so we should expect to see some similarities in their respective Fourier coefficient plots ($R_n$ vs $n$).  Indeed we do:
+    <br><br>
+    <a href="rep_img/salt8.png" data-lightbox="group"><img src="rep_img/salt8.png"></a>
+    <p>The Fourier coefficient plots of eight photographed salt grains (Fourier coefficients are all normalized with $R_0.$</p>
+    <br><br>
+    <a href="rep_img/saltavg.png" data-lightbox="group"><img src="rep_img/saltavg.png"></a>
+    <p>The average of the above plot.  Note the spikes at $n=4,8,12\text{ and }16$.  This is consistent with the square shape of salt grains.  There are no more spikes at 20, 24, and onward because the corners are rounded and not sharp.  Had the corners been sharp, there would be spikes at all multiples of 4.</p>
 
 
 
