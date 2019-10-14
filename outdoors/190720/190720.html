@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<head>
+	<title>190720</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Philmont - July 2019</h1>
+<a href="61.jpg" data-lightbox="group"><img src="61.jpg"></a>
+
+<br><br>
+Two-week long trip with the boys.
+<br><br>
+Participants: Samuel Wong (leader), Jerry Li (chaplain's aide), Nathan Bao (wilderness ethics guide), David Qiao, Richard Liu, Jeffrey Meng, Joshua Yin, myself, Richard's father, and Samuel's father.  And that was just our crew.  Our sister crew, also from our troop, consisted of several other people.
+<br><br>
+Since I'm writing this about two months later, I really only have my journal for reference.  This will just be a compilation of excerpts from my journal.
+<br><br>
+<h4>One</h4>
+Took the bus to the trailhead at around one or two in the afternoon.  We begin at Ponil turnaround and camp at Sioux camp for the night.  We take a wrong turn just a couple hundred yards from the campsite and delay nearly an hour, but all is well.  Some thoughts: the New Mexican weather is very unpredictable but very interesting nonetheless.  The focus on low impact camping practices and bear safety, especially, is impressive.  I am used to the makeshift who-gives-a-shit attitude I've usually been taking.  Something to keep in mind.  The night sky here seems to be even more beautiful than even the Sierra, where the nearest cities of Fresno and Bakersfield are really not all that far away.  Here, looking up at the stars at night, it feels as though absolutely nothing separates us from the stars.  And every few seconds, the edges of the sky flash from the light of distant thunderstorm.  How incredibly obvious it is---to see God's power like this---that we are but grains of sand in this world?
+<br><br>
+<a href="1.jpg" data-lightbox="group"><img src="1.jpg"></a>
+<p>Base camp</p><br><br>
+<a href="3.jpg" data-lightbox="group"><img src="3.jpg"></a><br><br>
+<a href="4.jpg" data-lightbox="group"><img src="4.jpg"></a><br><br>
+<a href="5.jpg" data-lightbox="group"><img src="5.jpg"></a><br><br>
+
+<h4>Two</h4>
+We woke up at five to the sunrise and left Sioux Camp by seven.  We hiked up Wilson Mesa, where we are able to see the Sangre de Cristo mountains and our first view of Baldy.  We ate lunch in a meadow next to a lake situated nearly on the top of the mesa with a full view of Baldy.  We hiked down to Pueblano Camp, played some cards and filled water.  <br><br>Then we hiked the mile to our campsite at Pueblano Ruins, set up camp in advance of the thunderstorm that we had to shelter from while eating dinner, and walked all the way back to Pueblano Camp to watch the evening show performed by the staff.  Impresive music!  They sang House of the Rising Sun at one point, and after we all left I could hear somebody busting out Billy Joel on the accordion.  We hiked back in the dark to our campsite at Pueblano Ruins, where our ranger Willie left us, having accompanied the crew for the first two days of hiking.  <br><br>Willie was half chinese as well and left us some interesting thoughts about representing our race in places that others may not expect us to be.  <br><br>
+
+<a href="9.jpg" data-lightbox="group"><img src="9.jpg"></a><br><br>
+<a href="10.jpg" data-lightbox="group"><img src="10.jpg"></a><br><br>
+<a href="11.jpg" data-lightbox="group"><img src="11.jpg"></a><br><br>
+<a href="12.jpg" data-lightbox="group"><img src="12.jpg"></a><br><br>
+<a href="13.jpg" data-lightbox="group"><img src="13.jpg"></a>
+<p>cooking in the rain</p><br><br>
+<a href="14.jpg" data-lightbox="group"><img src="14.jpg"></a><br><br>
+
+
+
+<h4>Three</h4>
+Hiked from Pueblano Ruins to Baldy Town.  It rained on and off in the afternoon as we set up camp and there were occasional rumbles of thunder.  Some of the guys learned about assaying after their shower.  Baldy Town was formerly a minin town, and metal ores are flame tested for their contents.  Everybody slept on or two hours early to be ready for our 4 a.m. start for Baldy the next day.  The anticipation is high.
+<br><br>
+<a href="16.jpg" data-lightbox="group"><img src="16.jpg"></a><br><br>
+<a href="17.jpg" data-lightbox="group"><img src="17.jpg"></a><br><br>
+
+<h4>Four</h4>
+Today we woke up at 4 and hiked up to Baldy Mountain.  The sun rose when we were about a third up the mountain, and the intensely red light illuminated the white-barked trees to a fiery color.  We hit treeline near the base of the summit massif, and the view opened up towards the east and west.  The summit was very windy, and we got some good signal.  Overall, it was very beautiful and everybody in our crew and our sister crew enjoyed it a lot.  <br><br>Then we hiked down to French Henry Camp where we tried panning for gold.  The success rate for finding small flakes of gold dust was actually much higher than expected, though all I got was three little nuggets of pyrite.  Then we spent thirty minutes blacksmithing and headed back to Baldy Town.  I showered and washed my dirty clothes in the sink.  Then we played cards (B.S. poker, dragon poker, B.S. poker variants, psychological jujitsu...), ate, and slept.  
+<br><br>
+<a href="18.jpg" data-lightbox="group"><img src="18.jpg"></a><br><br>
+<a href="19.jpg" data-lightbox="group"><img src="19.jpg"></a><br><br>
+<a href="21.jpg" data-lightbox="group"><img src="21.jpg"></a><br><br>
+<a href="22.jpg" data-lightbox="group"><img src="22.jpg"></a><br><br>
+<a href="23.jpg" data-lightbox="group"><img src="23.jpg"></a><br><br>
+<a href="26.jpg" data-lightbox="group"><img src="26.jpg"></a><br><br>
+<a href="27.jpg" data-lightbox="group"><img src="27.jpg"></a><br><br>
+<a href="28.jpg" data-lightbox="group"><img src="28.jpg"></a><br><br>
+
+
+<h4>Five</h4>
+Today we hiked from Baldy Town to Miranda, where we threw tomahawks.  Then we ate lunch at Ute meadows and then hiked to Baldy Skyline where we set up camp.  We played cards for a while (B.S. poker---2 person 5 down, 2 person points) but mostly we played contact (memorable words: vernacular, ovine, granular, legerdomain, rapture, anagram).  <br><br>After dinner we also played paranoia around the not lit campfire pit.  It is interesting to see the questions answered based on certain personality archetypes (crazy, unusual, clumsy...)  I found out I was the most likely person to eat a rock.  Overall everybody is having a pretty good time with each other, but people do feel kind of bored now that everything is downhill from Baldy.  ut we are in a nice rhythm and it feels quite comfortable to just be living here.  <br><br>
+<a href="29.jpg" data-lightbox="group"><img src="29.jpg"></a><br><br>
+<h4>Six</h4>
+Today we hiked from Baldy Skyline to Head of Dean.  We participated in a C.O.P.E course which was pretty fun to go through.  I did not like the standard post-teambuilding-activity-reflection-discussions though.  We ate lunch there too, and a visiting forest service forester gave us a little talk about the effects of fire on forests.  I learned several things: fire on steep slopes will cause trees to burn hottest on the uphill sides due to the eddying of the flames flickering upwards; the history of wildfire management was related to the several major fires in 1906; grazing animals int eh late 19th century reduced wildfire by clearing grass; Philmont does not do prescribed burns but is considering them.  <br><br>Then we hiked from Head of Dean to Santa Claus.  At Santa Claus we played more contact and B. S. Poker.  Good words: monounsaturated, accrue, ambivalent, vapid, cardiothoracic, monotonic, prenuptial... Then we had a campfire and slept.
+
+<h4>Seven</h4>
+What a night!  In the morning we did shotgun at Santa Claus, and then we hiked to New Dean camp to eat lunch.  I did not shoot the shotgun since I was scared of guns.  After New Dean we hiked up 700 feet to Dean Skyline, which was a camp with no water, situated on a high ridgeline above the South Ponill Creek valley.  Teh moment we got up to the ridgeline, it began to pour.  We hiked the short distance to our campsite, where we set up the tents and dining fly in the rain.  <br><br>We held a brief memorial service for Mr. Lau, who passed away a few weeks earlier.  He had come to Philmont three years earlier, he was an adult leader for our annual backapcking trips, and he was a very quiet but powerful presence in our troop.  In a large clearing on top of the ridge, on an outlook surrounded by stumps of lightning struck trees, we built a small rock memorial overlooking the canyons and valleys below with Baldy hovering in the distance.  <br><br>We ate a dry dinner under the dining fly, since it was raining and thunderstorms were all around us.  We were counting thunder delays of aorund ten to fifteen seconds when suddenly an enormous flash appeared and thundered just one second later (this implies a stike about a thousand feet away).  Imediately everybody jumped up and dove into their tents (the meatl poles protect us from ground current that would pass through us if there were no poles).  For a while we heard bolts about five to seven seconds away every minute or so.  About an hour later we determined that it was safe to get out of our tents.  <br><br>We went to the rock memorial above the valleys and witnessed an amazing and extraordinarily bright full double rainbow.  The thundercloud that was above us continued to flash above the ridges in the distance, and we watched the lightning pu ton a show along with the double rainbow as the sun shone on our backs.  An incredible location for Mr. Lau's memorial, and an incredible day to memorialize him as well.  A day of ups and downs, tears and ecstacy, rain and shine...  We'd all gain from following in the footsteps of a man who walked selflessly in love and lived his life to the fullest.  What would you do if today was your last--- when the calendar pages end?<br><br>
+<a href="31.jpg" data-lightbox="group"><img src="31.jpg"></a><br><br>
+<a href="32.jpg" data-lightbox="group"><img src="32.jpg"></a>
+<p>good demonstration of the inner-outer brightness disparity</p><br><br>
+<a href="33.jpg" data-lightbox="group"><img src="33.jpg"></a>
+<p>the area was littered with stumps like this one</p><br><br>
+<a href="34.jpg" data-lightbox="group"><img src="34.jpg"></a>
+<p>or taller remnants like this one</p><br><br>
+<a href="35.jpg" data-lightbox="group"><img src="35.jpg"></a><br><br>
+<a href="36.jpg" data-lightbox="group"><img src="36.jpg"></a><br><br>
+<a href="37.jpg" data-lightbox="group"><img src="37.jpg"></a>
+<p>What a well-timed shot!  Credit to Glen/Keray's father for this photo</p><br><br>
+<a href="39.jpg" data-lightbox="group"><img src="39.jpg"></a>
+<p>Us</p><br><br>
+<a href="40.jpg" data-lightbox="group"><img src="40.jpg"></a><br><br>
+<a href="43.jpg" data-lightbox="group"><img src="43.jpg"></a><br><br>
+<a href="41.jpg" data-lightbox="group"><img src="41.jpg"></a><br><br>
+
+<h4>Eight</h4>
+<a href="44.jpg" data-lightbox="group"><img src="44.jpg"></a>
+<p>Sunrise</p><br><br>
+We hiked from Dean Skyline down to Ponill, where we began about a week ago.  We completed a trail construction conservation project.  We got our last resupply at the commissary, and then we set up camp.  At three the crew went to shoot revolvers, rifles, and shotguns at the range.  That night's dinner was a "chuckwagon dinner" and the whole camp ate together.  We had beef stew, biscuits, and peach cobbler.  Cobbler 3/10.  We heard several lightning strikes within a thousand feet of us, but little rain.  In the evening the staff put on a show at the Cantina which was very spirited.  Many of the other crews were on their last day and going home the following day.  We still had 4 days remaining.<br><br>
+<a href="45.jpg" data-lightbox="group"><img src="45.jpg"></a><br><br>
+<a href="46.jpg" data-lightbox="group"><img src="46.jpg"></a>
+<p>Hart Peak</p>
+
+
+
+
+<h4>Nine</h4>
+We hike from Ponill up to Hart Peak, then from Hart Peak to Indian Writings camp.  There we threw atletl darts, toured archaeological ruins, and viewed petroglyphs.  The archaeological ruins were covered by roofs and consisted of the remains of Anasazi Pueblo dwellings.  The petroglyphs were faint carvings into large boulders preserved from weathering by overhangs in the rock.  The interpretations seemed very tenuous but it was interesting nonetheless.  I found the six-toed bear footprint petroglyph very interesting, since it was a symbol that was present in many other petroglyph sites in the area.  Then we hiked to Anasazi campsite and camped for the night.<br><br>
+<a href="48.jpg" data-lightbox="group"><img src="48.jpg"></a>
+<p>interesting iridescence patterns</p><br><br>
+<a href="49.jpg" data-lightbox="group"><img src="49.jpg"></a><br><br>
+<a href="50.jpg" data-lightbox="group"><img src="50.jpg"></a><br><br>
+<a href="51.jpg" data-lightbox="group"><img src="51.jpg"></a><br><br>
+
+<h4>Ten</h4>
+We hiked from Anasazi to Chase Cow camp.  Along the way, we passed a fossilized T. Rex track, the only T. Rex track ever discovered.  It was a footprint cast situated on a rock---essentially a cast of the foot was formed when the dinosaur stepped in mud and the surroundings weathered away.  At Chase Cow camp, we bouldered for about an hour.  There was a tough boulder problem that I couldn't do.  My fingers and forearms were very sore afterwards.  A large storm rolled in after we finished bouldering and I waited it out inside a "red roof" (toilet house with a wall separating two oppositely facing toilets).  <br><br>
+<a href="52.jpg" data-lightbox="group"><img src="52.jpg"></a>
+<p>T. Rex print </p><br><br>
+<a href="53.jpg" data-lightbox="group"><img src="53.jpg"></a><br><br>
+<a href="54.jpg" data-lightbox="group"><img src="54.jpg"></a>
+<p>Jerry on the boulder (we were traversing, not climbing up of course)</p>
+
+
+<h4>epilogue (journal ended)</h4>
+After the night at Chase Cow, we hiked back to base, spent another night, and then flew out.  We had a long layover in San Diego, and we left the airport and ate some seafood on the marina.<br><br>
+
+<a href="58.jpg" data-lightbox="group"><img src="58.jpg"></a>
+<p>service</p><br><br>
+<a href="59.jpg" data-lightbox="group"><img src="59.jpg"></a>
+<p>Group photo</p><br><br>
+<a href="60.jpg" data-lightbox="group"><img src="60.jpg"></a>
+<p>SD marina, eating seafood</p>
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+</body>
