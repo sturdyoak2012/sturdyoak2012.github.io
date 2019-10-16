@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<head>
+	<title>190831</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Labor Day Backpacking - Yosemite 2019</h1>
+<br><br>
+A trip with the guys!  Participants: Joshua Yin (leader), Brandon Yuan, Jeffrey Meng, Daniel Chen, myself, Mr. Johnny Chen, and Mr. Davis Zheng.  With Jeffrey, I planned the entire Labor Day Backpacking event, consisting of seven separate crews.  But Joshua was the leader for this crew, and we had a great time!
+<br><br>
+Route: <a href='https://caltopo.com/m/STR0'>Caltopo</a>
+<br><br>
+<h4>Day 0</h4>
+We left church at around 4 and drove to Yosemite, camping in the backpacker's campground.
+<br><br>
+<h4>Day 1</h4>
+Joshua went to go get the permits from the wilderness office (and the bear canisters).  Turns out that I forget to tell him that I couldn't find my bear can, and we were one bear can short for the entire trip.  Notably, we stored some food inside some Nalgenes because we just didn't have enough space.  Reminds me of the sphere-packing problems.<br><br>
+<a href="IMG_2273.jpg" data-lightbox="group"><img src="IMG_2273.jpg"></a>
+<p>so that was the smell last night....</p>
+<br><br>
+We had a pretty relaxed start, since our mileage was going to be pretty short that day.  We spent a long time waiting in the Mirror lake vicinity, because we didn't set a proper meeting location for Joshua to come find us after obtaining the permits.  It all got sorted out in the end, though it took an hour or two. <br><br> 
+<a href="IMG_2278.jpg" data-lightbox="group"><img src="IMG_2278.jpg"></a><br><br>
+Jeffrey, Brandon, and I had already been up the Snow Creek trail at one point or another (them two years ago and myself the previous winter), so we knew what was coming.  Tough climb for some of the less fit people!  <br><br>
+<a href="IMG_2279.jpg" data-lightbox="group"><img src="IMG_2279.jpg"></a><br><br>
+<a href="IMG_2280.jpg" data-lightbox="group"><img src="IMG_2280.jpg"></a><br><br>
+I took a poop around the footbridge area, and we also filled up water there.<br><br>
+<a href="IMG_2281.jpg" data-lightbox="group"><img src="IMG_2281.jpg"></a><br><br>
+We camped about a couple hundred feet above the footbridge (lugging up water containers...) due to the camping closure near the footbridge.  <br><br>
+<a href="IMG_2285.jpg" data-lightbox="group"><img src="IMG_2285.jpg"></a>
+<p>Group of teenagers attempt to solve the sphere-packing problem for n=7</p>
+<br><br>
+<h4>Day 2</h4>
+Day 2 was when the scenery began!  That's the trend for all backpacking trips, isn't it...<br><br>
+<a href="IMG_2289.jpg" data-lightbox="group"><img src="IMG_2289.jpg"></a>
+<p>Anticipation runs high</p><br><br>
+<a href="IMG_2290.jpg" data-lightbox="group"><img src="IMG_2290.jpg"></a>
+<p>Did you get a good pic?</p><br><br>
+We made our way to Olmsted Point, where we were back in the touristy part of Yosemite, being right next to Tioga road.  <br><br>
+<a href="IMG_2294.jpg" data-lightbox="group"><img src="IMG_2294.jpg"></a>
+<p>Olmsted Point</p><br><br>
+Past Olmsted Point, we hiked to Tenaya Lake, which was as gorgeous as ever.  We took a very relaxing lunch break there.<br><br>
+<a href="IMG_2301.jpg" data-lightbox="group"><img src="IMG_2301.jpg"></a>
+<p>Tenaya Lake</p><br><br>
+After Tenaya Lake, we headed back into the wilderness, hiking up to Clouds Rest.  We were planning to camp dry that night to make the third day shorter, but we struggled to find water sources.  Eventually, we relied on some third party information (there were lots of day-hikers hiking back down to the road), and we figured out which creeks had water remaining.  Sadly, we had to detour about half a mile to the west-most Sunrise Lake to get this information.  The lake was pretty plain, but still pretty nonetheless.  <br><br>
+
+At this point, we realized that our filtering was taking so long (one broken filter and another half-broken filter) that we needed to hurry a bit to make it to our desired campsite by nightfall.<br><br>
+<a href="IMG_2306.jpg" data-lightbox="group"><img src="IMG_2306.jpg"></a>
+<p>Bon Appetit! or apettite/apetite...</p><br><br>
+
+We made it, thankfully!  It was a great campsite, with only a partially obstructed view of the Yosemite high country, particularly Mt. Clark.  <br><br>
+
+<h4>Day 3</h4>
+<a href="IMG_2313.jpg" data-lightbox="group"><img src="IMG_2313.jpg"></a><br><br>
+<a href="IMG_2318.jpg" data-lightbox="group"><img src="IMG_2318.jpg"></a>
+<p>Anticipation runs higher</p><br><br>
+We didn't eat breakfast, and made a nice early morning start to bag Clouds Rest.  Wow!  It was great walking on that exposed trail on the knife ridge summit.  Take a look at the pictures. <br><br>
+<a href="IMG_2319.jpg" data-lightbox="group"><img src="IMG_2319.jpg"></a><br><br>
+<a href="IMG_2320.jpg" data-lightbox="group"><img src="IMG_2320.jpg"></a>
+<p>Daniel Chen ponders</p><br><br>
+<a href="IMG_2336.jpg" data-lightbox="group"><img src="IMG_2336.jpg"></a>
+<p>My favorite Mt. Clark!</p><br><br>
+<a href="IMG_2339.jpg" data-lightbox="group"><img src="IMG_2339.jpg"></a><br><br>
+<a href="IMG_2344.jpg" data-lightbox="group"><img src="IMG_2344.jpg"></a>
+<p>Yosemite North</p><br><br>
+<a href="IMG_2351.jpg" data-lightbox="group"><img src="IMG_2351.jpg"></a><br><br>
+<a href="IMG_2355.jpg" data-lightbox="group"><img src="IMG_2355.jpg"></a>
+<p>Sip sip Brandon!</p><br><br>
+We ate breakfast on the summit, after which we descended some extremely steep and sand-slippery granite stairs.  After that, it was just 6,000 feet of pure downhill, passing by some comfortable, familiar terrain from my previous trips.  It was flying, but we were unbelievably sore in the days following.  Descents just always have some way of killing you.  <br><br>
+<a href="IMG_2365.jpg" data-lightbox="group"><img src="IMG_2365.jpg"></a>
+<p>those scary-ass stairs... man!</p><br><br>
+<a href="IMG_2369.jpg" data-lightbox="group"><img src="IMG_2369.jpg"></a>
+<p>can't get enough of this mountain</p><br><br>
+<a href="IMG_2372.jpg" data-lightbox="group"><img src="IMG_2372.jpg"></a>
+<p>We were flying man!</p><br><br>
+<a href="IMG_2376.jpg" data-lightbox="group"><img src="IMG_2376.jpg"></a>
+<p>Nevada</p><br><br>
+<a href="IMG_2377.jpg" data-lightbox="group"><img src="IMG_2377.jpg"></a>
+<p>Vernal</p><br><br>
+Ready for the next one!<br><br>
+<a href="IMG_7925.jpg" data-lightbox="group"><img src="IMG_7925.jpg"></a>
+<p>goldfish: close to my heart... </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+</body>
