@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<head>
+	<title>190614</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Shasta - June 2019</h1>
+<a href="3.jpg" data-lightbox="group"><img src="3.jpg"></a> 
+<p>This view just never gets old!</p>
+<br><br>
+Participants: myself, Daniel Lin, Richard Liu, and Richard Liu's father (Mr. Liu or Gang Liu).  We made it to the top!  This is the trip report, written about 5 months later, long overdue.
+<br><br>
+<h3>Day 0</h3>
+A relatively late start!  We made it to the trailhead just a half hour before sunset.  
+<br><br>
+<a href="4.jpg" data-lightbox="group"><img src= "4.jpg"></a>
+<br><br> 
+<a href="2.jpg" data-lightbox="group"><img src= "2.jpg"></a>
+<br><br> 
+<a href="16.jpg" data-lightbox="group"><img src="16.jpg"></a>
+<br><br>
+That night we camped at horse camp, arriving in the dark.  Full moon night.
+<h3>Day 1</h3>
+<a href="5.jpg" data-lightbox="group"><img src="5.jpg"></a>
+<p>Our campsite right next to the hut</p> 
+<br><br>
+<a href="6.jpg" data-lightbox="group"><img src="6.jpg"></a>
+<p>Beautiful tibetan prayer flags by the hut</p> 
+<br><br>
+I forgot what we ate that morning, must have been really insignificant.  We didn't get the earliest start, and our progress was relatively slow compared to the other climbers.  
+<br><br>
+<a href="17.jpg" data-lightbox="group"><img src="17.jpg"></a>
+<br><br>
+<a href="18.jpg" data-lightbox="group"><img src="18.jpg"></a>
+<p>making our way up to Helen Lake</p>  
+<br><br>
+<a href="7.jpg" data-lightbox="group"><img src="7.jpg"></a>
+<p>some breaks along the way!</p>
+<br><br>
+We made it to Helen Lake (which, for the uninformed, is filled with snow almost all year round and registers as a simple flattening along the slope of Avalanche Gulch.) There were already a ton of people there and we had to walk around for quite a while to find an open hole to set up our tent.  
+
+<br><br>
+We found one eventually, but not before the clouds started rolling in!  Luckily, there was no rain/snow/thunder.  Daniel started to have a splitting headache, which lasted through the night.
+<br><br>
+<a href="8.jpg" data-lightbox="group"><img src="8.jpg"></a>
+<p>you can see daniel lying on the ground in this image.</p> 
+<br><br>
+<h3>Day 2</h3>
+Thankfully we didn't sleep in this year!  We had a nice alpine start at either 3 or 4 in the morning (i forgot!) and we were off about 45 minutes later.  Everybody was really sleepy, but the steep uphill quickly put us in our paces.  
+<br><br>
+It was totally pumpin' all the way to Red Banks.  Our pace this year was a lot slower than last year for some reason, but that was alright.  We were lucky to have a lot of step-holes carved out by people climbing in the afternoon when the snow was softer.  These saved us a lot of calf strain.  My boots were also way too heavy and way too stiff.
+<br><br>
+<a href="19.jpg" data-lightbox="group"><img src="19.jpg"></a>
+<p>I know I'm not supposed to enjoy having to climb with so many other people on the mountain, but this was pretty beautiful.</p> 
+<br><br>
+<a href="20.jpg" data-lightbox="group"><img src="20.jpg"></a>
+<p>A beautiful moonrise.</p> 
+<br><br>
+<a href="21.jpg" data-lightbox="group"><img src="21.jpg"></a>
+<p>Having fun!</p> 
+<br><br>
+<a href="1.jpg" data-lightbox="group"><img src="1.jpg"></a>
+<p>Watching this shadow emerge was a pretty amazing experience</p> 
+<br><br>
+Cresting at Red Banks was pretty fun.  At this point, Mr. Liu left us to summit alone.  To be fair, Red Banks is probably the most beautiful spot on the route, so he didn't miss too much!  The next several hours would be characterized by really bad headaches for Daniel and Richard and some pretty severe nausea for me.  I don't remember much.
+<br><br>
+<a href="22.jpg" data-lightbox="group"><img src="22.jpg"></a>
+<p>view from Red Banks towards Konwakiton glacier</p>
+<br><br>
+<a href="23.jpg" data-lightbox="group"><img src="23.jpg"></a>
+<p>Headwall for the Konwakiton glacier is behind us</p> 
+<br><br>
+<a href="9.jpg" data-lightbox="group"><img src="9.jpg"></a>
+<br><br>
+<a href="24.jpg" data-lightbox="group"><img src="24.jpg"></a>
+<p>The enormous summit plateau---this was so tedious to traverse in the slushy snow</p>
+<br><br>
+<a href="25.jpg" data-lightbox="group"><img src="25.jpg"></a>
+<p>Me in front of the short summit</p> 
+<br><br>
+<a href="26.jpg" data-lightbox="group"><img src="26.jpg"></a>
+<p>Summit photo! (At this moment Richard wanted to get the **** off that mountain)</p> 
+<br><br>
+<a href="27.jpg" data-lightbox="group"><img src="27.jpg"></a>
+<p>you can't see it in this photo, but Richard is yelling at us to hurry up</p> 
+<br><br>
+<a href="28.jpg" data-lightbox="group"><img src="28.jpg"></a>
+<p>you can't see it in this photo, but Daniel is enduring some massive pain</p> 
+<br><br>
+It seemed like we were one of the last ones to summit despite having started reasonably early.  We were probably not acclimatized enough to be fast...  On the descent, I started getting my headache (my headaches only come on the descents for some weird reason) so I was not really thinking straight.  Neither were Richard and Daniel---we were all sort of just in a painful trance and sliding down.  I'm thankful we all got back to Red Banks safely.<br><br>
+<a href="10.jpg" data-lightbox="group"><img src="10.jpg"></a>
+<p>you can't see it in this photo, but I feel like smashing my head open</p> 
+<br><br>
+We had a great glissade, though personally not as great as last year's.  I think the snow was a bit too soft.  At the bottom of the glissade, my boots were so full of snow that I couldn't walk.  (I didn't have gaiters since the boots seemed to be large enough to not retain snow.)  I had to walk about 200 meters barefoot back to the tent where I had my spare pair of shoes.  I thought I was going to open my socks and find my toes gone!
+<br><br>
+We lounged at Helen Lake for a while before descending, mostly because we were too exhausted to clean up our crap.  
+<br><br>
+<a href="29.jpg" data-lightbox="group"><img src="29.jpg"></a>
+<p>I had some fun eating pineapples out of a can using Becky as my spoon AND can opener.  That's a multi-tool right there.</p> 
+<br><br>
+We wanted to stay there forever since we were so tired, but we made our way down anyways.  
+<br><br>
+<a href="30.jpg" data-lightbox="group"><img src="30.jpg"></a>
+<p>This descent was dreadfully long.</p> 
+<br><br>
+Our plan was to camp at Horse camp again.  However, we were so sick of snow and eating utter crap that we decided, with complete unanimity, to stay at a motel that night.  (The funniest thing was watching how fast everybody began to descend after that.  Before, we were stopping every 2 minutes to wait for Mr. Liu to catch up.  Now, we were struggling to match his pace!!!  Food and blankets---one helluva morale booster.)
+<br><br>
+So we had chicken nuggets that night from McDonald's.  That was some gooooooood stuff.
+<br><br>
+Motel was buggy and too hot.  I think Daniel and I may have slept with the door open.  Here are some nice pictures from the next day:
+<br><br>
+<a href="11.jpg" data-lightbox="group"><img src="11.jpg"></a>
+<p>obligatory</p> 
+<br><br>
+<a href="12.jpg" data-lightbox="group"><img src="12.jpg"></a>
+<p>motel photo</p> 
+<br><br>
+<a href="13.jpg" data-lightbox="group"><img src="13.jpg"></a>
+<p>parking lot photo</p> 
+<br><br>
+<a href="14.jpg" data-lightbox="group"><img src="14.jpg"></a>
+<p>This view of Shasta never gets old.  I've watched Shasta go by, from this angle, for about 4 or 5 years straight now, on car and on train.</p> 
+<br><br>
+<a href="15.jpg" data-lightbox="group"><img src="15.jpg"></a>
+<p>all massaging burned legs, burned faces, and burned lips...</p> 
+<br><br>
+Overall, not such a fun trip in terms of physical comfort.  And the scenery was not like mega-great, but it was a great time with friends and mountains.  Thank you for reading.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+</body>
