@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<head>
+	<title>180901</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Bear Lakes Basin - Labor Day Backpacking 2018</h1>
+This trip was almost a completely bust in terms of what we hiked and saw compared to what we wanted to hike and see.  But, most important, it was a lot of quality time spent with good friends and lots of smiles, which is what counts.
+<br><br>
+Participants: myself, Richard Liu, Daniel Lin, Jack Tian, Brandon Yuan, Mr. Yuan, and Mr. Liu.  
+<br><br>
+<h3>Day 1</h3>
+We drove up on only one car!  The last two miles of the road was a 4wd road, so that part was really sketchy.  We had to get out of the car several times to get enough clearance to get over some particularly rocky sections.  
+<br><br>
+<a href="5.jpg" data-lightbox="group"><img src="5.jpg"></a>
+<br><br>
+<a href="6.jpg" data-lightbox="group"><img src="6.jpg"></a>
+<p>The "sketchy" trailhead</p>  
+<br><br>
+The first day was just a 10 mile slog in trees, with maybe 2-3k feet of uphill.
+<br><br>
+<a href="7.jpg" data-lightbox="group"><img src="7.jpg"></a>
+<p>the less acclimatized were starting to feel it at this point</p> 
+<br><br>
+<a href="1.jpg" data-lightbox="group"><img src="1.jpg"></a>
+<p>Jack having fun!</p> 
+<br><br>
+We weren't happy with our progress that day, so we decided to hike through the night to get closer to the point where the off-trail section began.  That did mean we ate dinner at a non-campsite location.
+<br><br>
+<a href="8.jpg" data-lightbox="group"><img src="8.jpg"></a>
+<p>cooking!  richard brought a wood-burning stove (that I haven't seen being used again)</p> 
+<br><br>
+There aren't any pictures from that night.  We were pretty bone tired.
+<br><br>
+<h3>Day 2</h3>
+<a href="2.jpg" data-lightbox="group"><img src="2.jpg"></a>
+<p>Our campsite sunrise (when you hike in during the night, the morning view is ALWAYS a pleasant surprise!)</p> 
+<br><br>
+<a href="3.jpg" data-lightbox="group"><img src="3.jpg"></a>
+<p>I think the cold dampened our excitement</p> 
+<br><br>
+<a href="19.jpg" data-lightbox="group"><img src="19.jpg"></a>
+<br><br>
+<a href="9.jpg" data-lightbox="group"><img src="9.jpg"></a>
+<p>Getting set to get the **** off that trail!</p>  
+<br><br>
+Turns out the first few miles of the off-trail section had a small use trail.  So it was really pseudo-cross country hiking.  It was pretty relaxing, and we took a break by a nice creek.
+<br><br>
+<a href="20.jpg" data-lightbox="group"><img src="20.jpg"></a>
+<br><br>
+<a href="21.jpg" data-lightbox="group"><img src="21.jpg"></a>
+<br><br>
+<a href="22.jpg" data-lightbox="group"><img src="22.jpg"></a>
+<p>I think this picture is nice.  Taken by Daniel Lin</p>   
+<br><br>
+<a href="23.jpg" data-lightbox="group"><img src="23.jpg"></a>
+<p>Heading above treeline!</p> 
+<br><br>
+<a href="24.jpg" data-lightbox="group"><img src="24.jpg"></a>
+<br><br>
+<a href="10.jpg" data-lightbox="group"><img src="10.jpg"></a>
+<p>After the trip, there was a concerted patrol effort to submit a bit to the USGS to rename this peak to "Dragon Peak"</p>
+<br><br>
+<a href="11.jpg" data-lightbox="group"><img src="11.jpg"></a>
+<p>Mr. Yuan is having fun too</p> 
+<br><br>
+<a href="25.jpg" data-lightbox="group"><img src="25.jpg"></a>
+<p>At this point, we lost the trail.  It was kind of tough for the less-experienced members to adjust to the trial and error of xc hiking.</p> 
+<br><br>
+<a href="12.jpg" data-lightbox="group"><img src="12.jpg"></a>
+<p>I liked this valley!</p> 
+<br><br>
+<a href="26.jpg" data-lightbox="group"><img src="26.jpg"></a>
+<p>Pretty quaint</p> 
+<br><br>
+<a href="27.jpg" data-lightbox="group"><img src="27.jpg"></a>
+<p>This is probably like my most favorite picture of myself!</p> 
+<br><br>
+<a href="13.jpg" data-lightbox="group"><img src="13.jpg"></a>
+<br><br>
+We ended up turning back at Vee Lake.  We had a nice relaxing break there!  Richard did some wading, I played some Beach Boys, and we all lay down in the alpine grass for a while.
+<br><br>
+<a href="28.jpg" data-lightbox="group"><img src="28.jpg"></a>
+<p>All grins!</p>  
+<br><br>
+<a href="14.jpg" data-lightbox="group"><img src="14.jpg"></a>
+<p>Our group photo, sans Mr. Liu who was taking the picture</p> 
+<br><br>
+<a href="29.jpg" data-lightbox="group"><img src="29.jpg"></a>
+<p>This stuff is beautiful man, can't make this stuff up!</p>
+<br><br>
+Eventually we had to dip back below tree line, and I think some of us were disappointed that we had spent so little time really enjoying the alpine country.  But it was ok.
+<br><br>
+<a href="30.jpg" data-lightbox="group"><img src="30.jpg"></a>
+<br><br>
+<a href="15.jpg" data-lightbox="group"><img src="15.jpg"></a>
+<p>If you're wondering why Daniel is holding his hands like that, it's because he CAUGHT A ****ING FISH!</p>  
+<br><br>
+Yeah Daniel caught a fish in a small stream with his bare hands.
+<a href="16.jpg" data-lightbox="group"><img src="16.jpg"></a>
+<p>The altitude was really taking its toll on Jack :(</p> 
+<br><br>
+<a href="17.jpg" data-lightbox="group"><img src="17.jpg"></a>
+<p>And Daniel</p> 
+<br><br>
+<a href="4.jpg" data-lightbox="group"><img src="4.jpg"></a>
+<br><br><br><br>
+<h3>Day 3</h3> 
+We headed out real fast that day.  A mild end to a mild trip, but still really really great.  For whatever reason, this one has a special place for me.
+<br><br>
+<a href="31.jpg" data-lightbox="group"><img src="31.jpg"></a>
+<br><br>
+<a href="18.jpg" data-lightbox="group"><img src="18.jpg"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+</body>
