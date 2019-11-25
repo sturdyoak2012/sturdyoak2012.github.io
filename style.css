@@ -18,7 +18,6 @@ body {
 }
 
 #container {
-	background-color: blue !important;
 	width: 750px;
 	margin-left: auto;
 	margin-right: auto;
@@ -164,18 +163,94 @@ img {
     display:none;
 }
 
+
+
+
+
+
+
 @media only screen and (max-width: 1000px) {
-	body #page{
-		font-size: 40px;
+	#menu {
+		display: none;
+		width: 0px;
 	}
-	body #menu p{
-		font-size: 35px;
+
+	#container {
+		width: 100%;
+		font-size: 25px;
+	}
+
+	#page {
+		width: 100%;
+		margin-left: 0px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+
+	.topnav {
+	  background-color: rgb(234, 222, 218);
+	  position: relative;
+	  font-family: 'Bookman Old Style', 'Courier New';
+	  font-weight: bold;
+	  color: #823329;
+	}
+
+	.topnav #myLinks {
+	  display: none;
+	}
+
+	.topnav a {
+	  color: #823329;
+	  padding: 30px 30px;
+	  text-decoration: none;
+	  font-size: 50px;
+	  display: block;
+	}
+
+	.topnav a.icon {
+	  background: rgb(234, 222, 218);
+	  display: block;
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	}
+
+	#myBtn {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Fixed/sticky position */
+	  bottom: 30px; /* Place the button at the bottom of the page */
+	  right: 30px; /* Place the button 30px from the right */
+	  z-index: 99; /* Make sure it does not overlap */
+	  border: none; /* Remove borders */
+	  outline: none; /* Remove outline */
+	  background-color: rgb(234, 222, 218); /* Set a background color */
+	  color: #823329; /* Text color */
+	  padding: 30px; /* Some padding */
+	  border-radius: 20px; /* Rounded corners */
+	  font-size: 50px; /* Increase font size */
+	  font-family: 'Bookman Old Style','Courier New';
+	  font-weight:bold;
+	}
+
+}
+
+
+
+@media only screen and (min-width: 1000px) {
+	.topnav {
+		display: none;
+	}
+
+	#myBtn {
+		display: none;
 	}
 }
 
 .rotate90 {
        -webkit-transform: rotate(90deg);
        -moz-transform: rotate(90deg);
+
        -o-transform: rotate(90deg);
        -ms-transform: rotate(90deg);
        transform: rotate(90deg);
