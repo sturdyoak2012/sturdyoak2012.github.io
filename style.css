@@ -169,7 +169,7 @@ img {
 
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-aspect-ratio: 1/1) {
 	#menu {
 		display: none;
 		width: 0px;
@@ -177,7 +177,7 @@ img {
 
 	#container {
 		width: 100%;
-		font-size: 25px;
+		font-size: 30px;
 	}
 
 	#page {
@@ -237,12 +237,16 @@ img {
 
 
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-aspect-ratio: 1/1) {
 	.topnav {
 		display: none;
 	}
 
 	#myBtn {
+		display: none;
+	}
+
+	#mwarning {
 		display: none;
 	}
 }
