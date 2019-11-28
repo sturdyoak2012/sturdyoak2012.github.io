@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>171227</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../physics.html">physics</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Yosemite - Christmas 2017</h1>
+Highly encourage you guys to check out the video Daniel made for this trip!  It's really nice and super super funny.  Nice because Daniel made it, funny because Jeffery and I are in it.  <a href="https://www.youtube.com/watch?v=EHQqsc25aIE">link</a>
+<br><br>
+Took the amtrak to Yosemite to hang around the valley for a couple of days.  Participants: myself, Jeffery Ou, and Daniel Lin.  Jeffery had done this once with me in June, now it was Daniel's turn!  
+<br><br>
+<a href="32.jpg" data-lightbox="group"><img src="32.jpg"></a>
+<br><br>
+We headed out from San Jose Diridon at 6 in the morning by bus and took the train from Stockton to Merced, then the bus (YARTS) from Merced to the valley.  Travel took up the entire day! 
+<br><br>
+<a href="33.jpg" data-lightbox="group"><img src="33.jpg"></a>
+<p>Eating in Merced</p>  
+<br><br>
+<a href="5.jpg" data-lightbox="group"><img src="5.jpg"></a>
+<br><br>
+<a href="6.jpg" data-lightbox="group"><img src="6.jpg"></a>
+<p>Arriving in the valley!  Worn out and frazzled but still amazed as always</p>  
+<br><br>
+<a href="34.jpg" data-lightbox="group"><img src="34.jpg"></a>
+<p>North Dome (Daniel was up there in Sept.)</p> 
+<br><br>
+<a href="35.jpg" data-lightbox="group"><img src="35.jpg"></a>
+<p>The beautiful view from our "campsite" near Curry village</p> 
+<br><br>
+<a href="36.jpg" data-lightbox="group"><img src="36.jpg"></a>
+<p>Hidden tent.</p> 
+<br><br>
+After setting up camp, we spent the evening in the Curry Village lounge.  The pasttime for that day was trying to film people who weren't able to open the door to get outside.  (You have to turn the doorknob counterclockwise while not pushing outwards!)
+<br><br>
+<a href="1.jpg" data-lightbox="group"><img src="1.jpg"></a>
+<p>Having some fun at night photographing stars (ignore blurry)</p> 
+<br><br>
+<a href="7.jpg" data-lightbox="group"><img src="7.jpg"></a>
+<p>Hello sunrise!</p> 
+<br><br>
+<a href="37.jpg" data-lightbox="group"><img src="37.jpg"></a>
+<p>Breakfast in curry village</p> 
+<br><br>
+We ended up messing up the stove.  First we tried to go the wilderness center to see if they knew why it broke.  Then we came back to the mountain-gear shop and asked for a instructions manual from one of their stoves.  The issue was actually a clog in the pump.  I used some of my handy physics knowledge and astutely observed the incompressibility of water.  We filled the piston with water to try and force out the clog.  I pushed as hard as I could, and the clog wouldn't release.  I pushed even harder, and everything---water, pump valves, parts---all shot out.  We spent half an hour crawling the floor to find the missing part.  We found it!  The stove was fixed.
+<br><br>
+<a href="38.jpg" data-lightbox="group"><img src="38.jpg"></a>
+<p>On our way to the village side of the valley</p> 
+<br><br>
+<a href="39.jpg" data-lightbox="group"><img src="39.jpg"></a>
+<p>Searching...</p> 
+<br><br>
+<a href="40.jpg" data-lightbox="group"><img src="40.jpg"></a>
+<p>What a luxury!</p> 
+<br><br>
+So we didn't have much daylight after spending so much time trying to fix the stuff.  We made our way to our next campsite, which was a small spot next to the Merced river that I had visited a couple years prior.  It was right next to Northside road, and it had a view of Half Dome partially obscured.  
+<br><br>
+<a href="41.jpg" data-lightbox="group"><img src="41.jpg"></a>
+<p>I forget what shenanigans we were up to that night...</p> 
+<br><br>
+<a href="8.jpg" data-lightbox="group"><img src="8.jpg"></a>
+<p>Nothing like listening to my dragonfly rumbling at night</p> 
+<br><br>
+<a href="9.jpg" data-lightbox="group"><img src="9.jpg"></a>
+<p>It's never pretty waking up to your sleeping bags like this (no tent)</p> 
+<br><br>
+<a href="10.jpg" data-lightbox="group"><img src="10.jpg"></a>
+<p>But it's always pretty waking up to this kind of stuff</p> 
+<br><br>
+<a href="11.jpg" data-lightbox="group"><img src="11.jpg"></a>
+<p>First hints of color</p> 
+<br><br>
+<a href="42.jpg" data-lightbox="group"><img src="42.jpg"></a>
+<p>Like sardines in a can (or spoons in a kitchen drawer)</p> 
+<br><br>
+<a href="12.jpg" data-lightbox="group"><img src="12.jpg"></a>
+<p>I liked the light illuminating the quarter domes to the left of Half Dome</p> 
+<br><br>
+<a href="13.jpg" data-lightbox="group"><img src="13.jpg"></a>
+<p>Too cold to even move</p> 
+<br><br>
+<a href="14.jpg" data-lightbox="group"><img src="14.jpg"></a>
+<p>Enjoying the view</p> 
+<br><br>
+The plan for that day was making our way to Tunnel View.  It was a casual day and pretty fun!  First we hiked to the base of El Capitan to eat lunch.  Daniel and I went a little further and climbed up to the base of the Dawn Wall route (the one climbed by Caldwell and Jorgeson).  It was pretty exposed for us non-rock climbers!
+<br><br>
+<a href="43.jpg" data-lightbox="group"><img src="43.jpg"></a>
+<p>all Jeffery's idea</p> 
+<br><br>
+<a href="15.jpg" data-lightbox="group"><img src="15.jpg"></a>
+<p>very cute, jeffery!</p> 
+<br><br>
+<a href="44.jpg" data-lightbox="group"><img src="44.jpg"></a>
+<p>long pants were a mistake... I never wore long pants again</p> 
+<br><br>
+<a href="16.jpg" data-lightbox="group"><img src="16.jpg"></a>
+<p>Did we accidentally feed Jeffery something wrong that morning?</p> 
+<br><br>
+<a href="3.jpg" data-lightbox="group"><img src="3.jpg"></a>
+<p>Daniel and El Cap</p> 
+<br><br>
+<a href="4.jpg" data-lightbox="group"><img src="4.jpg"></a>
+<p>El Cappppp</p> 
+<br><br>
+<a href="17.jpg" data-lightbox="group"><img src="17.jpg"></a>
+<p>Daniel's free solo</p> 
+<br><br>
+<a href="18.jpg" data-lightbox="group"><img src="18.jpg"></a>
+<p>The bolt I'm holding onto is actually the start of the Dawn Wall, which I didn't know at the time</p> 
+<br><br>
+<a href="19.jpg" data-lightbox="group"><img src="19.jpg"></a>
+<p>the view</p> 
+<br><br>
+<a href="20.jpg" data-lightbox="group"><img src="20.jpg"></a>
+<p>Careful daniel!</p> 
+<br><br>
+After our fun time at the base of El Cap, we had to head on over to Tunnel View quickly to get there in time for the famous tunnel view sunset!  We speed hiked for like 2 hours.
+<br><br>
+<a href="21.jpg" data-lightbox="group"><img src="21.jpg"></a>
+<p>Valley View</p> 
+<br><br>
+<a href="22.jpg" data-lightbox="group"><img src="22.jpg"></a>
+<p>Daniel and Valley View</p> 
+<br><br>
+<a href="24.jpg" data-lightbox="group"><img src="24.jpg"></a>
+<p>Made it to Tunnel view!</p> 
+<br><br>
+<a href="49.jpg" data-lightbox="group"><img src="49.jpg"></a>
+<br><br>
+<a href="25.jpg" data-lightbox="group"><img src="25.jpg"></a>
+<p>Definitely fed Jeffery something wrong</p>
+<br><br>
+<a href="26.jpg" data-lightbox="group"><img src="26.jpg"></a>
+<p>Yep</p> 
+<br><br>
+That night we had nowhere to sleep, so we slept behind a bunch of trash cans in the parking lot.  The early sunsets meant that we were hanging about in the dark for a really long time.  
+<br><br>
+Here's an interesting story: we were sitting quietly in our "campsite" when all of a sudden a car parks right next to us.  The headlights shut off and the man inside walks towards us.  So at this point we're so scared, and we have no idea what's going on, so we're frozen in our seats.  Suddenly, the man stops in his tracks just ten feet away from us, and for what seems like an eternity, nobody makes a sound.  We're pretty much scared shitless at this point.  Suddenly, we hear a quiet rustling noise coming from the man's direction, and we're all straining to listen and hear what it is.  When the rustling sound doesn't stop, it dawns on us.  The man never even SAW us.  HE WAS PEEING!!!  There he was, ten feet away from us in the pitch dark, totally oblivious to the fact that there were three boys sitting right in front of him, and he was just there doing his business.  At this point, we were so overcome with laughter we were shaking with our hands clapped over our mouths.  When he finally got back in his car and drove away, we all had a nice laugh about it.  
+<br><br>
+<a href="45.jpg" data-lightbox="group"><img src="45.jpg"></a>
+<p>Not too shabby</p> 
+<br><br>
+<a href="27.jpg" data-lightbox="group"><img src="27.jpg"></a>
+<p>Hello sunrise!</p> 
+<br><br>
+<a href="28.jpg" data-lightbox="group"><img src="28.jpg"></a>
+<p>Daylight view</p> 
+<br><br>
+After we packed up our stuff the next morning, we needed to make our way back to Curry Village before afternoon to catch our bus.  We decided to hitchhike back down to the valley, so Daniel approached a kind Chinese man who was packing up his camera gear and asked him for a ride down, which he happily agreed to.  (Interestingly, by some extraordinary chance, this man turned out to be a friend of my mom's, which was a fact I gradually began to suspect after he told us a little about himself.  I confirmed after the trip with my mom.)
+<br><br>
+Since we had a couple hours on hand, we checked out Mirror lake, which was frozen on the surface.
+<br><br>
+<a href="29.jpg" data-lightbox="group"><img src="29.jpg"></a>
+<p>Ice patterns</p> 
+<br><br>
+<a href="46.jpg" data-lightbox="group"><img src="46.jpg"></a>
+<p>Daniel out exploring</p> 
+<br><br>
+<a href="47.jpg" data-lightbox="group"><img src="47.jpg"></a>
+<p>Me out exploring</p> 
+<br><br>
+<a href="30.jpg" data-lightbox="group"><img src="30.jpg"></a>
+<p>A lot closer to half dome this time!</p> 
+<br><br>
+Eventually we had to go back home!  It was a fun trip.  Lots of late night talks (the nights were sooooo long) and a great fun time.
+<br><br>
+<a href="31.jpg" data-lightbox="group"><img src="31.jpg"></a>
+<p>all smiles from Jeffery</p> 
+<br><br>
+<a href="48.jpg" data-lightbox="group"><img src="48.jpg"></a>
+<p>tired.</p> 
+
+
+
+
+
+
+
+<div style="height: 30vh"></div>
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

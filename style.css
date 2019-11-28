@@ -169,7 +169,7 @@ img {
 
 
 
-@media only screen and (max-aspect-ratio: 1/1) {
+@media only screen and (max-aspect-ratio: 3/4) {
 	#menu {
 		display: none;
 		width: 0px;
@@ -237,7 +237,7 @@ img {
 
 
 
-@media only screen and (min-aspect-ratio: 1/1) {
+@media only screen and (min-aspect-ratio: 3/4) {
 	.topnav {
 		display: none;
 	}
