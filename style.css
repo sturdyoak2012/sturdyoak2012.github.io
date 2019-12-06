@@ -310,6 +310,7 @@ ul, #updates {
   color: black;
   display: inline-block;
   margin-right: 6px;
+  font-size:10px;
 }
 
 /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
