@@ -95,10 +95,10 @@
 	<h3>Welcome to my website!</h3>
 	
 	Recent updates:
-	<ul>
+	<ul id="updates">
 		<li>
-			2019 November:
-			<ul>
+			<span class="caret">2019 November:</span>
+			<ul class="nested">
 				<li>
 					Trip report for Yosemite 2017 (winter edition), found <a href="outdoors/171227/171227.html">here!</a>
 				</li>
@@ -108,40 +108,69 @@
 				<li>
 					Finally got around to writing a trip report for my Mt. Shasta trip in June.  <a href="outdoors/190614/190614.html">Take a look</a>.
 				</li>
-				<li>I wrote something about an interesting phenomenon that I will call "pavement rainbows."  
+				<li>I wrote something about an interesting phenomenon that I call "pavement rainbows."  
 					You can read about it <a href="physics/prainbows.html">here!</a>
 				</li>
 			</ul>
 		</li>
-		<li>2019 October: 
-			<ul>
-				<li>My Labor Day trip report is up: <a href="outdoors/190831/190831.html">check it out</a></li>
-				<li>My Philmont trip report is up: <a href="outdoors/190720/190720.html">check it out</a></li>
-				<li>I began some study into what affects the angle of repose of piles of sand: <a href="physics/repose.html">check it out</a></li>
+		<li><span class="caret">2019 October: </span>
+			<ul class="nested">
+				<li>
+					<span class="caret">Rudolf Ortvay Physics Competition</span>
+					<span class="nested">This Hungary-based competition is held for college students all over the world.  Participants have two weeks to submit their solutions.  I'm participating this year!  (Since I'm a high school senior, I enter as a college freshman.)  <a href="https://ortvay.elte.hu/main.html">See here for more information.</a>
+					</span>
+				<li>My 2018 Labor Day trip report is up: <a href="outdoors/190831/190831.html">check it out</a></li>
+				<li><span class="caret">I began some study into what affects the angle of repose of piles of sand: <a href="physics/repose.html">check it out</a>
+				</span>
+				<span class="nested">
+					This project investigates the effect of grain shape on the slope made by piles of sand.
+				</span>
+				</li>
 			</ul>
 
 		</li>
-		<li>2019 September:
-			<ul>
-				<li>Website Redesign!</li>
+		<li><span class="caret">2019 September:</span>
+			<ul class="nested">
+				<li><span class="caret">Website Redesign!</span>
+				<span class="nested">
+					I changed a the color scheme and the design of the left-side navigation bar.  (My friend Karen didn't like the use of Comic Sans.  She didn't explicitly say that, but every once in a while, just out of the blue, she would tell me how much she hated Comic Sans.  I took the hint.)  All the navigation works the same though!
+				</span>
+			</li>
 				<li>
-					Labor Day Backpacking trip in Yosemite:<br>We hiked from Yosemite Valley up the Snow Creek Trail to Tenaya Lake and Olmsted Point.  We came back down via Clouds Rest.  <a href="outdoors/190831/190831.html">Trip Report</a>
+					<span class="caret"><a href="outdoors/190831/190831.html">Labor Day Backpacking - Yosemite</a></span>
+					<span class="nested">We hiked from Yosemite Valley up the Snow Creek Trail to Olmsted Point and Tenaya Lake.  Then we summitted Clouds Rest and descended 6,000 feet back down to the valley.  A classic.</span>
 				</li>
 			</ul>		
 		</li>
-		<li>2019 August: 
-			<ul>
+		<li><span class="caret">2019 August: </span>
+			<ul class="nested">
 				<li>
-					John Muir Trail section-hike (cancelled)
+					<span class="caret">John Muir Trail section-hike (cancelled)</span>
+					<span class="nested">Our plan was to hike from near Edison down to Glen Pass and out via Bubbs Creek, hiking around half the JMT.  A lot of us came back from Philmont kind of burned out from being outside so long, so we ended up cancelling the trip.  A lot of us also preferred doing the trail in one big trip, instead of just doing half of it.</span>
 				</li>
 			</ul>
 		</li>
 		<li>
-			2019 July:
-			<ul>
+			<span class="caret">2019 July:</span>
+			<ul class="nested">
 				<li>
-					Philmont High Adventure in New Mexico:<br>
-					A two week backpacking trip in northern NM with the boys!  <a href="outdoors/190720/190720.html">Trip Report</a>
+					<span class="caret"><a href="outdoors/190720/190720.html">Philmont High Adventure in New Mexico!  </a></span>
+					<span class="nested">Philmont is a BSA high adventure base, and our troop sent two crews this year.  Somebody had to back out last minute, so I jumped in just a week prior.  We backpacked for two weeks, and we had a pretty fantastic time.  There were some crappy days, but here were also some all-around amazing days as well.  Read more about it in the trip report.</span>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<span class="caret">2019 June:</span>
+			<ul class="nested">
+				<li>
+					<span class="caret"><a href="outdoors/190614/190614.html">Mt. Shasta [summitted]</a></span>
+					<span class="nested">Daniel, Richard, Richard's dad, and I climbed Mt. Shasta over three days.  It was exciting at times, tedious at times, and painful at times.  Read more about it in the trip report.
+					</span>
+				</li>
+				<li>
+					<span class="caret">I attended the US Physics Team Training Camp in Maryland</span>
+					<span class="nested">The top 40 scorers on the USA Physics Olympiad earn a gold medal, and the top 20 scorers get the chance to go to the annual camp held at UMD College Park.  The team for the International Physics Olympiad is selected here.  At the camp, we had a lot of lectures, a lot of laboratory work (half of the IPhO is an experimental portion), and a lot of examinations.  I didn't understand all that much, but I had a great time learning with everybody else!
+					</span>
 				</li>
 			</ul>
 		</li>
@@ -160,6 +189,19 @@
 
 
 </div>
+<script>
+	var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+
+
 <script>
 	function myFunction() {
   var x = document.getElementById("myLinks");
