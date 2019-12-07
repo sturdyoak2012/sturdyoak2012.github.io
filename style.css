@@ -233,6 +233,14 @@ img {
 	  font-weight:bold;
 	}
 
+	.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+  font-size:50px;
+	}
+
 }
 
 
@@ -248,6 +256,10 @@ img {
 
 	#mwarning {
 		display: none;
+	}
+
+	.caret::before {
+		font-size: 15px;
 	}
 }
 
@@ -306,16 +318,17 @@ ul, #updates {
 
 /* Create the caret/arrow with a unicode, and style it */
 .caret::before {
-  content: "\25B6";
+  content: "\2295";
   color: black;
   display: inline-block;
   margin-right: 6px;
-  font-size:10px;
 }
 
 /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
 .caret-down::before {
-  transform: rotate(90deg);
+  /*transform: rotate(90deg);*/
+  content: "\229D";
+
 }
 
 /* Hide the nested list */
