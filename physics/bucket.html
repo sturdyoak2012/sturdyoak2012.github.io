@@ -115,12 +115,19 @@ MathJax.Hub.Config({
 	<br><br>
 	Next, I introduce the idea of the catacaustic as the mathematical basis for the shapes formed on the bucket.
 	<br><br>
-	Last, I solve for the catacaustic under various configurations of the light source and bucket.  
+	Then, I solve for the catacaustic (first order and second order) under various configurations of the light source and bucket.  
 	<h3>Theoretical set-up</h3>
 	As with any problem, we need to make some simplifying assumptions!  Suppose the light source is a height $h$ above the base of the bucket (radius $R$) and the bucket's walls extend arbitrarily high.  Furthermore, the light source is assumed to be very small, scattering light evenly in all directions.  Looking directly down into the bucket, the light source is offset from the center-axis by a distance $d.$  
 	<br><br>
 	<img src="buck_img/bucket.svg" style="width:50%">
 	<br><br>
+	It's worth noting that in real life, the shapes are actually most clear when $d\geq R$.  In this situation, the shape is given by <a href="http://mathworld.wolfram.com/CircleCatacaustic.html">Wolfram Mathworld</a> as the parametrized equations:
+	$$x = \dfrac{\mu (1 - 3\mu \cos t + t\mu \cos^3 t)}{-(1+2\mu^2) + 3\mu \cos t}\\
+	y = \dfrac{2\mu^2 \sin^3 t}{1+2\mu^2 - 3\mu \cos t},$$
+	where $\mu = d/R.$  As $d/R$ becomes large (as is usually the case when you see the shapes in the mug), this curve approaches a nephroid given by the parametric equations:
+	$$x = \dfrac{1}{4}(3 \cos t - \cos 3t)\\
+	y = \dfrac{1}{4}(3\sin t - \sin 3t).$$
+	We are trying to solve the more complex case of $d/R < 1,$ where the light source is "inside" the cylinder.  This is mathematically more challenging, and the equation is not given by Wolfram Mathworld in this case!  
 	<h3>Computer simulation</h3>
 	I wrote a simple piece of code to simulate the reflection of light inside the cylinder, plotting where the light hits.  
 	<br><br>
