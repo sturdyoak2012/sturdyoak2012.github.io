@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Analyzing the Pauline Epistles</title>
+		<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
+	<link rel="stylesheet" href="../style.css">
+	<script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+
+
+
+<div class="topnav">
+	<a href='../index.html' class="active">Jacob Nie</a>
+	<div id="myLinks">
+		<a href="../about.html">about</a>
+		<a href="../pictures.html">pictures</a>
+		<a href="../outdoors.html">outdoors</a>
+		<a href="../physics.html">physics</a>
+	</div>
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	</a>
+</div>
+<div id="page">
+<div class="trip">
+	<h1>A Lexicographic Analysis of Similarities in the Pauline Epistles</h1>
+	<h3>Using Python 3</h3>
+
+	I did a computer analysis of the word frequencies in the Greek New Testament to examine the following question:
+	<br>
+	<i>Which Pauline Epistles were actually written by Paul?</i>
+	<br><br>
+	By simply examining minute differences in the frequencies of the most common words (prepositions, conjunctions, and pronouns - the Greek equivalents of the, for, is, and I) I was able to 
+	uncover remarkable agreements with modern critical New Testament scholarship regarding stylistically similar and dissimilar Pauline epistles.  My analysis reaffirms the authenticity of
+	books like Romans, 1 Corinthians, 2 Corinthians, and Galatians while simultaneously confirming the possible pseudepigraphical ("forged") nature of Ephesians, Colossians, 1 Timothy, and Titus.
+	<br><br>
+	However, my analysis contradicts modern scholarship on the authenticity of 2 Timothy and suggests that it is far more Pauline than it is currently believed to be.  (The analysis also 
+	contradicts modern scholarship on Philemon but this is most likely the fault of the analysis.)
+
+	<br><br>
+
+	<a href="nt.pdf">Read the full paper here (pdf)</a>
+	
+	<br><br>
+	<h4>Disclaimers</h4>
+	Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  You may be equally surprised!  However, I did not do any research into how other people have analyzed the New Testament with computer methods, so it is possible that my methods are either too simple or too wrong to be considered any kind of relevant contribution to the complex, divided field of New Testament studies.  
+<br><br>
+Disclaimer 2: Any information about current scholarly consensus should be taken with a grain of salt.  First of all, most outside information in this paper came from Wikipedia.  At the very best, it's a bad research practice and at the very worst, the information is wrong.  Also, please note that both Wikipedia and modern critical analysis are skewed against conservative religious thought due to the general overrepresentation of progressive scholarship in universities.  Modern scholars are extremely quick to reject claims to authorship on the basis of occasionally minute details.  
+<br><br>
+Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of "inconvenient" doctrines (misogyny is the biggest culprit) or simply because it seems different.  "If we lose inerrancy, then it becomes a very slippery slope then to making the Bible be whatever we want it to be.  We just say that everything we don't like is not authentic.  In that case the Bible is no longer the Word of God but just a source to defend what you already believe." --Larry Lin
+<br><br>
+	<h4>What is the Bible?</h4>
+	If you are not familiar with the Bible, I can give a short introduction here.
+	<br><br>
+	The Bible is the authoratitive religious text of Christianity.  Protestants, Catholics, and Latter-day Saints all use a Bible (but slightly differing ones).  
+	I'll be talking about the Protestant Bible here.  
+	<br><br>
+	Christians believe that the Bible is divinely inspired, that it was written by men in their languages but inspired by their God.  
+	The Bible is split into two parts: the Old Testament and the New Testament, each of which consist of many individual books with different authors.
+	<br><br>
+	The Old Testament is also, approximately, the primary religious text of Judaism.  Its original language is Hebrew.  
+	The Old Testament consists of the creation story (Genesis), the Jewish law, the history of the Jewish people from Abraham through David and onward,
+	various books of poetry and wisdom, and various books of prophecy.  Some of this prophecy was fulfilled before the life of Christ, some of it was fulfilled
+	by the life of Christ (at least this is what Christians believe), and some of it has not yet been fulfilled.  
+	<br><br>
+	Christian faith relies solely on the deity of Jesus Christ and the Old Testament is first and foremost a Jewish text, but the Old Testament is relevant because Christianity and Judaism are uniquely
+	intertwined.  
+	<br><br>
+	The New Testament is not shared by Judaism and Christianity.  It begins with the "gospel", four books recounting what is essentially the same history: the ministry of Jesus Christ
+	in Palestine, his death by crucifixion as ordered by the Roman governor Pontius Pilate (in office 26 - 36 CE), and his resurrection and appearances to many people following his death.  
+	<br><br>
+	That is followed by the Book of Acts, a historical account of the founding of the Christian church and its spread throughout the Roman Empire within the span of a few decades.  
+	<br><br>
+	The latter half of the New Testament consists of letters from church leaders like Paul, James, Peter, and John to churches throughout the Meditteranean.  They contain instructions for Christian living, 
+	clarifications and restatements of theological doctrine, and general encouragement.  The majority are written by Paul, and these are termed the Pauline Epistles.  
+	<br><br>
+	The final book is a book of apocalyptic prophecy, called Revelation.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div style="height: 30vh"></div>
+	</div>
+</div>
+</div>
+<script>
+	function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+	//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
