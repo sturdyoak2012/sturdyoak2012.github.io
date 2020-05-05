@@ -1,0 +1,1938 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{longtable}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\usepackage[left=1in,right=1in,top=1in,bottom=1.5in]{geometry}
+\author{Jacob H. Nie}
+\title{A Lexicographic Analysis of Similarities in the Pauline Epistles}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\break
+
+
+Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  You may be equally surprised!  However, I did not do any research into how other people have analyzed the New Testament with computer methods, so it is possible that my methods are either too simple or too wrong to be considered any kind of relevant contribution to the complex, divided field of New Testament studies.  
+
+Disclaimer 2: Any information about current scholarly consensus should be taken with a grain of salt.  First of all, most outside information in this paper came from Wikipedia.  At the very best, it's a bad research practice and at the very worst, the information is wrong.  Also, please note that both Wikipedia and modern critical analysis are skewed against conservative religious thought due to the general overrepresentation of progressive scholarship in universities.  Modern scholars are extremely quick to reject claims to authorship on the basis of occasionally minute details.  
+
+Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of ``inconvenient'' doctrines (misogyny is the biggest culprit) or simply because it seems different.  ``If we lose inerrancy, then it becomes a very slippery slope then to making the Bible be whatever we want it to be.  We just say that everything we don't like is not authentic.  In that case the Bible is no longer the Word of God but just a source to defend what you already believe.'' --Larry Lin
+
+With that said, let's dive right in.  
+\section{Introduction}
+New Testament authorship is a tricky subject.  Most books have claims to authorship (in other words, the author directly writes, ``It is me, Jacob, who wrote this''), but other books have either no claims, or only indirect claims (like in John), to authorship.  And even among the books with claims to authorship, many modern scholars now dispute these claims, suggesting that these books were actually written by a later person pretending to be the claimed author.  (The scholarly term is ``pseudepigraphical.'')  
+
+Here's the general consensus among modern day scholars.
+
+\subsection{Modern Scholarship}
+
+We can split up the New Testament into five sections: the four Gospels (each giving an account of the ministry, crucifixion, and resurrection of Christ), the Book of Acts (a history of the early church following the resurrection), the Pauline Epistles (letters written by Paul to churches and specific people), the Catholic Epistles (letters written to the ``catholic'', or general, church not to be confused with the modern day Roman Catholic Church), and the Book of Revelation (a book containing end-time prophecies.)
+
+The Gospels are ascribed to the authors named in the title.  Among the four Gospels, we call the first three (Matthew, Mark, and Luke) the Synoptic Gospels.  The fourth, John, reads somewhat differently from the first three.
+
+The Book of Acts does not claim an author, but most scholars agree that it is written by the same person who wrote Luke (who we think is Luke but very well might not be).  
+
+The Epistles are a complex territory.  Seven letters are considered genuine works by Paul: 1 Thessalonians, Galatians, 1 Corinthians, Philippians, Philemon, 2 Corinthians, and Romans.  Scholars are split on the authenticity of two letters by Paul: Colossians and 2 Thessalonians.  Most scholars believe four letters are ``fakes'' (pseudepigraphic): Ephesians, 1 Timothy, 2 Timothy, and Titus.  Hebrews is anonymous but is usually categorized with the Pauline Epistles, but nobody thinks it's written by Paul, not even the church.
+
+And the Catholic Epistles.  James is written by somebody named James, but there are a couple of James's.  The opinion is split.  1 Peter is very contested as well.  (Peter was a fisherman, how could he write so well??  But there is evidence for it still.)  2 Peter is generally considered to be written by somebody other than Peter.  1, 2, and 3 John are generally considered to be written by the same person who wrote the Gospel of John (but not necessarily John!).  Finally, Jude is pretty disputed.
+
+The Book of Revelation is attributed to John, and traditionally this John has been thought to be the same John that wrote the Gospel of John, but now this is disputed due to significant stylistic differences.  
+
+\subsection{My analysis}
+
+For our analysis, we will only consider the Pauline epistles.  Trying to form any claim about authorship in other books is impossible because there aren't any books written by the same author that can be compared to.  For example, it would be pointless to try to determine whether James wrote James from a purely stylistic analysis: we have no other writings by James to compare it to.  
+
+Why can't we examine the Johannine literature?  Because comparing the books of John and 1, 2, 3 John and Revelation is like comparing apples to oranges.  The books have different purposes and different audiences---any difference in language would not speak much.  Furthermore, the sizes of the Johannine books vary too widely.  (Yes, size does matter!  Refer to the discussion about Philemon below.)  Nevertheless, you can try and form your own claims about the authorship of Johannine books by taking a look at Appendix B.  
+
+So to summarize, the big question is: \emph{Which Pauline Epistles were actually written by Paul?}
+
+\section{Method}
+Our method is pretty simple (almost too simple) and only involves looking at the word frequencies in the original Greek.  (No examination of grammatical structures or word combinations.)  Here is the general structure of our method. 
+
+\subsection{Summary} 
+
+First, we determine the frequencies of each Greek word as it appears in each book.  (We use root words.  For example, in English we would consider \emph{run}, \emph{ran}, \emph{running}, and \emph{runs} to be identical.)  
+
+Then, to compare two books, we will have something that I call the \emph{degree of dissimilarity}.  If one word has a high frequency in the first text but a low frequency in the second text, then this will add significantly to the degree of dissimilarity.  If another word appears equally frequently or infrequently in both texts, then this will add zero to the degree of dissimilarity.  
+
+Note: we will limit ourselves to the most common words (the 10 most common in each book).  Here is why.  We are looking for stylistic differences and not topical differences.  For example, Paul talks about circumcision often in Romans but never in 2 Corinthians.  But that should not discredit the stylistic similarities between the two books!  So we stick to the 10 most common words in each book, which happen to be mostly prepositions, conjunctions, and pronouns.  (Refer to Appendix A for a table of the 20 most common words in each book, along with the frequencies.)
+
+One might think, how could you possibly expect to glean any kind of results simply by looking at the frequencies of the most insignificant words like ``is,'' ``but,'' and ``the''???  I know it sounds ridiculous, but you might be surprised.
+
+\subsection{A bit more detail}
+
+Now I will explain the method in more detail.
+
+Let $\{m_i\}$ be the set of book M's top 10 words.  Let $\{n_i\}$ be the set of book N's top 10 words.  Then let $\{w_i\}$ be the union of $\{m_i\}$ and $\{n_i\}.$  (The size of $\{w_i\}$ is anywhere between 10 and 20.  This skews our final number, but in the right direction.  You'll see.)
+
+Let $f_m(w_i)$ be the frequency of word $w_i$ in book M (occurrences divided by total words).  Let $f_n(w_i)$ be the frequency of word $w_i$ in book N.  Note that it is possible, but unlikely, that word $w_i$ doesn't appear in one of the books.  In that case, we take note of $\{w_i\}$ but omit it from the set.  (We can't do $\ln 0$ as you will see.)
+
+My formula for the degree of dissimilarity, $a$, is:
+\begin{equation*}
+a = \sum s_i = \sum |\ln f_m(w_i) - \ln f_n(w_i)|.
+\end{equation*}
+A small $a$ means the two books are similar, a large $a$ means the two books are not similar.  Unfortunately, we can't look at a specific value of $a$ and determine whether this means the books are similar or dissimilar.  We can only look at two pairs of books and determine which pair is more similar.  
+
+Note: I use a logarithm to give proper weight to less common words.  For example, if one word has $f_m(w_i) = 0.15$ and $f_n(w_i) = 0.13$ and another word has $f_m(w_{j}) = 0.02$ and $f_n(w_{j}) = 0.001,$ then the absence of a logarithm would make these two words contribute equally to $a$: $|f_m(w_i) - f_n(w_i)| = |f_m(w_j) - f_n(w_j)|.$  However, it's clear that $w_{j}$ shows the largest, most significant stylistic difference.  The logarithm solves that issue.
+
+\subsection{A clarifying example}
+I'll make this in English and not Greek so it's a bit more clear.  And also, instead of the top ten words in each book, we'll take the top three words instead.  And the two books we compare will be: \emph{The Catcher in the Rye} and \emph{The Old Man and the Sea}.  (Data is fake, if that's not clear.)
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\emph{The Catcher in the Rye} & $f_1(w)$ & \emph{The Old Man and the Sea} & $f_2(w)$ \\ \hline \hline
+the & 0.15 & the & 0.14 \\ \hline
+and & 0.07 & for & 0.06 \\ \hline
+is & 0.02 & and & 0.03 \\ \hline
+\vdots & \vdots & \vdots & \vdots \\ \hline
+for & 0.01 & is & 0.005 \\ \hline
+\end{tabular}
+\end{center}
+Using the same notation as we did above, $\{m_i\} = $ \{the, and, is\}, and $\{n_i\} = $ \{the, for, and\}.  Then $\{w_i\} = $ \{the, and, is, for\} $= \{w_1, w_2, w_3, w_4\}.$  
+
+We calculate: 
+\begin{align*}
+s_1 = |\ln 0.15 -  \ln 0.14| &= 0.069\\
+s_2 = |\ln 0.07 - \ln 0.03| &= 0.847\\
+s_3 = |\ln 0.02 - \ln 0.005| &= 1.386 \\
+s_4 = |\ln 0.01 - \ln 0.06| &= 1.792\\
+\end{align*}
+Hence, our degree of dissimilarity is $a = 0.069 + 0.847 + 1.386 + 1.792 = 4.094.$  The word that contributes most, the word that has the largest discrepancy, is ``for''.  
+
+\subsection{Finding similar works in a group of works}
+(This section explains what the function \textbf{mostSimilarIn} (Section 3) does.)
+
+Suppose we have five books, (A, B, C, D, and E).  We've calculated the $a$-values for each pair of these five books, and we want to find the three out of the five books that are most similar to one another.  
+
+How do we do this?  We test each possible size 3 subset of the five books (ABC, ABD, ABE, etc) and see which one has the lowest ``total $a$-value.''  In other words, which subset has the lowest sum of all the pairwise $a$-values.  Then, this subset is the subset of books that is most similar to one another.
+
+In the program I wrote, you would invoke:
+\begin{verbatim}
+mostSimilarIn([A, B, C, D, E], 3)
+>>> ([A, C, D], 5.313151)
+\end{verbatim}
+where the second number is the average pairwise $a$ value.  (As before, lower means more similar!)
+
+\section{Computer Work}
+I used Python 3.  I downloaded a .csv file of the entire Greek New Testament (each line containing one word and its Strong's Number along with morphological tags that I ignored) from \underline{\href{https://github.com/biblicalhumanities/Nestle1904/tree/master/morph}{here}}.  
+
+Next, I split up the .csv file into books.  Each book had a corresponding 1-D array of the words that it contained.  
+
+Following that, I wrote a function that would return, in array form, each unique word along with the frequency with which it occurred in the book, ordered from most common to least common.  I also created a dictionary for each book that would allow me to quickly access the frequency of each word.
+
+Then, I wrote a function (\textbf{compare1}) to return the $a$ value for any two input books, along with the five words that contributed most significantly to $a$ (i.e. the words for which $s_i = |\ln f_m(w_i) - \ln f_n(w_i)|$ was the largest).  
+
+Next, I wrote a function (\textbf{mostSimilarTo}) that would take in an input book and return the $a$ values for it vs. the 26 other books, then ranking which books were most similar and most dissimilar to the input book. (Results in Appendix B)
+
+Finally, I wrote a function (\textbf{mostSimilarIn}) that would take a sublist of $n$ books and return the $k\leq n$ most similar books within that sublist.  The returned subset would be the subset of size $k$ that minimized the sum of all $\binom{k}{2}$ degrees of dissimilarity between all pairs of books within that subset.  Furthermore, the function also returns the average value of $a$ (the degree of dissimilarity) within all book-pairs within the returned subset.  
+
+The complete Python code is found in Appendix C.  
+
+\section{Results}
+Please see Appendix A and B for the raw results.  Appendix A lists the top 20 most common words in each book, along with each word's frequency.  Appendix B lists, for each book, the $a$ values for that book and all 26 other books.  
+
+Let's try to see how our data answers our main question.  Of course, we can't expect a clear, definite answer using only the limited analysis provided, but we can get a sense of how consistent our method is with current scholarship.  
+
+\textbf{Which Pauline Epistles were actually written by Paul?}
+
+To answer this question, we will use the function $\textbf{mostSimilarIn},$ which is the same method as explained in Section 2.4.  
+
+We will examine the 13 Pauline Epistles, not including Hebrews.  First, we will look for the two most similar works.  Then, we will look for the three most similar works.  (In other words, out of these 13 books we try every possible combination of three books and see which combination is the most similar to one another.)  Hopefully, by the time we get to the five and six most similar works, a clear ``in-group'' of similar books will begin to take shape.  
+
+Towards the end, when we start looking for the 11 and 12 most similar books, the books that only just begin to appear are going to be the clear odd ones out.
+
+If our developing ``in-group'' of similar books is consistent with what scholarship believes to be authentic Pauline literature, then we can estimate an approximate ranking of which books are ``most Pauline'' and ``least Pauline.''
+
+The results are listed in the table below.  (For your convenience, I have bolded the books that ``have just appeared'', i.e. the books that are not in the row directly above it.)
+
+\begin{center}
+\begin{tabular}{|c|p{10cm}|p{5cm}|}
+\hline
+$k$ & Most Similar $k$ books & Average $a$ (Average Degree of Dissimilarity) \\\hline \hline
+2 & Eph, Col & 2.361 \\ \hline
+3 & \textbf{Rom},\textbf{ 1Cor}, \textbf{Gal} & 3.358 \\ \hline
+4 & Rom, 1Cor, \textbf{2Cor}, Gal & 3.639 \\ \hline
+5 & Rom, 1Cor, 2Cor, Gal, \textbf{2Tim} & 4.429 \\ \hline
+6 & Rom, 2Cor, \textbf{Phil}, \textbf{1Thess}, \textbf{2Thess}, 2Tim & 4.826 \\ \hline
+7 & Rom, \textbf{1Cor}, 2Cor, Phil, 1Thess, 2Thess, 2Tim & 5.204 \\ \hline
+8 & Rom, 1Cor, 2Cor, \textbf{Gal}, Phil, 1Thess, 2Thess, 2Tim & 5.464 \\ \hline
+9 & Rom, 1Cor, 2Cor, Gal, \textbf{Eph}, Phil, 1Thess, 2Thess, 2Tim & 5.804 \\ \hline
+10 & Rom, 1Cor, 2Cor, Gal, Eph, Phil, \textbf{Col}, 1Thess, 2Thess, 2Tim & 6.253 \\ \hline
+11 & Rom, 1Cor, 2Cor, Gal, Eph, Phil, Col, 1Thess, 2Thess, 2Tim, \textbf{Phlm} & 6.67 \\ \hline
+12 & Rom, 1Cor, 2Cor, Gal, Eph, Phil, Col, 1Thess, 2Thess, 2Tim, \textbf{Titus}, Phlm & 7.101 \\ \hline
+13 & Rom, 1Cor, 2Cor, Gal, Eph, Phil, Col, 1Thess, 2Thess, \textbf{1Tim}, 2Tim, Titus, Phlm & 7.410 \\ \hline
+\end{tabular}
+\end{center}
+
+From this, we can order (approximately) the 13 books from most Pauline to least Pauline: Romans, 1 Corinthians, Galatians, 2 Corinthians, 2 Timothy, Philippians, 1 Thessalonians, 2 Thessalonians, Ephesians, Colossians, Philemon, Titus, and 1 Timothy.  
+
+(Despite Ephesians and Colossians appearing first, I have chosen not to consider them most Pauline because they appear to only be similarly dissimilar.  We can pretty safely do this because a very clear in-group began to develop in $k = 3,4,5.$)
+
+\subsection{Comparison to results of modern scholarship}
+
+As stated above, modern scholarship believes that Romans, 1 Corinthians, 2 Corinthians, Galatians, Philippians, 1 Thessalonians, and Philemon are authentic.  Colossians and 2 Thessalonians are disputed, and Ephesians, 1 Timothy, 2 Timothy, and Titus are believed to be pseudepigraphic.  
+
+The agreement with modern scholarship is very remarkable, especially considering that these determinations come from only the frequencies of the top 10-15 most common words in the books (words that, in English, would be words like the, he, is, and, but, for, etc).  
+
+The notable outliers in our analysis are: 2 Timothy and Philemon.  
+
+\subsubsection{2 Timothy}
+
+Our analysis shows that \textbf{2 Timothy is much much more Pauline than modern scholarship thinks it is}.  Indeed, modern scholarship is much more divided on 2 Timothy than 1 Timothy and Titus, the two other pastoral epistles.  \textbf{Our analysis may be very revealing.}
+
+Often, modern scholarship discounts the Pauline authorship of 2 Timothy by grouping 1 Timothy, 2 Timothy, and Titus into one collection and discounting all three of them at the same time.  However, our analysis shows significant differences between 2 Timothy and the other two books.  (As you can see in Appendix B, 1 Timothy and Titus are similar to each other but very different from the Pauline epistles, whereas 2 Timothy is far closer to the "authentic" Pauline epistles than it is to 1 Timothy.)  
+
+These differences can be seen in the content of 2 Timothy, which aligns much better with more "traditional" Pauline concepts, compared to the overtly misognystic non-sola fide in 1 Timothy (2:15).  
+
+Our analysis maintains the claim that 1 Timothy and Titus are not Pauline works but provides significant evidence against grouping 2 Timothy with the two other Pastoral Epistles. 
+
+\subsubsection{Philemon}
+
+Our analysis shows that \textbf{Philemon is much less Pauline than modern scholarship thinks it is}.  Modern scholarship rarely questions the authorship of Philemon, so it appears that \textbf{our analysis may have erred in this case.}  One possible reason is the book's shortness.  Almost all Pauline epistles have a greeting, introduction, thanksgiving, and conclusion, which contains a different style than the main body of the epistle.  Since Philemon is so short, the greeting, introduction, thanksgiving, and conclusion take up almost half of the entire epistle.  This can significantly skew the frequency counts, thereby causing a possible erroneous result.  
+
+\subsection{Disclaimers (again)}
+These are important disclaimers, so I will say them again.
+
+Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  You may be equally surprised!  However, I did not do any research into how other people have analyzed the New Testament with computer methods, so it is possible that my methods are either too simple or too wrong to be considered any kind of relevant contribution to the complex, divided field of New Testament studies.  
+
+Disclaimer 2: Any information about current scholarly consensus should be taken with a grain of salt.  First of all, most outside information in this paper came from Wikipedia.  At the very best, it's a bad research practice and at the very worst, the information is wrong.  Also, please note that both Wikipedia and modern critical analysis are skewed against conservative religious thought due to the general overrepresentation of progressive scholarship in universities.  Modern scholars are extremely quick to reject claims to authorship on the basis of occasionally minute details.  
+
+Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of ``inconvenient'' doctrines (misogyny is the biggest culprit) or simply because it seems different.  ``If we lose inerrancy, then it becomes a very slippery slope then to making the Bible be whatever we want it to be.  We just say that everything we don't like is not authentic.  In that case the Bible is no longer the Word of God but just a source to defend what you already believe.'' --Larry Lin
+
+
+\section{Sources}
+The Greek New Testament in csv format was downloaded from \underline{\href{https://github.com/biblicalhumanities/Nestle1904/tree/master/morph}{here}}.  
+
+I made use of \underline{\href{http://kingjamesbibledictionary.com/}{this website}} to translate Strong's numbers to English (done in Appendix A).
+
+Most of the information about New Testament scholarship was taken from these Wikipedia pages: \underline{\href{https://en.wikipedia.org/wiki/New_Testament}{New Testament}}, \underline{\href{https://en.wikipedia.org/wiki/Authorship_of_the_Pauline_epistles}{Authorship of the Pauline Epistles}}, \underline{\href{https://en.wikipedia.org/wiki/Authorship_of_the_Petrine_epistles}{Authorship of the Petrine Epistles}}, \underline{\href{https://en.wikipedia.org/wiki/Second_Epistle_to_Timothy}{Second Epistle to Timothy}}, \underline{\href{https://en.wikipedia.org/wiki/Epistle_to_Philemon}{Epistle to Philemon}}, \underline{\href{https://en.wikipedia.org/wiki/Authorship_of_the_Johannine_works}{Authorship of the Johannine works}}. 
+
+In writing the section on 2 Timothy, I used these two articles from the New World Encyclopedia: \underline{\href{https://www.newworldencyclopedia.org/entry/Second_Epistle_to_Timothy}{Second Epistle to Timothy}} and \underline{\href{https://www.newworldencyclopedia.org/entry/First_Epistle_to_Timothy}{First Epistle to Timothy}}.  
+
+\newpage 
+
+\appendix
+\section{Top Twenty Words in Each Book}
+
+Matt
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.15164763101808842\\ \hline 
+ 2532, and & 0.0638832723099623\\ \hline 
+ 846, himself & 0.04967484561997924\\ \hline 
+ 1161, but & 0.026996010710967813\\ \hline 
+ 3004, say & 0.025903054811738345\\ \hline 
+ 4771, you & 0.02481009891250888\\ \hline 
+ 1772, in & 0.016011803923711678\\ \hline 
+ 1510, to be & 0.015738564948904313\\ \hline 
+ 1473, I & 0.01420842668998306\\ \hline 
+ 1519, into & 0.011858571506639708\\ \hline 
+ 3756, not & 0.011093502377179081\\ \hline 
+ 2424, Jesus & 0.008197169244220997\\ \hline 
+ 3778, this & 0.007978578064375103\\ \hline 
+ 3754, that & 0.007705339089567736\\ \hline 
+ 3708, see & 0.007486747909721842\\ \hline 
+ 3361, not lest & 0.007322804524837423\\ \hline 
+ 3956, all & 0.006994917755068583\\ \hline 
+ 3739, who & 0.006830974370184163\\ \hline 
+ 1063, for & 0.00677632657522269\\ \hline 
+ 1909, upon & 0.006667030985299743\\ \hline 
+\end{longtable} 
+ 
+
+Mark
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.1339895362241731\\ \hline 
+ 2532, and & 0.09621353196772191\\ \hline 
+ 846, himself & 0.0671277822115811\\ \hline 
+ 3004, say & 0.025450031036623216\\ \hline 
+ 1510, to be & 0.01711448080163164\\ \hline 
+ 1519, into & 0.0148975791433892\\ \hline 
+ 4771, you & 0.014542874878070409\\ \hline 
+ 1161, but & 0.01445419881174071\\ \hline 
+ 1772, in & 0.01223729715349827\\ \hline 
+ 1473, I & 0.011439212556530992\\ \hline 
+ 3756, not & 0.010641127959563713\\ \hline 
+ 3754, that & 0.009133634831958854\\ \hline 
+ 3739, who & 0.007714817770683693\\ \hline 
+ 2064, come & 0.007626141704353995\\ \hline 
+ 2424, Jesus & 0.007271437439035204\\ \hline 
+ 3778, this & 0.007005409240046111\\ \hline 
+ 3361, not lest & 0.006916733173716414\\ \hline 
+ 5101, what & 0.006384676775738229\\ \hline 
+ 1909, upon & 0.006384676775738229\\ \hline 
+ 2192, to have & 0.006207324643078833\\ \hline 
+\end{longtable} 
+ 
+
+Luke
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.13563939144736842\\ \hline 
+ 2532, and & 0.07529810855263158\\ \hline 
+ 846, himself & 0.05556126644736842\\ \hline 
+ 1161, but & 0.027857730263157895\\ \hline 
+ 3004, say & 0.0263671875\\ \hline 
+ 4771, you & 0.022872121710526317\\ \hline 
+ 1510, to be & 0.0185546875\\ \hline 
+ 1772, in & 0.01845189144736842\\ \hline 
+ 1473, I & 0.014494243421052632\\ \hline 
+ 3778, this & 0.01177014802631579\\ \hline 
+ 1519, into & 0.01166735197368421\\ \hline 
+ 3739, who & 0.009765625\\ \hline 
+ 3756, not & 0.008891858552631578\\ \hline 
+ 3754, that & 0.008891858552631578\\ \hline 
+ 4314, forward & 0.008532072368421052\\ \hline 
+ 1909, upon & 0.008275082236842105\\ \hline 
+ 3956, all & 0.008120888157894737\\ \hline 
+ 3361, not lest & 0.007401315789473684\\ \hline 
+ 3708, see & 0.007092927631578948\\ \hline 
+ 1096, made & 0.006630345394736842\\ \hline 
+\end{longtable} 
+ 
+
+John
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.13910375247714632\\ \hline 
+ 2532, and & 0.05312280253148373\\ \hline 
+ 846, himself & 0.04845617848238829\\ \hline 
+ 1473, I & 0.032666368343668095\\ \hline 
+ 3004, say & 0.03042894585437576\\ \hline 
+ 1510, to be & 0.028383302435594195\\ \hline 
+ 4771, you & 0.02614587994630186\\ \hline 
+ 3756, not & 0.017963306271175605\\ \hline 
+ 3754, that & 0.017260116345969443\\ \hline 
+ 2424, Jesus & 0.015534104711372499\\ \hline 
+ 3778, this & 0.015342325640861727\\ \hline 
+ 1772, in & 0.014447356645144793\\ \hline 
+ 1161, but & 0.013360608578917087\\ \hline 
+ 3767, then & 0.012657418653710926\\ \hline 
+ 1519, into & 0.012018155085341686\\ \hline 
+ 1537, out from & 0.010483922521255514\\ \hline 
+ 3739, who & 0.010292143450744742\\ \hline 
+ 2064, come & 0.010036438023397046\\ \hline 
+ 2443, in order that & 0.00926932174135396\\ \hline 
+ 3962, father & 0.008630058172984722\\ \hline 
+\end{longtable} 
+ 
+
+Acts
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.14603381721307018\\ \hline 
+ 2532, and & 0.06013157179361714\\ \hline 
+ 846, himself & 0.03767737726308922\\ \hline 
+ 1161, but & 0.030337628445604305\\ \hline 
+ 1473, I & 0.016636763986299135\\ \hline 
+ 1519, into & 0.016310552927744252\\ \hline 
+ 1510, to be & 0.015005708693524711\\ \hline 
+ 1772, in & 0.015005708693524711\\ \hline 
+ 4771, you & 0.014135812537378351\\ \hline 
+ 3778, this & 0.01283096830315881\\ \hline 
+ 3004, say & 0.012287283205567335\\ \hline 
+ 3739, who & 0.012232914695808188\\ \hline 
+ 3956, all & 0.009405752188332518\\ \hline 
+ 1909, upon & 0.00913390963953678\\ \hline 
+ 2316, God & 0.008970804110259337\\ \hline 
+ 5037, and & 0.007937802424835536\\ \hline 
+ 4314, forward & 0.007285380307725765\\ \hline 
+ 3972, Paul & 0.00695916924917088\\ \hline 
+ 1096, made & 0.006796063719893438\\ \hline 
+ 3754, that & 0.006687326700375143\\ \hline 
+\end{longtable} 
+ 
+
+Rom
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.15535211267605634\\ \hline 
+ 2532, and & 0.038450704225352114\\ \hline 
+ 1772, in & 0.02436619718309859\\ \hline 
+ 846, himself & 0.02211267605633803\\ \hline 
+ 2316, God & 0.02140845070422535\\ \hline 
+ 1473, I & 0.020985915492957745\\ \hline 
+ 1161, but & 0.020704225352112676\\ \hline 
+ 1063, for & 0.02028169014084507\\ \hline 
+ 4771, you & 0.018028169014084508\\ \hline 
+ 3756, not & 0.017183098591549296\\ \hline 
+ 1519, into & 0.01676056338028169\\ \hline 
+ 1510, to be & 0.01591549295774648\\ \hline 
+ 1223, through & 0.012816901408450704\\ \hline 
+ 3739, who & 0.012816901408450704\\ \hline 
+ 3361, not lest & 0.011126760563380281\\ \hline 
+ 3551, law & 0.010422535211267606\\ \hline 
+ 3956, all & 0.009859154929577466\\ \hline 
+ 235, but & 0.009718309859154929\\ \hline 
+ 5547, Christ & 0.009154929577464789\\ \hline 
+ 1537, out from & 0.008450704225352112\\ \hline 
+\end{longtable} 
+ 
+
+1Cor
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.12683284457478006\\ \hline 
+ 2532, and & 0.04090909090909091\\ \hline 
+ 1161, but & 0.030791788856304986\\ \hline 
+ 1772, in & 0.024780058651026393\\ \hline 
+ 1510, to be & 0.023607038123167154\\ \hline 
+ 3756, not & 0.02287390029325513\\ \hline 
+ 4771, you & 0.02258064516129032\\ \hline 
+ 1473, I & 0.0187683284457478\\ \hline 
+ 3956, all & 0.016422287390029325\\ \hline 
+ 1063, for & 0.015542521994134898\\ \hline 
+ 2316, God & 0.015395894428152493\\ \hline 
+ 3361, not lest & 0.01407624633431085\\ \hline 
+ 846, himself & 0.012609970674486803\\ \hline 
+ 235, but & 0.010557184750733138\\ \hline 
+ 3778, this & 0.00997067448680352\\ \hline 
+ 2962, supreme & 0.009824046920821115\\ \hline 
+ 5547, Christ & 0.009237536656891495\\ \hline 
+ 1487, if & 0.009237536656891495\\ \hline 
+ 3739, who & 0.008944281524926686\\ \hline 
+ 3754, that & 0.008797653958944282\\ \hline 
+\end{longtable} 
+ 
+
+2Cor
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.12329380174535691\\ \hline 
+ 2532, and & 0.04408144998881181\\ \hline 
+ 1772, in & 0.036025956589841125\\ \hline 
+ 1473, I & 0.036025956589841125\\ \hline 
+ 4771, you & 0.03490713806220631\\ \hline 
+ 3756, not & 0.021705079436115462\\ \hline 
+ 2316, God & 0.01767733273663012\\ \hline 
+ 1519, into & 0.017453569031103153\\ \hline 
+ 1063, for & 0.016782277914522265\\ \hline 
+ 1161, but & 0.0165585142089953\\ \hline 
+ 235, but & 0.01521593197583352\\ \hline 
+ 846, himself & 0.013873349742671738\\ \hline 
+ 1510, to be & 0.013873349742671738\\ \hline 
+ 3956, all & 0.011635712687402103\\ \hline 
+ 3754, that & 0.01141194898187514\\ \hline 
+ 3361, not lest & 0.010964421570821213\\ \hline 
+ 5547, Christ & 0.010516894159767285\\ \hline 
+ 1223, through & 0.010069366748713358\\ \hline 
+ 2443, in order that & 0.009845603043186395\\ \hline 
+ 3778, this & 0.009621839337659432\\ \hline 
+\end{longtable} 
+ 
+
+Gal
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.12387791741472172\\ \hline 
+ 2532, and & 0.03231597845601436\\ \hline 
+ 1473, I & 0.026481149012567325\\ \hline 
+ 1161, but & 0.026032315978456014\\ \hline 
+ 1510, to be & 0.02378815080789946\\ \hline 
+ 4771, you & 0.02333931777378815\\ \hline 
+ 1772, in & 0.018402154398563735\\ \hline 
+ 5547, Christ & 0.017055655296229804\\ \hline 
+ 3756, not & 0.017055655296229804\\ \hline 
+ 1063, for & 0.01615798922800718\\ \hline 
+ 1537, out from & 0.01570915619389587\\ \hline 
+ 3551, law & 0.01436265709156194\\ \hline 
+ 2316, God & 0.013464991023339317\\ \hline 
+ 1519, into & 0.013464991023339317\\ \hline 
+ 3754, that & 0.013016157989228007\\ \hline 
+ 846, himself & 0.011669658886894075\\ \hline 
+ 3361, not lest & 0.010771992818671455\\ \hline 
+ 3739, who & 0.010323159784560144\\ \hline 
+ 235, but & 0.010323159784560144\\ \hline 
+ 4102, faith & 0.009874326750448833\\ \hline 
+\end{longtable} 
+ 
+
+Eph
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.17858619264158743\\ \hline 
+ 2532, and & 0.05663497312939231\\ \hline 
+ 1772, in & 0.05002066969822241\\ \hline 
+ 846, himself & 0.02728400165357586\\ \hline 
+ 3956, all & 0.02108309218685407\\ \hline 
+ 4771, you & 0.020256304257957835\\ \hline 
+ 1510, to be & 0.019842910293509715\\ \hline 
+ 5547, Christ & 0.019016122364613478\\ \hline 
+ 1473, I & 0.017775940471269118\\ \hline 
+ 1519, into & 0.015295576684580404\\ \hline 
+ 3739, who & 0.01364200082678793\\ \hline 
+ 2316, God & 0.012815212897891691\\ \hline 
+ 2962, supreme & 0.010748243075651096\\ \hline 
+ 2596, according & 0.009921455146754857\\ \hline 
+ 2443, in order that & 0.009508061182306739\\ \hline 
+ 1223, through & 0.0086812732534105\\ \hline 
+ 1161, but & 0.00826787928896238\\ \hline 
+ 2424, Jesus & 0.00826787928896238\\ \hline 
+ 3778, this & 0.007441091360066143\\ \hline 
+ 3361, not lest & 0.006614303431169905\\ \hline 
+\end{longtable} 
+ 
+
+Phil
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.11779141104294479\\ \hline 
+ 2532, and & 0.0656441717791411\\ \hline 
+ 1772, in & 0.03987730061349693\\ \hline 
+ 1473, I & 0.03558282208588957\\ \hline 
+ 4771, you & 0.03190184049079755\\ \hline 
+ 5547, Christ & 0.022699386503067485\\ \hline 
+ 3956, all & 0.020245398773006136\\ \hline 
+ 846, himself & 0.01901840490797546\\ \hline 
+ 1161, but & 0.016564417177914112\\ \hline 
+ 2316, God & 0.014723926380368098\\ \hline 
+ 1519, into & 0.01411042944785276\\ \hline 
+ 2424, Jesus & 0.013496932515337423\\ \hline 
+ 3754, that & 0.012883435582822086\\ \hline 
+ 1510, to be & 0.010429447852760737\\ \hline 
+ 3739, who & 0.009202453987730062\\ \hline 
+ 2962, supreme & 0.009202453987730062\\ \hline 
+ 3778, this & 0.009202453987730062\\ \hline 
+ 235, but & 0.009202453987730062\\ \hline 
+ 1223, through & 0.008588957055214725\\ \hline 
+ 1487, if & 0.007975460122699387\\ \hline 
+\end{longtable} 
+ 
+
+Col
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.16444444444444445\\ \hline 
+ 2532, and & 0.06412698412698413\\ \hline 
+ 1772, in & 0.05523809523809524\\ \hline 
+ 4771, you & 0.035555555555555556\\ \hline 
+ 846, himself & 0.02857142857142857\\ \hline 
+ 3956, all & 0.024761904761904763\\ \hline 
+ 3739, who & 0.02412698412698413\\ \hline 
+ 1510, to be & 0.01650793650793651\\ \hline 
+ 5547, Christ & 0.015873015873015872\\ \hline 
+ 1473, I & 0.015873015873015872\\ \hline 
+ 2316, God & 0.013333333333333334\\ \hline 
+ 1519, into & 0.012063492063492064\\ \hline 
+ 2962, supreme & 0.010158730158730159\\ \hline 
+ 1223, through & 0.008888888888888889\\ \hline 
+ 2596, according & 0.008888888888888889\\ \hline 
+ 2443, in order that & 0.008253968253968255\\ \hline 
+ 1537, out from & 0.006984126984126984\\ \hline 
+ 3361, not lest & 0.006349206349206349\\ \hline 
+ 575, from & 0.005714285714285714\\ \hline 
+ 4561, flesh & 0.005714285714285714\\ \hline 
+\end{longtable} 
+ 
+
+1Thess
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.1296673455532926\\ \hline 
+ 2532, and & 0.06788866259334692\\ \hline 
+ 4771, you & 0.05702647657841141\\ \hline 
+ 1772, in & 0.03598099117447386\\ \hline 
+ 1473, I & 0.03394433129667346\\ \hline 
+ 2316, God & 0.024439918533604887\\ \hline 
+ 1519, into & 0.017651052274270197\\ \hline 
+ 2962, supreme & 0.016293279022403257\\ \hline 
+ 846, himself & 0.016293279022403257\\ \hline 
+ 1063, for & 0.015614392396469789\\ \hline 
+ 80, brother & 0.012898845892735914\\ \hline 
+ 3756, not & 0.012219959266802444\\ \hline 
+ 3956, all & 0.012219959266802444\\ \hline 
+ 2424, Jesus & 0.010862186014935505\\ \hline 
+ 1161, but & 0.010183299389002037\\ \hline 
+ 3361, not lest & 0.010183299389002037\\ \hline 
+ 2531, as & 0.008825526137135099\\ \hline 
+ 3754, that & 0.008825526137135099\\ \hline 
+ 235, but & 0.008825526137135099\\ \hline 
+ 1492, know & 0.008825526137135099\\ \hline 
+\end{longtable} 
+ 
+
+2Thess
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.1362530413625304\\ \hline 
+ 2532, and & 0.06082725060827251\\ \hline 
+ 4771, you & 0.04866180048661801\\ \hline 
+ 1772, in & 0.031630170316301706\\ \hline 
+ 1473, I & 0.029197080291970802\\ \hline 
+ 2962, supreme & 0.0267639902676399\\ \hline 
+ 846, himself & 0.021897810218978103\\ \hline 
+ 2316, God & 0.021897810218978103\\ \hline 
+ 3956, all & 0.019464720194647202\\ \hline 
+ 1519, into & 0.0170316301703163\\ \hline 
+ 2424, Jesus & 0.015815085158150853\\ \hline 
+ 3739, who & 0.014598540145985401\\ \hline 
+ 3361, not lest & 0.01338199513381995\\ \hline 
+ 3754, that & 0.01338199513381995\\ \hline 
+ 1161, but & 0.01338199513381995\\ \hline 
+ 5547, Christ & 0.012165450121654502\\ \hline 
+ 1223, through & 0.012165450121654502\\ \hline 
+ 575, from & 0.010948905109489052\\ \hline 
+ 80, brother & 0.010948905109489052\\ \hline 
+ 3756, not & 0.009732360097323601\\ \hline 
+\end{longtable} 
+ 
+
+1Tim
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.09949622166246852\\ \hline 
+ 2532, and & 0.05793450881612091\\ \hline 
+ 1772, in & 0.02707808564231738\\ \hline 
+ 1161, but & 0.018891687657430732\\ \hline 
+ 1510, to be & 0.018261964735516372\\ \hline 
+ 3361, not lest & 0.015113350125944584\\ \hline 
+ 3956, all & 0.014483627204030227\\ \hline 
+ 3739, who & 0.013853904282115869\\ \hline 
+ 2316, God & 0.013853904282115869\\ \hline 
+ 4102, faith & 0.011964735516372796\\ \hline 
+ 1519, into & 0.011964735516372796\\ \hline 
+ 3778, this & 0.011335012594458438\\ \hline 
+ 5100, some & 0.011335012594458438\\ \hline 
+ 2570, good & 0.010075566750629723\\ \hline 
+ 2443, in order that & 0.009445843828715366\\ \hline 
+ 5547, Christ & 0.009445843828715366\\ \hline 
+ 1473, I & 0.009445843828715366\\ \hline 
+ 4771, you & 0.008816120906801008\\ \hline 
+ 2192, to have & 0.008816120906801008\\ \hline 
+ 2424, Jesus & 0.008816120906801008\\ \hline 
+\end{longtable} 
+ 
+
+2Tim
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.12045270816491511\\ \hline 
+ 2532, and & 0.0549717057396928\\ \hline 
+ 1473, I & 0.03395311236863379\\ \hline 
+ 1772, in & 0.029911075181891674\\ \hline 
+ 1161, but & 0.019401778496362168\\ \hline 
+ 4771, you & 0.016976556184316895\\ \hline 
+ 3739, who & 0.016168148746968473\\ \hline 
+ 1519, into & 0.014551333872271624\\ \hline 
+ 3956, all & 0.014551333872271624\\ \hline 
+ 2962, supreme & 0.012934518997574777\\ \hline 
+ 846, himself & 0.012934518997574777\\ \hline 
+ 1510, to be & 0.012934518997574777\\ \hline 
+ 1063, for & 0.01131770412287793\\ \hline 
+ 5547, Christ & 0.010509296685529508\\ \hline 
+ 2424, Jesus & 0.010509296685529508\\ \hline 
+ 2316, God & 0.010509296685529508\\ \hline 
+ 1223, through & 0.009700889248181084\\ \hline 
+ 235, but & 0.009700889248181084\\ \hline 
+ 3756, not & 0.009700889248181084\\ \hline 
+ 3778, this & 0.00889248181083266\\ \hline 
+\end{longtable} 
+ 
+
+Titus
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.09270516717325228\\ \hline 
+ 2532, and & 0.0547112462006079\\ \hline 
+ 1473, I & 0.028875379939209727\\ \hline 
+ 1510, to be & 0.0243161094224924\\ \hline 
+ 3956, all & 0.02127659574468085\\ \hline 
+ 3361, not lest & 0.019756838905775075\\ \hline 
+ 2443, in order that & 0.019756838905775075\\ \hline 
+ 1772, in & 0.019756838905775075\\ \hline 
+ 2316, God & 0.019756838905775075\\ \hline 
+ 3739, who & 0.013677811550151976\\ \hline 
+ 4771, you & 0.0121580547112462\\ \hline 
+ 2041, work & 0.0121580547112462\\ \hline 
+ 1161, but & 0.0121580547112462\\ \hline 
+ 846, himself & 0.0121580547112462\\ \hline 
+ 2596, according & 0.0121580547112462\\ \hline 
+ 4102, faith & 0.00911854103343465\\ \hline 
+ 4990, savior & 0.00911854103343465\\ \hline 
+ 1063, for & 0.00911854103343465\\ \hline 
+ 3778, this & 0.007598784194528876\\ \hline 
+ 3056, word & 0.007598784194528876\\ \hline 
+\end{longtable} 
+ 
+
+Phlm
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.10746268656716418\\ \hline 
+ 4771, you & 0.07164179104477612\\ \hline 
+ 1473, I & 0.0626865671641791\\ \hline 
+ 2532, and & 0.05373134328358209\\ \hline 
+ 1772, in & 0.029850746268656716\\ \hline 
+ 5547, Christ & 0.023880597014925373\\ \hline 
+ 1161, but & 0.01791044776119403\\ \hline 
+ 2424, Jesus & 0.01791044776119403\\ \hline 
+ 3739, who & 0.014925373134328358\\ \hline 
+ 2962, supreme & 0.014925373134328358\\ \hline 
+ 1223, through & 0.011940298507462687\\ \hline 
+ 3754, that & 0.011940298507462687\\ \hline 
+ 2443, in order that & 0.011940298507462687\\ \hline 
+ 80, brother & 0.011940298507462687\\ \hline 
+ 2192, to have & 0.011940298507462687\\ \hline 
+ 5613, as & 0.011940298507462687\\ \hline 
+ 3778, this & 0.008955223880597015\\ \hline 
+ 4160, make & 0.008955223880597015\\ \hline 
+ 4968, bowels & 0.008955223880597015\\ \hline 
+ 3972, Paul & 0.008955223880597015\\ \hline 
+\end{longtable} 
+ 
+
+Heb
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.1408678102926337\\ \hline 
+ 2532, and & 0.05126135216952573\\ \hline 
+ 846, himself & 0.028456104944500505\\ \hline 
+ 1063, for & 0.018365287588294654\\ \hline 
+ 1519, into & 0.014934409687184663\\ \hline 
+ 3739, who & 0.014934409687184663\\ \hline 
+ 1161, but & 0.013925327951564077\\ \hline 
+ 2316, God & 0.013723511604439959\\ \hline 
+ 3756, not & 0.013319878910191726\\ \hline 
+ 1473, I & 0.013319878910191726\\ \hline 
+ 1772, in & 0.013118062563067608\\ \hline 
+ 4771, you & 0.011907164480322906\\ \hline 
+ 1223, through & 0.011503531786074672\\ \hline 
+ 1510, to be & 0.011099899091826439\\ \hline 
+ 3956, all & 0.010696266397578204\\ \hline 
+ 3778, this & 0.00887991927346115\\ \hline 
+ 3361, not lest & 0.00887991927346115\\ \hline 
+ 2596, according & 0.008274470232088799\\ \hline 
+ 2192, to have & 0.007870837537840566\\ \hline 
+ 3004, say & 0.007669021190716448\\ \hline 
+\end{longtable} 
+ 
+
+Jas
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.13225991949396204\\ \hline 
+ 2532, and & 0.06325474410580793\\ \hline 
+ 4771, you & 0.02702702702702703\\ \hline 
+ 846, himself & 0.023001725129384705\\ \hline 
+ 1772, in & 0.02185163887291547\\ \hline 
+ 1161, but & 0.02127659574468085\\ \hline 
+ 1510, to be & 0.018401380103507763\\ \hline 
+ 3756, not & 0.015526164462334674\\ \hline 
+ 3361, not lest & 0.013801035077630822\\ \hline 
+ 1473, I & 0.012650948821161587\\ \hline 
+ 80, brother & 0.010925819436457734\\ \hline 
+ 2316, God & 0.009200690051753882\\ \hline 
+ 4102, faith & 0.009200690051753882\\ \hline 
+ 3754, that & 0.009200690051753882\\ \hline 
+ 1519, into & 0.008625646923519264\\ \hline 
+ 2041, work & 0.008625646923519264\\ \hline 
+ 5100, some & 0.008625646923519264\\ \hline 
+ 1063, for & 0.008625646923519264\\ \hline 
+ 2962, supreme & 0.008050603795284647\\ \hline 
+ 1537, out from & 0.007475560667050029\\ \hline 
+\end{longtable} 
+ 
+
+1Pet
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.11813842482100238\\ \hline 
+ 2532, and & 0.042362768496420046\\ \hline 
+ 4771, you & 0.031026252983293555\\ \hline 
+ 1772, in & 0.029832935560859187\\ \hline 
+ 1519, into & 0.025059665871121718\\ \hline 
+ 2316, God & 0.023269689737470168\\ \hline 
+ 846, himself & 0.02028639618138425\\ \hline 
+ 3739, who & 0.018496420047732696\\ \hline 
+ 1161, but & 0.016706443914081145\\ \hline 
+ 5613, as & 0.016109785202863963\\ \hline 
+ 5547, Christ & 0.013126491646778043\\ \hline 
+ 3956, all & 0.010739856801909307\\ \hline 
+ 1223, through & 0.010739856801909307\\ \hline 
+ 235, but & 0.00954653937947494\\ \hline 
+ 1487, if & 0.008949880668257757\\ \hline 
+ 3754, that & 0.008949880668257757\\ \hline 
+ 3361, not lest & 0.008353221957040573\\ \hline 
+ 2443, in order that & 0.007756563245823389\\ \hline 
+ 3756, not & 0.007756563245823389\\ \hline 
+ 3778, this & 0.0065632458233890216\\ \hline 
+\end{longtable} 
+ 
+
+2Pet
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.11293260473588343\\ \hline 
+ 2532, and & 0.05737704918032787\\ \hline 
+ 1772, in & 0.039162112932604735\\ \hline 
+ 846, himself & 0.026411657559198543\\ \hline 
+ 3778, this & 0.020036429872495445\\ \hline 
+ 4771, you & 0.01912568306010929\\ \hline 
+ 1161, but & 0.01912568306010929\\ \hline 
+ 3739, who & 0.017304189435336976\\ \hline 
+ 1473, I & 0.017304189435336976\\ \hline 
+ 1063, for & 0.01366120218579235\\ \hline 
+ 2962, supreme & 0.012750455373406194\\ \hline 
+ 1510, to be & 0.011839708561020037\\ \hline 
+ 3756, not & 0.01092896174863388\\ \hline 
+ 2250, day & 0.01092896174863388\\ \hline 
+ 1519, into & 0.010018214936247723\\ \hline 
+ 5613, as & 0.009107468123861567\\ \hline 
+ 2424, Jesus & 0.00819672131147541\\ \hline 
+ 5547, Christ & 0.007285974499089253\\ \hline 
+ 3956, all & 0.006375227686703097\\ \hline 
+ 1223, through & 0.006375227686703097\\ \hline 
+\end{longtable} 
+ 
+
+1John
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.16807116104868913\\ \hline 
+ 2532, and & 0.060393258426966294\\ \hline 
+ 846, himself & 0.047752808988764044\\ \hline 
+ 1510, to be & 0.046348314606741575\\ \hline 
+ 1772, in & 0.03698501872659176\\ \hline 
+ 3754, that & 0.035580524344569285\\ \hline 
+ 2316, God & 0.02902621722846442\\ \hline 
+ 1473, I & 0.026217228464419477\\ \hline 
+ 3756, not & 0.02247191011235955\\ \hline 
+ 3778, this & 0.018258426966292134\\ \hline 
+ 4771, you & 0.015917602996254682\\ \hline 
+ 1537, out from & 0.015917602996254682\\ \hline 
+ 3739, who & 0.014044943820224719\\ \hline 
+ 2192, to have & 0.013108614232209739\\ \hline 
+ 25, to love & 0.013108614232209739\\ \hline 
+ 3956, all & 0.012640449438202247\\ \hline 
+ 1097, to know & 0.011704119850187267\\ \hline 
+ 3306, to stay & 0.011235955056179775\\ \hline 
+ 2889, world & 0.010767790262172285\\ \hline 
+ 1437, if & 0.010299625468164793\\ \hline 
+\end{longtable} 
+ 
+
+2John
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.1346938775510204\\ \hline 
+ 2532, and & 0.0653061224489796\\ \hline 
+ 4771, you & 0.0326530612244898\\ \hline 
+ 1772, in & 0.0326530612244898\\ \hline 
+ 846, himself & 0.02857142857142857\\ \hline 
+ 1473, I & 0.024489795918367346\\ \hline 
+ 1510, to be & 0.024489795918367346\\ \hline 
+ 3361, not lest & 0.02040816326530612\\ \hline 
+ 3756, not & 0.02040816326530612\\ \hline 
+ 225, truth & 0.02040816326530612\\ \hline 
+ 3778, this & 0.02040816326530612\\ \hline 
+ 2443, in order that & 0.02040816326530612\\ \hline 
+ 1785, commandment & 0.0163265306122449\\ \hline 
+ 3962, father & 0.0163265306122449\\ \hline 
+ 2192, to have & 0.0163265306122449\\ \hline 
+ 235, but & 0.0163265306122449\\ \hline 
+ 5547, Christ & 0.012244897959183673\\ \hline 
+ 3306, to stay & 0.012244897959183673\\ \hline 
+ 4314, forward & 0.012244897959183673\\ \hline 
+ 1519, into & 0.012244897959183673\\ \hline 
+\end{longtable} 
+ 
+
+3John
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.1324200913242009\\ \hline 
+ 2532, and & 0.0502283105022831\\ \hline 
+ 4771, you & 0.045662100456621\\ \hline 
+ 1473, I & 0.0273972602739726\\ \hline 
+ 225, truth & 0.0273972602739726\\ \hline 
+ 3739, who & 0.0228310502283105\\ \hline 
+ 3140, to witness & 0.0182648401826484\\ \hline 
+ 3778, this & 0.0182648401826484\\ \hline 
+ 3756, not & 0.0182648401826484\\ \hline 
+ 846, himself & 0.0182648401826484\\ \hline 
+ 27, beloved & 0.0182648401826484\\ \hline 
+ 1125, write & 0.0136986301369863\\ \hline 
+ 80, brother & 0.0136986301369863\\ \hline 
+ 1577, church & 0.0136986301369863\\ \hline 
+ 235, but & 0.0136986301369863\\ \hline 
+ 2316, God & 0.0136986301369863\\ \hline 
+ 1772, in & 0.0136986301369863\\ \hline 
+ 4160, make & 0.0136986301369863\\ \hline 
+ 3686, name & 0.0091324200913242\\ \hline 
+ 3708, see & 0.0091324200913242\\ \hline 
+\end{longtable} 
+ 
+
+Jude
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.12035010940919037\\ \hline 
+ 2532, and & 0.045951859956236324\\ \hline 
+ 1161, but & 0.0262582056892779\\ \hline 
+ 4771, you & 0.024070021881838075\\ \hline 
+ 3778, this & 0.019693654266958426\\ \hline 
+ 1772, in & 0.0175054704595186\\ \hline 
+ 3956, all & 0.0175054704595186\\ \hline 
+ 846, himself & 0.0175054704595186\\ \hline 
+ 1473, I & 0.015317286652078774\\ \hline 
+ 2962, supreme & 0.015317286652078774\\ \hline 
+ 2424, Jesus & 0.01312910284463895\\ \hline 
+ 1438, himself & 0.01312910284463895\\ \hline 
+ 5547, Christ & 0.01312910284463895\\ \hline 
+ 1519, into & 0.01312910284463895\\ \hline 
+ 4012, about & 0.010940919037199124\\ \hline 
+ 5083, guard & 0.010940919037199124\\ \hline 
+ 3739, who & 0.010940919037199124\\ \hline 
+ 40, sacred& 0.0087527352297593\\ \hline 
+ 2316, God & 0.0087527352297593\\ \hline 
+ 1510, to be & 0.0087527352297593\\ \hline 
+\end{longtable} 
+ 
+
+Rev
+
+
+ \begin{longtable}{|c|c|}
+\hline
+ Strong's No., English & Frequency \\ \hline  
+3588, this & 0.19172091131000812\\ \hline 
+ 2532, and & 0.1136086248982913\\ \hline 
+ 846, himself & 0.04465012205044752\\ \hline 
+ 1772, in & 0.016069975589910496\\ \hline 
+ 1909, upon & 0.014646053702196907\\ \hline 
+ 1537, out from & 0.013730675345809601\\ \hline 
+ 1510, to be & 0.011187957689178194\\ \hline 
+ 2192, to have & 0.01017087062652563\\ \hline 
+ 3004, say & 0.01017087062652563\\ \hline 
+ 1473, I & 0.00986574450772986\\ \hline 
+ 2316, God & 0.009662327095199348\\ \hline 
+ 3708, see & 0.009052074857607811\\ \hline 
+ 1093, land & 0.008340113913751017\\ \hline 
+ 3173, great & 0.008136696501220505\\ \hline 
+ 1519, into & 0.008136696501220505\\ \hline 
+ 4771, you & 0.008136696501220505\\ \hline 
+ 3739, who & 0.007119609438567941\\ \hline 
+ 5613, as & 0.007017900732302685\\ \hline 
+ 32, angel & 0.006814483319772173\\ \hline 
+ 3756, not & 0.006814483319772173\\ \hline 
+\end{longtable} 
+ 
+
+
+
+\newpage
+\section{Book Similarities between all 27 books}
+
+Matt
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Luke & 1.2498858510252246 \\ \hline
+ Mark & 2.808491884758681 \\ \hline
+ Acts & 2.863939222914629 \\ \hline
+ Jas & 4.4346324976013465 \\ \hline
+ John & 4.678567860690274 \\ \hline
+ Jude & 6.961803874406476 \\ \hline
+ Heb & 7.88402478953559 \\ \hline
+ 1Cor & 8.27718596926664 \\ \hline
+ Rom & 8.344439915059338 \\ \hline
+ 2Pet & 9.082797677205104 \\ \hline
+ Gal & 9.693678966679508 \\ \hline
+ 2Tim & 9.785473187567574 \\ \hline
+ Eph & 10.432615562269314 \\ \hline
+ Rev & 10.503923386527115 \\ \hline
+ 2Cor & 10.569479552521868 \\ \hline
+ 1Pet & 11.01860472708464 \\ \hline
+ 2John & 11.411612200679972 \\ \hline
+ 2Thess & 12.009534851244338 \\ \hline
+ Col & 12.526479987093426 \\ \hline
+ Phil & 12.982965547698754 \\ \hline
+ 1Thess & 13.166040445500222 \\ \hline
+ 1John & 13.319468398025837 \\ \hline
+ Phlm & 14.564184398991955 \\ \hline
+ 1Tim & 15.001133513719347 \\ \hline
+ Titus & 15.37829088943846 \\ \hline
+ 3John & 19.944348788153366 \\ \hline 
+\end{longtable}
+
+
+Mark
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Matt & 2.808491884758681 \\ \hline
+ Luke & 3.0822798286148467 \\ \hline
+ Acts & 4.037392272772234 \\ \hline
+ John & 5.65640388695672 \\ \hline
+ Jas & 6.182932982948504 \\ \hline
+ Heb & 6.841319253495689 \\ \hline
+ Rev & 9.052949729869212 \\ \hline
+ Rom & 9.224729133939874 \\ \hline
+ Jude & 10.453955571142572 \\ \hline
+ 2Pet & 10.584373854975077 \\ \hline
+ 1Cor & 10.81424890587908 \\ \hline
+ 1Pet & 11.240397808725703 \\ \hline
+ 2Cor & 11.416286750616639 \\ \hline
+ Eph & 11.478587930258778 \\ \hline
+ 2Tim & 11.516673884347284 \\ \hline
+ 2John & 11.563196454726096 \\ \hline
+ Gal & 12.224830001939202 \\ \hline
+ 1John & 13.325773953034545 \\ \hline
+ 2Thess & 13.55507990735967 \\ \hline
+ 3John & 13.581649263068126 \\ \hline
+ Titus & 14.109114845386244 \\ \hline
+ Phil & 14.217385143550265 \\ \hline
+ Col & 14.342928234537267 \\ \hline
+ 1Thess & 14.585334331558329 \\ \hline
+ 1Tim & 14.731344772719343 \\ \hline
+ Phlm & 17.67813790680798 \\ \hline 
+\end{longtable}
+
+
+Luke
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Matt & 1.2498858510252246 \\ \hline
+ Acts & 2.9954302131011126 \\ \hline
+ Mark & 3.0822798286148467 \\ \hline
+ Jas & 5.291714777343677 \\ \hline
+ John & 5.870433429065313 \\ \hline
+ Jude & 6.473497387400187 \\ \hline
+ 1Cor & 7.820456175164511 \\ \hline
+ Heb & 8.067114764522275 \\ \hline
+ Rom & 8.516943816226547 \\ \hline
+ 2Pet & 8.62071208429699 \\ \hline
+ 2Tim & 9.519565236668662 \\ \hline
+ 1Pet & 10.589280497236954 \\ \hline
+ 2Cor & 10.793233528392742 \\ \hline
+ 2John & 10.996672989658158 \\ \hline
+ Gal & 11.148630974497753 \\ \hline
+ Rev & 11.15379430845007 \\ \hline
+ 1John & 11.17264101763682 \\ \hline
+ Eph & 11.197209346847472 \\ \hline
+ 2Thess & 12.04492799547027 \\ \hline
+ Phil & 12.728676716661727 \\ \hline
+ Titus & 12.83754770994 \\ \hline
+ 1Thess & 13.204306172337871 \\ \hline
+ 1Tim & 13.302681404703307 \\ \hline
+ Col & 13.670925587289256 \\ \hline
+ Phlm & 14.904853202539176 \\ \hline
+ 3John & 18.053114680370125 \\ \hline 
+\end{longtable}
+
+
+John
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Matt & 4.678567860690274 \\ \hline
+ Mark & 5.65640388695672 \\ \hline
+ Luke & 5.870433429065313 \\ \hline
+ Acts & 8.078242143693412 \\ \hline
+ 1John & 8.411323797616504 \\ \hline
+ 2John & 8.609675216567437 \\ \hline
+ Jas & 8.721868817722687 \\ \hline
+ 3John & 10.265949844393411 \\ \hline
+ Rom & 10.309927511788267 \\ \hline
+ Gal & 10.404714409545871 \\ \hline
+ 1Cor & 10.907198570530603 \\ \hline
+ 2Cor & 11.061894508320831 \\ \hline
+ Heb & 11.210480742875674 \\ \hline
+ Jude & 11.469453846497478 \\ \hline
+ 2Pet & 12.024894659343758 \\ \hline
+ 2Tim & 12.148982543463408 \\ \hline
+ 2Thess & 12.46014091223983 \\ \hline
+ Phlm & 12.762588361337974 \\ \hline
+ Rev & 12.775960411976842 \\ \hline
+ 1Pet & 13.477308495380738 \\ \hline
+ Phil & 13.49163960435913 \\ \hline
+ Eph & 13.492052186245019 \\ \hline
+ 1Thess & 13.71369308283147 \\ \hline
+ 1Tim & 14.946319353391026 \\ \hline
+ Col & 15.799653009352925 \\ \hline
+ Titus & 16.259662280026276 \\ \hline 
+\end{longtable}
+
+
+Acts
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Matt & 2.863939222914629 \\ \hline
+ Luke & 2.9954302131011126 \\ \hline
+ Mark & 4.037392272772234 \\ \hline
+ Jude & 4.916097429993837 \\ \hline
+ 2Pet & 5.082873396765076 \\ \hline
+ Heb & 5.416026847796947 \\ \hline
+ 2Tim & 5.528398577945508 \\ \hline
+ Jas & 6.472835406060057 \\ \hline
+ Rom & 6.505012963443187 \\ \hline
+ 1Cor & 7.687001356338429 \\ \hline
+ Eph & 7.847942989942897 \\ \hline
+ John & 8.078242143693412 \\ \hline
+ 2Cor & 8.397518606367868 \\ \hline
+ 2Thess & 8.711506654093402 \\ \hline
+ Phil & 9.061621886988657 \\ \hline
+ 1Pet & 9.629174665717688 \\ \hline
+ Gal & 9.700489665529872 \\ \hline
+ 1Thess & 9.789277095129279 \\ \hline
+ Col & 10.418140064290256 \\ \hline
+ 1Tim & 10.567553742690878 \\ \hline
+ 1John & 10.738945261034436 \\ \hline
+ Rev & 11.117753366041498 \\ \hline
+ 2John & 11.486116236413995 \\ \hline
+ Titus & 12.743731064008266 \\ \hline
+ Phlm & 13.471742486015694 \\ \hline
+ 3John & 16.380265256484805 \\ \hline 
+\end{longtable}
+
+
+Rom
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+2Cor & 3.304624866250097 \\ \hline
+ 1Cor & 3.3634385915073337 \\ \hline
+ Heb & 3.589732464510037 \\ \hline
+ Gal & 3.762412087232254 \\ \hline
+ Jas & 3.9067570184953815 \\ \hline
+ 2Pet & 5.068264652963615 \\ \hline
+ 2Tim & 5.347651691181487 \\ \hline
+ 1Thess & 5.562672736939286 \\ \hline
+ Acts & 6.505012963443187 \\ \hline
+ Phil & 6.559658832524622 \\ \hline
+ 2Thess & 6.597659163278408 \\ \hline
+ 1Pet & 7.751629182606049 \\ \hline
+ Eph & 7.797311634922189 \\ \hline
+ Matt & 8.344439915059338 \\ \hline
+ 1Tim & 8.444144360376796 \\ \hline
+ Luke & 8.516943816226547 \\ \hline
+ 2John & 8.643309820482035 \\ \hline
+ Jude & 8.81927986491159 \\ \hline
+ Mark & 9.224729133939874 \\ \hline
+ Titus & 9.601923689084177 \\ \hline
+ Phlm & 9.771174850275099 \\ \hline
+ Col & 9.98144735009302 \\ \hline
+ 1John & 10.30088385814545 \\ \hline
+ John & 10.309927511788267 \\ \hline
+ 3John & 13.368059306084888 \\ \hline
+ Rev & 15.409420118108146 \\ \hline 
+\end{longtable}
+
+
+1Cor
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Gal & 2.947045962736011 \\ \hline
+ Rom & 3.3634385915073337 \\ \hline
+ Jas & 4.260601660084346 \\ \hline
+ 2Cor & 4.470531192075281 \\ \hline
+ 2Tim & 5.599865151542004 \\ \hline
+ 2Pet & 6.236601819943239 \\ \hline
+ Phil & 6.8095621465672505 \\ \hline
+ Heb & 7.061425841167152 \\ \hline
+ Jude & 7.0657256993816775 \\ \hline
+ Acts & 7.687001356338429 \\ \hline
+ Luke & 7.820456175164511 \\ \hline
+ 1Thess & 7.895460709124209 \\ \hline
+ Titus & 8.199243241982249 \\ \hline
+ Matt & 8.27718596926664 \\ \hline
+ 1Tim & 8.283817030355692 \\ \hline
+ Eph & 8.619380545971659 \\ \hline
+ 2Thess & 8.761443809163133 \\ \hline
+ 2John & 9.057562497589577 \\ \hline
+ Phlm & 9.486700703180663 \\ \hline
+ Col & 10.43528571770649 \\ \hline
+ 1Pet & 10.801428149132054 \\ \hline
+ Mark & 10.81424890587908 \\ \hline
+ John & 10.907198570530603 \\ \hline
+ 1John & 10.964978350169366 \\ \hline
+ 3John & 16.707154203096355 \\ \hline
+ Rev & 17.659429830249145 \\ \hline 
+\end{longtable}
+
+
+2Cor
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Rom & 3.304624866250097 \\ \hline
+ 1Thess & 3.5831709969695367 \\ \hline
+ Gal & 3.9831036963231763 \\ \hline
+ 1Cor & 4.470531192075281 \\ \hline
+ Phil & 4.507446899462842 \\ \hline
+ 2Tim & 4.72576351900792 \\ \hline
+ Heb & 5.707156188036583 \\ \hline
+ 2Thess & 5.750838561889809 \\ \hline
+ Jas & 5.860917943917871 \\ \hline
+ 2Pet & 6.368628606851557 \\ \hline
+ 1Pet & 7.306147537348039 \\ \hline
+ 2John & 7.9806914148624415 \\ \hline
+ Phlm & 8.268911865836756 \\ \hline
+ Acts & 8.397518606367868 \\ \hline
+ Eph & 8.437749735109865 \\ \hline
+ Jude & 9.317805067829227 \\ \hline
+ 1Tim & 9.53777224016234 \\ \hline
+ Col & 10.172539684962665 \\ \hline
+ Matt & 10.569479552521868 \\ \hline
+ Titus & 10.640134011635926 \\ \hline
+ Luke & 10.793233528392742 \\ \hline
+ John & 11.061894508320831 \\ \hline
+ Mark & 11.416286750616639 \\ \hline
+ 1John & 11.669816665478802 \\ \hline
+ 3John & 13.617121499640714 \\ \hline
+ Rev & 18.032964178582887 \\ \hline 
+\end{longtable}
+
+
+Gal
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+1Cor & 2.947045962736011 \\ \hline
+ Rom & 3.762412087232254 \\ \hline
+ 2Cor & 3.9831036963231763 \\ \hline
+ Jas & 6.597426691669961 \\ \hline
+ 2Tim & 6.785928983326744 \\ \hline
+ Phil & 6.927831934108866 \\ \hline
+ 2Pet & 7.163029618166046 \\ \hline
+ Heb & 7.386919153066945 \\ \hline
+ 1Tim & 7.770543696461224 \\ \hline
+ 2John & 7.943318349523352 \\ \hline
+ Phlm & 8.329605437730203 \\ \hline
+ Eph & 8.612294442945819 \\ \hline
+ 1Thess & 8.899858487169308 \\ \hline
+ Matt & 9.693678966679508 \\ \hline
+ Acts & 9.700489665529872 \\ \hline
+ Titus & 9.804481544422595 \\ \hline
+ Jude & 10.03478412469002 \\ \hline
+ 2Thess & 10.379014777612305 \\ \hline
+ John & 10.404714409545871 \\ \hline
+ 1Pet & 10.552026086581963 \\ \hline
+ Luke & 11.148630974497753 \\ \hline
+ Col & 11.244820523085805 \\ \hline
+ Mark & 12.224830001939202 \\ \hline
+ 1John & 13.041947903321775 \\ \hline
+ 3John & 13.333865818090239 \\ \hline
+ Rev & 19.824662106823926 \\ \hline 
+\end{longtable}
+
+
+Eph
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Col & 2.3609806708099352 \\ \hline
+ Phil & 4.074692422709013 \\ \hline
+ 2Tim & 5.1576756379507955 \\ \hline
+ 2Thess & 5.32091262046331 \\ \hline
+ Jude & 6.429519356344312 \\ \hline
+ 2Pet & 7.094787445303593 \\ \hline
+ Rom & 7.797311634922189 \\ \hline
+ Acts & 7.847942989942897 \\ \hline
+ 1Thess & 7.932384582943782 \\ \hline
+ 2John & 8.25250664675242 \\ \hline
+ 2Cor & 8.437749735109865 \\ \hline
+ Gal & 8.612294442945819 \\ \hline
+ 1Cor & 8.619380545971659 \\ \hline
+ Titus & 8.652917841104854 \\ \hline
+ 1Pet & 8.685381698472085 \\ \hline
+ Heb & 9.032483682085626 \\ \hline
+ 1Tim & 9.098224706866691 \\ \hline
+ Jas & 9.517516729155506 \\ \hline
+ Phlm & 9.904483746355698 \\ \hline
+ Matt & 10.432615562269314 \\ \hline
+ 1John & 11.093272998064585 \\ \hline
+ Luke & 11.197209346847472 \\ \hline
+ 3John & 11.387942654416358 \\ \hline
+ Mark & 11.478587930258778 \\ \hline
+ John & 13.492052186245019 \\ \hline
+ Rev & 14.632467106599286 \\ \hline 
+\end{longtable}
+
+
+Phil
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+2Thess & 3.743576074890499 \\ \hline
+ Eph & 4.074692422709013 \\ \hline
+ 2Tim & 4.080985743135747 \\ \hline
+ 2Cor & 4.507446899462842 \\ \hline
+ 1Thess & 5.187291306780544 \\ \hline
+ Jude & 5.3529973370136865 \\ \hline
+ Col & 5.739007455473995 \\ \hline
+ Phlm & 6.212910605262698 \\ \hline
+ Rom & 6.559658832524622 \\ \hline
+ 1Cor & 6.8095621465672505 \\ \hline
+ Gal & 6.927831934108866 \\ \hline
+ 2Pet & 6.976244901588798 \\ \hline
+ 1Pet & 7.362437600257963 \\ \hline
+ Titus & 8.625706983866053 \\ \hline
+ Heb & 8.996867241213454 \\ \hline
+ Acts & 9.061621886988657 \\ \hline
+ Jas & 9.559517594566442 \\ \hline
+ 3John & 9.879233855901957 \\ \hline
+ 1Tim & 10.056139192073712 \\ \hline
+ 2John & 10.34884582024838 \\ \hline
+ 1John & 10.959145595487586 \\ \hline
+ Luke & 12.728676716661727 \\ \hline
+ Matt & 12.982965547698754 \\ \hline
+ John & 13.49163960435913 \\ \hline
+ Mark & 14.217385143550265 \\ \hline
+ Rev & 18.02813071464653 \\ \hline 
+\end{longtable}
+
+
+Col
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Eph & 2.3609806708099352 \\ \hline
+ 2Thess & 5.468475270981354 \\ \hline
+ Phil & 5.739007455473995 \\ \hline
+ 2Tim & 7.198377447288609 \\ \hline
+ Jude & 8.550672535950751 \\ \hline
+ Titus & 8.753522659821979 \\ \hline
+ 2Pet & 8.861531020872318 \\ \hline
+ 2John & 9.03950380212461 \\ \hline
+ 1Pet & 9.779128098094167 \\ \hline
+ 1Thess & 9.83325767733729 \\ \hline
+ Rom & 9.98144735009302 \\ \hline
+ 2Cor & 10.172539684962665 \\ \hline
+ Acts & 10.418140064290256 \\ \hline
+ 1Cor & 10.43528571770649 \\ \hline
+ Phlm & 10.883532588172633 \\ \hline
+ Heb & 10.943680002361875 \\ \hline
+ 1Tim & 10.980561680292086 \\ \hline
+ Gal & 11.244820523085805 \\ \hline
+ Jas & 11.474849252405225 \\ \hline
+ 1John & 11.770717308863905 \\ \hline
+ Matt & 12.526479987093426 \\ \hline
+ Luke & 13.670925587289256 \\ \hline
+ 3John & 13.73372401856001 \\ \hline
+ Mark & 14.342928234537267 \\ \hline
+ Rev & 15.213140460105995 \\ \hline
+ John & 15.799653009352925 \\ \hline 
+\end{longtable}
+
+
+1Thess
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+2Thess & 2.9432926622927016 \\ \hline
+ 2Cor & 3.5831709969695367 \\ \hline
+ Phil & 5.187291306780544 \\ \hline
+ Rom & 5.562672736939286 \\ \hline
+ 2Tim & 6.1053473627754 \\ \hline
+ 2John & 6.732221577764145 \\ \hline
+ Jas & 7.754277794253226 \\ \hline
+ 3John & 7.826868985385091 \\ \hline
+ 1Cor & 7.895460709124209 \\ \hline
+ Eph & 7.932384582943782 \\ \hline
+ 2Pet & 8.493948313235821 \\ \hline
+ Jude & 8.636760589021716 \\ \hline
+ Gal & 8.899858487169308 \\ \hline
+ Heb & 9.06111904251555 \\ \hline
+ Phlm & 9.212284950091842 \\ \hline
+ Acts & 9.789277095129279 \\ \hline
+ 1Pet & 9.801746744189156 \\ \hline
+ Col & 9.83325767733729 \\ \hline
+ Titus & 11.013048909349884 \\ \hline
+ 1John & 11.757880225841074 \\ \hline
+ 1Tim & 12.788256579171469 \\ \hline
+ Matt & 13.166040445500222 \\ \hline
+ Luke & 13.204306172337871 \\ \hline
+ John & 13.71369308283147 \\ \hline
+ Mark & 14.585334331558329 \\ \hline
+ Rev & 17.2606162680904 \\ \hline 
+\end{longtable}
+
+
+2Thess
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+1Thess & 2.9432926622927016 \\ \hline
+ Phil & 3.743576074890499 \\ \hline
+ 2Tim & 4.3939890439105405 \\ \hline
+ Eph & 5.32091262046331 \\ \hline
+ Col & 5.468475270981354 \\ \hline
+ 2Cor & 5.750838561889809 \\ \hline
+ Jude & 6.482519630870105 \\ \hline
+ Rom & 6.597659163278408 \\ \hline
+ 2John & 7.080979993815129 \\ \hline
+ Titus & 7.208837011402443 \\ \hline
+ Jas & 7.430148101067357 \\ \hline
+ 1Pet & 7.609416839352782 \\ \hline
+ Phlm & 7.690568180297394 \\ \hline
+ 3John & 8.322927419278681 \\ \hline
+ Heb & 8.33268287101203 \\ \hline
+ 2Pet & 8.477922793882962 \\ \hline
+ Acts & 8.711506654093402 \\ \hline
+ 1Cor & 8.761443809163133 \\ \hline
+ 1John & 9.31977990060063 \\ \hline
+ 1Tim & 10.134941214578092 \\ \hline
+ Gal & 10.379014777612305 \\ \hline
+ Matt & 12.009534851244338 \\ \hline
+ Luke & 12.04492799547027 \\ \hline
+ John & 12.46014091223983 \\ \hline
+ Mark & 13.55507990735967 \\ \hline
+ Rev & 17.769507232903926 \\ \hline 
+\end{longtable}
+
+
+1Tim
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Titus & 4.317441163201198 \\ \hline
+ 2Tim & 6.445178946323636 \\ \hline
+ Jas & 7.680119535701941 \\ \hline
+ Gal & 7.770543696461224 \\ \hline
+ Heb & 7.78076490539881 \\ \hline
+ 1Cor & 8.283817030355692 \\ \hline
+ Rom & 8.444144360376796 \\ \hline
+ Eph & 9.098224706866691 \\ \hline
+ 2Cor & 9.53777224016234 \\ \hline
+ Jude & 9.620437615505121 \\ \hline
+ 2John & 9.68241725096013 \\ \hline
+ Phil & 10.056139192073712 \\ \hline
+ 2Pet & 10.075827813779586 \\ \hline
+ 2Thess & 10.134941214578092 \\ \hline
+ 1Pet & 10.350272295366853 \\ \hline
+ Acts & 10.567553742690878 \\ \hline
+ Col & 10.980561680292086 \\ \hline
+ Phlm & 11.440024142005205 \\ \hline
+ 1Thess & 12.788256579171469 \\ \hline
+ Luke & 13.302681404703307 \\ \hline
+ 3John & 14.593689402632535 \\ \hline
+ Mark & 14.731344772719343 \\ \hline
+ 1John & 14.774390912321072 \\ \hline
+ John & 14.946319353391026 \\ \hline
+ Matt & 15.001133513719347 \\ \hline
+ Rev & 19.502434620726405 \\ \hline 
+\end{longtable}
+
+
+2Tim
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Phil & 4.080985743135747 \\ \hline
+ Jude & 4.108539867238225 \\ \hline
+ 2Pet & 4.179558098638855 \\ \hline
+ 2Thess & 4.3939890439105405 \\ \hline
+ 2Cor & 4.72576351900792 \\ \hline
+ Eph & 5.1576756379507955 \\ \hline
+ Rom & 5.347651691181487 \\ \hline
+ Acts & 5.528398577945508 \\ \hline
+ 1Cor & 5.599865151542004 \\ \hline
+ Phlm & 5.63084202844056 \\ \hline
+ 1Thess & 6.1053473627754 \\ \hline
+ Heb & 6.330060367286448 \\ \hline
+ 1Tim & 6.445178946323636 \\ \hline
+ Gal & 6.785928983326744 \\ \hline
+ Col & 7.198377447288609 \\ \hline
+ 2John & 7.611731874976947 \\ \hline
+ Jas & 7.852435772385855 \\ \hline
+ 1Pet & 7.891086685830416 \\ \hline
+ Titus & 8.1936759996299 \\ \hline
+ 3John & 8.322314089730803 \\ \hline
+ Luke & 9.519565236668662 \\ \hline
+ Matt & 9.785473187567574 \\ \hline
+ 1John & 10.901522953046426 \\ \hline
+ Mark & 11.516673884347284 \\ \hline
+ John & 12.148982543463408 \\ \hline
+ Rev & 17.05793508686522 \\ \hline 
+\end{longtable}
+
+
+Titus
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+1Tim & 4.317441163201198 \\ \hline
+ 2Thess & 7.208837011402443 \\ \hline
+ Jude & 7.31632222961266 \\ \hline
+ 2Tim & 8.1936759996299 \\ \hline
+ 1Cor & 8.199243241982249 \\ \hline
+ Phil & 8.625706983866053 \\ \hline
+ Eph & 8.652917841104854 \\ \hline
+ Col & 8.753522659821979 \\ \hline
+ 2John & 9.586225223159214 \\ \hline
+ Rom & 9.601923689084177 \\ \hline
+ Gal & 9.804481544422595 \\ \hline
+ 2Cor & 10.640134011635926 \\ \hline
+ 1Thess & 11.013048909349884 \\ \hline
+ Phlm & 11.217562020686868 \\ \hline
+ Heb & 11.42775968242117 \\ \hline
+ 2Pet & 11.457095749268587 \\ \hline
+ Jas & 11.647886495817415 \\ \hline
+ 3John & 12.400194926351592 \\ \hline
+ 1John & 12.63064240324077 \\ \hline
+ Acts & 12.743731064008266 \\ \hline
+ 1Pet & 12.796446553015791 \\ \hline
+ Luke & 12.83754770994 \\ \hline
+ Mark & 14.109114845386244 \\ \hline
+ Rev & 15.137645500505732 \\ \hline
+ Matt & 15.37829088943846 \\ \hline
+ John & 16.259662280026276 \\ \hline 
+\end{longtable}
+
+
+Phlm
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+3John & 4.857375518366468 \\ \hline
+ 2Tim & 5.63084202844056 \\ \hline
+ Phil & 6.212910605262698 \\ \hline
+ 2John & 7.283312552750726 \\ \hline
+ Jude & 7.465168215982802 \\ \hline
+ 2Pet & 7.643641327173146 \\ \hline
+ 2Thess & 7.690568180297394 \\ \hline
+ 2Cor & 8.268911865836756 \\ \hline
+ Gal & 8.329605437730203 \\ \hline
+ 1Thess & 9.212284950091842 \\ \hline
+ 1Cor & 9.486700703180663 \\ \hline
+ Rom & 9.771174850275099 \\ \hline
+ Eph & 9.904483746355698 \\ \hline
+ Col & 10.883532588172633 \\ \hline
+ 1Pet & 11.171906885552115 \\ \hline
+ Titus & 11.217562020686868 \\ \hline
+ 1Tim & 11.440024142005205 \\ \hline
+ John & 12.762588361337974 \\ \hline
+ Acts & 13.471742486015694 \\ \hline
+ Jas & 13.638259975930449 \\ \hline
+ Heb & 14.025403014218568 \\ \hline
+ 1John & 14.272362925822446 \\ \hline
+ Matt & 14.564184398991955 \\ \hline
+ Luke & 14.904853202539176 \\ \hline
+ Mark & 17.67813790680798 \\ \hline
+ Rev & 21.254361996129752 \\ \hline 
+\end{longtable}
+
+
+Heb
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Rom & 3.589732464510037 \\ \hline
+ 2Pet & 5.175658371080429 \\ \hline
+ Acts & 5.416026847796947 \\ \hline
+ 2Cor & 5.707156188036583 \\ \hline
+ 2Tim & 6.330060367286448 \\ \hline
+ Jas & 6.406746235804077 \\ \hline
+ Mark & 6.841319253495689 \\ \hline
+ 1Cor & 7.061425841167152 \\ \hline
+ Gal & 7.386919153066945 \\ \hline
+ 1Tim & 7.78076490539881 \\ \hline
+ Matt & 7.88402478953559 \\ \hline
+ Luke & 8.067114764522275 \\ \hline
+ 1Pet & 8.193683070161079 \\ \hline
+ 2Thess & 8.33268287101203 \\ \hline
+ Phil & 8.996867241213454 \\ \hline
+ Eph & 9.032483682085626 \\ \hline
+ 1Thess & 9.06111904251555 \\ \hline
+ Jude & 9.495033907696877 \\ \hline
+ Col & 10.943680002361875 \\ \hline
+ John & 11.210480742875674 \\ \hline
+ Titus & 11.42775968242117 \\ \hline
+ 2John & 11.907777582390002 \\ \hline
+ Rev & 12.46321011225798 \\ \hline
+ 1John & 13.263495422475312 \\ \hline
+ 3John & 13.696341786443817 \\ \hline
+ Phlm & 14.025403014218568 \\ \hline 
+\end{longtable}
+
+
+Jas
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Rom & 3.9067570184953815 \\ \hline
+ 1Cor & 4.260601660084346 \\ \hline
+ Matt & 4.4346324976013465 \\ \hline
+ 2John & 4.939340998530797 \\ \hline
+ Luke & 5.291714777343677 \\ \hline
+ 2Cor & 5.860917943917871 \\ \hline
+ Mark & 6.182932982948504 \\ \hline
+ Heb & 6.406746235804077 \\ \hline
+ Acts & 6.472835406060057 \\ \hline
+ Gal & 6.597426691669961 \\ \hline
+ 2Pet & 6.850911851453528 \\ \hline
+ Jude & 7.206992489404924 \\ \hline
+ 2Thess & 7.430148101067357 \\ \hline
+ 1Tim & 7.680119535701941 \\ \hline
+ 1Thess & 7.754277794253226 \\ \hline
+ 2Tim & 7.852435772385855 \\ \hline
+ John & 8.721868817722687 \\ \hline
+ Eph & 9.517516729155506 \\ \hline
+ Phil & 9.559517594566442 \\ \hline
+ 1John & 9.876051832732749 \\ \hline
+ 1Pet & 10.062653568373358 \\ \hline
+ 3John & 10.227760232407563 \\ \hline
+ Col & 11.474849252405225 \\ \hline
+ Titus & 11.647886495817415 \\ \hline
+ Rev & 11.797770304687862 \\ \hline
+ Phlm & 13.638259975930449 \\ \hline 
+\end{longtable}
+
+
+1Pet
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+2Cor & 7.306147537348039 \\ \hline
+ Phil & 7.362437600257963 \\ \hline
+ 2Thess & 7.609416839352782 \\ \hline
+ Rom & 7.751629182606049 \\ \hline
+ 2Pet & 7.872029236949034 \\ \hline
+ 2Tim & 7.891086685830416 \\ \hline
+ Heb & 8.193683070161079 \\ \hline
+ Eph & 8.685381698472085 \\ \hline
+ Jude & 9.145894534385286 \\ \hline
+ Acts & 9.629174665717688 \\ \hline
+ Col & 9.779128098094167 \\ \hline
+ 1Thess & 9.801746744189156 \\ \hline
+ Jas & 10.062653568373358 \\ \hline
+ 1Tim & 10.350272295366853 \\ \hline
+ Gal & 10.552026086581963 \\ \hline
+ Luke & 10.589280497236954 \\ \hline
+ 1Cor & 10.801428149132054 \\ \hline
+ Matt & 11.01860472708464 \\ \hline
+ Phlm & 11.171906885552115 \\ \hline
+ Mark & 11.240397808725703 \\ \hline
+ 3John & 12.342973677911544 \\ \hline
+ Titus & 12.796446553015791 \\ \hline
+ 2John & 13.229612606404983 \\ \hline
+ John & 13.477308495380738 \\ \hline
+ Rev & 15.995224823702431 \\ \hline
+ 1John & 16.255018289712257 \\ \hline 
+\end{longtable}
+
+
+2Pet
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+2Tim & 4.179558098638855 \\ \hline
+ Rom & 5.068264652963615 \\ \hline
+ Acts & 5.082873396765076 \\ \hline
+ Heb & 5.175658371080429 \\ \hline
+ Jude & 5.671691541437243 \\ \hline
+ 1Cor & 6.236601819943239 \\ \hline
+ 2Cor & 6.368628606851557 \\ \hline
+ Jas & 6.850911851453528 \\ \hline
+ Phil & 6.976244901588798 \\ \hline
+ Eph & 7.094787445303593 \\ \hline
+ Gal & 7.163029618166046 \\ \hline
+ Phlm & 7.643641327173146 \\ \hline
+ 3John & 7.7772514624107 \\ \hline
+ 1Pet & 7.872029236949034 \\ \hline
+ 2John & 8.10578725965267 \\ \hline
+ 2Thess & 8.477922793882962 \\ \hline
+ 1Thess & 8.493948313235821 \\ \hline
+ Luke & 8.62071208429699 \\ \hline
+ Col & 8.861531020872318 \\ \hline
+ Matt & 9.082797677205104 \\ \hline
+ 1Tim & 10.075827813779586 \\ \hline
+ Mark & 10.584373854975077 \\ \hline
+ 1John & 11.338415395563855 \\ \hline
+ Titus & 11.457095749268587 \\ \hline
+ John & 12.024894659343758 \\ \hline
+ Rev & 17.79850209361776 \\ \hline 
+\end{longtable}
+
+
+1John
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+2John & 7.667529473755046 \\ \hline
+ John & 8.411323797616504 \\ \hline
+ 2Thess & 9.31977990060063 \\ \hline
+ Jas & 9.876051832732749 \\ \hline
+ Rom & 10.30088385814545 \\ \hline
+ Acts & 10.738945261034436 \\ \hline
+ 2Tim & 10.901522953046426 \\ \hline
+ Phil & 10.959145595487586 \\ \hline
+ 1Cor & 10.964978350169366 \\ \hline
+ Eph & 11.093272998064585 \\ \hline
+ Luke & 11.17264101763682 \\ \hline
+ 2Pet & 11.338415395563855 \\ \hline
+ Jude & 11.627188554800423 \\ \hline
+ 2Cor & 11.669816665478802 \\ \hline
+ 1Thess & 11.757880225841074 \\ \hline
+ Col & 11.770717308863905 \\ \hline
+ 3John & 12.341030897943835 \\ \hline
+ Titus & 12.63064240324077 \\ \hline
+ Gal & 13.041947903321775 \\ \hline
+ Heb & 13.263495422475312 \\ \hline
+ Matt & 13.319468398025837 \\ \hline
+ Mark & 13.325773953034545 \\ \hline
+ Rev & 14.196820733475423 \\ \hline
+ Phlm & 14.272362925822446 \\ \hline
+ 1Tim & 14.774390912321072 \\ \hline
+ 1Pet & 16.255018289712257 \\ \hline 
+\end{longtable}
+
+
+2John
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Jas & 4.939340998530797 \\ \hline
+ 3John & 4.973085154000499 \\ \hline
+ 1Thess & 6.732221577764145 \\ \hline
+ Jude & 6.853020640291435 \\ \hline
+ 2Thess & 7.080979993815129 \\ \hline
+ Phlm & 7.283312552750726 \\ \hline
+ 2Tim & 7.611731874976947 \\ \hline
+ 1John & 7.667529473755046 \\ \hline
+ Gal & 7.943318349523352 \\ \hline
+ 2Cor & 7.9806914148624415 \\ \hline
+ 2Pet & 8.10578725965267 \\ \hline
+ Eph & 8.25250664675242 \\ \hline
+ John & 8.609675216567437 \\ \hline
+ Rom & 8.643309820482035 \\ \hline
+ Col & 9.03950380212461 \\ \hline
+ 1Cor & 9.057562497589577 \\ \hline
+ Rev & 9.517225302237614 \\ \hline
+ Titus & 9.586225223159214 \\ \hline
+ 1Tim & 9.68241725096013 \\ \hline
+ Phil & 10.34884582024838 \\ \hline
+ Luke & 10.996672989658158 \\ \hline
+ Matt & 11.411612200679972 \\ \hline
+ Acts & 11.486116236413995 \\ \hline
+ Mark & 11.563196454726096 \\ \hline
+ Heb & 11.907777582390002 \\ \hline
+ 1Pet & 13.229612606404983 \\ \hline 
+\end{longtable}
+
+
+3John
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Phlm & 4.857375518366468 \\ \hline
+ 2John & 4.973085154000499 \\ \hline
+ Jude & 5.64052290300648 \\ \hline
+ 2Pet & 7.7772514624107 \\ \hline
+ 1Thess & 7.826868985385091 \\ \hline
+ 2Tim & 8.322314089730803 \\ \hline
+ 2Thess & 8.322927419278681 \\ \hline
+ Phil & 9.879233855901957 \\ \hline
+ Jas & 10.227760232407563 \\ \hline
+ John & 10.265949844393411 \\ \hline
+ Eph & 11.387942654416358 \\ \hline
+ 1John & 12.341030897943835 \\ \hline
+ 1Pet & 12.342973677911544 \\ \hline
+ Titus & 12.400194926351592 \\ \hline
+ Gal & 13.333865818090239 \\ \hline
+ Rom & 13.368059306084888 \\ \hline
+ Mark & 13.581649263068126 \\ \hline
+ 2Cor & 13.617121499640714 \\ \hline
+ Heb & 13.696341786443817 \\ \hline
+ Col & 13.73372401856001 \\ \hline
+ Rev & 14.124352261904734 \\ \hline
+ 1Tim & 14.593689402632535 \\ \hline
+ Acts & 16.380265256484805 \\ \hline
+ 1Cor & 16.707154203096355 \\ \hline
+ Luke & 18.053114680370125 \\ \hline
+ Matt & 19.944348788153366 \\ \hline 
+\end{longtable}
+
+
+Jude
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+2Tim & 4.108539867238225 \\ \hline
+ Acts & 4.916097429993837 \\ \hline
+ Phil & 5.3529973370136865 \\ \hline
+ 3John & 5.64052290300648 \\ \hline
+ 2Pet & 5.671691541437243 \\ \hline
+ Eph & 6.429519356344312 \\ \hline
+ Luke & 6.473497387400187 \\ \hline
+ 2Thess & 6.482519630870105 \\ \hline
+ 2John & 6.853020640291435 \\ \hline
+ Matt & 6.961803874406476 \\ \hline
+ 1Cor & 7.0657256993816775 \\ \hline
+ Jas & 7.206992489404924 \\ \hline
+ Titus & 7.31632222961266 \\ \hline
+ Phlm & 7.465168215982802 \\ \hline
+ Col & 8.550672535950751 \\ \hline
+ 1Thess & 8.636760589021716 \\ \hline
+ Rom & 8.81927986491159 \\ \hline
+ 1Pet & 9.145894534385286 \\ \hline
+ 2Cor & 9.317805067829227 \\ \hline
+ Heb & 9.495033907696877 \\ \hline
+ 1Tim & 9.620437615505121 \\ \hline
+ Gal & 10.03478412469002 \\ \hline
+ Mark & 10.453955571142572 \\ \hline
+ John & 11.469453846497478 \\ \hline
+ 1John & 11.627188554800423 \\ \hline
+ Rev & 16.437010253461374 \\ \hline 
+\end{longtable}
+
+
+Rev
+\begin{longtable}{|c|c|}
+\hline
+ Book & $a$-value \\ \hline
+Mark & 9.052949729869212 \\ \hline
+ 2John & 9.517225302237614 \\ \hline
+ Matt & 10.503923386527115 \\ \hline
+ Acts & 11.117753366041498 \\ \hline
+ Luke & 11.15379430845007 \\ \hline
+ Jas & 11.797770304687862 \\ \hline
+ Heb & 12.46321011225798 \\ \hline
+ John & 12.775960411976842 \\ \hline
+ 3John & 14.124352261904734 \\ \hline
+ 1John & 14.196820733475423 \\ \hline
+ Eph & 14.632467106599286 \\ \hline
+ Titus & 15.137645500505732 \\ \hline
+ Col & 15.213140460105995 \\ \hline
+ Rom & 15.409420118108146 \\ \hline
+ 1Pet & 15.995224823702431 \\ \hline
+ Jude & 16.437010253461374 \\ \hline
+ 2Tim & 17.05793508686522 \\ \hline
+ 1Thess & 17.2606162680904 \\ \hline
+ 1Cor & 17.659429830249145 \\ \hline
+ 2Thess & 17.769507232903926 \\ \hline
+ 2Pet & 17.79850209361776 \\ \hline
+ Phil & 18.02813071464653 \\ \hline
+ 2Cor & 18.032964178582887 \\ \hline
+ 1Tim & 19.502434620726405 \\ \hline
+ Gal & 19.824662106823926 \\ \hline
+ Phlm & 21.254361996129752 \\ \hline 
+\end{longtable}
+
+
+
+\newpage
+\section{Code}
+The reader.py file reads the csv file and creates an array for each book (contained in a dictionary) that contains all the words (by Strong's number) in sequential order.
+\lstinputlisting[language=Python]{reader.py}
+
+\newpage
+
+The nt.py file uses the result of the reader.py file.  There are a couple useful functions (descriptions in the code): freqCount, freqCountTwenty (used to create Appendix A), freqDict, compare1, mostSimilarTo, printToTextFile (used to create Appendix B), printToDict, and mostSimilarIn.  The final output is the result of the table in the section 4. 
+\lstinputlisting[language=Python]{nt.py}
+
+
+\end{document}
