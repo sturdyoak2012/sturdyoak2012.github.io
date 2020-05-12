@@ -137,7 +137,6 @@ def printToDict():
             compareDict[(book2, book1)] = a
     return compareDict
 
-compareDict = printToDict()
 
 def mostSimilarIn(subList, k):
     """ Given a list of n books, subList, this returns the set of
@@ -149,6 +148,8 @@ def mostSimilarIn(subList, k):
     Sublist has nCk subsets of size k, and the returned subset mini-
     mizes the sum of each degree of dissimilarity between all pairs
     of books within the subset."""
+    
+    compareDict = printToDict()
     mina = 1e30
     (minSubset, avga) = (list(), 0)
     for subset in itertools.combinations(subList, k):
@@ -162,5 +163,9 @@ def mostSimilarIn(subList, k):
             (minSubset, avga) = (subset, a*2/(k*(k-1)))
     return (minSubset, avga)
 
+
+"""
+# Comment out if you want to find the most similar books
 for i in range(2,14):
     print(mostSimilarIn(pauline, i))
+"""
