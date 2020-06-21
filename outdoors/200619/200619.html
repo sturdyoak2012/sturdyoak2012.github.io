@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>200619</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../physics.html">physics</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> Big Sur 2020 - Boronda Ridge to Timber Top </h1>
+<br><br>
+This was a day-trip and a practice hike with my two friends Daniel and Hagen.
+We were preparing for our upcoming trip in the Sierra.
+<br><br>
+<a href="22.jpg" data-lightbox="group"><img src="22.jpg"></a>
+<br><br>
+We left San Jose in the early morning with backpacks filled with water bottles.
+Daniel and Hagen alternated the driving. We stopped along the way on Highway 1
+to take some pictures:
+<a href="6.jpg" data-lightbox="group"><img src="6.jpg"></a>
+<p>Hurricane Point</p> 
+<br><br>
+<a href="7.jpg" data-lightbox="group"><img src="7.jpg"></a>
+<br><br>
+The Boronda Ridge trailhead was a bit diffiult to spot, and we parked a little
+ways away.  (If you want to go, make sure you keep your eyes on the map to 
+stop at the right time! There should be ample parking along the side of the 
+road on weekdays.  Busy days? I have no clue.)
+<br><br>
+<a href="25.jpg" data-lightbox="group"><img src="25.jpg"></a>
+<p>This is what the trailhead looks like</p>  
+<br><br>
+The trail was very overgrown in certain sections along the first mile up.  Luckily,
+the brush that covers the trail is very "soft" and the poison oak is not too bad,
+but it's annoying.  As of the time of this writing, the growth is very significant,
+but we never lost the trail a single time.  
+<br><br>
+<a href="2.jpg" data-lightbox="group"><img src="2.jpg"></a>
+<p>(it's worse than this)</p> 
+<br><br>
+It was foggy for the first thousand feet or so due to the marine cloud layer.
+<br><br>
+<a href="8.jpg" data-lightbox="group"><img src="8.jpg"></a>
+<br><br>
+<a href="9.jpg" data-lightbox="group"><img src="9.jpg"></a>
+<br><br>
+<a href="10.jpg" data-lightbox="group"><img src="10.jpg"></a>
+<br><br>
+After we broke the cloud layer, the sun got real intense, and it was fairly hot.
+We all put on sunscreen, and I still got sunburned!
+<br><br>
+<a href="11.jpg" data-lightbox="group"><img src="11.jpg"></a>
+<p>Daniel</p>    
+<br><br>
+<a href="12.jpg" data-lightbox="group"><img src="12.jpg"></a>
+<p>Hagen</p> 
+<br><br>
+<a href="13.jpg" data-lightbox="group"><img src="13.jpg"></a>
+<br><br>
+<a href="14.jpg" data-lightbox="group"><img src="14.jpg"></a>
+<br><br>
+<a href="3.jpg" data-lightbox="group"><img src="3.jpg"></a>
+<br><br>
+The trail was somewhat tougher than expected for me, since I was carrying an
+inordinate amount of weight.   
+<a href="15.jpg" data-lightbox="group"><img src="15.jpg"></a>
+<p>In the upper sections, this was the most shade we got.</p> 
+<br><br>
+<a href="16.jpg" data-lightbox="group"><img src="16.jpg"></a>
+<br><br>
+<a href="17.jpg" data-lightbox="group"><img src="17.jpg"></a>
+<p>This reminded us of the Lorax.</p>  
+<br><br>
+<a href="18.jpg" data-lightbox="group"><img src="18.jpg"></a>
+<p>These strange plants grew out of the spiky bushes.</p> 
+<br><br>
+<a href="19.jpg" data-lightbox="group"><img src="19.jpg"></a>
+<p>It was very tiring all around.</p> 
+<br><br>
+At last we made it to the top - a nice campsite called Timber Top.  There is a 
+bench, a bbq grill, and a trail sign.  (If looking for the Boronda Ridge trail
+from Timber Top, try to find the wooden gate.  That's where the trail begins.)
+<br><br>
+<a href="20.jpg" data-lightbox="group"><img src="20.jpg"></a>
+<p>Group selfie</p> 
+<br><br>
+We spent half an hour eating lunch and goofing around, heading down at 1:30pm.  
+The trip down was speedy and very beautiful, though the downhill was painful.
+  <br><br>
+<a href="21.jpg" data-lightbox="group"><img src="21.jpg"></a>
+<br><br>
+<a href="22.jpg" data-lightbox="group"><img src="22.jpg"></a>
+<br><br>
+<a href="29.jpg" data-lightbox="group"><img src="29.jpg"></a>
+<p>Curiously, the cloud layer actually grew higher rather than lower.</p> 
+<br><br>
+<a href="23.jpg" data-lightbox="group"><img src="23.jpg"></a>
+<p>Beautiful ocean colors in the Pacific.</p> 
+<br><br>
+<a href="4.jpg" data-lightbox="group"><img src="4.jpg"></a>
+<br><br>
+<a href="24.jpg" data-lightbox="group"><img src="24.jpg"></a>
+<p>For some reason, we dubbed this the "sex lawn".</p>  
+<br><br>
+After our hike, we were all tired of course.  We drove to Cannery Row and had 
+some nice clam chowder.  Not many people were wearing masks compared to the 
+bay area.  It was my first time really have clam chowder, and I had a sourdough
+bread bowl.  It was too heavy for me to finish - Daniel agreed and said that the 
+chowder was unusually thick.
+<br><br>
+<a href="26.jpg" data-lightbox="group"><img src="26.jpg"></a>
+<br><br>
+<a href="27.jpg" data-lightbox="group"><img src="27.jpg"></a>
+<br><br>
+<a href="28.jpg" data-lightbox="group"><img src="28.jpg"></a>
+<br><br>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
