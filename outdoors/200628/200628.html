@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>200628</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../physics.html">physics</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> Shepherd Pass 2020 [fail]          </h1>
+A three day trip with Daniel and Hagen.  Pretty much a bust, through and 
+through.
+<br><br>
+Daniel had a really bad jock itch that probably started from our Big Sur 
+trip, but he still decided to come along.  
+<br><br>
+Our original plan was a 6-day trip with 2 days of driving and 4 days of 
+hiking.  We would cross Shepherd Pass on our first day of hiking, and then
+visit Milestone Basin and explore some of the Upper Kern Basin.  Here's what
+ended up happening!
+<br><br>
+The first day was mostly spent driving.  We stopped by Olmsted Point (an
+old favorite of mine) and Tenaya Lake - spending the night at Ellery Lake
+campground to help acclimatize for the rest of the trip. It was super windy!
+<br><br>
+<a href="1.jpg" data-lightbox="group"><img src="1.jpg"></a>
+<p>Half Dome from Olmsted Point</p> 
+<br><br>
+<a href="2.jpg" data-lightbox="group"><img src="2.jpg"></a>
+<p>Daniel carefully tending to his genitals</p> 
+<br><br>
+The next morning, we woke up nice and early at 5 a.m. to get on our way to 
+the Shepherd Pass trailhead.  Highway 395 in the early morning light... 
+that's the stuff I dream about.
+<br><br>
+<a href="3.jpg" data-lightbox="group"><img src="3.jpg"></a>
+<p>Ellery Lake from Tioga Rd</p> 
+<br><br>
+<a href="4.jpg" data-lightbox="group"><img src="4.jpg"></a>
+<p>Mono Lake from Tioga Rd</p> 
+<br><br>
+<a href="5.jpg" data-lightbox="group"><img src="5.jpg"></a>
+<br><br>
+<a href="6.jpg" data-lightbox="group"><img src="6.jpg"></a>
+<br><br>
+<a href="7.jpg" data-lightbox="group"><img src="7.jpg"></a>
+<p>Mt. Williamson from the road to the trailhead</p>  
+<br><br>
+<a href="8.jpg" data-lightbox="group"><img src="8.jpg"></a>
+<br><br>
+We started hiking at around 9:30 a.m.  Hiking up to the first saddle connecting the Symmes Creek canyon with the Shepherd Creek canyon was very speedy!  Symmes Creek needs to be crossed 4 times.  Since it was flowing high, we had to find alternate crossings further down the banks to keep our feet dry.  (On our way back, we weren't able to reverse these crossings and had to get our shoes wet.)  
+<br><br>
+There are two saddles (easily seen on the map) and there are some nice flat camping spots, but not very much shade, except underneat the squat little trees.  
+<br><br>
+After the saddle, our progress got progressively slower because Daniel's jock itch was getting really bad and painful.  (The mudslide area between Mahogany Flat and Anvil Camp turned out to not be an issue.  The trail seems to have been rerouted?  The tiny canyon etched into the ground was easily passable.)
+<br><br>
+<a href="9.jpg" data-lightbox="group"><img src="9.jpg"></a>
+<br><br>
+<a href="10.jpg" data-lightbox="group"><img src="10.jpg"></a>
+<p>Below Anvil Camp</p>
+<br><br>  
+We elected to stop at Anvil camp for the night.  This meant that we'd have to wait for a long time the next day to cross Shepherd Pass, because the snowfield would be too dangerous in the early morning.  
+<br><br>
+<a href="11.jpg" data-lightbox="group"><img src="11.jpg"></a>
+<p>Lots of nice campsites, and the breeze meant no mosquitos</p> 
+<br><br>
+<a href="12.jpg" data-lightbox="group"><img src="12.jpg"></a>
+<p>Ramen with fresh spinach</p> 
+<br><br>
+<a href="13.jpg" data-lightbox="group"><img src="13.jpg"></a>
+<br><br>
+The next morning, we woke up late because we knew we couldn't get any progress up Shepherd Pass until the afternoon.  We ended up deciding to just turn back, because Daniel's rash really was getting bad. So we headed home.
+<br><br>
+<a href="14.jpg" data-lightbox="group"><img src="14.jpg"></a>
+<p>Williamson from between the Shepherd and Symmes canyons</p> 
+<br><br>
+<a href="15.jpg" data-lightbox="group"><img src="15.jpg"></a>
+<p>Ritter and Banner? from Bishop</p> 
+<br><br>
+<a href="16.jpg" data-lightbox="group"><img src="16.jpg"></a>
+<p>:(</p> 
+We were pulled over by a park ranger in Tuolumne Meadows for going 43 in a ambiguous 25/35 zone.  His name was D. Johnson.  (We got pulled over by the Rock.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

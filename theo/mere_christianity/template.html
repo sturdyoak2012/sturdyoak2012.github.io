@@ -1,19 +1,19 @@
 <!DOCTYPE html>
+
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Pictures</title>
-		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
-	<link rel="stylesheet" href="style.css">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132703009-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-132703009-1');
+	<title>Preface</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
 </script>
-
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
@@ -65,83 +65,47 @@
 <body>
 <div id="container">
 <div id="menu">
-	<a href='index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
-	<a href='about.html'><div id='pages'><p>about</p></div></a>
-	<a href='pictures.html'><div id='pages'><p>pictures</p></div></a>
-	<a href='outdoors.html'><div id='pages'><p>outdoors</p></div></a>
-	<a href='physics.html'><div id='pages'><p>physics</p></div></a>
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
 </div>
 
+
+
 <div class="topnav">
-	<a href='index.html' class="active">Jacob Nie</a>
+	<a href='../../index.html' class="active">Jacob Nie</a>
 	<div id="myLinks">
-		<a href="about.html">about</a>
-		<a href="pictures.html">pictures</a>
-		<a href="outdoors.html">outdoors</a>
-		<a href="physics.html">physics</a>
+		<a href="../../about.html">about</a>
+		<a href="../../pictures.html">pictures</a>
+		<a href="../../outdoors.html">outdoors</a>
+		<a href="../../physics.html">physics</a>
 	</div>
 	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		<i class="fa fa-bars"></i>
 	</a>
 </div>
-
 <div id="page">
-
-	<div style="height: 10vh;"></div>
-
-	<div id="mwarning">This page is best viewed on the desktop!<br><br></div>
-
-	<div style="text-align:left;"><button id="btn">Random Image</button></div>
-	<br><br>
-
-	<img id="img" style="width: auto">
-	<p id="caption">Loading...</p>
-
-
-	<script src="lib/js/jquery.min.js"></script>
-	<script>
-		var images = 581; //number of images
-		var path = "pictures/img/";
-		
-		function showImage(num) {
-			var num = num || window.location.hash.substring(1);
-			if (num == "" || num == "#" || isNaN(num) || parseInt(num) < 1 || parseInt(num) > images) {
-				//the hash is not a valid number
-
-				window.location.hash = randInt(1, images);
-				var num = num || window.location.hash.substring(1);
-
-			}
-			$("#img").attr("src", path + num + ".jpg");
-			$("#caption").text("Image " + num);
-			
-		}
-
-		showImage();
-		$(window).on("hashchange", function() {
-			showImage();
-		})
-		//Add a click listener and also "click" the button once
-		$("#btn").click(function() {
-			window.location.hash = randInt(1, images);
-
-
-		});
-		
-		function randInt(min, max) {
-		  min = Math.ceil(min);
-		  max = Math.floor(max) + 1;//change from exclusive max to inclusive max
-		  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-		}
-		
-		
-	</script>
-	<p>Want to know when/where a picture was taken?  Send me an email with the image number!</p>
+<div class="trip">
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+	<div style="height: 30vh"></div>
+	</div>
 </div>
-
 </div>
 <script>
 	function myFunction() {
@@ -177,6 +141,3 @@ function topFunction() {
 }
 </script>
 </body>
-
-
-</html>
