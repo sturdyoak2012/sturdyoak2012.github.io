@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Chapter 4.5</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+
+
+
+<div class="topnav">
+	<a href='../../index.html' class="active">Jacob Nie</a>
+	<div id="myLinks">
+		<a href="../../about.html">about</a>
+		<a href="../../pictures.html">pictures</a>
+		<a href="../../outdoors.html">outdoors</a>
+		<a href="../../physics.html">physics</a>
+	</div>
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	</a>
+</div>
+<div id="page">
+<div class="trip">
+
+
+                                   <p>4.5</p>
+                       <p>THE OBSTINATE TOY SOLDIERS</p>
+<br><br>
+
+The Son of God became a man to enable men to become sons of God. We do
+not know—anyway, I do not know—how things would have worked if the human
+race had never rebelled against God and joined the enemy. Perhaps every
+man would have been “in Christ,” would have shared the life of the Son
+of God, from the moment he was born. Perhaps the <i>Bios</i> or natural life
+would have been drawn up into the <i>Zoe</i>, the uncreated life, at once and
+as a matter of course. But that is guesswork. You and I are concerned
+with the way things work now.
+<br><br>
+And the present state of things is this. The two kinds of life are now
+not only different (they would always have been that) but actually
+opposed. The natural life in each of us is something self-centred,
+something that wants to be petted and admired, to take advantage of
+other lives, to exploit the whole universe. And especially it wants to
+be left to itself: to keep well away from anything better or stronger or
+higher than it, anything that might make it feel small. It is afraid of
+the light and air of the spiritual world, just as people who have been
+brought up to be dirty are afraid of a bath. And in a sense it is quite
+right. It knows that if the spiritual life gets hold of it, all its
+self-centredness and self-will are going to be killed and it is ready to
+fight tooth and nail to avoid that.
+<br><br>
+Did you ever think, when you were a child, what fun it would be if your
+toys could come to life? Well suppose you could really have brought them
+to life. Imagine turning a tin soldier into a real little man. It would
+involve turning the tin into flesh. And suppose the tin soldier did not
+like it. He is not interested in flesh; all he sees is that the tin is
+being spoilt. He thinks you are killing him. He will do everything he
+can to prevent you. He will not be made into a man if he can help it.
+<br><br>
+What you would have done about that tin soldier I do not know. But what
+God did about us was this. The Second Person in God, the Son, became
+human Himself: was born into the world as an actual man—a real man of a
+particular height, with hair of a particular colour, speaking a
+particular language, weighing so many stone. The Eternal Being, who
+knows everything and who created the whole universe, became not only a
+man but (before that) a baby, and before that a <i>fœtus</i> inside a Woman’s
+body. If you want to get the hang of it, think how you would like to
+become a slug or a crab.
+<br><br>
+The result of this was that you now had one man who really was what all
+men were intended to be: one man in whom the created life, derived from
+His Mother, allowed itself to be completely and perfectly turned into
+the begotten life. The natural human creature in Him was taken up fully
+into the divine Son. Thus in one instance humanity had, so to speak,
+arrived: had passed into the life of Christ. And because the whole
+difficulty for us is that the natural life has to be, in a sense,
+“killed,” He chose an earthly career which involved the killing of His
+human desires at every turn—poverty, misunderstanding from His own
+family, betrayal by one of His intimate friends, being jeered at and
+manhandled by the Police, and execution by torture. And then, after
+being thus killed—killed every day in a sense—the human creature in Him,
+because it was united to the divine Son, came to life again. The Man in
+Christ rose again: not only the God. That is the whole point. For the
+first time we saw a real man. One tin soldier—real tin, just like the
+rest—had come fully and splendidly alive.
+<br><br>
+And here, of course, we come to the point where my illustration about
+the tin soldier breaks down. In the case of real toy soldiers or
+statues, if one came to life, it would obviously make no difference to
+the rest. They are all separate. But human beings are not. They look
+separate because you see them walking about separately. But then, we are
+so made that we can see only the present moment. If we could see the
+past, then of course it would look different. For there was a time when
+every man was part of his mother, and (earlier still) part of his father
+as well: and when they were part of his grandparents. If you could see
+humanity spread out in time, as God sees it, it would not look like a
+lot of separate things dotted about. It would look like one single
+growing thing—rather like a very complicated tree. Every individual
+would appear connected with every other. And not only that. Individuals
+are not really separate from God any more than from one another. Every
+man, woman, and child all over the world is feeling and breathing at
+this moment only because God, so to speak, is “keeping him going.”
+<br><br>
+Consequently, when Christ becomes man it is not really as if you could
+become one particular tin soldier. It is as if something which is always
+affecting the whole human mass begins, at one point, to affect that
+whole human mass in a new way. From that point the effect spreads
+through all mankind. It makes a difference to people who lived before
+Christ as well as to people who lived after Him. It makes a difference
+to people who have never heard of Him. It is like dropping into a glass
+of water one drop of something which gives a new taste or a new colour
+to the whole lot. But, of course, none of these illustrations really
+works perfectly. In the long run God is no one but Himself and what He
+does is like nothing else. You could hardly expect it to be.
+<br><br>
+What, then, is the difference which He has made to the whole human mass?
+It is just this; that the business of becoming a son of God, of being
+turned from a created thing into a begotten thing, of passing over from
+the temporary biological life into timeless “spiritual” life, has been
+done for us. Humanity is already “saved” in principle. We individuals
+have to appropriate that salvation. But the really tough work—the bit we
+could not have done for ourselves—has been done for us. We have not got
+to try to climb up into spiritual life by our own efforts; it has
+already come down into the human race. If we will only lay ourselves
+open to the one Man in whom it was fully present, and who, in spite of
+being God, is also a real man, He will do it in us and for us. Remember
+what I said about “good infection.” One of our own race has this new
+life: if we get close to Him we shall catch it from Him.
+<br><br>
+Of course, you can express this in all sorts of different ways. You can
+say that Christ died for our sins. You may say that the Father has
+forgiven us because Christ has done for us what we ought to have done.
+You may say that we are washed in the blood of the Lamb. You may say
+that Christ has defeated death. They are all true. If any of them do not
+appeal to you, leave it alone and get on with the formula that does.
+And, whatever you do, do not start quarrelling with other people because
+they use a different formula from yours.
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="index.html">Back to Index</a>
+
+	<div style="height: 30vh"></div>
+	</div>
+</div>
+</div>
+<script>
+	function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+	//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

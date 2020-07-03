@@ -1,17 +1,17 @@
 ﻿* A Distributed Proofreaders Canada eBook *
-
+<br><br>
 This eBook is made available at no cost and with very few
 restrictions. These restrictions apply only if (1) you make
 a change in the eBook (other than alteration for different
 display devices), or (2) you are making commercial use of
 the eBook. If either of these conditions applies, please
 contact an FP administrator before proceeding.
-
+<br><br>
 This work is in the Canadian public domain, but may be under
 copyright in some countries. If you live outside Canada, check your
 country's copyright laws. IF THE BOOK IS UNDER COPYRIGHT
 IN YOUR COUNTRY, DO NOT DOWNLOAD OR REDISTRIBUTE THIS FILE.
-
+<br><br>
 
 Title: Mere Christianity
 Date of first publication: 1952
@@ -19,39 +19,39 @@ Author: C.S. Lewis (1898-1963)
 Date first posted: June 7, 2015
 Date last updated: June 7, 2015
 Faded Page eBook #20150620
-
+<br><br>
 This eBook was produced by: Marcia Brooks, Mark Akrigg, Stephen Hutcheson
 & the online Distributed Proofreaders Canada team at http://www.pgdpcanada.net
+<br><br>
 
-
-
+<br><br>
 
                            MERE CHRISTIANITY
-
+<br><br>
 
  A revised and amplified edition, with a new introduction, of the three
 books <i>Broadcast Talks</i>, <i>Christian Behaviour</i> and <i>Beyond Personality</i>
-
+<br><br>
                                    by
                               C. S. LEWIS
-
+<br><br>
 
                              GEOFFREY BLES
                                  LONDON
-
+<br><br>
                       <i>Printed in Great Britain by
                        The Garden City Press Ltd
                             Letchworth Herts
                          for Geoffrey Bles Ltd
                      52 Doughty Street London WC1</i>
-
+<br><br>
                          <i>First Published 1952</i>
+<br><br>
 
-
-
+<br><br>
 
                                 PREFACE
-
+<br><br>
 
 The contents of this book were first given on the air, and then
 published in three separate parts as <i>Broadcast Talks</i> (1942),
@@ -76,7 +76,7 @@ I hope, the “popular” or “familiar” tone which I had all along intended.
 I have also added and deleted where I thought I understood any part of
 my subject better now than ten years ago or where I knew that the
 original version had been misunderstood by others.
-
+<br><br>
 The reader should be warned that I offer no help to anyone who is
 hesitating between two Christian “denominations.” You will not learn
 from me whether you ought to become an Anglican, a Methodist, a
@@ -105,11 +105,11 @@ were already engaged in such controversial matters than in the defence
 of what Baxter calls “mere” Christianity. That part of the line where I
 thought I could serve best was also the part that seemed to be thinnest.
 And to it I naturally went.
-
+<br><br>
 So far as I know, these were my only motives, and I should be very glad
 if people would not draw fanciful inferences from my silence on certain
 disputed matters.
-
+<br><br>
 For example, such silence need not mean that I myself am sitting on the
 fence. Sometimes I am. There are questions at issue between Christians
 to which I do not think we have been told the answer. There are some to
@@ -121,7 +121,7 @@ and yet say nothing. For I was not writing to expound something I could
 call “my religion,” but to expound “mere” Christianity, which is what it
 is and was what it was long before I was born and whether I like it or
 not.
-
+<br><br>
 Some people draw unwarranted conclusions from the fact that I never say
 more about the Blessed Virgin Mary than is involved in asserting the
 Virgin Birth of Christ. But surely my reason for not doing so is
@@ -142,7 +142,7 @@ appear something worse than a heretic—a Pagan. If any topic could be
 relied upon to wreck a book about “mere” Christianity—if any topic makes
 utterly unprofitable reading for those who do not yet believe that the
 Virgin’s son is God—surely this is it.
-
+<br><br>
 Oddly enough, you cannot even conclude, from my silence on disputed
 points, either that I think them important or that I think them
 unimportant. For this is itself one of the disputed points. One of the
@@ -151,12 +151,12 @@ disagreements. When two Christians of different denominations start
 arguing, it is usually not long before one asks whether such-and-such a
 point “really matters” and the other replies: “Matter? Why, it’s
 absolutely essential.”
-
+<br><br>
 All this is said simply in order to make clear what kind of book I was
 trying to write; not in the least to conceal or evade responsibility for
 my own beliefs. About those, as I said before, there is no secret. To
 quote Uncle Toby: “They are written in the Common-Prayer Book.”
-
+<br><br>
 The danger clearly was that I should put forward as common Christianity
 anything that was peculiar to the Church of England or (worse still) to
 myself. I tried to guard against this by sending the original script of
@@ -169,7 +169,7 @@ five of us were agreed. I did not have the remaining books similarly
 “vetted” because in them, though differences might arise among
 Christians, these would be differences between individuals or schools of
 thought, not between denominations.
-
+<br><br>
 So far as I can judge from reviews and from the numerous letters written
 to me, the book, however faulty in other respects, did at least succeed
 in presenting an agreed, or common, or central, or “mere” Christianity.
@@ -189,7 +189,7 @@ closest to every other in spirit, if not in doctrine. And this suggests
 that at the centre of each there is a something, or a Someone, who
 against all divergences of belief, all differences of temperament, all
 memories of mutual persecution, speaks with the same voice.
-
+<br><br>
 So much for my omissions on doctrine. In Book III, which deals with
 morals, I have also passed over some things in silence, but for a
 different reason. Ever since I served as an infantryman in the first
@@ -206,7 +206,7 @@ nothing about birth-control. I am not a woman nor even a married man,
 nor am I a priest. I did not think it my place to take a firm line about
 pains, dangers and expenses from which I am protected; having no
 pastoral office which obliged me to do so.
-
+<br><br>
 Far deeper objections may be felt—and have been expressed—against my use
 of the word <i>Christian</i> to mean one who accepts the common doctrines of
 Christianity. People ask: “Who are you, to lay down who is, and who is
@@ -218,7 +218,7 @@ amiable quality except that of being useful. We simply cannot, without
 disaster, use language as these objectors want us to use it. I will try
 to make this clear by the history of another, and very much less
 important, word.
-
+<br><br>
 The word <i>gentleman</i> originally meant something recognisable; one who
 had a coat of arms and some landed property. When you called someone “a
 gentleman” you were not paying him a compliment, but merely stating a
@@ -247,7 +247,7 @@ word. We had lots of terms of approval already, so it was not needed for
 that use; on the other hand if anyone (say, in a historical work) wants
 to use it in its old sense, he cannot do so without explanations. It has
 been spoiled for that purpose.
-
+<br><br>
 Now if once we allow people to start spiritualising and refining, or as
 they might say “deepening,” the sense of the word <i>Christian</i>, it too
 will speedily become a useless word. In the first place, Christians
@@ -264,7 +264,7 @@ man. But that way of using the word will be no enrichment of the
 language, for we already have the word <i>good</i>. Meanwhile, the word
 <i>Christian</i> will have been spoiled for any really useful purpose it
 might have served.
-
+<br><br>
 We must therefore stick to the original, obvious meaning. The name
 <i>Christians</i> was first given at Antioch (Acts xi. 26) to “the
 disciples,” to those who accepted the teaching of the apostles. There is
@@ -277,7 +277,7 @@ question of using words so that we can all understand what is being
 said. When a man who accepts the Christian doctrine lives unworthily of
 it, it is much clearer to say he is a bad Christian than to say he is
 not a Christian.
-
+<br><br>
 I hope no reader will suppose that “mere” Christianity is here put
 forward as an alternative to the creeds of the existing communions—as if
 a man could adopt it in preference to Congregationalism or Greek
@@ -303,18 +303,18 @@ service?” but “Are these doctrines true: Is holiness here? Does my
 conscience move me towards this? Is my reluctance to knock at this door
 due to my pride, or my mere taste, or my personal dislike of this
 particular door-keeper?”
-
+<br><br>
 When you have reached your own room, be kind to those who have chosen
 different doors and to those who are still in the hall. If they are
 wrong they need your prayers all the more; and if they are your enemies,
 then you are under orders to pray for them. That is one of the rules
 common to the whole house.
+<br><br>
 
-
-
+<br><br>
 
                                 CONTENTS
-
+<br><br>
 
                                                                      PAGE
     Preface                                                             v
@@ -356,19 +356,19 @@ common to the whole house.
   9. Counting the Cost                                                159
   10. Nice People or New Men                                          163
   11. The New Men                                                     171
+<br><br>
 
-
-
+<br><br>
 
                                 <i>BOOK I</i>
         RIGHT AND WRONG AS A CLUE TO THE MEANING OF THE UNIVERSE
+<br><br>
 
-
-
+<br><br>
 
                                    1
                         THE LAW OF HUMAN NATURE
-
+<br><br>
 
 Every one has heard people quarrelling. Sometimes it sounds funny and
 sometimes it sounds merely unpleasant; but however it sounds, I believe
@@ -379,7 +379,7 @@ alone, he isn’t doing you any harm”—“Why should you shove in first?”
 “Give me a bit of your orange, I gave you a bit of mine”—“Come on, you
 promised.” People say things like that every day, educated people as
 well as uneducated, and children as well as grown-ups.
-
+<br><br>
 Now what interests me about all these remarks is that the man who makes
 them is not merely saying that the other man’s behaviour does not happen
 to please him. He is appealing to some kind of standard of behaviour
@@ -401,7 +401,7 @@ unless you and he had some sort of agreement as to what Right and Wrong
 are; just as there would be no sense in saying that a footballer had
 committed a foul unless there was some agreement about the rules of
 football.
-
+<br><br>
 Now this Law or Rule about Right and Wrong used to be called the Law of
 Nature. Nowadays, when we talk of the “laws of nature” we usually mean
 things like gravitation, or heredity, or the laws of chemistry. But when
@@ -412,7 +412,7 @@ by biological laws, so the creature called man also had his law—with
 this great difference, that a body could not choose whether it obeyed
 the law of gravitation or not, but a man could choose either to obey the
 Law of Human Nature or to disobey it.
-
+<br><br>
 We may put this in another way. Each man is at every moment subjected to
 several different sets of law but there is only one of these which he is
 free to disobey. As a body, he is subjected to gravitation and cannot
@@ -423,7 +423,7 @@ animal can. That is, he cannot disobey those laws which he shares with
 other things; but the law which is peculiar to his human nature, the law
 he does not share with animals or vegetables or inorganic things, is the
 one he can disobey if he chooses.
-
+<br><br>
 This law was called the Law of Nature because people thought that every
 one knew it by nature and did not need to be taught it. They did not
 mean, of course, that you might not find an odd individual here and
@@ -437,11 +437,11 @@ at bottom knew as well as we did and ought to have practised? If they
 had had no notion of what we mean by right, then, though we might still
 have had to fight them, we could no more have blamed them for that than
 for the colour of their hair.
-
+<br><br>
 I know that some people say the idea of a Law of Nature or decent
 behaviour known to all men is unsound, because different civilisations
 and different ages have had quite different moralities.
-
+<br><br>
 But this is not true. There have been differences between their
 moralities, but these have never amounted to anything like a total
 difference. If anyone will take the trouble to compare the moral
@@ -460,7 +460,7 @@ everyone. But they have always agreed that you ought not to put yourself
 first. Selfishness has never been admired. Men have differed as to
 whether you should have one wife or four. But they have always agreed
 that you must not simply have any woman you liked.
-
+<br><br>
 But the most remarkable thing is this. Whenever you find a man who says
 he does not believe in a real Right and Wrong, you will find the same
 man going back on this a moment later. He may break his promise to you,
@@ -473,7 +473,7 @@ words, if there is no Law of Nature—what is the difference between a
 fair treaty and an unfair one? Have they not let the cat out of the bag
 and shown that, whatever they say, they really know the Law of Nature
 just like anyone else?
-
+<br><br>
 It seems, then, we are forced to believe in a real Right and Wrong.
 People may be sometimes mistaken about them, just as people sometimes
 get their sums wrong; but they are not a matter of mere taste and
@@ -483,7 +483,7 @@ really keeping the Law of Nature. If there are any exceptions among you,
 I apologise to them. They had much better read some other book, for
 nothing I am going to say concerns them. And now, turning to the
 ordinary human beings who are left:
-
+<br><br>
 I hope you will not misunderstand what I am going to say. I am not
 preaching, and Heaven knows I do not pretend to be better than anyone
 else. I am only trying to call attention to a fact; the fact that this
@@ -511,26 +511,26 @@ responsibility. For you notice that it is only for our bad behaviour
 that we find all these explanations. It is only our bad temper that we
 put down to being tired or worried or hungry; we put our good temper
 down to ourselves.
-
+<br><br>
 These, then, are the two points I wanted to make. First, that human
 beings, all over the earth, have this curious idea that they ought to
 behave in a certain way, and cannot really get rid of it. Secondly, that
 they do not in fact behave in that way. They know the Law of Nature;
 they break it. These two facts are the foundation of all clear thinking
 about ourselves and the universe we live in.
+<br><br>
 
-
-
+<br><br>
 
                                    2
                             SOME OBJECTIONS
-
+<br><br>
 
 If they are the foundation, I had better stop to make that foundation
 firm before I go on. Some of the letters I have had show that a good
 many people find it difficult to understand just what this Law of Human
 Nature, or Moral Law, or Rule of Decent Behaviour is.
-
+<br><br>
 For example, some people wrote to me saying, “Isn’t what you call the
 Moral Law simply our herd instinct and hasn’t it been developed just
 like all our other instincts?” Now I do not deny that we may have a herd
@@ -553,7 +553,7 @@ that the sheet of music which tells you, at a given moment, to play one
 note on the piano and not another, is itself one of the notes on the
 keyboard. The Moral Law tells us the tune we have to play: our instincts
 are merely the keys.
-
+<br><br>
 Another way of seeing that the Moral Law is not simply one of our
 instincts is this. If two instincts are in conflict, and there is
 nothing in a creature’s mind except those two instincts, obviously the
@@ -570,7 +570,7 @@ instinct when we set about making an instinct stronger than it is. The
 thing that says to you, “Your herd instinct is asleep. Wake it up,”
 cannot itself be the herd instinct. The thing that tells you which note
 on the piano needs to be played louder cannot itself be that note.
-
+<br><br>
 Here is a third way of seeing it. If the Moral Law was one of our
 instincts, we ought to be able to point to some one impulse inside us
 which was always what we call “good,” always in agreement with the rule
@@ -593,7 +593,7 @@ Every single note is right at one time and wrong at another. The Moral
 Law is not any one instinct or any set of instincts: it is something
 which makes a kind of tune (the tune we call goodness or right conduct)
 by directing the instincts.
-
+<br><br>
 By the way, this point is of great practical consequence. The most
 dangerous thing you can do is to take any one impulse of your own nature
 and set it up as the thing you ought to follow at all costs. There is
@@ -602,7 +602,7 @@ absolute guide. You might think love of humanity in general was safe,
 but it is not. If you leave out justice you will find yourself breaking
 agreements and faking evidence in trials “for the sake of humanity,” and
 become in the end a cruel and treacherous man.
-
+<br><br>
 Other people wrote to me saying, “Isn’t what you call the Moral Law just
 a social convention, something that is put into us by education?” I
 think there is a misunderstanding here. The people who ask that question
@@ -620,7 +620,7 @@ different—we learn to keep to the left of the road, but it might just as
 well have been the rule to keep to the rights—and others of them, like
 mathematics, are real truths. The question is to which class the Law of
 Human Nature belongs.
-
+<br><br>
 There are two reasons for saying it belongs to the same class as
 mathematics. The first is, as I said in the first chapter, that though
 there are differences between the moral ideas of one time or country and
@@ -660,7 +660,7 @@ each nation happens to approve,” there would be no sense in saying that
 any one nation had ever been more correct in its approval than any
 other; no sense in saying that the world could ever grow morally better
 or morally worse.
-
+<br><br>
 I conclude then, that though the differences between people’s ideas of
 Decent Behaviour often make you suspect that there is no real natural
 Law of Behaviour at all, yet the things we are bound to think about
@@ -682,13 +682,13 @@ knowledge not to believe in witches: there is no moral advance in not
 executing them when you do not think they are there. You would not call
 a man humane for ceasing to set mouse-traps if he did so because he
 believed there were no mice in the house.
+<br><br>
 
-
-
+<br><br>
 
                                    3
                          THE REALITY OF THE LAW
-
+<br><br>
 
 I now go back to what I said at the end of the first chapter, that there
 were two odd things about the human race. First, that they were haunted
@@ -706,7 +706,7 @@ not my job at all. I am not concerned at present with blame; I am trying
 to find out truth. And from that point of view the very idea of
 something being imperfect, of its not being what it ought to be, has
 certain consequences.
-
+<br><br>
 If you take a thing like a stone or a tree, it is what it is and there
 seems no sense in saying it ought to have been otherwise. Of course you
 may say a stone is “the wrong shape” if you want to use it for a
@@ -717,7 +717,7 @@ are not, except as a joke, blaming them for that. You really know, that,
 given the weather and the soil, the tree could not have been any
 different. What we, from our point of view, call a “bad” tree is obeying
 the laws of its nature just as much as a “good” one.
-
+<br><br>
 Now have you noticed what follows? It follows that what we usually call
 the laws of nature—the way weather works on a tree for example—may not
 really be <i>laws</i> in the strict sense, but only in a manner of speaking.
@@ -743,7 +743,7 @@ Electrons and molecules behave in a certain way, and certain results
 follow, and that may be the whole story.[1] But men behave in a certain
 way and that is not the whole story, for all the time you know that they
 ought to behave differently.
-
+<br><br>
 Now this is really so peculiar that one is tempted to try to explain it
 away. For instance, we might try to make out that when you say a man
 ought not to act as he does, you only mean the same as when you say that
@@ -768,7 +768,7 @@ easy to cheat, leaving a girl alone when you would like to make love to
 her, staying in dangerous places when you could go somewhere safer,
 keeping promises you would rather not keep, and telling the truth even
 when it makes you look a fool.
-
+<br><br>
 Some people say that though decent conduct does not mean what pays each
 particular person at a particular moment, still, it means what pays the
 human race as a whole; and that consequently there is no mystery about
@@ -796,7 +796,7 @@ only means “other people”), is one of the things decent behaviour
 consists in; all you are really saying is that decent behaviour is
 decent behaviour. You would have said just as much if you had stopped at
 the statement, “Men ought to be unselfish.”
-
+<br><br>
 And that is where I do stop. Men ought to be unselfish, ought to be
 fair. Not that men are unselfish, nor that they like being unselfish,
 but that they ought to be. The Moral Law, or Law of Human Nature, is not
@@ -816,13 +816,13 @@ shall have to admit that there is more than one kind of reality; that,
 in this particular case, there is something above and beyond the
 ordinary facts of men’s behaviour, and yet quite definitely real—a real
 law, which none of us made, but which we find pressing on us.
+<br><br>
 
-
-
+<br><br>
 
                                    4
                         WHAT LIES BEHIND THE LAW
-
+<br><br>
 
 Let us sum up what we have reached so far. In the case of stones and
 trees and things of that sort, what we call the Laws of Nature may not
@@ -835,7 +835,7 @@ or of Right and Wrong, must be something above and beyond the actual
 facts of human behaviour. In this case, besides the actual facts, you
 have something else—a real law which we did not invent and which we know
 we ought to obey.
-
+<br><br>
 I now want to consider what this tells us about the universe we live in.
 Ever since men were able to think, they have been wondering what this
 universe really is and how it came to be there. And, very roughly, two
@@ -882,7 +882,7 @@ science ever became complete so that it knew every single thing in the
 whole universe. Is it not plain that the questions, “Why is there a
 universe?” “Why does it go on as it does?” “Has it any meaning?” would
 remain just as they were?
-
+<br><br>
 Now the position would be quite hopeless but for this. There is one
 thing, and only one, in the whole universe which we know more about than
 we could learn from external observation. That one thing is Man. We do
@@ -899,7 +899,7 @@ only show what we did, and the moral law is about what we ought to do.
 In the same way, if there were anything above or behind the observed
 facts in the case of stones or the weather, we, by studying them from
 outside, could never hope to discover it.
-
+<br><br>
 The position of the question, then, is like this. We want to know
 whether the universe simply happens to be what it is for no reason or
 whether there is a power behind it that makes it what it is. Since that
@@ -937,7 +937,7 @@ me to obey the law of my human nature, He compels the stone to obey the
 laws of its stony nature. But I should expect to find that there was, so
 to speak, a sender of letters in both cases, a Power behind the facts, a
 Director, a Guide.
-
+<br><br>
 Do not think I am going faster than I really am. I am not yet within a
 hundred miles of the God of Christian theology. All I have got to is a
 Something which is directing the universe, and which appears in me as a
@@ -950,9 +950,9 @@ still less like a person. In the next chapter we shall see if we can
 find out anything more about it. But one word of warning. There has been
 a great deal of soft soap talked about God for the last hundred years.
 That is not what I am offering. You can cut all that out.
-
+<br><br>
                                * * * * *
-
+<br><br>
 Note.—In order to keep this section short enough when it was given on
 the air, I mentioned only the Materialist view and the Religious view.
 But to be complete I ought to mention the In-between view called
@@ -981,13 +981,13 @@ Life-Force is a sort of tame God. You can switch it on when you want,
 but it will not bother you. All the thrills of religion and none of the
 cost. Is the Life-Force the greatest achievement of wishful thinking the
 world has yet seen?
+<br><br>
 
-
-
+<br><br>
 
                                    5
                        WE HAVE CAUSE TO BE UNEASY
-
+<br><br>
 
 I ended my last chapter with the idea that in the Moral Law somebody or
 something from beyond the material universe was actually getting at us.
@@ -999,7 +999,7 @@ ready to listen to me as long as you thought I had anything new to say;
 but if it turns out to be only religion, well, the world has tried that
 and you cannot put the clock back. If anyone is feeling that way I
 should like to say three things to him.
-
+<br><br>
 First, as to putting the clock back. Would you think I was joking if I
 said that you can put a clock back, and that if the clock is wrong it is
 often a very sensible thing to do? But I would rather get away from that
@@ -1016,7 +1016,7 @@ I think if you look at the present state of the world, it is pretty
 plain that humanity has been making some big mistake. We are on the
 wrong road. And if that is so, we must go back. Going back is the
 quickest way on.
-
+<br><br>
 Then, secondly, this has not yet turned exactly into a “religious jaw.”
 We have not yet got as far as the God of any actual religion, still less
 the God of that particular religion called Christianity. We have only
@@ -1075,7 +1075,7 @@ fun. They need to think again. They are still only playing with
 religion. Goodness is either the great safety or the great
 danger—according to the way you react to it. And we have reacted the
 wrong way.
-
+<br><br>
 Now my third point. When I chose to get to my real subject in this
 roundabout way, I was not trying to play any kind of trick on you. I had
 a different reason. My reason was that Christianity simply does not make
@@ -1111,19 +1111,19 @@ not get either comfort or truth—only soft soap and wishful thinking to
 begin with and, in the end, despair. Most of us have got over the
 pre-war wishful thinking about international politics. It is time we did
 the same about religion.
+<br><br>
 
-
-
+<br><br>
 
                                 BOOK II
                         WHAT CHRISTIANS BELIEVE
+<br><br>
 
-
-
+<br><br>
 
                                    1
                       THE RIVAL CONCEPTIONS OF GOD
-
+<br><br>
 
 I have been asked to tell you what Christians believe, and I am going to
 begin by telling you one thing that Christians do not need to believe.
@@ -1140,13 +1140,13 @@ mean thinking that where Christianity differs from other religions,
 Christianity is right and they are wrong. As in arithmetic—there is only
 one right answer to a sum, and all other answers are wrong: but some of
 the wrong answers are much nearer being right than others.
-
+<br><br>
 The first big division of humanity is into the majority, who believe in
 some kind of God or gods, and the minority who do not. On this point,
 Christianity lines up with the majority—lines up with ancient Greeks and
 Romans, modern savages, Stoics, Platonists, Hindus, Mohammedans, etc.,
 against the modern Western European materialist.
-
+<br><br>
 Now I go on to the next big division. People who all believe in God can
 be divided according to the sort of God they believe in. There are two
 very different ideas on this subject. One of them is the idea that He is
@@ -1167,7 +1167,7 @@ The first of these views—the one that thinks God beyond good and evil—is
 called Pantheism. It was held by the great Prussian philosopher Hegel
 and, as far as I can understand them, by the Hindus. The other view is
 held by Jews, Mohammedans and Christians.
-
+<br><br>
 And with this big difference between Pantheism and the Christian idea of
 God, there usually goes another. Pantheists usually believe that God, so
 to speak, animates the universe as you animate your body: that the
@@ -1195,7 +1195,7 @@ and vegetables, are things that God “made up out of His head” as a man
 makes up a story. But it also thinks that a great many things have gone
 wrong with the world that God made and that God insists, and insists
 very loudly, on our putting them right again.
-
+<br><br>
 And, of course, that raises a very big question. If a good God made the
 world why has it gone wrong? And for many years I simply refused to
 listen to the Christian answers to this question, because I kept on
@@ -1204,7 +1204,7 @@ it much simpler and easier to say that the world was not made by any
 intelligent power? Aren’t all your arguments simply a complicated
 attempt to avoid the obvious?” But then that threw me back into another
 difficulty.
-
+<br><br>
 My argument against God was that the universe seemed so cruel and
 unjust. But how had I got this idea of <i>just</i> and <i>unjust</i>? A man does
 not call a line crooked unless he has some idea of a straight line. What
@@ -1225,13 +1225,13 @@ has no meaning, we should never have found out that it has no meaning:
 just as, if there were no light in the universe and therefore no
 creatures with eyes, we should never know it was dark. <i>Dark</i> would be a
 word without meaning.
+<br><br>
 
-
-
+<br><br>
 
                                    2
                               THE INVASION
-
+<br><br>
 
 Very well then, atheism is too simple. And I will tell you another view
 that is also too simple. It is the view I call Christianity-and-water,
@@ -1239,7 +1239,7 @@ the view which simply says there is a good God in Heaven and everything
 is all right—leaving out all the difficult and terrible doctrines about
 sin and hell and the devil, and the redemption. Both these are boys’
 philosophies.
-
+<br><br>
 It is no good asking for a simple religion. After all, real things are
 not simple. They look simple, but they are not. The table I am sitting
 at looks simple: but ask a scientist to tell you what it is really made
@@ -1253,7 +1253,7 @@ usually is not—if you want to go on and ask what is really
 happening—then you must be prepared for something difficult. If we ask
 for something more than simplicity, it is silly then to complain that
 the something more is not simple.
-
+<br><br>
 Very often, however, this silly procedure is adopted by people who are
 not silly, but who, consciously or unconsciously, want to destroy
 Christianity. Such people put up a version of Christianity suitable for
@@ -1267,7 +1267,7 @@ will change their ground every minute and only waste your time. Notice,
 too, their idea of God “making religion simple”: as if “religion” were
 something God invented, and not His statement to us of certain quite
 unalterable facts about His own nature.
-
+<br><br>
 Besides being complicated, reality, in my experience, is usually odd. It
 is not neat, not obvious, not what you expect. For instance, when you
 have grasped that the earth and the other planets all go round the sun,
@@ -1278,7 +1278,7 @@ you go further from the sun. In fact, you find no rhyme or reason (that
 we can see) about either the sizes or the distances; and some of them
 have one moon, one has four, one has two, some have none, and one has a
 ring.
-
+<br><br>
 Reality, in fact, is usually something you could not have guessed. That
 is one of the reasons I believe Christianity. It is a religion you could
 not have guessed. If it offered us just the kind of universe we had
@@ -1287,7 +1287,7 @@ not the sort of thing anyone would have made up. It has just that queer
 twist about it that real things have. So let us leave behind all these
 boys’ philosophies—these over-simple answers. The problem is not simple
 and the answer is not going to be simple either.
-
+<br><br>
 What is the problem? A universe that contains much that is obviously bad
 and apparently meaningless, but containing creatures like ourselves who
 know that it is bad and meaningless. There are only two views that face
@@ -1299,7 +1299,7 @@ everything, one of them good and the other bad, and that this universe
 is the battlefield in which they fight out an endless war. I personally
 think that next to Christianity Dualism is the manliest and most
 sensible creed on the market. But it has a catch in it.
-
+<br><br>
 The two powers, or spirits, or gods—the good one and the bad one—are
 supposed to be quite independent. They both existed from all eternity.
 Neither of them made the other, neither of them has any more right than
@@ -1318,7 +1318,7 @@ to like at any given moment. If “being good” meant simply joining the
 side you happened to fancy, for no real reason, then good would not
 deserve to be called good. So we must mean that one of the two powers is
 actually wrong and the other actually right.
-
+<br><br>
 But the moment you say that, you are putting into the universe a third
 thing in addition to the two Powers: some law or standard or rule of
 good which one of the powers conforms to and the other fails to conform
@@ -1328,7 +1328,7 @@ higher up than either of them, and He will be the real God. In fact,
 what we meant by calling them good and bad turns out to be that one of
 them is in a right relation to the real ultimate God and the other in a
 wrong relation to Him.
-
+<br><br>
 The same point can be made in a different way. If Dualism is true, then
 the bad Power must be a being who likes badness for its own sake. But in
 reality we have no experience of anyone liking badness just because it
@@ -1364,7 +1364,7 @@ with good things to desire or with good impulses to pervert. He must be
 getting both from the Good Power. And if so, then he is not independent.
 He is part of the Good Power’s world: he was made either by the Good
 Power or by some power above them both.
-
+<br><br>
 Put it more simply still. To be bad, he must exist and have intelligence
 and will. But existence, intelligence and will are in themselves good.
 Therefore he must be getting them from the Good Power: even to be bad he
@@ -1376,7 +1376,7 @@ evil to carry on are powers given it by goodness. All the things which
 enable a bad man to be effectively bad are in themselves good
 things—resolution, cleverness, good looks, existence itself. That is why
 Dualism, in a strict sense, will not work.
-
+<br><br>
 But I freely admit that real Christianity (as distinct from
 Christianity-and-water) goes much nearer to Dualism than people think.
 One of the things that surprised me when I first read the New Testament
@@ -1388,7 +1388,7 @@ went wrong. Christianity agrees with Dualism that this universe is at
 war. But it does not think this is a war between independent powers. It
 thinks it is a civil war, a rebellion, and that we are living in a part
 of the universe occupied by the rebel.
-
+<br><br>
 Enemy-occupied territory—that is what this world is. Christianity is the
 story of how the rightful king has landed, you might say landed in
 disguise, and is calling us all to take part in a great campaign of
@@ -1404,20 +1404,20 @@ know anything about his personal appearance. If anybody really wants to
 know him better I would say to that person, “Don’t worry. If you really
 want to, you will. Whether you’ll like it when you do is another
 question.”
+<br><br>
 
-
-
+<br><br>
 
                                    3
                         THE SHOCKING ALTERNATIVE
-
+<br><br>
 
 Christians, then, believe that an evil power has made himself for the
 present the Prince of this World. And, of course, that raises problems.
 Is this state of affairs in accordance with God’s will or not? If it is,
 He is a strange God, you will say: and if it is not, how can anything
 happen contrary to the will of a being with absolute power?
-
+<br><br>
 But anyone who has been in authority knows how a thing can be in
 accordance with your will in one way and not in another. It may be quite
 sensible for a mother to say to the children, “I’m not going to go and
@@ -1429,7 +1429,7 @@ other hand, it is her will which has left the children free to be
 untidy. The same thing arises in any regiment, or trade union, or
 school. You make a thing voluntary and then half the people do not do
 it. That is not what you willed, but your will has made it possible.
-
+<br><br>
 It is probably the same in the universe. God created things which had
 free will. That means creatures which can go either wrong or right. Some
 people think they can imagine a creature which was free but had no
@@ -1444,7 +1444,7 @@ voluntarily united to Him and to each other in an ecstasy of love and
 delight compared with which the most rapturous love between a man and a
 woman on this earth is mere milk and water. And for that they must be
 free.
-
+<br><br>
 Of course God knew what would happen if they used their freedom the
 wrong way: apparently He thought it worth the risk. Perhaps we feel
 inclined to disagree with Him. But there is a difficulty about
@@ -1458,7 +1458,7 @@ will—that is, for making a live world in which creatures can do real
 good or harm and something of real importance can happen, instead of a
 toy world which only moves when He pulls the strings—then we may take it
 it is worth paying.
-
+<br><br>
 When we have understood about free will, we shall see how silly it is to
 ask, as somebody once asked me: “Why did God make a creature of such
 rotten stuff that it went wrong?” The better stuff a creature is made
@@ -1467,7 +1467,7 @@ if it goes right, but also the worse it will be if it goes wrong. A cow
 cannot be very good or very bad; a dog can be both better and worse; a
 child better and worse still; an ordinary man, still more so; a man of
 genius, still more so; a superhuman spirit best—or worst—of all.
-
+<br><br>
 How did the Dark Power go wrong? Here, no doubt, we ask a question to
 which human beings cannot give an answer with any certainty. A
 reasonable (and traditional) guess, based on our own experiences of
@@ -1485,7 +1485,7 @@ themselves outside God, apart from God. And out of that hopeless attempt
 has come nearly all that we call human history—money, poverty, ambition,
 war, prostitution, classes, empires, slavery—the long terrible story of
 man trying to find something other than God which will make him happy.
-
+<br><br>
 The reason why it can never succeed is this. God made us: invented us as
 a man invents an engine. A car is made to run on petrol, and it would
 not run properly on anything else. Now God designed the human machine to
@@ -1495,7 +1495,7 @@ other. That is why it is just no good asking God to make us happy in our
 own way without bothering about religion. God cannot give us a happiness
 and peace apart from Himself, because it is not there. There is no such
 thing.
-
+<br><br>
 That is the key to history. Terrific energy is expended—civilisations
 are built up—excellent institutions devised; but each time something
 goes wrong. Some fatal flaw always brings the selfish and cruel people
@@ -1503,7 +1503,7 @@ to the top and it all slides back into misery and ruin. In fact, the
 machine conks. It seems to start up all right and runs a few yards, and
 then it breaks down. They are trying to run it on the wrong juice. That
 is what Satan has done to us humans.
-
+<br><br>
 And what did God do? First of all He left us conscience, the sense of
 right and wrong: and all through history there have been people trying
 (some of them very hard) to obey it. None of them ever quite succeeded.
@@ -1515,7 +1515,7 @@ several centuries hammering into their heads the sort of God He was—that
 there was only one of Him and that He cared about right conduct. Those
 people were the Jews, and the Old Testament gives an account of the
 hammering process.
-
+<br><br>
 Then comes the real shock. Among these Jews there suddenly turns up a
 man who goes about talking as if He was God. He claims to forgive sins.
 He says He has always existed. He says He is coming to judge the world
@@ -1527,7 +1527,7 @@ meant the Being outside the world Who had made it and was infinitely
 different from anything else. And when you have grasped that, you will
 see that what this man said was, quite simply, the most shocking thing
 that has ever been uttered by human lips.
-
+<br><br>
 One part of the claim tends to slip past us unnoticed because we have
 heard it so often that we no longer see what it amounts to. I mean the
 claim to forgive sins: any sins. Now unless the speaker is God, this is
@@ -1545,14 +1545,14 @@ This makes sense only if He really was the God whose laws are broken and
 whose love is wounded in every sin. In the mouth of any speaker who is
 not God, these words would imply what I can only regard as a silliness
 and conceit unrivalled by any other character in history.
-
+<br><br>
 Yet (and this is the strange, significant thing) even His enemies, when
 they read the Gospels, do not usually get the impression of silliness
 and conceit. Still less do unprejudiced readers. Christ says that He is
 “humble and meek” and we believe Him; not noticing that, if He were
 merely a man, humility and meekness are the very last characteristics we
 could attribute to some of His sayings.
-
+<br><br>
 I am trying here to prevent anyone saying the really foolish thing that
 people often say about Him: “I’m ready to accept Jesus as a great moral
 teacher, but I don’t accept His claim to be God.” That is the one thing
@@ -1565,13 +1565,13 @@ can shut Him up for a fool, you can spit at Him and kill Him as a demon;
 or you can fall at His feet and call Him Lord and God. But let us not
 come with any patronising nonsense about His being a great human
 teacher. He has not left that open to us. He did not intend to.
+<br><br>
 
-
-
+<br><br>
 
                                    4
                           THE PERFECT PENITENT
-
+<br><br>
 
 We are faced, then, with a frightening alternative. This man we are
 talking about either was (and is) just what He said or else a lunatic,
@@ -1579,7 +1579,7 @@ or something worse. Now it seems to me obvious that He was neither a
 lunatic nor a fiend: and consequently, however strange or terrifying or
 unlikely it may seem, I have to accept the view that He was and is God.
 God has landed on this enemy-occupied world in human form.
-
+<br><br>
 And now, what was the purpose of it all? What did He come to do? Well,
 to teach, of course; but as soon as you look into the New Testament or
 any other Christian writing you will find they are constantly talking
@@ -1587,7 +1587,7 @@ about something different—about His death and His coming to life again.
 It is obvious that Christians think the chief point of the story lies
 there. They think the main thing He came to earth to do was to suffer
 and be killed.
-
+<br><br>
 Now before I became a Christian I was under the impression that the
 first thing Christians had to believe was one particular theory as to
 what the point of this dying was. According to that theory God wanted to
@@ -1617,7 +1617,7 @@ adequate to the reality. But as I said in the preface to this book, I am
 only a layman, and at this point we are getting into deep water. I can
 only tell you, for what it is worth, how I, personally, look at the
 matter.
-
+<br><br>
 On my view the theories are not themselves the thing you are asked to
 accept. Many of you no doubt have read Jeans or Eddington. What they do
 when they want to explain the atom, or something of that sort, is to
@@ -1641,7 +1641,7 @@ if we do not understand it. But that is easily answered. A man can eat
 his dinner without understanding exactly how food nourishes him. A man
 can accept what Christ has done without knowing how it works: indeed, he
 certainly would not know how it works until he has accepted it.
-
+<br><br>
 We are told that Christ was killed for us, that His death has washed out
 our sins, and that by dying He disabled death itself. That is the
 formula. That is Christianity. That is what has to be believed. Any
@@ -1650,7 +1650,7 @@ view, quite secondary: mere plans or diagrams to be left alone if they
 do not help us, and, even if they do help us, not to be confused with
 the thing itself. All the same, some of these theories are worth looking
 at.
-
+<br><br>
 The one most people have heard is the one I mentioned before—the one
 about our being let off because Christ had volunteered to bear a
 punishment instead of us. Now on the face of it that is a very silly
@@ -1665,7 +1665,7 @@ sense of “standing the racket” or “footing the bill,” then, of course,
 it is a matter of common experience that, when one person has got
 himself into a hole, the trouble of getting him out usually falls on a
 kind friend.
-
+<br><br>
 
 Now what was the sort of “hole” man had got himself into? He had tried
 to set up on his own, to behave as if he belonged to himself. In other
@@ -1684,7 +1684,7 @@ bad person needs to repent: only a good person can repent perfectly. The
 worse you are the more you need it and the less you can do it. The only
 person who could do it perfectly would be a perfect person—and he would
 not need it.
-
+<br><br>
 Remember, this repentance, this willing submission to humiliation and a
 kind of death, is not something God demands of you before He will take
 you back and which He could let you off if He chose: it is simply a
@@ -1707,7 +1707,7 @@ corresponds to this process at all. So that the one road for which we
 now need God’s leadership most of all is a road God, in His own nature,
 has never walked. God can share only what He has: this thing, in His own
 nature, He has not.
-
+<br><br>
 But supposing God became a man—suppose our human nature which can suffer
 and die was amalgamated with God’s nature in one person—then that person
 could help us. He could surrender His will, and suffer and die, because
@@ -1719,7 +1719,7 @@ because it is a drop out of the ocean of His intelligence: but we cannot
 share God’s dying unless God dies; and He cannot die except by being a
 man. That is the sense in which He pays our debt, and suffers for us
 what He Himself need not suffer at all.
-
+<br><br>
 I have heard some people complain that if Jesus was God as well as man,
 then His sufferings and death lose all value in their eyes, “because it
 must have been so easy for Him.” Others may (very rightly) rebuke the
@@ -1741,17 +1741,17 @@ my gasps) “No, it’s not fair! You have an advantage! You’re keeping one
 foot on the bank”? That advantage—call it “unfair” if you like—is the
 only reason why he can be of any use to me. To what will you look for
 help if you will not look to that which is stronger than yourself?
-
+<br><br>
 Such is my own way of looking at what Christians call the Atonement. But
 remember this is only one more picture. Do not mistake it for the thing
 itself: and if it does not help you, drop it.
+<br><br>
 
-
-
+<br><br>
 
                                    5
                         THE PRACTICAL CONCLUSION
-
+<br><br>
 
 The perfect surrender and humiliation were undergone by Christ: perfect
 because He was God, surrender and humiliation because He was man. Now
@@ -1764,7 +1764,7 @@ evolution—the step to something beyond man—will happen. But on the
 Christian view, it has happened already. In Christ a new kind of man
 appeared: and the new kind of life which began in Him is to be put into
 us.
-
+<br><br>
 How is this to be done? Now, please remember how we acquired the old,
 ordinary kind of life. We derived it from others, from our father and
 mother and all our ancestors, without our consent—and by a very curious
@@ -1776,7 +1776,7 @@ who arranged that process is the same God who arranges how the new kind
 of life—the Christ life—is to be spread. We must be prepared for it
 being odd too. He did not consult us when He invented sex: He has not
 consulted us either when He invented this.
-
+<br><br>
 There are three things that spread the Christ life to us: baptism,
 belief, and that mysterious action which different Christians call by
 different names—Holy Communion, the Mass, the Lord’s Supper. At least,
@@ -1791,7 +1791,7 @@ friend would like me to say more about belief and less (in proportion)
 about the other two. But I am not going into that. Anyone who professes
 to teach you Christian doctrine will, in fact, tell you to use all
 three, and that is enough for our present purpose.
-
+<br><br>
 I cannot myself see why these things should be the conductors of the new
 kind of life. But then, if one did not happen to know, I should never
 have seen any connection between a particular physical pleasure and the
@@ -1817,7 +1817,7 @@ prove a thing in mathematics. We believe them simply because people who
 did see them have left writings that tell us about them: in fact, on
 authority. A man who jibbed at authority in other things as some people
 do in religion would have to be content to know nothing all his life.
-
+<br><br>
 Do not think I am setting up baptism and belief and the Holy Communion
 as things that will do instead of your own attempts to copy Christ. Your
 natural life is derived from your parents; that does not mean it will
@@ -1838,7 +1838,7 @@ repent and pick himself up and begin over again after each
 stumble—because the Christ-life is inside him, repairing him all the
 time, enabling him to repeat (in some degree) the kind of voluntary
 death which Christ Himself carried out.
-
+<br><br>
 That is why the Christian is in a different position from other people
 who are trying to be good. They hope, by being good, to please God if
 there is one; or—if they think there is not—at least they hope to
@@ -1847,7 +1847,7 @@ does comes from the Christ-life inside him. He does not think God will
 love us because we are good, but that God will make us good because He
 loves us; just as the roof of a greenhouse does not attract the sun
 because it is bright, but becomes bright because the sun shines on it.
-
+<br><br>
 And let me make it quite clear that when Christians say the Christ-life
 is in them, they do not mean simply something mental or moral. When they
 speak of being “in Christ” or of Christ being “in them,” this is not
@@ -1864,7 +1864,7 @@ man to be a purely spiritual creature. That is why He uses material
 things like bread and wine to put the new life into us. We may think
 this rather crude and unspiritual. God does not: He invented eating. He
 likes matter. He invented it.
-
+<br><br>
 Here is another thing that used to puzzle me. Is it not frightfully
 unfair that this new life should be confined to people who have heard of
 Christ and been able to believe in Him? But the truth is God has not
@@ -1877,7 +1877,7 @@ organism through which He works. Every addition to that body enables Him
 to do more. If you want to help those outside you must add your own
 little cell to the body of Christ who alone can help them. Cutting off a
 man’s fingers would be an odd way of getting him to do more work.
-
+<br><br>
 Another possible objection is this. Why is God landing in this
 enemy-occupied world in disguise and starting a sort of secret society
 to undermine the devil? Why is He not landing in force, invading it? Is
@@ -1904,19 +1904,19 @@ discover which side we really have chosen, whether we realised it before
 or not. Now, today, this moment, is our chance to choose the right side.
 God is holding back to give us that chance. It will not last for ever.
 We must take it or leave it.
+<br><br>
 
-
-
+<br><br>
 
                                 BOOK III
                           CHRISTIAN BEHAVIOUR
+<br><br>
 
-
-
+<br><br>
 
                                    1
                       THE THREE PARTS OF MORALITY
-
+<br><br>
 
 There is a story about a schoolboy who was asked what he thought God was
 like. He replied that, as far as he could make out, God was “The sort of
@@ -1932,7 +1932,7 @@ being taught how to use any machine, the instructor keeps on saying,
 “No, don’t do it like that,” because, of course, there are all sorts of
 things that look all right and seem to you the natural way of treating
 the machine, but do not really work.
-
+<br><br>
 Some people prefer to talk about moral “ideals” rather than moral rules
 and about moral “idealism” rather than moral obedience. Now it is, of
 course, quite true that moral perfection is an “ideal” in the sense that
@@ -1967,7 +1967,7 @@ going to cause you trouble later on. In the same way every moral failure
 is going to cause trouble, probably to others and certainly to yourself.
 By talking about rules and obedience instead of “ideals” and “idealism”
 we help to remind ourselves of these facts.
-
+<br><br>
 Now let us go a step further. There are two ways in which the human
 machine goes wrong. One is when human individuals drift apart from one
 another, or else collide with one another and do one another damage, by
@@ -1985,7 +1985,7 @@ will not be able to avoid collisions. Or, if you like, think of humanity
 as a band playing a tune. To get a good result, you need two things.
 Each player’s individual instrument must be in tune and also each must
 come in at the right moment so as to combine with all the others.
-
+<br><br>
 But there is one thing we have not yet taken into account. We have not
 asked where the fleet is trying to get to, or what piece of music the
 band is trying to play. The instruments might be all in tune and might
@@ -1994,14 +1994,14 @@ be a success if they had been engaged to provide dance music and
 actually played nothing but Dead Marches. And however well the fleet
 sailed, its voyage would be a failure if it were meant to reach New York
 and actually arrived at Calcutta.
-
+<br><br>
 Morality, then, seems to be concerned with three things. Firstly, with
 fair play and harmony between individuals. Secondly, with what might be
 called tidying up or harmonising the things inside each individual.
 Thirdly, with the general purpose of human life as a whole: what man was
 made for: what course the whole fleet ought to be on: what tune the
 conductor of the band wants it to play.
-
+<br><br>
 You may have noticed that modern people are nearly always thinking about
 the first thing and forgetting the other two. When people say in the
 newspapers that we are striving for Christian moral standards, they
@@ -2022,7 +2022,7 @@ one another. But though it is natural to begin with all that, if our
 thinking about morality stops there, we might just as well not have
 thought at all. Unless we go on to the second thing—the tidying up
 inside each human being—we are only deceiving ourselves.
-
+<br><br>
 What is the good of telling the ships how to steer so as to avoid
 collisions if, in fact, they are such crazy old tubs that they cannot be
 steered at all? What is the good of drawing up, on paper, rules for
@@ -2039,7 +2039,7 @@ carrying on the old game under the new system. You cannot make men good
 by law: and without good men you cannot have a good society. That is why
 we must go on to think of the second thing: of morality inside the
 individual.
-
+<br><br>
 But I do not think we can stop there either. We are now getting to the
 point at which different beliefs about the universe lead to different
 behaviour. And it would seem, at first sight, very sensible to stop
@@ -2058,7 +2058,7 @@ the landlord of my own mind and body, or only a tenant, responsible to
 the real landlord? If somebody else made me, for his own purposes, then
 I shall have a lot of duties which I should not have if I simply
 belonged to myself.
-
+<br><br>
 Again, Christianity asserts that every individual human being is going
 to live for ever, and this must be either true or false. Now there are a
 good many things which would not be worth bothering about if I were
@@ -2075,7 +2075,7 @@ may last for a thousand years, is more important than an individual. But
 if Christianity is true, then the individual is not only more important
 but incomparably more important, for he is everlasting and the life of a
 state or a civilisation, compared with his, is only a moment.
-
+<br><br>
 It seems, then, that if we are to think about morality, we must think of
 all three departments: relations between man and man: things inside each
 man: and relations between man and the power that made him. We can all
@@ -2085,17 +2085,17 @@ main differences between Christian and non-Christian morality come out.
 For the rest of this book I am going to assume the Christian point of
 view, and look at the whole picture as it will be if Christianity is
 true.
+<br><br>
 
-
-
+<br><br>
 
                                    2
                          THE “CARDINAL VIRTUES”
-
+<br><br>
 
 The previous section was originally composed to be given as a short talk
 on the air.
-
+<br><br>
 If you are allowed to talk for only ten minutes, pretty well everything
 else has to be sacrificed to brevity. One of my chief reasons for
 dividing morality up into three parts (with my picture of the ships
@@ -2103,7 +2103,7 @@ sailing in convoy) was that this seemed the shortest way of covering the
 ground. Here I want to give some idea of another way in which the
 subject has been divided by old writers, which was too long to use in my
 talk, but which is a very good one.
-
+<br><br>
 According to this longer scheme there are seven “virtues.” Four of them
 are called “Cardinal” virtues, and the remaining three are called
 “Theological” virtues. The “Cardinal” ones are those which all civilised
@@ -2114,7 +2114,7 @@ at present I am talking about the four Cardinal virtues. (The word
 comes from a Latin word meaning “the hinge of a door.” These were called
 “cardinal” virtues because they are, as we should say, “pivotal.”) They
 are Prudence, Temperance, Justice, and Fortitude.
-
+<br><br>
 Prudence means practical common sense, taking the trouble to think out
 what you are doing and what is likely to come of it. Nowadays most
 people hardly think of Prudence as one of the “virtues.” In fact,
@@ -2149,7 +2149,7 @@ his intelligence being sharpened: one of the reasons why it needs no
 special education to be a Christian is that Christianity is an education
 itself. That is why an uneducated believer like Bunyan was able to write
 a book that has astonished the whole world.
-
+<br><br>
 Temperance is, unfortunately, one of those words that has changed its
 meaning. It now usually means teetotalism. But in the days when the
 second Cardinal virtue was christened “Temperance,” it meant nothing of
@@ -2172,7 +2172,7 @@ special reasons—marriage, or meat, or beer, or the cinema; but the
 moment he starts saying the things are bad in themselves, or looking
 down his nose at other people who do use them, he has taken the wrong
 turning.
-
+<br><br>
 One great piece of mischief has been done by the modern restriction of
 the word Temperance to the question of drink. It helps people to forget
 that you can be just as intemperate about lots of other things. A man
@@ -2182,7 +2182,7 @@ being just as “intemperate” as someone who gets drunk every evening. Of
 course, it does not show on the outside so easily: bridge-mania or
 golf-mania do not make you fall down in the middle of the road. But God
 is not deceived by externals.
-
+<br><br>
 Justice means much more than the sort of thing that goes on in law
 courts. It is the old name for everything we should now call “fairness”;
 it includes honesty, give and take, truthfulness, keeping promises, and
@@ -2191,7 +2191,7 @@ kind that faces danger as well as the kind that “sticks it” under pain.
 “Guts” is perhaps the nearest modern English. You will notice, of
 course, that you cannot practise any of the other virtues very long
 without bringing this one into play.
-
+<br><br>
 There is one further point about the virtues that ought to be noticed.
 There is a difference between doing some particular just or temperate
 action and being a just or temperate man. Someone who is not a good
@@ -2204,10 +2204,10 @@ which is there even when he is not doing mathematics. In the same way a
 man who perseveres in doing just actions gets in the end a certain
 quality of character. Now it is that quality rather than the particular
 actions which we mean when we talk of a “virtue.”
-
+<br><br>
 This distinction is important for the following reason. If we thought
 only of the particular actions we might encourage three wrong ideas.
-
+<br><br>
 (1) We might think that, provided you did the right thing, it did not
 matter how or why you did it—whether you did it willingly or
 unwillingly, sulkily or cheerfully, through fear of public opinion or
@@ -2218,10 +2218,10 @@ the bad tennis player hits very hard, not because he sees that a very
 hard stroke is required, but because he has lost his temper, his stroke
 might possibly, by luck, help him to win that particular game; but it
 will not be helping him to become a reliable player.)
-
+<br><br>
 (2) We might think that God wanted simply obedience to a set of rules:
 whereas He really wants people of a particular sort.
-
+<br><br>
 (3) We might think that the “virtue” were necessary only for this
 present life—that in the other world we could stop being just because
 there is nothing to quarrel about and stop being brave because there is
@@ -2234,13 +2234,13 @@ of character: the point is that if people have not got at least the
 beginnings of those qualities inside them, then no possible external
 conditions could make a “Heaven” for them—that is, could make them happy
 with the deep, strong, unshakable kind of happiness God intends for us.
+<br><br>
 
-
-
+<br><br>
 
                                    3
                             SOCIAL MORALITY
-
+<br><br>
 
 The first thing to get clear about Christian morality between man and
 man is that in this department Christ did not come to preach any brand
@@ -2254,7 +2254,7 @@ after time, to the old simple principles which we are all so anxious not
 to see; like bringing a horse back and back to the fence it has refused
 to jump or bringing a child back and back to the bit in its lesson that
 it wants to shirk.
-
+<br><br>
 The second thing to get clear is that Christianity has not, and does not
 profess to have, a detailed political programme for applying “Do as you
 would be done by” to a particular society at a particular moment. It
@@ -2267,7 +2267,7 @@ even in English grammar. It was never intended to replace or supersede
 the ordinary human arts and sciences: it is rather a director which will
 set them all to the right jobs, and a source of energy which will give
 them all new life, if only they will put themselves at its disposal.
-
+<br><br>
 People say, “The Church ought to give us a lead.” That is true if they
 mean it in the right way, but false if they mean it in the wrong way. By
 the Church they ought to mean the whole body of practising Christians.
@@ -2290,7 +2290,7 @@ from Christian trade unionists and Christian schoolmasters: just as
 Christian literature comes from Christian novelists and dramatists—not
 from the bench of bishops getting together and trying to write plays and
 novels in their spare time.
-
+<br><br>
 All the same, the New Testament, without going into details, gives us a
 pretty clear hint of what a fully Christian society would be like.
 Perhaps it gives us more than we can take. It tells us that there are to
@@ -2307,7 +2307,7 @@ be very unpopular) from wives to husbands. Thirdly, it is to be a
 cheerful society: full of singing and rejoicing, and regarding worry or
 anxiety as wrong. Courtesy is one of the Christian virtues; and the New
 Testament hates what it calls “busybodies.”
-
+<br><br>
 If there were such a society in existence and you or I visited it, I
 think we should come away with a curious impression. We should feel that
 its economic life was very socialistic and, in that sense, “advanced,”
@@ -2323,7 +2323,7 @@ attracted by bits of it and wants to pick out those bits and leave the
 rest. That is why we do not get much further: and that is why people who
 are fighting for quite opposite things can both say they are fighting
 for Christianity.
-
+<br><br>
 Now another point. There is one bit of advice given to us by the ancient
 heathen Greeks, and by the Jews in the Old Testament, and by the great
 Christian teachers of the Middle Ages, which the modern economic system
@@ -2340,7 +2340,7 @@ for the state we are in or not. This is where we want the Christian
 economist. But I should not have been honest if I had not told you that
 three great civilisations had agreed (or so it seems at first sight) in
 condemning the very thing on which we have based our whole life.
-
+<br><br>
 One more point and I am done. In the passage where the New Testament
 says that every one must work, it gives as a reason “in order that he
 may have something to give to those in need.” Charity—giving to the
@@ -2369,7 +2369,7 @@ insecurity. This must often be recognised as a temptation. Sometimes our
 pride also hinders our charity; we are tempted to spend more than we
 ought on the showy forms of generosity (tipping, hospitality) and less
 than we ought on those who really need our help.
-
+<br><br>
 And now, before I end, I am going to venture on a guess as to how this
 section has affected any who have read it. My guess is that there are
 some Leftist people among them who are very angry that it has not gone
@@ -2391,13 +2391,13 @@ love my neighbour as myself till I learn to love God: and I cannot learn
 to love God except by learning to obey Him. And so, as I warned you, we
 are driven on to something more inward—driven on from social matters to
 religious matters. For the longest way round is the shortest way home.
+<br><br>
 
-
-
+<br><br>
 
                                    4
                       MORALITY AND PSYCHOANALYSIS
-
+<br><br>
 
 I have said that we should never get a Christian society unless most of
 us became Christian individuals. That does not mean, of course, that we
@@ -2408,13 +2408,13 @@ to modern society, and (2) the job of becoming the sort of people who
 really would apply it if we saw how. I now want to begin considering
 what the Christian idea of a good man is—the Christian specification for
 the human machine.
-
+<br><br>
 Before I come down to details there are two more general points I should
 like to make. First of all, since Christian morality claims to be a
 technique for putting the human machine right, I think you would like to
 know how it is related to another technique which seems to make a
 similar claim—namely, psychoanalysis.
-
+<br><br>
 Now you want to distinguish very clearly between two things: between the
 actual medical theories and technique of the psychoanalysts, and the
 general philosophical view of the world which Freud and some others have
@@ -2434,7 +2434,7 @@ technique overlaps with Christian morality at some points and it would
 not be a bad thing if every parson knew something about it: but it does
 not run the same course all the way, for the two techniques are doing
 rather different things.
-
+<br><br>
 When a man makes a moral choice two things are involved. One is the act
 of choosing. The other is the various feelings, impulses and so on which
 his psychological outfit presents him with, and which are the raw
@@ -2450,7 +2450,7 @@ of the second. Now what psychoanalysis undertakes to do is to remove the
 abnormal feelings, that is, to give the man better raw material for his
 acts of choice: morality is concerned with the acts of choice
 themselves.
-
+<br><br>
 Put it this way. Imagine three men who go to a war. One has the ordinary
 natural fear of danger that any man has and he subdues it by moral
 effort and becomes a brave man. Let us suppose that the other two have,
@@ -2474,7 +2474,7 @@ improve the man’s raw material, you have still got something else: the
 real, free choice of the man, on the material presented to him, either
 to put his own advantage first or to put it last. And this free choice
 is the only thing that morality is concerned with.
-
+<br><br>
 The bad psychological material is not a sin but a disease. It does not
 need to be repented of, but to be cured. And by the way, that is very
 important. Human beings judge one another by their external actions. God
@@ -2487,7 +2487,7 @@ right thing, does some tiny little kindness, or refrains from some
 cruelty he might have committed, and thereby, perhaps, risks being
 sneered at by his companions, he may, in God’s eyes, be doing more than
 you and I would do if we gave up life itself for a friend.
-
+<br><br>
 It is as well to put this the other way round. Some of us who seem quite
 nice people may, in fact, have made so little use of a good heredity and
 a good upbringing that we are really worse than those whom we regard as
@@ -2505,7 +2505,7 @@ really due to a good digestion, will fall off some of us: all sorts of
 nasty things which were due to complexes or bad health will fall off
 others. We shall then, for the first time, see every one as he really
 was. There will be surprises.
-
+<br><br>
 And that leads on to my second point. People often think of Christian
 morality as a kind of bargain in which God says, “If you keep a lot of
 rules I’ll reward you, and if you don’t I’ll do the other thing.” I do
@@ -2522,7 +2522,7 @@ To be the one kind of creature is heaven: that is, it is joy and peace
 and knowledge and power. To be the other means madness, horror, idiocy,
 rage, impotence, and eternal loneliness. Each of us at each moment is
 progressing to the one state or the other.
-
+<br><br>
 That explains what always used to puzzle me about Christian writers;
 they seem to be so very strict at one moment and so very free and easy
 at another. They talk about mere sins of thought as if they were
@@ -2541,7 +2541,7 @@ fall into it. Each of them, if he seriously turns to God, can have that
 twist in the central man straightened out again: each is, in the long
 run, doomed if he will not. The bigness or smallness of the thing, seen
 from the outside, is not what really matters.
-
+<br><br>
 One last point. Remember that, as I said, the right direction leads not
 only to peace but to knowledge. When a man is getting better he
 understands more and more clearly the evil that is still left in him.
@@ -2553,13 +2553,13 @@ mistakes in arithmetic when your mind is working properly: while you are
 making them you cannot see them. You can understand the nature of
 drunkenness when you are sober, not when you are drunk. Good people know
 about both good and evil: bad people do not know about either.
+<br><br>
 
-
-
+<br><br>
 
                                    5
                             SEXUAL MORALITY
-
+<br><br>
 
 We must now consider Christian morality as regards sex, what Christians
 call the virtue of chastity. The Christian rule of chastity must not be
@@ -2595,7 +2595,7 @@ standard) improper; and, in return, that young people should not call
 their elders prudes or puritans because they do not easily adopt the new
 standard. A real desire to believe all the good you can of others and to
 make others as comfortable as you can will solve most of the problems.
-
+<br><br>
 Chastity is the most unpopular of the Christian virtues. There is no
 getting away from it: the Christian rule is, “Either marriage, with
 complete faithfulness to your partner, or else total abstinence.” Now
@@ -2603,7 +2603,7 @@ this is so difficult and so contrary to our instincts, that obviously
 either Christianity is wrong or our sexual instinct, as it now is, has
 gone wrong. One or the other. Of course, being a Christian, I think it
 is the instinct which has gone wrong.
-
+<br><br>
 But I have other reasons for thinking so. The biological purpose of sex
 is children, just as the biological purpose of eating is to repair the
 body. Now if we eat whenever we feel inclined and just as much as we
@@ -2614,7 +2614,7 @@ purpose, but not enormously. But if a healthy young man indulged his
 sexual appetite whenever he felt inclined, and if each act produced a
 baby, then in ten years he might easily populate a small village. This
 appetite is in ludicrous and preposterous excess of its function.
-
+<br><br>
 Of take it another way. You can get a large audience together for a
 strip-tease act—that is, to watch a girl undress on the stage. Now
 suppose you came to a country where you could fill a theatre by simply
@@ -2624,7 +2624,7 @@ it contained a mutton chop or a bit of bacon, would you not think that
 in that country something had gone wrong with the appetite for food? And
 would not anyone who had grown up in a different world think there was
 something equally queer about the state of the sex instinct among us?
-
+<br><br>
 One critic said that if he found a country in which such strip-tease
 acts with food were popular, he would conclude that the people of that
 country were starving. He meant, of course, to imply that such things as
@@ -2648,7 +2648,7 @@ one we can imagine. Everyone knows that the sexual appetite, like our
 other appetites, grows by indulgence. Starving men may think much about
 food, but so do gluttons; the gorged, as well as the famished, like
 titillations.
-
+<br><br>
 Here is a third point. You find very few people who want to eat things
 that really are not food or to do other things with food instead of
 eating it. In other words, perversions of the food appetite are rare.
@@ -2661,7 +2661,7 @@ as any of our other natural desires and that if only we abandon the
 silly old Victorian idea of hushing it up, everything in the garden will
 be lovely. It is not true. The moment you look at the facts, and away
 from the propaganda, you see that it is not.
-
+<br><br>
 They tell you sex has become a mess because it was hushed up. But for
 the last twenty years it has not been hushed up. It has been chattered
 about all day long. Yet it is still in a mess. If hushing up had been
@@ -2688,7 +2688,7 @@ Christians. If anyone says that sex, in itself, is bad, Christianity
 contradicts him at once. But, of course, when people say, “Sex is
 nothing to be ashamed of,” they may mean “the state into which the
 sexual instinct has now got is nothing to be ashamed of.”
-
+<br><br>
 If they mean that, I think they are wrong. I think it is everything to
 be ashamed of. There is nothing to be ashamed of in enjoying your food:
 there would be everything to be ashamed of if half the world made food
@@ -2703,7 +2703,7 @@ obsession is a man who has very little sales-resistance. God knows our
 situation; He will not judge us as if we had no difficulties to
 overcome. What matters is the sincerity and perseverance of our will to
 overcome them.
-
+<br><br>
 Before we can be cured we must want to be cured. Those who really wish
 for help will get it; but for many modern people even the wish is
 difficult. It is easy to think that we want something when we do not
@@ -2714,7 +2714,7 @@ heart had been secretly adding, “But please don’t do it just yet.” This
 may happen in prayers for other virtues too; but there are three reasons
 why it is now specially difficult for us to desire—let alone to
 achieve—complete chastity.
-
+<br><br>
 In the first place our warped natures, the devils who tempt us, and all
 the contemporary propaganda for lust, combine to make us feel that the
 desires we are resisting are so “natural,” so “healthy,” and so
@@ -2744,7 +2744,7 @@ unless you are going to ruin your whole life. The Christian principles
 are, admittedly, stricter than the others; but then we think you will
 get help towards obeying them which you will not get towards obeying the
 others.
-
+<br><br>
 In the second place, many people are deterred from seriously attempting
 Christian chastity because they think (before trying) that it is
 impossible. But when a thing has to be attempted, one must never think
@@ -2757,7 +2757,7 @@ mountain climbing, in learning to skate, or swim, or ride a bicycle,
 even in fastening a stiff collar with cold fingers, people quite often
 do what seemed impossible before they did it. It is wonderful what you
 can do when you have to.
-
+<br><br>
 We may, indeed, be sure that perfect chastity—like perfect charity—will
 not be attained by any merely human efforts. You must ask for God’s
 help. Even when you have done so, it may seem to you for a long time
@@ -2772,7 +2772,7 @@ on the one hand, that we cannot trust ourselves even in our best
 moments, and, on the other, that we need not despair even in our worst,
 for our failures are forgiven. The only fatal thing is to sit down
 content with anything less than perfection.
-
+<br><br>
 Thirdly, people often misunderstand what psychology teaches about
 “repressions.” It teaches us that “repressed” sex is dangerous. But
 “repressed” is here a technical term: it does not mean “suppressed” in
@@ -2789,7 +2789,7 @@ to know their desires as Wellington knew Napoleon, or as Sherlock Holmes
 knew Moriarty; as a rat-catcher knows rats or a plumber knows about
 leaky pipes. Virtue—even attempted virtue—brings light; indulgence
 brings fog.
-
+<br><br>
 Finally, though I have had to speak at some length about sex, I want to
 make it as clear as I possibly can that the centre of Christian morality
 is not here. If anyone thinks that Christians regard unchastity as the
@@ -2803,13 +2803,13 @@ Diabolical self. The Diabolical self is the worse of the two. That is
 why a cold, self-righteous prig who goes regularly to church may be far
 nearer to hell than a prostitute. But, of course, it is better to be
 neither.
+<br><br>
 
-
-
+<br><br>
 
                                    6
                            CHRISTIAN MARRIAGE
-
+<br><br>
 
 The last chapter was mainly negative. I discussed what was wrong with
 the sexual impulse in man, but said very little about its right
@@ -2819,7 +2819,7 @@ the Christian doctrines on this subject are extremely unpopular. The
 second is that I have never been married myself, and, therefore, can
 speak only at second hand. But in spite of that, I feel I can hardly
 leave the subject out in an account of Christian morals.
-
+<br><br>
 The Christian idea of marriage is based on Christ’s words that a man and
 wife are to be regarded as a single organism—for that is what the words
 “one flesh” would be in modern English. And the Christians believe that
@@ -2838,7 +2838,7 @@ pleasure of eating. It means that you must not isolate that pleasure and
 try to get it by itself, any more than you ought to try to get the
 pleasures of taste without swallowing and digesting, by chewing things
 and spitting them out again.
-
+<br><br>
 As a consequence, Christianity teaches that marriage is for life. There
 is, of course, a difference here between different Churches: some do not
 admit divorce at all; some allow it reluctantly in very special cases.
@@ -2855,7 +2855,7 @@ deserting a regiment. What they all disagree with is the modern view
 that it is a simple readjustment of partners, to be made whenever people
 feel they are no longer in love with one another, or when either of them
 falls in love with someone else.
-
+<br><br>
 Before we consider this modern view in its relation to chastity, we must
 not forget to consider it in relation to another virtue, namely justice.
 Justice, as I said before, includes the keeping of promises. Now
@@ -2869,7 +2869,7 @@ indulgence is controlled by our promises, so should its be. If, as I
 think, it is not like all our other impulses, but is morbidly inflamed,
 then we should be specially careful not to let it lead us into
 dishonesty.
-
+<br><br>
 To this someone may reply that he regarded the promise made in church as
 a mere formality and never intended to keep it. Whom, then, was he
 trying to deceive when he made it? God? That was really very unwise.
@@ -2888,7 +2888,7 @@ live together unmarried than that they should make vows they do not mean
 to keep. It is true that by living together without marriage they will
 be guilty (in Christian eyes) of fornication. But one fault is not
 mended by adding another: unchastity is not improved by adding perjury.
-
+<br><br>
 The idea that “being in love” is the only reason for remaining married
 really leaves no room for marriage as a contract or promise at all. If
 love is the whole thing, then the promise can add nothing; and if it
@@ -2901,7 +2901,7 @@ Christian law is not forcing upon the passion of love something which is
 foreign to that passion’s own nature: it is demanding that lovers should
 take seriously something which their passion of itself impels them to
 do.
-
+<br><br>
 And, of course, the promise, made when I am in love and because I am in
 love, to be true to the beloved as long as I live, commits me to being
 true even if I cease to be in love. A promise must be about things that
@@ -2914,7 +2914,7 @@ woman (who has probably sacrificed or damaged her own career by getting
 married) from being dropped whenever the man is tired of her. But there
 is also another reason of which I am very sure, though I find it a
 little hard to explain.
-
+<br><br>
 It is hard because so many people cannot be brought to realise that when
 B is better than C, A may be even better than B. They like thinking in
 terms of good and bad, not of good, better, and best, or bad, worse and
@@ -2928,7 +2928,7 @@ a duel might be better than a lifelong enmity which expresses itself in
 secret efforts to “do the man down,” they go away complaining that you
 would not give them a straight answer. I hope no one will make this
 mistake about what I am now going to say.
-
+<br><br>
 What we call “being in love” is a glorious state, and, in several ways,
 good for us. It helps to make us generous and courageous, it opens our
 eyes not only to the beauty of the beloved but to all beauty, and it
@@ -2963,7 +2963,7 @@ else. “Being in love” first moved them to promise fidelity: this quieter
 love enables them to keep the promise. It is on this love that the
 engine of marriage is run: being in love was the explosion that started
 it.
-
+<br><br>
 If you disagree with me, of course, you will say, “He knows nothing
 about it, he is not married.” You may quite possibly be right. But
 before you say that, make quite sure that you are judging me by what you
@@ -2973,7 +2973,7 @@ is not so easy to do as people think. Our experience is coloured through
 and through by books and plays and the cinema, and it takes patience and
 skill to disentangle the things we have really learned from life for
 ourselves.
-
+<br><br>
 People get from books the idea that if you have married the right person
 you may expect to go on “being in love” for ever. As a result, when they
 find they are not, they think this proves they have made a mistake and
@@ -2994,7 +2994,7 @@ sober interest, who are then most likely to meet new thrills in some
 quite different direction. The man who has learned to fly and become a
 good pilot will suddenly discover music; the man who has settled down to
 live in the beauty spot will discover gardening.
-
+<br><br>
 This is, I think, one little part of what Christ meant by saying that a
 thing will not really live unless it first dies. It is simply no good
 trying to keep any thrill: that is the very worst thing you can do. Let
@@ -3010,7 +3010,7 @@ ought to be appearing and new doors opening all round them. It is much
 better fun to learn to swim than to go on endlessly (and hopelessly)
 trying to get back the feeling you had when you first went paddling as a
 small boy.
-
+<br><br>
 Another notion we get from novels and plays is that “falling in love” is
 something quite irresistible; something that just happens to one, like
 measles. And because they believe this, some married people throw up the
@@ -3026,7 +3026,7 @@ and our bodies full of alcohol, we shall turn any love we feel into that
 kind of love: just as if you have a rut in your path all the rainwater
 will run into that rut, and if you wear blue spectacles everything you
 see will turn blue. But that will be our own fault.
-
+<br><br>
 Before leaving the question of divorce, I should like to distinguish two
 things which are very often confused. The Christian conception of
 marriage is one: the other is the quite different question—how far
@@ -3043,14 +3043,14 @@ kinds of marriage: one governed by the State with rules enforced on all
 citizens, the other governed by the Church with rules enforced by her on
 her own members. The distinction ought to be quite sharp, so that a man
 knows which couples are married in a Christian sense and which are not.
-
+<br><br>
 So much for the Christian doctrine about the permanence of marriage.
 Something else, even more unpopular, remains to be dealt with. Christian
 wives promise to obey their husbands. In Christian marriage the man is
 said to be the “head.” Two questions obviously arise here, (1) Why
 should there be a head at all—why not equality? (2) Why should it be the
 man?
-
+<br><br>
 (1) The need for some head follows from the idea that marriage is
 permanent. Of course, as long as the husband and wife are agreed, no
 question of a head need arise; and we may hope that this will be the
@@ -3064,7 +3064,7 @@ or other of them must have a casting vote. If marriage is permanent, one
 or other party must, in the last resort, have the power of deciding the
 family policy. You cannot have a permanent association without a
 constitution.
-
+<br><br>
 (2) If there must be a head, why the man? Well, firstly, is there any
 very serious wish that it should be the woman? As I have said, I am not
 married myself, but as far as I can see, even a woman who wants to be
@@ -3094,13 +3094,13 @@ if you are a married woman, let me ask you this question. Much as you
 admire your husband, would you not say that his chief failing is his
 tendency not to stick up for his rights and yours against the neighbours
 as vigorously as you would like? A bit of an Appeaser?
+<br><br>
 
-
-
+<br><br>
 
                                    7
                               FORGIVENESS
-
+<br><br>
 
 I said in a previous chapter that chastity was the most unpopular of the
 Christian virtues. But I am not sure I was right. I believe there is one
@@ -3108,7 +3108,7 @@ even more unpopular. It is laid down in the Christian rule, “Thou shalt
 love thy neighbour as thyself.” Because in Christian morals “thy
 neighbour” includes “thy enemy,” and so we come up against this terrible
 duty of forgiving our enemies.
-
+<br><br>
 Every one says forgiveness is a lovely idea, until they have something
 to forgive, as we had during the war. And then, to mention the subject
 at all is to be greeted with howls of anger. It is not that people think
@@ -3116,7 +3116,7 @@ this too high and difficult a virtue: it is that they think it hateful
 and contemptible. “That sort of talk makes them sick,” they say. And
 half of you already want to ask me, “I wonder how you’d feel about
 forgiving the Gestapo if you were a Pole or a Jew?”
-
+<br><br>
 So do I. I wonder very much. Just as when Christianity tells me that I
 must not deny my religion even to save myself from death by torture, I
 wonder very much what I should do when it came to the point. I am not
@@ -3127,7 +3127,7 @@ forgive those that sin against us.” There is no slightest suggestion
 that we are offered forgiveness on any other terms. It is made perfectly
 clear that if we do not forgive we shall not be forgiven. There are no
 two ways about it. What are we to do?
-
+<br><br>
 It is going to be hard enough, anyway, but I think there are two things
 we can do to make it easier. When you start mathematics you do not begin
 with the calculus; you begin with simple addition. In the same way, if
@@ -3139,7 +3139,7 @@ or said in the last week. That will probably keep us busy for the
 moment. And secondly, we might try to understand exactly what loving
 your neighbour as yourself means. I have to love him as I love myself.
 Well, how exactly do I love myself?
-
+<br><br>
 Now that I come to think of it, I have not exactly got a feeling of
 fondness or affection for myself, and I do not even always enjoy my own
 society. So apparently “Love your neighbour” does not mean “feel fond of
@@ -3160,7 +3160,7 @@ allowed to loathe and hate some of the things my enemies do. Now that I
 come to think of it, I remember Christian teachers telling me long ago
 that I must hate a bad man’s actions, but not hate the bad man: or, as
 they would say, hate the sin but not the sinner.
-
+<br><br>
 For a long time I used to think this a silly, straw-splitting
 distinction: how could you hate what a man did and not hate the man? But
 years later it occurred to me that there was one man to whom I had been
@@ -3176,7 +3176,7 @@ But it does want us to hate them in the same way in which we hate things
 in ourselves: being sorry that the man should have done such things, and
 hoping, if it is anyway possible, that somehow, sometime, somewhere, he
 can be cured and made human again.
-
+<br><br>
 The real test is this. Suppose one reads a story of filthy atrocities in
 the paper. Then suppose that something turns up suggesting that the
 story might not be quite true, or not quite so bad as it was made out.
@@ -3191,7 +3191,7 @@ grey as black, and then to see white itself as black. Finally, we shall
 insist on seeing everything—God and our friends and ourselves
 included—as bad, and not be able to stop doing it: we shall be fixed for
 ever in a universe of pure hatred.
-
+<br><br>
 Now a step further. Does loving your enemy mean not punishing him? No,
 for loving myself does not mean that I ought not to subject myself to
 punishment—even to death. If one had committed a murder, the right
@@ -3218,13 +3218,13 @@ were ashamed of it. It is that feeling that robs lots of magnificent
 young Christians in the Services of something they have a right to,
 something which is the natural accompaniment of courage—a kind of gaiety
 and wholeheartedness.
-
+<br><br>
 I have often thought to myself how it would have been if, when I served
 in the first world war, I and some young German had killed each other
 simultaneously and found ourselves together a moment after death. I
 cannot imagine that either of us would have felt any resentment or even
 any embarrassment. I think we might have laughed over it.
-
+<br><br>
 I imagine somebody will say, “Well, if one is allowed to condemn the
 enemy’s acts, and punish him, and kill him, what difference is left
 between Christian morality and the ordinary view?” All the difference in
@@ -3244,7 +3244,7 @@ the enemy as we feel about ourselves—to wish that he were not bad, to
 hope that he may, in this world or another, be cured: in fact, to wish
 his good. That is what is meant in the Bible by loving him: wishing his
 good, not feeling fond of him nor saying he is nice when he is not.
-
+<br><br>
 I admit that this means loving people who have nothing lovable about
 them. But then, has oneself anything lovable about it? You love it
 simply because it is yourself. God intends us to love all selves in the
@@ -3256,13 +3256,13 @@ attractive qualities we think we have, but just because we are the
 things called selves. For really there is nothing else in us to love:
 creatures like us who actually find hatred such a pleasure that to give
 it up is like giving up beer or tobacco. . . .
+<br><br>
 
-
-
+<br><br>
 
                                    8
                              THE GREAT SIN
-
+<br><br>
 
 I now come to that part of Christian morals where they differ most
 sharply from all other morals. There is one vice of which no man in the
@@ -3277,7 +3277,7 @@ who showed the slightest mercy to it in others. There is no fault which
 makes a man more unpopular, and no fault which we are more unconscious
 of in ourselves. And the more we have it ourselves, the more we dislike
 it in others.
-
+<br><br>
 The vice I am talking of is Pride or Self-Conceit: and the virtue
 opposite to it, in Christian morals, is called Humility. You may
 remember, when I was talking about sexual morality, I warned you that
@@ -3287,7 +3287,7 @@ the utmost evil, is Pride. Unchastity, anger, greed, drunkenness, and
 all that, are mere fleabites in comparison: it was through Pride that
 the devil became the devil: Pride leads to every other vice: it is the
 complete anti-God state of mind.
-
+<br><br>
 Does this seem to you exaggerated? If so, think it over. I pointed out a
 moment ago that the more pride one had, the more one disliked pride in
 others. In fact, if you want to find out how proud you are the easiest
@@ -3317,7 +3317,7 @@ round; but the proud man, even when he has got more than he can possibly
 want, will try to get still more just to assert his power. Nearly all
 those evils in the world which people put down to greed or selfishness
 are really far more the result of Pride.
-
+<br><br>
 Take it with money. Greed will certainly make a man want money, for the
 sake of a better house, better holidays, better things to eat and drink.
 But only up to a point. What is it that makes a man with £10,000 a year
@@ -3334,21 +3334,21 @@ and on, demanding more and more? Pride again. Pride is competitive by
 its very nature: that is why it goes on and on. If I am a proud man,
 then, as long as there is one man in the whole world more powerful, or
 richer, or cleverer than I, he is my rival and my enemy.
-
+<br><br>
 The Christians are right: it is Pride which has been the chief cause of
 misery in every nation and every family since the world began. Other
 vices may sometimes bring people together: you may find good fellowship
 and jokes and friendliness among drunken people or unchaste people. But
 Pride always means enmity—it <i>is</i> enmity. And not only enmity between
 man and man, but enmity to God.
-
+<br><br>
 In God you come up against something which is in every respect
 immeasurably superior to yourself. Unless you know God as that—and,
 therefore, know yourself as nothing in comparison—you do not know God at
 all. As long as you are proud you cannot know God. A proud man is always
 looking down on things and people: and, of course, as long as you are
 looking down, you cannot see something that is above you.
-
+<br><br>
 That raises a terrible question. How is it that people who are quite
 obviously eaten up with Pride can say they believe in God and appear to
 themselves very religious? I am afraid it means they are worshipping an
@@ -3367,7 +3367,7 @@ being acted on, not by God, but by the devil. The real test of being in
 the presence of God is that you either forget about yourself altogether
 or see yourself as a small, dirty object. It is better to forget about
 yourself altogether.
-
+<br><br>
 It is a terrible thing that the worst of all the vices can smuggle
 itself into the very centre of our religious life. But you can see why.
 The other, and less bad, vices come from the devil working on us through
@@ -3384,10 +3384,10 @@ you the Dictatorship of Pride—just as he would be quite content to see
 your chilblains cured if he was allowed, in return, to give you cancer.
 For Pride is spiritual cancer: it eats up the very possibility of love,
 or contentment, or even common sense.
-
+<br><br>
 Before leaving this subject I must guard against some possible
 misunderstandings:
-
+<br><br>
 (1) Pleasure in being praised is not Pride. The child who is patted on
 the back for doing a lesson well, the woman whose beauty is praised by
 her lover, the saved soul to whom Christ says “Well done,” are pleased
@@ -3421,7 +3421,7 @@ In this way real thorough-going Pride may act as a check on vanity; for,
 as I said a moment ago, the devil loves “curing” a small fault by giving
 you a great one. We must try not to be vain, but we must never call in
 our Pride to cure our vanity; better the frying-pan than the fire.
-
+<br><br>
 (2) We say in English that a man is “proud” of his son, or his father,
 or his school, or regiment, and it may be asked whether “pride” in this
 sense is a sin. I think it depends on what, exactly, we mean by “proud
@@ -3434,7 +3434,7 @@ fault; but even then, it would be better than being proud simply of
 himself. To love and admire anything outside yourself is to take one
 step away from utter spiritual ruin; though we shall not be well so long
 as we love and admire anything more than we love and admire God.
-
+<br><br>
 (3) We must not think Pride is something God forbids because He is
 offended at it, or that Humility is something He demands as due to His
 own dignity—as if God Himself was proud. He is not in the least worried
@@ -3452,7 +3452,7 @@ more about the relief, the comfort, of taking the fancy-dress
 off—getting rid of the false self, with all its “Look at me” and “Aren’t
 I a good boy?” and all its posing and posturing. To get even near it,
 even for a moment, is like a drink of cold water to a man in a desert.
-
+<br><br>
 (4) Do not imagine that if you meet a really humble man he will be what
 most people call “humble” nowadays: he will not be a sort of greasy,
 smarmy person, who is always telling you that, of course, he is nobody.
@@ -3461,18 +3461,18 @@ intelligent chap who took a real interest in what <i>you</i> said to <i>him</i>.
 If you do dislike him it will be because you feel a little envious of
 anyone who seems to enjoy life so easily. He will not be thinking about
 humility: he will not be thinking about himself at all.
-
+<br><br>
 If anyone would like to acquire humility, I can, I think, tell him the
 first step. The first step is to realise that one is proud. And a
 biggish step, too. At least, nothing whatever can be done before it. If
 you think you are not conceited, it means you are very conceited indeed.
+<br><br>
 
-
-
+<br><br>
 
                                    9
                                 CHARITY
-
+<br><br>
 
 I said in an earlier chapter that there were four “Cardinal” virtues and
 three “Theological” virtues. The three Theological ones are Faith, Hope,
@@ -3480,7 +3480,7 @@ and Charity. Faith is going to be dealt with in the last two chapters.
 Charity was partly dealt with in Chapter 7, but there I concentrated on
 that part of Charity which is called Forgiveness. I now want to add a
 little more.
-
+<br><br>
 First, as to the meaning of the word. “Charity” now means simply what
 used to be called “alms”—that is, giving to the poor. Originally it had
 a much wider meaning. (You can see how it got the modern sense. If a man
@@ -3492,7 +3492,7 @@ means “Love, in the Christian sense.” But love, in the Christian sense,
 does not mean an emotion. It is a state not of the feelings but of the
 will; that state of the will which we have naturally about ourselves,
 and must learn to have about other people.
-
+<br><br>
 I pointed out in the chapter on Forgiveness that our love for ourselves
 does not mean that we <i>like</i> ourselves. It means that we wish our own
 good. In the same way Christian Love (or Charity) for our neighbours is
@@ -3501,7 +3501,7 @@ of” some people, and not of others. It is important to understand that
 this natural “liking” is neither a sin nor a virtue, any more than your
 likes and dislikes in food are a sin or a virtue. It is just a fact.
 But, of course, what we do about it is either sinful or virtuous.
-
+<br><br>
 Natural liking or affection for people makes it easier to be
 “charitable” towards them. It is, therefore, normally a duty to
 encourage our affections—to “like” people as much as we can (just as it
@@ -3514,7 +3514,7 @@ where our liking conflicts with our charity towards the person we like.
 For example, a doting mother may be tempted by natural affection to
 “spoil” her child; that is, to gratify her own affectionate impulses at
 the expense of the child’s real happiness later on.
-
+<br><br>
 But though natural likings should normally be encouraged, it would be
 quite wrong to think that the way to become charitable is to sit trying
 to manufacture affectionate feelings. Some people are “cold” by
@@ -3535,7 +3535,7 @@ quick eye for anything like showing off, or patronage.) But whenever we
 do good to another self, just because it is a self, made (like us) by
 God, and desiring its own happiness as we desire ours, we shall have
 learned to love it a little more or, at least, to dislike it less.
-
+<br><br>
 Consequently, though Christian charity sounds a very cold thing to
 people whose heads are full of sentimentality, and though it is quite
 distinct from affection, yet it leads to affection. The difference
@@ -3545,13 +3545,13 @@ worldly man treats certain people kindly because he “likes” them: the
 Christian, trying to treat every one kindly, finds himself liking more
 and more people as he goes on—including people he could not even have
 imagined himself liking at the beginning.
-
+<br><br>
 This same spiritual law works terribly in the opposite direction. The
 Germans, perhaps, at first ill-treated the Jews because they hated them:
 afterwards they hated them much more because they had ill-treated them.
 The more cruel you are, the more you will hate; and the more you hate,
 the more cruel you will become—and so on in a vicious circle for ever.
-
+<br><br>
 Good and evil both increase at compound interest. That is why the little
 decisions you and I make every day are of such infinite importance. The
 smallest good act today is the capture of a strategic point from which,
@@ -3559,7 +3559,7 @@ a few months later, you may be able to go on to victories you never
 dreamed of. An apparently trivial indulgence in lust or anger today is
 the loss of a ridge or railway line or bridgehead from which the enemy
 may launch an attack otherwise impossible.
-
+<br><br>
 Some writers use the word charity to describe not only Christian love
 between human beings, but also God’s love for man and man’s love for
 God. About the second of these two, people are often worried. They are
@@ -3568,7 +3568,7 @@ themselves. What are they to do? The answer is the same as before. Act
 as if you did. Do not sit trying to manufacture feelings. Ask yourself,
 “If I were sure that I loved God, what would I do?” When you have found
 the answer, go and do it.
-
+<br><br>
 On the whole, God’s love for us is a much safer subject to think about
 than our love for Him. Nobody can always have devout feelings: and even
 if we could, feelings are not what God principally cares about.
@@ -3581,13 +3581,13 @@ feelings come and go, His love for us does not. It is not wearied by our
 sins, or our indifference; and, therefore, it is quite relentless in its
 determination that we shall be cured of those sins, at whatever cost to
 us, at whatever cost to Him.
+<br><br>
 
-
-
+<br><br>
 
                                    10
                                   HOPE
-
+<br><br>
 
 Hope is one of the Theological virtues. This means that a continual
 looking forward to the eternal world is not (as some modern people
@@ -3610,7 +3610,7 @@ health provided you want other things more—food, games, work, fun, open
 air. In the same way, we shall never save civilisation as long as
 civilisation is our main object. We must learn to want something else
 even more.
-
+<br><br>
 Most of us find it very difficult to want “Heaven” at all—except in so
 far as “Heaven” means meeting again our friends who have died. One
 reason for this difficulty is that we have not been trained: our whole
@@ -3631,7 +3631,7 @@ what I mean. The wife may be a good wife, and the hotels and scenery may
 have been excellent, and chemistry may be a very interesting job: but
 something has evaded us. Now there are two wrong ways of dealing with
 this fact, and one right one.
-
+<br><br>
 (1) The Fool’s Way.—He puts the blame on the things themselves. He goes
 on all his life thinking that if only he tried another woman, or went
 for a more expensive holiday, or whatever it is, then, this time, he
@@ -3641,7 +3641,7 @@ spend their whole lives trotting from woman to woman (through the
 divorce courts), from continent to continent, from hobby to hobby,
 always thinking that the latest is “the Real Thing” at last, and always
 disappointed.
-
+<br><br>
 (2) The Way of the Disillusioned “Sensible Man.”—He soon decides that
 the whole thing was moonshine. “Of course,” he says, “one feels like
 that when one’s young. But by the time you get to my age you’ve given up
@@ -3657,7 +3657,7 @@ waiting for us? Supposing one really can reach the rainbow’s end? In
 that case it would be a pity to find out too late (a moment after death)
 that by our supposed “common sense” we had stifled in ourselves the
 faculty of enjoying it.
-
+<br><br>
 (3) The Christian Way.—The Christian says, “Creatures are not born with
 desires unless satisfaction for those desires exists. A baby feels
 hunger: well, there is such a thing as food. A duckling wants to swim:
@@ -3675,7 +3675,7 @@ myself the desire for my true country, which I shall not find till after
 death; I must never let it get snowed under or turned aside; I must make
 it the main object of life to press on to that other country and to help
 others to do the same.”
-
+<br><br>
 There is no need to be worried by facetious people who try to make the
 Christian hope of “Heaven” ridiculous by saying they do not want “to
 spend eternity playing harps.” The answer to such people is that if they
@@ -3690,13 +3690,13 @@ power and joy. Gold is mentioned to suggest the timelessness of Heaven
 (gold does not rust) and the preciousness of it. People who take these
 symbols literally might as well think that when Christ told us to be
 like doves, He meant that we were to lay eggs.
+<br><br>
 
-
-
+<br><br>
 
                                    11
                                  FAITH
-
+<br><br>
 
 I must talk in this chapter about what the Christians call Faith.
 Roughly speaking, the word Faith seems to be used by Christians in two
@@ -3713,7 +3713,7 @@ the goodness or badness of the evidence that would not mean he was a bad
 man, but only that he was not very clever. And if he thought the
 evidence bad but tried to force himself to believe in spite of it, that
 would be merely stupid.
-
+<br><br>
 Well, I think I still take that view. But what I did not see then—and a
 good many people do not see still—was this. I was assuming that if the
 human mind once accepts a thing as true it will automatically go on
@@ -3730,7 +3730,7 @@ words, I lose my faith in anæsthetics. It is not reason that is taking
 away my faith: on the contrary, my faith is based on reason. It is my
 imagination and emotions. The battle is between faith and reason on one
 side and emotion and imagination on the other.
-
+<br><br>
 When you think of it you will see lots of instances of this. A man
 knows, on perfectly good evidence, that a pretty girl of his
 acquaintance is a liar and cannot keep a secret and ought not to be
@@ -3745,7 +3745,7 @@ dozens of people float and swim. But the whole question is whether he
 will be able to go on believing this when the instructor takes away his
 hand and leaves him unsupported in the water—or whether he will suddenly
 cease to believe it and get in a fright and go down.
-
+<br><br>
 Now just the same thing happens about Christianity. I am not asking
 anyone to accept Christianity if his best reasoning tells him that the
 weight of the evidence is against it. That is not the point at which
@@ -3763,7 +3763,7 @@ wishes and desires will carry out a blitz. I am not talking of moments
 at which any real new reasons against Christianity turn up. Those have
 to be faced and that is a different matter. I am talking about moments
 when a mere mood rises up against it.
-
+<br><br>
 Now Faith, in the sense in which I am here using the word, is the art of
 holding on to things your reason has once accepted, in spite of your
 changing moods. For moods will change, whatever view your reason takes.
@@ -3776,7 +3776,7 @@ they get off,” you can never be either a sound Christian or even a sound
 atheist, but just a creature dithering to and fro, with its beliefs
 really dependent on the weather and the state of its digestion.
 Consequently one must train the habit of Faith.
-
+<br><br>
 The first step is to recognise the fact that your moods change. The next
 is to make sure that, if you have once accepted Christianity, then some
 of its main doctrines shall be deliberately held before your mind for
@@ -3788,7 +3788,7 @@ as a matter of fact, if you examined a hundred people who had lost their
 faith in Christianity, I wonder how many of them would turn out to have
 been reasoned out of it by honest argument? Do not most people simply
 drift away?
-
+<br><br>
 Now I must turn to Faith in the second or higher sense: and this is the
 most difficult thing I have tackled yet. I want to approach it by going
 back to the subject of Humility. You may remember I said that the first
@@ -3818,7 +3818,7 @@ wiped out. If there was any idea of a sort of bargain—any idea that we
 could perform our side of the contract and thus put God in our debt so
 that it was up to Him, in mere justice, to perform His—any side—that has
 to be wiped out.
-
+<br><br>
 I think every one who has some vague belief in God, until he becomes a
 Christian, has the idea of an exam. or of a bargain in his mind. The
 first result of real Christianity is to blow that idea into bits. When
@@ -3829,7 +3829,7 @@ the very things Christianity was designed to do was to blow this idea to
 bits. God has been waiting for the moment at which you discover that
 there is no question of earning a pass mark in this exam. or putting Him
 in your debt.
-
+<br><br>
 Then comes another discovery. Every faculty you have, your power of
 thinking or of moving your limbs from moment to moment, is given you by
 God. If you devoted every moment of your whole life exclusively to His
@@ -3843,13 +3843,13 @@ only an idiot would think that the father is sixpence to the good on the
 transaction. When a man has made these two discoveries God can really
 get to work. It is after this that real life begins. The man is awake
 now. We can now go on to talk of Faith in the second sense.
+<br><br>
 
-
-
+<br><br>
 
                                    12
                                  FAITH
-
+<br><br>
 
 I want to start by saying something that I would like everyone to notice
 carefully. It is this. If this chapter means nothing to you, if it seems
@@ -3865,14 +3865,14 @@ reached those places. Whenever you find any statement in Christian
 writings which you can make nothing of, do not worry. Leave it alone.
 There will come a day, perhaps years later, when you suddenly see what
 it meant. If one could understand it now, it would only do one harm.
-
+<br><br>
 Of course all this tells against me as much as anyone else. The thing I
 am going to try to explain in this chapter may be ahead of me. I may be
 thinking I have got there when I have not. I can only ask instructed
 Christians to watch very carefully, and tell me when I go wrong; and
 others to take what I say with a grain of salt—as something offered,
 because it may be a help, not because I am certain that I am right.
-
+<br><br>
 I am trying to talk about Faith in the second sense, the higher sense. I
 said just now that the question of Faith in this sense arises after a
 man has tried his level best to practise the Christian virtues, and
@@ -3893,7 +3893,7 @@ counter-claims between himself and God—he is not yet in the right
 relation to Him. He is misunderstanding what he is and what God is. And
 he cannot get into the right relation until he has discovered the fact
 of our bankruptcy.
-
+<br><br>
 When I say “discovered,” I mean really discovered: not simply said it
 parrot-fashion. Of course, any child, if given a certain kind of
 religious education, will soon learn to say that we have nothing to
@@ -3901,7 +3901,7 @@ offer to God that is not already His own and that we find ourselves
 failing to offer even that without keeping something back. But I am
 talking of really discovering this: really finding out by experience
 that it is true.
-
+<br><br>
 Now we cannot, in that sense, discover our failure to keep God’s law
 except by trying our very hardest (and then failing). Unless we really
 try, whatever we say there will always be at the back of our minds the
@@ -3926,7 +3926,7 @@ a particular year. And what matters is the nature of the change in
 itself, not how we feel while it is happening. It is the change from
 being confident about our own efforts to the state in which we despair
 of doing anything for ourselves and leave it to God.
-
+<br><br>
 I know the words “leave it to God” can be misunderstood, but they must
 stay for the moment. The sense in which a Christian leaves it to God is
 that he puts all his trust in Christ: trusts that Christ will somehow
@@ -3954,7 +3954,7 @@ less worried way. Not doing these things in order to be saved, but
 because He has begun to save you already. Not hoping to get to Heaven as
 a reward for your actions, but inevitably wanting to act in a certain
 way because a first faint gleam of Heaven is already inside you.
-
+<br><br>
 Christians have often disputed as to whether what leads the Christian
 home is good actions, or Faith in Christ. I have no right really to
 speak on such a difficult question, but it does seem to me like asking
@@ -3978,7 +3978,7 @@ no difference in the end.” The answer to that nonsense is that, if what
 you call your “faith” in Christ does not involve taking the slightest
 notice of what He says, then it is not Faith at all—not faith or trust
 in Him, but only intellectual acceptance of some theory about Him.
-
+<br><br>
 The Bible really seems to clinch the matter when it puts the two things
 together into one amazing sentence. The first half is, “Work out your
 own salvation with fear and trembling”—which looks as if everything
@@ -3998,7 +3998,7 @@ that even those who insist most strongly on the importance of good
 actions tell you you need Faith; and even those who insist most strongly
 on Faith tell you to do good actions. At any rate that is as far as I
 can go.
-
+<br><br>
 I think all Christians would agree with me if I said that though
 Christianity seems at first to be all about morality, all about duties
 and rules and guilt and virtue, yet it leads you on, out of all that,
@@ -4010,19 +4010,19 @@ They are not thinking of it. They are too busy looking at the source
 from which it comes. But this is near the stage where the road passes
 over the rim of our world. No one’s eyes can see very far beyond that:
 lots of people’s eyes can see further than mine.
+<br><br>
 
-
-
+<br><br>
 
                                 BOOK IV
    BEYOND PERSONALITY: or FIRST STEPS IN THE DOCTRINE OF THE TRINITY
+<br><br>
 
-
-
+<br><br>
 
                                    1
                           MAKING AND BEGETTING
-
+<br><br>
 
 Everyone has warned me not to tell you what I am going to tell you in
 this last book. They all say “the ordinary reader does not want
@@ -4032,7 +4032,7 @@ means “the science of God,” and I think any man who wants to think about
 God at all would like to have the clearest and most accurate ideas about
 Him which are available. You are not children: why should you be treated
 like children?
-
+<br><br>
 In a way I quite understand why some people are put off by Theology. I
 remember once when I had been giving a talk to the R.A.F., an old,
 hard-bitten officer got up and said, “I’ve no use for all that stuff.
@@ -4041,7 +4041,7 @@ Him: out alone in the desert at night: the tremendous mystery. And
 that’s just why I don’t believe all your neat little dogmas and formulas
 about Him. To anyone who’s met the real thing they all seem so petty and
 pedantic and unreal!”
-
+<br><br>
 Now in a sense I quite agreed with that man. I think he had probably had
 a real experience of God in the desert. And when he turned from that
 experience to the Christian creeds, I think he really was turning from
@@ -4060,7 +4060,7 @@ anywhere, the map is absolutely necessary. As long as you are content
 with walks on the beach, your own glimpses are far more fun than looking
 at a map. But the map is going to be more use than walks on the beach if
 you want to get to America.
-
+<br><br>
 Now, Theology is like the map. Merely learning and thinking about the
 Christian doctrines, if you stop there, is less real and less exciting
 than the sort of thing my friend got in the desert. Doctrines are not
@@ -4079,7 +4079,7 @@ that way, and you will not get eternal life by simply feeling the
 presence of God in flowers or music. Neither will you get anywhere by
 looking at maps without going to sea. Nor will you be very safe if you
 go to sea without a map.
-
+<br><br>
 In other words, Theology is practical: especially now. In the old days,
 when there was less education and discussion, perhaps it was possible to
 get on with a very few simple ideas about God. But it is not so now.
@@ -4091,14 +4091,14 @@ trotted out as novelties today are simply the ones which real
 Theologians tried centuries ago and rejected. To believe in the popular
 religion of modern England is retrogression—like believing the earth is
 flat.
-
+<br><br>
 For when you get down to it, is not the popular idea of Christianity
 simply this: that Jesus Christ was a great moral teacher and that if
 only we took His advice we might be able to establish a better social
 order and avoid another war? Now, mind you, that is quite true. But it
 tells you much less than the whole truth about Christianity and it has
 no practical importance at all.
-
+<br><br>
 It is quite true that if we took Christ’s advice we should soon be
 living in a happier world. You need not even go as far as Christ. If we
 did all that Plato or Aristotle or Confucius told us, we should get on a
@@ -4111,21 +4111,21 @@ are going to take the most advanced one? If Christianity only means one
 more bit of good advice, then Christianity is of no importance. There
 has been no lack of good advice for the last four thousand years. A bit
 more makes no difference.
-
+<br><br>
 But as soon as you look at any real Christian writings, you find that
 they are talking about something quite different from this popular
 religion. They say that Christ is the Son of God (whatever that means).
 They say that those who give Him their confidence can also become Sons
 of God (whatever that means). They say that His death saved us from our
 sins (whatever that means).
-
+<br><br>
 There is no good complaining that these statements are difficult.
 Christianity claims to be telling us about another world, about
 something behind the world we can touch and hear and see. You may think
 the claim false; but if it were true, what it tells us would be bound to
 be difficult—at least as difficult as modern Physics, and for the same
 reason.
-
+<br><br>
 Now the point in Christianity which gives us the greatest shock is the
 statement that by attaching ourselves to Christ, we can “become Sons of
 God.” One asks “Aren’t we Sons of God already? Surely the fatherhood of
@@ -4135,7 +4135,7 @@ existence and loves us and looks after us, and in that way is like a
 father. But when the Bible talks of our “becoming” Sons of God,
 obviously it must mean something different. And that brings us up
 against the very centre of Theology.
-
+<br><br>
 One of the creeds says that Christ is the Son of God “begotten, not
 created”; and it adds “begotten by his Father before all worlds.” Will
 you please get it quite clear that this has nothing to do with the fact
@@ -4144,7 +4144,7 @@ virgin? We are not now thinking about the Virgin Birth. We are thinking
 about something that happened before Nature was created at all, before
 time began. “Before all worlds” Christ is begotten, not created. What
 does it mean?
-
+<br><br>
 We don’t use the words <i>begetting</i> or <i>begotten</i> much in modern English,
 but everyone still knows what they mean. To beget is to become the
 father of: to create is to make. And the difference is this. When you
@@ -4157,13 +4157,13 @@ himself than a wireless set: say, a statue. If he is a clever enough
 carver he may make a statue which is very like a man indeed. But, of
 course, it is not a real man; it only looks like one. It cannot breathe
 or think. It is not alive.
-
+<br><br>
 Now that is the first thing to get clear. What God begets is God; just
 as what man begets is man. What God creates is not God; just as what man
 makes is not man. That is why men are not Sons of God in the sense that
 Christ is. They may be like God in certain ways, but they are not things
 of the same kind. They are more like statues or pictures of God.
-
+<br><br>
 A statue has the shape of a man but it is not alive. In the same way,
 man has (in a sense I am going to explain) the “shape” or likeness of
 God, but he has not got the kind of life God has. Let us take the first
@@ -4188,7 +4188,7 @@ which we know of. (There may be creatures in other worlds who are more
 like God than man is, but we do not know about them.) Man not only
 lives, but loves and reasons: biological life reaches its highest known
 level in him.
-
+<br><br>
 But what man, in his natural condition, has not got, is Spiritual
 life—the higher and different sort of life that exists in God. We use
 the same word <i>life</i> for both: but if you thought that both must
@@ -4206,17 +4206,17 @@ to <i>Zoe</i>: but only the sort of resemblance there is between a photo and
 a place, or a statue and a man. A man who changed from having <i>Bios</i> to
 having <i>Zoe</i> would have gone through as big a change as a statue which
 changed from being a carved stone to being a real man.
-
+<br><br>
 And that is precisely what Christianity is about. This world is a great
 sculptor’s shop. We are the statues and there is a rumour going round
 the shop that some of us are some day going to come to life.
+<br><br>
 
-
-
+<br><br>
 
                                    2
                          THE THREE-PERSONAL GOD
-
+<br><br>
 
 The last chapter was about the difference between begetting and making.
 A man begets a child, but he only makes a statue. God begets Christ but
@@ -4225,7 +4225,7 @@ about God, namely, that what God the Father begets is God, something of
 the same kind as Himself. In that way it is like a human father
 begetting a human son. But not quite like it. So I must try to explain a
 little more.
-
+<br><br>
 A good many people nowadays say, “I believe in a God, but not in a
 personal God.” They feel that the mysterious something which is behind
 all other things must be more than a person. Now the Christians quite
@@ -4236,7 +4236,7 @@ something impersonal: that is, as something less than personal. If you
 are looking for something super-personal, something more than a person,
 then it is not a question of choosing between the Christian idea and the
 other ideas. The Christian idea is the only one on the market.
-
+<br><br>
 Again, some people think that after this life, or perhaps after several
 lives, human souls will be “absorbed” into God. But when they try to
 explain what they mean, they seem to be thinking of our being absorbed
@@ -4246,12 +4246,12 @@ end of the drop. If that is what happens to us, then being absorbed is
 the same as ceasing to exist. It is only the Christians who have any
 idea of how human souls can be taken into the life of God and yet remain
 themselves—in fact, be very much more themselves than they were before.
-
+<br><br>
 I warned you that Theology is practical. The whole purpose for which we
 exist is to be thus taken into the life of God. Wrong ideas about what
 that life is will make it harder. And now, for a few minutes, I must ask
 you to follow rather carefully.
-
+<br><br>
 You know that in space you can move in three ways—to left or right,
 backwards or forwards, up or down. Every direction is either one of
 these three or a compromise between them. They are called the three
@@ -4261,7 +4261,7 @@ figure: say, a square. And a square is made up of four straight lines.
 Now a step further. If you have three dimensions, you can then build
 what we call a solid body: say, a cube—a thing like a dice or a lump of
 sugar. And a cube is made up of six squares.
-
+<br><br>
 Do you see the point? A world of one dimension would be a straight line.
 In a two-dimensional world, you still get straight lines, but many lines
 make one figure. In a three-dimensional world, you still get figures but
@@ -4270,7 +4270,7 @@ real and more complicated levels, you do not leave behind you the things
 you found on the simpler levels: you still have them, but combined in
 new ways—in ways you could not imagine if you knew only the simpler
 levels.
-
+<br><br>
 Now the Christian account of God involves just the same principle. The
 human level is a simple and rather empty level. On the human level one
 person is one being, and any two persons are two separate beings—just
@@ -4289,12 +4289,12 @@ super-personal—something more than a person. It is something we could
 never have guessed, and yet, once we have been told, one almost feels
 one ought to have been able to guess it because it fits in so well with
 all the things we know already.
-
+<br><br>
 You may ask, “If we cannot imagine a three-personal Being, what is the
 good of talking about Him?” Well, there isn’t any good talking about
 Him. The thing that matters is being actually drawn into that
 three-personal life, and that may begin any time—tonight, if you like.
-
+<br><br>
 What I mean is this. An ordinary simple Christian kneels down to say his
 prayers. He is trying to get into touch with God. But if he is a
 Christian he knows that what is prompting him to pray is also God: God,
@@ -4310,7 +4310,7 @@ bedroom where an ordinary man is saying his prayers. The man is being
 caught up into the higher kind of life—what I called <i>Zoe</i> or spiritual
 life: he is being pulled into God, by God, while still remaining
 himself.
-
+<br><br>
 And that is how Theology started. People already knew about God in a
 vague way. Then came a man who claimed to be God; and yet He was not the
 sort of man you could dismiss as a lunatic. He made them believe Him.
@@ -4320,7 +4320,7 @@ somehow inside them as well: directing them, making them able to do
 things they could not do before. And when they worked it all out they
 found they had arrived at the Christian definition of the three-personal
 God.
-
+<br><br>
 This definition is not something we have made up; Theology is, in a
 sense, an experimental science. It is the simple religions that are the
 made-up ones. When I say it is an experimental science “in a sense,” I
@@ -4333,12 +4333,12 @@ photos of wild animals in their native haunts. That is a bit different
 from studying rocks. The wild animals will not come to you: but they can
 run away from you. Unless you keep very quiet, they will. There is
 beginning to be a tiny little trace of initiative on their side.
-
+<br><br>
 Now a stage higher; suppose you want to get to know a human person. If
 he is determined not to let you, you will not get to know him. You have
 to win his confidence. In this case the initiative is equally divided—it
 takes two to make a friendship.
-
+<br><br>
 When you come to knowing God, the initiative lies on His side. If He
 does not show Himself, nothing you can do will enable you to find Him.
 And, in fact, He shows much more of Himself to some people than to
@@ -4346,7 +4346,7 @@ others—not because He has favourites, but because it is impossible for
 Him to show Himself to a man whose whole mind and character are in the
 wrong condition. Just as sunlight, though it has no favourites, cannot
 be reflected in a dusty mirror as clearly as in a clean one.
-
+<br><br>
 You can put this another way by saying that while in other sciences the
 instruments you use are things external to yourself (things like
 microscopes and telescopes), the instrument through which you see God is
@@ -4354,13 +4354,13 @@ your whole self. And if a man’s self is not kept clean and bright, his
 glimpse of God will be blurred—like the Moon seen through a dirty
 telescope. That is why horrible nations have horrible religions: they
 have been looking at God through a dirty lens.
-
+<br><br>
 God can show Himself as He really is only to real men. And that means
 not simply to men who are individually good, but to men who are united
 together in a body, loving one another, helping one another, showing Him
 to one another. For that is what God meant humanity to be like; like
 players in one band, or organs in one body.
-
+<br><br>
 Consequently, the one really adequate instrument for learning about God
 is the whole Christian community, waiting for Him together. Christian
 brotherhood is, so to speak, the technical equipment for this
@@ -4372,18 +4372,18 @@ to put all the real astronomers right. He may be a clever chap—he may be
 cleverer than some of the real astronomers, but he is not giving himself
 a chance. And two years later everyone has forgotten all about him, but
 the real science is still going on.
-
+<br><br>
 If Christianity was something we were making up, of course we could make
 it easier. But it is not. We cannot compete, in simplicity, with people
 who are inventing religions. How could we? We are dealing with Fact. Of
 course anyone can be simple if he has no facts to bother about.
+<br><br>
 
-
-
+<br><br>
 
                                    3
                           TIME AND BEYOND TIME
-
+<br><br>
 
 It is a very silly idea that in reading a book you must never “skip.”
 All sensible people skip freely when they come to a chapter which they
@@ -4392,7 +4392,7 @@ about something which may be helpful to some readers, but which may seem
 to others merely an unnecessary complication. If you are one of the
 second sort of readers, then I advise you not to bother about this
 chapter at all but to turn on to the next.
-
+<br><br>
 In the last chapter I had to touch on the subject of prayer, and while
 that is still fresh in your mind and my own, I should like to deal with
 a difficulty that some people find about the whole idea of prayer. A man
@@ -4400,14 +4400,14 @@ put it to me by saying “I can believe in God all right, but what I
 cannot swallow is the idea of Him attending to several hundred million
 human beings who are all addressing Him at the same moment.” And I have
 found that quite a lot of people feel this.
-
+<br><br>
 Now, the first thing to notice is that the whole sting of it comes in
 the words <i>at the same moment</i>. Most of us can imagine God attending to
 any number of applicants if only they came one by one and He had an
 endless time to do it in. So what is really at the back of this
 difficulty is the idea of God having to fit too many things into one
 moment of time.
-
+<br><br>
 Well that is of course what happens to us. Our life comes to us moment
 by moment. One moment disappears before the next comes along: and there
 is room for very little in each. That is what Time is like. And of
@@ -4419,7 +4419,7 @@ just as we do. But many learned men do not agree with that. It was the
 Theologians who first started the idea that some things are not in Time
 at all: later the Philosophers took it over: and now some of the
 scientists are doing the same.
-
+<br><br>
 Almost certainly God is not in Time. His life does not consist of
 moments following one another. If a million people are praying to Him at
 ten-thirty tonight, He need not listen to them all in that one little
@@ -4427,7 +4427,7 @@ snippet which we call ten-thirty. Ten-thirty—and every other moment from
 the beginning of the world—is always the Present for Him. If you like to
 put it that way, He has all eternity in which to listen to the split
 second of prayer put up by a pilot as his plane crashes in flames.
-
+<br><br>
 That is difficult, I know. Let me try to give something, not the same,
 but a bit like it. Suppose I am writing a novel. I write “Mary laid down
 her work; next moment came a knock at the door!” For Mary who has to
@@ -4439,7 +4439,7 @@ and think steadily about Mary. I could think about Mary as if she were
 the only character in the book and for as long as I pleased, and the
 hours I spent in doing so would not appear in Mary’s time (the time
 inside the story) at all.
-
+<br><br>
 This is not a perfect illustration, of course. But it may give just a
 glimpse of what I believe to be the truth. God is not hurried along in
 the Time-stream of this universe any more than an author is hurried
@@ -4448,21 +4448,21 @@ to spare for each one of us. He does not have to deal with us in the
 mass. You are as much alone with Him as if you were the only being He
 had ever created. When Christ died, He died for you individually just as
 much as if you had been the only man in the world.
-
+<br><br>
 The way in which my illustration breaks down is this. In it the author
 gets out of one Time-series (that of the novel) only by going into
 another Time-series (the real one). But God, I believe, does not live in
 a Time-series at all. His life is not dribbled out moment by moment like
 ours: with Him it is, so to speak, still 1920 and already 1960. For His
 life is Himself.
-
+<br><br>
 If you picture Time as a straight line along which we have to travel,
 then you must picture God as the whole page on which the line is drawn.
 We come to the parts of the line one by one: we have to leave A behind
 before we get to B, and cannot reach C until we leave B behind. God,
 from above or outside or all round, contains the whole line, and sees it
 all.
-
+<br><br>
 The idea is worth trying to grasp because it removes some apparent
 difficulties in Christianity. Before I became a Christian one of my
 objections was as follows. The Christians said that the eternal God who
@@ -4495,7 +4495,7 @@ is still in the future): in fact having nothing but the tiny little
 present, which has gone before you can speak about it. God forbid we
 should think God was like that. Even we may hope not to be always
 rationed in that way.
-
+<br><br>
 Another difficulty we get if we believe God to be in time is this.
 Everyone who believes in God at all believes that He knows what you and
 I are going to do tomorrow. But if He knows I am going to do so-and-so,
@@ -4516,20 +4516,20 @@ tomorrow’s actions in just the same way—because He is already in
 tomorrow and can simply watch you. In a sense, He does not know your
 action till you have done it: but then the moment at which you have done
 it is already “Now” for Him.
-
+<br><br>
 This idea has helped me a good deal. If it does not help you, leave it
 alone. It is a “Christian idea” in the sense that great and wise
 Christians have held it and there is nothing in it contrary to
 Christianity. But it is not in the Bible or any of the creeds. You can
 be a perfectly good Christian without accepting it, or indeed without
 thinking of the matter at all.
+<br><br>
 
-
-
+<br><br>
 
                                    4
                              GOOD INFECTION
-
+<br><br>
 
 I begin this chapter by asking you to get a certain picture clear in
 your minds. Imagine two books lying on a table one on top of the other.
@@ -4546,7 +4546,7 @@ B’s position. In other words the result does not come <i>after</i> the cause.
 Of course, results usually do: you eat the cucumber first and have the
 indigestion afterwards. But it is not so with all causes, and results.
 You will see in a moment why I think this important.
-
+<br><br>
 I said a few pages back that God is a Being which contains three Persons
 while remaining one Being, just as a cube contains six squares while
 remaining one body. But as soon as I begin trying to explain how these
@@ -4562,7 +4562,7 @@ important to make clear how one thing can be the source, or cause, or
 origin, of another without being there before it. The Son exists because
 the Father exists: but there never was a time before the Father produced
 the Son.
-
+<br><br>
 Perhaps the best way to think of it is this. I asked you just now to
 imagine those two books, and probably most of you did. That is, you made
 an act of imagination and as a result you had a mental picture. Quite
@@ -4574,7 +4574,7 @@ and the picture began at exactly the same moment and ended at the same
 moment. If there were a Being who had always existed and had always been
 imagining one thing, his act would always have been producing a mental
 picture; but the picture would be just as eternal as the act.
-
+<br><br>
 In the same way we must think of the Son always, so to speak, streaming
 forth from the Father, like light from a lamp, or heat from a fire, or
 thoughts from a mind. He is the self-expression of the Father—what the
@@ -4591,7 +4591,7 @@ know how to describe Him. He knows that Father and Son is more like the
 relation between the First and Second Persons than anything else we can
 think of. Much the most important thing to know is that it is a relation
 of love. The Father delights in His Son; the Son looks up to His Father.
-
+<br><br>
 Before going on, notice the practical importance of this. All sorts of
 people are fond of repeating the Christian statement that “God is love.”
 But they seem not to notice that the words “God is love” have no real
@@ -4606,7 +4606,7 @@ that is something quite different from what Christians mean by the
 statement “God is love.” They believe that the living, dynamic activity
 of love has been going on in God forever and has created everything
 else.
-
+<br><br>
 And that, by the way, is perhaps the most important difference between
 Christianity and all other religions: that in Christianity God is not a
 static thing—not even a person—but a dynamic, pulsating activity, a
@@ -4624,7 +4624,7 @@ it is not a real person: it is only rather like a person. But that is
 just one of the differences between God and us. What grows out of the
 joint life of the Father and Son is a real Person, is in fact the Third
 of the three Persons who are God.
-
+<br><br>
 This third Person is called, in technical language, the Holy Ghost or
 the “spirit” of God. Do not be worried or surprised if you find it (or
 Him) rather vaguer or more shadowy in your mind than the other two. I
@@ -4638,7 +4638,7 @@ it easier to begin with the third Person and work backwards. God is
 love, and that love works through men—especially through the whole
 community of Christians. But this spirit of love is, from all eternity,
 a love going on between the Father and the Son.
-
+<br><br>
 And now, what does it all matter? It matters more than anything else in
 the world. The whole dance, or drama, or pattern of this three-Personal
 life is to be played out in each one of us: or (putting it the other way
@@ -4654,10 +4654,10 @@ spurting up at the very centre of reality. If you are close to it, the
 spray will wet you: if you are not, you will remain dry. Once a man is
 united to God, how could he not live forever? Once a man is separated
 from God, what can he do but wither and die?
-
+<br><br>
 But how is he to be united to God? How is it possible for us to be taken
 into the three-Personal life?
-
+<br><br>
 You remember what I said in Chapter II about <i>begetting</i> and <i>making</i>.
 We are not begotten by God, we are only made by Him: in our natural
 state we are not sons of God, only (so to speak) statues. We have not
@@ -4672,13 +4672,13 @@ the Holy Ghost will arise in us. He came to this world and became a man
 in order to spread to other men the kind of life He has—by what I call
 “good infection.” Every Christian is to become a little Christ. The
 whole purpose of becoming a Christian is simply nothing else.
+<br><br>
 
-
-
+<br><br>
 
                                    5
                        THE OBSTINATE TOY SOLDIERS
-
+<br><br>
 
 The Son of God became a man to enable men to become sons of God. We do
 not know—anyway, I do not know—how things would have worked if the human
@@ -4688,7 +4688,7 @@ of God, from the moment he was born. Perhaps the <i>Bios</i> or natural life
 would have been drawn up into the <i>Zoe</i>, the uncreated life, at once and
 as a matter of course. But that is guesswork. You and I are concerned
 with the way things work now.
-
+<br><br>
 And the present state of things is this. The two kinds of life are now
 not only different (they would always have been that) but actually
 opposed. The natural life in each of us is something self-centred,
@@ -4701,7 +4701,7 @@ brought up to be dirty are afraid of a bath. And in a sense it is quite
 right. It knows that if the spiritual life gets hold of it, all its
 self-centredness and self-will are going to be killed and it is ready to
 fight tooth and nail to avoid that.
-
+<br><br>
 Did you ever think, when you were a child, what fun it would be if your
 toys could come to life? Well suppose you could really have brought them
 to life. Imagine turning a tin soldier into a real little man. It would
@@ -4709,7 +4709,7 @@ involve turning the tin into flesh. And suppose the tin soldier did not
 like it. He is not interested in flesh; all he sees is that the tin is
 being spoilt. He thinks you are killing him. He will do everything he
 can to prevent you. He will not be made into a man if he can help it.
-
+<br><br>
 What you would have done about that tin soldier I do not know. But what
 God did about us was this. The Second Person in God, the Son, became
 human Himself: was born into the world as an actual man—a real man of a
@@ -4719,7 +4719,7 @@ knows everything and who created the whole universe, became not only a
 man but (before that) a baby, and before that a <i>fœtus</i> inside a Woman’s
 body. If you want to get the hang of it, think how you would like to
 become a slug or a crab.
-
+<br><br>
 The result of this was that you now had one man who really was what all
 men were intended to be: one man in whom the created life, derived from
 His Mother, allowed itself to be completely and perfectly turned into
@@ -4736,7 +4736,7 @@ because it was united to the divine Son, came to life again. The Man in
 Christ rose again: not only the God. That is the whole point. For the
 first time we saw a real man. One tin soldier—real tin, just like the
 rest—had come fully and splendidly alive.
-
+<br><br>
 And here, of course, we come to the point where my illustration about
 the tin soldier breaks down. In the case of real toy soldiers or
 statues, if one came to life, it would obviously make no difference to
@@ -4753,7 +4753,7 @@ would appear connected with every other. And not only that. Individuals
 are not really separate from God any more than from one another. Every
 man, woman, and child all over the world is feeling and breathing at
 this moment only because God, so to speak, is “keeping him going.”
-
+<br><br>
 Consequently, when Christ becomes man it is not really as if you could
 become one particular tin soldier. It is as if something which is always
 affecting the whole human mass begins, at one point, to affect that
@@ -4765,7 +4765,7 @@ of water one drop of something which gives a new taste or a new colour
 to the whole lot. But, of course, none of these illustrations really
 works perfectly. In the long run God is no one but Himself and what He
 does is like nothing else. You could hardly expect it to be.
-
+<br><br>
 What, then, is the difference which He has made to the whole human mass?
 It is just this; that the business of becoming a son of God, of being
 turned from a created thing into a begotten thing, of passing over from
@@ -4779,7 +4779,7 @@ open to the one Man in whom it was fully present, and who, in spite of
 being God, is also a real man, He will do it in us and for us. Remember
 what I said about “good infection.” One of our own race has this new
 life: if we get close to Him we shall catch it from Him.
-
+<br><br>
 Of course, you can express this in all sorts of different ways. You can
 say that Christ died for our sins. You may say that the Father has
 forgiven us because Christ has done for us what we ought to have done.
@@ -4788,17 +4788,17 @@ that Christ has defeated death. They are all true. If any of them do not
 appeal to you, leave it alone and get on with the formula that does.
 And, whatever you do, do not start quarrelling with other people because
 they use a different formula from yours.
+<br><br>
 
-
-
+<br><br>
 
                                    6
                                TWO NOTES
-
+<br><br>
 
 In order to avoid misunderstanding I here add notes on two points
 arising out of the last chapter.
-
+<br><br>
 (1) One sensible critic wrote asking me why, if God wanted sons instead
 of “toy soldiers,” He did not <i>beget</i> many sons at the outset instead of
 first <i>making</i> toy soldiers and then bringing them to life by such a
@@ -4848,7 +4848,7 @@ time and matter—created precisely in order to make many-ness possible?
 Is there perhaps no other way of getting many eternal spirits except by
 first making many natural creatures, in a universe, and then
 spiritualising them? But of course all this is guesswork.)
-
+<br><br>
 (2) The idea that the whole human race is, in a sense, one thing—one
 huge organism, like a tree—must not be confused with the idea that
 individual differences do not matter or that real people, Tom and Nobby
@@ -4872,7 +4872,7 @@ same organism as yourself you will become an Individualist. If you
 forget that he is a different organ from you, if you want to suppress
 differences and make people all alike, you will become a Totalitarian.
 But a Christian must not be either a Totalitarian or an Individualist.
-
+<br><br>
 I feel a strong desire to tell you—and I expect you feel a strong desire
 to tell me—which of these two errors is the worse. That is the devil
 getting at us. He always sends errors into the world in pairs—pairs of
@@ -4882,13 +4882,13 @@ dislike of the one error to draw you gradually into the opposite one.
 But do not let us be fooled. We have to keep our eyes on the goal and go
 straight through between both errors. We have no other concern than that
 with either of them.
+<br><br>
 
-
-
+<br><br>
 
                                    7
                              LET’S PRETEND
-
+<br><br>
 
 May I once again start by putting two pictures, or two stories rather,
 into your minds? One is the story you have all read called <i>Beauty and
@@ -4907,7 +4907,7 @@ theology make? It can start making a difference tonight. If you are
 interested enough to have read thus far you are probably interested
 enough to make a shot at saying your prayers: and, whatever else you
 say, you will probably say the Lord’s Prayer.
-
+<br><br>
 Its very first words are <i>Our Father</i>. Do you now see what those words
 mean? They mean quite frankly, that you are putting yourself in the
 place of a son of God. To put it bluntly, you are <i>dressing up as
@@ -4918,7 +4918,7 @@ are at one with those of the Father: you are a bundle of self-centred
 fears, hopes, greeds, jealousies, and self-conceit, all doomed to death.
 So that, in a way, this dressing up as Christ is a piece of outrageous
 cheek. But the odd thing is that He has ordered us to do it.
-
+<br><br>
 Why? What is the good of pretending to be what you are not? Well, even
 on the human level, you know, there are two kinds of pretending. There
 is a bad kind, where the pretence is there instead of the real thing; as
@@ -4934,7 +4934,7 @@ is why children’s games are so important. They are always pretending to
 be grown-ups—playing soldiers, playing shop. But all the time, they are
 hardening their muscles and sharpening their wits, so that the pretence
 of being grown-up helps them to grow up in earnest.
-
+<br><br>
 Now, the moment you realise “Here I am, dressing up as Christ,” it is
 extremely likely that you will see at once some way in which at that
 very moment the pretence could be made less of a pretence and more of a
@@ -4943,7 +4943,7 @@ not be going on there if you were really a son of God. Well, stop them.
 Or you may realise that, instead of saying your prayers, you ought to be
 downstairs writing a letter, or helping your wife to wash-up. Well, go
 and do it.
-
+<br><br>
 You see what is happening. The Christ Himself, the Son of God who is man
 (just like you) and God (just like His Father) is actually at your side
 and is already at that moment beginning to turn your pretence into a
@@ -4958,13 +4958,13 @@ wrong; you are trying to catch the good infection from a Person. It is
 more like painting a portrait than like obeying a set of rules. And the
 odd thing is that while in one way it is much harder than keeping rules,
 in another way it is far easier.
-
+<br><br>
 The real Son of God is at your side. He is beginning to turn you into
 the same kind of thing as Himself. He is beginning, so to speak, to
 “inject” His kind of life and thought, His <i>Zoe</i>, into you; beginning to
 turn the tin soldier into a live man. The part of you that does not like
 it is the part that is still tin.
-
+<br><br>
 Some of you may feel that this is very unlike your own experience. You
 may say “I’ve never had the sense of being helped by an invisible
 Christ, but I often have been helped by other human beings.” That is
@@ -4981,7 +4981,7 @@ and stops going—provided he does it for honesty’s sake and not just to
 annoy his parents—the spirit of Christ is probably nearer to him then
 than it ever was before. But above all, He works on us through each
 other.
-
+<br><br>
 Men are mirrors, or “carriers” of Christ to other men. Sometimes
 unconscious carriers. This “good infection” can be carried by those who
 have not got it themselves. People who were not Christians themselves
@@ -4991,7 +4991,7 @@ Christians showing Him to one another, is so important. You might say
 that when two Christians are following Christ together there is not
 twice as much Christianity as when they are apart, but sixteen times as
 much.
-
+<br><br>
 But do not forget this. At first it is natural for a baby to take its
 mother’s milk without knowing its mother. It is equally natural for us
 to see the man who helps us without seeing Christ behind him. But we
@@ -5003,12 +5003,12 @@ who have helped us, we must honour them and love them. But never, never
 pin your whole faith on any human being: not if he is the best and
 wisest in the whole world. There are lots of nice things you can do with
 sand; but do not try building a house on it.
-
+<br><br>
 And now we begin to see what it is that the New Testament is always
 talking about. It talks about Christians “being born again”; it talks
 about them “putting on Christ”; about Christ “being formed in us”; about
 our coming to “have the mind of Christ.”
-
+<br><br>
 Put right out of your head the idea that these are only fancy ways of
 saying that Christians are to read what Christ said and try to carry it
 out—as a man may read what Plato or Marx said and try to carry it out.
@@ -5024,7 +5024,7 @@ permanently into a different sort of thing; into a new little Christ, a
 being which, in its own small way, has the same kind of life as God;
 which shares in His power, joy, knowledge and eternity. And soon we make
 two other discoveries.
-
+<br><br>
 (1) We begin to notice, besides our particular sinful acts, our
 sinfulness; begin to be alarmed not only about what we do, but about
 what we are. This may sound rather difficult, so I will try to make it
@@ -5061,7 +5061,7 @@ motives. After the first few steps in the Christian life we realise that
 everything which really needs to be done in our souls can be done only
 by God. And that brings us to something which has been very misleading
 in my language up to now.
-
+<br><br>
 (2) I have been talking as if it were we who did everything. In reality,
 of course, it is God who does everything. We, at most, allow it to be
 done to us. In a sense you might even say it is God who does the
@@ -5078,13 +5078,13 @@ really? Is not that how the higher thing always raises the lower? A
 mother teaches her baby to talk by talking to it as if it understood
 long before it really does. We treat our dogs as if they were “almost
 human”: that is why they really become “almost human” in the end.
+<br><br>
 
-
-
+<br><br>
 
                                    8
                      IS CHRISTIANITY HARD OR EASY?
-
+<br><br>
 
 In the previous chapter we were considering the Christian idea of
 “putting on Christ,” or first “dressing up” as a son of God in order
@@ -5094,7 +5094,7 @@ not a sort of special exercise for the top class. It is the whole of
 Christianity. Christianity offers nothing else at all. And I should like
 to point out how it differs from ordinary ideas of “morality” and “being
 good.”
-
+<br><br>
 The ordinary idea which we all have before we become Christians is this.
 We take as starting point our ordinary self with its various desires and
 interests. We then admit that something else—call it “morality” or
@@ -5110,7 +5110,7 @@ life and do what it likes. In fact, we are very like an honest man
 paying his taxes. He pays them all right, but he does hope that there
 will be enough left over for him to live on. Because we are still taking
 our natural self as the starting point.
-
+<br><br>
 As long as we are thinking that way, one or other of two results is
 likely to follow. Either we give up trying to be good, or else we become
 very unhappy indeed. For, make no mistake: if you are really going to
@@ -5125,7 +5125,7 @@ do not notice it more and always making a martyr of yourself. And once
 you have become that you will be a far greater pest to anyone who has to
 live with you than you would have been if you had remained frankly
 selfish.
-
+<br><br>
 The Christian way is different: harder, and easier. Christ says “Give me
 All. I don’t want so much of your time and so much of your money and so
 much of your work: I want You. I have not come to torment your natural
@@ -5136,14 +5136,14 @@ have it out. Hand over the whole natural self, all the desires which you
 think innocent as well as the ones you think wicked—the whole outfit. I
 will give you a new self instead. In fact, I will give you Myself: my
 own will shall become yours.”
-
+<br><br>
 Both harder and easier than what we are all trying to do. You have
 noticed, I expect, that Christ Himself sometimes describes the Christian
 way as very hard, sometimes as very easy. He says, “Take up your
 Cross”—in other words, it is like going to be beaten to death in a
 concentration camp. Next minute he says, “My yoke is easy and my burden
 light.” He means both. And one can just see why both are true.
-
+<br><br>
 Teachers will tell you that the laziest boy in the class is the one who
 works hardest in the end. They mean this. If you give two boys, say, a
 proposition in geometry to do, the one who is prepared to take trouble
@@ -5157,7 +5157,7 @@ there is often one thing which it takes a lot of pluck to do; but it is
 also, in the long run, the safest thing to do. If you funk it, you will
 find yourself, hours later, in far worse danger. The cowardly thing is
 also the most dangerous thing.
-
+<br><br>
 It is like that here. The terrible thing, the almost impossible thing,
 is to hand over your whole self—all your wishes and precautions—to
 Christ. But it is far easier than what we are all trying to do instead.
@@ -5171,7 +5171,7 @@ produce figs. If I am a field that contains nothing but grass-seed, I
 cannot produce wheat. Cutting the grass may keep it short: but I shall
 still produce grass and no wheat. If I want to produce wheat, the change
 must go deeper than the surface. I must be ploughed up and re-sown.
-
+<br><br>
 That is why the real problem of the Christian life comes where people do
 not usually look for it. It comes the very moment you wake up each
 morning. All your wishes and hopes for the day rush at you like wild
@@ -5180,7 +5180,7 @@ all back; in listening to that other voice, taking that other point of
 view, letting that other larger, stronger, quieter life come flowing in.
 And so on, all day. Standing back from all your natural fussings and
 frettings; coming in out of the wind.
-
+<br><br>
 We can only do it for moments at first. But from those moments the new
 sort of life will be spreading through our system: because now we are
 letting Him work at the right part of us. It is the difference between
@@ -5193,7 +5193,7 @@ an egg to turn into a bird: it would be a jolly sight harder for it to
 learn to fly while remaining an egg. We are like eggs at present. And
 you cannot go on indefinitely being just an ordinary, decent egg. We
 must be hatched or go bad.
-
+<br><br>
 May I come back to what I said before? This is the whole of
 Christianity. There is nothing else. It is so easy to get muddled about
 that. It is easy to think that the Church has a lot of different
@@ -5220,7 +5220,7 @@ of it that are millions of miles away from this Earth. Even on this
 Earth we do not know how it applies to things other than men. After all,
 that is what you would expect. We have been shown the plan only in so
 far as it concerns ourselves.
-
+<br><br>
 I sometimes like to imagine that I can just see how it might apply to
 other things. I think I can see how the higher animals are in a sense
 drawn into Man when he loves them and makes them (as he does) much more
@@ -5231,7 +5231,7 @@ in other worlds they might do the same with their worlds. It might be
 that when intelligent creatures entered into Christ they would, in that
 way, bring all the other things in along with them. But I do not know:
 it is only a guess.
-
+<br><br>
 What we have been told is how we men can be drawn into Christ—can become
 part of that wonderful present which the young Prince of the universe
 wants to offer to His Father—that present which is Himself and therefore
@@ -5239,13 +5239,13 @@ us in Him. It is the only thing we were made for. And there are strange,
 exciting hints in the Bible that when we are drawn in, a great many
 other things in Nature will begin to come right. The bad dream will be
 over: it will be morning.
+<br><br>
 
-
-
+<br><br>
 
                                    9
                            COUNTING THE COST
-
+<br><br>
 
 I find a good many people have been bothered by what I said in the
 previous chapter about Our Lord’s words, “Be ye perfect.” Some people
@@ -5254,7 +5254,7 @@ and as we cannot be perfect, then, if He meant that, our position is
 hopeless. But I do not think He did mean that. I think He meant “The
 only help I will give is help to become perfect. You may want something
 less: but I will give you nothing less.”
-
+<br><br>
 Let me explain. When I was a child I often had toothache, and I knew
 that if I went to my mother she would give me something which would
 deaden the pain for that night and let me get to sleep. But I did not go
@@ -5268,7 +5268,7 @@ permanently right. And I knew those dentists; I knew they started
 fiddling about with all sorts of other teeth which had not yet begun to
 ache. They would not let sleeping dogs lie; if you gave them an inch
 they took an ell.
-
+<br><br>
 Now, if I may put it that way, Our Lord is like the dentists. If you
 give Him an inch, He will take an ell. Dozens of people go to Him to be
 cured of some one particular sin which they are ashamed of (like
@@ -5276,7 +5276,7 @@ masturbation or physical cowardice) or which is obviously spoiling daily
 life (like bad temper or drunkenness). Well, He will cure it all right:
 but He will not stop there. That may be all you asked; but if once you
 call Him in, He will give you the full treatment.
-
+<br><br>
 That is why He warned people to “count the cost” before becoming
 Christians. “Make no mistake,” He says, “if you let me, I will make you
 perfect. The moment you put yourself in My hands, that is what you are
@@ -5289,7 +5289,7 @@ never rest, nor let you rest, until you are literally perfect—until my
 Father can say without reservation that He is well pleased with you, as
 He said He was well pleased with me. This I can do and will do. But I
 will not do anything less.”
-
+<br><br>
 And yet—this is the other and equally important side of it—this Helper
 who will, in the long run, be satisfied with nothing less than absolute
 perfection, will also be delighted with the first feeble, stumbling
@@ -5298,7 +5298,7 @@ writer (George MacDonald) pointed out, every father is pleased at the
 baby’s first attempt to walk: no father would be satisfied with anything
 less than a firm, free, manly walk in a grown-up son. In the same way,
 he said, “God is easy to please, but hard to satisfy.”
-
+<br><br>
 The practical upshot is this. On the one hand, God’s demand for
 perfection need not discourage you in the least in your present attempts
 to be good, or even in your present failures. Each time you fall He will
@@ -5316,7 +5316,7 @@ we are now good enough. He has done all we wanted Him to do, and we
 should be obliged if He would now leave us alone. As we say “I never
 expected to be a saint, I only wanted to be a decent ordinary chap.” And
 we imagine when we say this that we are being humble.
-
+<br><br>
 But this is the fatal mistake. Of course we never wanted, and never
 asked, to be made into the sort of creatures He is going to make us
 into. But the question is not what we intended ourselves to be, but what
@@ -5336,7 +5336,7 @@ people”: but He is determined to carry out a quite different plan. To
 shrink back from that plan is not humility; it is laziness and
 cowardice. To submit to it is not conceit or megalomania; it is
 obedience.
-
+<br><br>
 Here is another way of putting the two sides of the truth. On the one
 hand we must never imagine that our own unaided efforts can be relied on
 to carry us even through the next twenty-four hours as “decent” people.
@@ -5345,7 +5345,7 @@ the other hand, no possible degree of holiness or heroism which has ever
 been recorded of the greatest saints is beyond what He is determined to
 produce in every one of us in the end. The job will not be completed in
 this life: but He means to get us as far as possible before death.
-
+<br><br>
 That is why we must not be surprised if we are in for a rough time. When
 a man turns to Christ and seems to be getting on pretty well (in the
 sense that some of his bad habits are now corrected), he often feels
@@ -5358,7 +5358,7 @@ him into situations where he will have to be very much braver, or more
 patient, or more loving, than he ever dreamed of being before. It seems
 to us all unnecessary: but that is because we have not yet had the
 slightest notion of the tremendous thing He means to make of us.
-
+<br><br>
 I find I must borrow yet another parable from George MacDonald. Imagine
 yourself as a living house. God comes in to rebuild that house. At
 first, perhaps, you can understand what He is doing. He is getting the
@@ -5371,7 +5371,7 @@ of—throwing out a new wing here, putting on an extra floor there,
 running up towers, making courtyards. You thought you were going to be
 made into a decent little cottage: but He is building a palace. He
 intends to come and live in it Himself.
-
+<br><br>
 The command <i>Be ye perfect</i> is not idealistic gas. Nor is it a command
 to do the impossible. He is going to make us into creatures that can
 obey that command. He said (in the Bible) that we were “gods” and He is
@@ -5383,20 +5383,20 @@ bright stainless mirror which reflects back to God perfectly (though, of
 course, on a smaller scale) His own boundless power and delight and
 goodness. The process will be long and in parts very painful; but that
 is what we are in for. Nothing less. He meant what He said.
+<br><br>
 
-
-
+<br><br>
 
                                    10
                          NICE PEOPLE OR NEW MEN
-
+<br><br>
 
 He meant what He said. Those who put themselves in His hands will become
 perfect, as He is perfect—perfect in love, wisdom, joy, beauty, and
 immortality. The change will not be completed in this life, for death is
 an important part of the treatment. How far the change will have gone
 before death in any particular Christian is uncertain.
-
+<br><br>
 I think this is the right moment to consider a question which is often
 asked: If Christianity is true why are not all Christians obviously
 nicer than all non-Christians? What lies behind that question is partly
@@ -5419,7 +5419,7 @@ us that Careless Talk costs Lives. It is equally true that Careless
 Lives cost Talk. Our careless lives set the outer world talking; and we
 give them grounds for talking in a way that throws doubt on the truth of
 Christianity itself.
-
+<br><br>
 But there is another way of demanding results in which the outer world
 may be quite illogical. They may demand not merely that each man’s life
 should improve if he becomes a Christian: they may also demand before
@@ -5428,7 +5428,7 @@ divided into two camps—Christian and non-Christian—and that all the
 people in the first camp at any given moment should be obviously nicer
 than all the people in the second. This is unreasonable on several
 grounds.
-
+<br><br>
 (1) In the first place the situation in the actual world is much more
 complicated than that. The world does not consist of 100 per cent.
 Christians and 100 per cent. non-Christians. There are people (a great
@@ -5459,7 +5459,7 @@ which we have got from novels and newspapers. If you want to compare the
 bad Christian and the good Atheist, you must think about two real
 specimens whom you have actually met. Unless we come down to brass tacks
 in that way, we shall only be wasting time.
-
+<br><br>
 (2) Suppose we have come down to brass tacks and are now talking not
 about an imaginary Christian and an imaginary non-Christian, but about
 two real people in our own neighbourhood. Even then we must be careful
@@ -5492,7 +5492,7 @@ output, though high, may be a great deal lower than it ought to be. No
 doubt the good manager at Factory A is going to put in new machinery as
 soon as he can, but that takes time. In the meantime low output does not
 prove that he is a failure.
-
+<br><br>
 (3) And now, let us go a little deeper. The manager is going to put in
 new machinery: before Christ has finished with Miss Bates, she is going
 to be very “nice” indeed. But if we left it at that, it would sound as
@@ -5504,7 +5504,7 @@ God demanded. But this would be a fatal mistake. The truth is that in
 God’s eyes Dick Firkin needs “saving” every bit as much as Miss Bates.
 In one sense (I will explain what sense in a moment) niceness hardly
 comes into the question.
-
+<br><br>
 You cannot expect God to look at Dick’s placid temper and friendly
 disposition exactly as we do. They result from natural causes which God
 Himself creates. Being merely temperamental, they will all disappear if
@@ -5524,7 +5524,7 @@ fulfil the only purpose for which they were created? Their free will is
 trembling inside them like the needle of a compass. But this is a needle
 that can choose. It <i>can</i> point to its true North; but it need not. Will
 the needle swing round, and settle, and point to God?
-
+<br><br>
 He can help it to do so. He cannot force it. He cannot, so to speak, put
 out His own hand and pull it into the right position, for then it would
 not be free will any more. Will it point North? That is the question on
@@ -5532,7 +5532,7 @@ which all hangs. Will Miss Bates and Dick offer their natures to God?
 The question whether the natures they offer or withhold are, at that
 moment, nice or nasty ones, is of secondary importance. God can see to
 that part of the problem.
-
+<br><br>
 Do not misunderstand me. Of course God regards a nasty nature as a bad
 and deplorable thing. And, of course, He regards a nice nature as a good
 thing—good like bread, or sunshine, or water. But these are the good
@@ -5549,7 +5549,7 @@ colours. Presently (for that is how nature works) they will fall apart
 again and the pattern in both cases will disappear. Dick has had the
 chance to turn (or rather, to allow God to turn) that momentary pattern
 into the beauty of an eternal spirit: and he has not taken it.
-
+<br><br>
 There is a paradox here. As long as Dick does not turn to God, he thinks
 his niceness is his own, and just as long as he thinks that, it is not
 his own. It is when Dick realises that his niceness is not his own but a
@@ -5558,7 +5558,7 @@ begins to be really his own. For now Dick is beginning to take a share
 in his own creation. The only things we can keep are the things we
 freely give to God. What we try to keep for ourselves is just what we
 are sure to lose.
-
+<br><br>
 We must, therefore, not be surprised if we find among the Christians
 some people who are still nasty. There is even, when you come to think
 it over, a reason why nasty people might be expected to turn to Christ
@@ -5587,7 +5587,7 @@ goodness cannot be brought to recognise their need for Christ at all
 until, one day, the natural goodness lets them down and their
 self-satisfaction is shattered. In other words, it is hard for those who
 are “rich” in this sense to enter the Kingdom.
-
+<br><br>
 It is very different for the nasty people—the little, low, timid,
 warped, thin-blooded, lonely people, or the passionate, sensual,
 unbalanced people. If they make any attempt at goodness at all, they
@@ -5598,7 +5598,7 @@ are (in one very real and terrible sense) the “poor”: He blessed them.
 They are the “awful set” He goes about with—and of course the Pharisees
 say still, as they said from the first, “If there were anything in
 Christianity those people would not be Christians.”
-
+<br><br>
 There is either a warning or an encouragement here for every one of us.
 If you are a nice person—if virtue comes easily to you—beware! Much is
 expected from those to whom much is given. If you mistake for your own
@@ -5608,7 +5608,7 @@ gifts will only make your fall more terrible, your corruption more
 complicated, your bad example more disastrous. The Devil was an
 archangel once; his natural gifts were as far above yours as yours are
 above those of a chimpanzee.
-
+<br><br>
 But if you are a poor creature—poisoned by a wretched upbringing in some
 house full of vulgar jealousies and senseless quarrels—saddled, by no
 choice of your own, with some loathsome sexual perversion—nagged day in
@@ -5620,7 +5620,7 @@ perhaps far sooner than that) He will fling it on the scrap-heap and
 give you a new one. And then you may astonish us all—not least yourself:
 for you have learned your driving in a hard school. (Some of the last
 will be first and some of the first will be last.)
-
+<br><br>
 “Niceness”—wholesome, integrated personality—is an excellent thing. We
 must try by every medical, educational, economic, and political means in
 our power to produce a world where as many people as possible grow up
@@ -5630,7 +5630,7 @@ everyone nice we should have saved their souls. A world of nice people,
 content in their own niceness, looking no further, turned away from God,
 would be just as desperately in need of salvation as a miserable
 world—and might even be more difficult to save.
-
+<br><br>
 For mere improvement is not redemption, though redemption always
 improves people even here and now and will, in the end, improve them to
 a degree we cannot yet imagine. God became man to turn creatures into
@@ -5643,7 +5643,7 @@ may be a period, while the wings are just beginning to grow, when it
 cannot do so: and at that stage the lumps on the shoulders—no one could
 tell by looking at them that they are going to be wings—may even give it
 an awkward appearance.
-
+<br><br>
 But perhaps we have already spent too long on this question. If what you
 want is an argument against Christianity (and I well remember how
 eagerly I looked for such arguments when I began to be afraid it was
@@ -5661,13 +5661,13 @@ hearsay count (will you even be able to remember it?) when the
 anæsthetic fog which we call “nature” or “the real world” fades away and
 the Presence in which you have always stood becomes palpable, immediate,
 and unavoidable?
+<br><br>
 
-
-
+<br><br>
 
                                    11
                               THE NEW MEN
-
+<br><br>
 
 In the last chapter I compared Christ’s work of making New Men to the
 process of turning a horse into a winged creature. I used that extreme
@@ -5680,7 +5680,7 @@ been produced by rays coming from outer space. (Of course once the
 alterations are there, what they call “Natural Selection” gets to work
 on them: i.e. the useful alterations survive and the other ones get
 weeded out.)
-
+<br><br>
 Perhaps a modern man can understand the Christian idea best if he takes
 it in connection with Evolution. Everyone now knows about Evolution
 (though, of course, some educated people disbelieve it): everyone has
@@ -5705,7 +5705,7 @@ next step was not only going to be different, but different with a new
 kind of difference. The stream of Evolution was not going to flow on in
 the direction in which he saw it flowing: it was in fact going to take a
 sharp bend.
-
+<br><br>
 Now it seems to me that most of the popular guesses at the Next Step are
 making just the same sort of mistake. People see (or at any rate they
 think they see) men developing greater brains and getting greater
@@ -5721,7 +5721,7 @@ stage in Evolution at all: should expect that Evolution itself as a
 method of producing change will be superseded. And finally, I should not
 be surprised if, when the thing happened, very few people noticed that
 it was happening.
-
+<br><br>
 Now, if you care to talk in these terms, the Christian view is precisely
 that the Next Step has already appeared. And it is really new. It is not
 a change from brainy men to brainier men: it is a change that goes off
@@ -5735,14 +5735,14 @@ there are real novelties in store then of course our idea, based on the
 past, will not really cover them. And in fact this New Step differs from
 all previous ones not only in coming from outside nature but in several
 other ways as well.
-
+<br><br>
 (1) It is not carried on by sexual reproduction. Need we be surprised at
 that? There was a time before sex had appeared; development used to go
 on by different methods. Consequently, we might have expected that there
 would come a time when sex disappeared, or else (which is what is
 actually happening) a time when sex, though it continued to exist,
 ceased to be the main channel of development.
-
+<br><br>
 (2) At the earlier stages living organisms have had either no choice or
 very little choice about taking the new step. Progress was, in the main,
 something that happened to them, not something that they did. But the
@@ -5752,7 +5752,7 @@ of ourselves, could have chosen to take it or could even have imagined
 it; but it is voluntary in the sense that when it is offered to us we
 can refuse it. We can, if we please, shrink back; we can dig in our
 heels and let the new Humanity go on without us.
-
+<br><br>
 (3) I have called Christ the “first instance” of the new man. But of
 course He is something much more than that. He is not merely a new man,
 one specimen of the species, but <i>the</i> new man. He is the origin and
@@ -5762,7 +5762,7 @@ to us, of course: in its own place <i>Zoe</i> has existed for ever and ever.)
 And He transmits it not by heredity but by what I have called “good
 infection.” Everyone who gets it gets it by personal contact with Him.
 Other men become “new” by being “in Him.”
-
+<br><br>
 (4) This step is taken at a different speed from the previous ones.
 Compared with the development of man on this planet, the diffusion of
 Christianity over the human race seems to go like a flash of
@@ -5782,7 +5782,7 @@ them—that has been happening ever since. They keep on killing the thing
 that He started: and each time, just as they are patting down the earth
 on its grave, they suddenly hear that it is still alive and has even
 broken out in some new place. No wonder they hate us.)
-
+<br><br>
 (5) The stakes are higher. By falling back at the earlier steps a
 creature lost, at the worst, its few years of life on this earth: very
 often it did not lose even that. By falling back at this step we lose a
@@ -5801,7 +5801,7 @@ I wonder what an ordinary baby would do if it had the choice. It might
 prefer to stay in the dark and warmth and safety of the womb. For of
 course it would think the womb meant safety. That would be just where it
 was wrong; for if it stays there it will die.
-
+<br><br>
 On this view the thing has happened: the new step has been taken and is
 being taken. Already the new men are dotted here and there all over the
 earth. Some, as I have admitted, are still hardly recognisable: but
@@ -5822,7 +5822,7 @@ they recognise one another immediately and infallibly, across every
 barrier of colour, sex, class, age, and even of creeds. In that way, to
 become holy is rather like joining a secret society. To put it at the
 very lowest, it must be great <i>fun</i>.
-
+<br><br>
 But you must not imagine that the new men are, in the ordinary sense,
 all alike. A good deal of what I have been saying in this last book
 might make you suppose that that was bound to be so. To become new men
@@ -5831,7 +5831,7 @@ Christ, we must go. His will is to become ours and we are to think His
 thoughts, to “have the mind of Christ” as the Bible says. And if Christ
 is one, and if He is thus to be “in” us all, shall we not be exactly the
 same? It certainly sounds like it; but in fact it is not so.
-
+<br><br>
 It is difficult here to get a good illustration; because, of course, no
 other two things are related to each other just as the Creator is
 related to one of His creatures. But I will try two very imperfect
@@ -5857,7 +5857,7 @@ salt. (Of course, as I warned you, this is not really a very good
 illustration, because you can, after all, kill the other tastes by
 putting in too much salt, whereas you cannot kill the taste of a human
 personality by putting in too much Christ. I am doing the best I can.)
-
+<br><br>
 It is something like that with Christ and us. The more we get what we
 now call “ourselves” out of the way and let Him take us over, the more
 truly ourselves we become. There is so much of Him that millions and
@@ -5881,14 +5881,14 @@ state, nearly so much of a person as I like to believe: most of what I
 call “me” can be very easily explained. It is when I turn to Christ,
 when I give myself up to His Personality, that I first begin to have a
 real personality of my own.
-
+<br><br>
 At the beginning I said there were Personalities in God. I will go
 further now. There are no real personalities anywhere else. Until you
 have given up your self to Him you will not have a real self. Sameness
 is to be found most among the most “natural” men, not among those who
 surrender to Christ. How monotonously alike all the great tyrants and
 conquerors have been: how gloriously different are the saints.
-
+<br><br>
 But there must be a real giving up of the self. You must throw it away
 “blindly” so to speak. Christ will indeed give you a real personality:
 but you must not go to Him for the sake of that. As long as your own
@@ -5914,29 +5914,29 @@ will ever be raised from the dead. Look for yourself, and you will find
 in the long run only hatred, loneliness, despair, rage, ruin, and decay.
 But look for Christ and you will find Him, and with Him everything else
 thrown in.
+<br><br>
 
-
-
+<br><br>
 
                                Footnotes
-
+<br><br>
 
 [1]I do not think it is the whole story, as you will see later. I mean
     that, as far as the argument has gone up to date, it may be.
-
+<br><br>
 [2]See Note at the end of this chapter.
-
+<br><br>
 [3]One listener complained of the word <i>damned</i> as frivolous swearing.
     But I mean exactly what I say—nonsense that is <i>damned</i> is under
     God’s curse, and will (apart from God’s grace) lead those who
     believe it to eternal death.
-
+<br><br>
 [4]This corporate behaviour may, of course, be either better or worse
     than their individual behaviour.
-
+<br><br>
 
                           <i>BY THE SAME AUTHOR</i>
-
+<br><br>
                                <i>Theology</i>
                                 MIRACLES
                          THE PILGRIM’S REGRESS
@@ -5948,10 +5948,10 @@ thrown in.
                    TRANSPOSITION AND OTHER ADDRESSES
                            THE GREAT DIVORCE
                       GEORGE MACDONALD: ANTHOLOGY
-
+<br><br>
                             <i>Social Theory</i>
                           THE ABOLITION OF MAN
-
+<br><br>
                           <i>Literary Criticism</i>
               (<i>published by the Oxford University Press</i>)
                           THE ALLEGORY OF LOVE
@@ -5960,35 +5960,35 @@ thrown in.
                      HAMLET, THE PRINCE OR THE POEM
               (<i>in collaboration with E. M. W. Tillyard</i>)
                           THE PERSONAL HERESY
-
+<br><br>
                                <i>Romances</i>
               (<i>published by John Lane, The Bodley Head</i>)
                         OUT OF THE SILENT PLANET
                                PERELANDRA
                          THAT HIDEOUS STRENGTH
-
+<br><br>
                              <i>For Children</i>
                              PRINCE CASPIAN
                   THE LION, THE WITCH AND THE WARDROBE
                     THE VOYAGE OF THE “DAWN TREADER”
+<br><br>
 
-
-
+<br><br>
 
                           Transcriber’s Notes
-
+<br><br>
 
 --Copyright notice provided as in the original—this e-text is public
   domain in the country of publication.
-
+<br><br>
 --Silently corrected palpable typos; left non-standard spellings and
   dialect unchanged.
-
+<br><br>
 --Provided an original cover image, for free and unrestricted use with
   this Distributed Proofreaders-Canada eBook.
-
+<br><br>
 --Only in the text versions, delimited italicized text in <i>underscores</i>
   (the HTML version reproduces the font form of the printed book.)
-
+<br><br>
 
 [The end of <i>Mere Christianity</i> by C.S. Lewis]
