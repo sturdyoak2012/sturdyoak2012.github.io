@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>200719</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../physics.html">physics</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Royce Lakes</h1>
+<br><br>
+Route: <a href="https://caltopo.com/m/A2Q7">Caltopo map</a>
+<br><br>
+A 5 day trip (including 2 days of driving) with my friends Daniel Yao, Hagen 
+Zhang, Jeremy Xu, and Joshua Mei.  
+
+<br><br>
+<h4>Day 0</h4>
+<br><br>
+We drove 5 hours from the Bay Area to our campsite at Sonora Pass.  We wanted 
+to camp along the way to reduce the driving time and help acclimate.
+<br><br>
+Along the way, we stopped in Oakdale to buy dinner and breakfast.  We had 
+Subway and KFC - stopping at this little strip mall has been somewhat of a 
+tradition since we stop there so often on the way to the Yosemite area.
+<br><br>
+At the campsite at Sonora Pass, there were a lot of cars but not very many 
+people - most people were out on the trails.  We set up next to a bench, 
+ate our dinners, and got to sleep quickly.
+<br><br>
+<a href="1.jpg" data-lightbox="group"><img src="1.jpg"></a>
+<p>Compiling our gear</p> 
+<br><br>
+<a href="2.jpg" data-lightbox="group"><img src="2.jpg"></a>
+<br><br>
+<h4>Day 1</h4>
+<br><br>
+<a href="3.jpg" data-lightbox="group"><img src="3.jpg"></a>
+<p>Sunrise</p> 
+<br><br>
+After we cleaned up, we had to finish all our food or throw the rest away - 
+we couldn't keep food in the car at the trailhead.  Jeremy bought way too 
+much food in Oakdale, so we gave all of our leftovers to a kind stranger 
+that was camping nearby.  
+<br><br>
+After stopping for gas in Bridgeport, we drove to the Pine Creek Pass 
+trailhead.
+<br><br>
+<a href="4.jpg" data-lightbox="group"><img src="4.jpg"></a>
+<br><br>
+Our pace in the initial uphill was very quick, pretty fast beyond my 
+expectations.  Several streams cut across the trail, so there was no 
+shortage of water.
+<br><br>
+<a href="5.jpg" data-lightbox="group"><img src="5.jpg"></a>
+<p>A great view of the Pine Creek Tungsten Mill</p> 
+<br><br>
+<a href="6.jpg" data-lightbox="group"><img src="6.jpg"></a>
+<p>Looking uptrail from the switchbacks</p> 
+<br><br>
+Strangely, our pace slowed significantly as the trail flattened after the 
+first few miles.  
+<br><br>
+<a href="7.jpg" data-lightbox="group"><img src="7.jpg"></a>
+<br><br>
+The clouds began to build up heavily as we reached Pine Lake.  Although a 
+few drops fell on us here and there, it never really rained.  
+<a href="8.jpg" data-lightbox="group"><img src="8.jpg"></a>
+<p>Looking west at Pine Lake</p> 
+<br><br>
+<a href="9.jpg" data-lightbox="group"><img src="9.jpg"></a>
+<p>Pine Creek overflowing above Pine Lake</p> 
+<br><br>
+We did not see very much of Upper Pine Lake, even though the trail winded 
+very close to it.  The area was very buggy, so we were keen to get out of 
+there quickly.
+<br><br>
+We chose to stay the night at Honeymoon Lake.  There were excellent campsites 
+on the southeast side, windy and exposed enough to keep the mosquitoes away. 
+Most of us took a nap after setting up our tents.
+<br><br>
+For dinner, some of us had Mountain House and I had ramen with spam.  We 
+talked for a long time through the evening, and we tried to catch a glimpse 
+of the comet that was in the news.  Even though I brought my binoculars, we 
+couldn't see it.  To be fair, we didn't really know where to look.  I was 
+in the process of switching from contacts to glasses, so I couldn't see a 
+single thing in the sky anyways.  I had some pretty killer sleep that night 
+though.
+<br><br>
+<a href="10.jpg" data-lightbox="group"><img src="10.jpg"></a>
+<p>Josh</p>
+<a href="11.jpg" data-lightbox="group"><img src="11.jpg"></a>
+<p>Honeymoon Lake, looking towards Treasure</p> 
+<br><br>
+<a href="13.jpg" data-lightbox="group"><img src="13.jpg"></a>
+<p>Chatting over dinner</p>
+<br><br>
+<h4>Day 2</h4>
+<br><br>
+The goal for the second day was to make it all the way to the largest lake 
+of the four Royce Lakes.  It was not very much distance or elevation gain, 
+but I knew the terrain would get trickier towards the end.
+<br><br>
+It was a comfortable uphill hike through meadows to Pine Creek Pass from Honeymoon Lake.  It was beautiful in the morning light.
+<br><br>
+<a href="14.jpg" data-lightbox="group"><img src="14.jpg"></a>
+<p>Everybody pushing aggressively on the uphill</p>
+<br><br>
+At the top of Pine Creek Pass, we were treated to nice views of the opposing 
+mountains.  We could even see Mt. Humphreys, though I did not recognize it at 
+the moment since I was more familiar with the more iconic angle.
+<br><br>
+<a href="15.jpg" data-lightbox="group"><img src="15.jpg"></a>
+<p>Looking north from Pine Creek Pass</p> 
+<br><br>
+<a href="16.jpg" data-lightbox="group"><img src="16.jpg"></a>
+<p>Jeremy on the trail, at the top of the Pass</p> 
+<br><br>
+<a href="17.jpg" data-lightbox="group"><img src="17.jpg"></a>
+<p>Mt. Humphreys on the left</p> 
+<br><br>
+<a href="40.jpg" data-lightbox="group"><img src="40.jpg"></a>
+<p>The small lake at the top of the pass</p> 
+<br><br>
+After a short stop, we cut directly west towards the Royce Lakes.  It was 
+very easy off-trail walking, over grass and granite slabs.  The gradient 
+was not very steep either, but we took our time since it was very beautiful.
+<br><br>
+<a href="18.jpg" data-lightbox="group"><img src="18.jpg"></a>
+<p>Hiking upwards from the pass</p> 
+<br><br>
+<a href="19.jpg" data-lightbox="group"><img src="19.jpg"></a>
+<p>Josh (left) and Daniel (center) and some lake (right)</p> 
+<br><br>
+<a href="20.jpg" data-lightbox="group"><img src="20.jpg"></a>
+<p>A coyote walked past us on the way up</p> 
+<br><br>
+<a href="21.jpg" data-lightbox="group"><img src="21.jpg"></a>
+<p>Hagen (center) and Jeremy (far right) walking below Merriam and Royce</p> 
+<br><br>
+We spent an awkwardly long time trying to take a group picture of ourselves 
+since there was nobody around to take it for us.  
+<br><br>
+<a href="22.jpg" data-lightbox="group"><img src="22.jpg"></a>
+<p>Here, Josh has only just made it into the picture</p> 
+<br><br>
+<a href="23.jpg" data-lightbox="group"><img src="23.jpg"></a>
+<p>A better view of Humphreys from near the southernmost Royce Lake</p> 
+<br><br>
+We filtered water at the first (southernmost) Royce Lake.  Merriam Peak 
+towered above us, and it would continue to be a focal point for the rest 
+of the day.
+<br><br>
+<a href="24.jpg" data-lightbox="group"><img src="24.jpg"></a>
+<p>Merriam Peak</p> 
+<br><br>
+<a href="25.jpg" data-lightbox="group"><img src="25.jpg"></a>
+<p>Hagen filtering water</p> 
+<br><br>
+After a short lunch on the first Royce Lake, the wind began to pick up 
+strongly.  The clouds were rolling in with it, and we knew we had a limited 
+time before the weather came too.  We headed further up.
+<br><br>
+It was a bit tricky to navigate the east side of the second lake due to 
+an annoying patch of snow.  We made it across in one piece despite dislodging 
+some nerve-rattling boulders from underneath our feet.
+<br><br>
+<a href="26.jpg" data-lightbox="group"><img src="26.jpg"></a>
+<p>The incredible clarity of the lake</p> 
+<br><br>
+We had a beautiful break at the north end of the second Royce Lake.  We had 
+fun trying to take time-lapses of the clouds.
+<br><br>
+<a href="27.jpg" data-lightbox="group"><img src="27.jpg"></a>
+<p>Merriam Peak from the second Royce Lake (counting S to N)</p> 
+<br><br>
+Our planned campsite was at the saddle west of Treasure, but navigating the 
+east side of the third Royce Lake was very tricky due to all the boulders. 
+At least we were lucky that the snowfield had melted sufficiently.  We 
+managed to scramble just quickly enough to make it to the northeast end 
+of the lake right when it began to rain.
+<br><br>
+<a href="28.jpg" data-lightbox="group"><img src="28.jpg"></a>
+<p>At the southeast end of the third Royce Lake</p> 
+<br><br>
+It was very rocky despite being mostly flat, but we managed to find a sandy 
+flat area to set up our tents.  We did that quickly and dove in quickly to 
+wait out the short drizzle that was starting.  
+<br><br>
+After the rain stopped, Hagen and I took a short profanity-laced dip into the 
+freezing water while the rest of them napped.  Surprisingly, it felt really 
+good afterwards.
+<br><br>
+When we were making dinner together, I discovered that my fuel bottle pump 
+had snapped inside my pack.  Luckily, Hagen had his Jetboil which was 
+sufficient for the five of us. 
+<br><br>
+We watched the sunset together and then played One Night (very hard game).
+<br><br>
+<a href="29.jpg" data-lightbox="group"><img src="29.jpg"></a>
+<p>Chatting</p> 
+<br><br>
+<a href="30.jpg" data-lightbox="group"><img src="30.jpg"></a>
+<p>Merriam (left) and Royce (right) at sunset</p> 
+<br><br>
+<a href="31.jpg" data-lightbox="group"><img src="31.jpg"></a>
+<p>Feather Peak in the sunset</p> 
+<br><br>
+<h4>Day 3</h4>
+<br><br>
+Hagen, Josh, and I got up at 4:50 to watch the sunrise, which didn't 
+disappoint.  Most unfortunately, I accidentally stepped into the lake 
+because it was dark and it did not look like a lake at all.  My left foot 
+was frozen for quite a while.  But the sunrise made up for it.
+<br><br>
+<a href="32.jpg" data-lightbox="group"><img src="32.jpg"></a>
+<p>Royce Lake 30 minutes before sunrise</p> 
+<br><br>
+<a href="33.jpg" data-lightbox="group"><img src="33.jpg"></a>
+<p>Merriam Peak in the early morning light</p> 
+<br><br>
+After hearing its distinctive calls the previous evening and in the morning 
+as well, we finally located the marmot that had been following us.
+<br><br>
+<a href="34.jpg" data-lightbox="group"><img src="34.jpg"></a>
+<br><br>
+After a loud discussion about how the <a href="https://en.wikipedia.org/wiki/Coastline_paradox">Coastline paradox</a> affected the proper measurement of 
+trails, we headed back to the trailhead, returning via the more standard 
+route.  We all wanted McDonald's pretty badly, so it was very speedy.
+<br><br>
+We ate McDonald's in Bishop while calling motels to check room rates for the 
+night.  After an embarrassing phone call by me, we decided to just book 
+online.  We landed a nice room in a motel in Lee Vining, where we had a very 
+pleasant evening with ice cream, steak, fish, fries, sundaes, and crappy 
+American vegetables.  
+<br><br>
+<a href="35.jpg" data-lightbox="group"><img src="35.jpg"></a>
+<p>The Iris Fire</p> 
+<br><br>
+<a href="36.jpg" data-lightbox="group"><img src="36.jpg"></a>
+<p>Super hot room</p> 
+<br><br>
+<a href="37.jpg" data-lightbox="group"><img src="37.jpg"></a>
+<p>Burgers and Things</p> 
+<br><br>
+<a href="38.jpg" data-lightbox="group"><img src="38.jpg"></a>
+<p>Acancy Motel</p>
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
