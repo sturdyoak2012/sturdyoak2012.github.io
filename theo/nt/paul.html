@@ -70,6 +70,7 @@ MathJax.Hub.Config({
 	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
 	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
 	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
 </div>
 
 
@@ -81,6 +82,7 @@ MathJax.Hub.Config({
 		<a href="../../pictures.html">pictures</a>
 		<a href="../../outdoors.html">outdoors</a>
 		<a href="../../physics.html">physics</a>
+		<a href="../../misc.html">misc.</a>
 	</div>
 	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		<i class="fa fa-bars"></i>
@@ -113,12 +115,15 @@ MathJax.Hub.Config({
 	
 	<br><br>
 	<h4>Files</h4>
+	<u>Data:</u><br>
 	Entire Greek New Testament with Strong's numbers. <a href="https://github.com/biblicalhumanities/Nestle1904/tree/master/morph">Source (github)</a> | <a href="nt.csv">CSV file (9.1 MB)</a>
 	<br>
+	<u>Scripts:</u> <br>
 	<a href="reader.py">reader.py (1.8 kB)</a> - script for importing the csv file above
 	<br>
 	<a href="nt.py">nt.py (5.7 kB)</a> - primary script for all the computations, uses reader.py
 	<br>
+	<u>Results:</u> <br>
 	<a href="twenty.txt">twenty.txt (16.6 kB)</a> - the contents of appendix A (twenty most common words in each book, listed with the respective frequencies)
 	<br>
 	<a href="similarities.txt">similarities.txt (21.5 kB)</a> - the contents of appendix B (contains the a-values for all pairings of NT books, ranked by book)
@@ -128,26 +133,13 @@ MathJax.Hub.Config({
 
 
 
-	<br><br>
-    <h4>Proof of concept</h4>
-    If you're skeptical as to whether this method works, I have done a simple proof-of-concept using books written in English.
-    <br><br>
-    The first test: I compared five books by Malcolm Gladwell (Blink, David and Goliath, Outliers, Talking to Strangers, and The Tipping Point) and Michael Lewis (Moneyball, The Big Short, The Fifth Risk).  Both are non-fiction authors.  The analysis worked well - correctly identifying the three most "non-Gladwellian" books.
-    <br><br>
-    The second test: I looked at two books by Hemingway: The Old Man and the Sea + A Farewell to Arms.  I selected 5 5000 word chunks from the first book and 3 5000 word chunks from the second book.  The analysis worked well - correctly determining the odd ones out.
-    <br><br>
-    The third test: I compared several works of 20th century American fiction - five books by Hemingway, The Great Gatsby (Fitzgerald), and The Catcher in the Rye (Salinger).  The analysis failed - the works of Hemingway were much less inter-similar than expected: several works were more similar to The Great Gatsby or The Catcher in the Rye than they were to the other Hemingway works.  I chalked up this error due to the tendency for fiction authors to vary their writing styles significantly.  
-    <br><br>
-    All the files necessary for this proof of concept can be downloaded from <a href="proof_of_concept.zip">this zip file (1.5 MB)</a>
-    <br><br>
-
 	<h4>Disclaimers</h4>
 	<p style="text-align: left; font-size: 10pt;">
-	Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  You may be equally surprised!  However, I did not do any research into how other people have analyzed the New Testament with computer methods, so it is possible that my methods are either too simple or too wrong to be considered any kind of relevant contribution to the complex, divided field of New Testament studies.  
+	Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  Real algorithms to analyze authorship are (probably) more complex and reliable, so this shouldn't be considered a substitute for real scholarship.  
 <br><br>
 Disclaimer 2: Any information about current scholarly consensus should be taken with a grain of salt.  First of all, most outside information in this paper came from Wikipedia.  At the very best, it's a bad research practice and at the very worst, the information is wrong.  Also, please note that both Wikipedia and modern critical analysis are skewed against conservative religious thought due to the general overrepresentation of progressive scholarship in universities.  Modern scholars are extremely quick to reject claims to authorship on the basis of occasionally minute details.  
 <br><br>
-Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of "inconvenient" doctrines (misogyny is the biggest culprit) or simply because it seems different.  "If we lose inerrancy, then it becomes a very slippery slope then to making the Bible be whatever we want it to be.  We just say that everything we don't like is not authentic.  In that case the Bible is no longer the Word of God but just a source to defend what you already believe." --<a href="https://www.villagechurchhampden.com/leadership/">Larry Lin</a> (pastor at the Village Church Hampden in Baltimore, MD)
+Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of "inconvenient" doctrines (misogyny is the biggest culprit) or simply because it seems different.  
 <br><br>
 </p>
 	<h4>What is the Bible?</h4>
@@ -157,23 +149,23 @@ Disclaimer 3: For the Christian, rejecting the teachings of certain books becaus
 	The Bible is the authoratitive religious text of Christianity.  Protestants, Catholics, and Latter-day Saints all use a Bible (but slightly differing ones).  
 	I'll be talking about the Protestant Bible here.  
 	<br><br>
-	Christians believe that the Bible is divinely inspired, that it was written by men in their languages but inspired by their God.  
+	Most Christians believe that the Bible is divinely inspired, that it was written by men in their languages but inspired by their God.  
 	The Bible is split into two parts: the Old Testament and the New Testament, each of which consist of many individual books with different authors.
 	<br><br>
 	The Old Testament is also, approximately, the primary religious text of Judaism.  Its original language is Hebrew.  
 	The Old Testament consists of the creation myth (Genesis), the Jewish law, the history of the Jewish people from Abraham through David and onward,
 	various books of poetry and wisdom, and various books of prophecy.  Some of this prophecy was fulfilled before the life of Christ, some of it was fulfilled
-	by the life of Christ (at least this is what Christians believe), and some of it has not yet been fulfilled.  
+	by the life of Christ (at least this is what Christians believe), and some of it possibly has not yet been (or will not ever be?) fulfilled.  
 	<br><br>
-	Christian faith relies solely on the deity of Jesus Christ and the Old Testament is first and foremost a Jewish text, but the Old Testament is relevant because Christianity and Judaism are uniquely
-	intertwined.  
+	Christian faith relies firmly on the deity of Jesus Christ and the Old Testament is first and foremost a Jewish text, but the Old Testament is relevant because Christianity and Judaism are uniquely
+	related.  
 	<br><br>
 	The New Testament is not shared by Judaism and Christianity.  It is written in Greek.  It begins with the "gospel", four books recounting what is essentially the same history: the ministry of Jesus Christ
 	in Palestine, his death by crucifixion as ordered by the Roman governor Pontius Pilate (in office 26 - 36 CE), and his resurrection and appearances to many people following his death.  
 	<br><br>
-	That is followed by the Book of Acts, a historical account of the founding of the Christian church and its spread throughout the Roman Empire within the span of a few decades.  Of particular importance are the missionary journeys of the Apostle Paul.  
+	That is followed by the Book of Acts, a historical account of the founding of the Christian church and its spread throughout the Roman Empire within the span of a few decades.  Of particular emphasis are the missionary journeys of the Apostle Paul.  
 	<br><br>
-	The latter half of the New Testament consists of letters from church leaders like Paul, James, Peter, and John to churches throughout the Meditteranean.  They contain instructions for Christian living, 
+	The latter half of the New Testament consists of letters from church leaders like Paul, James, Peter, and John to churches throughout the Mediterranean.  They contain instructions for Christian living, 
 	clarifications and restatements of theological doctrine, and general encouragement.  The majority are written by the Apostle Paul, and these are termed the Pauline Epistles.  
 	<br><br>
 	The final book is a book of apocalyptic prophecy, called Revelation.  

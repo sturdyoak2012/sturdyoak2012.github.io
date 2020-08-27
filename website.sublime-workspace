@@ -1,0 +1,465 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
+			"settings":
+			{
+				"buffer_size": 1643017,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/jacob/Documents/sturdyoak2012.github.io"
+	],
+	"file_history":
+	[
+		"/home/jacob/Documents/sturdyoak2012.github.io/index.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/nt/paul.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/150724/150724.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/160101/160101.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/160617/160617.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/160903/160903.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/170101/170101.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/170605/170605.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/170620/170620.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/170902/170902.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/171227/171227.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180419/180419.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180519/180519.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180606/180606.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180815/180815.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180901/180901.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/181227/181227.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/190420/190420.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/190614/190614.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/190720/190720.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/190831/190831.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/200619/200619.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/200628/200628.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/200719/200719.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/outdoors_template.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/bird.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/mov.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/antlion.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/atmospheric_refraction.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/bucket.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/corona.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/cpho.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/density.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/float.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/geometry.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/meadows.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/orbits.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/physics_template.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/prainbows.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/repose.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/spectrometer.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/temps.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/miracles.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/testimony.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/404.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/about.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/pictures.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/testimony.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/.physics.html.swp",
+		"/home/jacob/Documents/sturdyoak2012.github.io/comics.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/feynman.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/style.css",
+		"/home/jacob/Downloads/messages/archived_threads/jellybeancontestwinners_unjidrzo4g/message_1.json",
+		"/home/jacob/Downloads/messages/inbox/karenzhou_guyajstivq/message_1.json",
+		"/home/jacob/Downloads/messages/archived_threads/jennasuesfanclub_qpiodxmjyg/message_3.json",
+		"/home/jacob/Downloads/messages/archived_threads/jennasuesfanclub_qpiodxmjyg/message_1.json",
+		"/home/jacob/Downloads/messages/archived_threads/stevenlong_0uwbd8zapq/message_1.json",
+		"/home/jacob/Downloads/messages/archived_threads/vgm_k9p2adeibg/message_1.json",
+		"/home/jacob/Downloads/messages/archived_threads/howdoesonegettheirlifetogetherftjasmineleethelegend_gvmohwsmba/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/message_count.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/alexzhang_lbn5yqpdva/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/month.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/andytang_szt8jym-sa/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/wesleylau_fikjbrclhq/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/andrewwu_prg1wd2tww/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/jaiuparkar_e-6hbxar4a/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/nocturnal_ikbsljisig/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/coronavirusbiblestudyannouncementsjesusonlyplease_gknwpnek3w/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/hoc5classof2020_ft7uuyip4a/message_4.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/cketyawp2w/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/bikramdas_fvjpi3jatq/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/0avlbh1fvq/message_1.json",
+		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/aileenmi_ycrfzc3trg/message_1.json",
+		"/home/jacob/Downloads/messages/archived_threads/andytanggauthamraghupathiandfacebookuser_9t3nkwfnkw/message_1.json",
+		"/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
+		"/home/jacob/Downloads/messages/inbox/hoc5classof2020_ft7uuyip4a/message_1.json",
+		"/home/jacob/Downloads/messages/inbox/hoc5classof2020_ft7uuyip4a/message_4.json",
+		"/home/jacob/Downloads/messages/inbox/phoebelin_qcy8lb7jwq/message_1.json",
+		"/home/jacob/Downloads/messages/inbox/phoebelin_qcy8lb7jwq/message_2.json",
+		"/home/jacob/Downloads/messages/inbox/andrewlin_haiztdyg7q/message_1.json",
+		"/home/jacob/Downloads/messages/inbox/andytangrichardluoandbrandonguo_jcpnfdejeg/message_1.json",
+		"/home/jacob/Downloads/messages/inbox/aarontai_l3uj73c2bq/message_1.json",
+		"/home/jacob/Downloads/messages/inbox/aadriabagchi_rj7uxb7nqa/message_1.json",
+		"/home/jacob/Documents/python/projects/nt/twenty.txt",
+		"/home/jacob/Documents/python/projects/nt/bookdict.json",
+		"/home/jacob/Documents/personal/therapy/thank_you_letter",
+		"/home/jacob/.config/redshift.conf",
+		"/home/jacob/Documents/python/projects/website_analytics/city_frequencies.txt",
+		"/home/jacob/Documents/archive/credoaai.txt",
+		"/home/jacob/Documents/python/projects/website_analytics/website_data.json",
+		"/home/jacob/Documents/python/Untitled.ipynb",
+		"/home/jacob/Documents/python/python_log",
+		"/home/jacob/Documents/python/prcp/610prcp_20200516.CPG",
+		"/home/jacob/Documents/form.pdf",
+		"/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf",
+		"/home/jacob/Downloads/redshift-1.12/README",
+		"/home/jacob/Downloads/redshift-1.12/CONTRIBUTING.md",
+		"/home/jacob/Documents/Science/email_to_prof_young.txt",
+		"/home/jacob/Documents/sturdyoak2012.github.io/favicon.png",
+		"/home/jacob/Documents/Personal/miscellaneous/shakespeare_quotes.txt",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/index.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter1-1.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/template.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-11.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-10.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-9.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-8.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-7.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-6.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-5.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-4.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-3.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-2.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-1.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-12.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-11.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-10.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-9.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-8.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-7.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-6.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-5.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-4.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-3.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-2.html"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+			"/home/jacob/Documents/sturdyoak2012.github.io",
+			".",
+			"/home/jacob/Documents/sturdyoak2012.github.io",
+			"/home/jacob/Desktop/Website"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>",
+			"<a href='../physics.html'><div id='pages'><p>physics</p></div></a>",
+			"<a href='physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='misc.html'><div id='pages'><p>misc</p></div></a>",
+			"<a href='physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='misc.html'><div id='pages'><p>misc.</p></div></a>",
+			"<a href='physics.html'><div id='pages'><p>physics</p></div></a>",
+			"<a href=\"../../physics.html\">physics</a>",
+			"<a href=\"../physics.html\">physics</a>",
+			"<a href=\"physics.html\">physics</a>",
+			"<a href=\"physics.html\">physics</a>\\n\\t\\t<a href=\"misc.html\">misc.</a>",
+			"<a href=\"physics.html\">physics</a>",
+			"youtube",
+			">\n",
+			"massachusetts",
+			"_ ",
+			"_",
+			" _",
+			"_ ",
+			"_",
+			"(_",
+			"_)",
+			"_.",
+			"_,",
+			"\\n_",
+			"_\\n",
+			"_ ",
+			" _",
+			"_",
+			"\\n_",
+			"_\\n",
+			"_,",
+			"_.",
+			"_ ",
+			" _",
+			"_\\n",
+			"_,",
+			"_.",
+			"_ ",
+			" _",
+			"_.",
+			"_\\n",
+			"_ ",
+			" _",
+			"../",
+			",",
+			"\\n",
+			"\\n\\n\\n",
+			"\\n",
+			"&nbsp;",
+			"font-s",
+			"/outdoors/180815",
+			"Rhode Island",
+			"Massachu",
+			"Dec 07",
+			"Rhode Island",
+			"Massachusetts",
+			"Los Angeles",
+			"\",\n",
+			"pasadena",
+			"Rhode",
+			"Mountain View",
+			"Providence",
+			"198.7.247.224",
+			"Providence",
+			"karen",
+			"Providence",
+			"</body>",
+			"<!DOCTYPE html>\n<div id=\"menu\">\n\t<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='../../about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>\n</div>\n\n<div class=\"topnav\">\n  <a href='../../index.html' class=\"active\">Jacob Nie</a>\n  <div id=\"myLinks\">\n    <a href=\"../../about.html\">about</a>\n    <a href=\"../../pictures.html\">pictures</a>\n    <a href=\"../../outdoors.html\">outdoors</a>\n    <a href=\"../../physics.html\">physics</a>\n  </div>\n  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\n    <i class=\"fa fa-bars\"></i>\n  </a>",
+			"</body>",
+			"<!DOCTYPE html>\n<div id=\"menu\">\n\t<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='../../about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>\n</div>\n\n<div class=\"topnav\">\n  <a href='../../index.html' class=\"active\">Jacob Nie</a>\n  <div id=\"myLinks\">\n    <a href=\"../../about.html\">about</a>\n    <a href=\"../../pictures.html\">pictures</a>\n    <a href=\"../../outdoors.html\">outdoors</a>\n    <a href=\"../../physics.html\">physics</a>\n  </div>\n  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\n    <i class=\"fa fa-bars\"></i>\n  </a>",
+			"<head>",
+			"<div id=\"menu\">\n\t<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='../../about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>\n</div>",
+			"<div id=\"menu\">\n\t<a href='../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='../about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='../pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='../outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='../physics.html'><div id='pages'><p>physics</p></div></a>\n</div>",
+			"<div id=\"menu\">\n\t<a href='index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='physics.html'><div id='pages'><p>physics</p></div></a>\n</div>",
+			"\\n",
+			"/n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>",
+			"<a href='../physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='../misc.html'><div id='pages'><p>misc.</p></div></a>",
+			"<a href='physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='misc.html'><div id='pages'><p>misc.</p></div></a>",
+			"<a href='physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='misc.html'><div id='pages'><p>misc</p></div></a>",
+			"<a href=\"../../physics.html\">physics</a>\\n\\t\\t<a href=\"../../misc.html\">misc.</a>",
+			"<a href=\"../physics.html\">physics</a>\\n\\t\\t<a href=\"../misc.html\">misc.</a>",
+			"<a href=\"physics.html\">physics</a>\\n\\t\\t<a href=\"misc.html\">misc.</a>",
+			"<a href=\"physics.html\">physics</a>",
+			"<a href=\"physics.html\">physics</a>\\n\\t\\t<a href=\"misc.html\">misc.</a>",
+			"<a href=\"physics.html\">physics</a>\\n<a href=\"misc.html\">misc.</a>",
+			" <i>",
+			"</i> ",
+			"(<i>",
+			"</i>)",
+			"</i>.",
+			"</i>,",
+			"\\n<i>",
+			"</i>\\n",
+			"</i> ",
+			" <i>",
+			"\\n<i>",
+			"</i>\\n",
+			"</i>,",
+			"</i>.",
+			"</i> ",
+			" <i>",
+			"</i>\\n",
+			"</i>,",
+			"</i>.",
+			"</i> ",
+			" <i>",
+			"</i>.",
+			"</i> ",
+			" <i>",
+			"<i>",
+			"../../",
+			"\",\"",
+			",",
+			"\\n",
+			"",
+			"\n ",
+			"\n",
+			"\t\n",
+			"\n<button onclick=\"topFunction()\" id=\"myBtn\" title=\"Go to top\">Top</button>\n<script>\n\t//Get the button:\nmybutton = document.getElementById(\"myBtn\");\n\n// When the user scrolls down 20px from the top of the document, show the button\nwindow.onscroll = function() {scrollFunction()};\n\nfunction scrollFunction() {\n  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {\n    mybutton.style.display = \"block\";\n  } else {\n    mybutton.style.display = \"none\";\n  }\n}\n\n// When the user clicks on the button, scroll to the top of the document\nfunction topFunction() {\n  document.body.scrollTop = 0; // For Safari\n  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera\n}\n</script>\n</body>",
+			"<!DOCTYPE html>",
+			"<script>\n\tfunction myFunction() {\n  var x = document.getElementById(\"myLinks\");\n  if (x.style.display === \"block\") {\n    x.style.display = \"none\";\n  } else {\n    x.style.display = \"block\";\n  }\n}\n</script>\n</body>",
+			"<!DOCTYPE html>",
+			"<div id=\"menu\">\n\t<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='../../about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>\n</div>\n\n<div class=\"topnav\">\n  <a href='../../index.html' class=\"active\">Jacob Nie</a>\n  <div id=\"myLinks\">\n    <a href=\"../../about.html\">about</a>\n    <a href=\"../../pictures.html\">pictures</a>\n    <a href=\"../../outdoors.html\">outdoors</a>\n    <a href=\"../../physics.html\">physics</a>\n  </div>\n  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\n    <i class=\"fa fa-bars\"></i>\n  </a>\n<head>\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">",
+			"<div id=\"menu\">\n\t<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='../../about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>\n</div>\n\n<div class=\"topnav\">\n  <a href='../../index.html' class=\"active\">Jacob Nie</a>\n  <div id=\"myLinks\">\n    <a href=\"../../about.html\">about</a>\n    <a href=\"../../pictures.html\">pictures</a>\n    <a href=\"../../outdoors.html\">outdoors</a>\n    <a href=\"../../physics.html\">physics</a>\n  </div>\n  <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\n    <i class=\"fa fa-bars\"></i>\n  </a>\n</div>",
+			"<div id=\"menu\">\n\t<a href='../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='../about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='../pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='../outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='../physics.html'><div id='pages'><p>physics</p></div></a>\n</div>\n\n\n\n<div class=\"topnav\">\n\t<a href='../index.html' class=\"active\">Jacob Nie</a>\n\t<div id=\"myLinks\">\n\t\t<a href=\"../about.html\">about</a>\n\t\t<a href=\"../pictures.html\">pictures</a>\n\t\t<a href=\"../outdoors.html\">outdoors</a>\n\t\t<a href=\"../physics.html\">physics</a>\n\t</div>\n\t<a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\n\t\t<i class=\"fa fa-bars\"></i>\n\t</a>\n</div>",
+			"<div id=\"menu\">\n\t<a href='index.html'><div id='jacob'><p>Jacob Nie</p></div></a>\n\t<a href='about.html'><div id='pages'><p>about</p></div></a>\n\t<a href='pictures.html'><div id='pages'><p>pictures</p></div></a>\n\t<a href='outdoors.html'><div id='pages'><p>outdoors</p></div></a>\n\t<a href='physics.html'><div id='pages'><p>physics</p></div></a>\n</div>\n\n<div class=\"topnav\">\n\t<a href='index.html' class=\"active\">Jacob Nie</a>\n\t<div id=\"myLinks\">\n\t\t<a href=\"about.html\">about</a>\n\t\t<a href=\"pictures.html\">pictures</a>\n\t\t<a href=\"outdoors.html\">outdoors</a>\n\t\t<a href=\"physics.html\">physics</a>\n\t</div>\n\t<a href=\"javascript:void(0);\" class=\"icon\" onclick=\"myFunction()\">\n\t\t<i class=\"fa fa-bars\"></i>\n\t</a>\n</div>\n",
+			""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1643017,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 133.0
+	},
+	"pinned_build_system": "",
+	"project": "website.sublime-project",
+	"replace":
+	{
+		"height": 73.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 554.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 256.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

@@ -42,11 +42,11 @@
 \break
 
 
-Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  You may be equally surprised!  However, I did not do any research into how other people have analyzed the New Testament with computer methods, so it is possible that my methods are either too simple or too wrong to be considered any kind of relevant contribution to the complex, divided field of New Testament studies.  
+Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  Real algorithms to analyze authorship are (probably) more complex and reliable, so this shouldn't be considered a substitute for real scholarship.  
 
 Disclaimer 2: Any information about current scholarly consensus should be taken with a grain of salt.  First of all, most outside information in this paper came from Wikipedia.  At the very best, it's a bad research practice and at the very worst, the information is wrong.  Also, please note that both Wikipedia and modern critical analysis are skewed against conservative religious thought due to the general overrepresentation of progressive scholarship in universities.  Modern scholars are extremely quick to reject claims to authorship on the basis of occasionally minute details.  
 
-Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of ``inconvenient'' doctrines (misogyny is the biggest culprit) or simply because it seems different.  ``If we lose inerrancy, then it becomes a very slippery slope then to making the Bible be whatever we want it to be.  We just say that everything we don't like is not authentic.  In that case the Bible is no longer the Word of God but just a source to defend what you already believe.'' --Larry Lin
+Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of ``inconvenient'' doctrines (misogyny is the biggest culprit) or simply because it seems different.  
 
 With that said, let's dive right in.  
 \section{Introduction}
@@ -62,32 +62,32 @@ The Gospels are ascribed to the authors named in the title.  Among the four Gosp
 
 The Book of Acts does not claim an author, but most scholars agree that it is written by the same person who wrote Luke (who we think is Luke but very well might not be).  
 
-The Epistles are a complex territory.  Seven letters are considered genuine works by Paul: 1 Thessalonians, Galatians, 1 Corinthians, Philippians, Philemon, 2 Corinthians, and Romans.  Scholars are split on the authenticity of two letters by Paul: Colossians and 2 Thessalonians.  Most scholars believe four letters are ``fakes'' (pseudepigraphic): Ephesians, 1 Timothy, 2 Timothy, and Titus.  Hebrews is anonymous but is usually categorized with the Pauline Epistles, but nobody thinks it's written by Paul, not even the church.
+The Epistles are a complex territory.  Seven letters are considered genuine works by Paul: 1 Thessalonians, Galatians, 1 Corinthians, Philippians, Philemon, 2 Corinthians, and Romans.  Scholars are split on the authenticity of two letters by Paul: Colossians and 2 Thessalonians.  Most scholars believe four letters are ``fakes'' (pseudepigraphic): Ephesians, 1 Timothy, 2 Timothy, and Titus.  Hebrews is anonymous but is usually categorized with the Pauline Epistles, but very few people think it is written by Paul, even in the Church itself.
 
-And the Catholic Epistles.  James is written by somebody named James, but there are a couple of James's.  The opinion is split.  1 Peter is very contested as well.  (Peter was a fisherman, how could he write so well??  But there is evidence for it still.)  2 Peter is generally considered to be written by somebody other than Peter.  1, 2, and 3 John are generally considered to be written by the same person who wrote the Gospel of John (but not necessarily John!).  Finally, Jude is pretty disputed.
+It is much more difficult to say something concrete about the Catholic Epistles for two reasons.  One, much less is known about the lives of these authors, unlike Paul, of whom we have a detailed record of his entire Christian life in the book of Acts.  Two, Paul's body of scholarship is much larger and much easier to compare across.  James is written by somebody named James, but there are a couple of James's.  The opinion is split.  1 Peter is very contested as well.  (Peter was a fisherman, how could he write so well?  But there is evidence for it still.)  2 Peter is generally considered to be written by somebody other than Peter.  1, 2, and 3 John are generally considered to be written by the same person who wrote the Gospel of John (but not necessarily John!).  Finally, the authorship of Jude is disputed.
 
 The Book of Revelation is attributed to John, and traditionally this John has been thought to be the same John that wrote the Gospel of John, but now this is disputed due to significant stylistic differences.  
 
 \subsection{My analysis}
 
-For our analysis, we will only consider the Pauline epistles.  Trying to form any claim about authorship in other books is impossible because there aren't any books written by the same author that can be compared to.  For example, it would be pointless to try to determine whether James wrote James from a purely stylistic analysis: we have no other writings by James to compare it to.  
+For our analysis, we will only consider the Pauline epistles.  Trying to form any claim about authorship in other books is impossible because there aren't many books written by the same author that can be compared to.  For example, it would be pointless to try to determine whether James wrote James from a purely stylistic analysis: we have no other writings by James to compare it to.  
 
-Why can't we examine the Johannine literature?  Because comparing the books of John and 1, 2, 3 John and Revelation is like comparing apples to oranges.  The books have different purposes and different audiences---any difference in language would not speak much.  Furthermore, the sizes of the Johannine books vary too widely.  (Yes, size does matter!  Refer to the discussion about Philemon below.)  Nevertheless, you can try and form your own claims about the authorship of Johannine books by taking a look at Appendix B.  
+Why can't we examine the Johannine literature?  Because comparing the books of John and 1, 2, 3 John and Revelation is like comparing apples to oranges.  The books have different purposes and different audiences---any difference in language would not speak much.  Furthermore, the sizes of the Johannine books vary too widely.  Nevertheless, you can try and form your own claims about the authorship of Johannine books by taking a look at the raw data in Appendix B.
 
 So to summarize, the big question is: \emph{Which Pauline Epistles were actually written by Paul?}
 
 \section{Method}
-Our method is pretty simple (almost too simple) and only involves looking at the word frequencies in the original Greek.  (No examination of grammatical structures or word combinations.)  Here is the general structure of our method. 
+Our method is conceptually simple and only involves looking at the word frequencies in the original Greek.  (No examination of grammatical structures or word combinations.)  Here is the general structure of our method. 
 
 \subsection{Summary} 
 
 First, we determine the frequencies of each Greek word as it appears in each book.  (We use root words.  For example, in English we would consider \emph{run}, \emph{ran}, \emph{running}, and \emph{runs} to be identical.)  
 
-Then, to compare two books, we will have something that I call the \emph{degree of dissimilarity}.  If one word has a high frequency in the first text but a low frequency in the second text, then this will add significantly to the degree of dissimilarity.  If another word appears equally frequently or infrequently in both texts, then this will add zero to the degree of dissimilarity.  
+Then, to compare two books, we will calculate the \emph{degree of dissimilarity}.  If one word has a high frequency in the first text but a low frequency in the second text, then this will add significantly to the degree of dissimilarity.  If another word appears equally frequently or infrequently in both texts, then this will add zero to the degree of dissimilarity.  
 
 Note: we will limit ourselves to the most common words (the 10 most common in each book).  Here is why.  We are looking for stylistic differences and not topical differences.  For example, Paul talks about circumcision often in Romans but never in 2 Corinthians.  But that should not discredit the stylistic similarities between the two books!  So we stick to the 10 most common words in each book, which happen to be mostly prepositions, conjunctions, and pronouns.  (Refer to Appendix A for a table of the 20 most common words in each book, along with the frequencies.)
 
-One might think, how could you possibly expect to glean any kind of results simply by looking at the frequencies of the most insignificant words like ``is,'' ``but,'' and ``the''???  I know it sounds ridiculous, but you might be surprised.
+One might think, how could you possibly expect to glean any kind of results simply by looking at the frequencies of the most insignificant words like ``is,'' ``but,'' and ``the''?  The results can be surprising.
 
 \subsection{A bit more detail}
 
@@ -136,7 +136,7 @@ Suppose we have five books, (A, B, C, D, and E).  We've calculated the $a$-value
 
 How do we do this?  We test each possible size 3 subset of the five books (ABC, ABD, ABE, etc) and see which one has the lowest ``total $a$-value.''  In other words, which subset has the lowest sum of all the pairwise $a$-values.  Then, this subset is the subset of books that is most similar to one another.
 
-In the program I wrote, you would invoke:
+In the program I wrote, you would call:
 \begin{verbatim}
 mostSimilarIn([A, B, C, D, E], 3)
 >>> ([A, C, D], 5.313151)
@@ -223,11 +223,11 @@ Our analysis shows that \textbf{Philemon is much less Pauline than modern schola
 \subsection{Disclaimers (again)}
 These are important disclaimers, so I will say them again.
 
-Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  You may be equally surprised!  However, I did not do any research into how other people have analyzed the New Testament with computer methods, so it is possible that my methods are either too simple or too wrong to be considered any kind of relevant contribution to the complex, divided field of New Testament studies.  
+Disclaimer 1: This was mostly a personal project to practice my programming skills.  I was surprised by the results, especially since I did not need to optimize anything to attain them.  Real algorithms to analyze authorship are (probably) more complex and reliable, so this shouldn't be considered a substitute for real scholarship.  
 
 Disclaimer 2: Any information about current scholarly consensus should be taken with a grain of salt.  First of all, most outside information in this paper came from Wikipedia.  At the very best, it's a bad research practice and at the very worst, the information is wrong.  Also, please note that both Wikipedia and modern critical analysis are skewed against conservative religious thought due to the general overrepresentation of progressive scholarship in universities.  Modern scholars are extremely quick to reject claims to authorship on the basis of occasionally minute details.  
 
-Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of ``inconvenient'' doctrines (misogyny is the biggest culprit) or simply because it seems different.  ``If we lose inerrancy, then it becomes a very slippery slope then to making the Bible be whatever we want it to be.  We just say that everything we don't like is not authentic.  In that case the Bible is no longer the Word of God but just a source to defend what you already believe.'' --Larry Lin
+Disclaimer 3: For the Christian, rejecting the teachings of certain books because they are pseudepigraphic is dangerous business.  Many times, they are considered pseudepigraphic largely in part due to the presence of ``inconvenient'' doctrines (misogyny is the biggest culprit) or simply because it seems different.  
 
 
 \section{Sources}
