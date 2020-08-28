@@ -8,10 +8,20 @@
 	"buffers":
 	[
 		{
-			"file": "/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
+			"file": "physics/prainbows.html",
 			"settings":
 			{
-				"buffer_size": 1643017,
+				"buffer_size": 5035,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "physics/bucket.html",
+			"settings":
+			{
+				"buffer_size": 86342,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -52,9 +62,10 @@
 	],
 	"file_history":
 	[
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc.html",
+		"/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
 		"/home/jacob/Documents/sturdyoak2012.github.io/index.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/nt/paul.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/misc.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/150724/150724.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/160101/160101.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/160617/160617.html",
@@ -129,7 +140,6 @@
 		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/0avlbh1fvq/message_1.json",
 		"/home/jacob/Documents/python/projects/messenger_analytics/inbox/aileenmi_ycrfzc3trg/message_1.json",
 		"/home/jacob/Downloads/messages/archived_threads/andytanggauthamraghupathiandfacebookuser_9t3nkwfnkw/message_1.json",
-		"/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
 		"/home/jacob/Downloads/messages/inbox/hoc5classof2020_ft7uuyip4a/message_1.json",
 		"/home/jacob/Downloads/messages/inbox/hoc5classof2020_ft7uuyip4a/message_4.json",
 		"/home/jacob/Downloads/messages/inbox/phoebelin_qcy8lb7jwq/message_1.json",
@@ -345,32 +355,63 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
+					"file": "physics/prainbows.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1643017,
+						"buffer_size": 5035,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3792,
+								3792
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2063.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "physics/bucket.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 86342,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								83904,
+								83904
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2470.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

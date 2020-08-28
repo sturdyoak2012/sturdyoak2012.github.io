@@ -99,15 +99,11 @@ MathJax.Hub.Config({
 <div id="page">
 <div id = "trip">
 	<div style="height: 10vh"></div>
-	<img src="buck_img/IMG_1878.JPG" style="width: 20%; margin-left: 5%;">
-	<br>
-	An exhibit at the SF MOMA.
-	<br><br>
-	Click <a href="buck_img/bucket-v04.pdf">here</a> for a pdf report of this project.  There are some differences in the report, including a simpler method in calculating the first-order caustic.  I also added an appendix containing all the plots of the first-order caustics for all of $d=\{.01,.02,\ldots,.99,1\}.$
+	Click <a href="buck_img/bucket-v04.pdf">here</a> for a pdf version of this page.  There are some differences in the pdf, including a simpler method in calculating the first-order caustic.  I also added an appendix containing all the plots of the first-order caustics for all of $d=\{.01,.02,\ldots,.99,1\}.$
 	<br><br>
 	1/17/19 - I've had this problem in the back of my mind for a couple of years now, here's an attempt to get some of the math laid out.
 	<h3>Bucket problem</h3>
-	Jacob is camping in the mountains with his friends and, like a responsible citizen, fills up a bucket with water before he starts the fire for that night.  When he goes to the water spout to fill up his big orange Home Depot bucket (which has a glossy reflective interior), he notices that his headlamp makes a very strange reflection at the bottom of his bucket!  Perplexed, he decides to forget about it, saying "oh well I probably need to know like abstract linear calculus to figure out why this happens."  Which was wrong of him.
+	Jacob is camping in the mountains with his friends and, like a responsible citizen, fills up a bucket with water before he starts the fire for that night.  When he goes to the water spout to fill up his big orange Home Depot bucket (which has a glossy reflective interior), he notices that his headlamp makes a very strange reflection at the bottom of his bucket!  Perplexed, he decides to forget about it for four years.
 	<br><br>
 	<img src="buck_img/rice.jpg">
 	<br><br>
@@ -133,20 +129,12 @@ MathJax.Hub.Config({
 	<h3>Computer simulation</h3>
 	I wrote a simple piece of code to simulate the reflection of light inside the cylinder, plotting where the light hits.  
 	<br><br>
-	The direction of the light can be randomized using spherical coordinates: the direction can be described using two angles $\theta$ and $\alpha,$ the horizontal angular displacement from the $x$ axis and the angle of depression, respectively.  So it would look something like
-	<pre><code>
-theta = rand*2*pi
-alpha = rand*pi/2
-v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
-	</code></pre>
-	Changing the light direction based on how it reflects off the circular interior looks tricky but is quite easy.  Compressing the light position $\vec{x}$ and light direction vectors $\vec{v}$ into their solely their horizontal components, you can confirm that the new light direction is
-	$$\vec{v} - \frac{2\vec{v}\cdot \vec{x}}{\text{norm}(x)}\vec{x}.$$
 	Here are the results of the program (click to enlarge, arrow keys to compare):
 	<br><br>
 	<div style="margin: 0 auto; width: auto">
 	<a href="buck_img/scatterheat.PNG" data-lightbox="group1" data-title="scatter-heat map"><img src="buck_img/scatterheat.PNG" style="height: 100px; width: auto; display:inline-block;"></a> <a href="buck_img/scatterblue.PNG" data-lightbox="group1" data-title="10% of points"><img src="buck_img/scatterblue.PNG" style="height:100px; width: auto; display:inline-block;"></a> <a href="buck_img/scatterbluedense.PNG" data-lightbox="group1" data-title="33% of points"><img src="buck_img/scatterbluedense.PNG" style="height:100px; width:auto; display:inline-block;"></a></div><br><b>Click these pretty pictures!</b>
 	<br><br>
-	(I couldn't get it as a vectorized image because MATLAB crashed trying to save the figure, had to screenshot it.)  This heatmap scatter plot is the result of the program iterated 1 million times (for images 2&3 only a fraction of these were plotted) with the initial parameters <code>R = 1, d = 0.8, h = 2</code>.
+	This heatmap scatter plot is the result of the program iterated 1 million times (for images 2&3 only a fraction of these were plotted) with the initial parameters <code>R = 1, d = 0.8, h = 2</code>.
 	<br><br>
 	Hopefully these three different visualizations of the data can give you some idea of the complex and interesting shapes, each of different intensity, formed in this extraordinarily simple configuration.
 	<h3>Mathematics</h3>
@@ -176,12 +164,6 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
 
 	<br><br>
 	We are looking for a way to express the set of all possible ray reflections in a similar way as the range of a function of $x,y,$ and some other parameter.  We'd like to be able to find an algebraic way of expressing all possible ray reflections.  
-	<br><br>
-	Considering the angles involved in the problem, polar coordinates may seem like a good idea, but it didn't work out so well when I tried it.  Here's a method using the simple idea behind reflection and some degree of wishful thinking.  
-	<br><br>
-	The tricky part of the problem is algebraically expressing a reflection.  The reflected ray is simple the reflection of the original ray over the line connecting the center and the point of reflection.  We think: <i>this would be pretty easy if the line connecting the center and the point of reflection were the $x$-axis, then we just negate the function, yeah?</i>  Once that goes through your mind, the solution is pretty obvious and it just becomes algebra. 
-	<br><br>
-	(Another way to do this is with vectors, using the dot product.  It could even be easier, but the result is the same nonetheless.)
 	<br><br>
 	<img style="width:50%" src="buck_img/diagram.svg">
 	<br><br>
@@ -216,10 +198,8 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
 	(R\sin\theta + d(\sin^2\theta-\cos^2\theta))x + dR\cos\theta &= (R\cos\theta + 2d\sin\theta\cos\theta)y\\
 	y&= \dfrac{R\sin\theta - d\cos 2\theta}{R\cos\theta + d\sin 2\theta}x+\dfrac{dR\cos\theta}{R\cos\theta + d\sin 2\theta}
 	\end{align*}$$
-	as our equation for the reflected ray.  This can be confirmed:
+	as our equation for the reflected ray.  
 	<br><br>
-	<img style="width:50%"src="buck_img/ref.svg">
-	<p>Plot in Mathematica (excuse the half blue half orange circle!)</p>
 	So the set of all possible reflected rays can be given by
 	$$U(x,y,\theta)=(R\cos\theta + d\sin2\theta)y + (-R\sin\theta + d\cos 2\theta)x - d R \cos\theta = 0.$$
 	Differentiating with respect to $\theta$ and simultaneously solving the two resulting equations is unimaginably bad.  So we employ a clever trick: reparametrizing $U$ by making the substitution $t = e^{i\theta}.$  Now the curve family becomes a polynomial instead of a sum of several trigonometric functions.  With this new substitution we calculate
@@ -1378,7 +1358,9 @@ v = [cos(theta)*cos(alpha), sin(theta)*cos(alpha), -sin(alpha)]
   658016447 d^42 R^48 y^18 - 125816115 d^40 R^50 y^18 + 
   15804814 d^38 R^52 y^18 - 1178062 d^36 R^54 y^18 + 
   46197 d^34 R^56 y^18 - 729 d^32 R^58 y^18)=0.</code>
-  	Of course, I'd have to be criminally insane to try plotting this.  You'll have to live with the assumption that it'll work for this because it worked the first time.  
+  <br><br>
+
+  	Obviously, there's no way I know this is actually correct.  I think a good idea for me would be to find some way of finding a parametric equation instead of a Cartesian equation?  I don't know, I don't know much math.  
 
 
 
