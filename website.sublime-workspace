@@ -8,19 +8,10 @@
 	"buffers":
 	[
 		{
-			"file": "physics/prainbows.html",
+			"file": "misc/new-jersey.html",
 			"settings":
 			{
-				"buffer_size": 5035,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "physics/bucket.html",
-			"settings":
-			{
-				"buffer_size": 86342,
+				"buffer_size": 264,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -58,14 +49,39 @@
 	},
 	"expanded_folders":
 	[
-		"/home/jacob/Documents/sturdyoak2012.github.io"
+		"/home/jacob/Documents/sturdyoak2012.github.io",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/doodle_img",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180519",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/nt"
 	],
 	"file_history":
 	[
-		"/home/jacob/Documents/sturdyoak2012.github.io/misc.html",
-		"/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/8f0.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/index.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180519/180519.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/table-where-eleven-umbrella-thanksgiving.html",
+		"/home/jacob/scripts/backup.sh",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/nt/paul.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/doodles.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/dirigo.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/lao.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/new-jersey.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/illinois.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/california.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/north-carolina.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/louisiana.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/new-york.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/.git/COMMIT_EDITMSG",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/bird.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/mov.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/prainbows.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/physics/bucket.html",
+		"/home/jacob/Downloads/messages/archived_threads/85crashingdate_1th3ty3jtg/message_1.json",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/150724/150724.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/160101/160101.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/160617/160617.html",
@@ -76,7 +92,6 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/170902/170902.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/171227/171227.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180419/180419.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180519/180519.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180606/180606.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180815/180815.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180901/180901.html",
@@ -89,11 +104,8 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/200628/200628.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/200719/200719.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/outdoors_template.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/misc/bird.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/misc/mov.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/antlion.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/atmospheric_refraction.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/physics/bucket.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/corona.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/cpho.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/density.html",
@@ -102,7 +114,6 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/meadows.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/orbits.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/physics_template.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/physics/prainbows.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/repose.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/spectrometer.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics/temps.html",
@@ -110,7 +121,6 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/testimony.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/404.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/about.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/physics.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/pictures.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/testimony.html",
@@ -176,20 +186,7 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-6.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-5.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-4.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-3.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-2.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-1.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-12.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-11.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-10.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-9.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-8.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-7.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-6.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-5.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-4.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-3.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter3-2.html"
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-3.html"
 	],
 	"find":
 	{
@@ -355,63 +352,32 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "physics/prainbows.html",
+					"file": "misc/new-jersey.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5035,
+						"buffer_size": 264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3792,
-								3792
+								151,
+								151
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2063.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "physics/bucket.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 86342,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								83904,
-								83904
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2470.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
