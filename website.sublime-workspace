@@ -15,6 +15,33 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "misc/movies.html",
+			"settings":
+			{
+				"buffer_size": 7902,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "theo/prayer/1",
+			"settings":
+			{
+				"buffer_size": 1404,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "Father,"
+			}
+		},
+		{
+			"file": "/home/jacob/Downloads/ml-25m/genome-scores.csv",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -55,7 +82,7 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180519",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/nt"
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/prayer"
 	],
 	"file_history":
 	[
@@ -208,6 +235,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\\n",
 			">\n",
 			"<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>",
 			"<a href='../physics.html'><div id='pages'><p>physics</p></div></a>",
@@ -291,6 +319,8 @@
 		"regex": true,
 		"replace_history":
 		[
+			"<br>\\n",
+			"<br>",
 			"<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>",
 			"<a href='../physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='../misc.html'><div id='pages'><p>misc.</p></div></a>",
 			"<a href='physics.html'><div id='pages'><p>physics</p></div></a>\\n\\t<a href='misc.html'><div id='pages'><p>misc.</p></div></a>",
@@ -353,7 +383,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -383,6 +413,91 @@
 						"translation.y": 3377.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "misc/movies.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7902,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4702,
+								4702
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1958.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "theo/prayer/1",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1404,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1404,
+								1404
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Father,",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/jacob/Downloads/ml-25m/genome-scores.csv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
 					"type": "text"
 				}
@@ -395,7 +510,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 41.0
 	},
 	"layout":
 	{
