@@ -17,29 +17,11 @@
 			}
 		},
 		{
-			"file": "misc/movies.html",
+			"file": "misc/film_appreciation.html",
 			"settings":
 			{
-				"buffer_size": 7902,
+				"buffer_size": 8599,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "theo/prayer/1",
-			"settings":
-			{
-				"buffer_size": 1404,
-				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "Father,"
-			}
-		},
-		{
-			"file": "/home/jacob/Downloads/ml-25m/genome-scores.csv",
-			"settings":
-			{
-				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		}
@@ -78,7 +60,6 @@
 	[
 		"/home/jacob/Documents/sturdyoak2012.github.io",
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc",
-		"/home/jacob/Documents/sturdyoak2012.github.io/misc/doodle_img",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors",
 		"/home/jacob/Documents/sturdyoak2012.github.io/outdoors/180519",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo",
@@ -87,6 +68,8 @@
 	"file_history":
 	[
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/movies.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/prayer/1",
+		"/home/jacob/Downloads/ml-25m/genome-scores.csv",
 		"/home/jacob/Documents/sturdyoak2012.github.io/index.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/dirigo.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/lao.html",
@@ -211,9 +194,7 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-9.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-8.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-7.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-6.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-5.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-4.html"
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-6.html"
 	],
 	"find":
 	{
@@ -383,7 +364,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -410,92 +391,37 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3377.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "misc/movies.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7902,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4702,
-								4702
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1958.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "theo/prayer/1",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1404,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1404,
-								1404
-							]
-						],
-						"settings":
-						{
-							"auto_name": "Father,",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 375.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/home/jacob/Downloads/ml-25m/genome-scores.csv",
+					"buffer": 1,
+					"file": "misc/film_appreciation.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 8599,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								6931,
+								6931
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3053.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

@@ -302,7 +302,7 @@ img {
 
 /* Remove default bullets */
 ul, #updates {
-  list-style-type: none;
+  list-style-type: square;
 }
 
 /* Remove margins and padding from the parent ul */
