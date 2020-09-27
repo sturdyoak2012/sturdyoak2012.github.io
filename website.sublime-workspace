@@ -8,20 +8,36 @@
 	"buffers":
 	[
 		{
-			"file": "misc.html",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 8796,
+				"buffer_size": 6864,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "misc/film_appreciation.html",
+			"file": "/home/jacob/Downloads/Output.json",
 			"settings":
 			{
-				"buffer_size": 8599,
+				"buffer_size": 1426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "misc/movies.html",
+			"settings":
+			{
+				"buffer_size": 9266,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jacob/Documents/python/projects/nino/data.txt",
+			"settings":
+			{
+				"buffer_size": 6702,
 				"line_ending": "Unix"
 			}
 		}
@@ -67,6 +83,9 @@
 	],
 	"file_history":
 	[
+		"/home/jacob/Documents/sturdyoak2012.github.io/style.css",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc.html",
+		"/home/jacob/Documents/sturdyoak2012.github.io/misc/film_appreciation.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/movies.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/prayer/1",
 		"/home/jacob/Downloads/ml-25m/genome-scores.csv",
@@ -85,7 +104,6 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/california.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/north-carolina.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/new-york.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/misc.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/.git/COMMIT_EDITMSG",
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/bird.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/misc/mov.html",
@@ -138,7 +156,6 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/.physics.html.swp",
 		"/home/jacob/Documents/sturdyoak2012.github.io/comics.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/feynman.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/style.css",
 		"/home/jacob/Downloads/messages/archived_threads/jellybeancontestwinners_unjidrzo4g/message_1.json",
 		"/home/jacob/Downloads/messages/inbox/karenzhou_guyajstivq/message_1.json",
 		"/home/jacob/Downloads/messages/archived_threads/jennasuesfanclub_qpiodxmjyg/message_3.json",
@@ -193,8 +210,7 @@
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-10.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-9.html",
 		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-8.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-7.html",
-		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-6.html"
+		"/home/jacob/Documents/sturdyoak2012.github.io/theo/mere_christianity/chapter4-7.html"
 	],
 	"find":
 	{
@@ -364,64 +380,116 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "misc.html",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8796,
+						"buffer_size": 6864,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7319,
-								7319
+								3364,
+								3364
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 375.0,
+						"translation.y": 2055.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/jacob/Downloads/Output.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 4029.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "misc/movies.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9266,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4854,
+								4854
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2822.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "misc/film_appreciation.html",
+					"buffer": 3,
+					"file": "/home/jacob/Documents/python/projects/nino/data.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8599,
+						"buffer_size": 6702,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6931,
-								6931
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3053.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
