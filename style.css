@@ -79,7 +79,7 @@ div #pages {
 }
 
 a:hover {
-	color: #003fff;
+	text-decoration: underline;
 }
 
 /*#menu li {
