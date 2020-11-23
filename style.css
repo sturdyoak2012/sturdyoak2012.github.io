@@ -78,7 +78,7 @@ div #pages {
 	color: #823329;
 }
 
-a:hover {
+#page a:hover {
 	text-decoration: underline;
 }
 
