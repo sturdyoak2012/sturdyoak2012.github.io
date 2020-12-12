@@ -1,0 +1,98 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'plot1.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{515.93539981bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.79148312)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.05656134,0.39931292){\color[rgb]{0.6,0.6,0.6}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Out[\end{tabular}}}}%
+    \put(0.09144943,0.39931292){\color[rgb]{0.6,0.6,0.6}\transparent{0.32000002}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\end{tabular}}}}%
+    \put(0.10658047,0.39931292){\color[rgb]{0.6,0.6,0.6}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}]=\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{plot1.pdf}}%
+    \put(0.1647185,0.05985818){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{plot1.pdf}}%
+    \put(0.2504773,0.05985818){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{plot1.pdf}}%
+    \put(0.33623609,0.05985818){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{plot1.pdf}}%
+    \put(0.42199489,0.05985818){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{plot1.pdf}}%
+    \put(0.50775369,0.05985818){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{plot1.pdf}}%
+    \put(0.58826565,0.05985818){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{plot1.pdf}}%
+    \put(0.67402444,0.05985818){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{plot1.pdf}}%
+    \put(0.75978324,0.05985818){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{plot1.pdf}}%
+    \put(0.14025717,0.0899752){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{plot1.pdf}}%
+    \put(0.14025717,0.175734){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{plot1.pdf}}%
+    \put(0.14025717,0.2614928){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{plot1.pdf}}%
+    \put(0.14025717,0.34725159){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{plot1.pdf}}%
+    \put(0.14025717,0.43301039){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{plot1.pdf}}%
+    \put(0.12976348,0.51876919){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{plot1.pdf}}%
+    \put(0.12976348,0.60452798){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{plot1.pdf}}%
+    \put(0.12976348,0.69028678){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{plot1.pdf}}%
+    \put(0.90264944,0.26542655){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.91363918,0.26542655){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.90264944,0.31432802){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-\end{tabular}}}}%
+    \put(0.91363918,0.31432802){\color[rgb]{0.4,0.4,0.4}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}505\\10\\15\\20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{plot1.pdf}}%
+  \end{picture}%
+\endgroup%

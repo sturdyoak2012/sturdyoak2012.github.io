@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{jacob}
+\usepackage[left=1.5in,top=1.5in,bottom=1.5in,right=1.5in]{geometry}
+
+\title{}
+\date{}
+\author{Jacob H. Nie}
+
+\begin{document}
+
+\section*{Problem 15}
+
+Let us consider the entropy increase of the cold and hot tea separately.  We are permitted to do this because there is no additional entropy increase that arises from the fact that they mix.  This strategy would not be allowed if the cold and hot tea were chemically different.  Then there would be an associated ``entropy of mixing.''
+
+The cold tea starts at 289 K, and the hot tea starts at 361 K.  Their final temperatures must be the average of this: they exchange equal and opposite amounts of heat and have equal heat capacities.
+
+Let us calculate the entropy change for the cold tea.  Let $C$ be the heat capacity of the cold and hot tea combined.  (If I am mistaken in this interpretation, then our final answer is just off by a factor of 2.)
+
+\begin{align*}
+	\Delta S_1 &= \int \frac{\diff Q}{T} \\
+		   &= \frac{C}{2}\int_{289}^{325} \frac{\diff T}{T} \\
+		   &= \frac{C}{2} \log \frac{325}{289}.
+\end{align*}
+
+The same can be done for the cold tea:
+\[
+	\Delta S_2 = \frac{C}{2}\log \frac{325}{361}.
+\]
+Thus, the total change in entropy is
+\[
+	\Delta S_1 + \Delta S_2 = \frac{C}{2} \log \frac{325^2}{289\cdot 361} = (6.2 \times 10^{-3})C.
+\]
+Note that, as a result of the AM-GM identity, the logarithm is always positive, in keeping with the second law of thermodynamics.
+
+\vspace{1cm}
+
+\hfill Contestant: Jacob H. Nie
+
+
+
+\end{document}

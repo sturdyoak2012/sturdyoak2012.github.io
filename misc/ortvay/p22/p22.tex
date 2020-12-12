@@ -1,0 +1,51 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1.5in,right=1.5in,top=1.5in,bottom=2in]{geometry}
+\usepackage{jacob}
+\usepackage{breqn}
+\begin{document}
+
+\section*{Problem 22}
+Suppose that in the salt, there are $N$ magnetic dipoles.  $N/2 + n$ of them are aligned with the magnetic field $\mathbf{B}$, and $N/2 - n$ are aligned in the opposite direction.  
+
+The thermodynamic entropy $\sigma \equiv S/k_B$ is given by:
+\begin{dmath*}
+\sigma(n) = \log \left[ \dfrac{N!}{(N/2 + n)!(N/2-n)!} \right] \\
+= N\log N - \left(\dfrac{N}{2} + n\right)\log\left(\dfrac{N}{2}+n\right) - \left(\dfrac{N}{2} - n\right)\log\left(\dfrac{N}{2}-n\right) \\
+= N\log N - \left(\dfrac{N}{2}+n\right)\left[\log\dfrac{N}{2} + \log\left(1+\dfrac{2n}{N}\right)\right] - \left(\dfrac{N}{2} - n\right)\left[\log\dfrac{N}{2}+\log\left(1-\dfrac{2n}{N}\right)\right] \\
+= N\log N - N(\log N - \log 2) - \left(\dfrac{N}{2} + n\right) \log\left(1+\dfrac{2n}{N}\right) - \left(\dfrac{N}{2} - n\right)\log\left(1 - \dfrac{2n}{N}\right) \\
+= N\log 2 - \left(\dfrac{N}{2} + n\right)\left(\dfrac{2n}{N} - \dfrac{2n^2}{N^2}\right) - \left(\dfrac{N}{2} - n\right)\left(-\dfrac{2n}{N} - \dfrac{2n^2}{N^2}\right) \\
+= N\log 2 - \dfrac{2n^2}{N} \\
+= \sigma(0) - \dfrac{2n^2}{N}.
+\end{dmath*}
+
+Now there is an internal energy associated with this configuration, because $U = -\boldsymbol{\mu}\cdot \mathbf{B}$ for a single magnetic dipole in a magnetic field $B.$  All the dipoles pointing opposite $\mathbf{B}$ will add to the energy:
+\[ U(n) = \left(\dfrac{N}{2} - n\right)\mu B = U(0) - n\mu B.\]
+The temperature $T$ is given by 
+\[ T = \dfrac{1}{k_B} \left(\dfrac{\partial \sigma}{\partial U}\right)_N^{-1}.\]
+Now,
+\begin{align*}
+\dfrac{\partial \sigma}{\partial U} &= -\dfrac{1}{\mu B}\dfrac{\partial \sigma}{\partial n} \\
+&= \dfrac{4n}{\mu BN}.
+\end{align*}
+Thus,
+\[ T = \dfrac{\mu BN}{4k_B n}\]
+and 
+\[ n = \dfrac{\mu BN}{4k_B T}.\]
+We can rewrite the entropy in terms of $T$:
+\[ \sigma(T) = \sigma(n=0) - \dfrac{\mu^2 B^2 N}{8k_B^2 T^2}.\]
+But in the adiabatic process, $\sigma$ is conserved.  Thus,
+\[ \dfrac{B}{T} = \text{constant.}\]
+Thus,
+\[ T = \dfrac{T_i}{B_i} B,\]
+where $T_i$ and $B_i$ are the initial temperature and magnetic field.  
+
+In the case of totally independent dipoles, the temperature can go to zero if $B$ goes to zero.  However, this is not the case physically.  $B$ inside the salt will never go to zero due to the dipoles inside the material.  
+
+For the most part, the salt with a higher spin will not have any effect.  However, a greater spin means a greater dipole moment, which also means more interactions between the dipoles.  A salt with higher spin will not be able to go to the lowest possible temperature because the residual internal field is higher even when the outside magnetic field has gone to zero.  
+
+\vspace{1cm}
+
+\hfill Contestant: Jacob H. Nie
+
+\end{document}

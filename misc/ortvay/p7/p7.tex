@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+\usepackage{jacob}
+\usepackage[left=1.5in,top=1.5in,bottom=1.5in,right=1.5in]{geometry}
+
+\title{}
+\date{}
+\author{Jacob H. Nie}
+
+\begin{document}
+
+\section*{Problem 7}
+
+Some notation and conventions used:
+\begin{align*}
+	\mathcal{F}[x(t)]  &= \left(\frac{1}{2\pi}\right)^{1/2} \int_{-\infty}^{\infty} x(t) \exp(-i\omega t)\diff t \\
+		    &= \hat{x}(\omega) \\
+	\mathcal{F}^{-1}[\hat{x}(\omega)] &= \left( \frac{1}{2\pi} \right)^{1/2} \int_{-\infty}^{\infty} \hat{x}(\omega) \exp(i\omega t)\diff t \\
+					  &= x(t)
+\end{align*}
+
+\begin{theorem}
+	If \[
+		x(t) = \int_{-\infty}^{\infty} G(t-t')F(t') \diff t',
+	\] 
+	then \[
+		\hat{x}(\omega) = (2\pi)^{1/2}\hat{G}(\omega) \hat{F}(\omega).	
+	\] 
+
+\end{theorem}
+
+\begin{proof}
+	\begin{align*}
+		\hat{x}(\omega)  &= \left(\frac{1}{2\pi}\right)^{1/2} \int_{-\infty}^{\infty} x(t) \exp(-i\omega t)\diff t \\
+				 &= \left(\frac{1}{2\pi}\right)^{1/2} \int_{-\infty}^{\infty} \diff t \exp\left[\left(-i\omega(t-t')\right)\right] G(t-t') \int_{-\infty}^{\infty} \diff t' \exp(-i\omega t') F(t') \\ 
+				 &= \left(\frac{1}{2\pi}\right)^{1/2} \int_{-\infty}^{\infty} \diff (t-t') \exp\left[\left(-i\omega(t-t')\right)\right] G(t-t') \int_{-\infty}^{\infty} \diff t' \exp(-i\omega t') F(t') \\
+				 &= \left(\frac{1}{2\pi}\right)^{1/2} (2\pi)^{1/2} \hat{G}(\omega)\cdot (2\pi)^{1/2} \hat{F}(\omega) \\
+				 &= (2\pi)^{1/2}\hat{G}(\omega) \hat{F}(\omega).
+	\end{align*}
+\end{proof}
+
+Let us calculate $\hat{F}(\omega).$  This is:
+\begin{align*}
+	\mathcal{F}[m\ddot{x}(t)] &= \left(\frac{1}{2\pi}\right)^{1/2} m \int_{-\infty}^{\infty} \frac{\diff^{2}x}{\diff t^{2}} \exp(-i\omega t)\diff t \\
+				  &= \left(\frac{1}{2\pi}\right)^{1/2}m\left[\dot{x}\exp(-i\omega t)\Big|_{-\infty}^{\infty} + i\omega x \exp(-i\omega t)\Big|_{-\infty}^{\infty} - \omega^2 \int_{\infty}^{\infty} x \exp(-i\omega t)\diff t \right] \\
+				  &= -\omega ^2 m \hat{x}(\omega),
+\end{align*}
+where we have assumed that $x$ and $\dot{x}$ tend towards 0 as t goes to $\pm \infty$.
+
+This allows us to calculate $\hat{G}(\omega) :$
+\begin{align*}
+	\hat{G}(\omega) &= \left(\frac{1}{2\pi}\right)^{1/2}\frac{\hat{x}(\omega)}{\hat{F}(\omega)} \\
+			&= -\left(\frac{1}{2\pi}\right)^{1/2} \left(\frac{1}{\omega^2 m}\right).
+\end{align*}
+Thus, 
+\[
+	G(t) = -\left( \frac{1}{2\pi m^2} \right)^{1/2} \mathcal{F}^{-1}\left[ \omega^{-2} \right]
+\] 
+
+Let us introduce the following theorem: 
+\begin{theorem}
+	\[
+		\mathcal{F}^{-1}\left[ \frac{\diff }{\diff \omega}\hat{f}(\omega) \right] = -i t f(t).
+	\]
+	
+\end{theorem}
+\begin{proof}
+	\begin{align*}
+		\mathcal{F}^{-1}\left[ \frac{\diff}{\diff \omega}\hat{f}(\omega) \right] &= \left( \frac{1}{2\pi} \right)^{1/2} \int_{-\infty}^{\infty} \diff \omega \ \exp(i\omega t)\frac{\diff }{\diff \omega}\hat{f}(\omega) \\
+											 &= \left( \frac{1}{2\pi} \right)\int_{-\infty}^{\infty} \diff \omega \ \exp(i\omega t) \frac{\diff }{\diff \omega}\int_{-\infty}^{\infty} \diff t' \ \exp(-i\omega t')f(t') \\
+											 &= \left( \frac{-i}{2\pi} \right)\int_{-\infty} ^{\infty} \diff t' \ t' f(t') \int_{-\infty}^{\infty} \diff \omega \ \exp \left[ i \omega(t-t') \right] \\
+											&=  -i\int_{-\infty}^{\infty} \diff t' \ t'f(t')\delta(t-t') \\
+											 &= -itf(t).
+	\end{align*}
+\end{proof}
+
+Now let us also introduce the transform of the sgn function. 
+\begin{theorem}
+	\[
+		\mathcal{F}[\emph{sgn}(t)] = \left( \frac{1}{2\pi} \right)^{1/2} \left( \frac{2}{i\omega} \right).
+	\]
+	
+\end{theorem}
+\begin{proof}
+	We have the integral
+	\[
+		\mathcal{F} [ \text{sgn}(t) ] = \left( \frac{1}{2\pi} \right)^{1/2} \int_{-\infty}^{\infty} \text{sgn}(t)\exp(-i\omega t)\ \diff t. 
+	\]
+	It is also known that
+	\[
+		\frac{\diff}{\diff t}\text{sgn}(t) = 2\delta(0).
+	\]
+	We can use this fact to integrate by parts as follows:
+	\begin{align*}
+		\mathcal{F}[\text{sgn}(t)] &= \left( \frac{1}{2\pi} \right)^{1/2} \bigg[ \frac{i}{\omega} \text{sgn}(t) \exp(-i\omega t)\big|_{-\infty}^{\infty} - \frac{2i}{\omega} \int_{-\infty}^{\infty} \delta(0) \exp(-i \omega t)\ \diff t \bigg] \\
+					   &= -\left( \frac{1}{2\pi} \right)^{1/2} \left( \frac{2i}{\omega} \right).
+	\end{align*}
+	
+\end{proof}
+
+We can combine these two theorems:
+\begin{align*}
+	\mathcal{F}^{-1}[\omega^{-2}] &= \mathcal{F}^{-1} \left\{ \frac{\diff}{\diff \omega} \mathcal{F}\left[ -(2\pi)^{1/2} \left( \frac{i}{2} \right)\text{sgn}(t) \right] \right\} \\
+				      &= i (2\pi)^{1/2} \left( \frac{i}{2} \right) t \ \text{sgn}(t) \\
+				      &= -\left( 2\pi\right)^{1/2} \cdot \frac{t}{2} \ \text{sgn}(t).
+\end{align*}
+Thus,
+\begin{align*}
+	G(t) &= \left( \frac{1}{2\pi} \right)^{1/2} \left( \frac{1}{m} \right) \left( 2\pi \right)^{1/2} \left( \frac{t}{2} \right)\text{sgn}(t) \\
+	     &= \frac{|t|}{2m}.
+\end{align*}
+
+
+
+
+
+
+\vspace{1cm}
+
+\hfill Contestant: Jacob H. Nie
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

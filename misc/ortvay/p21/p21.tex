@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}
+\usepackage{jacob}
+\usepackage[left=1.5in,top=1.5in,bottom=1.5in,right=1.5in]{geometry}
+
+\title{}
+\date{}
+\author{Jacob H. Nie}
+
+\begin{document}
+
+\section*{Problem 21}
+
+First, we will go through the preliminary steps covered in most textbooks, including calculating the Fermi energy and deriving the density of states.
+
+Then, we will answer the question of the problem.
+
+\subsection*{Preliminaries}
+Consider the Fermi electron gas inside a solid conducting cube of length $L$ at zero temperature.  The energies of each energy level is given by 
+\begin{equation} \label{eq:eeig} 
+	\epsilon_i = \frac{\hbar^2 \pi^2}{2 m L^2}(n_x^2 + n_y^2 + n_z^2) \equiv \frac{\hbar^2 \pi^2}{2 m L^2}n^2. 
+\end{equation}
+The Fermi-Dirac distribution
+\begin{equation}
+	f(\epsilon_i) = \left[ \exp\left( \frac{\epsilon_i - \mu}{kT} \right) + 1 \right]^{-1} 
+\end{equation}
+gives the expected occupancy of each orbital $i$. At zero temperature, this is
+ \[
+	 f(\epsilon_i) = \begin{cases} 1 & \qquad \epsilon_i < \epsilon_F \\ 0 & \qquad \epsilon_i > \epsilon_F \end{cases}
+\]
+where $\epsilon_F$ is the Fermi energy, the chemical potential $\mu$ at zero temperature.  The Fermi energy is the energy of the highest occupied orbital of the degenerate electron gas at zero temperature.  
+
+\subsubsection*{Fermi energy}
+Note that (\ref{eq:eeig}) implies that the allowed energies can be treated as the discrete points in the positive octant of a sphere formed in $\mathbf{n}$ space.  At zero temperature, the Fermi energy $\epsilon_F$ is the maximum allowed energy that is occupied.  Let us define $n_{\text{max}}$ as the $n$ that is associated with this orbital.  The total number of occupied orbitals $N$ will be the volume of this sphere in the positive octant times 2, due to the two spin states of the electron.  Thus,
+\begin{align}
+	N &= 2\left( \frac{4\pi}{3} \right)\left( \frac{1}{8} \right) n_{\text{max}}^{3} \nonumber \\
+	  &= \frac{1}{3}\pi n_{\text{max}}^3.
+\end{align}
+Now 
+\[
+	n_{\text{max}} = \left( \frac{2 m L^2 \epsilon_F}{\hbar^2 \pi^2} \right)^{1/2},
+\]
+so 
+\[
+	N = \frac{\pi}{3}\left( \frac{2m \epsilon_F L^2}{\hbar^2 \pi^2} \right)^{3/2}
+\]
+which means
+\begin{equation}
+	\epsilon_F = \frac{\hbar^2 \pi^2}{2 m}\left( \frac{3N}{\pi V} \right)^{2/3}.
+\end{equation}
+
+
+\subsubsection*{Density of states}
+
+Let us now calculate the density of states.  Note that, according to (\ref{eq:eeig}), the allowed energies can be treated as the discrete points in the positive octant of a sphere formed in $\mathbf{n}$ space.  We can express the number of orbitals between $n$ and $n + \diff n$ as 
+\begin{equation}
+	\frac{1}{2}\gamma \pi n^2 \diff n = \pi n^2 \diff n,
+\end{equation}
+where $\gamma$ is the degeneracy of each orbital.  Because electrons are spin-$1/2$, $\gamma = 2$.  Changing variables to $\epsilon$ by making use of (\ref{eq:eeig}), we can find the number of orbitals between $\epsilon$ and $\epsilon + \diff \epsilon$, 
+\[
+	\frac{\pi}{2}\left( \frac{2mL^2}{\hbar^2 \pi^2} \right)^{3/2} \epsilon^{1/2} \diff \epsilon.
+\]
+Expressing this as a distribution $g(\epsilon)$,
+\begin{equation} \label{eq:dos}
+	g(\epsilon) = \frac{\pi}{2}\left( \frac{2mL^2}{\hbar^2 \pi^2} \right)^{3/2} \epsilon^{1/2}.
+\end{equation}
+This can also be expressed in terms of the Fermi energy:
+\begin{equation} \label{eq:dos-ef}
+	g(\epsilon) = \frac{3N}{2\epsilon_F^{3/2}} \epsilon^{1/2}.
+\end{equation}
+\begin{remark}
+	Although $g(\epsilon)$ contains an $N$ in (\ref{eq:dos-ef}), it is not dependent on $N$ because the $\epsilon_F$ cancels out this $N$ term. This is clearly seen in (\ref{eq:dos}).
+\end{remark}
+
+\subsection*{Specific Heat at Constant $\mu$ }
+Typically, when the number of electrons is kept constant, $\mu$ will decrease with increasing temperature.  This leads to some complications in the calculation of specific heat.  Here, the problem asks us to consider the case where $\mu$ is held constant.  So the electron gas is being kept in electronic equilibrium with some reservoir---in other words, grounding.
+
+For ease of notation, let 
+\[
+	g_0 \equiv \frac{\pi}{2} \left( \frac{2mL^2}{\hbar^2 \pi^2} \right)^{3/2},
+\]
+such that
+\[
+	g(\epsilon) = g_0 \epsilon^{1/2}.
+\]
+The energy of the gas is therefore 
+\begin{align}
+	U &= \int_{0}^{\infty}\epsilon g(\epsilon) f(\epsilon) \diff \epsilon \\
+	  &= g_0 \int_0^{\infty} \epsilon^{3/2} \left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{-1} \diff \epsilon. \label{eq:int-1}
+\end{align}
+Integrating by parts, (\ref{eq:int-1}) becomes 
+\begin{equation*}
+	U = g_0 \left\{ \frac{2}{5}\epsilon^{5/2} \left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{-1} \Bigg|_0^{\infty} + \frac{2}{5kT}\int_0^{\infty} \epsilon^{5/2} \frac{\exp\left( \frac{\epsilon - \mu}{kT} \right)}{\left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{2}} \diff \epsilon \right\}.
+\end{equation*}
+The first term vanishes, so this is 
+\[
+	U = \frac{2g_0}{5}\cdot \frac{1}{kT} \int_0^{\infty}  \epsilon^{5/2} \frac{\exp\left( \frac{\epsilon - \mu}{kT} \right)}{\left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{2}} \diff \epsilon. 
+\]
+Substituting $x = (\epsilon - \mu)/kT$, this is 
+\[
+	U = \frac{2g_0}{5} \int_{-\mu/kT}^{\infty} \epsilon^{5/2} \frac{e^x}{(1+e^x)^2} \diff x.
+\]
+The integrand is very sharp at $x = 0$, and we can also assume $\mu \gg kT$, so it is acceptable to replace the lower limit with $-\infty$.  Additionally, we Taylor expand $\epsilon^{5/2}$ around $\mu$.  We can make this approximation because the second term of the integrand is so sharply peaked around $x = 0$ or $\epsilon = \mu$.  This expansion is
+\begin{equation}
+	\epsilon^{5/2} = \mu^{5/2} + \frac{5}{2}kT\mu^{3/2}x + \frac{15}{8}k^2 T^2 \mu^{1/2} x^2 + \cdots.
+\end{equation}
+Thus, we can split our integral into 
+\begin{align}
+	U &= \frac{2g_0}{5}\int_{-\infty}^{\infty} \Bigg [ \mu^{5/2}\frac{e^x}{(1+e^x)^2}  + \frac{5}{2}kT\mu^{3/2} \frac{xe^x}{(1+e^x)^2} \nonumber \\
+	  &\qquad \qquad \frac{15}{8} k^2 T^2 \mu^{1/2} \frac{x^2 e^x}{(1+e^x)^2} + \cdots \Bigg ] \diff x. 
+\end{align}
+Using the three integrals
+\begin{align*}
+	\int_{-\infty}^{\infty} \frac{e^x}{(1+e^x)^2} &= 1 \\
+	\int_{-\infty}^{\infty} \frac{xe^x}{(1+e^x)^2} &= 0 \\
+	\int_{-\infty}^{\infty} \frac{x^2e^x}{(1+e^x)^2} &= \frac{\pi^2}{3},
+\end{align*}
+we determine that 
+\begin{align}
+	U &= \frac{2g_0}{5}\left( \mu^{5/2} + \frac{5\pi^2 k^2 T^2}{8}\mu^{1/2} \right)\nonumber \\
+	  &= \frac{\pi}{5} \left( \frac{2mL^2}{\hbar^2 \pi^2} \right)^{3/2} \mu^{5/2} + \left( \frac{m}{2\hbar^2} \right)^{3/2} Vk^2 T^2 \mu^{1/2}.
+\end{align}
+Therefore, the specific heat is
+\begin{equation}
+	\frac{\partial U}{\partial T} = \left( \frac{m^3\mu}{2} \right)^{1/2} \frac{Vk^2T}{\hbar^3}.
+\end{equation}
+
+\vspace{1cm}
+
+\hfill Contestant: Jacob H. Nie
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
