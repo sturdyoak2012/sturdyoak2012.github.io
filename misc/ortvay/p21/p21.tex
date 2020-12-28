@@ -51,13 +51,13 @@ which means
 
 \subsubsection*{Density of states}
 
-Let us now calculate the density of states.  Note that, according to (\ref{eq:eeig}), the allowed energies can be treated as the discrete points in the positive octant of a sphere formed in $\mathbf{n}$ space.  We can express the number of orbitals between $n$ and $n + \diff n$ as 
+Let us now calculate the density of states.  Note that, according to (\ref{eq:eeig}), the allowed energies can be treated as the discrete points in the positive octant of a sphere formed in $\mathbf{n}$ space.  We can express the number of orbitals between $n$ and $n + \textit{d}n$ as 
 \begin{equation}
-	\frac{1}{2}\gamma \pi n^2 \diff n = \pi n^2 \diff n,
+	\frac{1}{2}\gamma \pi n^2 \textit{d}n = \pi n^2 \textit{d}n,
 \end{equation}
-where $\gamma$ is the degeneracy of each orbital.  Because electrons are spin-$1/2$, $\gamma = 2$.  Changing variables to $\epsilon$ by making use of (\ref{eq:eeig}), we can find the number of orbitals between $\epsilon$ and $\epsilon + \diff \epsilon$, 
+where $\gamma$ is the degeneracy of each orbital.  Because electrons are spin-$1/2$, $\gamma = 2$.  Changing variables to $\epsilon$ by making use of (\ref{eq:eeig}), we can find the number of orbitals between $\epsilon$ and $\epsilon + \textit{d}\epsilon$, 
 \[
-	\frac{\pi}{2}\left( \frac{2mL^2}{\hbar^2 \pi^2} \right)^{3/2} \epsilon^{1/2} \diff \epsilon.
+	\frac{\pi}{2}\left( \frac{2mL^2}{\hbar^2 \pi^2} \right)^{3/2} \epsilon^{1/2} \textit{d}\epsilon.
 \]
 Expressing this as a distribution $g(\epsilon)$,
 \begin{equation} \label{eq:dos}
@@ -84,20 +84,20 @@ such that
 \]
 The energy of the gas is therefore 
 \begin{align}
-	U &= \int_{0}^{\infty}\epsilon g(\epsilon) f(\epsilon) \diff \epsilon \\
-	  &= g_0 \int_0^{\infty} \epsilon^{3/2} \left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{-1} \diff \epsilon. \label{eq:int-1}
+	U &= \int_{0}^{\infty}\epsilon g(\epsilon) f(\epsilon) \,\textit{d}\epsilon \\
+	  &= g_0 \int_0^{\infty} \epsilon^{3/2} \left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{-1} \,\textit{d}\epsilon. \label{eq:int-1}
 \end{align}
 Integrating by parts, (\ref{eq:int-1}) becomes 
 \begin{equation*}
-	U = g_0 \left\{ \frac{2}{5}\epsilon^{5/2} \left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{-1} \Bigg|_0^{\infty} + \frac{2}{5kT}\int_0^{\infty} \epsilon^{5/2} \frac{\exp\left( \frac{\epsilon - \mu}{kT} \right)}{\left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{2}} \diff \epsilon \right\}.
+	U = g_0 \left\{ \frac{2}{5}\epsilon^{5/2} \left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{-1} \Bigg|_0^{\infty} + \frac{2}{5kT}\int_0^{\infty} \epsilon^{5/2} \frac{\exp\left( \frac{\epsilon - \mu}{kT} \right)}{\left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{2}} \,\textit{d}\epsilon \right\}.
 \end{equation*}
 The first term vanishes, so this is 
 \[
-	U = \frac{2g_0}{5}\cdot \frac{1}{kT} \int_0^{\infty}  \epsilon^{5/2} \frac{\exp\left( \frac{\epsilon - \mu}{kT} \right)}{\left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{2}} \diff \epsilon. 
+	U = \frac{2g_0}{5}\cdot \frac{1}{kT} \int_0^{\infty}  \epsilon^{5/2} \frac{\exp\left( \frac{\epsilon - \mu}{kT} \right)}{\left[ 1+\exp\left( \frac{\epsilon - \mu}{kT} \right) \right]^{2}} \,\textit{d}\epsilon. 
 \]
 Substituting $x = (\epsilon - \mu)/kT$, this is 
 \[
-	U = \frac{2g_0}{5} \int_{-\mu/kT}^{\infty} \epsilon^{5/2} \frac{e^x}{(1+e^x)^2} \diff x.
+	U = \frac{2g_0}{5} \int_{-\mu/kT}^{\infty} \epsilon^{5/2} \frac{e^x}{(1+e^x)^2} \,\textit{d}x.
 \]
 The integrand is very sharp at $x = 0$, and we can also assume $\mu \gg kT$, so it is acceptable to replace the lower limit with $-\infty$.  Additionally, we Taylor expand $\epsilon^{5/2}$ around $\mu$.  We can make this approximation because the second term of the integrand is so sharply peaked around $x = 0$ or $\epsilon = \mu$.  This expansion is
 \begin{equation}
@@ -106,7 +106,7 @@ The integrand is very sharp at $x = 0$, and we can also assume $\mu \gg kT$, so 
 Thus, we can split our integral into 
 \begin{align}
 	U &= \frac{2g_0}{5}\int_{-\infty}^{\infty} \Bigg [ \mu^{5/2}\frac{e^x}{(1+e^x)^2}  + \frac{5}{2}kT\mu^{3/2} \frac{xe^x}{(1+e^x)^2} \nonumber \\
-	  &\qquad \qquad \frac{15}{8} k^2 T^2 \mu^{1/2} \frac{x^2 e^x}{(1+e^x)^2} + \cdots \Bigg ] \diff x. 
+	  &\qquad \qquad \frac{15}{8} k^2 T^2 \mu^{1/2} \frac{x^2 e^x}{(1+e^x)^2} + \cdots \Bigg ] \,\textit{d}x. 
 \end{align}
 Using the three integrals
 \begin{align*}

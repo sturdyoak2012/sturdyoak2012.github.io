@@ -122,7 +122,7 @@ It can be seen that equations (1), (2), (3), and (4) are sufficient to determine
 So the logical next step is calculating $C(0,0)$ and $C(0,1)$.  We calculate these explicitly since the integrals are not difficult to do at all.
 \begin{align*}
 	C(0,0) &= \langle \omega_1,0|\omega_0,0\rangle \\
-	       &= \int_{-\infty}^{\infty} \left(\frac{m\omega_1}{\pi \hbar}\right)^{1/4}\exp\left(-\frac{m\omega_1 x^2}{2\hbar}\right)\cdot \left(\frac{m\omega_0}{\pi \hbar}\right)^{1/4}\exp\left(-\frac{m\omega_0 x^2}{2\hbar}\right)\diff x \\
+	       &= \int_{-\infty}^{\infty} \left(\frac{m\omega_1}{\pi \hbar}\right)^{1/4}\exp\left(-\frac{m\omega_1 x^2}{2\hbar}\right)\cdot \left(\frac{m\omega_0}{\pi \hbar}\right)^{1/4}\exp\left(-\frac{m\omega_0 x^2}{2\hbar}\right)\,\textit{d}x \\
 	       &= \left[ \frac{4\omega_0\omega_1}{(\omega_0+\omega_1)^2}\right]^{1/4} \\
 	       &= (\cosh \gamma)^{-1/2},
 \end{align*}
@@ -219,8 +219,8 @@ We guess that $u(x,y) = \varphi(p)$, where $p$ is a function of $x$ and $y$.  It
 in order to satisfy the differential equation.  We can now put everything together: let us now solve (7) with an ansatz $F(x,y) = h(x,y) \varphi(p)$.  This gives
 \begin{align*}
 	0 &= (y^2 - 1)\frac{\partial F}{\partial y} + (x^2 - 1)\frac{\partial F}{\partial x} + (x+ y) F \\
-	  &= (y^2 - 1)\frac{\partial h}{\partial y}\varphi(p) + h(x,y) \frac{\diff \varphi}{\diff p} \cdot \frac{2(y-1)(x+1)}{(x-1)(y+1)} \\
-	  &   \qquad  + (x^2 - 1)\frac{\partial h}{\partial x}\varphi(p) + h(x,y) \frac{\diff \varphi}{\diff p} \cdot \frac{(-2)(x+1)(y-1)}{(x-1)(y+1)} \\
+	  &= (y^2 - 1)\frac{\partial h}{\partial y}\varphi(p) + h(x,y) \frac{\textit{d}\varphi}{\textit{d}p} \cdot \frac{2(y-1)(x+1)}{(x-1)(y+1)} \\
+	  &   \qquad  + (x^2 - 1)\frac{\partial h}{\partial x}\varphi(p) + h(x,y) \frac{\textit{d}\varphi}{\textit{d}p} \cdot \frac{(-2)(x+1)(y-1)}{(x-1)(y+1)} \\
 	  & \qquad + (x+y)h(x,y)\varphi(p)  \\
 	  &= \varphi(p)\left[ (y^2 -1 )\frac{\partial h}{\partial y} + (x^2 - 1)\frac{\partial h}{\partial x} + (x+y) h \right] .
 \end{align*}
