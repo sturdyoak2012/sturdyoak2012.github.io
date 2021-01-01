@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1609120978 "p20.tex" "p20.pdf" "p20" 1609120978
+["pdflatex"] 1609216109 "p20.tex" "p20.pdf" "p20" 1609216109
   "/etc/texmf/web2c/texmf.cnf" 1574129025 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1480098689 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -55,6 +55,7 @@
   "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty" 1517006633 185082 6c11d4e30ed78e2a12957b7e77030856 ""
   "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty" 1480098815 70864 bcd5b216757bd619ae692a151d90085d ""
   "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty" 1490564930 1251 d170e11a3246c3392bc7f59595af42cb ""
+  "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty" 1480098815 6797 90b7f83b0ad46826bc16058b1e3d48df ""
   "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty" 1480098815 8253 473e0e41f9adadb1977e8631b8f72ea6 ""
   "/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty" 1480098815 18425 5b3c0c59d76fac78978b5558e83c1f36 ""
   "/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty" 1513722769 12604 3dec726c041422879dc3268237f09026 ""
@@ -117,9 +118,9 @@
   "figures/grid.pdf_tex" 1603560429 3147 e0e8211c71da6c1811e0b10e8512e46c ""
   "figures/plot7.pdf" 1603929103 15169 37a51443680cd9cadbbf5c5e41303c4a ""
   "figures/plot7.pdf_tex" 1603929103 4736 ff7da3936c3b724fb0b4c9ea0605004c ""
-  "p20.aux" 1609120978 1418 e916163d75a9f8c4ac4ad17a87c965f8 ""
-  "p20.out" 1609120978 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "p20.tex" 1609120977 19457 6cdb7fb1eeaa06fc34c678f15fd2f723 ""
+  "p20.aux" 1609216109 1418 e916163d75a9f8c4ac4ad17a87c965f8 ""
+  "p20.out" 1609216109 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "p20.tex" 1609216108 19477 e9f2047f10cb5f6d3ae6cb33d2f76380 ""
   (generated)
   "p20.log"
   "p20.out"
