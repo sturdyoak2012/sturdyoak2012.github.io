@@ -2,19 +2,18 @@
 
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>About</title>
-		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
-	<link rel="stylesheet" href="style.css">
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132703009-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-132703009-1');
+	<title>Can you explain it?</title>
+		<link rel="shortcut icon" type="image/png" href="../favicon.png"/>
+	<link rel="stylesheet" href="../style.css">
+	<script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+	<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
 </script>
-
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
@@ -66,112 +65,90 @@
 <body>
 <div id="container">
 <div id="menu">
-	<a href='index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
-	<a href='about.html'><div id='pages'><p>about</p></div></a>
-	<a href='pictures.html'><div id='pages'><p>pictures</p></div></a>
-	<a href='outdoors.html'><div id='pages'><p>outdoors</p></div></a>
-	<a href='physics.html'><div id='pages'><p>physics</p></div></a>
-	<a href='misc.html'><div id='pages'><p>misc.</p></div></a>
+	<a href='../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../physics.html'><div id='pages'><p>physics</p></div></a>
+	<a href='../misc.html'><div id='pages'><p>misc.</p></div></a>
 </div>
 
+
+
 <div class="topnav">
-	<a href='index.html' class="active">Jacob Nie</a>
+	<a href='../index.html' class="active">Jacob Nie</a>
 	<div id="myLinks">
-		<a href="about.html">about</a>
-		<a href="pictures.html">pictures</a>
-		<a href="outdoors.html">outdoors</a>
-		<a href="physics.html">physics</a>
-		<a href="misc.html">misc.</a>
+		<a href="../about.html">about</a>
+		<a href="../pictures.html">pictures</a>
+		<a href="../outdoors.html">outdoors</a>
+		<a href="../physics.html">physics</a>
+		<a href="../misc.html">misc.</a>
 	</div>
 	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		<i class="fa fa-bars"></i>
 	</a>
 </div>
-
 <div id="page">
-  <div style="height: 10vh"></div>
-  <img src="selfie.jpg" >
-  <br><br>
-  	My name is Jacob Nie (pronounced "nye").  I am a freshman at UC Santa Barbara studying physics, and I am from San Jose, California.  I created this website so that I could have a repository of trip reports from my backpacking trips.  Over time, it has grown to include some other things as well! <!-- Here's a little more about me:
-  <br><br>
-    I don't like chocolate, computer science, homework, French things, pencils, non-swivel chairs, Elon Musk, podcasts, computer stickers, toast, indoor heating, coffee, skiing, Icicles, grass jelly, boba tea, hot pot, skiers, snowboarders, spiders, sunscreen, oily hands, basketball, rap, school clubs, the Rocky Mountains, trees, biology, celery, cucumbers, pop music, spiral notebooks, lined paper, Chipotle, the east coast, zucchini, hot weather, cloudy weather, chipseal roads, ice skating, taro cakes, The Big Bang Theory, and Kevin Hart. 
-	<br><br>
-    I like backpacking, soccer, Friends, and good film. -->
- <br>
- 
-
-  <br><br>
-	If you would like to contact me, [myname]2008@gmail.com is my email.  
-
-	<br>
-	<br>
-<!--	
-	<h5>Some things I like right now</h5>
-	<ul>
-		<li>
-			Backpacking
-		</li>
-		<li>
-			The Sierra Nevada
-		</li>
-		<li>
-			FC Barcelona
-		</li>
-		<li>
-			Lionel Messi
-		</li>
-		<li>
-			Bob Dylan
-		</li>
-		<li>
-			George Harrison
-		</li>
-		<li>
-			The Beatles
-		</li>
-		<li>
-			Chinese food
-		</li>
-		<li>
-			Martin Scorsese
-		</li>
-		<li>
-			Seinfeld
-		</li>
-		<li>
-			Larry David
-		</li>
-		<li>
-			Dramas with interesting male characters
-		</li>
-		<li>
-			Romantic comedy
-		</li>
-		<li>
-			Classical Hollywood
-		</li>
-		<li>
-			Friends
-		</li>
-		<li>
-			Audrey Hepburn
-		</li>
-		<li>
-			Cary Grant
-		</li>
-		<li>
-			Robert de Niro
-		</li>
-		<li>
-			Coming-of-age movies
-		</li>
-		
-	</ul>
-	
--->
-  <div style="height: 30vh"></div>
+<div class="trip">
 
 
+	<h1>Can you explain it?</h1>
+<br>
+<br>
+
+<a href="https://youtu.be/PZqDI96YI3s">Video link</a>
+<br>
+<br>
+
+Description from the video:
+<br>
+<br>
+After heavy rains last week, the small lagoon next to my apartment broke through to the beach.  Based on the eroded remains, it started out as a large torrent of water about 8 feet deep.  After a few days, as seen in the video, it was reduced to a fast flowing current no deeper than 5 inches, but very wide.  
+<br>
+<br>
+
+
+The combination of a very fast current and a very new, un-eroded "riverbed" of wet sand created these other-worldly undulations in the sand itself.  Can you explain it?
+<br>
+<br>
+
+
+Location: Sands Beach, Isla Vista right next to UC Santa Barbara.
+<br>
+<br>
+
+
+Taken with my Pixel camera, which has beautiful image stabilization.  
+<br>
+<br>
+
+Send me an email or comment on the video if you can explain it!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height: 30vh"></div>
+	</div>
 </div>
 </div>
 <script>
@@ -208,5 +185,3 @@ function topFunction() {
 }
 </script>
 </body>
-
-</html>
