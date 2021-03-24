@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>210320</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../physics.html'><div id='pages'><p>physics</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../physics.html">physics</a>
+		<a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> Alabama Hills Camping          </h1>
+
+A three day trip that I went on with some friends from my college fellowship: Steve, Phillip, myself, Jenlane, Eaman, Jianan, and Patty.  They did not have much experience, but with a little bit of hand-holding, we all had a great time in the beautiful area.  I think the Alabama Hills are within the top 5 most beautiful places in all of California, and I had been excited to visit for many years.  
+
+<br>
+<br>
+
+I was lucky that Lone Pine was just a four hour drive from Santa Barbara.  When I was still living in the Bay Area, it would have been an eight hour drive, which really deterred me from ever getting the chance to visit the area.  
+
+<br>
+<br>
+
+A lot of people were late by over an hour, so Patty and I had an hour to kill in Lone Pine.  (I drove over with her.)  We got the chance to visit the Lone Pine Western Film History Museum.  I haven't watched any classic westerns, even famous ones, so it was mostly underwhelming for me.  However, there were some really cool things from movies I was familiar with.  There was a lot of stuff from Django Unchained, Tremors (which my pastor in high school really liked for some reason), Iron Man, and Gladiator.  
+
+<br>
+<br>
+
+<a href="4.jpg" data-lightbox="1"><img src="4.jpg"></a>
+<p>One of the three wagons used in Django - a donation from Tarantino</p>
+
+<br>
+<br>
+
+<a href="5.jpg" data-lightbox="1"><img src="5.jpg"></a>
+<p>A wall signed by Tarantino, Foxx, and Waltz.  (This was epic.)</p>
+
+<br>
+<br>
+
+Looking for a campsite in Alabama Hills was very difficult.  There were a lot of people over the weekend, and the dirt roads were bumpy.  Eventually, I found a nice open campsite with a firepit.  (It turned out that our campsite was the filming location for the film Yellow Sky.  There was some gravel possibly left over from the film, and also an interesting stone circle called an Arrastra that was featured in the film.)
+
+<br>
+<br>
+
+It was pretty windy, but the large size of the tent made things a lot worse too.  It would keep keeling over from the wind, and the ground was too hard for any stakes.  Here is what we came up with:
+<br>
+<br>
+<a href="6.jpg" data-lightbox="1"><img src="6.jpg"></a>
+<br>
+<br>
+Actually, during the night, the wind shifted 90 degrees and we were forced to sleep in a tent that was collapsing on top of us every minute or so.  A tough night.
+<br>
+<br>
+Then I made the fire, and we started cooking.  Ramen with spam and eggs.  Phillip really liked it, but I've had better (in terms of psychology not quality).  A big thanks to Jenlane for handling the most of the food.  
+<br>
+<br>
+<a href="7.jpg" data-lightbox="1"><img src="7.jpg"></a>
+<br>
+<br>
+<a href="8.jpg" data-lightbox="1"><img src="8.jpg"></a>
+<br>
+<br>
+The next morning we all compared how much sleep we got.  I think I did the best at a very solid 7 hours, but Steve only got two.  Some clouds had rolled in over the Sierra to the west, just covering the summits of Lone Pine Peak and Whitney.  
+<br>
+<br>
+<a href="1.jpg" data-lightbox="1"><img src="1.jpg"></a>
+<br>
+<br>
+
+We all went to check out the Mobius Arch, since that was a must.  
+<br>
+<br>
+<a href="2.jpg" data-lightbox="1"><img src="2.jpg"></a>
+<br>
+<br>
+<a href="3.jpg" data-lightbox="1"><img src="3.jpg"></a>
+<br>
+<br>
+Then we went to check out the filming site for that famous "Jericho" scene in Iron Man.  We tried really hard to match up the rocks, and I found the exact spot where he stood.  
+<br>
+<br>
+<a href="9.jpg" data-lightbox="1"><img src="9.jpg"></a>
+<p>Eaman standing where RDJ stood.  Wearing Jianan's glasses.</p>
+<br>
+<br>
+<a href="13.jpg" data-lightbox="1"><img src="13.jpg"></a>
+<p>Steve flew his drone to get this photo of all of us. (L-R Steve, Phillip, myself, Jenlane, Eaman, Jianan, and Patty.)</p>
+
+Then we all went to Lone Pine to get some food.  
+<br>
+<br>
+<a href="10.jpg" data-lightbox="1"><img src="10.jpg"></a>
+<p>The junction between Whitney Portal and 395.</p>
+<br>
+<br>
+After eating, we did some relaxing and also some of us went on a little climb.  Mostly just Eaman, Jianan, and I.  
+<br>
+<br>
+<a href="11.jpg" data-lightbox="1"><img src="11.jpg"></a>
+<p>Jianan looking up the chute.</p>
+<br>
+<br>
+<a href="12.jpg" data-lightbox="1"><img src="12.jpg"></a>
+<p>Eaman taking a selfie at the top.</p>
+<br>
+<br>
+Then did the same stuff as the night before.  I also joined them for Avalon.  (The night before I wanted to sleep earlier.)
+<br>
+<br>
+<a href="15.jpg" data-lightbox="1"><img src="15.jpg"></a>
+<br>
+<br>
+The next morning, I got up early to watch the sunrise.  It was pretty good - a bit more diffuse than usual, probably due to a cloud in the east.
+<br>
+<br>
+<a href="14.jpg" data-lightbox="1"><img src="14.jpg"></a>
+<br>
+<br>
+Then went home.  I had an interview in the afternoon at 4 so we all left pretty early.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
