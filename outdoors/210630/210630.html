@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>210630</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../research.html'><div id='pages'><p>research</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+		<a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Bishop Pass, Dusy Basin, and Knapsack Pass           </h1>
+
+Participants: myself, Hagen Zhang, and Jonathan Wong (first time!)
+
+<br>
+<br>
+
+<a href="1.jpg" data-lightbox="1"><img src="1.jpg"></a>
+
+<br>
+<br>
+
+
+We left San Jose at around 2pm, driving through Yosemite as the sun set around 8pm.  The rain began to pick up to a slight drizzle around the time we crossed Tuolumne Meadows.  We stopped for gas at the Tioga Pass Gas Mart. 
+
+<br>
+<br>
+
+We decided to sleep for the night at June Lake, hoping that there would be some campsites open.  Fortunately, there were, so we set up our tent in the dark and went to sleep.
+<br>
+
+<a href="28.jpg" data-lightbox="1"><img src="28.jpg"></a>
+<p>Our campsite at June Lake</p>
+<br>
+<br>
+
+We woke up as early as we could and got on our way to Bishop.  In Bishop, we stopped to eat at the Taco Bell before heading up to South Lake.  Already, the clouds were beginning to fill the sky despite it only being 9am.  (Typically, Sierra mornings are cloudless, with clouds beginning to pack the sky only in the afternoon if there is a thunderstorm coming.)  We knew it would be a strange weather day.
+
+<br>
+<br>
+
+On the trail, we met one ranger (who checked our permit), a father backpacking with his daughters, and a group of young girls with some friendly dogs that followed us for some time.  
+
+<br>
+<br>
+
+As we anticipated, it began to rain steadily at around noon.  We hunkered beneath a couple of pine trees next to the trail.  For some reason, I was the only person prepared with rain gear - a bad sign!  We sat in the rain, getting pretty wet while listening to music.  The rain stopped after about an hour, and we set off hiking again.  The rain would begin again around an hour later, after which we sought shelter again.  Gradually, as we grew wetter and wetter, we became more and more indifferent to the rain and sometimes opted to simply hike through it.  
+
+<br>
+<br>
+
+We were generally too focused on beating the rain to fully appreciate the scenery around us.  But the lakes and mountains on the approach to Bishop Pass were generally pretty plain (not in their own right but rather in comparison to what we were expecting to see later). 
+
+<br>
+<br>
+
+<a href="9.jpg" data-lightbox="1"><img src="9.jpg"></a>
+<p>Looking north at some point during the approach to Bishop Pass</p>
+
+<br>
+<br>
+
+<a href="2.jpg" data-lightbox="1"><img src="2.jpg"></a>
+
+
+Unfortunately, Jonathan slipped during a stream crossing near Bishop Lake and was forced to continue with soaked shoes.  It was disappointing and hurt our pace but not too dangerous in the generally mild temperatures.  
+
+<a href="29.jpg" data-lightbox="1"><img src="29.jpg"></a>
+<p>Rain drops in a small pool near Bishop Lake</p>
+
+The switchbacks up Bishop Pass were rocky but well constructed and very nicely graded.  Mt Agassiz loomed largely above our heads, constructing a dark figure against the gray rain clouds.  We were lucky to only encounter one snow patch on the trail.
+
+<br>
+<br>
+
+<a href="10.jpg" data-lightbox="1"><img src="10.jpg"></a>
+<p>Switchbacks up Bishop Pass</p>
+
+<br>
+<br>
+
+There were many deer skeletons strewn about on one switchback on the north side of the pass.  I had only heard of the deer carcasses on Shepherd Pass, so I was surprised to see some here as well.  We had an interesting time speculating the cause of death.
+
+<a href="3.jpg" data-lightbox="1"><img src="3.jpg"></a>
+<p>A deer bone</p>
+
+We were lucky to have the rain stop just as we topped out on the pass. Right on queue, the sun came out as the deep backcountry of Kings Canyon NP appeared in the horizon. 
+
+<br>
+<br>
+
+<a href="4.jpg" data-lightbox="1"><img src="4.jpg"></a>
+<p>Holding the Bishop Pass sign</p>
+
+<br>
+<br>
+
+We descended the pass quickly into Dusy Basin, eager to find a campsite as soon as possible.  We camped at the west side of the lake closest to Bishop Pass, elevation 11345'.  For dinner, we ate Shin ramen with bagged tuna mixed into it.  It tasted very bad!  However, the sunset over the Palisades was particularly beautiful, and the lake was extremely still that evening.
+
+<br>
+<br>
+
+<a href="13.jpg" data-lightbox="1"><img src="13.jpg"></a>
+
+<br>
+<br>
+
+<a href="18.jpg" data-lightbox="1"><img src="18.jpg"></a>
+
+<br>
+<br>
+
+<a href="14.jpg" data-lightbox="1"><img src="14.jpg"></a>
+
+<br>
+<br>
+
+<a href="12.jpg" data-lightbox="1"><img src="12.jpg"></a>
+
+<br>
+<br>
+
+<a href="16.jpg" data-lightbox="1"><img src="16.jpg"></a>
+
+<br>
+<br>
+
+<a href="15.jpg" data-lightbox="1"><img src="15.jpg"></a>
+<p>Looking south towards Giraud Peak (large left) and Wheel Mountain (small pointy on right)</p>
+
+<br>
+<br>
+
+<a href="17.jpg" data-lightbox="1"><img src="17.jpg"></a>
+<p>My apologies for the excess of almost identical photos.</p>
+
+<br>
+<br>
+
+The next morning, we set off early (but not that early) towards Knapsack Pass.  We left our packs at our campsite.  I ate a tasty breakfast of flavor-blasted goldfish and wheat thins and felt well-fueled for the day-hike ahead of us.
+
+<br>
+<br>
+
+We contoured at approximately the same elevation towards Lake 11306' (approximately between Isosceles and Columbine).  The constantly changing appearances of Columbine and Isosceles were pleasing to look at as we made our way through the basin.  We passed through all kinds of terrain, including areas populated with whitebarks, rocky plateaus above the lakes, and grassy meadows near the lake outlets and inlets.  We stopped to fill up water just before we headed up Knapsack Pass.
+
+We chose a poor approach to Knapsack Pass, choosing to contour without losing elevation from the northwest instead of dropping down and heading up the pass due west.  The easiest way to get up Knapsack Pass is to follow the gully, possibly with a little bit of water and some grass.  
+
+Our method forced us to scramble many large boulders, which was definitely really fun but also inefficient.  
+
+<br>
+<br>
+
+<a href="5.jpg" data-lightbox="1"><img src="5.jpg"></a>
+
+<br>
+<br>
+
+Around halfway up the pass, we stopped to eat some food.  We passed a family who was heading down, who warned us about the daily rain.  Not that we weren't also expecting the rain.  We debated whether to head back or not, and we chose to go over the pass in spite of the rain.
+
+<br>
+<br>
+
+<a href="19.jpg" data-lightbox="1"><img src="19.jpg"></a>
+<p>Looking back towards Dusy Basin</p>
+
+<br>
+<br>
+
+
+As we neared the top of the pass, the rain began to pick up.  Very conveniently, we found a great shelter to sit in while hiding out the rain.  
+
+<br>
+<br>
+
+<a href="21.jpg" data-lightbox="1"><img src="21.jpg"></a>
+
+<br>
+<br>
+
+<a href="6.jpg" data-lightbox="1"><img src="6.jpg"></a>
+
+<br>
+<br>
+
+<a href="20.jpg" data-lightbox="1"><img src="20.jpg"></a>
+<br>
+<p>A selfie with North Palisade looming behind me in the clouds.</p>
+
+<br>
+<br>
+
+We also saw an interesting wildlife camera at the very top of the pass.  My guess was that a researcher would place a camera at pass because passes have the highest probability of receiving wildlife traffic.  After searching up the name of the man listed on the camera, I found this article that may be relevant: <a href='https://wildlife.org/cameras-reveal-new-sierra-nevada-fox-population-in-calif/'>link</a>.
+
+<br>
+<br>
+
+<a href="22.jpg" data-lightbox="1"><img src="22.jpg"></a>
+
+<br>
+<br>
+
+<a href="23.jpg" data-lightbox="1"><img src="23.jpg"></a>
+<br>
+<p>Looking back to the west from the top of the pass.  Black Giant is the tallest on the left, while Mt. Warlow is the peak in the center.</p>
+
+
+The way down the east side of Knapsack was very easy.  There were many grassy ledges that effectively formed switchbacks going down the pass.  Just be sure to descent (and ascend) on the south side of the east face of the pass.  
+
+<br>
+<br>
+
+<a href="26.jpg" data-lightbox="1"><img src="26.jpg"></a>
+<br>
+<p>Contemplating the best approach for the descent as the impressive rainclouds rolled over the Sierra Crest.</p>
+
+<br>
+<br>
+
+We decided that we didn't have enough time to explore the Barrett Lakes, since our pace was too slow to safely get back before dark.  So we just stopped below the pass to fill some water, and we went right back up the pass again.
+
+<br>
+<br>
+
+<a href="25.jpg" data-lightbox="1"><img src="25.jpg"></a>
+<p>North Palisade was even more impressive from Palisade Basin.</p>
+
+<br>
+<br>
+
+On the way back, we chose the smarter way down the west side of Knapsack Pass.  (With one exception: I downclimbed a pretty sharply angled slab just for fun.  Which I shouldn't do.)  
+
+<br>
+<br>
+
+We headed down the southernmost chain of lakes in Dusy Basin, since we wanted to hike back along the Bishop Pass trail this time.  The mosquitoes began to hit hard as we descended back to treeline and the sun began to lower in the sky.  My legs were also starting to give out from aching, since Hagen forgot to pack the ibuprofen in his daypack.  But our pace was not that slow.
+
+<br>
+<br>
+
+Along the Bishop Pass trail, the constantly changing perspectives of North Palisade and Isosceles Peak were interesting to look at, and also a great gauge of where we needed to turn to get back to our campsite.  We made it just before sunset.
+
+<br>
+<br>
+
+<a href="27.jpg" data-lightbox="1"><img src="27.jpg"></a>
+
+<br>
+<br>
+
+<a href="8.jpg" data-lightbox="1"><img src="8.jpg"></a>
+
+<p>Preparing my dinner with Agassiz, Winchell, and Thunderbolt behind me illuminated in the last light.  </p>
+
+<br>
+<br>
+
+<a href="7.jpg" data-lightbox="1"><img src="7.jpg"></a>
+
+<br>
+<br>
+
+That night we ate Neoguri, which went much better with the tuna.  Next time, I probably wouldn't bring tuna as a supplement.  But I would consider chicken.
+
+<br>
+<br>
+
+The following morning, we woke up at the crack of dawn and headed back to the trailhead as quickly as we could (or as quickly as Jonathan could Haha).  We made it well before Hagen's expectation, but generally in line with mine.  Everybody hikes faster on the last day.  
+
+<br>
+<br>
+
+Overall, it was a great trip with some really interesting and unpredictable weather.  It was probably not the best condition for a first-time trip for Jonathan, but it was thorougly interesting and scenic for me and Hagen.  My favorite part was, as always, the rock hopping up Knapsack.  Also, finally being able to see the classic sunset view over the Palisades was incredible.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
