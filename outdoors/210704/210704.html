@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>210704</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../research.html'><div id='pages'><p>research</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+		<a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> Ediza Lake, Nydiver Lakes, Whitebark Pass, and Thousand Island Lake          </h1>
+
+Participants: myself, Brandon Guo, Isaac Li, and Zachary Wang.  
+
+<br>
+<br>
+
+A really fun three day trip exploring some beautiful terrain: interesting but, for the most part, easy cross country walking.  As always, the Ritter Range is incredible and adds an unusual volcanic flavor to an otherwise granitic Sierra Nevada.  I had an opportunity to revisit Ediza Lake, the lake that was part of my first introduction to the High Sierra nearly <a href="../../outdoors/150724/150724.html">six years prior</a>.
+
+<br>
+<br>
+
+We left San Jose at around 5 in the morning.  Fortunately, nobody woke up late.  
+
+<br>
+<br>
+
+Fast forward... we made it to Mammoth at around 11:30, just before our reserved shuttle reservation time window of 12 pm - 1 pm.  I had some time to get a very delicious cheesesteak from a foodstand.  
+
+<br>
+<br>
+
+<a href="1.jpg" data-lightbox="1"><img src="1.jpg"></a>
+<p>Waiting for the Reds Meadow Shuttle</p>
+
+<br>
+<br>
+
+The shuttle line was long, but the shuttle squeezed in more people than we could imagine.  We managed to be at Agnew Meadows by around 1 pm.  We set off a quick pace along the River Trail (as opposed to the High Trail/PCT), but disaster struck early as Brandon rolled his ankle within the first fifteen minutes!  We popped him a few pills and set off again, but this would continue to be a small issue throughout the next three days for him.
+
+<br>
+<br>
+
+<a href="2.jpg" data-lightbox="1"><img src="2.jpg"></a>
+<p>Fixing up the ankle</p>
+
+<br>
+<br>
+
+
+Interesting note: we saw a lot of Indian backpackers on the trail to Ediza Lake, and also a couple on the trail to Thousand Island Lake.  This is compared to the almost 100% white backpackers that you would see elsewhere in the Eastern Sierra.  I am glad that we get to see more and more diverse ethnic groups out in the wilderness, and I suppose the increased diversity will inevitably appear first in the most popular locations.  After all, the Ansel Adams Wilderness was what attracted me to my first backpacking trip. :)
+
+<br>
+<br>
+
+After the short descent into the San Joaquin River valley, we began the gentle climb into the Shadow Creek valley.  Again, trouble struck early as Zachary began experiencing a variety of interesting ailments, which also became an amusing theme throughout the next three days for him.
+
+<br>
+<br>
+
+<a href="3.jpg" data-lightbox="1"><img src="3.jpg"></a>
+
+<br>
+<br>
+ <a href="4.jpg" data-lightbox="1"><img src="4.jpg"></a>
+ <p>Indigestion strikes: do you think I can poop here?</p>
+ 
+
+<br>
+<br>
+
+Before long, we passed Shadow Lake.  We did not take many stops here since the mosquitoes started to get pretty bad.
+
+<br>
+<br>
+
+<a href="5.jpg" data-lightbox="1"><img src="5.jpg"></a>
+<p>The beautiful Shadow Lake, always hidden behind some trees if you stay on the trail.</p>
+
+<br>
+<br>
+
+The mosquitoes did not get any better as the afternoon progressed and we ascended higher.  Zachary started having a tougher time - probably needed to exercise more!!  But it was not too bad, we made it to Ediza Lake in the end.  Right before Ediza Lake, there was a trickier stream crossing.  (Tricky if you want to make it without getting your feet wet that is.)  Zach fell in, which was really quite a shame.  
+
+<br>
+<br>
+
+But watching as the beautiful Ediza Lake unfolded around the next bend made the interesting day worth it!  
+
+<br>
+<br>
+
+<a href="6.jpg" data-lightbox="1"><img src="6.jpg"></a>
+
+<br>
+<br>
+
+<a href="7.jpg" data-lightbox="1"><img src="7.jpg"></a>
+<p>The sun disappearing behind Ritter</p>
+
+<br>
+<br>
+
+At the inlet of Ediza Lake, there are one or two tricky streams that need to be crossed in order to get to the legal camping area.  Definitely takes some balance to avoid getting the feet wet.
+
+<br>
+<br>
+
+<a href="8.jpg" data-lightbox="1"><img src="8.jpg"></a>
+
+<br>
+<br>
+
+It's a little bit of a struggle finding a good camping site at Ediza Lake, in my opinion.  It may be advisable to go further to the northwest side of the lake in order to find some nice spots, but we were too tired and settled for an interesting set of sites perched on a rocky ledge above the lake.  It certainly made for a quite a view of the Minarets.
+
+<br>
+<br>
+
+<a href="9.jpg" data-lightbox="1"><img src="9.jpg"></a>
+<p>My 7-year-old tent - also its second time at Ediza Lake</p>
+
+<br>
+<br>
+
+That night we ate some tasty ramen and went to bed quickly.  
+
+<br>
+<br>
+
+The next morning's sunrise was beautiful as expected.  
+
+<br>
+<br>
+
+<a href="10.jpg" data-lightbox="1"><img src="10.jpg"></a>
+<p>Brandon and Mt. Ritter</p>
+
+<br>
+<br>
+
+<a href="11.jpg" data-lightbox="1"><img src="11.jpg"></a>
+<p>The Minarets and another campsite</p>
+
+<br>
+<br>
+
+We took some time to clean up and get going.  We first went back to the inlet stream to get some water.  
+
+<br>
+<br>
+
+<a href="12.jpg" data-lightbox="1"><img src="12.jpg"></a>
+<p>Ritter and Banner above the inlet stream of Ediza</p>
+
+<br>
+<br>
+
+Our choice of approach to Nydiver Lakes was the direct ascent upwards from the northern side of Ediza Lake.  Certainly, there are easier methods: allegedly there is a use trail that splits from the Shadow Creek trail east of Ediza Lake; one can also go via Roper's High Route towards the Ritter-Banner saddle before cutting east to Nydiver Lakes.  
+
+<br>
+<br>
+
+Our route was steep but not that rocky: there was a lot of grass on the slope to keep things stable.  However, the rocks were generally loose and unreliable.  It took us a long time to make it to the top, where there was a small tarn.  On the way up, we had to pause for a very long time because a mosquito flew into Zach's ear.  It would ultimately stay in his ear (alive) for several more days.
+
+<br>
+<br>
+
+As we ascended higher and higher, the views of the Minarets and Ediza Lake became more and more expansive.  
+
+<br>
+<br>
+
+<a href="14.jpg" data-lightbox="1"><img src="14.jpg"></a>
+
+<br>
+<br>
+
+<a href="15.jpg" data-lightbox="1"><img src="15.jpg"></a>
+<p>Zach and Isaac navigating the slope</p>
+
+<br>
+<br>
+
+<a href="18.jpg" data-lightbox="1"><img src="18.jpg"></a>
+<p>One of the looser sections that required some care</p>
+
+<br>
+<br>
+
+<a href="20.jpg" data-lightbox="1"><img src="20.jpg"></a>
+<p>The view from the top, next to the tarn just south of the easternmost Nydiver Lake.</p>
+
+<br>
+<br>
+
+We took a short break at the tarn.  (Not that we hadn't been taking many breaks: it took nearly two hours just to walk the quarter mile up from Ediza Lake.)  I took this opportunity to poop, doing so with a perfect view of the Minarets.
+
+<br>
+<br>
+
+<a href="21.jpg" data-lightbox="1"><img src="21.jpg"></a>
+<p>Banner from the tarn just south of the easternmost Nydiver Lake.</p>
+
+<br>
+<br>
+
+<a href="22.jpg" data-lightbox="1"><img src="22.jpg"></a>
+<p>Relaxing with the perfect view</p>
+
+<br>
+<br>
+
+<a href="23.jpg" data-lightbox="1"><img src="23.jpg"></a>
+<p>The alpine wildflowers were in full bloom.  </p>
+
+It was a gentle walk through grassy meadows to reach the westernmost Nydiver Lake, where we would ascend Whitebark Pass.  Along the way, we met a fisherman who was on his fifth or sixth day with his two dogs, fishing all the lakes that he walked past.  His two dogs kept us good company as we filtered water.
+
+<br>
+<br>
+
+<a href="24.jpg" data-lightbox="1"><img src="24.jpg"></a>
+<p>Banner above the middle Nydiver Lake</p>
+
+<br>
+<br>
+
+<a href="25.jpg" data-lightbox="1"><img src="25.jpg"></a>
+<p>Ritter and Banner above the westernmost Nydiver Lake</p>
+
+<br>
+<br>
+
+On the way to the base of Whitebark Pass, we were viciously attacked by dense swarms of gnats that lived in between the talus next to the lake.  It was very traumatizing.  The way up the south side of Whitebark Pass is a walk in the park: just take the gentle (actually quite steep) grassy slope on the western side.  Isaac rather stupidly took the eastern side with all the loose talus and hurt his hand.  Actually, there is also a use trail, but it is totally unnecessary and actually looser than the surrounding grass.
+
+<br>
+<br>
+
+<a href="26.jpg" data-lightbox="1"><img src="26.jpg"></a>
+<p>The south side of Whitebark Pass</p>
+
+<br>
+<br>
+
+<a href="27.jpg" data-lightbox="1"><img src="27.jpg"></a>
+<p>More wildflowers</p>
+
+<br>
+<br>
+
+<a href="29.jpg" data-lightbox="1"><img src="29.jpg"></a>
+<p>A beautiful photo of Brandon (?), Nydiver Lakes, and the Minarets that I snapped from the top of Whitebark Pass.</p>
+
+<br>
+<br>
+
+From the top of Whitebark Pass, we could see Garnet Lake and Thousand Island Lake.  Banner Peak loomed above us, closer than ever before.  The north side of the pass was much steeper and rockier.  It was very daunting as we looked down from the top.  We spent some time contemplating our fates (joking) as I tested the safest ways down from the pass.  None of the ways down were that great.  I'm not able to find a consensus online about the optimal route, so please let me know if that exists.
+
+<br>
+<br>
+
+<a href="31.jpg" data-lightbox="1"><img src="31.jpg"></a>
+<p>Garnet Lake</p>
+
+<br>
+<br>
+
+<a href="33.jpg" data-lightbox="1"><img src="33.jpg"></a>
+<p>Banner Peak from Whitebark Pass</p>
+
+<br>
+<br>
+
+Ultimately, my determination of the safest path was straight down the middle.  There, the talus was larger and more white (and hence, more stable).  We made it down extremely cautiously and mostly without a hitch.  It was one of the looser passes that I've gone down, which is probably characteristic of the whole region.  
+
+<br>
+<br>
+
+<a href="32.jpg" data-lightbox="1"><img src="32.jpg"></a>
+<p>Looking up towards Brandon making his way down carefully</p>
+
+<br>
+<br>
+
+<a href="34.jpg" data-lightbox="1"><img src="34.jpg"></a>
+<p>Looking back towards the north side of Whitebark Pass </p>
+
+<br>
+<br>
+
+The rest of the way towards the saddle between Garnet and Thousand Island was gentle and grassy.  Along the way, a very fast SHR hiker zoomed by us.  He was doing the Reds Meadow to Twin Lakes section, although he was stopping at Saddlebag and not doing Sky Pilot Col.  We were all very impressed by his pace.
+
+<br>
+<br>
+
+<a href="35.jpg" data-lightbox="1"><img src="35.jpg"></a>
+<p>Banner Peak and the wildflowers that were blooming</p>
+
+<br>
+<br>
+
+<a href="37.jpg" data-lightbox="1"><img src="37.jpg"></a>
+<p>Thousand Island Lake from the saddle</p>
+
+<br>
+<br>
+
+We definitely took our luxury time for the rest of the way to the campsites on the north shore of Thousand Island Lake.  We ate lots of snacks and enjoyed the beautiful scenery.  At the southwestern corner of Thousand Island Lake, there was a clear use trail that we followed all the way to the outlet, where we camped.  (We did lose the use trail at the northwestern corner of the lake though.)
+
+<br>
+<br>
+
+<a href="38.jpg" data-lightbox="1"><img src="38.jpg"></a>
+<p>Descending the saddle to Thousand Island Lake</p>
+
+<br>
+<br>
+
+<a href="39.jpg" data-lightbox="1"><img src="39.jpg"></a>
+<p>Walking across the beautiful meadows on the northwestern side of the lake (of course, spreading out in an LNT conscious fashion :D)</p>
+
+<br>
+<br>
+
+
+
+The closer we got to the outlet, the more people there were.  We were pretty much seeing people every three minutes, even though it was a Monday evening.  It was a little bit of a struggle to find a nice campsite with all the people, so we were forced to go higher above the trail and the lake.  This was okay though.
+
+<br>
+<br>
+
+<a href="42.jpg" data-lightbox="1"><img src="42.jpg"></a>
+<p>The view from our campsite</p>
+
+<br>
+<br>
+
+We took a little dip in the water to clean our legs.  Then we all had a big dinner to finish off the rest of our food.  Afterwards, we played a little BS poker and then went to sleep.  There wasn't enough space to put up the rainfly, so Brandon and I slept under just the tent mesh.  It was a little unnerving to watch the mosquitos all gather on top of the mesh as we were falling asleep though.  Still, it wasn't the worst I've ever seen.
+
+<br>
+<br>
+
+<a href="47.jpg" data-lightbox="1"><img src="47.jpg"></a>
+
+<br>
+<br>
+
+The next morning, I was a little too lazy to get up for the sunrise.  I was only able to watch it through the mesh, which was okay.  We got packed as quickly as possible and set off at a very high speed to try and get home before dinnertime.  That day we completed the 8-9 miles back to Agnew Meadows at an average speed of 2.5 mph, taking an astonishing zero breaks beyond sips of water.  To be fair, the mosquitos were starting to get so annoying that it was impossible to stop.  
+
+<br>
+<br>
+
+<a href="43.jpg" data-lightbox="1"><img src="43.jpg"></a>
+<p>The classic view in the morning</p>
+
+<br>
+<br>
+
+
+We took the High Trail (PCT) on the way back, which was honestly stunning.  However, we were too focused on the mosquitos (and getting home) to really fully enjoy the expansive views of the Ritter Range.  I would recommend doing the High Trail on the way to Thousand Island Lakes and maybe doing River Trail on the way back. :)
+
+<br>
+<br>
+
+<a href="44.jpg" data-lightbox="1"><img src="44.jpg"></a>
+<p>Beautiful lupine on the High Trail with a view of the Ritter Range</p>
+
+<br>
+<br>
+
+<a href="45.jpg" data-lightbox="1"><img src="45.jpg"></a>
+<p>The last stretch at Agnew Meadows before the shuttle bus</p>
+
+<br>
+<br>
+
+At Mammoth Lakes, Zach went to a first aid station to try and get the mosquito out of his ear.  However, even they were too scared to try and dig it out, saying that it was "too deep".  I think Zach would not get it out until one or two days later.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
