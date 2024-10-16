@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>241001</title>
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+        lastVisit:{
+                page:window.location.pathname,
+                timestamp:new Date() + ""
+              }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+  <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+  <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+  <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+  <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../research.html'><div id='pages'><p>research</p></div></a>
+  <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> Cathedral Lake and Matthes Lake          </h1>
+
+<br>
+<br>
+
+My first solo backpacking trip. Since I was recovering from a knee injury from a few weeks ago, I decided to go on a short trip. Cathedral Lake was a dream of mine for so many years, but I never had the opportunity to go. The permits are not so easy to get. But since I was by myself, and it was so late in the season (my latest trip in the Sierra ever), it was not hard to get a permit. It was a great trip, but a little lonely!
+
+<br>
+<br>
+
+I left San Jose around 9 am on Tuesday and got to Tuolumne Meadows at around 3:30 pm. It took me a while to find the wilderness permit office (it has been a while). I was on the trail by around 3:45 pm. 
+
+<br>
+<br>
+
+My pack felt a lot heavier than I remembered. It was probably was actually a lot heavier. With nobody to share the load with and some new deluxe sleeping gear (my ultralight days are over), I was probably going at least five or ten pounds over my normal weight. 
+
+<br>
+<br>
+
+The climb up to (Upper) Cathedral Lake was very steady and not difficult by normal standards, but I was very out of shape and needed to go very slowly. I tried to keep my heart rate steady so that I wouldn't get altitude sickness. The woods were beautiful and peaceful with the afternoon light streaming through the trees, although the dryness of the air hurt my nose, and the dust was not nice.
+
+<br><br>
+
+
+
+
+<a href="1.jpg" data-lightbox="1"><img src="1.jpg"></a>
+<p>Late afternoon ascent in the woods</p>
+
+<br>
+<br>
+
+<a href="2.jpg" data-lightbox="1"><img src="2.jpg"></a>
+<p>A pretty little meadow</p>
+
+<br>
+<br>
+
+<a href="3.jpg" data-lightbox="1"><img src="3.jpg"></a>
+<p>Fairview Dome through the trees</p>
+
+<br>
+<br>
+
+Sooner or later, when the afternoon light was beginning to fade, the bigger pines started to give way to smaller whitebark pines. I saw some odd birds (what are these?). 
+
+<br><br>
+
+<a href="4.jpg" data-lightbox="1"><img src="4.jpg"></a>
+<p>??</p>
+
+<br>
+<br>
+
+I was starting to get very tired, even though I was only three miles in. But I tried to hurry along, so that I could get to the lake before sunset to capture some of the last light on Cathedral Peak. 
+
+<br><br>
+
+<a href="5.jpg" data-lightbox="1"><img src="5.jpg"></a>
+<p>Eichorn Pinnacle, I think</p>
+
+<br><br>
+
+Finally, right as the sun was beginning to set, I made it to Upper Cathedral Lake. There is a small use trail that goes off the main trail, and it is not hard to spot if you're paying attention. I was able to snap some shots of the last dying light on the peak reflected in the water:
+
+<br><br>
+
+<a href="6.jpg" data-lightbox="1"><img src="6.jpg"></a>
+
+<br><br>
+
+<a href="7.jpg" data-lightbox="1"><img src="7.jpg"></a>
+
+<br><br>
+
+I had a brief chat with another guy who was also taking photos by the lake. After I was satisfied with the photos I had taken, I put down my pack and filled up some water and washed up a little bit in the lake. (No soap obviously.) I didn't bring my water filter because I couldn't find it, so I tried to close my eyes when drinking the water. (Haha. There were definitely some floaty things in there.) 
+
+<br><br>
+
+I was disappointed to see one group with a campfire (I don't think this is allowed at Cathedral Lakes despite being within the elevation limit). I found a really great little site after hiking a bit up the hill. It was already dark by 7:30 pm, so I had a lot of time to kill before going to sleep. I had some ramen and was full after just one pack. After twilight, I took some Milky Way photos with my camera (Sony A9 + Tamron 28-200mm f/2.8-5.6). It was a bit hard to set up without a tripod, but I managed. Then I did some reading (<i>The Church</i> by Mark Dever and <i>The Story of Christianity: Volume 1</i> by Justo Gonzalez). I slept around 12 am.
+
+<br><br>
+<a href="8.jpg" data-lightbox="1"><img src="8.jpg"></a>
+<br><br>
+<a href="9.jpg" data-lightbox="1"><img src="9.jpg"></a>
+<br><br>
+<a href="10.jpg" data-lightbox="1"><img src="10.jpg"></a>
+<br><br>
+<a href="11.jpg" data-lightbox="1"><img src="11.jpg"></a>
+<br><br>
+
+
+<br><br>
+
+<br><br>
+
+After a decent night's sleep (I feel like I woke up a few times), I woke up to the sun hitting my tent around 9 am. It was already warming up, so I got out of bed quickly. After brushing my teeth and eating some crackers, I put everything in the bear can, packed some layers, and set off towards Matthes Lake. 
+
+<br><br>
+
+As I was plodding along, I looked at the map and started to realize that the distance was quite a bit longer than I expected. (I didn't calculate it at home.) I realized that I would have to walk at a quick pace if I wanted to make it back before sunset. That was annoying. I was hoping to have a relaxed day.
+
+<br><br>
+
+
+<a href="12.jpg" data-lightbox="1"><img src="12.jpg"></a>
+<p>The meadow atop Cathedral Pass </p>
+<br><br>
+
+<a href="13.jpg" data-lightbox="1"><img src="13.jpg"></a>
+<p>Looking back at Cathedral Peak</p>
+<br><br>
+
+
+<a href="14.jpg" data-lightbox="1"><img src="14.jpg"></a>
+<p>Staring off into the distance at what I believe is the Clark Range</p>
+<br><br>
+
+
+<a href="15.jpg" data-lightbox="1"><img src="15.jpg"></a>
+<p>Looking up at Columbia Finger</p>
+<br><br>
+
+A pack train passed me while I was taking a break at the bottom of Columbia Finger. It always sucks to get passed by them, because then you know that you'll have to be smelling their fresh poop for the rest of the day.
+
+<br><br>
+
+After Long Meadow, I turned off the JMT towards Cathedral Fork. This part of the trail was nice. I had a nice long rest at the top of the little hill before descending towards Cathedral Fork. On the other side, there were great views of the Matthes Crest.
+
+<br><br>
+
+
+<a href="16.jpg" data-lightbox="1"><img src="16.jpg"></a>
+<p>Matthes Crest</p>
+<br><br>
+
+At around 9160', I decided to set off from the trail and head towards Matthes Lake. The initial stretch was very brushy. I made the mistake of not checking the satellite imagery at home. (Based on the satellite imagery, I think leaving the trail at 9000' is best.) Thankfully, once I started getting closer to Cathedral Fork, the terrain opened up, and there were some nice granite slabs.
+
+
+
+<br><br>
+
+<a href="17.jpg" data-lightbox="1"><img src="17.jpg"></a>
+<br><br>
+
+Cathedral Fork itself was almost all dried up, with some pools of water remaining. There were lots of tiny trout that would skitter around whenever they saw me coming. I wonder if this part is easily passible during the early season.
+
+<br><br>
+
+
+<a href="18.jpg" data-lightbox="1"><img src="18.jpg"></a>
+<br><br>
+
+I followed the leftover stream up until I met the streambed that led up to Matthes Lake. Since the forest around the streambed was so thick, I just walked up the dry, rocky streambed. This was not that easy either, since there were many logs strewn across the streambed that blocked my way. I was kind of cursing myself for not doing my homework on the route to Matthes Lake beforehand. Thankfully, after some time, the streambed finally opened up into some more granite slabs at 9240'. I was so happy to be out of the wood that I practically ran up these slabs. At around 9360', the slabs turned into this tiny little canyon where the stream had cut through the rock. I was a little worried that I wouldn't be able to follow the streambed anymore, but thankfully I was still able to walk on the side. 
+
+<br><br>
+
+
+<a href="19.jpg" data-lightbox="1"><img src="19.jpg"></a>
+<br><br>
+
+From there, I kept following the tiny canyon until the streambed flattened out once again around 9500', after which I cut to the north, where the forest cleared out a little bit, and it was easy to walk through the trees. From there, it was an easy walk to the meadow on the southwest side of Matthes Lake. I was treated some stunning views of the crest, and I spent at least half an hour chilling at the side of the lake.
+
+<br><br>
+
+<a href="20.jpg" data-lightbox="1"><img src="20.jpg"></a>
+<br><br>
+
+
+<a href="21.jpg" data-lightbox="1"><img src="21.jpg"></a>
+<br><br>
+
+There were some others at the lake, so I waved to them from afar. I ate the last of my goldfish and refilled my water too. Annoyingly, there was a lot of little gunk in the water, and I wasn't able to get a clean-looking bottle of water. I should bring a filter next time.
+
+<br><br>
+
+After a while, I figured I should get going to get back before sunset, so I packed up and headed back. I took approximately the same way back to the trail, although I tried to find an easier way when it got brushy. (I was not successful.) I connected with the trail a little further south than where I left off. I was exhausted by the time I hit the trail again, and my shoes were filled with little spikes from the plants. 
+
+<br><br>
+
+I took some long breaks to try and get some energy back. I also ate some Wheat Thins, but the flavor I got was awful. (Only original flavor next time.) After I got my blood sugar back up a bit, I headed back up to Cathedral Lakes. I put in my earbuds and listened to some sermons so that the time would pass a little faster (my legs and feet were killing me by this point). 
+
+<br><br>
+
+<a href="22.jpg" data-lightbox="1"><img src="22.jpg"></a>
+<p>Mt. Clark (I assume)</p>
+<br><br>
+
+I made it back to the lake around half an hour before sunset. I took a little hike up the ridge to the south of the lake to get a nice view of the sunset. I was too tired, so I didn't go very high. (I regret this - my view wasn't the best.) I had some time to kill, so I set up my camera to take a selfie. It definitely took a while to get right!
+
+<br><br>
+
+<a href="23.jpg" data-lightbox="1"><img src="23.jpg"></a>
+<br><br>
+
+That night, I was very disappointed to see a group on the north side of the lake camping right next to the water on the grassy meadow. It's sad to see these people disrepecting the environment so blatantly, especially at these more popular camping sites. 
+
+<br><br>
+
+A lot more people were at the lake, and some people were struggling to find a site. I washed off, had some tasty ramen, read my books, and went to bed. 
+
+<br><br>
+
+The following morning, I woke up at around 7 am, set off at around 8:30 am, and got to the car by around 11 am. I was dying to eat some Panda Express on the way home, and I indulged myself quite happily. Overall, the trip was nice, and the late season was nice and offered more solitude than usual. However, I wasn't in very good shape and paid for it. Going solo was more lonely, but I was able to have more peace, and the hiking was more relaxing at my own pace. My pack was heavier than usual, but my new sleeping pad was awesome and so comfortable. 
+
+<br><br>
+
+5/10 trip overall.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
