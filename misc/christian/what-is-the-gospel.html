@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>What is the gospel?</title>
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+        lastVisit:{
+                page:window.location.pathname,
+                timestamp:new Date() + ""
+              }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+  <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+  <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+  <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+  <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../research.html'><div id='pages'><p>research</p></div></a>
+  <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>What is the gospel? </h1>
+
+Dear friend, <br><br>
+
+<b>May I ask you today what you believe?</b> Are you an atheist? Agnostic? Nominally religious? Something else? Don’t worry—whatever you are, I probably used to be that too. But four years ago, I was changed profoundly by a simple message that I had previously seen as foolishness, an age-old story that I regarded with as much scorn as perhaps even you standing here today. <br><br>
+This message I heard was the <b>good news of Jesus Christ</b>. Perhaps you’ve heard this before and thought little of it. Would you spare me a few minutes so that I might try to convince you of this truth in a way that might make sense to you? I’m not an idiot or a fanatic, I’m not part of a cult, I don’t have an agenda, I’m not trying to get you to join an organization, and I certainly don’t want your money. I simply recognize that I possess a precious truth of such magnificence that it would be a disservice not to share it with you. I hope that because I once may have been in your shoes, I might be able to make things clear from your perspective as well. Let’s begin.
+<br><br><br><br>
+First, I’d like you to join me in making <b>three unique observations about humanity</b>.<br><br>
+<b>The human heart has an inclination towards discerning right and wrong.</b> Deep inside your heart, you have a clear sense that some things are “right” and some things are “wrong.” In other words, we have a conscience. This clear knowledge etched deeply within our hearts is more than just a psychological impulse or a sociological conditioning. If we take the time to deeply consider this universal human inclination, we can soon perceive that its very existence is a deep mystery. Righteousness is a knowledge and prize hidden deep within our hearts. We all know it’s there, but why is it there?<br><br>
+<b>The human heart has an inclination towards selflessness and mercy.</b> In other words, the human heart treasures love. We glorify people who sacrifice themselves for others, and we glorify people who show mercy to those who wrong them. For example, when we hear of a strong young man sacrificing his life to save a weak elderly woman in a fire, do we question his sanity? On the face of it, it seems like we ought to, but we don’t: we celebrate his heroism. But why? Why do we as humans treasure love, sacrifice, and mercy despite how unnatural they are?<br><br>
+<b>The human heart has an inclination towards discovering lasting purpose.</b> If you’re like me, this is the one that hits closest to home. Every single one of us—rich or poor, wise or foolish—is going to die. All of our children and every child of theirs will also die. Everything we create, build, or discover will eventually disappear and be forgotten. Any purpose we claim to have is an illusion in light of these truths. At the end of the day, we are creatures without purpose, “chasing after the wind.” But let me ask you: why does this simple fact give us so much angst? Animals, by all observable means, appear content to live today and die tomorrow. But we want to <i>matter</i>. Why are we so inconsolably desperate for purpose? Why has this unattainable desire come to be so deeply rooted within our psyche?<br><br>
+These are deep questions. You might need more time to think about them. But before I address these three mysteries about ourselves, I want to give you another mystery to ponder. <br><br>
+<b>Who was Jesus?</b> The central claim of Christianity is the answer to this question. I’m going to give you five generally uncontested historical facts, and you can decide for yourself.<br><br>
+
+1)  Jesus was a first century Jewish man who claimed to be the Son of God, and he had many followers during his lifetime.<br>
+2)  Jesus was executed by the Roman Empire for claiming to be the Son of God.<br>
+3)  His followers fled because they assumed that Jesus would not die if he was who he claimed to be.<br>
+4)  His followers suddenly each came to believe that Jesus came back to life three days after his death.<br>
+5)  His followers spread this belief across the entire Roman Empire over the next several decades, with no aspiration for wealth or political power. Almost all were eventually executed for refusing to renounce this belief. <br><br>
+
+What do you think? I can think of only <b>two plausible conclusions. 1) Jesus was a charismatic liar.</b> Then shortly following his execution, <i>every single one</i> of his hundreds of followers had <i>identical</i> and roughly <i>simultaneous</i> delusions of seeing Jesus alive again. They convinced tens of thousands of people that this delusion was true. <b>2) Jesus was the Son of God.</b> <br><br><br><br>
+
+I’m writing to you today to tell you that, indeed, Jesus was everything he claimed to be. He died and came back to life three days later. By his death, Jesus Christ accomplished the forgiveness of sin and guarantees eternal life for whoever believes in him. <br><br>
+I so very much want to explain this to you, but even a lifetime of piety could not exhaust the magisterial beauty of this message. If this truth were a glimmering jewel, my mere words would barely illuminate a single facet. The wonder of it all simply disintegrates me. Even right now, as I write, I am simply lost for words. What could I possibly say to describe this? Language simply fails. I can’t even scratch the surface of this ocean of goodness and its incomprehensible depths. Nevertheless, I have convinced myself to try, for your sake. Shall we start from the beginning?<br><br>
+In the beginning, God created the heavens and the earth. Where was Jesus? All things were made through him, because he was in the beginning with God. But not only was Jesus with God: Jesus was God. <br><br>
+It then pleased God to create man in his own image. God created humanity and imbued man with qualities reflective of his own attributes: namely, his righteousness, his love, and his eternality. But deep down, you already knew this didn’t you? Isn’t this exactly what we were talking about earlier? Look far enough inside yourself, and you will see a very faint reflection of God himself. By some of our own traits, we can come to know a little bit about God and what he has intended for us! You were created with the knowledge of right and wrong so that you would be perfectly righteous. You were created with a heart that treasures love so that you yourself would love others. And you (<i>yes, you!</i>) were created with eternity written into your heart because you were meant to glorify God and enjoy him forever. <br><br>
+But you yourself know better than I do that this is hardly the case with ourselves. This is because the first man and woman disobeyed God, and sin entered the world. Through this first disobedience, sin corrupted the creation and corrupted every single person born of man, including me and you. We know what’s right and wrong, but we keep choosing evil. We yearn for love in this world, but we ourselves are nothing but selfish. We want to see our work last forever, but each one of us will die. This is the true state of humanity. <br><br>
+You could have discovered much of this just by examining your own self, as we did together. But there is a deeper reality revealed only through God’s Word, the Holy Bible—a reality that damns us all. God is not only righteous, loving, and eternal: God is holy. Evil cannot dwell in the presence of God. Whatever is unholy, even the most righteous person, will wither away instantly in his vicinity. I don’t even have to tell you that this is bad news, because you know as well as I do that we are both rotten to the core. Every sin we commit (and there are more than we could even imagine) is a transgression against a completely holy God. Every single one of us will one day stand before God and give account for all of our sins. Nothing will be swept under the carpet. Have you heard of the phrase, “the punishment fits the crime”? The phrase should probably actually say, “the punishment fits the importance of the offended.” I can tell you this for sure: if it is an infinitely holy God that you have offended, your punishment will be infinitely severe. <br><br>
+But isn’t God merciful? Yes. God is merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness, forgiving iniquity and transgression and sin. But he will by no means clear the guilty. I hope you see the paradox here. How can God forgive without clearing the guilty? After all, what would you think of a judge who lets a murderer go without a punishment? You’d call for his head! There is no justice in forgiveness. This is the great dilemma of God’s relationship with his people: how can God be both just and merciful? This ought to tear you apart, because you will suffer eternally if God cannot forgive. <br><br>
+It all has to do with Jesus Christ. God sent his Son to this world, emptying himself to be born as a man that we knew by the name Jesus. Although he was despised and rejected by men, he was more perfect and more wonderful than any other human to ever walk this earth. I have so many things I want to tell you about Jesus, and thoughts flood my mind, but I can’t possibly write them all. Let me just tell you this one thing. When God looks at his Son Jesus, he smiles and his heart simply bursts with pleasure. Nothing is sweeter than the love God has for his own Son. <br><br>
+But I tremble now as I write these words because they seem too wonderful and frightening to be true. I did not yet tell you <i>why</i> God sent his only beloved Son to this world. God wants you to be with him so much that he sent his only Son to this world to die. Jesus died on the cross for <i>you</i>. On that rugged cross, with perfect blood flowing profusely from his nail-pierced body, Jesus cried out to his Father and said, <i>“My God, My God, why have you forsaken me?”</i> Then God, the Lord of all heaven and earth, took your sin, placed it upon his Son with whom he was well pleased, and crushed him. God crushed his Son so that justice would be satisfied. God, the lover of your soul, crushed his Son so that he could have <i>you</i>. <br><br>
+This is the price with which you have been bought: the precious blood of Jesus Christ. My words fail, and there is nothing else to say. Believe in Jesus Christ, and you will be saved. You are not your own. You belong to your faithful Savior Jesus Christ. Go to him quickly. Friend, Jesus is calling you.<br><br>
+<p>♰</p>
+<br><br>
+
+Please send me an email if you have any questions or want to consider some next steps. I’d love to have a conversation with you.<br><br><br><br>
+
+Jacob Nie<br>
+jacobnie2008@gmail.com<br>
+April 30, 2023<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

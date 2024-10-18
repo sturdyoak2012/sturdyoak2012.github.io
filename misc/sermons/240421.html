@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>240421</title>
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+        lastVisit:{
+                page:window.location.pathname,
+                timestamp:new Date() + ""
+              }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+  <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+  <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+  <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+  <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../research.html'><div id='pages'><p>research</p></div></a>
+  <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> Hypocrisy          </h1>
+
+Lord's Day, April 21, 2024, Connect Church Silicon Valley (with Chinese translation)
+<br><br>
+Matthew 6:1–4 (ESV) <br>
+<i>
+1 “Beware of practicing your righteousness before other people in order to be seen by them, for then you will have no reward from your Father who is in heaven. <br>
+2 “Thus, when you give to the needy, sound no trumpet before you, as the hypocrites do in the synagogues and in the streets, that they may be praised by others. Truly, I say to you, they have received their reward. <br>
+3 But when you give to the needy, do not let your left hand know what your right hand is doing, <br>
+4 so that your giving may be in secret. And your Father who sees in secret will reward you.
+</i>
+
+<br><br><br><br>
+We have been talking about the Sermon on the Mount for several weeks now.
+And the part of the Sermon that we have been in for the past few weeks is about what it means to be truly righteous.<br><br>
+Jesus has just given six examples of what it means to be truly righteous compared to the regulations of the Pharisees at the time.
+We talked about four of those examples: anger, oaths, retaliation, and love for our enemies.
+Now we are entering into a new section, where Jesus talks about what it means to be truly righteous in how we practice our devotion to God.
+This time, he uses three examples: almsgiving, prayer, and fasting.
+These were the three pillars of spiritual devotion for Jews at the time.
+And his main point about these three examples is found in the very first verse of chapter 6.
+“Beware of practicing your righteousness before other people in order to be seen by them, for then you will have no reward from your Father who is in heaven.” <br><br>
+Now, today we are looking at the very first example, which is in the act of giving.
+But when we read closely, we see that Jesus is not concerned with the act of giving itself.
+His main point is that we should not give in the same way that hypocrites do.
+The main message of this passage is actually really not about giving at all.
+It is about the sin of hypocrisy.
+And so that will be the topic for today’s message.
+My message will be divided into only two parts.
+We will talk about 1) the problem of hypocrisy, and 2) the proper response.<br><br>
+<b>First, the problem of hypocrisy.</b><br><br>
+Now, it’s important to note that the meaning of hypocrisy in this passage is different from how we might use the word today.
+Nowadays, when we say that somebody is a hypocrite, we mean that they say one thing and do another. 
+For example, a hypocrite might tell others to be generous even though he never gives in his own personal life. 
+But this is actually not the kind of hypocrisy that Jesus is getting at here. 
+Jesus says that a hypocrite is anybody who does the right things but for the wrong reasons. 
+So actually, these hypocrites are not necessarily committing any sin at all. 
+There is no indication from the passage that these people are stingy in their private lives, although that certainly may be the case. 
+By all means, a hypocrite, in the sense of this passage, can literally be doing all the right things, all the time. 
+But the reason for their condemnation is that their righteous actions are not done for the right reasons.
+Somebody can be perfect in all their actions and still be condemned. 
+And why? 
+Because God’s requirement of true righteousness concerns the whole person, both the external and the internal. 
+That’s why God’s greatest commandment is not worship, or prayer, or fasting, or generosity, or even self-sacrifice.
+God’s greatest commandment is love.
+Love is the most fundamental command because it requires the action to come from the heart.<br><br>
+The problem is that when it comes to our actions, many of us have no trouble doing the right thing.
+But our actions can be so pure, even when our hearts are not there at all.
+The Bible says in Jeremiah 17:9:<br><br>
+<i>“The heart is deceitful above all things, and desperately sick; who can understand it?” </i><br><br>
+I think that behind every one of our actions, there is a dark cloud of intentions.
+Some of our intentions are even concealed from our very own eyes.
+The specific intention that Jesus is getting at in this passage is the desire to be seen by others.<br><br>
+I want us to think about every single one of our supposedly godly actions.
+Every prayer we say.
+Every act of kindness.
+Or every dollar we give away.
+And I want us to ask ourselves, how much people-pleasing would we see?
+How much of it is just fear of what others will think of us if we don’t do it?
+And how much of it would be the genuine overflow of a true love for God and his people?
+I think the depth of the hypocrisy can even terrify us.<br><br>
+But I want to go even deeper.
+Now, Jesus says we shouldn’t give to the needy in order to be praised by others.
+That’s the people-pleasing we were just talking about.
+But in verse three, Jesus says something very odd. 
+He says that when we give, we shouldn’t even let our left hand know what our right hand is doing. 
+In other words, he wants us to give without even ourselves knowing!
+Now, obviously this is fundamentally impossible. 
+We can’t do something without consciously being aware of what we’re doing. 
+So most people have interpreted that this is just a hyperbolic exaggeration used to make his point. 
+And I agree. 
+But I also want to propose to you that there might be something very subtle going on in this statement.
+I think Jesus is correctly suggesting that the most dangerous audience is sometimes not others, but ourselves. 
+In other words, this is the dangerous sin of personal pride. 
+Verse 1 says, “Beware of practicing your righteousness before other people in order to be seen by them.” 
+Perhaps for many of us, this actually needs to say something else. 
+“Beware of practicing your righteousness before yourself in order to be seen by yourself.” <br><br>
+In reality, sometimes the praise we have for ourselves is more powerful than the praise of others.
+We can do good things in total secrecy and then think to ourselves about how good of a person we are.
+It is the sin of doing the right thing simply for the sake of seeing that we are a good person.<br><br>
+Now, to be clear, I am not saying that it is wrong to be genuinely happy when we do the right thing.
+We should be glad when we do the right thing.
+But there is a very fine line between being pleased by our actions for the glory of God, and being pleased by our actions for the glory of ourselves. 
+The first thanks the Lord for his saving work in us, 
+but the second has only ourselves in mind. 
+It’s a fine line, but we must know which side we are on. <br><br>
+Now, before we move on to the proper response, I want to speak directly to the people in this room that have been Christians for the longest time.
+Hypocrisy is most dangerous for people such as yourself.
+When we have followed the Lord for a long time, we may find ourselves with our passion for God slowly dying.
+And at the same time, there are more and more expectations from both others and ourselves about how we ought and ought not to act. 
+That’s the ideal breeding ground for hypocrisy to grow.<br><br>
+It reminds me of what Jesus said to the Ephesian church in Revelation. 
+He said: <br><br><i>“I know you are enduring patiently and bearing up for my name’s sake, and you have not grown weary. 
+But I have this against you, that you have abandoned the love you had at first.” </i><br><br>
+I think this describes so many of us. 
+So many of us are just enduring, doing the right things but living life with such little joy in the Lord. 
+We know what we should be doing, but we’ve forgotten why we’re doing it. 
+We are tired Christians, and the hope of the gospel has lost its appeal over time.
+We live lives of habit and not lives of faith.
+But as the Bible says in Romans 14:23, <br><br>
+<i>“Whatever does not proceed from faith is sin.”</i>
+<br><br>
+<b>Second, the proper response. </b>
+<br><br>
+If we want to escape hypocrisy, we need to change our hearts.
+We need to change our hearts to desire God over self righteousness and the admiration of others.<br><br>
+But that is an impossibility.
+It is fundamentally impossible to change our hearts to desire the right thing.
+We are able to change our actions such that we act opposite to our desires.
+But to change desire itself is an impossibility.
+So then what are we supposed to do?<br><br>
+Some people, when faced with their hypocrisy, decide to just stop doing everything.
+They say, I’m not giving with a truly generous heart, so I’m going to stop being generous. 
+Or, I think I’m not going to church for the right reasons, so I’m just going to stop going. 
+Well, to be honest, if we all did that, this place would be empty next Sunday. 
+Nobody’s heart is truly pure. 
+I think it may depend from person to person, but in general, I don’t think this is a productive way to counteract hypocrisy.<br><br>
+So then how do we transform our hearts?
+How do we transform our hearts so that our generosity is out of true love for others? 
+How do we transform our hearts so that our devotion isn’t just out of habit or self-righteousness? 
+How do we bring true love to our cold hearts? 
+If we don’t answer this right, then all of our devotion and worship is just a sham. <br><br>
+It’s an enormous question, but I believe the answer is simple. 
+We repent of our hypocrisy, and we trust in the Lord. 
+I remember telling the youth over and over again that repentance and faith is both the beginning and the entirety of the Christian life. 
+It means that we tell the Lord that our hearts have been false even if our actions may be true. 
+We tell the Lord, 
+<br><br>
+I am a hypocrite. <br>
+My life looks beautiful but my heart is hard. <br>
+I have not met your standard of true righteousness. <br>
+I need my heart to be brought near to the heart of Christ. <br>
+I cannot change my heart but you can. <br>
+I trust that your Spirit is in me even if I cannot feel him. <br>
+I will wait as long as it takes for me to be made new again. <br>
+And yet, in all this, I trust that I have been forgiven by the unfailing blood of your Son Jesus Christ. <br><br>
+But then we don’t just sit there and do nothing. 
+We make war on our hypocrisy. 
+It must be killed.
+We need to be men and women of prayer. 
+We need to confess to our brothers and sisters. 
+We need to be encouraged by each other. 
+We need to be saturated in the Scriptures.
+And finally, we need real and spiritual experience of who God is.<br><br>
+And I know that it can feel hopeless to try and make ourselves love God.
+But God is actually not hard to love.
+I mean think about it, if God was hard to love, then he wouldn’t be God.
+The only reason we find it so hard to love God is because we see him so unclearly. 
+If we truly see him and know him for who he is, then it would be impossible for us to not fall in love with him.
+And it would also be impossible for us to not fall in love with the people around us, every one of whom bears his image. 
+We need his beauty to be the deepest meditation of our heart. 
+And then we will delight in that beauty.
+And then our actions become the genuine overflow of that delight, 
+and we become truly righteous, inside and out. <br><br>
+But to be honest, God can sometimes feel so distant.
+Nevertheless, there is real hope in the gospel. 
+God has not justified us by the infinitely precious blood of Christ just to leave us alone again. 
+The very Spirit of Christ is in those who trust in him. 
+And God’s promise, that he has in fact predestined us to “be conformed to the image of his Son” – That is not a promise that will fail. 
+One day our cold and loveless hearts will be totally renewed as we see the Lord face to face. 
+And we will be freed from our self-righteousness and our need to please others. 
+And we will worship God and love one another freely, right there in his presence. <br><br>
+But the thing is, our journey towards that blessed hope has already begun. 
+And there is a choice placed before each of us. 
+We can either live for others and live for ourselves, 
+or we can live for the pleasure of the Lord. 
+Let’s choose wisely, repent where we need to repent, and trust in the salvation of the Lord.<br><br><br><br>
+Before we end, there is something else that I do want to mention. 
+It actually doesn’t have anything to do with what we’ve been talking about. 
+But I just want to quickly mention it.
+Let’s look very quickly at the very last sentence. <br><br>
+<i>“Your Father who sees in secret will reward you.” </i>
+<br><br>
+Now I do think that the main thrust of this passage is the condemnation of hypocrisy. 
+And I think it’s right that we spent the entire message talking about that. 
+But when I read this, I’m also hearing something that might be deeply comforting to some people. 
+It’s a message of comfort to people who feel unseen and unappreciated. <br><br>
+Perhaps some of you are just faithfully serving your families, or doing a really great job at work, or even serving this church. 
+And nobody bothers to say thank you. 
+That can sting. <br><br>
+I remember in college I used to lead a Bible study every week with my friend in my sophomore year. 
+And some weeks, literally not a single person showed up. 
+So my friend and I would just sit there for an hour and half, waiting for somebody to show up. 
+And that stings, because all that hard work we put in just goes completely unappreciated. <br><br>
+And by the way, I don’t think feeling unappreciated necessarily means that you were acting like a hypocrite and seeking their approval all along.
+That might be the case, but it’s also a totally justified emotional response.<br><br>
+But the incredible comfort of this passage is that God sees us when nobody else sees us. 
+He appreciates our service to others even when nobody else appreciates us. 
+And the beauty of it is that our work, our generosity, and our service is not appreciated by him on the basis of how well we did. 
+He appreciates it simply on the basis of who we are to him in Christ. 
+He sees our frequently mediocre work and accepts it as something precious to him, 
+because he looks at our work and sees only us. 
+We have become precious to him because of what Christ did for us on the cross. 
+And for those of us in the room who do not yet know the Lord, this is the kind of beautiful relationship you can have with God if you believe in the Lord Jesus Christ and repent and put your trust in him and him alone.
+And so, I just kind of wanted to dig that out of the passage just for the people here who might have needed to hear that. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

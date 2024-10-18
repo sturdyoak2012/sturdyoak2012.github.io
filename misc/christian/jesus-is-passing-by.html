@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Jesus is passing by</title>
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+        lastVisit:{
+                page:window.location.pathname,
+                timestamp:new Date() + ""
+              }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+  <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+  <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+  <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+  <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../research.html'><div id='pages'><p>research</p></div></a>
+  <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Jesus is passing by</h1>
+
+
+Friend,<br><br>
+There is a God that created and sustains our whole entire universe. But he also has a bottomless passion, affection, and longing for mere sinners and sufferers—people like you. It was in this love that he gave his only Son, Jesus Christ, to die on a cross for your sin so that you might have eternal life. <br><br>
+
+You may have heard this before without thinking much of it. You may think it’s stupid. I once did too, but then God saved me and I finally experienced his love for me through that simple message. Let me tell you more. Let me show you that God’s love is as real as it is wonderful. 
+<br><br>
+Can I share with you a brief historical account from the life of Jesus? 
+<br><br>
+When Jesus walked this earth 2,000 years ago, the Bible tells us that he directly ministered to countless people, each one of them as real and human, and as destitute and broken as both you and me. They breathed the same air, tasted the same dust, and endured the same beating sun. As did Christ himself. But out of all the people the Bible describes, no story touches me more than the account of one bleeding woman who came to Jesus early in his ministry. 
+<br><br>
+Although her name and the exact nature of her illness has been lost to history, the Bible tells us that she was a woman with a discharge of blood that continued without stopping for 12 whole years. Besides the pain, her serious disease would’ve made her a social outcast, totally lonely without a family or a single friend. Not only that: she was also completely penniless, without a dollar to her name, because she had spent every one of her possessions seeking treatments from countless doctors. None of them could heal her, and their “treatments” only caused her greater suffering.
+<br><br>
+I now quote directly from the Bible, in the historical account written by Mark:
+<br><br>
+<div style="margin-left:5%">
+She had heard the reports about Jesus and came up behind him in the crowd and touched his garment. For she said, “If I touch even his garments, I will be made well.” And immediately the flow of blood dried up, and she felt in her body that she was healed of her disease. And Jesus, perceiving in himself that power had gone out from him, immediately turned about in the crowd and said, “Who touched my garments?” And his disciples said to him, “You see the crowd pressing around you, and yet you say, ‘Who touched me?’” And he looked around to see who had done it. But the woman, knowing what had happened to her, came in fear and trembling and fell down before him and told him the whole truth. And he said to her, “Daughter, your faith has made you well; go in peace, and be healed of your disease.”</div>
+<br><br>
+This happened almost 2,000 years ago, but I believe that it speaks directly to you… today. 
+<br><br>
+This woman went to all kinds of different doctors in search of a cure, for <i>twelve years</i>. Twelve whole years! And let me remind you: back then, these were not the doctors of today. These were scam artists taking money for false remedies, some of which would’ve been unsafe, painful, and even superstitious. And after twelve years of unsuccessful desperation, the woman was left broke and worse off than when she began. 
+<br><br>
+Can you imagine what must have gone through her mind when, in passing, she heard the reports about Jesus? This is a woman who has heard everything and seen everything—every magician, every crackpot, every “prophet”, and every charlatan. But this was also a woman who had <i>nothing</i>, not even a single penny left to be swindled from her. There was nothing more to lose, nothing more to protect, and not a single reason left to doubt. 
+<br><br>
+So, when Jesus came, she simply believed. She told herself, “Twelve years I have suffered, and twelve years I have been cheated and taken for a fool. I have seen everything and lost everything, with no end in sight. But this man they speak of? This man that seems no different from all the others? This man, Jesus Christ, who couldn’t possibly be who they say he is? This is not any ordinary man. This man is not like the others. I don’t know who this man is, but today is my last day of suffering and this moment my final hour of pain. I will not go home broken today. If I may touch but his clothes, I shall be whole.” 
+<br><br>
+How about you? Have you reached the end of the line? Is it grief or heartache? Is it depression? Guilt? Purposelessness? Are you just lonely? Has your pain and darkness finally overcome you? Does this woman’s desperation stir a corner of your soul? Are you just about ready to give up? Then… just give up. But give up… and come to Jesus. 
+<br><br>
+My friend, I urge you to do what this woman did so long ago! Against all your doubts, all your pride, and all your worries… believe in Jesus Christ, the Son of God, Lord and Savior over your life. Just like he was for this woman, Jesus is passing by at this very moment that you read these words. Can’t you hear the treading of his feet and the rustling of his robes as he goes by? The moment is now. Will you let him slip past? Or will you fall on your knees, reach out your hand, and touch? All it took for this woman was a mere touch. Not a vigorous plea, a strong confession, or even a grasp of his hand. All that was required of her was a gentle, humble, and heartfelt brush of her hand against the robes of her Savior. So too for you, my friend: simply believe and trust, and you will be saved. 
+<br><br>
+And when you do—when you simply turn your eyes to look at him—the softness of his heart will run to you. He simply cannot look away or ignore you when you turn and trust in him. For when this woman merely touched him on the very corner of his robes, this slightest of touches was all that Jesus noticed. Even his disciples were astonished. All the rough crowds that pushed against Jesus from every side were as nothing to him compared to the gentle and lowly touch of this woman. Why? Because Jesus left everything behind to bring this lost woman back to him. She was exactly the one he had been waiting for. And… so are you. Even though you have rejected God your whole life, Jesus is waiting for you and passing by in this very moment, <i>just for you</i>. 
+<br><br>
+When you finally look upon Christ, his head will turn, his eyes will soften, and his arms will open wide: for you. Just as you are. There will be no introduction. There will be no “Who are you?” There will not even be the slightest pause of trying to remember who you are… There will be only the warm embrace of the shepherd who has known and loved his sheep from the beginning, who searches earnestly after them when they wander away, and who rejoices proudly when he finds them again, no matter how dirtied or scuffed or broken they are. 
+<br><br>
+So deep is his love for you, even you of all people, that he gave his life to die on a cross <i>for you</i>, coming back to life three days later. Simply trust in this, and you will be saved! 
+<br><br>
+What will you do? Is today your last day of darkness? Is this moment your last without Christ?
+<br><br>
+In the words of Christ himself:
+<br>
+<p><i>
+Come to me, all who labor and are heavy laden, and I will give you rest. Take my yoke upon you, and learn from me, for I am gentle and lowly in heart, and you will find rest for your souls.
+<br><br>
+The one who comes to me I will by no means cast out.
+<br><br>
+For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.</i>
+</p>
+
+
+<p>♰</p>
+<br><br><br>
+
+
+
+
+
+
+Please reach out and have a conversation with me!
+<br><br>
+jacobnie2008@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

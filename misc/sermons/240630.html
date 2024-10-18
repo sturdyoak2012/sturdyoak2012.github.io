@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>240630</title>
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+        lastVisit:{
+                page:window.location.pathname,
+                timestamp:new Date() + ""
+              }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+  <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+  <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+  <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+  <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../research.html'><div id='pages'><p>research</p></div></a>
+  <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> Joy and Hope in the Word of God          </h1>
+
+Lord's Day, June 30, 2024, Connect Church Silicon Valley (with Chinese translation)
+<br><br>
+Psalm 119:105-112 (NIV) <br>
+<i>
+105 Your word is a lamp for my feet, a light on my path. <br>
+106 I have taken an oath and confirmed it, that I will follow your righteous laws. <br>
+107 I have suffered much; preserve my life, LORD, according to your word. <br>
+108 Accept, LORD, the willing praise of my mouth, and teach me your laws. <br>
+109 Though I constantly take my life in my hands, I will not forget your law. <br>
+110 The wicked have set a snare for me, but I have not strayed from your precepts. <br>
+111 Your statutes are my heritage forever; they are the joy of my heart. <br>
+112 My heart is set on keeping your decrees to the very end.<br>
+
+
+</i>
+
+<br><br><br><br>We have been in Psalm 119 for the past two weeks now, and this will be our third and final Sunday in this psalm. <br><br>
+In the first week, we discussed the value of God’s word in living righteously. We saw how renewing our minds with God’s truth is essential for living a life pleasing to God. Last week, we discussed the unchanging nature of God’s word. We saw how only a foundation in the unmovable word of God will carry us through the storms of this life. <br><br>
+But this week, to conclude our series, what I’d like to do is to move away from considering the benefits of God’s word, which should be clear to us by now. I want to take a deeper look at what it means to love the word of God. I want to ask what it means to earnestly make it our deepest need and passion. It’s clear by now that we ought to read God’s word. But a true love for God’s word cannot be fueled by mere necessity. We need to, above all, find actual pleasure in the inspired word of God. True spirituality is always built upon the transformed desires of the heart. Forced spirituality is false spirituality. <br><br>
+Unfortunately, I would guess that many of us don’t enjoy the Bible. It’s kind of like medicine. It is kind of bitter to the taste but not something that we would ever refuse, because we know we need it. But my question is, what if we, like the psalmist in verse 103, would discover that the Scriptures are not like medicine at all, but, in reality, sweeter to our lips than even honey? That is my dream. My dream is to see brothers and sisters thirsting over the word of God and mining its pages for a new treasure every single day. <br><br>
+So, the goal today is to sketch out a pathway for each one of us to begin falling in love with the Bible. We shouldn’t expect ourselves to be magically lit on fire for the Bible, although that would be nice. But the goal today is just to show what the path looks like and how we might get started. And we will ask the psalmist himself to lead the way for us. <br><br>
+Our time today will be divided into two parts. 1) Why the psalmist found joy and hope in the word of God. 2) How we can imitate him in discovering joy and hope in the word of God. <br><br>
+But before we go any further, I want to prove to you how deeply the psalmist was committed to the word of God as the driving passion of his life. Obviously, we could cite the fact that the psalmist wrote 176 carefully constructed verses just praising the word of God. But beyond that, I want to make a few observations from the text. <br><br>
+First, it is clear that the psalmist does not find himself in an ordinary situation. We may read our Bibles in the morning over some hot coffee, or at night before going to bed. But the psalmist appears to be coming to the word of God from uncomfortable, hopeless, and even dangerous situations. For example, in verse 107, he says that he has suffered much. And it seems that it is only by appealing to the promises of God found in Scripture, which he likely memorized and meditated over a thousand times, that he is able to find the courage and boldness to plead for his life. In verses 109 and 110, he finds himself at risk of death, trapped left and right by his enemies. And yet, perhaps unexpectedly to us, it is in the law and precepts of the Lord that he finds his source of strength and hope in these perilous circumstances. <br><br>
+And then there is the famous and cherished verse 105. <br><br>
+<i>“Your word is a lamp for my feet and a light on my path.” </i>
+<br><br>
+He does not say that the word of God is like an instruction manual. He does not say that the word of God is like a self-help book. And he does not say that the word of God is like one of many signs pointing the right way. The psalmist finds himself in the midnight of his soul. There is no sunlight. There is no moonlight. There is no starlight. The word of God shines alone. It is his singular and exclusive passion upon which he draws his very strength for life itself. The question for today is why he found so much joy and hope in the word of God and how we can imitate him and recover the same passion he had. <br><br>
+I propose three answers for why he found joy and hope in the word of God. a) He found joy and hope in the word of God because it was the word of God, b) he found joy and hope in the word of God because it guaranteed judgment upon the wicked, and c) he found joy and hope in the word of God because it patterned and foreshadowed the promise of salvation in Jesus Christ the incarnate Son of God. 
+<br><br>
+<b>a) The psalmist found joy and hope in the word of God because it was the word of God.</b>
+<br><br>
+What do I mean by this statement? What I mean is that the psalmist’s passion for the Scriptures was an extension of his passion for its source: the living God who created all things. He could not rest without the Scriptures because he could not rest until he was in the presence of God. <br><br>
+Now, a concern that I have is that it is very possible to study the Scriptures without any consideration towards its divine author. There is a danger, especially in our modern day, for us to read Scripture as if it is meant to serve us. We open the pages of the word of God and expect to be assured and comforted. We expect our desires to be satisfied and our fears to be eased. <br><br>
+Now, there is truth in this, so I want to be precise. Scripture is wonderful and it is comforting. But it does not exist to comfort us. It does not exist to assure us. It exists in order to bring glory to the triune God. It exists to reveal the works of God concerning humanity and his creation. And it is only by means of the revelation of God’s glory and works that people such as us can be comforted. <br><br>
+We should not expect to be assured when we open the Bible. We should not expect to be satisfied when we open the Bible. Rather, when we open the Bible, we should expect to hear from the living God and leave the rest up to him. <br><br>
+The psalmist found joy and hope in the Scriptures because they brought him to the feet of his God. He knew that in the Scriptures, he was beholding the glory of the Creator. The psalmist read the Scriptures on his old parchments and recognized that it was as if his own Maker was speaking directly into his ear. He sensed the majesty in the holy words and felt as if he himself was standing there with Moses at Sinai, listening, while trembling, as he heard the heavenly voice in the cloud of fire. And even more unthinkably, he recognized that the words of Scripture constituted the same utterance as the divine speech that brought the entire universe into existence---the same voice that generated electrons and galaxies now transcribed into mere human language. <br><br>
+It is therefore little wonder that he was utterly fixated upon the words of Scripture. They transported him into the bosom of God. They revealed all of his perfections and profundities. Even the simplest and most mundane details carried the total truthfulness and majesty of God. When he cast himself and his fortune upon the promises of the written word, the psalmist knew that he was not resting upon empty platitudes but upon the certain support of the triune Creator. We can have joy and hope in the word of God because it is the word of God. <br><br>
+
+<b>b) The psalmist found joy and hope in the word of God because it guaranteed judgment upon the wicked.</b>
+<br><br>
+I won’t spend too long on this point. The idea that judgment can bring hope may sound foreign to most of us. But when we go through the Psalms, we see a major theme where the psalmists plead for judgment and condemnation to fall upon the wicked who disregard the law. In fact, there’s even a name for this: the imprecatory psalms. These make us uncomfortable. Perhaps we wish that the psalmists would love their enemies. Instead, the psalmists wish that their enemies would be cursed. What do we make of that? <br><br>
+Verse 109 is helpful for understanding their mindset. Here, the psalmist says that <i>“he constantly takes his life in his hands.”</i> Presumably this is linked to the next verse, which says that <i>“the wicked have set a snare for me.”</i> Evidently, the psalmist finds himself in a desperate situation where he is being cornered by his enemies. Now we might expect the psalmist to say, “God, save me!” But instead, he says something kind of unexpected. He says, <i>“I will not forget your law.”</i> And the reason why he says this has a lot to do with what we were just talking about. <br><br>
+For the psalmist, the existence of a divine law and a divine lawgiver necessitated a divine judgment. He finds himself in the common situation where evil is winning and righteousness is losing. And it is in those situations where the justice of God becomes an essential ingredient in our hope. His meditation on the law of God led him to find peace in knowing that everything would one day be put right. It was this confidence in the righteous decrees of God that allowed the psalmist to look evil in the eye and not lose hope. This same confidence allowed David to remain loyal to Saul even when Saul was seeking to take his life. And in our own lives, it is trust in the justice of God that allows us to love our enemies. We never have to lose hope when we deal with people who treat us with evil. We know that both vengeance and mercy belong to God and not us. Either our enemies will repent and we have gained a brother or sister in the Lord, or they will receive what they deserve from the hand of God. Therefore, we have joy and hope in the word of God because it guarantees judgment on the wicked. <br><br>
+And yet, of course, if our hope was limited to the judgment of God, that would be no hope at all. Because we ourselves fall under the scope of his condemnation. And that is why there must be something more.<br><br>
+
+<b>c) The psalmist found joy and hope in the word of God because it patterned and foreshadowed the promise of salvation in Jesus Christ the incarnate Son of God.</b><br><br>
+
+The key text for this point comes from verse 108: <br><br>
+<i>“I have suffered much; preserve my life, Lord, according to your word.”</i>
+<br><br>
+Now, if you are a careful reader, you would’ve realized that when the psalmist talks about the word of God, he is not saying the exact same thing as what we mean today by the word of God. I don’t mean that he had a different Scripture. What I mean is that his Scripture was a small subset of what we have today. Because our Bible is the cumulative collection or canonization of many centuries of writing, the psalmist would’ve only had access to whatever Scripture was already compiled prior to his time. These would’ve included the first five books of the Old Testament and possibly not much more. He certainly did not have a New Testament. <br><br>
+Then how is it that I can claim that the psalmist found joy and hope in the promise of salvation in Jesus Christ? This is a very important question to answer if we want to understand our Bibles well. <br><br>
+I became a Christian five years ago. To be honest, I did not appreciate the Old Testament as a new believer, and I rarely read it. I thought it was boring, weird, and not as enjoyable as the New Testament. Perhaps you can relate to this. It took me a long time to discover the beauty and coherence of the Old Testament. <br><br>
+Nowadays, I find that understanding the New Testament is actually impossible without deep knowledge of the Old Testament. It is the patterns and structures of the Old Testament that helps us to understand who Jesus Christ is and what he accomplished. This means that for us, reading the Old Testament is just as important as reading the New Testament. (If you are interested in this topic, I would commend to you a short online series by Tim Keller called <a href="https://www.youtube.com/playlist?list=PLqdAeLCMehGE0vhoqCwEtS6BBqg4UJydk">“Discovering the Gospel in Every Book of the Bible.”</a> It is quite helpful and easy to understand.)
+<br><br> 
+But now let’s return to the psalmist. What does he mean when he says: <i>“preserve my life according to your word”</i>? It is my contention that, despite not having the full revelation of salvation by grace through faith in Jesus Christ, the psalmist understood the promises and historical patterns of Scripture as installments of divine salvation that would escalate beyond his own life to find their endpoint in a future salvation that would bring him eternal life. That final salvation would be what we now know as the death, resurrection, and return of Jesus Christ. The psalmist saw the promises and salvations recorded in Scripture and anticipated what they pointed to. And it was on the basis of this anticipated promise that he appealed for God to make right upon his promise and thereby save his life. <br><br>
+Let me give some examples. The psalmist read the promise made to Adam and Eve of a descendant that would crush the head of the serpent (Gen 3:15), and he knew that this promised a Savior who would destroy evil forever. <br>
+The psalmist read the story of God’s judgment in the flood and the saving ark of Noah, and he sensed that this foreshadowed a Savior who would withstand the judgment of God to save all who abide in his spiritual ark. <br>
+The psalmist read of the Passover lamb, whose blood was shed to avert the punishment of God, and he would’ve understood that there would be another Lamb, whose human blood would be shed to protect the life of his people. <br>
+The psalmist read of the crossing of the Red Sea, and he would’ve known that God was preparing for another crossing---not a crossing of water but one of death, and not into a physical Promised Land, but into an eternal kingdom of heaven. <br>
+The psalmist read of even the rock that Moses struck to bring forth water in the wilderness, and he would’ve known that there would be another Rock who would likewise be struck, not for a physical wilderness, but for the spiritual wilderness of life, and not to bring forth physical water, but to bring forth a living water, the Spirit of God. <br>
+This is only up to the book of Exodus. We could go on and on. The point is, the psalmist trusted in the shadows of the promise of a Savior, and by his trust he was saved. That is why he could not rest apart from the word of God. It told him of his salvation and the means by which he could have life. <br><br>
+Now, we have what the psalmist only had in shadows. We possess the full revelation of what has been accomplished by Jesus Christ on the cross upon which he died in order to save sinners like us. If the psalmist could trust in what he did not even see, then surely we can trust in what we now see clearly. <br><br>
+If you are here today and you have not yet known the love of God in Jesus Christ, then you must turn away from your sin and trust in what Jesus Christ has done for you personally on the cross. Search the Scriptures and see the plan of salvation from Genesis to Revelation. Christ is the center and end of all history. Trust in him! He alone has the power to rescue us from ourselves. There is love in no one else but him. The whole Bible tells us about his love, from beginning to end. And it is through discovering this love that we have joy and hope in the word of God.<br><br>
+
+<b>2) How we can imitate the psalmist in discovering joy and hope in the word of God.</b>
+<br><br>
+Now that we have clearly established the reasons for why the psalmist delighted in the word of God, let’s now ask ourselves how we can imitate the psalmist in discovering joy and hope in the word of God. It is no surprise that the Scriptures should be our joy and hope and the deepest delight of our heart. But it is one thing to say thing that, and another thing to actually experience that. <br><br>
+I think it can be very discouraging sometimes, just for normal Christians, to know how much they ought to be reading their Bibles and seeing their actual devotional life come nowhere close to that. It can be discouraging to hear encouragements to read our Bibles more while knowing that it’s been weeks or months since we last opened it outside of Sunday morning. <br><br>
+But there is no need to feel discouraged. We do not need to measure ourselves by how much we read our Bibles. However, we do need to measure ourselves by our heart and our love for God and his word. So the question remains. How do we grow our love for the word of God? How do we move from viewing the Bible as a very difficult to understand book that sits in our closet to a living revelation of God that fills our hearts from morning to evening? <br><br>
+Unfortunately, the answer is simpler than most people would like. In order to learn to love the Bible, we must study it and spend time to learn why it is beautiful. <br><br>
+It is like a husband learning to love his wife. The initial act of falling in love was probably effortless. I’m sure that for all of you, when you first believed in the Lord Jesus, every verse of Scripture was like a new jewel in your life. But twenty years on, it’s not quite as easy for a husband to love his wife. And it’s not because she has developed any defect within herself. It’s just a condition of the human heart. Our hearts are hard and stubborn. They must be cultivated and watered. And so, a husband sometimes must learn how to love his wife all over again. What was so easy at first may now require some concentrated effort. He needs to spend time with her and grow in his knowledge of her and open up his own heart. Some people may find this artificial or unnatural or forced. But that doesn’t matter to him, because he is determined to love her according to what she deserves. <br><br>
+We must approach Scripture in a similar way. We must be determined to love our Bibles, and to put in the work required to develop a passion for it. We all know the cost of a life without the word of God. Our determination should be proportionate to that cost. <br><br>
+With my remaining time, I will give 7 personal pointers for growing our love for the Scriptures. These have all been helpful for me personally. <br><br>
+1) Read the Bible cover to cover, over and over again, until you die. Do you know how long it takes to read the Bible out loud, start to finish? Only around 72 hours. A lot, but also not that much. I like to call this “broad” reading. We must read the Bible in its entirety because it is a consistent narrative that builds upon itself. With just five or ten minutes a day, we can easily finish the Bible in two to three years. This is essential for building a foundational knowledge of the Scriptures. <br>
+2) Incorporate meditation and memorization. In addition to “broad” reading, it is important to have time for “deep” reading as well. Sit on one or two verses for several minutes and allow God to speak to your heart. Pray over these verses and memorize them. This habit helps us submit to the word of God. <br>
+3) Buy a study Bible. I recommend the ESV Study Bible. This also happens to be one of the few study Bibles translated into Chinese. <br>
+4) Read books about the Bible. These help you grasp the main themes that you might otherwise miss. <br>
+5) Sit under faithful preaching of the Bible. This is especially important for high school students who will need to choose a church in the future. By faithful preaching of the Bible, I mean teaching that instructs accurately and directly from the Scriptures, seeking to communicate and apply the actual meaning of the text, rather than ten useful life lessons or empty, human comforts. <br>
+6) Help and receive help from one another. <br>
+7) Parents, especially fathers, should model a love for the Scriptures. <br><br>
+
+With all that in mind, let’s conclude for today by returning to the first verse from our text, verse 105. 
+<br><br>
+<i>“Your word is a lamp for my feet and a light on my path.”</i>
+<br><br>
+It is a very sunny day today. But there is a kind of darkness in all of us. Some of us are more aware of this darkness than others, but it is there, and it will not go away. There is only one person who can take away this darkness, and that is Jesus Christ, the true light. So until he returns, just as the moon reflects the sun, we have the Scriptures which reflect the glory of God. And so in the night of life, we walk by faith in this moonlight and we wait patiently in our wilderness. But there will be a dawn, and the morning star will rise in our heart, and the true light will refresh our soul. May that morning come quickly. Until then, let us dedicate ourselves to the study of the word of God.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

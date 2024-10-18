@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>240901</title>
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+        lastVisit:{
+                page:window.location.pathname,
+                timestamp:new Date() + ""
+              }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+  <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+  <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+  <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+  <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../research.html'><div id='pages'><p>research</p></div></a>
+  <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> Honor Your Father and Mother          </h1>
+
+Lord's Day, September 1, 2024, Connect Church Silicon Valley (with Chinese translation)
+<br><br>
+Exodus 20:12 (NIV) <br>
+<i>
+12 “Honor your father and your mother, so that you may live long in the land the LORD your God is giving you.
+
+
+</i>
+
+<br><br><br><br>
+As I was reflecting about this commandment during my preparation, I started to realize that this might be the most challenging out of the Ten Commandments to preach on. And it’s not because it’s the hardest to understand or even the hardest to perform. It’s because it’s the only commandment that relates to the family. <br><br>
+And the family is simultaneously the most universal human experience, while also being the most diverse and personal. It is universal in the sense that every human has or has had a family. And it is both diverse and personal in the sense that one’s family history could be one person’s deepest source of personal formation and joy, while at the same time being another person’s deepest source of trauma and brokenness. Therefore, it feels almost impossible to preach on this commandment to almost 200 people with 200 completely unique family backgrounds. But we’ll try our best. 
+<br><br>
+
+Today, we’ll take a look at three things. 1) The commandment’s application, 2) the commandment’s relationship to culture, and 3) the commandment’s redemption. We’ll start shallow, and then dig deeper and deeper into the heart of this commandment, and the goal is to come out of the other side with some hopeful insights about what this commandment means in the grand scheme of things.
+<br><br>
+
+<b>1. The commandment’s application</b>
+<br><br>
+There are three essential aspects to how we are to fulfill this commandment. The first is respect, the second is obedience, and the third is care.
+<br><br>
+Let’s first talk about respect. We need to respect our parents because they are not only our biological fathers and mothers. They are people that God has placed in our lives to guide us. Therefore, they need to be honored for the role that they have in our lives. <br><br>
+Now what’s quite important is that this honor that we show them is not dependent on how good they are as parents or how well they treated us. The command to honor our parents is not reciprocal but unconditional. That can be an enormous challenge. Certainly some are better than others, but none of them perfectly fulfill their role. And yet God commands us to honor them unconditionally. We need to speak to them with respect, even when they frustrate us. Our heated emotions are never an excuse to use careless language. Even when they speak to us with anger, we need to respond with patience and respect for them. Furthermore, we need to speak about our parents around others in a way that is respectful. These are all components of what it means to respect our parents.
+<br><br>
+The second aspect is obedience. <br><br>
+Here, I’d like to speak directly to the youth that are here. The reason why is that obedience is an important part of respecting our parents, but the degree of obedience depends on our parents’ level of authority in our life, and that authority is greatest when we are children. The idea of authority may sound unusual or even unacceptable to you. In our culture, we have a tendency to reject authority if it’s not helpful to us. But God tells us we need to respect and even submit to the authorities over our life. <br><br>
+For example, in Romans 13, Paul tells us that we need to submit to our governments, because they have been instituted by God, no matter how evil they may be. In Ephesians 6, Paul tells slaves to obey their masters. In Ephesians 5, Paul tells wives to submit to their husbands. And finally, in Ephesians 6:1, Paul commands children to obey their parents in the Lord, citing the fifth commandment. He writes, <br><br>
+<i>"Children, obey your parents in the Lord, for this is right. 2 'Honor your father and mother'—which is the first commandment with a promise— 3 'so that it may go well with you and that you may enjoy long life on the earth'"</i> (Eph 6:1-3).
+<br><br>
+“In the Lord” means that we should only obey if it does not contradict the will of God, because God comes before our parents. However, in the things that God allows, we need to obey our parents even if it means doing things that we don’t want to do. We may disagree, and there are ways to express that without dishonoring our parents. But if our parents don’t change their mind, then we need to simply obey them. That’s a big challenge, but it is the will of God.
+<br><br>
+Here’s another thing for the youth. In our youth groups, we have been talking a lot about the gospel. Now, the gospel, that Jesus died to save sinners, can only be understood if you know how sinful you really are. And I know that many of you haven’t really understood that about yourselves yet. Maybe you think that sin isn’t such a big deal. <br><br>
+So my challenge to you here today is to apply this commandment to yourself. “Honor your father and mother.” “Children, obey your parents in the Lord.” This is not God’s suggestion for you. It is his law. And he is perfectly allowed to judge you against how well you have obeyed this commandment. I challenge you to try for one week, even for a day, to fulfill this commandment perfectly. Obey your parents perfectly, even in the very tiniest things they tell you. And when you obey them, make sure you’re obeying with a cheerful heart. Don’t talk back, and don’t even grumble in your heart. See how long you can be perfect. I’d be surprised if you could even last the ride home from church. What I think you’ll discover is that there is some part of you, deep inside, that simply cannot help but refuse to obey your parents. Even if you tried, you could not compel that part of yourself to be good. And the reason why you disobey is not because you’re careless or because you’re independent. It’s because you’re a sinner desperately in need of the mercy of God. And when you realize this about yourself, I pray that you will see just how much you need somebody like Jesus to take your place. The way to receive the forgiveness that you need is by repenting of your sin and trusting in what he did on the cross to save you from sin.
+<br><br>
+The third and final aspect of fulfilling this commandment is caring for them in their old age. In an American church, this might be an unusual thing to say, but I’m sure that in a Chinese church, this is a no-brainer. Caring for our parents is simply a way of fulfilling the golden rule. We should treat our parents in the way that we would like to be treated by our children. And that means caring for them when they are old and cannot take care of themselves.
+<br><br>
+Before moving onto the next part, I want to make two last comments. 
+<br><br>
+The first is that, if we look carefully, this is the only one out of the ten commandments that comes with a promise attached. The Israelites were to honor their parents so that they might live long in the land God was giving them. Now, part of this doesn’t apply to us anymore. This commandment was given to the Israelites just before they were supposed to enter the Promised Land, and obeying this commandment was supposed to ensure that they would be able to remain within the Promised Land forever. Obviously, the Israelites were not able to keep this commandment or any of the other commandments, so they were eventually exiled from the land. So in that sense, the promise doesn’t apply to us anymore. But in a broader sense, it certainly does. <br><br>Honoring our parents and preserving our family ties has many tangible benefits. It means we’ll always have people to support us. It also means that we’ll be able to carry on generational legacies of wisdom. So, obeying this commandment is not only a way to obey God, but it is also a way to bring blessings into our life. 
+<br><br>
+The second comment I want to make is that this commandment is situated at a very unique spot within the list of the Ten Commandments. The Ten Commandments are commonly split into two tables. The first four deal with how we relate to God. The last six deal with how we relate to others. And this commandment is really located at the perfect transitional spot. You see, there are no people on earth that better mirror the relationship we have with God than our parents. Our parents are authorities over our life, even if they are imperfect ones, just as God is our supreme authority. Our parents are like our first introduction in life to how we ought to relate to God. Therefore, the way we relate to our parents will significantly influence the way that we relate to God. 
+<br><br>
+
+
+<b>2. The commandment’s relationship to culture</b>
+<br><br>
+
+Originally, this part was meant to be very short, but I ended up finding it so interesting that I just had to make it an independent section.
+<br><br>
+The reason why we need to talk about culture here is that this fifth commandment is undeniably the most culturally loaded in our context. The command to honor our parents overlaps significantly with the Confucian understanding of filial piety. We need to have a clear picture of how our culture affects our reading of this commandment. 
+<br><br>
+We can think of culture as a set of values or practices that guide our way of life. Everybody has a culture. But what’s very interesting is that culture is usually invisible to us. It’s like a pair of sunglasses. It tints everything that we think or do, and yet we usually aren’t aware that it’s there. So what’s very dangerous, as a Christian, is to read our own culture into Scripture, rather than allowing Scripture to speak for itself. And in the case of this specific commandment, it’s very dangerous to read the phrase “Honor your father and mother” and come away with the Chinese understanding of it, rather than the Christian understanding. 
+<br><br>
+Let’s take a step back for a moment. Christianity itself is not a culture. It is something that transcends culture. So when a person in a specific culture becomes a Christian, many things will remain the same, because they are morally neutral from a Christian standpoint. These include food, dress, holidays, and many other customs. Some aspects of culture are morally negative and need to be abandoned. Finally, some aspects of culture are morally positive, and yet they need a certain kind of transformation before becoming truly Christian virtues. The Chinese emphasis on honoring parents is one such example. 
+<br><br>
+In modern Western culture, respect and honor for parents is generally unimportant. We see this as Western families become more and more fractured. Parents are expected to respect the choices and independence of their children. Children are trained to see parents as sources of affection and provision, rather than authority figures with wisdom. Parents are expected to save in order to provide for their own support in old age. From a Christian perspective, Chinese culture does well to emphasize honor and respect for parents. But actually, in its own way, it falls short of God’s will for the family.
+<br><br>
+Western culture falls short, because it says that we are supposed to honor ourselves above our parents. Chinese culture does well to affirm that we are supposed to honor our parents above ourselves, but it falls short because it neglects the fact that there is something to honor even above our parents, which is God. What I’d like to convince you of is that each culture leads to its own type of brokenness. The Western devaluing of parents leads to an absence of permanent and stable family relationships. It generates a greater sense of loneliness and personal disconnection. But the Chinese overemphasis on honoring parents leads to a perpetual sense of inadequacy and inferiority. It makes people feel unable to escape the expectations of parents. When honoring our parents is the most important thing in life, this commandment that was meant to bring us blessings can actually crush us. 
+<br><br>
+In order to understand the Christian response to this problem, I think it’s helpful to turn to a related idea that Augustine formulated. Augustine was a fourth century theologian, and he had a very famous concept called “disordered loves.” His idea was that disordered love was the root of all sin and brokenness. Some Christians thought that any form of worldly desire was sin. Now Augustine disagreed. He said that desire itself was good, but we sin when we desire a lesser thing over a greater thing. For example, loving to play golf is good, and loving your wife is also good. But if you love to play golf more than you love your wife, your marriage is probably going to fail. Loving your job is good, and so is loving your kids. But if you love your job more than your kids, your kids will grow up to resent you. So there is a way in which we ought to order our loves so that we can have a flourishing life. And Augustine said that if God isn’t our greatest love, then we’ll be filled with sin and brokenness, because God is the highest order of good. <br><br>
+And it’s very easy to see how this same idea applies to how we ought to honor our parents. Just as disordered love will bring brokenness into our life, so will disordered honor. It is important to honor ourselves and also to honor our parents, but they must be honored in the correct order. That’s where Western culture fails. If we honor ourselves over our parents, we’ll grow up without knowing how to submit to our authorities. We’ll be very foolish people without our parents’ wisdom. But in the same way, God and parents must be also honored in the correct order. That’s where Eastern culture fails. If we make honoring our parents ultimate in our life, then we’ll always be enslaved by their expectations. If we measure ourselves by how well we please our parents, then we’ll constantly feel the shame of not being enough. Even after they’re long gone, we’ll still feel their presence over our shoulders. It’s just impossible to live like this. 
+<br><br>
+Now what Jesus does is he totally flips things around. On the one hand, he affirms the importance of honoring our parents. But on the other hand, he says things such as this. <br><br>
+<i>"35 For I have come to turn ‘a man against his father, a daughter against her mother, a daughter-in-law against her mother-in-law— <br>36 a man’s enemies will be the members of his own household.’ <br>37 Anyone who loves their father or mother more than me is not worthy of me; anyone who loves their son or daughter more than me is not worthy of me"</i> (Matt 10:35-37).
+<br><br>
+Now, we have to understand that Jesus is speaking to a culture that is very Eastern. People were literally defined by their family. The most important thing in life was bringing honor to your parents. And Jesus is saying that he’s come to change things up. He says that you can’t be my disciple unless you decide to honor me above honoring your family. You’re literally not worthy of me unless you love me above everything else. <br><br>
+Now this sounds like a very unreasonable demand. Why isn’t he just satisfied with us honoring him in a normal way? Why does he go so far as to demand the supreme place of importance in our life? Does Jesus simply want to make sure that we’re unhappy by asking us to sacrifice everything? Quite the opposite, actually. He says, <br><br>
+<i>“Whoever finds their life will lose it, and whoever loses their life for my sake will find it” (Matt 10:39).</i> <br><br>
+What he’s saying is that following him is sacrificing all of what’s important in our life. So much so, that it’s literally a form of death. But it’s a death that is meant to bring us a better life on the other side. And he’s saying that if honoring our parents is the most important thing in our life, we’ll never have real life. The way to have a life filled with blessing and personal flourishing is by losing our life, which means honoring him above honoring our parents. <br><br>
+This actually makes a lot of sense when you think about it carefully. You see, the Western solution to escape the oppressiveness of pleasing our parents is by simply prioritizing our own interests above theirs. And this actually only gives a very temporary freedom. You’re freed from your parents, but at what cost? You’ll be more lonely without their support. You’ll make more mistakes without access to their generational wisdom and knowledge. So Jesus says that honoring our parents is still important for all those reasons. But he says that the way to escape the oppressiveness of pleasing our parents is not by escaping our parents. It’s by honoring God above honoring our parents. And so, we’ll continue to respect and obey our parents, so we won’t run into the common problems of Western culture. But we also won’t face the constant shame that pervades Eastern culture, because our identity is no longer tied to our parents’ assessment of us. Instead, we decide to see ourselves in the way that God sees us. And God sees us as deeply flawed people who have been made perfect by the blood of his Son Jesus Christ. And instead of living for what our parents want for us, which is frequently very misguided, we become disciples of the Lord Jesus, who provides us with a way of living that actually brings us happiness and fulfillment. <br><br>
+When God reigns supreme in our life, we see parents for what they truly are: necessary but fallible guides that God has placed in our life to help us follow after him. The oppressiveness of trying to live for our parents is broken down by living for God instead.
+<br><br>
+Overall, this is just one example of how our culture needs to transform when we become followers of Jesus. Our culture affects everything. It affects the way we speak to others, the way we experience emotion, the way we determine what’s important in life, and the way we organize socially. <br><br>
+Our culture affects everything, but so should our faith. We need to be constantly doing these kinds of mental exercises to examine where our own culture falls short of the way of Christ. And what’s actually very helpful is we live in an ideal environment where two cultures intersect. Normally, our culture is so invisible to us that we develop cultural blindspots. But when two cultures collide, these blindspots become visible. A great strategy to be a more faithful follower of Jesus is by having the humility to interact with other cultures. That can frequently shine light on how our own culture prevents us from practicing the will of God. 
+
+<br><br>
+
+<b>3. The commandment’s redemption</b>
+<br><br>
+
+One of the most famous novels of all time is Anna Karenina, written by Leo Tolstoy. And Tolstoy begins the novel with this equally famous first line: “Happy families are all alike; every unhappy family is unhappy in its own way.” <br><br>
+Every family has its own unique problems, and there would not be enough time in the world to adequately address each of them. First of all, nothing reveals our deepest faults quite like our families do. For better or for worse, we are most true to our real nature when we are with our families. The family is where our sinfulness shines the brightest. The family is where illusions about ourselves go to die. <br><br>
+That’s why this commandment sometimes seems like the most hopeless out of all of God’s laws. We are all very skilled at being Christ-like in public. But Christ-likeness in the family is just different. No child really honors their parents. And no parent is really worthy of receiving honor from their child. 
+<br><br>
+Not only are we often incapable of experiencing spiritual transformation in our family life, but many of us also come from very broken family backgrounds. <br><br>
+First of all, a broken family can make it feel almost hopeless to fulfill this commandment. Some of us read this commandment and see no problem with it. Others of us read this commandment, and all kinds of doubts or questions or traumas just fill our mind. Why should I honor somebody that has only hurt me? Why should I respect somebody that I would rather have nothing to do with? <br><br>
+Second, a family can pass down sin and failure from generation to generation, leaving us to feel like the family is simply irredeemable. I have a lot of friends, both now and in the past, who just come from very broken families. Some had absent fathers, others had particularly cruel mothers. It was very heartbreaking to think about their stories when I was reflecting about this commandment to honor our parents. But I noticed that all of them had a kind of hope and determination to do better when they themselves became parents. I used to think that this was very commendable. But it’s actually a very dangerous hope. <br><br>
+It’s tempting to feel like we have the strength to transcend the brokenness of our past. But it doesn’t take long to realize how mistaken we are. In high school, one of my close friends had a father who had left his family when he was around 10 years old. Now my friend’s older brother later became a pastor, and he once wrote a very thoughtful article reflecting about his father’s actions. The title was “Like Father, Like Son.” In the article, he starts by reflecting about a funeral he recently performed for his father’s mom. He discusses how his reflection made him realize that his father’s absence was really because his father didn’t have a father either. The sin had been passed down from generation to generation. And he realized that while he had once felt anger and bitterness over his father’s betrayal, he now felt this intense fear of inevitability that he would one day be the same. <br><br>
+Every single one of us is committed to being better than our parents and not following their mistakes. But all it takes is a single moment of carelessness to shatter the illusion and reveal that we are not as different as we thought. The redemption of the family cannot come from ourselves.
+<br><br>
+Why, then, would God create the family? Why would he give us this messy group of people that we cannot even choose? Why does he give us this thing that seems to only pass down misery and brokenness from generation to generation?
+<br><br>
+When the disciples asked Jesus to teach them how to pray, Jesus told them to begin with the word, “Father.” This was a very new idea, because God was almost never called Father in the Old Testament. It’s pretty much only in the New Testament that God is called Father. So some people will basically explain this by saying that because of our salvation through Jesus Christ, we can now relate to God in the same loving way that a child relates to a father. And they’ll say that now God loves us in the same way that a father loves his child, only better. <br><br>
+And these people are simply wrong. And you have to come from a certain kind of family background to really see why. Because people from particularly broken families will object to this. They’ll say, “If God is comparing himself to a father, why would I ever want to know him? I hate my father. I don’t want a father. I don’t even know what a father is. Why would I ever want to address God as Father?” And these people are totally correct. Because if God is simply a newer and better version of a human father, that is barely any hope at all. If God’s way of redeeming the family is simply by creating a new and better version of the human family, we are of all people most to be pitied. <br><br>
+So then why does God tell us to call him Father? Where does the redemption of the family come from? <br><br>
+Our mistake is in thinking that God is comparing himself to human fathers. That could not be further from the truth. God’s plan to redeem the family does not begin with the human family. His plan to redeem the family is not by creating a new family. His plan to redeem the family is by inviting us to enter the eternal family. Because God is not like a father, God was Father before there was any father to walk this earth. God is not comparing himself to human fathers. God is Father, and human fathers are only fathers insofar as they are like him. The family of the triune God is the redemption of the human family. 
+<br><br>
+It is in the triune God that we have hope for family. Our hope for family is not in something new; it is in something very, very old. It is found within the life of God himself: Father, Son, and Spirit. C. S. Lewis wrote that “God is not a static thing -- not even a person -- but a dynamic, pulsating activity, a life, . . . [or even] a kind of dance.” We might even take a step beyond Lewis and go as far as to say that God himself is a family. The God-family is like an eternal fountain of love, with Father, Son, and Spirit pouring love into each other and giving themselves into one another since before even time began. This is what allows Jesus to say, <br><br>
+<i>“The Father is in me, and I am in the Father”</i> (John 10:38).<br><br>
+They do not withhold any portion of themselves from one another. Their life together is one of perfect love and union and understanding. And what Christ has done for us on the cross is to open a way into this divine family. The veil is torn, the gate is thrown open, and the Father comes running to meet us and call us his child. This is the redemption of the family. This is the family we always hoped for but never received! Jesus has extended a hand for us to experience love like never before, not only to have love poured into us without measure but also to have love poured out of us without measure. Christ bids us to experience the sonship that he alone possessed. The Father calls us, the Son tears down the dividing wall, and the Spirit exclaims within us and cries out, “Abba! Father!” <br><br>
+Jonathan Edwards wrote, “There in heaven this fountain of love is set open, this eternal three in one. There in heaven this glorious God is manifested and shines forth in full glory with beams of love; there in heaven the fountain overflows in streams and rivers of love and delight, enough for all to drink at, and to swim in, yea, so as to overflow the world as it were with a deluge of love.” In that eternal moment, there will be no more tears, no more bickering, no more anger, no more heartache -- only a distant memory of a past life, as we rest in the arms of the Father like lost orphans under his wings, we who were once strangers and sojourners, yet now purchased by the blood of Jesus to be not slaves but children. And it is as this new kind of child that we will honor our true Father in heaven forever. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
