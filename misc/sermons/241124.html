@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>241124</title>
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+        lastVisit:{
+                page:window.location.pathname,
+                timestamp:new Date() + ""
+              }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+  <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+  <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+  <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+  <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../research.html'><div id='pages'><p>research</p></div></a>
+  <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../research.html">research</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1> What Is Faith?         </h1>
+
+Lord's Day, November 24, 2024, Connect Church Silicon Valley (with Chinese translation)
+<br><br>
+Selected Scriptures <br>
+
+<br><br><br><br>
+<b>What must we do to be saved? </b>
+This is one of the most important questions we could ever ask.  
+<br><br>We were created by the one true God for a <i>purpose</i>—to glorify him and enjoy him forever. 
+And yet each of us have turned to our own way and rejected the very God upon whom we depend for our very life and being. 
+We have made a mockery of his name by living out our sinful impulses. 
+We have neglected to love, or even acknowledge, the one who first loved us. 
+Therefore, we are justly condemned by God. 
+And so God, in the riches of his mercy, sent his own Son. 
+He sent his Son Jesus Christ as a man in the place of sinners like us. 
+And on the cross, he died the death that we deserved and paid the penalty of our sin. 
+All of our sins were nailed to the cross. 
+And then God raised him up from the dead as a proof to us that the penalty had indeed been paid in full. 
+And because of the sacrificial death of Jesus Christ, the way of salvation has been opened. 
+There is now a way to be forgiven of sin and reconciled to God. 
+There is now a way to have life with God forever. 
+But then, how do we <i>take</i> that way of salvation? 
+Seeing that God has done all this to save us, what must we do to <i>receive</i> his salvation? 
+<br><br>
+The Bible records a story of one man who had this exact same question. 
+Two early Christian missionaries named Paul and Silas had just been thrown into his jail. 
+But here's what happened next. 
+<br><br>
+<i>"About midnight Paul and Silas were praying and singing hymns to God, and the other prisoners were listening to them. 
+Suddenly there was such a violent earthquake that the foundations of the prison were shaken. 
+At once all the prison doors flew open, and everyone's chains came loose. 
+The jailer woke up, and when he saw the prison doors open, he drew his sword and was about to kill himself because he thought the prisoners had escaped. 
+But Paul shouted, 'Don't harm yourself! We are all here!' 
+The jailer called for lights, rushed in and fell trembling before Paul and Silas. 
+He then brought them out and asked, 'Sirs, what must I do to be saved?'" </i>(Acts 16:25-30).
+<br><br>
+What must we do to be saved? 
+The jailer correctly realized, as you must also, that he needed to be saved from his sin. 
+But what must we <i>do</i> to be saved? 
+How can we escape the righteous judgment of God? 
+How can we be reconciled to our God who cannot tolerate our guilt? 
+How can we receive the forgiveness that Christ offers through the cross? 
+If you're not a Christian, try to take a guess. 
+You might say that we can be saved if we live a righteous life. 
+Or if we pray to God daily. 
+Or if our good works outweigh our bad ones.
+<br><br>
+But here is how Paul and Silas responded to this man. 
+<br><br>
+<i>"They replied, '</i>Believe<i> in the Lord Jesus, and you will be saved—you and your household.' 
+Then they spoke the word of the Lord to him and to all the others in his house. 
+At that hour of the night the jailer took them and washed their wounds; then immediately he and all his household were baptized. 
+The jailer brought them into his house and set a meal before them; 
+he was filled with joy because he had come to believe in God—he and his whole household"</i> (Acts 16:31-34).
+<br><br>
+Friends, salvation comes through <i>faith</i>—faith in Jesus Christ. 
+Now, you might ask, why faith and not something else? 
+The answer is because salvation is by grace. 
+The Bible says, 
+<br><br>
+<i>"For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God"</i> (Ephesians 2:8). 
+<br>
+<i>"Therefore, the promise comes by faith, so that it may be by grace"</i> (Romans 4:16). 
+<br><br>
+Pay attention to this word "grace." 
+"Grace" means something that we don't earn or deserve. 
+Because we are sinners who deserve God's judgment, we can do nothing to <i>earn</i> righteousness before God. 
+Therefore, it was Jesus who fully earned our righteousness for us when he died on the cross.
+To be saved by <i>grace</i> means that salvation is a free and unmerited gift. 
+But then because salvation is offered as a gift, we can't possibly pay for it on our own. 
+Therefore, salvation is by faith, which is a simple trust and <i>acceptance</i> of what Jesus has already done for us <i>completely</i>. 
+Grace means that, unlike other religions, we can neither pay nor pray our way to have peace with God. 
+To be reconciled to God, faith is the only option. 
+Believe in the Lord Jesus, and you will be saved.
+<br><br>
+So today, we'll think about what exactly<i> is</i> faith? 
+If faith is the way to salvation, then how do I have it, and how do I know I've got it? 
+If you're taking notes, my message for today will have three parts. <br>
+1) What does it mean to have faith? <br>
+2) What does faith look like? <br>
+3) What are some common misconceptions about faith?
+<br><br>
+<b>1) What does it mean to have faith?</b>
+<br><br>
+Now, the word "faith" is used to mean many different things today. 
+But when we ask the question—"what is faith?"—we are primarily interested in what the Bible has to say about the nature of faith. 
+The Bible shows us that there are three essential components to faith, each of which builds upon the other. 
+They are: knowledge, belief, and personal trust.
+<br><br>
+Of course, knowledge is the basic foundation of faith. 
+You can't believe in Jesus if you've never heard of him! 
+In order to be saved, you need to know the basic facts about Jesus. 
+You need to know that he died on the cross to pay for our sins. 
+You need to know that he rose again to declare victory over death.
+<br><br>
+If you're relatively new here, we trust that, as you participate in our gatherings, you're gradually getting to know more about Jesus. 
+You don't have to know everything to become a Christian, but you do need to know the basic facts. 
+<br><br>
+Next, saving faith requires belief. 
+When I say belief, what I mean is confidence or assurance that something is true. 
+When most people think of the word "faith," this is probably the first thing that they think of. 
+To believe in Jesus, you must believe that he is God, who died on a cross and rose again. 
+However, the Bible makes it clear to us that this kind of belief is not enough to be saved. 
+There needs to be something more.
+<br><br>
+Third and finally, saving faith requires personal trust. 
+Simple belief is not enough. 
+In James 2 it says, 
+<br><br>
+<i>"You believe that there is one God. Good! Even the demons believe that—and shudder" </i>(James 2:19). 
+<br><br>
+What James is sarcastically saying to us is that a simple belief that God exists or that Jesus is God is <i>not</i> real faith. 
+During the life of Jesus, the demons believed that Jesus was God, even when nobody else did. 
+Yet their response to Jesus showed no indication of true faith. 
+So then, what is the difference between mere belief and true faith? 
+It is what we call personal trust.
+<br><br>
+In our English language, we make this distinction clear in the two different usages of the word "believe." 
+"Believing <i>in</i>" something is very different from "believing <i>that</i>" something is true. 
+For example, if you were to ask somebody whether he believed that Joe Biden was the President of the United States, then he would of course say yes. 
+But to ask somebody whether he believes <i>in</i> Joe Biden as the President of the United States is a different matter entirely. 
+To believe <i>in</i> somebody is much more than to acknowledge their existence. 
+To say that you believe <i>in</i> Joe Biden means that you believe him to be trustworthy and capable of his job. 
+It means that you trust him to lead the country in the right direction. 
+The Bible is clear that the faith we need is this latter kind of faith. 
+<br><br>
+<i>"Yet to all who did receive him, to those who believed </i>in<i> his name, he gave the right to become children of God" </i>(John 1:12). <br>
+<i>"For God so loved the world that he gave his one and only Son, that whoever believes </i>in<i> him shall not perish but have eternal life"</i> (John 3:16). <br>
+<i>"Believe </i>in<i> the Lord Jesus, and you will be saved—you and your household" </i>(Acts 16:31).
+<br><br>
+To trust in Jesus is to stake all of your hope on him and what he has done for you. 
+To move from belief to trust is to say that God's promises are not only true, they're true for <i>me</i>. 
+Trust takes belief and makes it real and personal and transformative.
+<br><br>
+Now, this may sound kind of vague, so let's take a step back. 
+What does it actually mean to trust someone or something? 
+Are there other examples of trust that we can use as a comparison? 
+It turns out that there are.
+<br><br>
+Every day of our life, we are constantly placing our trust in something. 
+I'm not talking about simple trusts, like trusting our chairs to not collapse when we sit on them. 
+I'm talking about deep-rooted trusts that are sometimes invisible to us. 
+<br><br>
+Kids, many of you are stressed all the time because of schoolwork or maybe friends. 
+Have you ever wondered why? 
+Could it be because you've placed your personal trust in your grades or how well other people like you? 
+Could it be that you've unconsciously decided to stake your hope and worth in how well you've done in school or how many friends you have? 
+<br><br>
+Parents, maybe you struggle with your temper when you're arguing with your kids. 
+Have you ever thought about why? 
+Perhaps it's because you've placed your trust in how well your kids turn out. 
+You've decided to stake your hope and worth in how well they meet your expectations. 
+When they don't, you lash out because of your own insecurity. 
+<br><br>
+Perhaps you're here and you're single, and you feel very alone, and you feel that there's no hope of finding love anymore. 
+What you've actually done is placed your trust in love. 
+You've decided that life is most worth living when you love someone and they love you back. 
+You've unconsciously decided that true satisfaction comes from a relationship, or a happy family. 
+<br><br>
+Or maybe you're here today and you've been going to church all your life, but deep down, you know that you struggle with pride and looking down on others. 
+You feel a surge of excitement whenever people see how diligently you serve the church. 
+You feel anger when you are criticized and shame when you sin. 
+Well, you may be a Christian, but your trust is actually, at least partially, in your own good works.
+<br><br>
+To trust in God is simply to do to God what you have unconsciously done to all these false gods. 
+It is to believe that you have significance as a person not because other people like you, but because God loves you in Christ. 
+It is to trust that what matters most in life is not making money or finding love, but following the will of God. 
+It is to draw hope not from the promises of the world, but from the words of God. 
+We all trust in something. 
+Trusting in Jesus is a matter of taking our trust out of those things and putting them in Jesus instead. 
+To go from simple belief to real trust is to say that Jesus is not only God, but that he's <i>my</i> God. 
+It is to not only believe that Jesus is <i>a</i> Savior, but that he's, in a very real sense, <i>my</i> Savior.
+<br><br>
+Now, before we move on, just think about how liberating that would be to trust in God alone! 
+Compared to the world, how unshakeable are the promises of the Lord! 
+Read about what the biblical authors had to say about this kind of faith. 
+Look at the kind of confidence they had. 
+<br><br>
+<i>"God is our refuge and strength, <br>an ever-present help in trouble. <br>
+Therefore we will not fear, though the earth give way<br> and the mountains fall into the heart of the sea, <br>
+though its waters roar and foam <br>and the mountains quake with their surging"</i> <br>(Psalm 46:1-3). <br>
+<i>"Though the fig tree does not bud <br>and there are no grapes on the vines, <br>
+though the olive crop fails <br>and the fields produce no food, <br>
+though there are no sheep in the pen <br>and no cattle in the stalls, <br>
+yet I will rejoice in the Lord, <br>I will be joyful in God my Savior" </i><br>(Habakkuk 3:17-18). <br><br>
+Faith is simply a matter of trusting in God and taking him at his word.
+<br><br>
+<b>2) What does faith look like?</b>
+<br><br>
+The question could also be worded: what are the signs or evidence of faith in your life? 
+If you're a Christian, then these are the signs you should be looking for in your own life to see if your faith is genuine. 
+If you're not a Christian, then this is what your life will look like if you choose to place your trust in Jesus.
+<br><br>
+The first sign of true faith is repentance. 
+Repentance means turning away from sin to live righteously before God. 
+Repentance is such an important sign of faith that sometimes people really see faith and repentance as two sides of the same coin. 
+<br><br>
+On a surface level, repentance is simply putting an end to the sins in our life. 
+It doesn't mean immediate perfection. 
+It simply means a firm commitment to hate our sin and change our life according to God's law. 
+<br><br>
+However, on a deeper level, repentance means much more, and we see how repentance and faith are closely connected. 
+On a deeper level, repentance is not only turning away from sinful actions, but also turning away from sinful trusts. 
+We turn away from trusting in money, or trusting in love, or trusting in acceptance, and we turn towards trusting in Jesus. 
+Our hearts get totally rewired into this radically new way of understanding who we are and why we matter. 
+Surprisingly, it's only this deep, inward transformation that leads to real outward transformation. 
+If you're interested in learning more about this, I would recommend the book <i>How People Change</i>, which I heard some others in the church are reading right now. 
+<br><br>
+The second sign of true faith is following Jesus forever and obeying his commands. 
+Because true faith means having a personal trust in Jesus, this trust leads to a commitment to follow him. 
+Trusting somebody means placing yourself in their hands and allowing them to tell you what to do. 
+In the same way, trusting Jesus means making him your Lord and Master. 
+It leads to genuine obedience. 
+Not perfect obedience, but sincere and committed obedience.
+<br><br>
+Friends, if you're here and you're not a Christian, these two signs of faith—repentance and obedience—are the cost of trusting Jesus. 
+Consider these things carefully, so that you know what you sign up for if you choose to believe in Jesus. 
+<br><br>
+<b>3) Clearing up misconceptions about faith.</b>
+<br><br>
+Finally, I'd like to give some comments about four common misconceptions that people have about faith.
+<br><br>
+<i>i) Saving faith is not "blind faith." </i>
+Although phrases such as "blind faith" or "taking a leap of faith" are common, they are not entirely accurate when describing biblical faith. 
+If you're here and you're not a Christian, one of your hesitations when it comes to having faith in Jesus might be a lack of evidence. 
+When we invite you to believe in Jesus, perhaps you feel that we're asking you to ignore your reason. 
+But as Christians, we don't believe faith is irrational, or that faith and reason are opposed. 
+We believe that our faith is built on truth, and that we believe in something that truly happened. 
+So if you have doubts about Christianity, we would encourage you not to put them aside, but to really search for answers. 
+We don't claim to have all of those answers. 
+But we do believe that a careful study of the evidence can only lead to or strengthen faith. 
+<br><br>
+<i>ii) Saving faith trusts in God and his promises, not what we think he ought to do for us.</i>
+One thing that I think many new believers struggle with is the issue of faith seeming ineffective. 
+Maybe you're facing this problem right now. 
+We keep telling you to trust God, but you decide to trust God and yet your life is simply not changing. 
+In spite of how much faith you have, nothing gets better. 
+Is God simply not there? 
+Let me try and explain this common misunderstanding.
+<br><br>
+When it comes to faith, we need to distinguish between what God has promised and what we want. 
+God <i>does</i> invite us to pray for what we want and need. 
+He says, 
+<br><br>
+<i>"... in every situation, by prayer and petition, with thanksgiving, present your requests to God"</i> (Philippians 4:6). 
+<br><br>
+He even wants us to pray expectantly with faith in his power to answer. 
+He says, 
+<br><br>
+<i>"Whatever you ask for in prayer, believe that you have received it, and it will be yours"</i> (Mark 11:24). 
+<br><br>
+But having faith in God means two things at the same time. 
+On the one hand, it means believing that he has the power to give us what we want. 
+At the same time, it also means believing that his plan and timing is <i>better</i> when he doesn't give us what we want. 
+To believe in God is both to believe in his power but also his wisdom and direction. 
+In fact, this is exactly what Jesus demonstrated for us as he prayed before his death. 
+He prayed, 
+<br><br>
+<i>"Abba, Father, everything is possible for you. Take this cup from me. Yet not what I will, but what you will"</i> (Mark 14:36). 
+<br><br>
+So somebody who has <i>true</i> faith in God is simultaneously confident that she will receive exactly what she asks for, and yet not disappointed when God has other plans. 
+<br><br>
+You see, faith in God is ultimately based on our trust and confidence that God will act on his promises. 
+God has promised that he has completely forgiven our sins when we trusted in Jesus. 
+God has promised that he will one day end evil and suffering forever. 
+God has promised that believers will spend eternity with him. 
+But God has actually never promised that you would live a happy life. 
+He never promised that he would give you a job or a happy family. 
+These are the things that we rightly want for ourselves, but not the things that God has promised us. 
+Therefore, we need to anticipate the possibility that God may have a plan for us that contradicts what we want for ourselves. 
+We need to trust ultimately in what God has promised, not what he hasn't promised. 
+<br><br>
+But let me go a step further. 
+If you're disappointed that your trust in God has not yielded the results you wanted, your problem might actually be that you haven't trusted in God in the first place. 
+Let me explain what I mean by this. 
+Let's say that you desperately need a job, and you've decided to trust God because that's what all your Christian friends tell you to do. 
+You pray to God and you really believe that God is going to get you a job. 
+Then months pass, and you still don't have a job. 
+You're very disappointed and you decide that Jesus isn't God after all. 
+But don't you see from what we've learned today? 
+Your disappointment with God actually shows that your trust is still in your job or your financial security or whatever it is. 
+What you've done is simply use Jesus as a tool to serve your <i>real</i> god, which is getting a job and having a comfortable life. 
+You may believe that Jesus is God, but you haven't trusted him enough to make him <i>your</i> God. 
+You have knowledge and belief but not personal trust. 
+You believe in him enough to trust that he has the <i>ability</i> to give you what you want, but you don't actually trust him to <i>redefine</i> what you want.
+<br><br>
+Christians, this is also very important for how we share about our faith with others. 
+We need to be careful in how we testify to God's work in our lives. 
+God absolutely does work in our lives. 
+But if all we do is talk about how God has made our life better, then we mislead people into thinking that's what the gospel is all about. 
+We're giving people false hope and a false gospel if we mislead them in that way. 
+We need to be pointing people towards what Jesus has actually done and what Jesus has actually promised. 
+Saving faith trusts in God and his gospel.
+<br><br>
+<i>iii) We are not saved by the strength of our faith, but by the object of our faith.</i>
+If you are in any kind of contact with Christian faith, whether you're considering Christianity or you've been a Christian for decades, doubt is going to be part of your life. 
+And based on my experience, there are basically three kinds of doubt. 
+The first is intellectual doubt. 
+Kids, I think this is really common for people your age. 
+You feel like there's just not enough evidence for you to believe. 
+Or you feel like other things, such as science, have made Christianity unlikely to be true. 
+The second kind of doubt is the kind of doubt that comes from fear of the commitment needed to follow after Jesus. 
+If you have this kind of doubt, you probably think it's quite likely that Jesus is really God, but you're just nervous about how much it's going to cost you to become a Christian. 
+Jesus might be God, but you're just not sure enough to lay down your life for him. 
+The third kind of doubt is the kind of doubt that comes from extended or intense periods of trial and suffering. 
+So much pain or grief has overtaken you that you don't know if God really exists anymore. 
+And if he really does exist, you simply don't know if he really loves you and cares about you at all. 
+<br><br>
+So these kinds of doubts are inevitable. 
+And if you're here and you're not a Christian and you have doubts about Jesus, I just want to make sure you know that you're still going to have doubts about Jesus if you become a Christian. 
+Doubt is more normal than you think it is. 
+There are probably Christians here who have more doubts about Jesus than you do. 
+The only difference between you and them is that they've decided to trust Jesus in spite of those doubts. 
+Until we see God face to face, doubt will not go away.
+<br><br>
+That's why it's so important to realize that we are not saved by the <i>strength</i> of our faith, but by the <i>object</i> of our faith. 
+At the end of the day, it is Jesus and not our faith that saves us. 
+One analogy that I like to think of is how a lightbulb lights up when you connect it to a battery. 
+If you know anything about electricity, then you know that the lightbulb lights up no matter what kind of wire you use. 
+You can use a cheap one or an expensive one, a thin one or a thick one—as long as you connect the wire to the battery, the lightbulb lights up. 
+Likewise, even a very weak faith saves us if we put it in the right place. 
+Tim Keller gives another helpful analogy. 
+Two men want to fly to China. 
+One of them is very confident in flying, but he decides that he's going to get to China by gluing feathers to his arms. 
+The other man is deathly afraid of flying, but he takes a plane. 
+He's sitting there, his knees are trembling, his hands are sweating, and he can't even open his eyes. 
+His faith was so weak that it only got him as far as the door of the plane. 
+But which man do you think got to China in the end? 
+Ultimately, it's Jesus that saves you, not the strength of your faith.
+<br><br>
+Friend, if you trust in Christ and still struggle with serious doubts, be assured that genuine faith and doubt can coexist. 
+Remember what the man who needed Jesus to heal his son said to Jesus?
+Jesus told him, "All things are possible for one who believes" (Mark 9:23). 
+And the man responded in the way that all of us sometimes do. 
+"I believe; help my unbelief!" (Mark 9:24). 
+What a wonderful reminder and encouragement to us that is—that there is no perfect faith, only a perfect Savior!
+<br><br>
+<i>iv) The basis of faith is not a subjective experience of God, but the objective reality of who Jesus is and what he has done.</i>
+This is a common misconception that I frequently see. 
+Sometimes, we confuse faith with having a conversion experience. 
+Kids, maybe you've heard about how your parents came to faith, and you've concluded that you're not ready to <i>really</i> become a Christian yet because you haven't had that experience yet. 
+Or maybe you're here and you <i>are</i> a Christian, but you doubt your faith because you don't seem to have the deep spiritual experiences that other believers have. 
+Or maybe you're here and you <i>think</i> that you're a Christian, when all you've had is a spiritual experience or an encounter with God. 
+But if that spiritual experience was not followed by faith in Jesus, then you are not a Christian. 
+Faith and spiritual experiences are not the same thing. 
+You don't need to supposedly "experience" God to have real faith. 
+If you're here today and you've heard and understood the gospel of Jesus Christ, then you have absolutely everything you need to take the step of faith towards Jesus. 
+Faith means nothing more than hearing about what Jesus has done for you and trusting him at his word—making a simple, quiet decision to make him your Lord and Savior.
+<br><br>
+I know people who have had intense experiences of God, only to show no sign of long-lasting faith afterwards. 
+And yet I know just as many people, if not more, who have never experienced God in an intense way, yet have quietly chosen to follow Jesus and trust him day after day. 
+Which kind of person would you rather be? 
+Friends, choose faith over illusory experiences. 
+Do not place your trust in how much you have experienced God. 
+Christians, this also means that when you share your testimony to non-believers, focus <i>less</i> on your personal experience and <i>more</i> on Jesus himself. 
+Feelings come and go, so faith based on feelings will never last. Only Jesus will last forever.
+<br><br>
+As we conclude, I'd like to do something a little different, which is to personally invite you to repent of your sin and place your trust in Jesus Christ, if you've never done so before. 
+This is the way that you can be forgiven of all your sin and reconciled to God. 
+I hope that from today, you've concluded, as I have, that trusting in Jesus is both simple and costly. 
+It's simple in that anybody can come to Jesus, doubters included. 
+But it's costly because you have to give every part of yourself to him. 
+So this is a choice that you need to make carefully. 
+We'd love to walk with you for as long as it takes and help prepare you to make this important decision. 
+But if you're ready to make this urgent choice now, I'd like to give you a few moments to do that. 
+Let's all close our eyes and bow our heads, and we'll have a brief pause of personal reflection before I close us in prayer. 
+So if you've never done so before, do real business with God. 
+Repent of your sin and trust in the Lord Jesus for salvation.
+<br><br>
+Our heavenly Father, we thank you for sending your Son Jesus Christ. 
+We thank you that his death on the cross is sufficient to take away all of our guilt. 
+We thank you that you raised him from the dead to show us that shame and death no longer have power over us. 
+We humbly come before you to ask for your forgiveness. 
+We repent of our sin and trust in Jesus for our hope and salvation. 
+We ask that you would grant us the grace and courage to come to you by faith. 
+Please give us assurance and confidence that your salvation is all we need. 
+Strengthen our confidence in you, which so often wavers. 
+In Jesus's name, 
+Amen. 
+<br><br>
+
+<br><br>
+ 
+<br><br>
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
