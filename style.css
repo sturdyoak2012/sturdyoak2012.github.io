@@ -18,9 +18,8 @@ body {
 }
 
 #container {
-	width: 750px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 1000px;
+	margin-left: 350px;
 }
 
 
@@ -30,10 +29,11 @@ body {
 	float: left;
 	font-family: 'Bookman Old Style', 'Courier New';
 	text-align: center;
-	height: 97vh;
+	height: 102vh;
 	/*background-color: #EADEDA;*/
 	background-image: linear-gradient(to right, rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218), rgb(234, 222, 218, .0001));
 	border-left: 3px solid rgb(130, 51, 41, 1);
+	margin-top:-10px;
 }
 
 #jacob p {
@@ -108,9 +108,9 @@ img {
 
 #page {
 	float: left;
-	width: 500px;
+	width: 550px;
 	font-family: "Verdana";
-	margin-left: 250px;
+	margin-left: 255px;
 }
 
 
@@ -150,9 +150,11 @@ img {
   border: 4px solid black !important;
 }
 
+/*
 #img{
 	width: auto !important;
 }
+*/
 
 .math {
 	width: 85%;
