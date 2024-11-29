@@ -189,6 +189,7 @@ img {
 		width: 100%;
 		font-size: 30px;
 		margin: 0px;
+		padding: 0px
 	}
 
 	#page {
@@ -196,15 +197,18 @@ img {
 		margin-left: 0px;
 		padding-left: 30px;
 		padding-right: 30px;
+		padding-top: 100px;
 	}
 
 
 	.topnav {
 	  background-color: rgb(234, 222, 218);
-	  position: relative;
+	  position: fixed;
 	  font-family: 'Bookman Old Style', 'Courier New';
 	  font-weight: bold;
 	  color: #823329;
+	  width: 100%;
+	 	margin: -10px;
 	}
 
 	.topnav #myLinks {
