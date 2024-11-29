@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>GNT Statistics</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script>document.write('<script src="http://' + (location.host || '${1:localhost}').split(':')[0] + ':${2:35729}/livereload.js?snipver=1"></' + 'script>')</script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+  <script type="text/javascript" src="https://livejs.com/live.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+      <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+        <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <!-- MATHJAX -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript"
+          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+        <!-- END MATHJAX -->
+
+        <h1>A Statistical Look at the Greek New Testament </h1>
+
+        <i>November 2024</i>
+
+        <br>
+        <br>
+
+        <h3>Introduction</h3>
+        The New Testament (NT) Scriptures were written during the first century AD in
+        Koine Greek. (This was the lingua franca of the Hellenistic world, which
+        included Palestine, Asia Minor, and Greece.) They are composed of 27 books 
+        in total:
+        <br>
+        <br>
+        The Four Gospels (Jesus biographies) and the Acts of the Apostles (a 
+        history of the early church and the missionary journies of Paul)
+        <ul>
+          <li>Matthew</li>
+          <li>Mark</li>
+          <li>Luke</li>
+          <li>John</li>
+          <li>Acts</li>
+        </ul>
+        The Pauline Epistles (letters to churches and individuals authored by
+        the Apostle Paul)
+        <ul>
+          <li>Romans</li>
+          <li>1 Corinthians</li>
+          <li>2 Corinthians</li>
+          <li>Galatians</li>
+          <li>Ephesians</li>
+          <li>Philippians</li>
+          <li>Colossians</li>
+          <li>1 Thessalonians</li>
+          <li>2 Thessalonians</li>
+          <li>1 Timothy</li>
+          <li>2 Timothy</li>
+          <li>Titus</li>
+          <li>Philemon</li>
+        </ul>
+        The General Epistles (letters to churches by other authors)
+        <ul>
+          <li>Hebrews</li>
+          <li>James</li>
+          <li>1 Peter</li>
+          <li>2 Peter</li>
+          <li>1 John</li>
+          <li>2 John</li>
+          <li>3 John</li>
+          <li>Jude</li>
+        </ul>
+        Apocalyptic Literature
+        <ul>
+          <li>Revelation</li>
+        </ul>
+        One of the biggest questions about the NT is the authorship of
+        each book. Only some books explicitly mention the name of the author:
+        (all the Pauline epistles, James, 1 and 2 Peter, Jude, and Revelation). 
+        In other books, the author only hints at his identity (i.e. the Gospel of
+        John, Luke-Acts[?], and 2 and 3 John). The rest are anonymous, and the 
+        authors are known only through the name of the book, as it was transmitted
+        throughout the early church. (The only exception is Hebrews, whose author
+        was unknown even to the early church.) 
+        <br>
+        <br>
+        With the exception of Hebrews, the traditional authorships were mostly 
+        uncontested until the nineteenth century, when scholars began to reject
+        the traditionally understood authorship for almost all the books of the 
+        NT (with the exception of some of the core Pauline epistles.)
+        Scholars began to suggest that many of the NT books were not 
+        written by the apostles themselves (or associates of the apostles, like 
+        Mark and Luke), but rather by Christians later in the early second century 
+        writing pseudonymously under the names of the apostles. Although many of 
+        these claims are difficult to defend due to the lack of concrete evidence 
+        and the speculative nature of their arguments, this understanding of
+        non-traditional authorship remains the predominant view in more liberal 
+        scholarly circles.
+        <br>
+        <br>
+        Modern computational techniques can shed light on some of these claims. 
+        The goal of this exercise is to see whether there are statistically 
+        identifiable stylistic differences between the books of the Greek NT.
+        <br>
+        <br>
+        <h3>Dataset</h3>
+        For my text base, I am using the public-domain 1904 edition of the Greek
+        NT edited by Eberhard Nestle, which can be found as a .csv file
+        <a href="https://github.com/biblicalhumanities/Nestle1904/tree/master/morph">here</a>.
+        Each word corresponds to one line, which contains the book/chapter/verse, 
+        the Greek text, the word's morphology (noun or verb, nominative or accusative,
+        indicative or participle, etc.), the Strong's number, and the lemma (or root).
+        <br>
+        <br>
+        As an example, here is a quick look at the data for John 3:16.
+        <br>
+        <br>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-rq5v{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:bottom}
+.tg .tg-7g6k{background-color:#ffffff;border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-3xi5{background-color:#ffffff;border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7g6k">Greek</th>
+    <th class="tg-7g6k">Morphology</th>
+    <th class="tg-7g6k">Strong's Number</th>
+    <th class="tg-7g6k">Lemma</th>
+    <th class="tg-7g6k">Gloss</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">Οὕτως</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ADV</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3779</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">οὕτω</span></td>
+    <td class="tg-3xi5">thus/so/in this way</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">γὰρ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">CONJ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">1063</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">γάρ</span></td>
+    <td class="tg-3xi5">For</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἠγάπησεν</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">V-AAI-3S</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">25&amp;5656</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἀγαπάω</span></td>
+    <td class="tg-3xi5">loved</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὁ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">T-NSM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3588</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὁ</span></td>
+    <td class="tg-3xi5">(the)</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">Θεὸς</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">N-NSM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">2316</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">θεός</span></td>
+    <td class="tg-3xi5">God</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">τὸν</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">T-ASM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3588</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὁ</span></td>
+    <td class="tg-3xi5">the</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">κόσμον,</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">N-ASM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">2889</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">κόσμος</span></td>
+    <td class="tg-3xi5">world</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὥστε</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">CONJ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">5620</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὥστε</span></td>
+    <td class="tg-3xi5">that/so that</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">τὸν</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">T-ASM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3588</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὁ</span></td>
+    <td class="tg-3xi5">(the)</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">Υἱὸν</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">N-ASM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">5207</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">υἱός</span></td>
+    <td class="tg-3xi5">Son</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">τὸν</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">T-ASM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3588</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὁ</span></td>
+    <td class="tg-3xi5">(the)</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">μονογενῆ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">A-ASM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3439</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">μονογενής</span></td>
+    <td class="tg-3xi5">only begotten</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἔδωκεν,</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">V-AAI-3S</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">1325&amp;5656</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">δίδωμι</span></td>
+    <td class="tg-3xi5">he gave</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἵνα</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">CONJ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">2443</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἵνα</span></td>
+    <td class="tg-3xi5">so that</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">πᾶς</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">A-NSM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3956</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">πᾶς</span></td>
+    <td class="tg-3xi5">all</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὁ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">T-NSM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3588</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ὁ</span></td>
+    <td class="tg-3xi5">(the)</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">πιστεύων</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">V-PAP-NSM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">4100&amp;5723</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">πιστεύω</span></td>
+    <td class="tg-3xi5">who believe</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">εἰς</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">PREP</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">1519</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">εἰς</span></td>
+    <td class="tg-3xi5">in</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">αὐτὸν</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">P-ASM</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">846</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">αὐτός</span></td>
+    <td class="tg-3xi5">him</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">μὴ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">PRT-N</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">3361</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">μή</span></td>
+    <td class="tg-3xi5">not</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἀπόληται</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">V-2AMS-3S</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">622&amp;5643</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἀπόλλυμι</span></td>
+    <td class="tg-3xi5">may perish</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἀλλ’</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">CONJ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">235</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἀλλά</span></td>
+    <td class="tg-3xi5">but</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἔχῃ</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">V-PAS-3S</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">2192&amp;5725</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ἔχω</span></td>
+    <td class="tg-3xi5">may have</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ζωὴν</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">N-ASF</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">2222</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">ζωή</span></td>
+    <td class="tg-3xi5">life</td>
+  </tr>
+  <tr>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">αἰώνιον.</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">A-ASF</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">166</span></td>
+    <td class="tg-rq5v"><span style="font-weight:400;text-decoration:none;color:black">αἰώνιος</span></td>
+    <td class="tg-3xi5">eternal</td>
+  </tr>
+</tbody></table>
+        <br><br>
+        (The glosses are not part of the dataset; I have added them here for clarity.)
+        As you can see, there is a wealth of grammatical data at our disposal. 
+        A quick look at κόσμον shows us that we have a <b>N</b>oun in the 
+        <b>A</b>ccusative case, <b>S</b>ingular number, and <b>M</b>asculine 
+        gender.
+        A quick look at ἠγάπησεν shows us that we have a <b>V</b>erb in the 
+        <b>A</b>orist tense, <b>A</b>ctive voice, <b>I</b>ndicative mood, <b>3</b>rd
+        person <b>S</b>ingular. 
+
+        <h3>Cosine Similarity</h3>
+        Cosine similarity is a way of measuring the similarity between two texts,
+        irrespective of their size. Taking each text as a vector $\textbf{a}$, whose elements 
+        are each word's frequency of appearance, then the cosine similarity is
+        $$\cos\theta = \dfrac{\textbf{a}_1 \cdot \textbf{a}_2}{|\textbf{a}_1||\textbf{a}_2|}.$$
+        Two texts that are identical will have a cosine similarity of 1. Two texts
+        that don't have any words in common will have a cosine similarity of 0. 
+        <br>
+        <br>
+        One may observe that due to the relatively large size of each NT book,
+        the factors that contribute most significantly to the cosine similarity 
+        will be the most common words, which are mostly particles, conjunctions, 
+        and prepositions. Therefore, this metric, used on larger corpuses of text, 
+        highlights more of the stylistic and not topical similarities.
+        <br><br>
+        For instance, the top three most common words in Matthew are ὁ (the), καί (and),
+        and αὐτός (he), which occur 2775, 1169, and 909 times respectively. The top
+        three most common words in Romans are ὁ (the), καί (and), and ἐν (in), which 
+        occur 1103, 273, and 173 times respectively.
+        <br><br>
+        Counting the frequency at which each word appears in each book of the NT
+        (based on Strong's numbers, which does not separate between different
+        grammatical forms of the same word), the cosine similarities are as follows:
+        <br><br>
+        <a href="nt/cosine_similarity_1gram.png" data-lightbox="1"><img src="nt/cosine_similarity_1gram.png"></a>
+        <br><br>
+        Several points are worth noting. As expected, we see a high degree of 
+        correspondence between the Synoptics (Matthew, Mark, and Luke-Acts), and 
+        the Gospel of John to a slightly lesser extent. As expected, we also see 
+        a strong match between Colossians and Ephesians, which are very similar 
+        letters. 
+        <br><br>
+        Interesting, Philemon shows a lot of dissimilarity to almost all of the other 
+        NT books, despite being almost universally accepted as a genuine work 
+        by Paul. Furthermore, we might be surprised to see that there is not a stronger
+        correspondence within the Johannine books (John, 1/2/3 John, and Revelation) 
+        despite their notable stylistic similarities.
+        <br><br>
+        <h3>$n$-gram Cosine Similarity</h3>
+        Going a step further, we can look at not only words, but also <i>phrases</i> 
+        that are shared between the books of the New Testament. 
+        <br><br>
+        Instead of analyzing the text by word frequencies, we can look at $n$-gram 
+        frequency, where an $n$-gram is simply a string of words with length $n$. 
+        For example, the sentence "I woke up late today" consists of the three 
+        3-grams: "I woke up", "woke up late," and "up late today."
+        <br><br>
+        The three most common 3-grams (including grammatical variations) in Matthew 
+        are ὁ βασιλεία ὁ (e.g. ἡ βασιλεία τῶν [οὐρανῶν] - the kingdom of heaven), 
+        δέ γεννάω ὁ (used in the opening genealogy), and ὁ υἱός ὁ (e.g. ὁ υἱός τοῦ ἀνθρώπου - 
+        the Son of Man). 
+        These occur 40, 37, and 33 times respectively. 
+        <br><br>
+        The three most common 3-grams in Romans are ὁ κύριος ἐγώ (e.g. Ἰησοῦ
+        Χριστοῦ τοῦ Κυρίου ἡμῶν - Jesus Christ our Lord), ὁ θεός ὁ (e.g. "God" followed
+        by another noun with the article), and ὁ νόμος ὁ (e.g. "the law" followed
+        by another noun with the article). These occur 12, 10, and 9 times respectively.
+        <br><br>
+        Looking at 3-gram cosine similarities between the NT books, we find:
+        <br><br>
+        <a href="nt/cosine_similarity_3gram.png" data-lightbox="1"><img src="nt/cosine_similarity_3gram.png"></a>
+        <br><br>
+        <a href="nt/cosine_similarity_3gram_enhanced.png" data-lightbox="1"><img src="nt/cosine_similarity_3gram_enhanced.png"></a>
+        <p>The same as above with the color scale changed.</p>
+        <br>
+        Here, we see a much closer relationship between the Gospels and Acts. 
+        Notably, we also see that the most similar book to Acts is Luke, as anticipated.
+        We see, again, a close relationship between Ephesians and Colossians, a lot 
+        of similarity between the Thessalonian letters, similarity between John and 
+        1 John, and a generally high degree of correspondence between the Pauline 
+        epistles up to 2 Thessalonians. As expected, 2 Peter and Jude also show 
+        similarity.
+        <br><br>
+        Some unexpected points are that Revelation shows more similarity to Luke-Acts 
+        than to John. Interestingly, Hebrews and Revelation have much in common. 
+        We may also note that Hebrews shares the most in common with Luke-Acts out 
+        of all the Gospels (could Luke have written Hebrews?). 
+        <br>
+        <br>
+        Similar results can also be observed when analyzing 4-grams:
+        <br><br>
+        <a href="nt/cosine_similarity_4gram.png" data-lightbox="1"><img src="nt/cosine_similarity_4gram.png"></a>
+        <br><br>
+        
+        <h4>$n$-gram Cosine Similarity with Word Morphology</h4>
+        One problem is that as we look at $n$-grams for increasingly larger $n$, our similarity index is more sensitive towards the specific topic matter, rather than capturing stylistic differences. Furthermore, grammatical patterns that extend past two or three words are impossible to capture. For one, the grammatical morphology is each word is not being considered here (each word is condensed into its lemma). But also, two $n$-grams won't match unless they share the exact same words, even if they have the same grammatical pattern.
+        <br><br>
+        Luckily, we have morphological tags for each word that allow us to figure out what part of speech each word is. By collecting $n$-grams of these morphological tags, we can detect grammatical patterns that are common among the books of the NT. 
+        <br><br>
+        For example, the most common morphological 3-gram in Matthew is PREP T-ASF N-ASF (preposition, accusative singular feminine particle, accusative singular feminine noun), which occurs 83 times. The most common morphological 3-gram in Romans is PREP T-GSF N-GSF (preposition, genitive singular feminine particle, genitive singular feminine noun), which occurs 26 times. 
+        <br><br>
+        Here are the results for 1-grams, 2-grams, and 3-grams:
+        <br><br>
+        <a href="nt/cosine_similarity_morph_1gram.png" data-lightbox="1"><img src="nt/cosine_similarity_morph_1gram.png"></a>
+        <br><br>
+        <a href="nt/cosine_similarity_morph_2gram.png" data-lightbox="1"><img src="nt/cosine_similarity_morph_2gram.png"></a>
+        <br><br>
+        <a href="nt/cosine_similarity_morph_3gram.png" data-lightbox="1"><img src="nt/cosine_similarity_morph_3gram.png"></a>
+        <br><br>
+
+        
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+  <script src="../../lib/js/jquery.min.js"></script>
+  <script src="../../lib/js/lightbox.min.js"></script>
+  <script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+   })
+ </script>
+</div>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+  mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+// When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

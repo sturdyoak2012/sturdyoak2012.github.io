@@ -18,8 +18,11 @@ body {
 }
 
 #container {
-	width: 1000px;
+	width: 800px;
+	position: absolute;
 	margin-left: 350px;
+	
+
 }
 
 
@@ -168,7 +171,11 @@ img {
 
 
 
-
+@media only screen and (max-width: 1250px) {
+	#container {
+		margin: 0px;
+	}
+}
 
 
 
@@ -181,6 +188,7 @@ img {
 	#container {
 		width: 100%;
 		font-size: 30px;
+		margin: 0px;
 	}
 
 	#page {
