@@ -177,6 +177,17 @@ img {
 	}
 }
 
+@media only screen and (min-width: 2300px) {
+	#container {
+		margin-left: 600px;
+		width: 1200px;
+	}
+
+	#page {
+		width: 750px;
+	}
+}
+
 
 
 @media only screen and (max-aspect-ratio: 3/4) {
