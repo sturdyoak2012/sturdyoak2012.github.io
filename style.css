@@ -43,10 +43,10 @@ div #jacob {
 div #jacob p {
 	font-size: 35px;
 	margin-top: 0px;
-	font-family: 'Garamond';
+	font-family: 'EB Garamond';
 	font-weight: normal;
 	color: #751313;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.03em;
 }
 
 #jacob p:hover {
@@ -305,7 +305,7 @@ h2, h3, h4, h5, h6 {
 	.topnav {
 	  background-color: #ffffff;
 	  position: fixed;
-	  font-family: 'Garamond';
+	  font-family: 'EB Garamond';
 	  letter-spacing: 0.05em;
 	  color: #751313;
 	  width: 102%;
