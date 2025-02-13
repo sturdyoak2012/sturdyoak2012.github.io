@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Six Devotions on 2 Corinthians 5:14-21</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1> Six Devotions on 2 Corinthians 5:14–21       </h1>
+          <p>February 2025</p>
+          <br>
+          <div style="text-align: center">
+          <a href="#v14">5:14–15</a><br>
+          <a href="#v16">5:16</a><br>
+          <a href="#v17">5:17</a><br>
+          <a href="#v18">5:18–19</a><br>
+          <a href="#v20">5:20</a><br>
+          <a href="#v21">5:21</a><br>
+          </div>
+
+          <h2 id="v14">2 Corinthians 5:14–15 </h2>
+
+          <div id="scr">
+          <sup>14 </sup>For the love of Christ controls us, because we have concluded this: that one has died for all, therefore all have died; <sup>15 </sup>and he died for all, that those who live might no longer live for themselves but for him who for their sake died and was raised.
+          </div>
+          <br>
+          In 2 Corinthians 5:14–21, which we will meditate on over the course of these next six devotions, Paul explains how the love of God in the death of Christ is the recreating power and redefining paradigm for the believer’s new life in Christ. How do I deal with my sin and shame? How do I view myself? Who am I meant to be? What is the purpose of my existence? Paul answers all these questions and more in these eight verses. For now, let’s look at the first two.
+          <br><br>
+          Every person has a system of beliefs that dictates how they live—everything from how they make decisions to how they perceive themselves and the surrounding world. In other words, everybody has a “worldview.” Worldviews inevitably affect the purpose and direction of our life. For example, a person with a worldview shaped heavily by family values will focus their life on honoring their parents and providing well for their future family. A person with a worldview shaped by ideals of human progress and individual freedom will focus their life on making the world a better place for humanity.
+          <br><br>
+          Paul had a “worldview” too, and we should not be surprised to find that the epicenter of his was the cross of Christ. The worldview that drove his life was that he existed for the exaltation of God, and that God was most supremely exalted at the cross of Christ. As he says in another letter to the Corinthians, “I decided to know nothing among you except Jesus Christ and him crucified” (1 Cor. 2:2). Or to the Galatians, “Far be it from me to boast except in the cross of our Lord Jesus Christ” (Gal. 6:14). 
+          <br><br>
+          For Paul, it is the love of Christ demonstrated on the cross that “controls” him (v. 14). This word can also be translated as “occupies” or “absorbs” or “constrains.” There is a sense in which the love of Christ is so compelling that Paul finds it unthinkable to do anything else with his life. 
+          <br><br>
+          I wonder what you would say if somebody asked you what your purpose in life was? This verse tells us what Paul would say: “My life’s purpose is determined solely by the love of Christ!” How about you? What are you “controlled” by? If we want our lives to <i>mean</i> something—if we want to be people who live for something that really <i>matters</i>—we need to be controlled by the love of Christ and the glory of God.
+          <br><br>
+          Now, the <i>reason</i> why Christ’s love has become Paul’s controlling influence is found in the remainder of v. 14: “one has died for all, therefore all have died.” This is restated and explained in v. 15: “he died for all, that those who live might no longer live for themselves but for him who for their sake died and was raised.”
+          <br><br>
+          We know that “one has died for all” refers to Christ’s sacrificial death, but what does “therefore all have died” mean? Here, Paul draws upon his doctrine of dying with Christ. All of those who have been united to Christ through faith have also been united to him in his death and resurrection. “I have been crucified with Christ. It is no longer I who live, but Christ who lives in me” (Gal. 2:20; cf. Rom. 6:1–11). Christ’s death not only secures our forgiveness; it is <i>also</i> the reality by which our old selves are put to death such that we live anew to God. Indeed, the very <i>purpose</i> of Christ’s death was to secure our undivided devotion: “he died for all, <i>[so] that</i> those who live might . . . live . . . for him” (v. 15).
+          <br><br>
+          This is simply Paul’s way of saying what Jesus himself said: “Whoever finds his life will lose it, and whoever loses his life for my sake will find it” (Matt. 10:39). A Christian is one who has died to self so that they might live to God, “for him who for their sake died and was raised.”
+          <br><br>
+          Friend, I wonder if this is true of you? Have you died with Christ? Have you put the sword to the former “you”? Or are their parts of your heart that are still content to live for your own hopeless endeavors? As A. W. Tozer wrote, “Self is the opaque veil that hides the Face of God from us. . . . There must be a work of God in destruction before we are free.” 
+          <br><br>
+          The cross is where we lose not only our guilt, but ourselves. How often we spurn the love of Christ to turn and serve our own interests! How often we miss out on boundless joys when we make the mistake of crowning ourselves king! 
+ 
+          <br><br>
+
+          <br><br>
+
+          <h2 id="v16">2 Corinthians 5:16</h2>
+          <div id="scr">
+          <sup>16 </sup>From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer.
+          </div>
+          <br>
+          Around 1,000 years before Jesus’s time, the nation of Israel needed a new king. God called the prophet Samuel to find a man named Jesse, saying to him, “I have provided for myself a king among his sons” (1 Sam. 16:1). So, Samuel went and found Jesse and his seven sons. First, Samuel looked at Eliab, the oldest son, and immediately thought that surely this would be God’s chosen king. But God told Samuel, “Do not look on his appearance or on the height of his stature, because I have rejected him. For the LORD sees not as man sees: man looks on the outward appearance, but the LORD looks on the heart” (16:7). So Samuel went down the line, having each of the seven sons pass before him. But as it turned out, <i>none</i> of these seven sons was God’s chosen king—it was the eighth and youngest son, David, who was still out taking care of the sheep. So they called for David, and he was anointed as the new king of Israel. 
+          <br><br>
+          This story shows us that God doesn’t choose people in the same way that the world chooses people. “Man looks on the outward appearance, but the LORD looks on the heart.” Unfortunately, as the letter of 2 Corinthians shows us, the Corinthian church was still stuck in the world’s way of evaluating others. 
+          <br><br>
+          Paul wrote 2 Corinthians because he was trying to defend the legitimacy of his ministry against some fierce attacks against him within the Corinthian church. Compared to some of the false teachers infiltrating the church, Paul didn’t fit the Corinthians’ worldly criteria for what an apostle should look like. They complained that Paul didn’t have enough success in evangelism (4:2–4). Apparently, Paul’s presence was “weak” and “his speech of no account” (10:10; cf. 11:6). They even thought that Paul was less credible than their so-called “super-apostles” because he preached free of charge (11:7)! (Can you believe that?!)
+          <br><br>
+          But at the heart of it all, the Corinthian church didn’t respect Paul because of his weakness and suffering. Paul was constantly being beaten, thrown into prison, and persecuted (11:23–33). The Corinthians couldn’t comprehend how a message about a glorious God and a glorious salvation could come from a man who suffered as much as Paul did. But for Paul, this simply meant that the Corinthians didn’t know Christ. They didn’t understand the <i>cross.</i> That’s why 2 Corinthians is all about <i>glory in weakness. </i>
+          <br><br>
+          In v. 16, Paul explains the consequence (“therefore”) of a believer’s union with Christ in his death (v. 15). A new life lived towards Christ also means a new perspective towards others—a new lens on reality. Because of what Jesus has done in his death, we no longer view others according to worldly standards (“according to the flesh”). 
+          <br><br>
+          Jesus himself was once viewed according to these worldly standards. After all, he was a complete nobody from an unknown town in Galilee. As Nathanael said, “Can anything good come out of Nazareth?” (John 1:46). The prophet Isaiah foretold that Jesus would be “despised and rejected by men,” “one from whom men hide their faces” (Isa. 53:3). Jesus then died in utter weakness, mocked as he was crucified. “Prophesy! Who is it that struck you?” (Luke 22:64). “He saved others; let him save himself, if he is the Christ of God, his Chosen One!” (Luke 23:35).  
+          <br><br>
+          But the cross of Christ shows us that, indeed, “the LORD sees not as man sees.” The cross, a symbol of shame, became the <i>apex</i> of God’s glory in salvation. “For the foolishness of God is wiser than men, and the weakness of God is stronger than men” (1 Cor. 1:25). The cross shows us that the standards of the world are <i>totally</i> upside-down. The world thinks that power comes from strength and might. But God says, “my power is made perfect in weakness” (2 Cor. 12:9). Because of the cross, we cannot judge according to the paradigms of the former age. The magnificent treasure of God’s glory is stored in <i>weakness</i>—like humble “jars of clay”—to show that “the surpassing power belongs to God” and not man (4:7). 
+          <br><br>
+          Have <i>you</i> put on the “lenses” of this new life in Christ? Do you regard others according to the flesh or according to the cross? How about the way you regard <i>yourself</i>? Money, family, beauty, academics, charisma—the world is full of empty value systems that will <i>never</i> bring you life. Life comes by <i>faith</i> and not by stature; life comes in Christ and not in ourselves. “Therefore I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me. . . . For when I am weak, then I am strong” (2 Cor. 12:9–10).
+          <br><br><br><br>
+
+          <h2 id="v17">2 Corinthians 5:17</h2>
+          <div id="scr">
+          <sup>17 </sup>Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come. 
+          </div>
+          <br>
+          The prophet Isaiah, writing long before Jesus’s time, ministered to the nation of Israel during an era when it was clear that exile was coming soon. Israel, God’s chosen people, was unfaithful to the covenant that God made with them—trusting in and worshiping idols made by human hands, instead of the one, true, and living God. Whether it was now or later, God was going to judge Israel by sending them into exile under foreign powers. They would be utterly destroyed by nations like Assyria and Babylon, forsaken by God, and devastated beyond recognition.
+          <br><br>
+          Isaiah prophesied extensively about this impending exile, but he <i>also</i> prophesied about God’s future salvation after exile. In these prophecies, we encounter some of the Old Testament’s most striking and expansive messages of comfort and restoration. It is these messages that Paul draws upon as he writes of the “new creation” reality that characterizes every believer who is “in Christ.”
+          <br><br>
+          Isaiah makes it clear to his readers that exile will <i>not</i> be the last word. God’s holiness necessitates divine judgment, but he will not forget his people. “Can a woman forget her nursing child, that she should have no compassion on the son of her womb? <i>Even these may forget</i>, yet I will not forget you” (49:15). Exile will <i>not</i> be the last word. 
+          <br><br>
+          Can you think of any moments in your life when it felt as though you were forsaken by God? Times when you were deep in the midnights of your soul, “with many a conflict, many a doubt; fightings within, and fears without”? When your heart was crying out, “<i>How long</i>, O LORD? Will you forget me forever? <i>How long</i> will you hide your face from me? <i>How long</i> must I take counsel in my soul and have sorrow in my heart all the day?” (Ps. 13:1–2)?
+          <br><br>
+          Suffering will <i>never</i> have the final say, because God saves: “The LORD is near to the brokenhearted and saves the crushed in spirit” (Ps. 34:18). “Behold, I am doing a <i>new thing</i>; now it springs forth, do you not perceive it?” (Isa. 43:19). 
+          <br><br>
+          But shockingly, according to Isaiah, this “new thing” that God is doing is <i>not</i> limited to mere return from exile. God is not only going to forgive Israel’s iniquities and make a new covenant with Israel—God is going to bring about a <i>new creation</i>. “For behold, I create <i>new heavens and a new earth</i>, and the former things shall not be remembered or come into mind” (65:17). The violence of the old creation will be eradicated: “the wolf shall dwell with the lamb” (11:6) and nations “shall beat their swords into plowshares” (2:4). The entire creation will be “full of the knowledge of the LORD, as the waters cover the sea” (11:9). John later writes of the new heavens and new earth: “Behold, the dwelling place of God is with man. He will dwell with them, and they will be his people, and God himself will be with them as their God. He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore, for the former things have passed away” (Rev. 21:3–4). 
+          <br><br>
+          Are you in search of hope? (I am!) The new creation is the hope that the entire Bible points towards. It is a hope that outweighs <i>any</i> trial and <i>any</i> calamity that the world can throw at us. How? “For I consider that the sufferings of this present time are not worth comparing with the glory that is to be revealed to us” (Rom. 8:18). “For this light <i>momentary</i> affliction is preparing for us an <i>eternal</i> weight of glory beyond all comparison, as we look not to the things that are seen but to the things that are unseen” (2 Cor. 4:17–18).
+          <br><br>
+          But what’s so astonishing about Paul’s statement here is that the new creation <i>has already come</i>. “If anyone is in Christ, he <i>is</i> a new creation.” Believers in the risen Lord Jesus, who have been born again by the Spirit of God (John 3:1–8; 1 Pet. 1:3), are the <i>beginning</i> and <i>inauguration</i> of the future new creation. Like the kingdom of God, which begins like a tiny mustard seed that grows into a big tree (Matt. 13:31–32, so it is with the new creation. 
+          <br><br>
+          Friend, if you are in Christ, then <i>you</i> are a new creation. Have you ever stopped to think of how extraordinary that is? When you were “born again to a living hope,” the forces at work within you were as divine and supernatural as the forces which brought the cosmos into being! As we were each once born of the <i>old</i> man, Adam, so now we are born of the <i>new</i> man, Christ (Rom 5:12–19). God’s call for us is twofold: first, to put off “the old self” and “put on the new self, created after the likeness of God in true righteousness and holiness” (Eph. 4:22–24); and second, to “continue in the faith, stable and steadfast, not shifting from the <i>hope</i> of the gospel” (Col. 1:23)! How might you yourself put these calls into action? 
+          <br><br><br><br>
+
+          <h2 id="v18">2 Corinthians 5:18–19</h2>
+          <div id="scr">
+          <sup>18 </sup>All this is from God, who through Christ reconciled us to himself and gave us the ministry of reconciliation; <sup>19 </sup>that is, in Christ God was reconciling the world to himself, not counting their trespasses against them, and entrusting to us the message of reconciliation. 
+          </div>
+          <br>
+          In 5:18–21, Paul explains the central mission of his ministry: to bring people into <i>reconciliation with God</i>. We read of God’s purpose of reconciliation (v. 18–19), Paul’s role as an emissary of Christ in bringing this message of reconciliation (v. 20), and the basis for reconciliation—the substitutionary atonement of Christ (v. 21).  
+          <br><br>
+          Now, what is reconciliation with God and why is it such a big deal? <i>Is</i> it such a big deal? Unfortunately, many today would answer in the negative. Many “churches” and many “Christians” have begun to embrace a God that is all love and no justice, a God of tolerance and not of wrath. With such a God, what need is there for <i>reconciliation</i>? What need is there for <i>atonement</i>? They say, “God is our friend! God loves us!” 
+          <br><br>
+          I do not intend to dispute these statements, because they are true. But to suggest that God’s love for us erases our need for reconciliation is, simply put, to “turn to a different gospel” (Gal. 1:6). It is, in essence, to deny the reason for Christ’s death. In other words, in our effort to draw divisions between God’s love and God’s wrath, we are at risk of turning to a cross-less Christianity, which is none other than a gospel emptied of its power! 
+          <br><br>
+          Where is the <i>power</i> of the cross? What is the <i>goodness</i> of the “good news”? Friend, if you want to experience the “power of God for salvation” (Rom. 1:16), if you want to “taste and see that the LORD is good” (Ps. 34:8), if you want to know something of his “steadfast love and faithfulness” (Ex. 34:6)—then you must first understand your desperate need of <i>reconciliation with God</i>.
+          <br><br>
+          First, do you believe that you are a sinner? Have you recognized that you deserve nothing but the consuming wrath of our almighty God? Or are you still holding on to your precious illusions of self-merit that you think (wrongly) will deem you acceptable before our holy God? Too often, we hide a tiny little Pharisee in our heart, who always tries to justify himself by his own goodness, thanking God that he is “not like other men” (Luke 18:11), “not knowing that God’s kindness is meant to lead [him] to repentance” (Rom. 2:4).
+          <br><br>
+          Second, what kind of God do you think we have? The true, living God of our universe is not one who looks kindly upon sin of any form. Do not imagine, even for a second, that the omnipotent Sovereign who created the cosmos, whose righteousness and purity exceeds comprehension, would look kindly, or even forgivingly, at the miserable life that you and I have lived! We are <i>sinners</i> before a holy God! Do you understand this? 
+          <br><br>
+          We are those who have received mercy upon mercy from the Almighty One, only to spurn him for mere trivialities. His presence, his splendor, and his right to be <i>exclusively</i> worshiped “have been clearly perceived, ever since the creation of the world,” such that we are absolutely “without excuse” for failing to honor his absolute claim to glory and reverence (Rom. 1:20). And yet, “we like sheep have gone astray; we have turned—every one—to his own way” (Isa. 53:6). It is little wonder, then, that the Scriptures describe us as “enemies” of God (Rom. 5:10).
+          <br><br>
+          God’s free act of grace in Christ has been to reconcile enemies such as us to himself, undeserving and dishonorable as we are. By the power of the cross (v. 21), sinners have been brought near to the throne of the Holy One, with their rags of guilt exchanged for robes of glory. “There is therefore now no condemnation for those who are in Christ Jesus” (Rom. 8:1). <i>Reconciled!</i> Friend, are you in Christ Jesus? Are you reconciled to God? Be reconciled to him today!
+          <br><br>
+          Ultimately, the only way to God is through Jesus Christ. Our vain efforts will never be enough to bridge the great gulf that separates our sinful selves from our holy God. It is the righteousness of our great Savior alone that will suffice to unite us, body and soul, with our beloved Creator. “Just as I am, without one plea; but that Thy blood was shed for me!” 
+          <br><br><br><br>
+
+          <h2 id="v20">2 Corinthians 5:20</h2>
+          <div id="scr">
+          <sup>20 </sup>Therefore, we are ambassadors for Christ, God making his appeal through us. We implore you on behalf of Christ, be reconciled to God.
+          </div>
+          <br>
+          Having meditated upon the substance of Paul’s message—reconciliation with God—let us now turn our attention to the <i>authority</i> behind Paul’s message. 
+          <br><br>
+          Paul is <i>qualified</i> to proclaim this message of reconciliation because he, along with his fellow workers, is an ambassador for Christ. He is a representative of God, such that, as he proclaims the message of reconciliation, it is <i>as if</i> God himself were offering terms of peace. 
+          <br><br>
+          Now, as believers, we must be aware of our own status as ambassadors for Christ. First, do you <i>live</i> as if you were Jesus’s very own representative on earth? We are taught in Scripture that our call is to “be imitators of God” (Eph. 5:1), to “be perfect, as your heavenly Father is perfect” (Matt. 5:48). In fact, God’s very purpose in redeeming us is that we might be “conformed to the image of his Son” (Rom. 8:29). Every moment of our life is a testimony to one of two things: either the power of worldly affections or the glory of God in Christ. Has your life and conduct given a testimony to Christ? Is Christ—in all his love, meekness, devotion, and righteousness—visible in you? We need to remember that we are ambassadors who serve and represent a King. We are “not [our] own, but belong—body and soul, in life and in death—to [our] faithful Savior, Jesus Christ.” His glory and reputation is our highest goal.
+          <br><br>
+          Second, do you <i>speak</i> as an ambassador for Christ on earth? Even the most upright and righteous ambassadors are worthless if they don’t <i>speak</i> the message of their King. We have been entrusted with an incredible message, the good news that is “the power of God for salvation to everyone who believes” (Rom. 1:16). We live in a perishing world that can be saved by the knowledge of Christ. But “how are they to believe in him of whom they have never heard” (Rom. 10:14)? We must be people who speak of our King. 
+          <br><br>
+          This is not an easy task by any means, knowing that “the natural person does not accept the things of the Spirit of God” (1 Cor. 2:14). But Jesus himself said, “Whoever denies me before men, I also will deny before my Father who is in heaven” (Matt. 10:33). So let us be diligent and brave in seizing opportunities to speak of Jesus. Who are some people in your life that you can tell about Jesus? Pray about these people and for bravery to have those awkward conversations about these matters of utmost importance.
+          <br><br>
+          Finally, ambassadorship is a reminder not only of our role as representatives, but our status as <i>citizens of another kingdom</i>. An ambassador is one who <i>resides</i> in one nation, yet calls another home. We are like Abraham and Sarah, who sought for “a better country, that is, a heavenly one,” “not having received the things promised, but having seen them and greeted them from afar, and having acknowledged that they were strangers and exiles on the earth” (Heb. 11:16, 13). Betrothed to Christ but not yet wedded, we are those who have tasted the final inheritance and yet continue to “grown inwardly as we wait eagerly for adoption as sons, the redemption of our bodies” (Rom. 8:23). 
+          <br><br>
+          Think of the trials that you have endured—all the false hopes and weary failures and crushing disappointments—and then remind yourself that you are not a citizen of this world, but an ambassador for another. Not a resident condemned to this world forever, but a sojourner and exile from another (1 Pet. 2:11). We belong not to this perishing world of strife and mortality, but to a kingdom of peace and joy ruled by Love himself. As John says of our future in God’s kingdom, “They shall hunger no more, neither thirst anymore; the sun shall not strike them, nor any scorching heat. For the Lamb in the midst of the throne will be their shepherd, and he will guide them to springs of living water, and God will wipe away every tear from their eyes” (Rev. 7:16–17). What a glorious hope that is ours in Christ and Christ alone! 
+          <br><br><br><br>
+
+          <h2 id="v21">2 Corinthians 5:21</h2>
+          <div id="scr">
+          <sup>21 </sup>For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God. 
+          </div>
+          <br>
+          Here in v. 21, we finally see the <i>ground</i> of Paul’s message of reconciliation with God—the reason why reconciliation with God is possible in the first place. Fittingly, it ties back to the beginning of our passage in v. 14–15: the basis for reconciliation is the cross of Christ. Let’s think together about what Paul is trying to say.
+          <br><br>
+          Every story has a plot, and in order for there to be a plot, there must be a problem that requires resolution. Without a conflict or tension, a story becomes no more than a series of events. Now, the Bible is a story—a story that goes back to the beginning of time itself. And like any other story, it too has a plot that is driven by a certain tension. That tension is, of course, the question of what God will do about human sin. On the one hand, God is a God of steadfast love and faithfulness. On the other hand, God’s holiness and his passion for his own glory demand that he punish sin and evil. These appear to be contradictory, and this is the tension that guides the biblical storyline.
+          <br><br>
+          For example, when Adam and Eve sin, God’s holiness demands that they be cast out of Eden. And yet his love leads him to spare their lives and promise a future redeemer (Gen. 3:15). God destroys the world in the flood due to the wickedness of man, but his mercy leads him to preserve Noah’s family. In love, God chooses a nation called Israel to have the blessing of dwelling in his presence, but his holiness requires that Israel keep a bloody system of sacrifice to appease his wrath against their sin. When Israel turns to other gods, God’s passion for his own glory demands that he punish them with exile, but his love for Israel causes him to preserve a surviving remnant. The whole Old Testament is driven by this tension between divine salvation and divine justice.
+          <br><br>
+           Do you understand what this problem has to do with you personally? It means that God loves you and desires for you “to be saved and to come to the knowledge of the truth” (1 Tim. 2:4). But it also means that your sin and innate rejection of God leaves him with no choice but to condemn you. Our God is a holy God who is “merciful and gracious . . . but who will by no means clear the guilty” (Ex. 34:6–7). Eternity hangs in the balance. Do you know where you stand with God?
+          <br><br>
+          The Old Testament does not give us the answer to the problem outright, but we have some clues. First, the sacrificial system shows us that the problem of sin is only resolved through substitutionary death. The Israelite worshiper can only draw near to the presence of God when, symbolically, an animal dies in his place. Second, the prophecy of Isaiah tells us that one day, God’s own servant—a future king of Israel—will suffer and die as the ultimate sacrifice for sin (52:13–53:12). 
+          <br><br>
+          Only one problem remains. Not only does Israel not have a king anymore, but an <i>ultimate</i> sacrifice for sin would require a <i>sinless</i> substitute. There has never been a sinless man, much less a sinless king of Israel! It appears that, for now, there is simply no solution to the problem of sin.
+          <br><br>
+          But God, that great Author of history, writes <i>himself</i> into the story—our story—weaving his eternal Being into the fabric of time. The Word becomes flesh: the God-man Jesus Christ, “who in every respect has been tempted as we are, yet without sin” (Heb. 4:15). As the long-awaited King of Israel, he lives a life of perfect obedience, only to die a shameful death. “Rejected by men” (Isa. 53:3) and cursed by God (Gal. 3:13), he is bound to the cross—not for <i>his</i> sin but for <i>ours</i>.
+          <br><br> 
+          Paul explains this central mystery of the cross in v. 21: Christ who “knew no sin”—in that he was sinless—was “made to be sin.” This is not to say that Christ became a sinner, but rather that our sins were <i>counted</i> as his. As Paul says elsewhere, our “record of debt” was “[nailed] to the cross” (Col. 2:14). In exchange (what a glorious exchange this is!), we “become the righteousness of God.” God looks upon Christ at the cross and sees only the vilest sinner, so that when he gazes upon our misery he might exclaim, “This is my beloved Son, with whom I am well pleased” (Matt. 17:5)! Love and justice, those two perpetual opposites, meet finally in perfect unison at this climax of tension, as the perfect Substitute is smitten so that God “might be just <i>and</i> the justifier of the one who has faith in Jesus” (Rom. 3:26).
+          <br><br>  
+          Have you trusted in Christ? Is he your Savior? Has your soul beheld the glory of the cross—that divine act of reconciliation? Do you possess that “righteousness from God that depends on faith” (Phil. 3:9)? What magnificent hope we have in Christ when we have been forgiven by the power of his blood! 
+
+
+
+
+
+
+
+
+
+            <div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
