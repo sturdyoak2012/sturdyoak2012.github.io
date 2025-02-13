@@ -249,7 +249,7 @@ h2, h3, h4, h5, h6 {
 	}
 }
 
-@media only screen and (max-aspect-ratio: 4/7) {
+@media only screen and (max-aspect-ratio: 3/5) {
 	#menu {
 		display: none;
 		width: 0px;
@@ -269,8 +269,16 @@ h2, h3, h4, h5, h6 {
 		margin-left: 0px;
 		padding-left: 30px;
 		padding-right: 30px;
-
 		padding-top: 100px;
+		font-size: 25px;
+	}
+
+	#page p {
+		font-size: 20px;
+	}
+
+	#page sup {
+		font-size: 16px;
 	}
 
 
@@ -278,6 +286,7 @@ h2, h3, h4, h5, h6 {
 	  background-color: #ffffff;
 	  position: fixed;
 	  font-family: 'Garamond';
+	  letter-spacing: 0.05em;
 	  color: #751313;
 	  width: 102%;
 	  margin: -10px;
@@ -332,7 +341,7 @@ h2, h3, h4, h5, h6 {
 
 
 
-@media only screen and (min-aspect-ratio: 4/7) {
+@media only screen and (min-aspect-ratio: 3/5) {
 	.topnav {
 		display: none;
 	}
