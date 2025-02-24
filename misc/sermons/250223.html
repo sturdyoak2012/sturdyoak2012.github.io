@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>250223</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Jesus and Nicodemus</h1>
+        <p>
+        Lord's Day, Feburary 23, 2025, Connect Church Silicon Valley (with <a href="#chinese">Chinese translation</a>)
+        <br>
+        John 3:1–21<br>
+        </p>
+
+        <div id="scr">
+
+
+          <sup>1&nbsp;</sup>Now there was a man of the Pharisees named Nicodemus, a ruler of the Jews. <sup>2&nbsp;</sup>This man came to Jesus by night and said to him, “Rabbi, we know that you are a teacher come from God, for no one can do these signs that you do unless God is with him.” <sup>3&nbsp;</sup>Jesus answered him, “Truly, truly, I say to you, unless one is born again he cannot see the kingdom of God.” <sup>4&nbsp;</sup>Nicodemus said to him, “How can a man be born when he is old? Can he enter a second time into his mother’s womb and be born?” <sup>5&nbsp;</sup>Jesus answered, “Truly, truly, I say to you, unless one is born of water and the Spirit, he cannot enter the kingdom of God. <sup>6&nbsp;</sup>That which is born of the flesh is flesh, and that which is born of the Spirit is spirit. <sup>7&nbsp;</sup>Do not marvel that I said to you, ‘You must be born again.’ <sup>8&nbsp;</sup>The wind blows where it wishes, and you hear its sound, but you do not know where it comes from or where it goes. So it is with everyone who is born of the Spirit.” 
+          <br><br>
+          <sup>9&nbsp;</sup>Nicodemus said to him, “How can these things be?” <sup>10&nbsp;</sup>Jesus answered him, “Are you the teacher of Israel and yet you do not understand these things? <sup>11&nbsp;</sup>Truly, truly, I say to you, we speak of what we know, and bear witness to what we have seen, but you do not receive our testimony. <sup>12&nbsp;</sup>If I have told you earthly things and you do not believe, how can you believe if I tell you heavenly things? <sup>13&nbsp;</sup>No one has ascended into heaven except he who descended from heaven, the Son of Man. <sup>14&nbsp;</sup>And as Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up, <sup>15&nbsp;</sup>that whoever believes in him may have eternal life. 
+          <br><br>
+          <sup>16&nbsp;</sup>“For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. <sup>17&nbsp;</sup>For God did not send his Son into the world to condemn the world, but in order that the world might be saved through him. <sup>18&nbsp;</sup>Whoever believes in him is not condemned, but whoever does not believe is condemned already, because he has not believed in the name of the only Son of God. <sup>19&nbsp;</sup>And this is the judgment: the light has come into the world, and people loved the darkness rather than the light because their works were evil. <sup>20&nbsp;</sup>For everyone who does wicked things hates the light and does not come to the light, lest his works should be exposed. <sup>21&nbsp;</sup>But whoever does what is true comes to the light, so that it may be clearly seen that his works have been carried out in God.”
+
+
+        </div>
+        <br><br>
+        We turn today to a famous text that has changed many lives in the 1900 years of its existence. It has some great warnings, but some even greater hopes. I urge you to listen carefully, especially if you have not come to know the Lord Jesus. If you’re taking notes, we’ll go through the passage in three parts. 1) You must be born again, 2) Believe in the Son of God, and 3) Come to the light. 
+        <br><br>
+        <h3>1. You Must Be Born Again</h3>
+        In the first verse, we learn about this man named Nicodemus, who is a Pharisee. If you’re new to the Bible, that basically means that Nicodemus is a well-respected Jewish leader, trained in the Scriptures from a young age. He’s somebody who cares deeply about God and following the law. 
+        <br><br>
+        Next, we learn that Nicodemus comes to Jesus <i>by night</i>. Most likely, he’s concerned about what others would think of him. He’s a well-respected man with a high social status, and Jesus comes from outside the religious establishment. Nicodemus would not want others to know about his secret meeting with Jesus. But John, the author of this passage, includes this detail for symbolic reasons as well. Throughout the entire Gospel of John, light is a key theme that symbolizes life, truth, and goodness. By highlighting this small detail of Nicodemus’s coming at night, John is telling us something of his spiritual state. Nicodemus is in spiritual darkness, and he’s coming to meet the light that “shines in the darkness” (John 1:5).
+        <br><br>
+        Nicodemus then praises Jesus. He says that Jesus must be a teacher come from God, because of all the miracles he performs. It sounds like Nicodemus is really excited about Jesus. He’s certainly open to learning more about him. But hovering underneath the surface of Nicodemus’s statement is a sea of doubt. He’s open, but also highly skeptical. Implied within his statement is a question. “I can tell that you are a very unusual person. But who exactly are you? Are you a prophet? Are you the Messiah? Or are you a fraud? Show me more, so that I can decide.” By coming at night, he shows that he is unwilling to publicly acknowledge Jesus. By starting with a statement of praise, he tries to flatter Jesus, hoping that Jesus will tell him more about himself without detecting the doubts that fill his heart. Nicodemus is <i>proud</i>, and Nicodemus is <i>afraid</i>.
+        <br><br>
+        If you’re here and you’re not a Christian, we’re glad that you’ve joined us today. Whether it’s your first time or your twentieth time, we’re glad that you’ve come to learn more about Jesus. But let me warn you to not come like Nicodemus. Whatever you are outside of this building means absolutely nothing to us here. More importantly, it means nothing to God. So I urge you to lay down your pride when you come to Jesus. Don’t be like Nicodemus. Jesus has nothing to offer for those who come with their hands full. Jesus is only for those who come empty-handed. 
+        <br><br>
+        As we might expect, Jesus sees right through Nicodemus. It says in the verse right before this passage that Jesus “needed no one to bear witness about man, for he himself knew what was in man” (John 2:25). He knows Nicodemus better than Nicodemus knows himself. So Jesus doesn’t even respond to Nicodemus’s implicit question. Nicodemus thinks that his problem is not having enough <i>evidence</i> about who Jesus is. Nicodemus thinks that if he can see something <i>more</i>, he’ll be able to come to a conclusion about Jesus’s identity. But Jesus knows that Nicodemus’s problem isn’t his lack of information. Nicodemus’s problem is that he doesn’t have the spiritual capacity required to comprehend Jesus’s identity or message. Nicodemus needs to be “born again.”
+        <br><br>
+        Jesus gives a cryptic statement: “Unless one is born again he cannot see the kingdom of God.” In the Gospel of John, the “kingdom of God” is synonymous with “eternal life.” It’s the time when God will rule in perfect harmony over creation, where sin and death will be no more. It was the expectation and hope of every Jew, including Nicodemus. Nicodemus would’ve assumed that, as a devout Jew, he would be part of God’s future kingdom. But Jesus says that unless he is “born again,” he can’t be saved. He can’t have eternal life, and he can’t see God’s kingdom. Somebody who isn’t “born again” will never know God.
+        <br><br>
+        For those of us here that don’t know Jesus, who haven’t believed in him, I wonder if perhaps you are just like Nicodemus. You think that with just a little bit more evidence, you’d believe in Jesus. You think that with just a tiny leap of faith, you would become a Christian. Or perhaps that you might be a Christian if you were slightly less logical of a person. Let me assure you that you are much further from knowing Jesus than you think. What separates somebody who is <i>in</i> the kingdom of God with somebody who is <i>out</i> of the kingdom of God is not <i>information</i> but <i>rebirth</i>. Becoming a Christian requires being reborn. It doesn’t matter if you’re fifty years old. When it comes to believing in Jesus, you are no different than one of those five year olds in the kids class right now. In the kingdom of God, everything that you have and everything that you are is worthless, because you need to be born again. With Jesus, you either come as nothing, or you don’t come at all. “Unless you turn and become like children, you will never enter the kingdom of heaven” (Matt 18:3). 
+        <br><br>
+        At this church, we’re happy to answer all of your questions and doubts about Jesus. We believe that getting those answers is really important. But just know that your unbelief is not because of any lack of information. You don’t believe because you’re not born again. And unless you are willing to submit to God’s transformative work of rebirth, you will never know Jesus. Unless you are willing to let go of the person that you are now, you will never believe in him.
+        <br><br>
+        Nicodemus clearly has no idea what Jesus is talking about. Frequently in the Gospel of John, Jesus makes a symbolic comment about a spiritual reality, and his hearers mistake the <i>physical</i> meaning for the <i>spiritual</i> meaning. Nicodemus does just that. He becomes deliberately obtuse and makes a sarcastic comment about what Jesus has said.
+        <br><br>
+        So Jesus explains what it means to be born again. He says that being born again means being “born of water and the Spirit.” Many different interpretations have been given for this phrase. Some understand being “born of water” to refer to physical birth. Others think that it refers to baptism. However, the most likely case is that Jesus is making an allusion to Ezekiel 36:25–26. 
+        <br><br>
+        Under the old covenant, Israel had a law that told them what was right, but Israel did not have the <i>heart</i> that was required to obey it. The problem, of course, was not with the law, but with the Israelites themselves. As a result, they kept sinning and turning away from God. So God promised Israel that under the <i>new</i> covenant, he would give everybody a new <i>heart</i>. He says in Jeremiah: “I will put my law within them, and I will write it on their hearts. And I will be their God, and they shall be my people. And no longer shall each one teach his neighbor and each his brother, saying, ‘Know the L<span id="sc">ORD</span>,’ for they shall all know me” (Jer 31:33–34). In Ezekiel, God says something very similar: “I will sprinkle clean water on you, and you shall be clean from all your uncleannesses, and from all your idols I will cleanse you. And I will give you a new heart, and a new spirit I will put within you. And I will remove the heart of stone from your flesh and give you a heart of flesh.” (Ezek 36:25–26). And then in the very following chapter, we read of the famous story where Ezekiel prophesies over the valley of dry bones. Ezekiel speaks, spirit comes into the dead bones, and they begin to live. Given the close connection between “water,” “Spirit,” and regeneration in Ezekiel 36–37, it’s almost certain that this is what Jesus was alluding to. 
+        <br><br>
+        This is the kind of rebirth that happens to every single person who believes in Christ. Without Christ, we are spiritually dead. Paul writes: “But God, being rich in mercy, because of the great love with which he loved us, even when we were dead in our trespasses, made us alive together with Christ” (Eph 2:4–5). None of us have the spiritual capacity to know God or love God. In God’s eyes, we are as good as dead. We have hearts of stone, and we are like dry bones with no breath. We cannot simply add on some good works or change a few trouble spots in our life. That would be a misunderstanding of our spiritual state without Christ. Everything that we are is utterly hopeless. We need to be made alive in Christ. 
+        <br><br>
+        I invite you to just take a moment to think of how amazing it is to be converted to Christ. Conversion—becoming a Christian—is so much more than just a decision to believe. Conversion is when a dead person becomes alive. Dead people do not understand the things of God. Dead people cannot know Jesus. Dead people cannot make themselves alive. It is God who saves. It is God who gives understanding. It is God who gives faith. It is God who “gives life to the dead and calls into existence the things that do not exist” (Rom 4:17). Brothers and sisters, we were all once like dry bones in that valley. We were dead. We were without hope. But like those dry bones, we heard the word of God. And then we were filled with God’s Spirit. And we were made alive into a people of God. Do not forget these things. When being a Christian gets hard, do not forget what we once were. Do not forget that we worship a God who can do such a thing as this, who can save dead sinners such as ourselves.
+        <br><br>
+        Jesus then goes onto explain that there are two kinds of people: people born of the flesh and people born of the Spirit. 
+        <br><br>
+        Finally, in verse 8, Jesus explains that the <i>mechanism</i> of spiritual rebirth is mysterious, and yet the <i>results</i> are undisputable. He compares the effect of the Spirit to the effect of wind. In both Hebrew and Greek, the words for Spirit and wind are the same, so this is a kind of wordplay. In the same way that people don’t know where wind comes from, there is mystery involved in how people are born of the Spirit. Regeneration is a spiritual matter, and it cannot be predicted. It’s not something we’re meant to understand or control. Nevertheless, the results of regeneration are noticeable and discernable. Somebody who is born again will show the signs of rebirth. They will believe in Christ. They will know him personally. They will exhibit the fruit of the Spirit. Having a transformed mind and heart, they will grow in obedience to God’s law.
+        <br><br>
+        There are two very important applications from this verse. The first application is that we must be bold and confident in sharing Christ with others. We cannot predict who will and won’t receive Christ. No matter how open or closed people seem to the gospel, they are all equally dead in their spirit. Only the Spirit of God can awaken them to belief. Our responsibility in evangelism is not to manufacture belief. Successful evangelism is simply accurate and compelling communication of the gospel. <i>Belief</i> can only come from the regenerative power of the Holy Spirit. Brothers and sisters, think about whether there are people in your life whom you have given up sharing the gospel with. People that are just too resistant and too hard-hearted. Brothers and sisters, we can never give up like that. We do not know when the Spirit will work on a hardened heart. We don’t have control over belief. But we do have control over the hearing of the message. The Holy Spirit is effective and never fails in his purpose of salvation. The only question is whether we will be found faithful in sharing the message.
+        <br><br>
+        The second application of this verse has to do with how we can know that we ourselves are born again. Unfortunately, our churches today are filled with people that are not born again. They may profess faith, and they may be baptized. But they don’t know Jesus, and they are not saved. Friends, are you born again? “The wind blows where it wishes, and you hear its sound.” Jesus tells us that not only is rebirth necessary, but it is obvious. 
+        <br><br>
+        The book of 1 John is especially helpful in assessing whether we are born again. Kids, this is a great and easy book to read with your parents later this week. A great question to ask them is whether they think that they’re born again, and how they know. In the book of 1 John, John gives us several criteria by which we can see whether we truly know God or not. By my count, there are about five such criteria given in 1 John, and I encourage you to jot them down. First, those who are born again confess their sins. Ask yourself whether you are becoming more and more aware of your sin as you grow in your faith. Second, those who are born again keep the commandments of God. John is not saying that we become perfect. But he does mean that somebody who truly knows God will develop a consistent and growing pattern of obedience in their life. Third, those who are born again do not love the world anymore. Ask yourself: do you sense a consistent and growing love for God over the things of the world that once captivated you? Fourth, those who are born again endure in the faith. Those who abandon the faith and abandon the church show that they are not born again. Fifth, those who are born again believe the truth about Jesus. If you lack any of these five characteristics, you might not be born again.
+        <br><br>
+        But one thing you’ll notice is that all the criteria that John points to have to do with the present and not the past. What I mean is that John does not ask whether we experienced a sudden life transformation when we became a Christian. Many Christians have experienced such a thing, including myself, but many Christians have a more gradual conversion experience. That doesn’t mean that they are not born again. Some Christians, especially those who grow up in church, can’t even point to the time when they were born again. As Christians, we believe that conversion and rebirth are <i>inwardly</i> instantaneous, but sometimes <i>outwardly</i> gradual or even unmemorable. On the other hand, there are even those who claim to have dramatic testimonies of rebirth, and yet as time goes on, their lack of endurance in the faith proves that they did not experience true conversion at all. The ultimate sign of being born again is not your past experience, but your present obedience. Not your past experience, but your present obedience. It’s like if somebody came up to you in the street and asked you to prove that you’ve been born. You don’t need to hand him your birth certificate. You just need to have him look at you! You’re alive! Of course you’ve been born! So in the same way, if you want to see whether you’ve been born again, you just need to look at yourself right now. Are you spiritually alive, or are you spiritually dead? 
+        <br><br>
+        But perhaps now you’re asking, “What if I’m not born again?” Perhaps you’ve claimed to be a Christian for a long time, and yet you don’t show these characteristics of being born again. Friend, if you find yourself with that realization, I want to assure you that there is hope. And your hope is the same hope that exists for any other person who is outside of Christ. You must turn to Jesus and believe in him.
+        <br><br>
+        <h3>2. Believe in the Son of God</h3>
+
+        Turning to verse 9, Nicodemus still has no idea what Jesus is talking about. In the next three verses, Jesus criticizes Nicodemus for failing to understand him. With Nicodemus’s background in the Old Testament, he should have been able to anticipate Jesus’s teaching on the new birth. Jesus is not introducing complicated concepts. He is simply talking of “what we know” and “what we have seen,” and yet Nicodemus does not believe. In fact, if he can’t even comprehend an “earthly thing” such as rebirth, then he has no hope of understanding the “heavenly things” regarding the deeper mysteries of the kingdom of God. And regarding these “heavenly things,” Jesus alone is qualified to speak authoritatively about them. Only Jesus knows about these “heavenly things,” because he alone has come from heaven. This is what he says in verse 13: “No one has ascended into heaven except he who descended from heaven, the Son of Man.” (If you’re new to the Bible, “Son of Man” is a common title that Jesus uses to refer to himself.)
+        <br><br>
+        Then in verses 14–18, Jesus pivots from his discussion on the new birth, and he explains why the Son of Man descended from heaven. In other words, Jesus gives the reason for why God sent him, his Son, to this world. The answer we’ll find is that Jesus came to this world to save people from the righteous condemnation of God, so that whoever believes in him might have eternal life. 
+        <br><br>
+        First, in verses 14–15, Jesus compares himself to the serpent that Moses lifted up in the wilderness. This is a famous story from the Old Testament. The Israelites had just come up out of Egypt, but now they were wandering in the wilderness for forty years. They were impatient, and it seemed like God’s promises had failed. They said to God, “Why have you brought us up out of Egypt to die in the wilderness? For there is no food and no water, and we loathe this worthless food” (Num 21:5). Obviously, to say such a thing to God is a terrible sin, and God punishes them for it. In his wrath, God “sent fiery serpents among the people, and they bit the people, so that many people of Israel died” (21:6). But the Israelites repent, and they ask Moses to pray to God on their behalf, so that he might save them from the serpents. So Moses prays for the people. And here is what happens next. “The L<span id="sc">ORD</span> said to Moses, ‘Make a fiery serpent and set it on a pole, and everyone who is bitten, when he sees it, shall live.’ So Moses made a bronze serpent and set it on a pole. And if a serpent bit anyone, he would look at the bronze serpent and live” (21:8–9).
+        <br><br>
+        Now Jesus says that he is just like that bronze serpent. Just like the serpent, he is going to be lifted up. Not onto a pole, but onto the cross. And whoever looks to Christ and trusts in him will be saved. And notice how God gave the Israelites a serpent to save them from the serpents. Isn’t that odd, that a symbol of the curse would become the way of salvation? And yet what does it say of Christ? “Christ redeemed us from the curse of the law by becoming a curse for us” (Gal 3:13). We look to the curse—God’s wrath poured out on Christ—so that we ourselves can be saved from the curse. Friends, if you’re here and you’re not a Christian, I urge you to look to Christ. Turn away from your sin, from yourself, and look to Christ in faith. Believe in him, so that you can be saved from your sins. There is nothing you need to do except look to Christ.
+        <br><br>
+        There’s a famous story in Charles Spurgeon’s autobiography of how he became a Christian. Now Spurgeon was a famous English preacher in the nineteenth century. When he was fifteen years old and not yet a believer, he was caught in a snowstorm one Sunday morning. Along the way, he found himself accidentally taking shelter in a small Methodist chapel. The pastor wasn’t there that morning, so a layman from the congregation got up to preach. He was uneducated and couldn’t even pronounce the words correctly because of his thick accent. But his text was Isaiah 45:22, which reads, “Look unto me, and be ye saved, all the ends of the earth.” And this is how he preached: 
+        <br><br>
+        <div id="scr">
+        “My dear friends, this is a very simple text indeed. It says, ‘Look.’ Now lookin’ don’t take a great deal of pain. It ain’t liftin’ your foot or your finger; it’s just, ‘Look.’ Well, a man needn’t go to college to learn to look. You may be the biggest fool, and yet you can look. A man needn’t be worth a thousand a year to be able to look. Anyone can look; even a child can look.
+        <br><br>
+        “But then the text says, ‘Look unto Me.’ Many of you are lookin’ to yourselves, but it’s no use lookin’ there. You’ll never find any comfort in yourselves. Jesus Christ says, ‘Look unto Me.’ Some of you say, ‘We must wait for the Spirit’s working.’ You have no business with that just yet. Look to Christ. The text says, ‘Look unto Me.’
+        <br><br>
+        “Look unto Me; I’m sweating great drops of blood. Look unto Me; I’m hanging on the cross. Look unto Me; I’m dead and buried. Look unto Me; I rise again. Look unto Me; I ascend to heaven. Look unto Me; I’m sitting at the Father’s right hand. O poor sinner, look unto Me! Look unto Me!”
+        </div>
+        <br>
+        Then the preacher turns to look directly at Spurgeon, speaking directly to him.
+        <br><br>
+        <div id="scr">
+        “Young man, you look very miserable. And you always will be miserable—miserable in life, and miserable in death—if you don’t obey my text. But if you obey now, this moment, you will be saved. Young man, look to Jesus Christ. Look! Look! Look! You have nothing to do but to look and live.”
+        </div>
+        <br>
+        Then Spurgeon writes, “I saw at once the way of salvation. I know not what else he said—I did not take much notice of it—I was so possessed with that one thought. Like as when the bronze serpent was lifted up, the people only looked and were healed, so it was with me. I had been waiting to do fifty things. But when I heard that word, ‘Look!’ What a charming word it seemed to me! Oh! I looked until I could have almost looked my eyes away. There and then the cloud was gone, the darkness had rolled away, and that moment I saw the sun. And I could have risen that instant, and sung with the most enthusiastic of them, of the precious blood of Christ, and the simple faith which looks alone to him.”
+        <br><br>
+        Friends, look to Christ and nothing else. Jesus Christ is worthy of your trust, and he is powerful to save. There is no better time than now to look unto Christ. 
+        <br><br>
+        In verses 16–18, we see the promise for those who believe, and also the destiny for those who do not. Those who believe will inherit eternal life. They will enter into the kingdom of God. On the final day of judgment, they will be raised from the dead and counted righteous before God. They will live forever in God’s kingdom, where sin and death are no more. They will enjoy the sweetness of perfect, never-ending fellowship with God in his new creation. All of this is possible because of the abundant and merciful love of God. 
+        <br><br>
+        On the other hand, those who do not believe will be condemned. Often we speak of salvation, but we don’t speak clearly of what it is that we are saved <i>from</i>. Jesus makes it abundantly clear. We are saved from the wrath and condemnation of God. The sin that characterizes each one of us merits nothing but the righteous condemnation of our holy God. And God’s wrath at the final judgment will be much worse than fiery serpents. The Bible describes hell as a lake of fire. Let me assure you that this metaphor is inaccurate, because the reality will be much worse than what mere words can describe. Friend, do you think that you can escape the condemnation of God? Do you think that you’ll receive special treatment? Turn from your sin and trust in Christ. Christ is the only escape. Christ is your only hope. Trust in him now.
+        <br><br>
+        <h3>3. Come to the Light</h3>
+        In these final three verses, Jesus explains the difference between those who turn to him and those who do not. He starts by saying that “the light has come into the world.” By this, he’s referring to himself, because elsewhere in the Gospel of John, Jesus is called the “true light” (1:9). Jesus says that the reason why people reject the light is because they don’t want to have their darkness exposed. There may be many reasons on the surface for why they don’t want to come to Christ. They might complain of a lack of evidence. Or they may simply find him inconvenient to follow. But deep down, it’s because they know that Christ is the true light who will expose their sins and weaknesses. Just like Nicodemus, they are proud, and they are afraid.
+        <br><br>
+        On the other hand, those who come to the light are willing to have everything about themselves exposed. They come freely, with humility and self-abandon. They know that their wounds can only heal in the light. If you continue reading into the next chapter, this is exactly what you’ll find with Jesus and the Samaritan woman. Unlike Nicodemus, she comes to Jesus in broad daylight. Jesus exposes her sin and her brokenness, and she experiences the rebirth that Nicodemus does not. She came to the light. 
+        <br><br>
+        One day, as we see in verse 21, these people who come to the light will do so in order that it may be clearly seen that their works have been carried out in God. They will be the light of the world. God’s glory will be displayed through their born-again lives. They will delight in coming to Christ the true light because they want to show their works, and yet not in order to demonstrate their own righteousness, but to demonstrate the power of the God that works within them.
+        <br><br>
+        Friends, as we conclude, all of this is possible if you would only come out of the darkness and into the light. Turn to Jesus. If you don’t know Jesus, then turn to him and trust in him. Don’t be like Nicodemus, who couldn’t understand what Jesus was saying because he wasn’t willing to give up his unbelief. Open yourself up to experiencing the power of the new birth by trusting in Christ. Don’t be like Spurgeon, who was waiting to do fifty things before he could find salvation. Turn to Christ and set your eyes upon him. Come to the light, and trust in him. 
+        <br><br>
+        Let’s pray.
+        <br><br>
+        Our heavenly Father, we thank you for your Son Jesus, the true light. We thank you for this beautiful text. We thank you that you are a God of saving mercy. We thank you for your love, which was shown to the entire world when Jesus died for us. We pray that you would cause us to look to Christ in faith. We pray that you would cause us to be born again. Lord, we entrust ourselves to your merciful hands. In Jesus’s name we pray, Amen. 
+
+            <br><br>
+
+            <br><br>
+
+            <h2 id="chinese">中文翻译</h2>
+            约翰福音3:1–21
+            <br><br>
+            <div id="scr">
+             <sup>1&nbsp;</sup>有一个法利赛人，名叫尼哥德慕，是犹太人的官。<sup>2&nbsp;</sup>这人夜里来见耶稣，说：「拉比，我们知道你是由　神那里来作师傅的；因为你所行的神迹，若没有　神同在，无人能行。」<sup>3&nbsp;</sup>耶稣回答说：「我实实在在地告诉你，人若不重生，就不能见　神的国。」<sup>4&nbsp;</sup>尼哥德慕说：「人已经老了，如何能重生呢？岂能再进母腹生出来吗？」<sup>5&nbsp;</sup>耶稣说：「我实实在在地告诉你，人若不是从水和圣灵生的，就不能进　神的国。<sup>6&nbsp;</sup>从肉身生的就是肉身；从灵生的就是灵。<sup>7&nbsp;</sup>我说：『你们必须重生』，你不要以为希奇。<sup>8&nbsp;</sup>风随着意思吹，你听见风的响声，却不晓得从哪里来，往哪里去；凡从圣灵生的，也是如此。」<sup>9&nbsp;</sup>尼哥德慕问他说：「怎能有这事呢？」<sup>10&nbsp;</sup>耶稣回答说：「你是以色列人的先生，还不明白这事吗？<sup>11&nbsp;</sup>我实实在在地告诉你，我们所说的是我们知道的；我们所见证的是我们见过的；你们却不领受我们的见证。<sup>12&nbsp;</sup>我对你们说地上的事，你们尚且不信，若说天上的事，如何能信呢？<sup>13&nbsp;</sup>除了从天降下、仍旧在天的人子，没有人升过天。<sup>14&nbsp;</sup>摩西在旷野怎样举蛇，人子也必照样被举起来，<sup>15&nbsp;</sup>叫一切信他的都得永生。
+             <br><br>
+              <sup>16&nbsp;</sup>「　神爱世人，甚至将他的独生子赐给他们，叫一切信他的，不致灭亡，反得永生。<sup>17&nbsp;</sup>因为　神差他的儿子降世，不是要定世人的罪，乃是要叫世人因他得救。<sup>18&nbsp;</sup>信他的人，不被定罪；不信的人，罪已经定了，因为他不信　神独生子的名。<sup>19&nbsp;</sup>光来到世间，世人因自己的行为是恶的，不爱光，倒爱黑暗，定他们的罪就是在此。<sup>20&nbsp;</sup>凡作恶的便恨光，并不来就光，恐怕他的行为受责备。<sup>21&nbsp;</sup>但行真理的必来就光，要显明他所行的是靠　神而行。」
+
+            </div>
+            <br>
+            今天我们来看一段著名的经文，它在1900年间改变了许多人的生命。
+            这段经文有严厉的警告，但也有更大的盼望。
+            我劝你们仔细听，尤其是如果你还不认识主耶稣。
+            如果你在做笔记，我们会分三部分来看这段经文：
+            1）你必须重生，
+            2）信神的儿子，
+            3）来到光中。
+            <br><br>
+            <h3>1. 你必须重生</h3>
+            第一节提到一个叫尼哥底母的人，他是个法利赛人。
+            他是深受尊敬的犹太领袖，从小熟读圣经。
+            他在乎神，并遵守律法的人。
+            <br><br>
+            尼哥底母 夜里来见耶稣。
+            很可能，他是担心别人会怎么看他。
+            他社会地位很高、受人尊敬，而耶稣却来自宗教体制之外。
+            尼哥底母不想让别人知道他私下见耶稣。
+            但约翰，也就是这段经文的作者，提到这个细节也有象征意义。
+            在整卷约翰福音中，光是一个关键主题，象征生命、真理和良善。
+            通过强调 尼哥底母夜里来見耶穌這個的细节，约翰在告诉我们 尼哥底母的属灵光景。
+            尼哥底母处在属灵的黑暗中，而他来见那“照亮黑暗”的光（约翰福音1:5）。
+            <br><br>
+            尼哥底母接着称赞耶稣。
+            他说耶稣一定是从神那里来的老师，因为祂行了许多神迹。
+            听起来尼哥底母对耶稣很感兴趣。
+            显然的，他想更多地了解耶穌。
+            但在他的话背后，隐藏着深深的怀疑。
+            他看起來開明，實際上非常怀疑。
+            他的话里隐含着一个问题：
+            “我看得出你是个不寻常的人。
+            但你到底是谁？
+            是先知吗？
+            是弥赛亚吗？
+            还是个骗子？
+            我需要更多的證據才能决定。”
+            他夜里来，表明他不愿公开承认耶稣。
+            他以赞美开头，试图讨好耶稣，来掩盖他心中的怀疑。
+            尼哥底母心里骄傲，同时也很害怕。
+            <br><br>
+            如果你还不是基督徒，我们很高兴你今天来到我们中间。
+            无论你是第一次来还是第二十次来，我们都很高兴你愿意了解更多关于耶稣的事。
+            但我要提醒你，不要像尼哥底母那样来。
+            你在这座建筑外的身份对我们毫无意义。
+            更重要的是，对神也毫无意义。
+            所以我劝你来见耶稣时，放下你的骄傲。
+            不要像尼哥底母那样。
+            耶稣对那些双手满满而来的人毫无可给。
+            耶稣只为那些空手而来的人预备。
+            <br><br>
+            正如我们所料，耶稣一眼看穿了尼哥底母。
+            之前一节经文说，耶稣“用不着谁见证人怎样，因他知道人心里所存的。”（约翰福音2:25）。
+            祂比尼哥底母更了解尼哥底母他自己。
+            所以耶稣甚至没有回应尼哥底母隐含的问题。
+            尼哥底母认为他自己的问题是对耶稣的身份缺乏足够的证据。
+            他以为只要看到更多，就能对耶稣的身份得出结论。
+            但耶稣知道，尼哥底母的问题不是缺乏信息。
+            尼哥底母的问题是他没有属灵的能力去理解耶稣的身份或信息。
+            尼哥底母需要的是“重生”。
+            <br><br>
+            耶稣说了一句意味深长的话：
+            “人若不重生，就不能见神的国。”
+            在约翰福音中，“神的国”与“永生”是同义词。
+            那时候神将完全掌管所造之物，罪和死亡将不复存在。
+            这是每个犹太人的期待和盼望，包括尼哥底母。
+            尼哥底母可能以为，作为一个虔诚的犹太人，他自然会成为神未来国度的一部分。
+            但耶稣说，除非他“重生”，否则他无法得救。
+            他不能得永生，也不能见神的国。
+            没有“重生”的人永远不会认识神。
+            <br><br>
+            对于那些还不认识耶稣、还没有信祂的人，会不会是和尼哥底母一样的结局？
+            你以为只要再多一点证据，你就会信耶稣。
+            你以为只要稍微跨出信心的一小步，你就会成为基督徒。
+            或者你觉得，如果你不那么理性，或许你已经是基督徒了。
+            让我告诉你，你离认识耶稣的距离比你想象的要远得多。
+            区分在神国里的人和神国之外的人的不是信息，而是重生。
+            成为基督徒需要重生。
+            不管你五十岁还是五岁。
+            在信耶稣这件事上，你和那些正在上主日学的孩子没什么不同。
+            在神的国里，你所拥有的一切和你现在的身份都毫无价值，因为你需要重生。
+            面对耶稣，你要么空手而来，要么根本不要来。
+            “你们若不回转，变成小孩子的样式，断不得进天国”（马太福音18:3）。
+            <br><br>
+            在这间教会，我们很乐意回答你所有关于耶稣的问题和疑惑。
+            我们认为找到答案非常重要。
+            但你要知道，你的不信不是因为缺乏信息。
+            你不信是因为你没有重生。
+            除非你愿意顺服神，经历由神而来的改变和重生，否则你永远不会认识耶稣。
+            除非你愿意放下现在的自己，否则你永远不会信祂。
+            <br><br>
+            尼哥底母显然不明白耶稣在说什么。
+            在约翰福音中，耶稣经常用象征性的语言谈论属灵的现状，而听者却误解为字面的意思。
+            尼哥底母正是如此。
+            他故意装糊涂，并对耶稣的话作出讽刺的回应。
+            <br><br>
+            于是耶稣解释了重生的含义。
+            祂说重生就是“从水和圣灵而生”。
+            这句话有许多不同的解释。
+            有人认为“从水而生”指的是肉体的出生。
+            也有人认为它指的是洗礼。
+            然而，最有可能的是，耶稣是在引用以西结书36章的内容。
+            <br><br>
+            在旧约之下，以色列人有律法告诉他们什么是对的，但他们没有顺服律法的心。
+            问题当然不在律法，而在以色列人自己。
+            结果，他们不断犯罪，背离神。
+            所以神应许以色列人，在新约之下，祂会赐给他们一颗新的心。
+            祂在耶利米书中说：“我要将我的律法放在他们里面，写在他们心上。
+            我要作他们的神，他们要作我的子民。
+            他们各人不再教导自己的邻舍和自己的弟兄说：‘你该认识耶和华’，因为他们从最小的到至大的都必认识我。”（耶31:33–34）
+            在以西结书中，神说了非常相似的话：
+            “我必用清水洒在你们身上，你们就洁净了。我要洁净你们，使你们脱离一切的污秽，弃掉一切的偶像。
+            我也要赐给你们一个新心，将新灵放在你们里面。又从你们的肉体中除掉石心，赐给你们肉心。”（结36:25–26）
+            紧接着的下一章，我们读到以西结在枯骨山谷中发预言的著名故事。
+            以西结说话，灵进入枯骨，它们就活了过来。
+            鉴于“水”、“灵”和重生在以西结书36–37章中的紧密联系，几乎可以肯定耶稣所指的就是这个。
+            <br><br>
+            这种重生发生在每一个信靠基督的人身上。
+            没有基督，我们在灵里是死的。
+            保罗写道：“然而，神既有丰富的怜悯，因祂爱我们的大爱，当我们死在过犯中的时候，便叫我们与基督一同活过来。”（弗2:4–5）
+            我们都没有认识神或爱神的属灵能力。
+            在神眼中，我们如同死人。
+            我们的心像石头，像没有气息的枯骨。
+            我们不能仅仅靠一些好行为或改变几个生活习惯来解决。
+            那是对我们没有基督的属灵状态的误解。
+            我们的一切都毫无希望。
+            我们需要在基督里得生命。
+            <br><br>
+            我邀请你花点时间想想，归信基督是多么奇妙的事。
+            归信——成为基督徒——远不止是一个相信的决定。
+            归信是死的人得生命。
+            死人无法理解神的事。
+            死人无法认识耶稣。
+            死人无法使自己活过来。
+            是神的拯救。
+            是神赐下理解。
+            是神赐下信心。
+            是神“叫死人复活，使无变为有”（罗4:17）。
+            弟兄姐妹们，我们都曾像那山谷中的枯骨。
+            我们是死的。
+            我们没有盼望。
+            但像那些枯骨一样，我们听到了神的话。
+            然后我们被神的灵充满。
+            我们得生命，成为神的子民。
+            不要忘记这些事。
+            当基督徒的生活变得艰难时，不要忘记我们曾经的样子。
+            不要忘记我们敬拜的神能行这样的事，能拯救像我们这样的罪人。
+            <br><br>
+            接着，耶稣解释说有两种人：从肉体生的和从圣灵生的。
+            <br><br>
+            最后，在第8节，耶稣解释说，属灵重生的机制是神秘的，但其结果是无可争议的。
+            祂将圣灵的工作比作风的作用。
+            在希伯来语和希腊语中，“灵”和“风”是同一个词，所以这是一种文字游戏。
+            就像人们不知道风从哪里来一样，人如何从圣灵而生也带着奥秘。
+            重生是属灵的事，无法预测。
+            这不是我们该去理解或控制的事。
+            然而，重生的结果是显而易见的，可以辨别的。
+            一个重生的人会显露出重生的迹象。
+            他们会信靠基督。
+            他们会亲身经历祂。
+            他们会结出圣灵的果子。
+            他们的心思意念被改变，会在顺服神的律法上不断成长。
+            <br><br>
+            这段经文有两个重要的应用。
+            首先，我们必须勇敢且自信地向他人分享基督。
+            我们无法预测谁会或谁不会接受耶稣。
+            有些人对福音显得开放， 有些人对福音显得封闭，但是他们在灵里都是同样死的。
+            只有神的灵能唤醒他们，让他们相信神。
+            我们在传福音中的责任不是制造信心。
+            而是准确且有说服力地传达福音。
+            只能圣灵才能让人得以重生。
+            弟兄姐妹们，想想你生活中是否有些人是你已经放弃分享福音的。
+            那些看似太抗拒、心太硬的人。
+            弟兄姐妹们，我们绝不能这样放弃。
+            我们不知道圣灵何时会在刚硬的心中动工。
+            人无法控制。
+            我们可以控制的是信息的传递。
+            圣灵是有功效的，在救赎这件事上神从不失败。
+            唯一的问题是，我们是否忠实地传递神的福音。
+            <br><br>
+            其次，这段经文的应用关乎我们如何知道自己是否重生。
+            不幸的是，今天的教会中充满了未重生的人。
+            他们可能宣称信仰，也可能受过洗。
+            但他们不认识耶稣，也没有得救。
+            朋友，你重生了吗？
+            “风随着意思吹，你听见它的响声。”
+            耶稣告诉我们，重生不仅是必要的，而且是显而易见的。
+            <br><br>
+            约翰一书特别有助于评估我们是否重生。
+            这是一本很棒且容易读的书，小朋友这个星期可以和父母一起读。
+            可以问你的爸爸妈妈，他们是否认为自己重生了，以及他们是如何知道的。
+            在约翰一书中，约翰给出了几个标准，帮助我们判断是否真正认识神。
+            根据我的计算，约翰一书大约给出了五个标准，我鼓励你们记下来。
+            第一，重生的人承认自己的罪。
+            问问自己，随着信心的增长，你是否越来越意识到自己的罪。
+            第二，重生的人遵守神的诫命。
+            约翰不是说我们变得完美，
+            而是说真正认识神的人会在生活中越来越顺服神。
+            第三，重生的人不再爱世界。
+            问问自己：你是否越来越爱神超过爱世界？
+            第四，重生的人在信仰中坚持到底。
+            那些放弃信仰和教会的人没有得到重生。
+            第五，重生的人相信耶稣是道路，真理和生命。
+            如果你缺乏这五个特征中的任何一个，你可能没有重生。
+            <br><br>
+            你可能会注意到，约翰提到的所有标准都关乎现在，而非过去。
+            我是说，约翰没有问我们成为基督徒时是否经历了突然的生命转变。
+            许多基督徒，包括我自己，经历过这样的转变，但也有许多基督徒的归信经历是渐进的。
+            这并不意味着他们没有重生。
+            一些基督徒，尤其是那些在教会中长大的人，甚至无法指出自己重生的时间。
+            作为基督徒，我们相信归信和重生在内心是瞬间的，但有时在外表上是渐进的，甚至是不易察觉的。
+            另一方面，有些人声称有戏剧性的重生见证，
+            但随着时间的推移，他们在信仰中的缺乏坚持证明他们并没有经历真正的归信。
+            重生的最终标志不是过去的经历，而是现在的顺服。
+            不是过去的经历，而是现在的顺服。
+            就像有人在街上问你如何证明你出生了。
+            你不需要给他看出生证明，
+            你只需要让他看看你！
+            你还活着！
+            当然你已经出生了！
+            同样，如果你想看看自己是否重生，只需要看看现在的自己。
+            你在灵里是活的，还是死的？
+            <br><br>
+            或许你现在在问：“如果我没有重生呢？”
+            也许你长期以来一直声称自己是基督徒，却没有表现出重生的特征。
+            朋友，如果你意识到这一点，我想告诉你，你仍有盼望。
+            你的盼望与任何在基督之外的人一样。
+            你必须转向耶稣并信靠祂。
+            <br><br>
+            <h3>2. 信神的儿子</h3>
+            回到第9节，尼哥底母仍然不明白耶稣在说什么。
+            在接下来的三节经文中，耶稣批评尼哥底母未能理解祂的话。
+            以尼哥底母对旧约的背景，他本应能预见到耶稣关于重生的教导。
+            耶稣并没有引入复杂的概念。
+            祂只是在谈论“我们所知道的”和“我们所见过的”，但尼哥底母却不信。
+            事实上，如果他连重生这样“地上的事”都无法理解，那么他更无法理解关于神国更深奥的“天上的事”。
+            关于这些“天上的事”，只有耶稣有资格谈论。
+            只有耶稣知道这些“天上的事”，因为只有祂是从天降下的。
+            这是祂在第13节所说的：
+            “ 除了从天降下、仍旧在天的人子，没有人升过天。
+            ”
+            （如果你对圣经不熟悉，“人子”是耶稣常用的自称。）
+            <br><br>
+            接着在第14–18节，耶稣从重生的讨论转向解释人子为何从天而降。
+            换句话说，耶稣解释了神为何差遣祂的儿子来到这个世界。
+            答案是为了拯救人们脱离神的公义审判，使一切信祂的人得永生。
+            <br><br>
+            在第14–15节，耶稣将自己比作摩西在旷野举起的铜蛇。
+            这是旧约中的一个著名故事。
+            以色列人出埃及后，在旷野漂流了四十年。
+            他们失去耐心，似乎神的应许落空了。
+            他们对神说：“你们为什么把我们从埃及领出来、使我们死在旷野呢？这里没有粮，没有水，我们的心厌恶这淡薄的食物。”（民21:5）
+            显然，对神说这样的话是极大的罪，神因此惩罚他们。
+            在祂的愤怒中，神“使火蛇进入百姓中间，蛇就咬他们。以色列人中死了许多。”（民21:6）
+            但以色列人悔改了，他们请求摩西为他们祷告，求神拯救他们脱离蛇的伤害。
+            于是摩西为百姓祷告。
+            接下来发生的事是这样的：
+            耶和华对摩西说：「你制造一条火蛇，挂在杆子上；凡被咬的，一望这蛇，就必得活。」
+            摩西便制造一条铜蛇，挂在杆子上；凡被蛇咬的，一望这铜蛇就活了。”（民21:8–9）
+            <br><br>
+            现在耶稣说，祂就像那条铜蛇。
+            就像铜蛇一样，祂将被举起。
+            不是挂在杆子上，而是挂在十字架上。
+            凡仰望基督并信靠祂的人必得救。
+            注意，神给以色列人一条蛇来拯救他们脱离蛇的伤害。
+            是不是很奇怪，诅咒的象征竟成为救赎的途径？
+            这跟基督又有什么关系呢？
+            “基督既为我们受了咒诅，就赎出我们脱离律法的咒诅”（加3:13）
+            我们仰望那咒诅——神的愤怒倾倒在基督身上——好让我们自己从咒诅中得救。
+            朋友们，如果你在这里还不是基督徒，我劝你仰望基督。
+            从你的罪中、从你自己身上转离，凭信心仰望基督。
+            信靠祂，好让你从罪中得救。
+            你不需要做任何事，只需仰望基督。
+            <br><br>
+            查尔斯·司布真的自传中有一个著名的故事，讲述了他如何成为基督徒。
+            司布真是19世纪著名的英国传道人。
+            当他15岁还未信主时，一个周日早晨，他遇到了一场暴风雪。
+            途中，他偶然躲进了一间小小的卫理公会礼拜堂。
+            那天早上牧师不在，所以会众中的一位平信徒站起来讲道。
+            他没有受过教育，甚至因为浓重的口音连单词都发音不准。
+            他的经文是以赛亚书45:22：“地极的人都当仰望我，就必得救。”
+            他是这样讲的：
+            <br><br>
+            <div id="scr">
+            “亲爱的朋友们，这段经文非常简单。
+            它说：‘仰望。’
+            仰望不需要费多大力气。
+            它不是抬起你的脚或手指，只是‘仰望’。
+            一个人不需要上过大学才能学会仰望。
+            即使是最愚笨的人也能仰望。
+            一个人不需要年薪千镑才能仰望。
+            任何人都能仰望，连孩子也能仰望。
+            <br><br>
+            “但经文接着说：‘仰望我。’
+            你们许多人在仰望自己，但那毫无用处。
+            你们在自己身上永远找不到安慰。
+            耶稣基督说：‘仰望我。’
+            有些人说：‘我们必须等待圣灵的工作。’
+            你们现在不需要管那个。
+            仰望基督。
+            经文说：‘仰望我。’
+            <br><br>
+            “仰望我；我汗如血滴。
+            仰望我；我被挂十架。
+            仰望我；我被埋葬。
+            仰望我；我复活。
+            仰望我；我升天。
+            仰望我；我坐在父神右边。
+            可怜的罪人哪，仰望我！
+            仰望我！”
+            </div>
+            <br>
+            然后，这位讲道人转向司布真，直接对他说话。
+            <br><br>
+            <div id="scr">
+            “年轻人，你看起来很痛苦。
+            如果你不听从这段经文，你将永远痛苦——生也痛苦，死也痛苦。
+            但如果你现在听从，就在这一刻，你将得救。
+            年轻人，仰望耶稣基督。
+            仰望！
+            仰望！
+            仰望！
+            你不需要做任何事，只需仰望而得生。”
+          </div>
+            <br>
+            司布真写道：“我立刻明白了救恩的道路。
+            我不记得他还说了什么——我没有太注意——我完全被那个思想占据了。
+            就像铜蛇被举起时，人们只需仰望就得医治，我也是如此。
+            我一直在等待做五十件事。
+            但当我听到那个词‘仰望！’时，它对我来说是多么美妙的词！
+            哦！我仰望，几乎要把眼睛望穿。
+            就在那时，乌云散去，黑暗退去，那一刻我看见了阳光。
+            我可以立刻站起来，和他们中最热情的人一起歌唱，赞美基督宝贵的血和单单仰望祂的单纯信心。”
+            <br><br>
+            朋友们，仰望基督，别无他物。
+            耶稣基督值得你信靠，祂有拯救的大能。
+            现在就是仰望基督的最佳时机。
+            <br><br>
+            在第16–18节中，我们看到了对相信之人的应许，以及不信之人的结局。
+            相信的人将承受永生。
+            他们将进入神的国。
+            在最终的审判日，他们将从死里复活，在神面前被称为义。
+            他们将永远活在神的国里，那里不再有罪和死亡。
+            他们将在神的新天新地中享受与神完美、永恒的甜蜜相交。
+            这一切之所以可能，是因为神丰盛且怜悯的爱。
+            <br><br>
+            不信的人将被定罪。
+            我们常常谈论救恩，却没有清楚地说明我们是从什么中被拯救出来。
+            耶稣清楚地告诉我们：
+            我们是从神的愤怒和定罪中被拯救出来。
+            我们每个人身上的罪只配得圣洁神的公义审判。
+            神在最终审判中的愤怒将比火蛇更可怕。
+            圣经将地狱描述为火湖。
+            让我告诉你，这个比喻并不准确。
+            现实将比言语所能描述的更可怕。
+            朋友，你认为你能逃脱神的定罪吗？
+            你认为你会被特殊对待吗？
+            从你的罪中回转，信靠基督。
+            基督是唯一的出路。
+            基督是你唯一的盼望。
+            现在就信靠祂。
+            <br><br>
+            <h3>3. 来到光中</h3>
+            在最后三节经文中，耶稣解释了转向祂的人与不转向祂的人之间的区别。
+            祂首先说“光来到世间”。
+            这里祂指的是自己，因为在约翰福音的其他地方，耶稣被称为“真光”（1:9）。
+            耶稣说，人们拒绝光的原因是他们不想让自己的黑暗被暴露。
+            表面上，他们可能有许多理由不想来到基督面前。
+            他们可能抱怨缺乏证据，
+            或者觉得跟随祂不方便。
+            但内心深处，是因为他们知道基督是真光，会暴露他们的罪和软弱。
+            就像尼哥底母一样，他们骄傲，也害怕。
+            <br><br>
+            另一方面，那些来到光中的人愿意让自己的一切被暴露。
+            他们以谦卑和舍己的态度自愿来到光中。
+            他们知道自己的伤口只有在光中才能愈合。
+            如果你继续读下一章，你会发现耶稣和撒玛利亚妇人的故事正是如此。
+            与尼哥底母不同，撒玛利亚妇人是在光天化日之下来到耶稣面前。
+            耶稣暴露了她的罪和破碎，撒玛利亚妇人经历了尼哥底母未曾经历的重生。
+            撒玛利亚妇人来到了光中。
+            <br><br>
+            正如我们在第21节看到的，有一天，这些来到光中的人将清楚地显明神在他们身上的作为。
+            他们将成为世上的光。
+            神的荣耀将通过他们重生的生命彰显出来。
+            他们将欢喜来到真光基督面前，因为他们想要显明自己的行为，
+            但不是为了展示自己的义，而是为了显明在他们里面作工的神的大能。
+            <br><br>
+            朋友们，这一切都是可能的，只要你从黑暗中走出来，进入光中。
+            转向耶稣。
+            如果你还不认识耶稣，转向祂并信靠祂。
+            不要像尼哥底母那样，不愿放弃他的“不信”而无法理解耶稣的话。
+            敞开心扉，信靠基督，体验从神而来的重生。
+            不要像司布真那样，等待做五十件事才能找到救恩。
+            转向基督，定睛在祂身上。
+            来到光中，信靠祂。
+            <br><br>
+            让我们一起祷告。
+            <br><br>
+            我们在天上的父，我们为你的儿子耶稣，那真光，感谢你。
+            我们为这美好的经文感谢你。
+            我们感谢你是施拯救怜悯的神。
+            我们感谢你的爱，这爱在耶稣为我们死时显明给全世界。
+            我们祷告，求你使我们凭信心仰望基督。
+            我们祷告，求你使我们重生。
+            主啊，我们将自己交托在你慈爱的手中。
+            奉耶稣的名祷告，
+            阿们。
+
+
+
+
+
+
+
+
+
+
+            <div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
