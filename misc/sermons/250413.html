@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>250413</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>The Authority of Christ</h1>
+        <p>
+        Lord's Day, April 13, 2025, Connect Church Silicon Valley (with <a href="#chinese">Chinese translation</a>)
+        <br>
+        Matthew 8:5–13<br>
+        </p>
+
+        <div id="scr">
+          <sup>5&nbsp;</sup>When he had entered Capernaum, a centurion came forward to him, appealing to him, <sup>6&nbsp;</sup>“Lord, my servant is lying paralyzed at home, suffering terribly.” <sup>7&nbsp;</sup>And he said to him, “[Shall I come and heal him?]” <sup>8&nbsp;</sup>But the centurion replied, “Lord, I am not worthy to have you come under my roof, but only say the word, and my servant will be healed. <sup>9&nbsp;</sup>For I too am a man under authority, with soldiers under me. And I say to one, ‘Go,’ and he goes, and to another, ‘Come,’ and he comes, and to my servant, ‘Do this,’ and he does it.” <sup>10&nbsp;</sup>When Jesus heard this, he marveled and said to those who followed him, “Truly, I tell you, with no one in Israel have I found such faith. <sup>11&nbsp;</sup>I tell you, many will come from east and west and recline at table with Abraham, Isaac, and Jacob in the kingdom of heaven, <sup>12&nbsp;</sup>while the sons of the kingdom will be thrown into the outer darkness. In that place there will be weeping and gnashing of teeth.” <sup>13&nbsp;</sup>And to the centurion Jesus said, “Go; let it be done for you as you have believed.” And the servant was healed at that very moment.
+        </div>
+        <br><br>
+
+        Who is <i>really</i> in control of the world? When we’re children, we think that our parents are in control. They tell us what to do, and it seems like they can take care of everything. Then when we first begin our adult life, we start to think that <i>we</i> are in control. <I>I</I> get to choose what kind of job I want to have. <I>I</I> get to choose what kind of person I want to marry. <I>I</I> get to determine the future course of my life. But then some tragedy strikes. A car is totaled. A job is lost. A spouse is unfaithful. A family member dies. All of a sudden, the foundation of our life crumbles beneath us. For the first time in our life, it seems that <i>nobody</i> is in control. There is no one to turn to. There is not even a reason, or an explanation for what happens. Two weeks ago, the foundation literally crumbled. An earthquake in Myanmar killed about 6,000 people. A random slip of two tectonic plates, and thousands of lives are instantly changed. Who is <i>really</i> in control of the world? 
+        <br><br>
+        Many philosophers have concluded that, indeed, <i>nobody</i> is in control. The British philosopher Bertrand Russell wrote, “Man is the product of causes which had no [anticipation] of the end they were achieving. His origin, his growth, his hopes and fears, his loves and his beliefs, are but the outcome of accidental [collisions] of atoms. .&nbsp;.&nbsp;. All the labors of the ages, all the devotion, all the inspiration, all the noonday brightness of human genius, are destined to extinction in the vast death of the solar system.” [<a href="#n1" id="l1">1</a>] 
+        <br><br>
+        Yet the importance of this question is not merely philosophical. The question of who is in control affects every aspect of our lives. It affects whom we trust and the ultimate direction of our existence. If <i>we</i> are in control, then we ought to trust ourselves and determine our own life purpose. If <i>nobody</i> is in control, then, as Russell observed, there really is no point in doing much of anything at all. Obviously, neither view is acceptable. Life shows us repeatedly that we are not in control. But the idea that <i>nobody</i> is in control is almost too intolerable to even be meaningful. 
+        <br><br>
+        The Scriptures tell us the real answer to this question, and this is the subject to which our passage for today shall turn our attention towards. Who is <i>really</i> in control of the world? This passage tells us in no uncertain terms. <i>Jesus Christ</i> is in control. He deserves our trust, and he demands our surrender.
+        <br><br>
+        Please look with me now to the passage that we have just read. Our passage comes from the eighth chapter of the Gospel of Matthew. Jesus has just finished his Sermon on the Mount, and Matthew continues the narrative by highlighting three healing miracles. Our focus today is on the second of these three miracles. 
+        <br><br>
+        We are presented with a man who approaches Jesus: a centurion. He asks Jesus to heal his servant, who is paralyzed. Two things are highlighted. First, he is a person of authority. A centurion had command over a regiment of around one hundred soldiers, hence the name. Second, he is a Gentile. It was unlawful for Jews and Gentiles to associate with one another. The fact that the centurion represented the oppressive Roman Empire would’ve only added to the offense. Luke chooses to soften some of the ethnic tension in his account of this event (Luke 7:1–10) by describing how some Jewish elders tell Jesus about how much the centurion loved the Jewish nation. Matthew, on the other hand, omits this detail, choosing instead to lean into the ethnic tension. Only twice in the Gospel of Matthew does a Gentile come to Jesus asking for a miracle: here and in Matthew 15 with the account of the Canaanite woman. In both cases, the ethnic tension is front and center in the narrative. 
+        <br><br>
+        In verse 7, Jesus responds in a mysterious way: “Shall <I>I </I>come and heal him?” Both the ESV and the CUV render Jesus’ response as a statement, but the NIV, which renders it as a question, is more likely given the context. (We must remember that ancient manuscripts of the Bible did not have punctuation marks, so there is interpretive ambiguity.) Furthermore, there is an added emphasis on the “I” in the way that the question is formed. “Shall <I>I</I> come and heal him?” Jesus is pressing into the obvious problem in the centurion’s request: a Jew like Jesus could not enter the centurion’s home, because he was a Gentile (cf. Acts 10:28). 
+        <br><br>
+        But still, this is a strange way of responding, isn’t it? It could not have been the response that the centurion was expecting. Similar to the later story of Jesus and the Canaanite woman, Jesus <i>seems</i> to express reluctance to heal the centurion’s servant. He seems unwilling, even cold. But, of course, the narrative shows us that Jesus has other intentions with his question. He knows exactly what he is about to do. But instead of responding immediately, he hides his true intentions to elicit a greater confession of faith from the centurion. He desires to know the true depth of the faith that grounds the centurion’s request. He conceals his willingness to save, <i>so that</i> the centurion would persevere in his appeal. It is in this way that Jesus receives the greater glory.
+        <br><br>
+        At this point, we can take a moment to pause and reflect on the mysterious ways in which God sometimes deals with us. We do not always receive the answer from God that we would like, or even the one that we would expect given his character. The centurion would not have been wrong to expect a more immediate answer from the Savior. It would appear more consistent with the merciful character of Christ if he had dropped everything to come and heal the servant. But the truth of the matter is that God seeks his own glory above our comfort. And God is most glorified in us when we are most dependent on him. God is glorified not when we are sufficient in ourselves, but when we are sufficient in him. This, perhaps, is one of the reasons why God’s providence in our lives is sometimes so mysterious. God knows our own capacity for faithfulness better than we ourselves know. We may feel that we have hit the limits of our faith, but God knows the true extent of our trust. And we can be certain that God <i>never</i> demands that which he does not also supply. When trials are extended, faith is increased. And when faith is increased, God is magnified. There is no greater worship that we can supply to God than our persistent faith in the face of extended suffering. God is trustworthy even when he doesn’t make sense to us. As Job said, “Though he slay me, I will hope in him” (Job 13:15). Or as Isaiah said, “Let him who walks in darkness and has no light trust in the name of the L<span id="sc">ORD</span> and rely on his God” (Isa 50:10). Or as Paul said, “Oh, the depth of the riches and wisdom and knowledge of God! How unsearchable are his judgments and how inscrutable his ways!” (Rom 11:33). 
+        <br><br>
+        Then in verse 8, the centurion picks up on the evident problem that is raised by Jesus’ question but also proposes a solution. First, he acknowledges his unworthiness. He knows that, as an unclean Gentile, Jesus could not come to his home. The problem is one of Jewish law and custom. But we cannot ignore the <i>spiritual</i> aspect, where the centurion feels shame not primarily for his ethnic background, but for his sin. We are reminded of Peter’s response upon realizing that he was in the presence of Jesus the Son of God: “Depart from me, for I am a sinful man, O Lord” (Luke 5:8).
+        <br><br>
+        I wonder, have you ever realized your own unworthiness before Jesus in the same way as this centurion? Have you truly felt and experienced this penetrating conviction of your own corruption? Have you wept over sin? I ask myself this question too. We cannot deeply understand the heart of Christ and the cross of Christ without knowing our own sin. I am afraid that, too often, we feel entitled to Christ and his love. The first work of the Holy Spirit is always the conviction of sin. Our gospel is powerless—indeed, it would not be a gospel at all—if it did not first begin with conviction of sin. Friends, do you know this gospel? There is no other gospel than this one. There is no other gospel than the gospel of Jesus’ death in our place for the forgiveness of sin. We cannot speak of the blessings of the gospel—peace, joy, hope—without first knowing the <i>power</i> of the gospel—the cross of Christ and our sin that required it. What churches today need more than ever is a return to the core doctrines of the gospel—sin, repentance, faith, and the cross of Christ.
+        <br><br>
+        The centurion tells Jesus that he doesn’t need to come to his home. The centurion knows the power of the Savior. The centurion knows who Jesus is. The centurion believes in Jesus. The servant will be healed, if Jesus would only say the word. Jesus does not need to be present to perform a miracle. Jesus acts simply by his words. This is an astonishing recognition of Christ’s power and deity. Up until this point in the Gospel of Matthew, there is no record of Jesus performing a miracle from afar. The centurion compares Jesus’ authority with the authority that he knows from military experience. “I too am a man under authority, with soldiers under me.” In the military, all the centurion has to do is speak, and it <i>happens</i>. The centurion recognizes that Jesus has an authority that transcends his own. All of <i>creation</i> is subordinate to the words of Christ. The centurion would not have fully realized it, but Christ is God in the flesh. The words of Jesus are the words of God. And when God speaks, things <i>happen</i>. “God said, ‘Let there be light,’ and there was light” (Gen 1:3). God says through Isaiah, “My word .&nbsp;.&nbsp;. that goes out from my mouth .&nbsp;.&nbsp;. shall not return to me empty, but it shall accomplish that which I purpose, and shall succeed in the thing for which I sent it” (Isa 55:11).
+        <br><br>
+        I think it’s astonishing that a man of authority like the centurion would have the spiritual humility to recognize the superior authority of Christ. Wealth and power are, almost always, curses and not blessings. They blind us from our real spiritual condition. “It is easier for a camel to go through the eye of a needle than for a rich person the kingdom of God” (Matt 19:24; Mark 10:25; Luke 18:25). Friends, be cautious that you do not pursue wealth and power. “No one can serve two masters, for either he will hate the one and love the other, or he will be devoted to the one and despise the other. You cannot serve God and money” (Matt 6:24; Luke 16:13). Kids, when you think about what you want to do when you grow up, do <i>not</i> fall into the trap of deciding on the basis of money and influence. Think instead about how you can most glorify <i>God</i>. This is a great question to ask your parents this week. How do I glorify God in my future career? How do I balance the necessity to support myself financially against the temptations of wealth? 
+        <br><br>
+        After hearing the centurion’s declaration of faith, Jesus is amazed. His faith is greater than even the Jews. The centurion has grasped the power and sovereignty of Christ in a way that no one else has. The Jews had the Scriptures to point them to the Christ, but it is this <i>Gentile</i> centurion who has recognized the Messiah!
+        <br><br>
+        Then Jesus tells his followers something very strange. The kingdom of heaven will be filled with Gentiles coming from east and west, just like this centurion. On the other hand, many Jews, these “sons of the kingdom”, will be cast into hell. Of course, the Jewish expectation was the exact opposite. They expected the kingdom of God to be a restoration of national Israel led by the Messiah. Jesus completely dispels this notion. He makes it clear that entrance to the kingdom of heaven is not determined by ethnic identity. It is determined by recognizing the authority of the Messiah and responding in faith. It is not the biological offspring of Abraham who will enjoy the feast of heaven; it is the <i>spiritual</i> offspring of Abraham. We are reminded of Jesus’ words earlier in the Gospel. He tells the Pharisees, “Do not presume to say to yourselves, ‘We have Abraham as our father,’ for I tell you, God is able from these stones to raise up children for Abraham” (Matt 3:9). Salvation comes by faith in Christ alone. The foolish presumption of the Jews shows us that we are not to point to <i>anything</i> but faith in Christ as our means of salvation. Not family background, not church association, and not baptism. The creed of the Reformers is as true today as it was yesterday. Salvation is by grace alone, in Christ alone, through faith alone.
+        <br><br>
+        Kids, I fear that many of you are like these “sons of the kingdom” in v. 12. You have all the outward signs of Christian identity. You go to church, and you even read your Bible from time to time. You may have even been baptized! But you are utterly dead in your sins. You have not known Christ. You have not experienced the new birth. You may have had some spiritual experiences, but you are not yet born again of the <i>Holy</i> Spirit. You obey God in your actions but love the world in your heart. You do not yet know what it means to be “poor in spirit” (Matt 5:3). You have not yet experienced that “hunger and thirst for righteousness” (Matt 5:6). I urge you to turn to Christ! Surrender yourself to him! Pray to God that you would receive the Holy Spirit and experience genuine conviction of sin and assurance of salvation. This is a request that, if made in faith, God will not fail to honor.
+        <br><br>
+        While we are on this topic, I have an additional comment to make to parents in our congregation. How do we ensure that our children are not these “sons of the kingdom .&nbsp;.&nbsp;. thrown into the outer darkness”? Many of you worry about why so many children are growing up and abandoning their faith. This is an unfortunate reality, but not a surprising one at all. On the one hand, it is good for us to ask how we can better equip our kids to persevere in their faith. But it is perhaps a better question to ask whether our kids are even converted in the first place. Kids “abandon their faith” because they carried the label of Christian without the reality of true saving faith. True faith always perseveres. John tells us, “They went out from us, but they were not of us; for if they had been of us, they would have continued with us. But they went out, that it might become plain that they all are not of us” (1 John 2:19). Unfortunately, the high rate of apostasy in our churches has revealed the uncomfortable fact that we do not take conversion seriously. Children leave the church because Christianity is part of their cultural identity and not their inner being. It is what they grew up with and nothing more. They change and leave home, as all people do, and they discover that they have no more need of it. In other words, they are simply not converted. They have been assured of their salvation from a young age without the true reality of the Spirit’s work within them. Their faith is not genuine, which is why we should not be surprised when they grow up and abandon it. 
+        <br><br>
+        I have four points of response to this serious problem. 
+        <br><br>
+        First, we must return to the true gospel. We need to go back to the doctrine of original sin—that every child is dead in their trespasses, a descendant of Adam, in conscious rebellion against God. We need to stop thinking that we can attract kids to the faith and keep them there through human means. Conversion is always supernatural. Kids should not be “lured into” the faith through involvement or a sense of belonging and responsibility. I sincerely believe that we are doing things wrong if the church feels like “home” to an unconverted child. If kids feel spiritually comfortable or “at home” in church, then they will never awaken to the reality of sin. We need to insist upon the uncomfortable, biblical assessment of their sin and call them to repentance. We need to insist upon the power of God’s word and the supernatural activity of the Holy Spirit in bringing kids to faith and sustaining them in discipleship. 
+        <br><br>
+        Second, we must be slow and cautious in affirming professions of faith. Childhood is when most people come to faith, but it is also when people are most susceptible to giving false professions of faith. Sometimes, obedience and a desire to conform is mistaken for the genuine work of the Holy Spirit in conversion. Giving assurance of salvation to a child’s sincere but false profession of faith is an easy way to make sure that this child <i>never</i> experiences true conversion. Therefore, it is generally unwise to baptize children who have not yet had their faith significantly tested. It is also unwise to allow children to serve or lead in areas of significant spiritual responsibility, <i>especially</i> if their faith is not yet certain. It is not right to ask a child to act like a Christian when they have not yet been converted. Instead, when a child professes faith, we should celebrate that with them without offering concrete assurance of salvation. It is healthiest to adopt a “wait and see” mentality. This is more true the younger they are. 
+        <br><br>
+        Third, ask yourself whether the gospel is regularly being communicated in your household. I am not talking about vague expressions such as “God loves you” or “God will take care of you”, which don’t communicate the gospel at all. I am talking about the biblical gospel of Christ dying for our sins and rising from the dead. If the biblical gospel is <i>assumed</i>, it <i>will</i> be lost. Learn how to apply this gospel to situations that your kids are facing in their everyday lives. Consider setting aside time once a week or even once a day to study the Bible with your kids. We have a bunch of blank family devotions booklets in our classroom. They’re free for you to take. This is a great way to model real-life Bible application to your children. 
+        <br><br>
+        Fourth, we need to pray, both as parents and as a church, that our children would hear the gospel and respond in faith. We need to pray for the Spirit’s work in their hearts, and also for our wisdom in discerning genuine signs of the new birth. The Spirit is active and powerful, and he does not fail in his work of conversion.
+        <br><br>
+        Finally, before we go onto some points of application, some comments are necessary for the last phrase in this verse. “In that place, there will be weeping and gnashing of teeth.” This is Jesus’ way of describing hell. Unfortunately, the doctrine of hell and judgment is frequently passed over in our modern churches. When we speak of passages such as these, we are too timid and almost apologetic. However, we cannot even speak coherently about the gospel if we do not also speak of judgment and hell. We cannot make sense of the cross without hell. There is no logical connection between the death of Christ and our salvation, if Christ did not die in our place for a <i>reason</i>. 
+        <br><br>
+        The Bible consistently teaches us that God is a God of love and a God of justice. These are inseparable qualities within the nature of God. God is entirely love and entirely just. The biblical doctrine of hell is simply a consequence of the nature of God against the nature of sinful humanity. Because God is entirely just and tolerates no sin, he must punish evil. In this life, we all experience the common grace of God, which is what sustains our day-to-day existence. But following this life, at the final judgment, the full weight of God’s wrath will descend upon sinners who have not placed their trust in Christ. The penalty for our lifetime of rebellion against God’s sovereignty is an eternity in hell. Jesus described hell as “unquenchable fire” (Matt 3:12; Mark 9:43). Paul described hell as “eternal destruction, away from the presence of the Lord” (2 Thess 1:9). John described hell as a “lake of fire” (Rev 20:15), where “the smoke of their torment goes up forever and ever, and they have no rest, day or night” (Rev 14:11). We are taught that hell is eternal, conscious, and terrible. 
+        <br><br>
+        So we ask, how should we respond to the biblical doctrine of hell? 
+        <br><br>
+        First, we should be thankful. We should be thankful that the true God is one who punishes evil. Hell is what allows us to rest peacefully at night when we experience evil in our life. Hell is what allows us to forgive those who wrong us. With Abraham, we can say, “Shall not the Judge of all the earth do right?” (Gen 18:25 KJV). 
+        <br><br>
+        Second, the doctrine of hell should move us to the gospel. 
+        <br><br>
+        If you are here and you’re not a Christian, you may be offended by the idea of hell. But I invite you to set aside your feelings and think <i>rationally</i> about this. Do you <i>not</i> desire the execution of justice in <i>your</i> life? If somebody defrauds you, do you mean to suggest that you would <i>not</i> go to court and sue that person? The Bible is in total agreement with you on this point. Justice <i>is</i> necessary. The only difference between <i>your</i> thinking and the Bible is that the Bible says that <i>you</i> are in the wrong, and God is in the right. Might I suggest that the reason why you reject the idea of hell is because <i>you</i> are that thief, that murderer, that adulterer who wants to keep doing wrong without suffering the punishment? There is no surprise that you find the idea of hell repulsive. Just as a criminal despises the idea of prison, you are a sinner who despises the idea of hell. 
+        <br><br>
+        But friend, if you are convinced of your sin and convinced of God’s right to condemn you, I have wonderful news for you. The incredible news of the gospel is that the Judge of all the world has effectively taken your place in hell. In Christ, God became a man and endured all the temptations that we face, yet without sin. Christ took the punishment of hell on the cross. He drank the cup of God’s wrath, rising from the dead three days later to show that there was not one drop left. He died under the weight of God’s wrath in the place of sinners, so that, if you would only turn from your sin and trust in him, you could be forgiven <i>today</i>. Do not be like one these “sons of the kingdom,” cast into hell for not recognizing the authority of Christ. I urge you to turn to Christ and be reconciled to God today!
+        <br><br>
+        Christians, brothers and sisters, we must not shy away from these teachings about hell and final judgment. Without hell, we can only preach a good news that is one among many others. But with hell, we can be certain that we are preaching the <i>only</i> good news, and the <i>only</i> way of salvation. Christ is the light in the darkness, but we have to get the <i>darkness</i> right if we are to see something of his light. We have to boldly proclaim these fundamental truths of salvation, if we are to see any kind of spiritual power in our gospel ministry.
+        <br><br>
+        Before we conclude, I’d like to say a few things about the application of this passage. We’ve learned that Jesus has authority over everything. King Jesus is in control. How do we respond? First, we trust Jesus. Second, we surrender all to Jesus. 
+        <br><br>
+        Jesus is totally worthy of our trust. Not a sparrow falls to the ground apart from his sovereign will. He is the source of all our blessings and all our sorrows. Nothing is random in this world. “Whatever the L<span id="sc">ORD</span> pleases, he does, in heaven and on earth, in the seas and all deeps. He it is who makes the clouds rise at the end of the earth, who makes lightning for the rain and brings forth the wind from his storehouses” (Ps 135:6–7). “Who has spoken and it came to pass, unless the Lord has commanded it? Is it not from the mouth of the Most High that good and bad come?” (Lam 3:37–38). We do not need to fear for a single moment that we are outside the center of God’s plan. God is “the Alpha and the Omega .&nbsp;.&nbsp;. who is and who was and who is to come” (Rev 1:8). Brothers and sisters, this is how we find comfort in our sorrows. This is how we find relief in our anxiety. We have a sovereign God. We know who holds tomorrow. 
+        <br><br>
+        But the greatest expression of trust in God is neither comfort nor relief from anxiety. The greatest expression of our trust in God is our total surrender to Jesus Christ. Brothers and sisters, we cannot have truly known the authority of King Jesus if we are not prepared to lay our everything at his feet. I fear that many of us are like the rich young ruler (Matt 19:16–29; Mark 10:17–31; Luke 18:18–30). We are willing to be righteous, but not willing to give up our finances. Willing to tell the truth, but not yet willing to suffer for it. Willing to serve, but not yet willing to be uncomfortable. Willing to come to Jesus, but not yet willing to be ridiculed for it. Willing to live for Jesus, but not yet willing to die for Jesus. Brothers and sisters, are you willing to die for Jesus? This is a matter of trust. A person unwilling to die for Jesus is not fit to be his disciple. This is a person who trusts in life over Jesus. “If anyone comes to me and does not hate .&nbsp;.&nbsp;. his own life, he cannot be my disciple” (Luke 14:26). Brothers and sisters, are you willing to die for Jesus? Have you surrendered everything to Jesus? 
+        <br><br>
+        I’m very thankful that next week, Lord willing, we’ll see a few people here taking this step of surrender to Christ by receiving baptism. Baptism is a sign of us uniting ourselves to Christ’s death (Rom 6:3–4). It is a way for us to tell the world, “I have been crucified with Christ. It is no longer I who live, but Christ who lives in me” (Gal 2:20). So to conclude, I’d like to end with a story about one man’s incredible surrender to Christ as he was baptized 200 years ago. It is recorded in the biography of Adoniram Judson. 
+        <br><br>
+        Adoniram Judson was one of the first American missionaries, and he served in the country of Burma between 1813 and 1850. His life was one of intense suffering and immense faithfulness. From the time he landed in the country, it took him six years before he saw the first Burmese man come to faith. He was imprisoned for two years because he was suspected of being a British spy. He saw two of his three wives and seven of his thirteen children die. We can only praise God for the extraordinary life of surrender that Judson lived for the sake of Christ and his gospel. 
+        <br><br>
+        However, the story I’d like to highlight is not about Judson himself. It’s about one of the first Burmese men to come to faith in Christ under his preaching. The year was 1819, about six years into Judson’s time in Burma. At that point, there were four Burmese believers who had been converted under Judson’s preaching. Unfortunately, there was a new king on the Burmese throne. There was serious uncertainty about how he would react to the news that some Burmese were converting to Christianity. If they displeased the king, they could expect imprisonment or even execution. There was an enormous tension in that first Burmese church. Out of the four believers, only one was baptized. Baptism brought about a huge danger, it being a public declaration of their allegiance to Christ. The danger of the persecution made two of the remaining believers hesitant to take the final step of applying for baptism. But then Judson asked the fourth believer whether he was ready to apply for baptism. Judson asked, “Do you love Christ more than your own life?” The man replied, “very slowly and deliberately, ‘When I meditate upon this religion, I know not what it is to love my own life.’” [<a href="#n2" id="l2">2</a>] 
+        <br><br>
+        Friends, may it be so for us as well. May we surrender our all to the authority of Christ, so that we know not what it is to love our own lives. 
+        <br><br>
+        Let’s pray.
+        <br><br>
+
+        <br><br>
+        [<a href="#l1" id="n1">1</a>] Bertrand Russell, “A Free Man’s Worship,” 1903, https://www3.nd.edu/~afreddos/courses/264/fmw.htm.
+        <br><br>
+        [<a href="#l2" id="n2">2</a>] Courtney Anderson, <i>To the Golden Shore: The Life of Adoniram Judson</i> (Valley Forge, PA: Judson Press, 1987), 218.
+        <br><br>
+
+
+
+        <h2 id="chinese">中文翻译</h2>
+        马太福音 8:5–13
+        <br><br>
+        <div id="scr">
+          <sup>5&nbsp;</sup>耶稣进了迦百农，有一个百夫长进前来，求他说：<sup>6&nbsp;</sup>「主啊，我的仆人害瘫痪病，躺在家里，甚是疼苦。」<sup>7&nbsp;</sup>耶稣说：「我去医治他。」<sup>8&nbsp;</sup>百夫长回答说：「主啊，你到我舍下，我不敢当；只要你说一句话，我的仆人就必好了。<sup>9&nbsp;</sup>因为我在人的权下，也有兵在我以下；对这个说『去！』他就去；对那个说『来！』他就来；对我的仆人说：『你做这事！』他就去做。」<sup>10&nbsp;</sup>耶稣听见就希奇，对跟从的人说：「我实在告诉你们，这么大的信心，就是在以色列中，我也没有遇见过。<sup>11&nbsp;</sup>我又告诉你们，从东从西，将有许多人来，在天国里与亚伯拉罕、以撒、雅各一同坐席；<sup>12&nbsp;</sup>惟有本国的子民竟被赶到外边黑暗里去，在那里必要哀哭切齿了。」<sup>13&nbsp;</sup>耶稣对百夫长说：「你回去吧！照你的信心，给你成全了。」那时，他的仆人就好了。
+        </div>
+            
+        <br><br>
+
+        谁才是真正掌管世界的那一位？
+        小时候，我们以为父母掌控一切。
+        父母告诉我们该做什么，他们看起来能处理所有事情。
+        当我们成年时，我们以为自己才是掌控者。
+        我可以选择从事的工作。
+        我可以选择要嫁娶的人。
+        我可以决定未来的道路。
+        灾难来临时，总是突如其来，让人措手不及。
+        它可能是车祸
+        是失业
+        或是配偶不忠。
+        亲人离世。
+        我们的生活在突然之间陷入僵局。
+        我们第一次感觉到，没有人能够掌控一切。
+        我们不知道该向谁求助。
+        甚至没有理由，没有解释。
+        两个星期前，这种灾难变成了现实。
+        缅甸发生地震，约六千人遇难。
+        两块地壳板块的随机滑动，彻底改变了几千人的命运。
+        那到底，谁在掌管这个世界？
+        <br><br>
+        很多哲学家得出的结论是：没有人掌管世界。
+        英国哲学家罗素这样写道：
+        “人，是那些不能预见结局的原因所造成的产物。
+        人的起源与成长、希望与恐惧、爱与信仰，只不过是原子偶然碰撞的产物。
+        历代人的努力、奉献、灵感，以及人类天才最辉煌的时刻，终将消失在太阳系那浩瀚的死亡之中。”
+        <br><br>
+        但这个问题的重要性，不只是哲学性的。
+        “谁在掌管”这个问题，会影响我们生活的方方面面。
+        它决定了我们信靠谁，也决定了我们人生最终的方向。
+        如果我们是掌控者，那我们就该信靠自己，为自己设定人生目标。
+        如果没有人掌管，就像罗素说的，其实我们做任何事都没有意义。
+        但显然，这两个观点都无法令人接受。
+        生活一次又一次告诉我们，我们并不掌控一切。
+        但“无人掌管”的想法，又让人几乎无法承受，甚至无法理解。
+        <br><br>
+        圣经却告诉我们这个问题真正的答案。今天的经文要带我们回到这个核心问题。
+        谁才是真正掌管世界的那一位？
+        这段经文非常清楚地告诉我们：
+        耶稣基督掌管一切。
+        他配得我们的信靠，也配得我们的降服。
+        <br><br>
+        让我们一起再看刚才所读的经文。
+        这段经文出自《马太福音》第八章。
+        耶稣刚刚讲完登山宝训，马太接着记录了三件医治的神迹。
+        我们今天的焦点，是这三件神迹中的第二件。
+        <br><br>
+        有一个人来到耶稣面前， 他是一个百夫长。
+        他请求耶稣医治他的仆人，那人瘫痪了。
+        这段经文强调了两件事。
+        第一，他是一个有权柄的人。
+        一个百夫长，大约统领一百名士兵。
+        第二，他是个外邦人。
+        犹太人与外邦人本来是不能互相往来的。
+        更何况，这位百夫长代表的是压迫以色列人的罗马帝国，这更让人反感。
+        路加在记载这件事时，尝试缓和种族之间的紧张气氛，他说有犹太长老来告诉耶稣，这百夫长“爱我们的百姓”。
+        但马太没有讲这些，反而选择保留并强化这种紧张关系。
+        在整本《马太福音》里，只有两次外邦人主动来求耶稣行神迹：一次是这段经文里的百夫长，另一次是在第十五章的迦南妇人。
+        而在这两次记载中，族群之间的隔阂都是故事的核心。
+        <br><br>
+        第七节，耶稣的回应很神秘：“我来医治他吗？”
+        和合本和英文ESV版本都把这句翻成陈述句，但像NIV这样用问句来翻译，其实更贴合当时的语境。
+        （古代圣经手稿里没有标点符号，所以翻译上有解释的空间。）
+        而且在希腊文里，这句话特别强调了“我”这个字。
+        “我来医治他吗？”
+        耶稣点出了百夫长请求里最敏感的地方：按犹太人的律法，像耶稣这样的犹太人，是不能进入外邦人的家。
+        这样的回应方式，着实令人意外 
+        这肯定不是百夫长预期的回答。
+        就像后来耶稣对待迦南妇人的方式一样，
+        耶稣似乎一开始并不愿意医治这位仆人，甚至有点冷漠。
+        但我们知道，耶稣其实另有打算。
+        他完全清楚自己将要做什么。
+        他没有立刻回应，是为了激发百夫长更深的信心告白。
+        耶稣想要看清，这个百夫长的信心到底有多大、有多真。
+        他暂时隐藏了自己愿意施救的心意，是为了让百夫长继续坚持祈求。
+        这样，耶稣就能得着更大的荣耀。
+        <br><br>
+        到这里，我们可以稍作停顿，思想一下神对我们所行的一些奥秘。
+        我们并不总是从神那里得到我们所盼望的回应，甚至有时候，连一个符合祂慈爱性情的回应都没有。
+        百夫长若期待主耶稣立刻回应他，那并不为过。
+        毕竟，如果耶稣马上放下一切去医治这位仆人，看起来才更符合他那满有怜悯的性情。
+        但真实的情况是，神看重祂的荣耀，胜过我们的安逸。
+        当我们最依靠祂的时候，神就在我们里面得着最大的荣耀。
+        神得荣耀，不是在我们自给自足的时候，而是在我们完全倚靠祂的时候。
+        这或许也是为什么，神在我们生命中的带领有时会这么神秘难测。
+        神比我们更了解我们自己的忠心能到什么地步。
+        我们可能觉得信心已经到了极限，但神知道我们真正能信靠祂到什么程度。
+        而且，我们可以确信，神绝不会要求我们承担祂不供应的。
+        试炼若延长，信心就增长。
+        信心若增长，神的荣耀就越发显明。
+        在漫长的苦难中坚持信心，是我们能够献给神的最真实、最深的敬拜。
+        即使我们不明白，神仍然值得信靠。
+        正如约伯所说：“他虽然杀我，我却要仰望他。”（约伯记13:15）
+        "或像以赛亚说的：“ 这人行在暗中，没有亮光。 当倚靠耶和华的名， 仗赖自己的　神。
+        ”（以赛亚书50:10）"
+        正如保罗所说：“深哉， 神丰富的智慧和知识！他的判断何其难测，他的踪迹何其难寻！”（罗马书11:33）
+        <br><br>
+        接着在第八节，百夫长抓住了耶稣提问中所带出的明显问题，但他也提出了一个解决办法。
+        首先，他承认自己不配。
+        他知道自己是一个不洁净的外邦人，耶稣按理是不能到他家来的。
+        这个问题表面上是关于犹太人的律法和习俗。
+        但我们不能忽略属灵层面的因素——百夫长感到羞愧，不只是因为自己的族裔，而是因为自己的罪。
+        这让我们想到彼得在意识到自己站在神子耶稣面前时的回应：
+        “主啊，离开我，我是个罪人！”
+        <br><br>
+        我想问你，你是否也像这位百夫长一样，意识到自己在耶稣面前是多么不配？
+        你是否真正感受到、经历过那种对自己罪恶的深刻责备？
+        你是否为自己的罪流过泪？
+        我也在问我自己。
+        若我们不认识自己的罪，就无法真正明白基督的心和基督的十字架。
+        我担心，我们常常觉得我们理所当然地配得基督和祂的爱。
+        圣灵的第一项工作，就是使人知罪。
+        如果我们的福音不是从知罪开始，它就毫无能力——甚至不能称为福音。
+        亲爱的朋友，你认识这样的福音吗？
+        除了这个福音，再没有别的福音。
+        除了耶稣替我们死、使我们的罪得赦免的福音，再没有别的福音。
+        我们若不先认识福音的大能——也就是基督的十字架和我们的罪需要十字架——就无法真正谈论福音所带来的祝福——平安、喜乐、盼望。
+        今天的教会比以往任何时候都更需要回归福音的核心教义——罪、悔改、信心和基督的十字架。
+        <br><br>
+        百夫长告诉耶稣，不需要到他家里来。
+        百夫长知道救主的权能。
+        百夫长知道耶稣是谁。
+        百夫长相信耶稣。
+        只要耶稣说一句话，仆人就会痊愈。
+        耶稣不需要在场，就能行神迹。
+        耶稣仅凭祂的话语就能行动。
+        这是对基督能力和神性的惊人认识。
+        在这之前，耶稣还没有远距离行神迹的记录。
+        百夫长把耶稣的权柄与他从军经验中所知道的权柄相比。
+        “我在人的权下，也有兵在我以下”
+        在军队中，百夫长只需说话，事情就会发生。
+        百夫长认识到，耶稣拥有一种超越他自己权柄的权柄。
+        所有的创造物都服从基督的话语。
+        百夫长可能没有完全意识到，但基督是道成肉身的神。
+        耶稣的话就是神的话。
+        当神说话时，事情就发生了。
+        “神说，要有光，就有了光。”（创世记1:3）
+        神通过以赛亚说：“我口所出的话也必如此， 决不徒然返回， 却要成就我所喜悦的， 在我发他去成就的事上必然亨通。”（以赛亚书55:11）
+        <br><br>
+        我觉得很惊讶，像百夫长这样有权柄的人竟然有属灵的谦卑，能够认识到基督的至高权柄。
+        财富和权力，几乎总是诅咒，而不是祝福。
+        财富与权力使我们看不清自己真正的属灵状况。
+        “骆驼穿过针的眼，比财主进 神的国还容易。”（马太福音19:24；马可福音10:25；路加福音18:25）
+        不要做财富和权力的奴仆。
+        「一个人不能事奉两个主；不是恶这个、爱那个，就是重这个、轻那个。你们不能又事奉　神，又事奉玛门。」（马太福音6:24；路加福音16:13）
+        孩子们，当你们考虑长大后想做什么时，不要落入根据金钱和影响力来决定的陷阱。
+        而是要思考如何才能最荣耀 神。
+        这个星期可以跟家人讨论这个话题。
+        “怎样在未来的职业中荣耀 神？”
+        “怎样让自己经济独立却不被财富诱惑？”
+        <br><br>
+        听到百夫长的信心宣告后，耶稣感到惊讶。
+        百夫长的信心比犹太人的还要大。
+        百夫长以他人做不到的方式，领悟了基督的权能和主权。
+        犹太人有圣经指引他们看到基督，但正是这位外邦人百夫长认出了弥赛亚！
+        <br><br>
+        然后耶稣对跟随他的人说了件听起来非常奇怪的事。
+        天国将满是从东、从西来的外邦人，像这位百夫长一样。
+        另一方面，许多犹太人，这些“本国的子民”，将被抛进地狱。
+        当然，犹太人的期待正好相反。
+        他们期待的是，神的国度将是由弥赛亚领导的民族以色列的复兴。
+        耶稣完全打破了这个观念。
+        他明确指出，进入天国不是由种族身份决定的。
+        而是由认识弥赛亚的权柄并以信心回应决定的。
+        享受天国筵席的，不是亚伯拉罕的肉身后裔，而是亚伯拉罕的属灵后裔。
+        这让我们想起耶稣在福音书中早先的话。
+        他对法利赛人说：“不要自己心里说：『有亚伯拉罕为我们的祖宗。』我告诉你们，　神能从这些石头中给亚伯拉罕兴起子孙来。”（马太福音3:9）
+        得救的唯一路径，乃是对基督的信心。
+        犹太人愚蠢的自负提醒我们，得救的唯一途径是信靠基督，而不是依赖任何其他东西。
+        不是家族背景，不是教会关系，也不是洗礼。
+        基督教自改教后的信条，一贯如此。
+        得救唯独是恩典，唯独在基督里，唯独通过信心。
+        <br><br>
+        孩子们，我担心你们中的许多人像第12节中的“本国的子民”一样。
+        你们有基督徒外在的身份标志。
+        你们去教堂，偶尔也读圣经。
+        你们甚至可能已经受洗了！
+        但是，你们在罪中是死的。
+        你们还没有认识基督。
+        你们还没有经历重生。
+        你们或许有一些属灵的经历，但你们还没有从圣灵重生。
+        你们在行为上遵守神的命令，却在心里爱世界。
+        你们还不知道什么是“心灵贫穷”（马太福音5:3）。
+        你们还没有经历过“为义饥渴”（马太福音5:6）。
+        我劝你们转向基督！
+        将自己交托给他！
+        向神祷告，求他赐下圣灵，经历真正的罪的责备和得救的确据。
+        如果凭信心求，神一定会应允。
+        <br><br>
+        既然谈到了这个问题，我还想对会众中的家长们说几句话。
+        如何确保我们的孩子不是那些“本国的子民……被赶到外边黑暗里的”呢？
+        为什么很多孩子长大后放弃了信仰？
+        这是一个不幸的现实，但并不令人惊讶。
+        一方面，我们应该问自己如何更好地装备孩子，使他们能够在信仰中坚持。
+        或许更应该问的是，我们的孩子起初是否得救。
+        孩子们“放弃信仰”，因为他们虽然身上有基督徒的标签，但没有真正得救的信仰。
+        真正的信心会坚持到底。
+        约翰告诉我们：“他们从我们中间出去，却不是属我们的；若是属我们的，就必仍旧与我们同在；他们出去，显明都不是属我们的。”（约翰一书2:19）
+        教会中信徒离开信仰的比例之高，揭示了一个让人扎心的事实：我们没有认真对待重生得救。
+        孩子们长大离开教会，是因为基督教只是他们文化认同的一部分，而不是他们内心生命的认同。
+        基督教只是他们成长过程中接触到的东西，仅此而已。
+        他们长大、离开家，发现自己不再需要它。
+        换句话说，他们根本没有得救。
+        他们从小就确信自己得救了，却没有经历圣灵在他们内心的真实工作。
+        他们的信心不是真实的。他们长大后放弃信仰，一点都不奇怪。
+        <br><br>
+        这个问题非常重要，我有四点回应。
+        <br><br>
+        首先，我们必须回归真正的福音。
+        我们需要回到原罪的教义——每个孩子在过犯中死了，是亚当的后裔，处于与神的意识性反叛中。
+        我们不能停留在通过人的手段吸引孩子进入信仰，并期待他们坚持下去。
+        重生得救是超自然的， 是神灵的工作。
+        孩子们不应通过参与感或归属感来“被引诱”进入信仰。
+        我真诚地相信，如果教会对一个未得救的孩子来说像“家”一样，那么我们做错了事情。
+        如果孩子们在教会中感到属灵舒适或“如家一般”，那么他们永远不会觉醒到罪的现实。
+        我们需要根据圣经的原则，呼召他们认罪悔改。
+        我们需要坚持依靠神话语的能力和圣灵的带领，带孩子信主，并在门徒训练中坚固他们的信心。
+        <br><br>
+        第二，我们在确认信仰宣告时必须谨慎，要有耐心。
+        童年是大多数人信主的时候，但也是人们最容易做出虚假的信仰宣告的时候。
+        有时候，顺服和想要符合别人期望的心态被误认为是圣灵在得救中所做的真实工作。
+        如果我们以一个孩子真诚但错误的信仰宣告作为他得救的确据，那么这个孩子可能就失去了经历到真正得救的机会。
+        因此，给尚未经历信仰严肃考验的孩子施洗通常是不明智的。
+        如果孩子的信仰还不确定，让他们在具有重大属灵责任的领域服事或领导，也是不明智的。
+        当孩子还没有得救时，要求他们表现得像基督徒是不对的。
+        相反，当一个孩子宣称信仰时，我们应该与他们一起庆祝，而不是给出具体的得救确据。
+        最健康的做法是采纳一种“等待并观察”的心态。
+        尤其是他们年纪越小，这一点越重要。
+        <br><br>
+        第三，问问自己是否在家中定期传讲福音。
+        我不是指一些模糊的表达，比如“神爱你”或“神会看顾你”，这些不是在传讲福音。
+        我说的是基督为我们的罪死，且从死里复活的圣经福音。
+        如果我们只是默认福音，那么福音最终会消失。
+        教导孩子们如何将福音应用到日常生活中。
+        考虑每周一次或每天一次与孩子一起学习圣经。
+        我们教室里有很多空白的家庭灵修小册子。
+        欢迎你们来拿。
+        这是向孩子们展示如何将圣经应用于现实生活的好方法。
+        <br><br>
+        第四，作为父母，作为教会，我们需要为孩子们祷告，求神让他们不仅听到福音并以信心回应。
+        祈求圣灵在孩子们心中工作，也帮助我们有智慧辨别新生的真实迹象。
+        圣灵是活泼且有能力的，他不停止改变人心的工作。
+        <br><br>
+        在我们进入应用前，有必要对这节经文的最后一句话做一些评论。
+        “在那里必有哀哭切齿。”
+        这是耶稣描述地狱的方式。
+        不幸的是，今天许多教会常常忽视地狱和审判的教义。
+        当我们谈到这些经文时，我们太过胆怯，甚至带着歉意。
+        然而，如果不谈审判和地狱，我们将无法连贯地讲解福音。
+        没有地狱，我们就无法理解十字架的意义。
+        如果基督不是为了某种理由替我们死，那么基督的死与我们的得救之间就没有任何逻辑上的联系。
+        圣经一贯教导我们，神是爱，也是公义。
+        这两者是神本性中不可分割的品质。
+        神是完全的爱，也是完全的公义。
+        圣经关于地狱的教义，实际上是神的本性与堕落的人类本性之间的一种必然后果。
+        因为神完全公义，不容忍任何罪恶，他必须惩罚罪恶。
+        在这一生中，我们都经历了神的普遍恩典，它维持了我们的日常存在。
+        但是在这一生之后，在最后的审判时，神的愤怒将降临在那些没有信靠基督的罪人身上。
+        我们一生对神主权的反叛的惩罚就是永恒的地狱。
+        耶稣将地狱形容为“不能熄灭的火”（马太3:12；马可9:43）。
+        保罗将地狱形容为“永远的沉沦，离开主的面”（帖后1:9）。
+        约翰则形容地狱为“火湖”（启示录20:15），在那里“他们的痛苦的烟气，直上永永远远；他们昼夜不得安息”（启示录14:11）。
+        我们被教导地狱是永恒的、有意识的，并且可怕的。
+        <br><br>
+        那么，我们应该如何回应圣经关于地狱的教义呢？
+        <br><br>
+        首先，我们应该感恩。
+        我们应该感谢神，因为神是惩罚罪恶的神。
+        因此，即使我们经历了生活中的恶事，仍能安然入睡。
+        因此，我们能够原谅那些得罪我们的人。
+        与亚伯拉罕一样，我们可以说：“审判全地的主岂不行公义吗？”（创18:25）
+        <br><br>
+        第二，地狱的教义应该促使我们传讲福音。
+        如果你今天在这里，还不是基督徒，地狱的观念可能会让你感到冒犯。
+        但我邀请你抛开感性，理性地思考这个问题。
+        你难道不渴望在你的生活中，公义被执行吗？
+        如果有人欺骗你，你不打算去法院起诉那个人吗？
+        圣经在这一点上与你的想法一致。
+        公义必须得到声张。
+        唯一不同的是，圣经说你是错的，而神是对的。
+        你为什么拒绝地狱这个概念？难道你就是那个小偷、那个谋杀者、那个奸淫者，想继续作恶而不受惩罚？
+        你对地狱的反感并不奇怪。
+        就像罪犯厌恶监狱一样，你是个罪人，自然厌恶地狱。
+        <br><br>
+        如果你已经意识到自己的罪，并且相信神有权定你罪，我有一个极好的消息要告诉你。
+        这个令人难以置信的好消息就是，审判全世界的主已经代替了你。
+        在基督里，神成了人，经历了我们所面对的所有试探，却没有罪。
+        基督在十字架上承受了地狱的刑罚。
+        他喝下了神愤怒的杯，三天后从死里复活，证明神的愤怒已经完全倾泻。
+        他在神愤怒的重压下替罪人死，只要你回转离开罪，信靠他，你今天就可以得到赦免。
+        不要像那些“本国的子民”一样，因为不认基督的权柄而被丢进地狱。
+        我劝你今天就转向基督，与神和好！
+        <br><br>
+        弟兄姊妹们，我们不应回避这些关于地狱和最后审判的教义。
+        如果地狱不存在，我们传讲的福音只是一个好消息。
+        如果真的有地狱，可以确定的是，我们传讲的是福音是唯一的好消息，是唯一的得救之道。
+        基督是黑暗中的光，但如果我们不理解黑暗，就无法看见光。
+        我们必须大胆宣讲这些得救的基本真理，才能在福音事工中看到圣灵的功效。
+        <br><br>
+        在我们结束之前，我想说几句关于这段经文的应用。
+        我们已经知道，耶稣拥有一切的权柄。
+        主耶稣掌管一切。
+        我们该如何回应呢？
+        首先，我们要信靠耶稣。
+        其次，我们要将所有的一切交托给耶稣。
+        <br><br>
+        耶稣完全值得我们信赖。
+        没有一只麻雀会无缘无故地掉在地上，都是在他主权的旨意中。
+        他是我们所有祝福和所有痛苦的源头。
+        这个世界上没有什么是偶然的。
+        耶和华在天上，在地下， 在海中，在一切的深处， 都随自己的意旨而行。
+        他使云雾从地极上腾， 造电随雨而闪， 从府库中带出风来。
+        除非主命定， 谁能说成就成呢？
+        祸福不都出于至高者的口吗？
+        我们不必有片刻的害怕，认为我们处在神计划之外。
+        神是“阿拉法和俄梅戛……那昔在，今在，以后永在的神”（启1:8）。
+        弟兄姊妹们，主耶稣使我们在忧伤中得安慰。
+        主耶稣使我们在焦虑中得解脱。
+        我们有一位掌管万有的神。
+        我们知道谁掌握明天。
+        <br><br>
+        然而，对神全然的信靠，并不仅仅体现在得安慰和脱离焦虑。
+        而是我们完完全全将自己交给耶稣基督。
+        弟兄姊妹们，如果我们不将一切放在耶稣脚前，我们就不能真正认识主耶稣的权柄。
+        我担心，我们当中很多人像马太福音19章那位产业很多的少年人（马太19:16-29；马可10:17-31；路加18:18-30）。
+        我们愿意追求公义，却不愿放弃财富。
+        愿意说诚实话，却不愿为此受苦。
+        愿意服侍，却不愿不舒服。
+        愿意跟随耶稣，却不愿因此被人嘲笑。
+        愿意为耶稣活，却不愿为耶稣死。
+        弟兄姊妹们，你愿意为耶稣死吗？
+        这关乎信任。
+        一个不愿为耶稣死的人，不能做他的门徒。
+        这个人把生命放在耶稣之上。
+        “人到我这里来，若不爱我胜过爱自己的...性命，就不能作我的门徒。”（路加14:26）。
+        弟兄姊妹们，你愿意为耶稣死吗？
+        你已经将一切交托给耶稣了吗？
+        <br><br>
+        我非常感恩，下周，主若许可，我们将看到一些人在这里通过受洗来向基督完全交托自己。
+        受洗是我们与基督的死联合的标志（罗马书 6:3–4）。
+        告诉世界：“我已经与基督同钉十字架，现在活着的不再是我，乃是基督在我里面活着”（加拉太书 2:20）。
+        最后，我想通过一个故事来结束。有一位男子在200年前受洗时，他以极大的顺服向基督交托自己的生命。
+        这个故事记载在阿多尼兰·贾德森的传记中。
+        <br><br>
+        阿多尼兰·贾德森是美国第一批宣教士之一，他在1813年至1850年间，服务于缅甸。
+        他的生命充满了巨大的痛苦和极大的忠诚。
+        从他到达缅甸开始，足足六年，他才见到第一个缅甸人信主。
+        他曾因被怀疑是英国间谍而被囚禁两年。
+        他目睹了三位妻子中的两位和十三个孩子中的七位去世。
+        我们为贾德森赞美上帝，因为他为基督和福音活出了非凡的生命。
+        <br><br>
+        然而，我今天要讲的故事不是关于贾德森本人的。
+        而是一位被他带领，首批信主的缅甸人。
+        那是1819年，大约是贾德森在缅甸的第六年。
+        那时，已经有四个缅甸人因贾德森的讲道信主。
+        不幸的是，缅甸的王位有了新的继承人。
+        没人知道这位新国王会如何看待缅甸人皈依基督教。
+        如果他们得罪了国王，他们可能会被囚禁，甚至被处死。
+        缅甸当时的第一间教会面临巨大压力。
+        在这四个信徒中，只有一个人受了洗。
+        受洗带来了巨大的危险，因为这是一种公开宣告他们对基督忠诚的方式。
+        迫害的危险使得其中的两个信徒犹豫不决，不敢迈出申请受洗的最后一步。
+        但贾德森问第四位信徒，是否准备好申请受洗。
+        贾德森问：“你爱基督超过爱你自己的生命吗？”
+        那人非常缓慢且慎重地说，‘当我思考信仰时，我不知道什么是爱自己的生命。’”
+        朋友们，愿我们也如此。愿我们全然交托给基督，让我们不知道什么是爱自己的生命。
+        <br><br>
+        让我们祷告。
+
+
+
+
+
+
+
+
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
