@@ -33,7 +33,7 @@ body {
 div #jacob {
 	float: left;
 	width: 200px;
-	margin-right: 350px;
+	margin-right: 300px;
 	margin-top: 50px;
 	height: 40px;
 	text-align: center;
@@ -57,12 +57,11 @@ div #jacob p {
 
 div #pages {
 	float: left;
-	width: 80px;
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-top: 50px;
 	height: 40px;
-	text-align: center;
+	text-align: right;
 	text-decoration: none;
 	color: black;
 }
@@ -183,6 +182,38 @@ h2, h3, h4, h5, h6 {
 	background-color: #ededed;
 	cursor: pointer;
 }
+
+
+
+
+
+#blog-post {
+	margin-top: 100px;
+}
+
+#post-title a {
+	font-family: 'Lato';
+	text-decoration: none !important;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 1.0;
+}
+
+#post-date {
+	font-size: 15px;
+	font-family: 'Lato';
+	color: #494949;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+#post-snippet {
+	line-height: 1.4;
+}
+
+
+
+
 
 
 

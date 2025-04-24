@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Blog</title>
+	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+	<link href="lib/css/lightbox.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132703009-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-132703009-1');
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+
+<style>
+td {
+	width: 50%;
+}
+</style>
+
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='about.html'><div id='pages'><p>about</p></div></a>
+	<a href='pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='blog.html'><div id='pages'><p>blog</p></div></a>
+	<a href='misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+	<a href='index.html' class="active">Jacob Nie</a>
+	<div id="myLinks">
+		<a href="about.html">about</a>
+		<a href="pictures.html">pictures</a>
+		<a href="outdoors.html">outdoors</a>
+		<a href="blog.html">blog</a>
+		<a href="misc.html">misc.</a>
+	</div>
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	</a>
+</div>
+
+
+<div id="page">
+	<div style="height: 8vh"></div>
+  <h1 style="margin-bottom: -25px">Latest Posts</h1>
+  <br>
+
+
+
+
+  <table id="blog-post">
+    <tr>
+      <td style="width: 30%">
+        <img style="width: 200px" src="blog/2025/250423-small.jpg">
+      </td>
+      <td style="width: 70%">
+        <div>
+          <div id="post-title">
+            <a href="blog/2025/250423.html">
+              Why Physics?
+            </a>
+          </div>
+          <div id="post-date">
+            April 23, 2025
+          </div>
+          <div id="post-snippet">
+            <i>He must have looked at what the preachers said about God and felt that they were blaspheming. He had seen much more majesty than they had ever imagined, and they were just not talking about the real thing</i>
+            .&nbsp;.&nbsp;.&nbsp;<a href="blog/2025/250423.html">Read more</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  <table id="blog-post">
+    <tr>
+      <td style="width: 30%">
+        <img style="width: 200px" src="misc/christian/tree.jpg">
+      </td>
+      <td style="width: 70%">
+        <div>
+          <div id="post-title">
+            <a href="misc/christian/six-devotions-2cor5.html">
+              Six Meditations on 2 Corinthians 5:14–21
+            </a>
+          </div>
+          <div id="post-date">
+            February 12, 2025
+          </div>
+          <div id="post-snippet">
+            <i>How do I deal with my sin and shame? How do I view myself? Who am I meant to be? What is the purpose of my existence? Paul answers all these questions and more</i>
+            .&nbsp;.&nbsp;. <a href="misc/christian/six-devotions-2cor5.html">Read more</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  <table id="blog-post">
+    <tr>
+      <td style="width: 30%">
+        <img style="width: 200px" src="misc/christian/nt-statistics-small.jpg">
+      </td>
+      <td style="width: 70%">
+        <div>
+          <div id="post-title">
+            <a href="misc/christian/nt-statistics.html">
+              Some Statistics on the Greek New Testament
+            </a>
+          </div>
+          <div id="post-date">
+            November 21, 2024
+          </div>
+          <div id="post-snippet">
+            A simple statistical study of linguistic similarity between the different books of the Greek New Testament.
+            <a href="misc/christian/nt-statistics.html">Read more</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  <table id="blog-post">
+    <tr>
+      <td style="width: 30%">
+        <img style="width: 200px" src="misc/christian/footsteps-small.jpg">
+      </td>
+      <td style="width: 70%">
+        <div>
+          <div id="post-title">
+            <a href="misc/christian/jesus-is-passing-by.html">
+              Jesus Is Passing By
+            </a>
+          </div>
+          <div id="post-date">
+            July 31, 2023
+          </div>
+          <div id="post-snippet">
+            <i>Twelve years I have suffered, and twelve years I have been cheated and taken for a fool. I have seen everything and lost everything, with no end in sight</i> 
+            .&nbsp;.&nbsp;.&nbsp;<a href="misc/christian/jesus-is-passing-by.html">Read more</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  <table id="blog-post">
+    <tr>
+      <td style="width: 30%">
+        <img style="width: 200px" src="misc/christian/sea-small.jpg">
+      </td>
+      <td style="width: 70%">
+        <div>
+          <div id="post-title">
+            <a href="misc/christian/what-is-the-gospel.html">
+              What Is the Gospel?
+            </a>
+          </div>
+          <div id="post-date">
+            April 30, 2023
+          </div>
+          <div id="post-snippet">
+            A simple tract explaining the essentials of the gospel in a clear and relevant manner.
+            <a href="misc/christian/what-is-the-gospel.html">Read more</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <table id="blog-post">
+    <tr>
+      <td style="width: 30%">
+        <img style="width: 200px" src="misc/christian/cross-small.jpg">
+      </td>
+      <td style="width: 70%">
+        <div>
+          <div id="post-title">
+            <a href="misc/christian/baptism-testimony.html">
+              My Baptism Testimony
+            </a>
+          </div>
+          <div id="post-date">
+            December 22, 2019
+          </div>
+          <div id="post-snippet">
+            <i>Over the years I experienced glimpses of this very strange love that seemed to me as being very unnatural. It made no sense in the context of my existing frameworks. I was very atheist during this time and I hated the foolishness of religion, but there was one thing I hated more than religion, and that was being wrong</i> 
+            .&nbsp;.&nbsp;. <a href="misc/christian/baptism-testimony.html">Read more</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <!--
+  Template: 
+
+  <table id="blog-post">
+    <tr>
+      <td style="width: 30%">
+        <img style="width: 200px" src="blog/2025/DATE-small.jpg">
+      </td>
+      <td style="width: 70%">
+        <div>
+          <div id="post-title">
+            <a href="blog/2025/DATE.html">
+              TITLE
+            </a>
+          </div>
+          <div id="post-date">
+            DATE
+          </div>
+          <div id="post-snippet">
+            SNIPPET
+            .&nbsp;.&nbsp;.&nbsp;<a href="blog/2025/DATE.html">Read more</a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  -->
+ 
+
+
+
+
+	
+	<div style="height: 30vh"></div>
+</div>	
+
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+		albumLabel:"Image %1 of %2"
+    })
+</script>
+
+
+
+</div>
+<script>
+	var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+
+
+<script>
+	function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+	//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Why Physics?</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Why Physics?</h1>
+        <p>
+          April 23, 2025
+        </p>
+
+        <img src="250423-large.jpg">
+
+        <br><br>
+        
+        Looking through some old forum posts, I stumbled upon this forum reply from yours truly, dated August 9, 2020, back when I was just starting out at UCSB. I was responding to a question from an (over-eager) middle schooler who was asking about whether he should pursue a career in physics. Here was my reply, which has been lightly edited for clarity. I think what surprises me most is how <i>worshipfully</i> I approached the physical sciences. Looking back at what I wrote here, it seems almost <i>inevitable</i> that at one point or another, I would pivot to theological studies. 
+        <br><br>
+        It reminds me of what somebody once hypothesized regarding Einstein's rejection of traditional "religion":
+        <br><br>
+        <div id="scr">
+          The design of the universe .&nbsp;.&nbsp;. is very magnificent and shouldn't be taken for granted. In fact, I believe that is why Einstein had so little use for organized religion, although he strikes me as a basically very religious man. He must have looked at what the preachers said about God and felt that they were blaspheming. He had seen much more majesty than they had ever imagined, and they were just not talking about the real thing. My guess is that he simply felt that religions he'd run across did not have proper respect .&nbsp;.&nbsp;. for the author of the universe. [<a href="#n1" id="l1">1</a>]
+        </div>
+        <br>
+        So, my reply to this question I received:
+        <br><br>
+        <div id="scr">
+          You're in middle school I'm guessing? I'm in college, a physics major, so I can answer for you.
+          <br><br>
+          To be honest, there isn't exactly a great diversity of physics jobs. To "stay" in physics, the jobs are limited to: academia, research scientists, physics education, and there are probably some others that I have not thought of. Of course, people with physics educations often go to other fields as well, because physics trains many useful skills that are needed everywhere: strong mathematical knowledge, physical intuition, and programming know-how. Many physics majors and PhD people go onto fields like electrical engineering, software, finance, and various private sector R&D jobs.
+          <br><br>
+          Is physics <i>hard</i>? Yes, I think it is hard. Everybody who goes into physics is capable, yet many people report feeling inadequate almost all the time in physics because of everybody's brilliance. I myself have felt this often.
+          <br><br>
+          Is physics <i>worth it</i>? Probably not, honestly. Everybody who goes into physics must enjoy doing it, because it is difficult, long, and generally has a low financial benefit. A PhD + postdoc takes as long as med school + residency. Both are probably equally difficult, but the medical student comes out with a near-guaranteed job that pays several hundred dollars a year, while the academic has an ever-narrowing probability of landing a faculty position, and even if he/she gets it, it probably pays as much as an entry-level software job in Silicon Valley.
+          <br><br>
+          So why do people do physics instead of easily making lots of money in Silicon Valley or Wall Street? Starting out, it's probably ego. To be honest, people want to study physics because physicists are smart, and physics makes people feel smart—in control of some "secret." That is something I had to come to terms with myself starting out. 
+          <br><br>
+          But gradually, as the ego is chipped away, I think more often than not, there remains a more lasting humility that comes simply from <i>not knowing</i>. It is the reverential state where one must prostrate himself in front of Nature, to better understand Her at Her most unknown boundaries. We must be thankful that there exist people who feel this way, for they are the ones who drive understanding.
+          <br><br>
+          Of course, don't let that over-romanticized view of science mislead you into thinking that there is no worthier pursuit available to you. In fact, I can think of many more honorable pursuits in life than scientific research, but indeed, some are meant to take this path.
+        </div>
+
+        <br><br><br>
+        [<a href="#l1" id="n1">1</a>] The words of Charles Misner, quoted in John Piper, <i>Let the Nations Be Glad! The Supremacy of God in Missions</i>, 4th ed. (Grand Rapids: Baker Academic, 2022), 4.
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
