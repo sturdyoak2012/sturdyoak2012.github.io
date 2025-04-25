@@ -115,7 +115,13 @@ img {
 	color: #4a4a4a;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+	font-family: 'Noto Serif';
+	line-height: 1.2;
+	font-weight: 600;
+}
+
+h2, h3, h4, h5, h6 {
 	font-family: 'Lato';
 	line-height: 1.2;
 }
@@ -192,15 +198,15 @@ h2, h3, h4, h5, h6 {
 }
 
 #post-title a {
-	font-family: 'Lato';
+	font-family: 'Noto Serif';
 	text-decoration: none !important;
-	font-weight: bold;
-	font-size: 30px;
+	font-weight: 600;
+	font-size: 26px;
 	line-height: 1.0;
 }
 
 #post-date {
-	font-size: 15px;
+	font-size: 14px;
 	font-family: 'Lato';
 	color: #494949;
 	margin-top: 7px;
@@ -208,7 +214,8 @@ h2, h3, h4, h5, h6 {
 }
 
 #post-snippet {
-	line-height: 1.4;
+	line-height: 1.5;
+	font-size: 16px;
 }
 
 

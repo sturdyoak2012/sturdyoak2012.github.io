@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>One Assembly (Book Review)</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>One Assembly (Book Review)</h1>
+        <p>
+          November 17, 2024
+        </p>
+
+        <img src="241117-large.jpg">
+        <br><br>
+        
+        In the 2,000 years of Christian history, full buildings have always been a problem, but the multiservice church is a relatively new phenomenon, beginning only in the last century. [<a href="#n1" id="l1">1</a>] The multisite church is an even newer phenomenon. However, both are now commonplace and almost normative when it comes to “how church works.” The positives of “multichurch” are that an individual church can quickly reach more people without the hassle of church planting, and a gifted preacher can expand his influence. The negatives are that “multichurch” enhances church consumerism and dampens the instinct to church plant and revitalize.
+        <br><br>
+        In his book <a href="https://a.co/d/8i5NubC"><i>One Assembly</i></a>, Leeman questions the scriptural warrant for multisite churches and argues that an <i>ekklēsia</i> is not an <i>ekklēsia</i> unless it gathers. [<a href="#n2" id="l2">2</a>] In his argument, he looks at every supposed multisite church in the Bible and shows that there is no concrete evidence that the biblical authors ever used <i>ekklēsia </i>to describe an entity other than the universal or locally assembled church. He also traces the usage of <i>ekklēsia</i> from Classical Greek and shows that <i>ekklēsia </i>can mean more than an assembly, but never <i>less</i>. He also shows from Matthew 18 that Jesus’s authority and presence is specifically found in the act of gathering. Finally, Leeman provides a vision for a one-assembly church that focuses not on expanding a “brand,” but on a catholic approach to church planting and partnership. 
+        <br><br>
+        Leeman’s case is strong and compelling, both from a cultural and exegetical standpoint. 
+        <br><br>
+        Certainly, most multisite practitioners have godly motives, adding services or campuses in order to reach more people for Christ. However, the unintentional side effect of “multichurch” is that it generates a consumeristic attitude towards church, leading people to view church as a performance to watch and not a gathering of saints. It implicitly <i>defines</i> the concept of church around something other than the gathering even when the people may claim that church is about the people. Leeman helpfully identifies these side effects and notes the connection between these effects and the growing influence of market strategies in the world of church growth strategy. 
+        <br><br>
+        Leeman’s critique of the biblical “proof” for multisite churches is scathing, and he convincingly demonstrates that the so-called evidence for multisite in the Bible is pure conjecture and speculation. Leeman’s catalogue of all the instances of <i>ekklēsia </i>in the Bible shows that it cannot be clearly demonstrated that <i>ekklēsia </i>was ever used to describe a regional body of believers that never actually gathered. 
+        <br><br>
+        The weakest link in Leeman’s exegetical argument is probably the church in Jerusalem. It says in Acts 2 that the saints in Jerusalem met in <i>homes</i> together to “break bread.” If this refers to the Lord’s supper, then Leeman’s argument collapses: the Jerusalem saints undoubtedly had one <i>church</i>, but they took the Lord’s supper separately in <i>homes</i>. Leeman’s response is that “breaking bread” refers to table fellowship and not the Lord’s supper, and that this could be considered an early example of small groups within the church.
+        <br><br>
+        Finally, Leeman’s vision for one-assembly churches pursuing catholic interests, collaborating for the sake of the kingdom of God was inspiring to me. I personally hope that the instinct of multisite “branding” will one day fade away so that churches will once again value collaboration amid independence. Churches that are motivated to plant and revitalize will reap much greater rewards in the long run than churches that make short-term fixes like multiple services or sites. 
+        <br><br>
+        In conclusion, as Leeman points out, the essence of the church (and the aspect in which Jesus presides over) is the gathering, and churches should not spotlight leadership, style, vision, ministry “philosophy, or even preaching above the centrality of the gathering.
+        <br><br>
+
+        <br><br>
+
+        Purchase on <a href="https://a.co/d/8i5NubC">Amazon</a>
+
+        <br><br>
+        Leeman, Jonathan. <i>One Assembly: Rethinking the Multisite and Multiservice Church Models</i>. Wheaton, IL: Crossway, 2020.
+
+        <br><br><br><br>
+
+        [<a href="#l1" id="n1">1</a>] Caleb Morell, “When Did Multiple Services Begin?,” last modified December 20, 2023, <a href="https://www.9marks.org/article/when-did-multiple-services-begin/">https://www.9marks.org/article/when-did-multiple-services-begin/</a>.
+        <br>
+        [<a href="#l2" id="n2">2</a>] <i>Ekklēsia</i> is the Greek word for "assembly" that is translated as "church" in English Bibles. 
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

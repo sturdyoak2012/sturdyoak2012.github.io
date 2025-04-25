@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Conversion (Book Review)</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Conversion (Book Review)</h1>
+        <p>
+          November 18, 2024
+        </p>
+
+        <img src="241118-large.jpg">
+        <br><br>
+        
+        “Show me someone’s doctrine of conversion, and I can tell you a lot about his church.” The doctrine of conversion has vast implications for the health and purity of the local church. A faulty understanding of the means of conversion (the proclamation of the gospel) has generated the ills of the seeker-sensitive movement, and a lackadaisical insistence on the fruits of conversion (a repentant life) has led to rampant nominalism in our churches today.
+        <br><br>
+        In <a href="https://a.co/d/dJufunO"><i>Conversion</i></a>, Michael Lawrence provides a clear exposition of what biblical conversion is and why it matters so much for the local church. He begins with the necessity of regeneration before conversion and the distinction between a moral life and a transformed heart. Then he moves to the human response in conversion, which is faith and repentance, contrasting this with the idea of a one-time “decision for Christ.” Then he explains the result of conversion in the Christian life and in the local body of believers, how, in conversion, God tears down the dividing walls to unite a people for himself. 
+        <br><br>
+        In the final three chapters, Lawrence shows how this biblical doctrine of conversion should affect the way we approach our ministry. Understanding conversion correctly should lead us to evangelize boldly and honestly. It should also lead churches to look for the fruit of conversion before assuring somebody of their salvation. It also informs the church’s practice of discipline. Finally, Lawrence balances this by reminding us that churches cannot swing too far in the opposite direction and demand perfection from their members.
+        <br><br>
+        This book is very clear and defends the biblical, reformed understanding of regeneration, conversion, and sanctification. Lawrence manages to convincingly demonstrate that conversion has an impact on almost every aspect of the local church’s ministry and purity. His style of writing is clear, engaging, precise, and persuasive.
+        <br><br>
+        The chapter on evangelism is the best in the book. Lawrence reminds us that the supernatural character of regeneration should compel us to evangelize honestly and boldly, rather than “selling” the gospel to people’s felt needs. People are spiritually blinded from receiving Christ, and they cannot be manipulated into the kingdom of God by appealing to their inner desires. This is where our doctrine of conversion clearly separates us in the way we evangelize.
+        <br><br>
+        Lawrence’s final chapter was a rare and necessary corrective against the practice of being too harsh in assessing the fruit of conversion. We cannot be overzealous about church discipline or regenerate church membership, and we need to be reminded that sheep are sheep, and all of us are still sinners. 
+        <br><br>
+        I would’ve liked to see a more nuanced discussion about the difference between conversion and making a “decision.” Lawrence is quick to attack the decisionism prevalent in 20th century evangelism, but conversion is still ultimately a decision of sorts: a decision to repent and trust in Christ. One-time decisions that do not result in fruit are clearly not true conversions, but a true conversion always begins with a decision. 
+        <br><br>
+        Furthermore, I think the book would have benefited with more explanation about how genuine Christians can be assured of their salvation, since this is an important question people have about the topic of conversion. Lawrence explains, correctly, that “true assurance must ultimately be found by looking at Christ, not by looking for evidence of grace in our lives” (100), but he goes on to only explain the ways in which assurance can be found in seeing our growth as Christians (which is also correct). How does a Christian struggling with assurance ultimately find assurance in looking to Christ’s finished work on the cross? What if they are constantly questioning the sincerity of their faith or the authenticity of their spiritual growth?
+        <br><br>
+
+        <br><br>
+
+        Purchase on <a href="https://a.co/d/dJufunO">Amazon</a>
+
+        <br><br>
+
+        Lawrence, Michael. <i>Conversion: How God Creates a People.</i> 9Marks: Building Healthy Churches. Wheaton, IL: Crossway, 2017.
+
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
