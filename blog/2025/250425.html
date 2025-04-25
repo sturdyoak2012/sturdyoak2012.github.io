@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>What about Evil? (Book Review)</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>What about Evil? (Book Review)</h1>
+        <p>
+          April 25, 2025
+        </p>
+
+        <img src="250425-large.jpg">
+        <br><br>
+        
+        Earthquakes. Floods. Murder. Rape. The Christian faith has a problem of evil. Hume, citing Epicurus, stated it concisely: “Is God willing to prevent evil, but not able? Then he is impotent. Is he able, but not willing? Then he is malevolent. Is he both able and willing? Whence then is evil?” The problem of the existence of evil in a world governed by an omnipotent and omnibenevolent God is a quandary that thinkers have wrestled with since the time of Job. Furthermore, it is one of those philosophical problems that touch us at the core of our day-to-day existence as we confront the painful reality of evil and suffering in our own lives. 
+        <br><br>
+        The task of the theologian is to explain why evil exists if God is omnibenevolent and omnipotent—that is, to provide a <i>theodicy</i>. Most such theodicies can be categorized as <i>greater-good theodicies</i>: God allows evil to exist because of some <i>greater-good</i> that can only be achieved through the possibility or existence of evil in the world. Furthermore, this greater-good is <i>weighty</i> enough such that the world is better <i>with</i> evil than if evil had never existed. Only by appealing to some greater-good can the existence of evil be held together with God’s omnipotence and omnibenevolence. But the question remains: what <i>is</i> that greater-good that makes sense of the evil we see in this world? <i>
+        <br><br>
+        </i>In <a href="https://www.amazon.com/What-about-Defense-Sovereign-Glory/dp/1629955353"><i>What about Evil?</i></a>, Scott Christensen argues, based on his Reformed-Calvinistic theology, that the testimony of Scripture points to a specific version of the greater-good theodicy, which he calls the greater-<i>glory</i> theodicy. Evil exists in the world primarily to bring God glory through the display of his wondrous attributes in his plan of salvation and redemption. The cosmic display of God’s glory is a supreme good that outweighs the existence of evil, and yet depends on it in such a way that God would not be as glorified if evil did not exist. 
+        <br><br>
+        In chapters 1–3, Christensen begins by setting up the problem of evil. In chapter 2, He outlines the evolution of Western thought about God and evil from the Enlightenment all the way to our postmodern secular age. In chapter 3, he “probes the darkness” and addresses the nature of evil. 
+        <br><br>
+        In chapter 4, Christensen establishes the various problems of evil—logical, evidential, and religious—and addresses what a theodicy must accomplish in order to be successful. In chapters 5 and 6, he outlines various greater-good theodicies, including the commonly espoused free-will and natural-law defenses, which he will later reject as inconsistent with God’s meticulous sovereignty over creation (ch. 7). 
+        <br><br>
+        Finally in chapters 7–17, Christensen presents his greater-glory theodicy. His theodicy is grounded in the Reformed-Calvinistic view of God’s sovereignty, a compatibilist view of human free will, and, most importantly, the biblical storyline of creation, fall, redemption, and new creation. 
+        <br><br>
+        Christensen, along with many earlier thinkers, draws inspiration from a concept known as <i>felix culpa</i>, or “fortunate fault.” This is a reference to a line in an early fourth-century liturgical hymn known as the Exultet: “O assuredly necessary sin of Adam, which has been blotted out by the death of Christ! <i>O fortunate fault</i>, which has merited such and so great a Redeemer!” In other words, the fall of Adam and the introduction of evil into the world was a <i>fortunate</i> occurrence because it led to the superior good of the cross of Christ. Thus, Christensen’s greater-glory theodicy is:
+        <br><br>
+        1. God’s ultimate purpose in freely creating the world is to supremely magnify the riches of his glory to all his creatures, especially human beings, who alone bear his image.  
+        <br><br>
+        2. God’s glory is supremely magnified in the atoning work of Christ, which is the sole means of accomplishing redemption for human beings. 
+        <br><br>
+        3. Redemption is unnecessary unless human beings have fallen into sin.  
+        <br><br>
+        4. Therefore, the fall of humanity is necessary to God’s ultimate purpose in creating the world.
+        <br><br>
+        Thus, Christensen’s theodicy is that evil is <i>necessary</i> for God to maximize his extrinsic glory in the display of his divine attributes to all of creation through his incomparable work of salvation through judgment in Christ. The remainder of the book is dedicated to tracing this theme through the storyline of Scripture, from creation to new creation.
+        <br><br>
+
+        <br><br>
+        Christensen has done an immense service to the Reformed, evangelical church in this work by firmly grounding his answer to the problem of evil in the storyline of Scripture and, ultimately, the glory of God. His answer is thoroughly bibliocentric and Christocentric. Instead of resorting to man-centered theodicies such as the free-will defense, Christensen ties his theodicy to the <i>gospel</i> and a vision of God that is robust enough to actually face the depths of evil head on. 
+        <br><br>
+        Some unique features of the book that were especially helpful include the second chapter tracing the transformation of fundamental presuppositions in Western thought beginning with the Enlightenment, as well as the appendix that addresses the relationship between the problem of evil and the lapsarian debate. The book is well-researched, and the footnotes are a treasure trove of additional resources for further study. Christensen’s writing is compelling and beautifully descriptive, though my only critique would be that the last five chapters, though exquisitely written, were probably far too long. 
+        <br><br>
+        Overall, this book is a must-read for pastors and theological students interested in the problem of evil, and it should be the new go-to resource for theodicy from a Reformed-Calvinistic perspective. However, considering its length, a shorter and similar treatment would be Greg Welty’s <i>Why Is There Evil in the World (and so Much of It)?</i> (Christian Focus, 2018). Laypeople who are looking for more pastoral resources would probably be better served by more popular-level treatments. [<a href="#n1" id="l1">1</a>] 
+        <br><br>
+
+        <br><br>
+        Purchase on <a href="https://www.amazon.com/What-about-Defense-Sovereign-Glory/dp/1629955353">Amazon</a>
+        <br><br>
+        Christensen, Scott. <i>What About Evil? A Defense of God’s Sovereign Glory</i>. Phillipsburg, NJ: P&R Publishing, 2020.
+        <br><br>
+
+        <br><br>
+        [<a href="#l1" id="n1">1</a>] Christensen himself recommends several such works: “Among the many excellent books on handling pain and suffering, I recommend the works of Joni Eareckson Tada. See especially <a href="https://www.amazon.com/Place-Healing-Wrestling-Mysteries-Sovereignty/dp/0781412544"><i>A Place of Healing: Wrestling with the Mysteries of Suffering, Pain, and God’s Sovereignty</i></a> (Colorado Springs: David C. Cook, 2010); Joni Eareckson Tada with Steve Estes, <a href="https://a.co/d/genk6Sc"><i>When God Weeps: Why Our Sufferings Matters to the Almighty</i></a> (Grand Rapids: Zondervan, 2000). See also Paul David Tripp, <a href="https://a.co/d/iK5Gwxe"><i>Suffering: Gospel Hope When Life Doesn’t Make Sense</i></a> (Wheaton, IL: Crossway, 2018); David Powlison, <a href="https://a.co/d/8nagluI"><i>God’s Grace in Your Suffering</i></a> (Wheaton, IL: Crossway, 2018); Dave Furman, <a href="https://a.co/d/0OVR5Ts"><i>Kiss the Wave: Embracing God in Your Trials</i></a> (Wheaton, IL: Crossway, 2018); Elisabeth Elliot, <a href="https://a.co/d/4B7YXJq"><i>A Path through Suffering</i></a> (Grand Rapids: Revell, 1990); Elisabeth Elliot, <a href="https://a.co/d/h8wCt84"><i>Suffering Is Never for Nothing</i></a> (Nashville: B&H Publishing Group, 2019); Jerry Bridges, <a href="https://a.co/d/7eP7QQz"><i>Trusting God</i></a> (Colorado Springs: NavPress, 2008); Sinclair B. Ferguson, <a href="https://a.co/d/c21qAn3"><i>Deserted by God?</i></a> (Carlisle, PA: Banner of Truth, 1993).”
+        <br><br>
+        <br><br>
+        <br><br>
+
+
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
