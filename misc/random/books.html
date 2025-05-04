@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Books</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+      <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+        <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+  <h1>Favorite Books</h1>
+
+  Here are some of my favorite books!
+
+  <br><br>
+
+  <h3>Theological</h3>
+  <a href="https://a.co/d/fpIC2Pu"><i>The Holiness of God</i> by R. C. Sproul</a><br>
+  <a href="https://a.co/d/fNi3Bkz"><i>Gentle and Lowly</i> by Dane Ortlund</a><br>
+  <a href="https://a.co/d/jaNiVJr"><i>Systematic Theology, Volume One</i> by Stephen Wellum</a><br>
+  <a href="https://a.co/d/37iSzO5"><i>The Wonderful Works of God</i> by Herman Bavinck</a><br>
+  <a href="https://a.co/d/0rGFnye"><i>What about Evil?</i> by Scott Christensen</a><br>
+
+
+
+  <h3>Biblical</h3>
+  <a href="https://a.co/d/alslGBS"><i>The King in His Beauty</i> by Tom Schreiner</a> <br>
+  <a href="https://a.co/d/4dcOFbm"><i>From Eden to the New Jerusalem</i> by T. Desmond Alexander</a><br>
+
+
+  <h3>Ministry</h3>
+  <a href="https://a.co/d/auH0FbI"><i>The Compelling Community</i> by Mark Dever and Jamie Dunlop</a><br>
+  <a href="https://a.co/d/8yp3LjB"><i>Let the Nations Be Glad!</i> by John Piper</a><br>
+  <a href="https://a.co/d/2Kj53YX"><i>Brothers, We Are Not Professionals</i> by John Piper</a><br>
+  <a href="https://a.co/d/dOPphGQ"><i>Discipling</i> by Mark Dever</a><br>
+  <a href="https://a.co/d/9SlL3VO"><i>Mission Affirmed</i> by Elliot Clark</a><br>
+
+
+
+
+  <h3>Christian Living</h3>
+  <a href="https://a.co/d/2SUBGSP"><i>The Essential Means of Grace</i> by Paul Washer</a><br>
+  <a href="https://a.co/d/7kftV7h"><i>The Valley of Vision</i> edited by Arthur Bennett</a><br>
+  <a href="https://a.co/d/8RL8DA1"><i>The Pursuit of God</i> by A. W. Tozer</a><br>
+  <a href="https://a.co/d/dCOEfXm"><i>Everything Is Never Enough</i> by Bobby Jamieson</a><br>
+  <a href="https://a.co/d/cgCIqed"><i>Let Me Be a Woman</i> by Elisabeth Elliot</a><br>
+
+
+
+
+  <h3>Apologetics</h3>
+  <a href="https://a.co/d/f4tRF7j"><i>The Reason for God</i> by Tim Keller</a><br>
+  <a href="https://a.co/d/85Ev1hp"><i>Making Seense of God</i> by Tim Keller</a><br>
+
+
+
+  <h3>Biography/History</h3>
+  <a href="https://a.co/d/fv98Vwt"><i>To the Golden Shore</i> by Courtney Anderson</a><br>
+  <a href="https://a.co/d/hp2izPa"><i>Heavenly Man</i> by Brother Yun with Paul Hattaway</a><br>
+  <a href="https://a.co/d/9n0kBGt"><i>Through Gates of Splendor</i> by Elisabeth Elliot</a><br>
+  <a href="https://a.co/d/cnmP045"><i>God Is Red</i> by Liao Yiwu</a><br>
+  <a href="https://a.co/d/aHgod5F"><i>The Life of Martyn Lloyd-Jones</i> by Iain Murray</a><br>
+  <a href="https://a.co/d/cANAoe8"><i>Timothy Keller</i> by Collin Hansen</a><br>
+  <a href="https://a.co/d/fOqnbpi"><i>Confessions</i> by Augustine (trans. Sheed)</a><br>
+
+
+
+
+
+
+
+  <h3>Popular Works</h3>
+  <a href="https://a.co/d/3EAyJAf"><i>The Chronicles of Narnia</i> by C. S. Lewis</a> (esp. <i>The Horse and His Boy</i>, <i>The Silver Chair</i>, and <i>The Last Battle</i>)<br>
+  <a href="https://a.co/d/dqoCspp"><i>When Breath Becomes Air</i> by Paul Kalanithi</a><br>
+  <a href="https://a.co/d/6tixj0t"><i>To Live</i> by Yu Hua</a><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height: 30vh"></div>
+	</div>
+</div>
+</div>
+<script src="../lib/js/jquery.min.js"></script>
+<script src="../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+
+<script>
+	function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<script>
+  var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("caret-down");
+  });
+}
+</script>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+	//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+</body>
