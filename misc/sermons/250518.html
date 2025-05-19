@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>250518</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>A Story of Two Daughters</h1>
+        <p>
+        Lord's Day, May 18, 2025, Connect Church Silicon Valley (with <a href="#chinese">Chinese translation</a>)
+        <br>
+        Mark 5:21–43<br>
+        </p>
+
+        <div id="scr">
+          
+
+          <sup>21&nbsp;</sup>And when Jesus had crossed again in the boat to the other side, a great crowd gathered about him, and he was beside the sea. <sup>22&nbsp;</sup>Then came one of the rulers of the synagogue, Jairus by name, and seeing him, he fell at his feet <sup>23&nbsp;</sup>and implored him earnestly, saying, “My little daughter is at the point of death. Come and lay your hands on her, so that she may be made well and live.” <sup>24&nbsp;</sup>And he went with him. 
+          <br><br>
+          And a great crowd followed him and thronged about him. <sup>25&nbsp;</sup>And there was a woman who had had a discharge of blood for twelve years, <sup>26&nbsp;</sup>and who had suffered much under many physicians, and had spent all that she had, and was no better but rather grew worse. <sup>27&nbsp;</sup>She had heard the reports about Jesus and came up behind him in the crowd and touched his garment. <sup>28&nbsp;</sup>For she said, “If I touch even his garments, I will be made well.” <sup>29&nbsp;</sup>And immediately the flow of blood dried up, and she felt in her body that she was healed of her disease. <sup>30&nbsp;</sup>And Jesus, perceiving in himself that power had gone out from him, immediately turned about in the crowd and said, “Who touched my garments?” <sup>31&nbsp;</sup>And his disciples said to him, “You see the crowd pressing around you, and yet you say, ‘Who touched me?’” <sup>32&nbsp;</sup>And he looked around to see who had done it. <sup>33&nbsp;</sup>But the woman, knowing what had happened to her, came in fear and trembling and fell down before him and told him the whole truth. <sup>34&nbsp;</sup>And he said to her, “Daughter, your faith has made you well; go in peace, and be healed of your disease.” 
+          <sup>35&nbsp;</sup>While he was still speaking, there came from the ruler’s house some who said, “Your daughter is dead. Why trouble the Teacher any further?” <sup>36&nbsp;</sup>But overhearing what they said, Jesus said to the ruler of the synagogue, “Do not fear, only believe.” <sup>37&nbsp;</sup>And he allowed no one to follow him except Peter and James and John the brother of James. <sup>38&nbsp;</sup>They came to the house of the ruler of the synagogue, and Jesus saw a commotion, people weeping and wailing loudly. <sup>39&nbsp;</sup>And when he had entered, he said to them, “Why are you making a commotion and weeping? The child is not dead but sleeping.” <sup>40&nbsp;</sup>And they laughed at him. But he put them all outside and took the child’s father and mother and those who were with him and went in where the child was. <sup>41&nbsp;</sup>Taking her by the hand he said to her, “Talitha cumi,” which means, “Little girl, I say to you, arise.” <sup>42&nbsp;</sup>And immediately the girl got up and began walking (for she was twelve years of age), and they were immediately overcome with amazement. <sup>43&nbsp;</sup>And he strictly charged them that no one should know this, and told them to give her something to eat.
+
+        </div>
+        <br><br>
+
+        <h3>Bruised Reeds</h3>
+
+        In 1630, the English Puritan Richard Sibbes published his famous exposition of Isaiah 42:3, which he titled <i>The Bruised Reed</i>. In that verse, Isaiah says of Christ, that “a bruised reed shall he not break, and the smoking flax shall he not quench: He shall bring forth judgment unto truth” (KJV). Sibbes was often nicknamed as “The Sweet Dropper” for his ability to tenderly unfold the mercies of Christ to wounded consciences, and his book on Isaiah 42:3 continues to be his most read work up until this very day. Sibbes writes,
+        <br><br>
+        <div id="scr">
+        The bruised reed is a man who is in some misery, and by misery he is brought to see sin as the cause of it. For whatever deception sin makes, it comes to an end when we are bruised and broken. He is aware of sin and misery, and, seeing no help in himself, is carried with restless desire to have supply from another. This spark of hope being opposed by doubting and fear makes him like a smoking flax. Both of these together, a bruised reed and smoking flax, make up the state of a poor distressed man. We need bruising so that reeds may know themselves to be reeds, and not oaks. But in pursuing his calling, Christ will not break the bruised reed, nor quench the smoking flax. He will not only not break nor quench, but he will cherish those with whom he so deals. Physicians, though they put their patients to much pain, will not destroy but heal. Surgeons will lance and cut, but not dismember. A mother who has a sick and stubborn child will not therefore cast it away. <i>And shall there be more mercy in the stream than in the spring? Shall we think there is more mercy in ourselves than in God?</i> [<a href="#n1" id="l1">1</a>] 
+        </div>
+        <br>
+        In the passage we are presented with today, what we see is some of Christ’s dealings with those bruised reeds he encountered during his earthly ministry. It should no less than astonish us that incarnate Deity—King of kings and Lord of lords, who alone has immortality, who dwells in unapproachable light (1 Tim 6:15–16)—would deign to condescend with such tender humility, as a shepherd with his lambs. As Sibbes again writes, “the God who dwells in the highest heavens dwells likewise in the lowest soul.” [<a href="#n2" id="l2">2</a>] 
+        <br><br>
+        <h3>The Problem of Death</h3>
+        We first encounter a man named Jairus, whose little daughter is dying. Jairus is a powerful synagogue ruler, and for him to not only approach Jesus but fall down at his feet is, I think, unusual to say the least. But, I don’t think it is an unknown fact that death does indeed make us do unusual things. 
+        <br><br>
+        One of the great errors of our modern age is that we have become accustomed to the absence of death. The blessing of long life has deceived us into thinking that the temporary is eternal. We exert ourselves in the accumulation of wealth and prestige and affection, and when death comes knocking at our door a little too early, we somehow have the audacity to feel cheated. We have constructed this senseless modern bubble in which we feel, somehow, that we have a <i>right</i> to live a certain number of years. It is this bubble that sustains our countless delusions about what matters, who we are, who we’re meant to be, and what we’re meant to do. 
+        <br><br>
+        Sometimes, as in the case of this synagogue ruler, it’s a blessing when this bubble is popped. Without death, he may have continued to live in deluded self-importance. But it is with death as our teacher that we learn not to hold on too tightly to who we are and what we have in this life. Death teaches us that life, like all things, is a gift and not a right that we can presume upon. Like Jairus, death helps us see who we really are and what we truly need. 
+        <br><br>
+        If you’re here and you’re not a Christian, take some time to reflect on your own approach to life. Is your worldview or philosophy of life resilient enough to face the fact that you and all of your loved ones will inevitably die at a time that is utterly out of your control? Whether it’s yourself or your dearest loved one on the hospital bed, will you be ready to face that moment when you are separated from that which you love most? Are you prepared for death?
+        <br><br>
+        <h3>An Unclean Woman</h3>
+        So Jairus humbles himself before Jesus and asks him to come and heal his daughter. Jesus goes with him. But as they travel, a great crowd goes with them and throngs about Jesus. He is being squeezed about from every side, and everybody wants to catch a glimpse of this miracle that might be happening soon. We can only imagine how frustrated Jairus must have been, to be delayed by this immense crowd. 
+        <br><br>
+        Now, if you would look down to verse 25, it is at this point that we are introduced to our story’s second character, a woman who had had a discharge of blood for twelve years. Unlike the rest of the crowd, this woman is not here for a spectacle. She is not here for entertainment. She is not here to satiate her curiosity. She is not here because her friends are here. She is not here because she has to oblige her parents. She is not here because she has a responsibility to serve. She is not here because it makes her a good person. She is here for salvation. She is here for living water and the bread of life.  
+        <br><br>
+        A brief explanation is necessary to understand the condition that she faced. We read that she had a continuous “discharge of blood,” which was likely menstrual. However, the main problem she faced was not any suffering caused by the disease itself, but the social ostracization that came with it. Under the Levitical Jewish law, a woman with a discharge of blood was perpetually unclean. Leviticus 15:25–27 says, 
+        <br><br>
+        <div id="scr">
+        If a woman has a discharge of blood for many days, not at the time of her menstrual impurity, or if she has a discharge beyond the time of her impurity, all the days of the discharge she shall continue in uncleanness. As in the days of her impurity, she shall be unclean. Every bed on which she lies, all the days of her discharge, shall be to her as the bed of her impurity. And everything on which she sits shall be unclean, as in the uncleanness of her menstrual impurity. And whoever touches these things shall be unclean, and shall wash his clothes and bathe himself in water and be unclean until the evening.
+        </div>
+        <br>
+        Nobody would touch this woman or anything that she touched. She was unclean, so anybody who touched her would become unclean. For all intents and purposes, the woman was a leper. It was this profound shame that moved her to spend all her money on physicians, seeking in vain to cure her disease. 
+        <br><br>
+        <h3>“Doctors”</h3>
+        We read also that the woman “suffered much” under these physicians. We must remember that physicians during those times were essentially charlatans guided by senseless superstition. They would’ve sold balms that did not heal and cures that only maimed. Whether they truly believed in their abilities or not, they were, in reality, extortionists selling empty promises to desperate people. Empty promises, desperate people.
+        <br><br>
+        Now, I wonder if this does not remind you of the many “doctors” we have in our world today. I am not, of course, talking about doctors in the hospital. I am talking about those “doctors” that sell us empty cures that are entirely unable to heal us. “Doctors” like money, beauty, education, friendship, sex, and love. “Doctors” that advertise instant healing and result in only misery, all at the small price of your soul. We are, perhaps, not unlike this woman. I’d be making enough money, if only I had <i>that</i> job. I’d be satisfied with how I look, if only I looked like <i>that</i> person. I’d be good enough for my parents, if only I got into <i>that</i> college. I’d be happy enough, if only I could marry <i>that</i> woman. Twelve years go by, and you’ve spent all that you have, and you are worse off than you were before. In the end, we are not quite as strong nor as self-sufficient as we make ourselves out to be. In the end, we find ourselves, and rightly so, to be no more than bruised reeds crushed by the winds of life, or smoking wicks expiring under our final breaths. In the end, we need a doctor who will tell us the truth instead of selling us lies—a doctor who will restore us and not consume us. It doesn’t take a genius to figure out that our world has no such physician on hand. 
+        <br><br>
+        <h3>The Woman's Faith</h3>
+        Next, if you would look down to verse 27, we read of the woman’s faith, and the action generated by her faith. The woman “heard the reports about Jesus.” We don’t know what these reports were. Whatever they were, the woman received these reports by faith. In the example of this woman, we see all three components of saving faith. [<a href="#n3" id="l3">3</a>] First, she heard and understood the <i>content</i> of the reports about Jesus. Second, she assented to (or agreed with) the <i>truthfulness</i> of the reports about Jesus. Third, she placed a confident <i>trust</i> in the reports about Jesus, relying upon them for her salvation. Her trust was such that she not only agreed with the reports about Jesus but also, in a very real way, made them her own. Jesus was not only able to save her, but also personally necessary in such a way that she set aside all other obstacles to make Christ her own. This is the faith that differentiated her from the crowds of people around Jesus, all of whom no doubt believed that Jesus was capable of healing. Unlike the woman, the crowds of people indeed saw Jesus for who he was but did not comprehend their own need of him. Unfortunately, many today are more like the crowd than the woman. They claim the label of “Christian” for the sole reason that they believe in God and believe in Jesus. Rather, a Christian is one who personally trusts in Christ for their salvation and submits to his universal claim of lordship. This is not a small distinction, and self-examination is necessary. 
+        <br><br>
+        Moved by her faith, she reaches out from within the crowd to touch his garments. She thought to herself, “If I touch even his garments, I will be made well.” Well, having just commended her for her faith, we see now the <i>weakness</i> of her faith. Evidently, her faith, though genuine, was mixed with doubt and fear. Her faith was real, but poor. She tries to do the bare minimum, in order to escape his notice. This is made all the more clear a few verses later. She may have trusted in the Savior’s power to save, but she did not yet trust in the Savior’s <i>eagerness</i> to save. She knew Christ as one who would rescue her, but not yet as one who would also <i>love</i> her. She knew the Messiah to be great in power, but not yet as one who was also great in <i>humility</i>. We are reminded and encouraged that, despite what Satan would have us believe, the weakest of faith is more than enough, as long as it unites us with so bountiful a Savior. The assurance of salvation comes not from the strength of faith but the ground of faith. Even the mode of her salvation illustrates this. The briefest of touches was all that it took. Not a firm grasp of his hands, but the slightest grazing of the edge of his garments. A gentle touch was enough.
+        <br><br>
+        <h3>Encounter</h3>
+        Now, a touch was enough for salvation, but it was not enough for Jesus. We read in verse 30 that he immediately senses that power has gone out from him and seeks to find the person that touched him. His disciples are incredulous, and rightfully so. People are squeezing around him from every side, and Jesus wants to know who touched him? Whether this is a genuine question is hard to say. Perhaps Jesus really knew exactly who touched him and only asks this question to secure an audience with the woman. Or perhaps Jesus genuinely did not know who it was that touched him and received healing. Both are possible, given that Jesus was not omniscient when acting from his human knowledge and only omniscient when acting from his divine knowledge (cf. Luke 2:52; Matt 24:36). Whatever the case, Jesus is not content with the mere dispensation of healing. Jesus refuses to be reduced to a mere source of power. The woman wants a cure, but Jesus wants a personal encounter. 
+        <br><br>
+        We are reminded, for ourselves, that the Christian faith is not ultimately about the benefits of Christ, but about the person of Christ. Many false teachers wrongly reduce the gospel to benefits that are of a physical, earthly nature. But even the gifts of salvation as received in the true gospel—like justification, adoption, sanctification, and eternal life—are all means to an end—that end being the prospect of <i>personal union and encounter with God</i>. The ultimate goal of faith is not salvation in itself, but the possibility of knowing Christ personally. It is to one day be a personal participant in what theologians across the centuries have called the <i>beatific vision</i>—that is, to see God face to face. Therefore, Christ calls the woman, not out of any desire to shame her, but wanting to give her the gift that exceeds even that which she was seeking—the gift of himself. 
+        <br><br>
+        It's easy to forget, sometimes, how personally and how individually Christ loves his sheep. Our sin, our shame, and our neglect of studying God make us wonder whether he loves us. Or, perhaps, we are sure that God loves <i>us</i>, but unsure as to whether he loves <i>me</i>. 
+        <br><br>
+        Augustine, in his autobiography, once reflected on the agonizing way in which his mother Monica anguished over his unbelief. Over and over again, he writes of how his mother would weep continually over the state of his soul, praying to God for his conversion and salvation. He writes, as a prayer to God, 
+        <br><br>
+        <div id="scr">
+        My mother, Your faithful one, wept to You for me more bitterly than mothers weep for the bodily deaths of their children. … You heard her and did not despise her tears when they flowed down and watered the earth against which she pressed her face wherever she prayed. You heard her. … Your ears had heard her heart, O Good Omnipotent, You who have such care for each one of us as if You had care for him alone, and such care for all as if we were all but one person. [<a href="#n4" id="l4">4</a>] 
+        </div>
+        <br>
+        In other words, Augustine writes that God’s love for us is such that it would be no less if he considered us each alone. His love is inexhaustible. Like God himself, his love is both transcendent and immanent. Transcendent in that his love is incomprehensible, beyond measure, and understood by us only in shadows. Immanent in that his love is not only known by us, but also deeply <i>felt</i>, permeating to the inner recesses of our soul. It makes us want to rejoice. It makes us want to sing. But most of all, it makes us want to come to him and answer his call. He calls out to his sheep, not as a flock, but “by name” (John 10:3). With a love so precise, so individual, so selective, and so definite, how could we not respond and come to him? The woman hears the voice of <i>her</i> Shepherd, <i>her</i> Creator, and she will not deny him his pleasure in her. She removes herself from her hiding, falls before Christ, and tells him the whole truth. No more shame. No more doubts. Only the perfect love of Christ. 
+        <br><br>
+        Do you know this love? The way to know this love is by looking to Christ and his cross. “God shows his love for us in that while we were still sinners, Christ died for us” (Rom 5:8). Sin and our rebellion against God is what separates us from God and his love. It darkens our heart, making us unconscious of God, what he requires of us, and how he cares for us. For our sin, we deserve not the love of God, but his righteous judgment. On the cross, Christ, the Son of God become man, became our Substitute, taking upon himself the judgment and wrath of God in the place of all those who would turn and trust in him. He rose again three days later, both to conquer sin and death once and for all, and also to demonstrate that the penalty for our sin had been paid in full. You can know this love of God that compelled him to send his only Son to die in your place, if you would only turn from your sin and trust in Christ. Trust in him, surrender yourself to him, and Christ will be yours this hour, just as he was for this woman. 
+        <br><br>
+        <h3>Scoffers</h3>
+        The story does not end here, however. All of this has occurred on the way to Jairus’s home. It appears that the delay of the crowd, and of this woman in particular, has prevented Jesus from making it to Jairus’s home on time. His daughter is dead. 
+        <br><br>
+        At this point, it is difficult not to be reminded of the story of Lazarus being raised from the dead, where Jesus was similarly delayed only for Lazarus to die before Jesus got there (John 11:6). God’s timing is purposeful. 
+        <br><br>
+        From every angle, doubters assail Jesus. The messengers tell Jairus not to trouble Jesus any further. The professional mourners, hired to wail and make a scene, break from their crocodile tears to mock Jesus for his apparent hubris. A man who claims the ability to heal a sick girl is hailed as a hero. But a man who claims the ability to heal a <i>dead </i>girl is lambasted as a lunatic. These people don’t know who Jesus is. They are <i>fools</i>. Their eyes are blind to his glory. They don’t have the Holy Spirit. They’re not born again. They’re utterly incredulous. They don’t see who they’re dealing with. They don’t see that they’re laughing at the destroyer of death who will be resurrected in power to be seated at the right hand of the Father. So how does Jesus respond? He utterly ignores them. He doesn’t give them the time of day. Instead, he turns to Jairus and says, “Do not fear, only believe.” 
+        <br><br>
+        Kids, if I may briefly speak to the few of you that are here, you are entering a world in which it is fashionable to mock Christianity. You will hear your friends mock Jesus Christ. You will hear your friends mock Christians. And if you profess Christ before the world, you will hear your friends mocking <i>you</i> behind your back. The scientifically minded will mock you for being an idiot. The progressively minded will mock you for being a bigot. Even your so-called “Christian” friends will mock you for “taking Christianity too seriously.” You need to decide what path you’re going to take. You’re either going to capitulate under the pressure and deny Christ, or you’re going to ignore them and trust in Jesus. You’re either going to snap like a twig, or you’re going to be like Paul and celebrate being a fool for Jesus and just keep on going. Sooner or later, you’re going to face a decisive moment where you need to choose between Jesus and your friends, and you had better decide now whom you will choose. “Choose this day whom you will serve …. But as for me and my house, we will serve the L<span id="sc">ORD</span>” (Josh 24:15). 
+        <br><br>
+        <h3><i>Talitha Cumi</i> </h3>
+        Jesus casts all of them outside and brings in only the little girl’s parents and his disciples. The scoffers outside don’t deserve to see anything. “For to the one who has, more will be given, and from the one who has not, even what he has will be taken away” (Mark 4:25). 
+        <br><br>
+        Then Jesus takes the little girl’s hand, and says, “Talitha cumi.” Mark records the original Aramaic of Jesus and provides a translation into his Greek. “Talitha” means “little girl” and “cumi” means “arise.” Only three or four times in the Gospels do we have the original Aramaic words of Jesus. Evidently these words were so special and so memorable to the earliest Christian communities that Mark chooses to preserve them even for his Greek-speaking audience. “Talitha cumi.” 
+        <br><br>
+        In Matthew 11:29, Jesus says, “I am gentle and lowly in heart.” In 2020, Dane Ortlund published his now-famous book on this verse, titled <i>Gentle and Lowly</i>, which would become the bestselling Christian book during the pandemic. Channeling Richard Sibbes and various other Puritan authors, Ortlund asks these questions: “Who is Jesus? Who is he <i>really</i>? … What ignites within him most immediately as he moves toward sinners and sufferers? What flows out most freely, most instinctively?” [<a href="#n5" id="l5">5</a>]  Ortlund goes on to note, 
+        <br><br>
+        <div id="scr">
+          In the four Gospel accounts given to us in Matthew, Mark, Luke, and John—eighty-nine chapters of biblical text—there’s only one place where Jesus tells us about his own heart. … In the one place in the Bible where the Son of God pulls back the veil and lets us peer way down into the core of who he is, we are not told that he is “austere and demanding in heart.” We are not told that he is “exalted and dignified in heart.” We are not even told that he is “joyful and generous in heart.” Letting Jesus set the terms, his surprising claim is that he is “gentle and lowly in heart.” [<a href="#n6" id="l6">6</a>] 
+        </div> 
+        <br>
+        If Jesus’s interactions with these two “daughters” tell us anything, it is that we have a Savior who deals gently with sinners and sufferers like us. He knows us better than we know ourselves, and yet he chooses to love us. If ever there was a person who had the right to judge us and expose our shame, it is Christ. Yet instead of condemnation, we find a strange acceptance. We find a Savior who reassures us, who calls us as lambs and sheep by name. Suddenly, to be known by God is not the terrifying reality that it ought to be. In Christ, to be known by God is to be loved and cherished and touched. Ortlund writes,
+        <br><br>
+        <div id="scr">
+          This high and holy Christ does not cringe at reaching out and touching dirty sinners and numbed sufferers. Such embrace is precisely what he loves to do. He cannot bear to hold back. We naturally think of Jesus touching us the way a little boy reaches out to touch a slug for the first time—face screwed up, cautiously extending an arm, giving a yelp of disgust upon contact, and instantly withdrawing. This is why we need a Bible. Our natural intuition can only give us a God like us. The God revealed in the Scriptures deconstructs our intuitive predilections and startles us with one whose infinitude of perfections is matched by his infinitude of gentleness. … It is who he is. It is his very heart. Jesus himself said so. [<a href="#n7" id="l7">7</a>] 
+        </div>
+        <br>
+        <h3>Healing Today?</h3>
+        To conclude somewhat tangentially, I need to briefly comment on the final verse, and this will also go a long way in helping us understand the relevance of this story for our present situations. Why did Jesus “strictly charge them that no one should know this”? In fact, this command to silence happens repeatedly through the Gospel of Mark. Over and over again, Jesus performs miracles and yet commands the spectators to not tell others about what happened. Even when his disciples rightly identify Jesus as the Messiah, Jesus commands his disciples to not tell anybody about who he was. Why is Jesus so concerned with protecting his identity? Isn’t his whole purpose to make himself known to others?
+        <br><br>
+        Although this is a difficult question to answer, it seems mostly likely that Jesus conceals his identity and miracles because he does not want his identity to be misunderstood. Without the sufferings of the cross, his identity as Messiah cannot be correctly understood. Jesus does not want his identity to be reduced to that of a healer, or a miracle worker, or, worse, a political revolutionary. If he allows news of his miracles to travel, people will assume that he has come as a worker of signs and wonders—which, though true, is not the essence of his ministry. If he tells people that he is the Messiah and Son of God, people at that time would have inevitably assumed that he was a revolutionary, here to take down Rome and liberate Israel. Jesus can only be understood as the Messiah in light of his sufferings on the cross, which is why he only permits his identity to be widely proclaimed after the resurrection. The Messiah, more than a healer or miracle worker or liberator, was to be a suffering servant, dying in the place of his people. 
+        <br><br>
+        This is a reminder to us that we are not to reduce Jesus to a healer or a miracle worker. Jesus must be understood on his terms and not ours. It’s very sad today that many Christians have turned to a false, prosperity gospel that is focused only on wealth and health in this life. It’s even more unfortunate that prosperity teachings have infiltrated into even relatively sound churches who are desperate to make themselves more attractive to the world. Unfortunately, these teachings are powerful because they have a kernel of truth, always citing Scripture. However, they completely distort the true gospel. Christians and churches alike must be vigilant to protect sound doctrine and call out prosperity gospel teachings, which vary from misguided to satanic. While Christians are encouraged to pray for the sick (cf. Jas 5:14), physical healing in this life is never God’s central purpose in salvation. Interestingly, we can note that Jesus himself almost never goes out of his way to heal people. He only heals people when he encounters them in the course of his travels. His ministry is always primarily one of teaching and proclamation.
+        <br><br>
+        So then, how do these stories of healing apply to us today? Should we anticipate miracles of healing in our own life? This requires a nuanced answer. While we should not exclude the possibility of miracles today and praying for miracles is not wrong, they do not constitute the center of our hope during times of suffering. “If in Christ we have hope in this life only, we are of all people most to be pitied” (1 Cor 15:19). The Christian’s primary hope is never healing in <i>this</i> life, but the resurrection from the dead and life in the new creation. Stories of healing in the Gospels are like rays of light piercing through dark clouds from above. They represent the inbreaking of the kingdom of God. They apply to us today not by encouraging us to seek healing, but by pointing us toward the hope of the new creation. Christians are first and foremost those who look to the hour when the curses of this life come undone and we receive the resurrection from the dead. Christians are those who wait for that day when “[God] will dwell with [man], and they will be his people, and God himself will be with them as their God” (Rev 21:3). Christians are those who wait for that day when “[God] will wipe away every tear from their eyes, and death shall be no more … for the former things have passed away” (Rev 21:4).
+        <br><br>
+
+
+
+        <br><br><br><br>
+
+        <div id="footnotes">
+          [<a href="#l1" id="n1">1</a>] Richard Sibbes, <i>The Bruised Reed</i>, 1630. Excerpted from chs. 1 and 2, with some minor adjustments in wording. Italics mine.
+          <br>
+          [<a href="#l2" id="n2">2</a>] Sibbes, <i>The Bruised Reed</i>. Last paragraph of chapter 2. 
+          <br>
+          [<a href="#l3" id="n3">3</a>] As understood by the Protestant Reformers, saving faith consists of knowledge, assent/agreement, and personal trust (<i>notitia</i>, <i>assentia</i>, and <i>fiducia</i>.) See also my earlier sermon on faith. 
+          <br>
+          [<a href="#l4" id="n4">4</a>] Augustine, <i>Confessions</i>, ed. Michael P. Foley, trans. F. J. Sheed, 2nd ed. (Indianapolis, IN: Hackett Publishing, 2006), 3.11.
+          <br>
+          [<a href="#l5" id="n5">5</a>] Dane Ortlund, <i>Gentle and Lowly: The Heart of Christ for Sinners and Sufferers</i> (Wheaton, IL: Crossway, 2020), 13.
+          <br>
+          [<a href="#l6" id="n6">6</a>] Ortlund, <i>Gentle and Lowly</i>, 18.
+          <br>
+          [<a href="#l7" id="n7">7</a>] Ortlund, <i>Gentle and Lowly</i>, 24.
+
+        </div>
+
+        <br><br>
+
+        <h2 id="chinese">中文翻译</h2>
+        马可福音 5:21–43
+        <br><br>
+        <div id="scr">
+          <sup>21&nbsp;</sup>耶稣坐船又渡到那边去，就有许多人到他那里聚集；他正在海边上。<sup>22&nbsp;</sup>有一个管会堂的人，名叫睚鲁，来见耶稣，就俯伏在他脚前，<sup>23&nbsp;</sup>再三地求他，说：「我的小女儿快要死了，求你去按手在她身上，使她痊愈，得以活了。」<sup>24&nbsp;</sup>耶稣就和他同去。
+          有许多人跟随拥挤他。<sup>25&nbsp;</sup>有一个女人，患了十二年的血漏，<sup>26&nbsp;</sup>在好些医生手里受了许多的苦，又花尽了她所有的，一点也不见好，病势反倒更重了。<sup>27&nbsp;</sup>她听见耶稣的事，就从后头来，杂在众人中间，摸耶稣的衣裳，<sup>28&nbsp;</sup>意思说：「我只摸他的衣裳，就必痊愈。」<sup>29&nbsp;</sup>于是她血漏的源头立刻干了；她便觉得身上的灾病好了。<sup>30&nbsp;</sup>耶稣顿时心里觉得有能力从自己身上出去，就在众人中间转过来，说：「谁摸我的衣裳？」<sup>31&nbsp;</sup>门徒对他说：「你看众人拥挤你，还说『谁摸我』吗？」<sup>32&nbsp;</sup>耶稣周围观看，要见做这事的女人。<sup>33&nbsp;</sup>那女人知道在自己身上所成的事，就恐惧战兢，来俯伏在耶稣跟前，将实情全告诉他。<sup>34&nbsp;</sup>耶稣对她说：「女儿，你的信救了你，平平安安地回去吧！你的灾病痊愈了。」
+          <sup>35&nbsp;</sup>还说话的时候，有人从管会堂的家里来，说：「你的女儿死了，何必还劳动先生呢？」<sup>36&nbsp;</sup>耶稣听见所说的话，就对管会堂的说：「不要怕，只要信！」<sup>37&nbsp;</sup>于是带着彼得、雅各，和雅各的兄弟约翰同去，不许别人跟随他。<sup>38&nbsp;</sup>他们来到管会堂的家里；耶稣看见那里乱嚷，并有人大大地哭泣哀号，<sup>39&nbsp;</sup>进到里面，就对他们说：「为什么乱嚷哭泣呢？孩子不是死了，是睡着了。」<sup>40&nbsp;</sup>他们就嗤笑耶稣。耶稣把他们都撵出去，就带着孩子的父母和跟随的人进了孩子所在的地方，<sup>41&nbsp;</sup>就拉着孩子的手，对她说：「大利大，古米！」（翻出来就是说：「闺女，我吩咐你起来！」）<sup>42&nbsp;</sup>那闺女立时起来走。他们就大大地惊奇；闺女已经十二岁了。<sup>43&nbsp;</sup>耶稣切切地嘱咐他们，不要叫人知道这事，又吩咐给她东西吃。
+
+        </div>
+            
+        <br><br>
+
+        1630年，英国清教徒理查德·西布斯出版了他对以赛亚书42章3节的著名释经著作，书名叫《压伤的芦苇》。
+        以赛亚说基督是这样的人：“压伤的芦苇，他不折断；将残的灯火，他不吹灭。他凭真实将公理传开。”（以赛亚书42:3，和合本）
+        西布斯常被人称作“甘露滴者”，因为他总能温柔地将基督的怜悯带进受伤的心中。
+        他关于这节经文的书至今仍是他最广为流传的作品。
+        西布斯写道：“‘压伤的芦苇’是指那些在痛苦中，被苦难逼得开始看见罪才是根源的人。”
+        无论罪有多大的欺骗力，当我们真正受伤、被击打时，这些假象都会被打破。
+        这样的人意识到自己的罪和痛苦，知道自己不能够帮自己，只能迫切地寻求另一个来源的帮助。
+        那一线希望被怀疑和惧怕所搅扰，使他就像“将残的灯火”。
+        “压伤的芦苇”和“将残的灯火”这两个形象合在一起，就是一个痛苦破碎之人的真实写照。
+        我们需要被“压伤”，因为只有这样，芦苇才会知道自己是芦苇，不是橡树。
+        但在履行他呼召的过程中，基督不会折断那压伤的芦苇，也不会吹灭那将残的灯火。
+        他不仅不折断、不吹灭，反而会温柔地扶持那些他所拯救的人。
+        医生虽然会给病人带来疼痛，但他们的目的是医治，而不是毁坏。
+        外科医生做手术时会切开伤口，但不会肢解病人。
+        一个母亲就算孩子再顽劣，也不会因此抛弃他。
+        泉源会比溪流更少怜悯吗？
+        难道我们会比神更多怜悯吗？
+        <br><br>
+        我们今天要看的这段经文，就是关于基督在地上的事工中，如何对待那些“压伤的芦苇”。
+        我们理应为此感到震撼——那位道成肉身的神，万王之王、万主之主，那独一不死、住在人不能靠近的光里的主（提摩太前书6:15–16），竟然愿意以牧人带羊羔的样式，柔和地俯就人类。
+        正如西布斯所说：“那位住在至高之处的神，也住在最卑微的心中。”
+        <br><br>
+        我们首先遇见一个人，叫睚鲁，他的小女儿快要死了。
+        睚鲁是会堂的主管，有地位、有权柄，但他不仅来到耶稣面前，甚至俯伏在他脚前——这一点，可以说是非常罕见的。
+        但我相信，我们都知道，死亡常常让人做出极不寻常的事。
+        <br><br>
+        我们这个时代最严重的错觉之一，就是我们已经习惯了“死亡的缺席”。
+        长寿的祝福反而让我们误以为暂时的是永恒的。
+        我们拼命追求金钱、地位、关系，但当死亡来得早了一点，我们竟然还觉得自己被亏待了。
+        我们建构了一个荒唐的现代泡泡，里面的人觉得自己有权活到某个年龄。
+        正是这个泡泡，支撑了我们对人生、身份、意义的无数幻想。
+        <br><br>
+        有时候，就像这个会堂主管的情况，这个泡泡被戳破，反而是种恩典。
+        如果没有死亡，他可能会继续活在自我欺骗的荣耀中。
+        但正是死亡教会我们，不要太紧抓我们在今生所拥有的一切。
+        死亡提醒我们，生命和万事万物，其实都是礼物，而不是我们理所当然可以拥有的权利。
+        就像睚鲁一样，死亡让我们看清我们是谁，也看清我们真正的需要是什么。
+        <br><br>
+
+        如果你在这里、你还不是基督徒，我邀请你认真思考一下你对生命的看法。
+        你的世界观，或你的人生哲学，是否足以面对这样一个现实：你和你所爱的人，终有一天会在完全无法掌控的时刻死去？
+        无论是你自己，或是你最亲爱的人躺在病床上，你有没有准备好面对那一刻——你会与最爱之人永远分离的那一刻？
+        你，准备好面对死亡了吗？
+        <br><br>
+        所以，睚鲁谦卑地来到耶稣面前，请他去医治自己的女儿。
+        耶稣就和他一同前往。
+        但路上有许多人跟随他们，拥挤着耶稣。
+        耶稣被四面围住，每个人都想看看会不会发生神迹。
+        我们可以想象睚鲁有多焦急，被这人群拖慢脚步，一定非常难受。
+        <br><br>
+
+        现在，请大家看第25节，这时我们就遇到了今天故事的第二位人物——一个患了十二年血漏的女人。
+        和周围的人不同，这个女人不是来看热闹的。
+        她不是来找娱乐的。
+        她不是因为好奇心才来的。
+        她不是因为朋友来了自己也来。
+        她不是为了讨好父母而来。
+        她不是因为她有什么服事的责任。
+        她也不是因为这样做可以让她成为“好人”。
+        她来，是为了得救。
+        她来，是要得活水和生命的粮。
+        <br><br>
+        我们需要稍微解释一下她的状况。
+        经文说她“患了血漏”，很可能是长年不断的月经出血。
+        但她面临的最大痛苦，并不是身体的病痛，而是社会的排斥。
+        按犹太利未律法，有血漏的女人是“长时间不洁净的”。
+        利未记15章25到27节这样说：“女人若在经期以外患多日的血漏，或是经期过长，有了漏症，她就因这漏症不洁净
+        与她在经期不洁净一样。
+        她在患漏症的日子所躺的床、所坐的物都要看为不洁净，与她在月经期一样。
+        凡摸这些物件的，就为不洁净，必不洁净到晚上，并要洗衣服，用水洗澡。
+        <br><br>
+        没人敢碰她，甚至没人敢碰她坐过的东西。
+        她是不洁净的，谁碰她，谁就要变得不洁。
+        可以说，她在社会上就像一个麻风病人一样。
+        正是这种深深的羞耻感，逼着她花光所有的钱去求医，希望能治好病。
+        经文也说，她“在好些医生手里受了许多苦”。
+        我们要记住，那时候的医生大多是靠迷信行骗的江湖术士。
+        他们卖的膏药不能治病，他们开的方子可能还会害人。
+        无论他们是否真的相信自己的方法，他们实际上都是向绝望的人兜售空头支票的敛财者。
+        空洞的承诺，绝望的人心。
+        <br><br>
+        这是否让你想起今天这个世界里的很多“医生”？
+        我当然不是指医院里的医生。
+        我说的是那些兜售“假医治”的人和事物，根本解决不了我们的问题。
+        那些“医生”可能是金钱、美貌、学历、友情、性和爱情。
+        他们承诺给你立刻的满足，结果却带来更深的空虚和痛苦，只需要付出你一点点代价——你的灵魂。
+        说不定，我们和这个女人也没多大区别。
+        “只要我能拿到那份工作，我的钱就够了。”
+        “只要我能长得像那个人，我就对自己满意了。”
+        “只要我能进那个大学，爸妈就会认同我了。”
+        “只要我能娶到那个女人，我就幸福了。”
+        十二年过去了，她花尽所有，结果却比一开始还要糟糕。
+        到最后，我们没那么强大，也没那么自足。
+        到最后，我们发现自己不过是被风压弯的芦苇，将要熄灭的灯火。
+        到最后，我们需要的是一个讲真话、不卖假药的医生——一个会医治我们，而不是耗尽我们的人。
+        稍微清醒一点的人都知道，我们这个世界，没有这样的医生。
+        <br><br>
+
+        接下来，请大家看第27节，这里讲到了这个女人的信心，以及她因信而产生的行动。
+        这女人“听见耶稣的事”，我们不知道她听到了什么具体的内容。
+        但无论她听见了什么，她都是凭信心接受了。
+        从她的例子中，我们可以看到得救之信所包含的三个基本要素：
+        第一，她听见并明白了关于耶稣的事。
+        第二，她承认并同意这些事是真实的。
+        第三，她把完全的信靠放在这些事上，相信这福音能救她。
+        她的信心不仅是认同耶稣有能力救她，更是在实际行动上，以一种非常真实的方式，把耶稣当作她自己的救主。
+        耶稣对她来说不仅是“有能力”的，也是“不可缺少”的——她排除一切阻碍，只为得着基督。
+        也正是这种信心，使她与那些围绕耶稣、但只是围观的人区分开来。
+        那些人也许也相信耶稣有能力医治，但不像她一样意识到自己真正的需要。
+        可惜的是，今天许多人更像那些围观的群众，而不是这位女人。
+        他们自称“基督徒”，仅仅因为他们相信有神，也相信耶稣存在。
+        但一个真正的基督徒，是那个信靠耶稣得救、并降服于耶稣，以他为主的人。
+        这是一个不小的区别，也提醒我们必须省察自己。
+        <br><br>
+        她的信心促使她从人群中伸出手去，摸耶稣的衣裳。
+        她心里说：“我只要摸他的衣裳，就必痊愈。”
+        我们刚刚赞扬了她的信心，但现在也看到她信心的软弱。
+        显然，她的信虽然真实，却也夹杂着惧怕和疑惑。
+        她的信心是真的，但也是软弱的。
+        她只是想做最不引人注意的举动，只想偷偷摸一下就走。
+        接下来的几节经文也印证了这一点。
+        她相信耶稣有能力救她，但还不敢相信耶稣乐意救她。
+        她知道基督是可以拯救的主，却还不认识他是一位满有怜悯、会亲自爱她的主。
+        她知道弥赛亚大有能力，却还不知道他也有极大的谦卑。
+        我们在这里得到的提醒与鼓励是：尽管撒但总想让我们怀疑，但只要信心足以把我们与这样一位丰富的救主连结，即便是最软弱的信心，也足够了。
+        得救的确据，不在于信心有多强，而在于信心所依靠的对象是否可靠。
+        连她得救的方式也说明了这一点。
+        只要轻轻一摸就够了。
+        不是抓住他的手，只是摸到他衣裳的边缘。
+        只是轻轻一触，就足够了。
+        <br><br>
+        但“摸”虽然对她的得救来说已经足够，对耶稣来说却还不够。
+        我们在第30节读到，耶稣立刻感觉到有能力从他身上出去，就寻找那摸他的人。
+        门徒感到不可思议，也难怪他们会这样。
+        因为人群四面拥挤，耶稣怎么会在乎“谁摸了他”？
+        这问题是真的还是反问也说不准。
+        也许耶稣确实知道是谁，只是借着发问想让那女人现身。
+        或者耶稣真的不知道是谁摸了他并得了医治。
+        两种可能都有，因为耶稣在凭着他的人性知识行事时并不是无所不知的，只有在凭着他神性知识行事时才是全知的。
+        无论是哪种情况，有一点是肯定的：耶稣不满足于只是施行医治的大能。
+        耶稣拒绝成为一个只提供“能力”的来源。
+        女人要的是医治，但耶稣要的是与她的相遇。
+        <br><br>
+        这也提醒我们，基督信仰的核心，不是基督所赐的好处，而是基督祂自己。
+        很多假教师错把福音简化为一堆属世的益处。
+        但即使是真福音中所领受的救恩恩赐——如称义、得儿子的名分、成圣和永生——也只是达到最终目的的手段。
+        而那个最终的目的，就是与神亲自联合并与祂相遇的盼望。
+        信心的终点，不是“得救”本身，而是认识基督，与他联合。
+        就是有一天能成为神的亲密同在的见证者，也就是历代神学家所称的“荣光之见”（beatific vision）——得以面对面见神的荣耀。
+        因此，基督呼唤那女人，不是为了使她羞愧，而是为了给她一个比她所求更大的恩典——把耶稣自己给她。
+        <br><br>
+        我们有时很容易忘记，基督对他羊群的爱是多么个人化、多么具体。
+        我们的罪、我们的羞愧、我们对神话语的忽视，会让我们怀疑他是否爱我们。
+        或者，我们或许确信神爱世人，却不确定他是否爱“我”。
+        <br><br>
+        奥古斯丁在他的自传中，曾回忆他的母亲莫尼卡因他不信主而极度忧伤的情景。
+        他一再描述他母亲如何因他灵魂的状态而痛哭不已，不断向神祷告，求神使他悔改得救。
+        他写道，这也是他对神的祷告：“我母亲——你的忠仆——为我向你哭泣，比世上的母亲为自己儿女肉体的死亡更为悲痛。
+        ……你听见了她，你没有轻看她的眼泪，当她把脸贴在地上祷告时，她的泪水滴落在尘土上。
+        你听见了她。
+        ……你的耳朵听见了她的心声，你是那位看顾我们每一个人，好像只看顾他一个；又是那位看顾我们众人，好像我们是一人。”
+        换句话说，奥古斯丁说神对我们的爱深刻到一个地步：即使他只爱我们一个，也不会更深。
+        他的爱是永不枯竭的。
+        如同神自己一样，神的爱既是超越的，也是亲近的。
+        “超越”，是说神的爱不可测度，超越人类理解，我们只能摸到一点影子。
+        “亲近”，是说神的爱不只是我们能理解，更是我们可以深刻感受到的，能渗透我们灵魂最深处。
+        这样的爱，叫人想要欢呼。
+        叫人想要歌唱。
+        但最重要的是，叫人想要回应他的呼召，来到他面前。
+        他呼唤他的羊，不是当作一群，而是“按着名字叫自己的羊”（约10:3）。
+        如此精准、个别、拣选、明确的爱，我们怎能不回应，来到他面前？
+        那女人听见她牧人的声音、她创造主的声音，她不会拒绝主在她身上的喜悦。
+        她不再隐藏，来到基督面前，俯伏在地，把实情全告诉他。
+        不再羞愧。
+        不再疑惑。
+        只有那完全的爱——基督的爱。
+        <br><br>
+        你认识这种爱吗？
+        认识这爱的方法，就是仰望基督和他的十字架。
+        “惟有基督在我们还作罪人的时候为我们死，神的爱就在此向我们显明了。”（罗5:8）
+        罪和我们对神的悖逆，使我们与神隔绝，使我们感受不到神的爱。
+        罪使我们的心昏暗，让我们对神、对他的要求、对他如何关心我们变得麻木。
+        按公义来说，我们配得的不是神的爱，而是他的审判。
+        在十字架上，基督——那成为人的神的儿子——代替我们承受了神的审判和忿怒，替那些愿意悔改、信靠他的人死。
+        三日之后，他从死里复活，不但战胜了罪与死亡，也表明罪的代价已经完全偿还。
+        你若愿意悔改、信靠基督，你就能认识这种爱——神差他爱子为你而死的爱。
+        信靠他，降服在他面前，基督此刻就要成为你的主，就像他那天成为那女人的主一样。
+        <br><br>
+        但这个故事还没有结束。
+        这一切，都是在耶稣前往睚鲁家的途中发生的。
+        看起来，是人群的耽搁，特别是这位妇人的出现，使耶稣没能及时赶到睚鲁家中。
+        睚鲁的女儿，死了。
+        <br><br>
+        在这一刻，我们很难不联想到拉撒路复活的那一幕。耶稣当时同样是被耽搁了，直到拉撒路死后才前去（约11:6）。
+        神的时间从来不是偶然的。
+        <br><br>
+        质疑耶稣的人纷纷而至。
+        有报信的，劝睚鲁不要再麻烦耶稣了。
+        那些受雇前来哭号的，甚至嘲笑耶稣的狂妄。
+        一个人声称能医治病人，被奉为英雄。
+        但一个人声称能医治死人，则被当作疯子。
+        这些人根本不知道耶稣是谁。
+        他们是愚昧人。
+        他们的眼睛瞎了，看不见他的荣耀。
+        他们没有圣灵。
+        他们没有重生。
+        他们完全不信。
+        他们不知道自己正在嘲笑的是那位将要战胜死亡、复活升天、坐在父神右边的主宰。
+        <br><br>
+        那么耶稣怎么回应呢？他根本没有理会他们。
+        没有浪费一句话。
+        相反，他转向睚鲁，对他说：“不要怕，只要信。”
+        <br><br>
+        在座的孩子们，如果我可以花一点时间对你们说几句，你们正要进入一个把嘲笑基督教当作时髦的世界。
+        你们会听到你们的朋友讥笑耶稣基督。
+        你们会听到你们的朋友讥笑基督徒。
+        如果你们在众人面前承认你们属于基督，你们会听见你们的朋友在背后讥笑你们。
+        自诩有科学头脑的人会笑你是个蠢蛋。
+        自诩追求发展的人会笑你是个偏执狂。
+        甚至那些所谓的“基督徒”朋友也会笑你，“你也太认真了吧？”
+        你必须决定，要走哪条路。
+        你要在压力下退缩否认基督，还是要无视他们、信靠耶稣？
+        你要像树枝一样一碰就断，还是像保罗那样，为耶稣作愚拙人，继续前行？
+        你迟早会面对一个关键时刻，必须在耶稣和朋友之间做出选择，你最好现在就决定，你会选择谁。
+        “你们今日要选择所要事奉的是谁……
+        至于我和我家，我们必定事奉耶和华。”（书24:15）
+        <br><br>
+        耶稣把众人都赶到外头，只带着那女孩的父母和几个门徒进去。
+        那些讥笑他的人，不配看到接下来的事。
+        “因为有的，还要给他；没有的，连他所有的也要夺去。”（可4:25）
+        <br><br>
+        接着，耶稣拉着小女孩的手，说：“大利大，古米。”
+        马可记录了耶稣原本的亚兰语，并将其翻译成希腊语。
+        “大利大”意思是“小女孩”，“古米”意思是“起来”。在四福音中，仅有三、四次保留了耶稣的亚兰原话。
+        显然，这句话对早期教会极为宝贵，甚至使马可决定为说希腊语的读者保留它。
+        “大利大，古米。”
+        <br><br>
+        在马太福音11章29节，耶稣说：“我心里柔和谦卑。”
+        2020年，戴恩·奥特伦出版了关于这节经文的著作《柔和谦卑》，在疫情期间成为畅销的基督教书籍。
+        他引用理查·西布斯和其他清教徒神学家，提出这些问题：
+        “耶稣是谁？
+        他真正的本质是什么？
+        当他面对罪人和受苦的人时，内心首先被点燃的是什么？
+        他最自然、最本能的反应是什么？”
+        奥特伦指出：“在马太、马可、路加、约翰四本福音书中——共八十九章的圣经文本——只有一次，耶稣亲自告诉我们他的心如何。
+        唯一一次圣子自己撩开帷幕，让我们窥见他的内心，圣经没有说，他是‘严厉苛刻的心’，
+        也没有说，他是‘高高在上、威武庄严的心’，
+        甚至没有说他是‘喜乐慷慨的心’。
+        当耶稣亲自定义他是谁时，他出人意料地说：‘我心里柔和谦卑。’”
+        <br><br>
+        如果耶稣与这两位“女儿” （也就是患血漏的妇人和睚鲁的女儿）的互动说明了什么，那就是他是一位温柔对待罪人和受苦者的救主。
+        他比我们更了解我们自己，然而他仍然选择爱我们。
+        如果谁有资格审判我们、揭露我们的羞耻，那就是基督。
+        但我们在他那里不是被定罪，乃是被接纳。
+        我们遇见一位安慰我们、按我们名字呼召我们这些小羊的救主。
+        突然间，被神所认识，不再是令人恐惧的事。
+        在基督里，被神所认识，意味着被爱、被珍惜、被触摸。
+        <br><br>
+        奥特伦写道：“这位至高圣洁的基督，面对污秽的罪人和麻木的受苦者，并不退缩。
+        相反，这正是他喜爱做的事。
+        他不能忍受袖手旁观。
+        我们以为耶稣触摸我们时，就像小男孩第一次去摸一只鼻涕虫时的样子——脸扭成一团，小心地伸出手，一触即跳开，满脸厌恶。”
+        奥特伦接着说：“这正是我们需要圣经的原因。
+        我们的直觉只能想象出一个像我们一样的神。
+        但圣经所启示的神，颠覆了我们直觉中的偏见：他的完美是无限的，而他的温柔也是无限的。
+        这是神的本性，
+        是他的心，
+        是耶稣亲自说的。”
+        <br><br>
+        最后，我想稍微岔开一点来评论这段经文的最后一节，这也将帮助我们理解这段故事与我们当下处境的关联。
+        为什么耶稣“切切地嘱咐他们，不要叫人知道这事”？
+        事实上，这种沉默的命令在马可福音中屡次出现。
+        耶稣一次又一次地行神迹，却吩咐目击者不要把事情告诉别人。
+        甚至当门徒正确地认出耶稣是弥赛亚时，耶稣也吩咐他们不要将自己的身份告诉任何人。
+        耶稣为何如此在意隐藏自己的身份？
+        他的使命不正是要向人显明自己吗？
+        <br><br>
+        虽然这个问题不易回答，但最合理的解释是：耶稣隐藏身份和神迹，是因为他不愿自己的身份被误解。
+        如果没有十字架的受苦，人们无法正确理解他作为弥赛亚的真正身份。
+        耶稣不愿人把他看作单单是一个医治者、行神迹者，或者一个政治改革家。
+        如果他允许这些神迹的消息传播出去，人们就会以为他只是一个行异能的先知——这虽不完全错误，却也不是他事工的核心。
+        如果他直接告诉人自己是弥赛亚， 是神的儿子，那时的人必然会误以为他是来推翻罗马、解放以色列的政治领袖。
+        唯有在十字架的光照之下，弥赛亚的身份才能被正确理解，这也是为什么耶稣只在复活之后才允许人广传他的身份。
+        弥赛亚的本质，不是医治者、行神迹者、或解放者，乃是一位替百姓死的救赎者。
+        <br><br>
+        这提醒我们，我们也不能将耶稣简化为一位医治者或行神迹的人。
+        我们必须按耶稣的方式来认识他，而不是照着自己的期待来定义他。
+        令人遗憾的是，如今许多基督徒已转向一个错误的、以今生的财富和健康为中心的“成功神学”。
+        更令人忧心的是，这种教导已经渗透进许多原本正统的教会，只因他们渴望变得更吸引世界。
+        可悲的是，这些教导之所以有影响力，是因为它们常引用圣经，看似合情合理。
+        但实际上完全扭曲了真正的福音。
+        基督徒和教会都必须警醒，维护纯正的教义，揭露“成功神学”的谬误——这些教导不仅是错误的，有时甚至是邪恶的。
+        虽然基督徒应当为病人祷告（参雅5:14），但身体的医治从来不是神救恩的中心目的。
+        有意思的是，我们注意到耶稣几乎从不特意去医治人。
+        他只是在旅途中遇见人时才施行医治。
+        耶稣的事工核心一直是教导和宣讲福音。
+        <br><br>
+        那么，这些医治的故事今天对我们有什么意义呢？
+        我们是否应当期待自己生命中也会出现神迹奇事？
+        我们需要小心地回答这个问题。
+        我们不应排除今天仍有神迹的可能，也可以为神迹祷告，但这些不应成为我们在苦难中盼望的核心。
+        “我们若靠基督只在今生有指望，就算比众人更可怜。”（林前15:19）
+        基督徒的主要盼望，从来不是今生的医治，而是死人复活和新创造的生命。
+        福音书中的医治故事，如同从密云中穿透而出的光线。
+        它们是神国降临的序幕。
+        这些故事对我们今日的意义，并不是叫我们去追求医治，而是指向那新天新地的盼望。
+        基督徒首先是那些仰望那一刻的人，一切今生的咒诅被废除、死人都要复活的时刻。
+        基督徒是那些等候那一日的人：“神要与人同住，他们要作他的子民，神要亲自与他们同在，作他们的神。”（启21:3）
+        基督徒是那些等候那一日的人：“神要擦去他们一切的眼泪，不再有死亡……因为以前的事都过去了。”（启21:4）
+
+
+
+
+
+
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
