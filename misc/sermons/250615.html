@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>250615</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>The Cross and True Greatness</h1>
+        <p>
+        Lord's Day, June 15, 2025, Connect Church Silicon Valley (with <a href="#chinese">Chinese translation</a>)
+        <br>
+        Mark 9:30–37<br>
+        </p>
+
+        <div id="scr">
+          
+
+          <sup>30&nbsp;</sup>They went on from there and passed through Galilee. And he did not want anyone to know, <sup>31&nbsp;</sup>for he was teaching his disciples, saying to them, “The Son of Man is going to be delivered into the hands of men, and they will kill him. And when he is killed, after three days he will rise.” <sup>32&nbsp;</sup>But they did not understand the saying, and were afraid to ask him. 
+          <br><br>
+
+          <sup>33&nbsp;</sup>And they came to Capernaum. And when he was in the house he asked them, “What were you discussing on the way?” <sup>34&nbsp;</sup>But they kept silent, for on the way they had argued with one another about who was the greatest. <sup>35&nbsp;</sup>And he sat down and called the twelve. And he said to them, “If anyone would be first, he must be last of all and servant of all.” <sup>36&nbsp;</sup>And he took a child and put him in the midst of them, and taking him in his arms, he said to them, <sup>37&nbsp;</sup>“Whoever receives one such child in my name receives me, and whoever receives me, receives not me but him who sent me.”
+
+        </div>
+        <br><br>
+        <h3>Introduction</h3>
+
+        What is true greatness? There’s a fascinating story from the life of Adoniram Judson that illustrates the complexity of this question. As you might know, Adoniram Judson was the first American foreign missionary who became the first to translate the Bible into Burmese. But before he became a Christian, he was actually a very ambitious young man. From a young age, he was always in pursuit of greatness. He gave himself to his studies and graduated top of his class from Brown University. This was no small feat, considering that among his classmates were future Congressmen and Presidential Cabinet members. Judson seemed poised to become a great man in the eyes of the world. But everything changed when he was converted as a Christian. His biographer writes, “He banished forever those dreams of literary and political ambition in which he had formerly indulged, and simply asked himself, How shall I so order my future being as best to please God?” [<a href="#n1" id="l1">1</a>]  And so he became the first American to boldly commit himself to a lifetime of foreign missions. You can imagine what a stark contrast it was, to go from top of his class at Brown to preaching in a small hut in the streets of Burma. Judson demonstrated that greatness in the eyes of God is radically different from greatness in the eyes of the world.
+        <br><br>
+        But it’s actually for a different reason that I’ve used Judson’s life as an illustration today. And that comes from another episode in his life that I think really serves to demonstrate the complexity of human pride in even what seem to be the most humble and self-sacrificial individuals. After around 13 long and difficult years in Burma, two of which were spent in prison, his first wife Ann and their only child both died, and Judson was thrown into a deep depression. For whatever reason, their deaths gave Judson this profound sense of guilt and awareness of his own pride. In his depression, he began to feel that he had never really escaped his childhood temptation of pursuing greatness. His biographer writes, 
+        <br><br>
+        <div id="scr">
+        He began to suspect that his real motive in becoming a missionary had been not genuine humility and self-abnegation but ambition – ambition to be the <i>first</i> American foreign missionary; the <i>first</i> missionary to Burma; the <i>first</i> translator of the Bible into Burmese: <i>first</i> in his own eyes and the eyes of men. . . . He had always known that his forwardness, self-pride and desire to stand out were serious flaws in his nature. Now he began to suspect that they were more than flaws. They made his entire missionary career up to now a kind of monstrous hypocrisy, a method of securing prominence and praise without admitting it to himself. He had deluded himself. But he had not deluded God. Perhaps here was the intention in all these deaths: to teach him true humility. [<a href="#n2" id="l2">2</a>] 
+        </div>
+        <br>
+        These thoughts sank him even deeper into his depression, and he began to punish himself for his pride. He gave away all of his life savings. When Brown awarded him an honorary doctorate, he publicly renounced it. He asked his family back at home to destroy all his letters and writings, so that he would have no legacy to leave behind. He moved away from all the other missionaries into a little hut deep in the tiger-infested jungle, where he would read his Bible and confine himself to total solitude. At one point, he famously even dug his own grave and sat next to it for days at a time. 
+        <br><br>
+        While I obviously would not recommend following in Judson’s footsteps here, I do highlight this story to show that even the greatest servants of God are not immune to the temptations of worldly greatness. Pride is always “crouching at the door” (Gen 4:7), and as Christians we need to rule over it. Instead of pursuing greatness in the eyes of this world, we are to pursue greatness in the eyes of God. In other words, we are to exhibit the humility of the gospel. This is going to be the topic of my message for today.
+        <br><br>
+        <h3>Mark 9:30–37</h3>
+        As we go into today’s passage, it helps to first understand a bit of context. The book of Mark has a very clear structure. The entire first half of the book is all about introducing Jesus as the Messiah, or the Christ. This section culminates with Peter’s confession at Caesarea Philippi in Mark 8, where he confesses that Jesus is indeed the Christ. But after this moment, there’s a significant shift in the color of the story. The narrative takes a darker turn as Jesus travels from Caesarea Philippi in the north to Jerusalem in the south, which was the nexus of Jewish opposition. The emphasis in this section is no longer on Jesus’ <i>identity</i> as the Messiah, but on Jesus’ <i>role</i> as the Messiah. We learn that being the Messiah means being the suffering servant. And therefore we also learn that following the Messiah means following him in his suffering and self-denial as he journeys to the cross. And so it is here in the Gospel of Mark, in chapters 9–10, as Jesus makes his way to Jerusalem, that we see the most extended meditations upon the imminent death and resurrection of Christ. 
+        <br><br>
+        Significantly, Mark records Jesus foretelling his death and resurrection exactly three times in these two chapters. Today’s passage is the second one of these three times. In all three instances, the disciples have no idea what Jesus is saying. And in all three instances, Jesus’ foretelling of his death is followed by a teaching on what it means to be his disciple. We see very clearly that discipleship and the cross are inextricable. Jesus makes it very clear that his disciples are following, yes, a triumphant king, but one whose triumph only occurs because he is first a <i>crucified</i> king. So, today, as we meditate upon humility and true greatness, it is impossible for us to think about these things without the cross in mind. 
+        <br><br>
+        To begin, let’s turn our eyes to verse 31. Jesus teaches his disciples, “The Son of Man is going to be delivered into the hands of men, and they will kill him. And when he is killed, after three days he will rise.” If you’re new to the Bible, “Son of Man” is a phrase that Jesus often uses to refer to himself. So, at this point in the story, he is foretelling his own death and resurrection from the grave, which will ultimately happen exactly as he said it would, at the end of the book. 
+        <br><br>
+        Strangely, the disciples don’t understand what Jesus is saying, even though he is being as literal as he could possibly be. The reason is that even though the disciples believed that Jesus was the Messiah, they didn’t understand what it meant to be the Messiah. If you’re new to the Bible, the word “Messiah” is also very important to understand here. “Messiah” is a Hebrew word that is actually translated “Christ” in Greek, and it simply means the “Anointed One.” For the Jews before and during the time of Jesus, the Messiah was an anticipated future king, descending from King David, who would restore the nation of Israel to its former glory and also bring peace to the whole world. Nearly all of the prophets in the Jewish Scriptures (our Old Testament) prophesied about this future Messiah and his Messianic reign. And so, during Jesus’ time, when Israel had essentially been subservient to foreign powers for nearly six centuries, Messianic expectation was rife among the Jews. And so, when the disciples confess Jesus to be the Messiah, this was their expectation. They were expecting a great king or political leader who would release Israel from the stranglehold of the Roman Empire and bring peace to the land. And so for Jesus to tell them that he was going to be killed was almost nonsensical. In fact, the first time Jesus tells them this, Peter even rebukes him for saying such a foolish thing. Then, as you might remember, Jesus rebukes Peter for rebuking him, and Jesus even calls him Satan. So, this second time Jesus speaks about his death, the disciples are at least wise enough to shut up, but not yet wise enough to understand what Jesus was saying. 
+        <br><br>
+        Moving on to verses 33–34, it seems like we’ve gone on to a different story about the disciples arguing about who is the greatest. But of course, as I’ve mentioned just now, these two tiny passages really have to be read together. The disciples’ misunderstanding about true greatness really comes from their failure to understand what it means for Jesus to be the Messiah. Their wrong view of Jesus has given them a wrong view of themselves. 
+        <br><br>
+        Jesus obviously knows exactly what is on their minds, and he sits down and begins to teach. Notice that he does not rebuke them for seeking greatness. Greatness in and of itself is not a bad thing. It was the disciples’ vision of greatness that was wrong. Whatever the disciples saw as being true greatness, Jesus teaches a different kind. He says, in verse 35, “If anyone would be first, he must be last of all and servant of all.” In other words, if you want to be great in the kingdom of God, you need to be willing to make yourself low for the sake of others. You need to be a servant. This is Jesus’ upside-down kingdom. The kingdoms of this world are all about control, self-exaltation, and posturing for power and attention. The kingdom of God is very different. In the kingdom of God, blessed are the poor in spirit, for theirs is the kingdom of heaven (Matt 5:3). In the kingdom of God, blessed are the meek, for they shall inherit the earth (Matt 5:5). We see this most clearly in the life of Jesus himself. Jesus was the true exemplar of greatness because he laid his life down for others. This is why verses 33–37 come after 30–32. Jesus’ death on the cross was his greatness, because he became last of all and a servant of all. Paul describes this very clearly in Philippians 2. In fact, I invite you to turn there if possible—the second chapter of the letter to the Philippians. He writes, starting in verse 5, 
+        <br><br>
+        <div id="scr">
+        Have this mind among yourselves, which is yours in Christ Jesus, who, though he was in the form of God, did not count equality with God a thing to be grasped, but emptied himself, by taking the form of a servant, being born in the likeness of men. And being found in human form, he humbled himself by becoming obedient to the point of death, even death on a cross. Therefore has highly exalted him and bestowed on him the name that is above every name, so that at the name of Jesus every knee should bow, in heaven and on earth and under the earth, and every tongue confess that Jesus Christ is Lord, to the glory of God the Father. (Phil 2:5–11)
+        </div>
+        <br>
+        Even though Jesus was God in his very nature, he became man and came to this earth. And not only that, he entered into the humiliation of the cross by dying on behalf of all who would turn and trust in him. He did this out of love for the world and obedience to God the Father. And it was <i>because</i> of this obedience and this humiliation—this willingness to be “last of all and servant of all”—that God highly exalted Christ and made him Lord over all things. So, it was on the cross that Jesus demonstrated what it means to be first, but first <i>through</i> being last. It is this humility and servitude that Christians are called to imitate and resemble.
+        <br><br>
+        Finally, in verses 36–37, Jesus gives them a clear example of what it means to be a servant. He takes a child, literally places the child in the middle of the disciples, and takes the child into his arms. He does this to demonstrate that somebody of true greatness is one who cares for and associates with the lowly. It is the one who lovingly receives the lowliest of people who is the one who has received Christ. If you know your Bible well, this should remind you of the parable of the sheep and the goats in Matthew 25. Jesus teaches us that the way we receive the lowliest people and the way we receive Christ are one and the same. And those who have received Christ are those who have received him who sent Christ—God the Father. 
+        <br><br>
+        Now, as we think about the application of this passage, I’d like to think specifically about the nature and practice of this kind of humility. I’ll approach this from three directions. First, let’s think about what true humility is. Then, second, let’s think about what true humility looks like. And then third, once we’ve nailed that down, we can think more about how we can cultivate that kind of humility in our lives.
+        <br><br>
+        <h3>What Is True Humility?</h3>
+        So first, what is true humility? Let’s first think about an important misconception about what humility is. Unfortunately, I think this has more to do with culture than the Bible. This misconception is that humility and self-deprecation are the same. This is not true, at least from a Christian perspective. What I mean by “self-deprecation” is that kind of person who is constantly thinking about his own faults and his shortcomings and his inabilities. It is true that there is an important place in the Christian life for this kind of thinking. Christians need to confess sin and be aware of ways in which they have fallen short. As Paul says in Romans 12, “I say to everyone among you not to think of himself more highly than he ought to think, but to think with sober judgment” (Rom 12:3). In other words, we need to have a proper estimation of ourselves, so that we’re not conceited. But this is not what is meant by humility—or, at least not the humility that is described in today’s passage. A very easy way to see this is just by noticing that Jesus himself could not have exercised this kind of so-called “humility.” If Jesus is indeed our model of humility, then humility cannot be the same thing as self-deprecation, because Jesus had no sins or shortcomings or inabilities to acknowledge. He was perfect in all of his goodness and even omnipotent in his divine nature. I think that if you met Jesus, you would not see the kind of “humility” that most people think of when they think of the word “humility.” 
+        <br><br>
+        Rather, true biblical humility is about making ourselves less important for the sake of others. It is what Paul means when he says to not do anything “from selfish ambition or conceit, but in humility <i>count others more significant than yourselves</i>” (Phil 2:3). In fact, true humility is what we might call <i>self-forgetfulness</i>. Here, I’m borrowing a term from Tim Keller’s short book titled <i>The Freedom of Self-Forgetfulness</i>, and I agree with his definition of humility. He writes, “The essence of gospel-humility is not thinking more <i>of</i> myself or thinking less <i>of</i> myself, it is thinking of myself <i>less</i>.” [<a href="#n3" id="l3">3</a>]  Not thinking less <i>of</i> myself, but thinking of myself <i>less</i>. That’s why I think “self-forgetfulness” is a very suitable term for describing true Christian humility. You can see very clearly how this kind of humility is different from self-deprecation. I feel that this is a very important distinction to make, especially in an Asian church. On the one hand, a conceited person can be very un-humble. But on the other hand, self-deprecating people can also be very un-humble. They can be so wrapped up in their own deficiencies that they don’t bother to think about others. They can become consumed by what other people think about them. They can become so tied down by their sense of inadequacy that they shirk their Christian duty to take meaningful roles of responsibility. Once again, to be clear, I am not saying that there isn’t a place for self-deprecation in the Christian life. What I am saying is that self-deprecation and humility are not the same, and that, taken too far, they can even become opposites. In his famous book <i>Mere Christianity</i>, C. S. Lewis writes, 
+        <br><br>
+        <div id="scr">
+        Do not imagine that if you meet a really humble man he will be what most people call “humble” nowadays: he will not be a sort of greasy, smarmy person, who is always telling you that, of course, he is nobody. Probably all you will think about him is that he seemed a cheerful, intelligent chap who took a real interest in what you said to him. If you do dislike him it will be because you feel a little envious of anyone who seems to enjoy life so easily. He will not be thinking about humility: he will not be thinking about himself at all. [<a href="#n4" id="l4">4</a>] 
+        </div>
+        <br>
+        Lewis is right. It doesn’t take long for us to see how attractive this kind of humility is. True humility is not only godly but <i>liberating</i>. True humility is freedom from both pride and shame. True humility is freedom from ourselves. To quote Keller again, “True gospel-humility means I stop connecting every experience, every conversation, with myself. In fact, I stop thinking about myself. [Humility means having] the freedom of self-forgetfulness. [Humility is attaining] the blessed rest that only self-forgetfulness brings.” [<a href="#n5" id="l5">5</a>] 
+        <br><br>
+        With this correct definition of humility in mind, I’d like to now think about how this kind of humility plays out in real life.
+        <br><br>
+        <h3>What Does True Humility Look Like?</h3>
+        What does it look like to exercise Christian humility? There are so many different ways we could think about this, but I’d like to narrow it down to three areas and make it as brief as possible. a) How do we exercise humility in our service to others? b) How do we exercise humility in receiving criticism and encouragement? c) How do we exercise humility in work and vocation?
+        <br><br>
+        So first, what does humility look like when we serve others? I think we should first recognize that while all humble people are servants, not all servants are humble people. There can be many reasons for why we serve that really have nothing to do with humility at all. We might serve to gain recognition for ourselves. We might serve out of a sense of duty or obligation. Or, maybe, we might even serve because we feel that we are owed an opportunity to exercise our gifts of serving. I think this is a common phenomenon, so I’ll explain what I mean by this. Some people are so certain of their ministry gifts that they feel that it would be a waste if their gifts were not adequately used by the church. So when they start to feel underutilized, they begin to complain or find a new church. But if we become like this kind of person, then we’ve completely misunderstood the purpose of spiritual gifts. We might be serving very sacrificially, but we’ve still managed to make it all about ourselves. Serving has become a right and not a privilege. We’ve ignored the fact that our gifts are not about us, but for the edification of the church. So, in the end, the main principle of servant humility is nothing other than love. All of us need to examine our hearts. If our service doesn’t come from love, we’ve been serving ourselves and not our brothers and sisters. But, in general, I do want to say that, personally, I have been so encouraged by the humble service demonstrated by many of you. Whether that’s watching people do work for the church behind the scenes, or leading various ministries, or just taking the time to love one another, I just want to thank many of you, as a fellow brother, for setting such a faithful example of love and humility. No church is perfect, but I really praise God that this is a church that has the Spirit of Christ and lives with such joyful humility. I hope this is something that will continue and grow even deeper as time goes on. 
+        <br><br>
+        Second, what does humility look like when we receive praise and criticism? This is an interesting one. I think our natural instinct, as sinners, is that we inwardly despise criticism and crave the praise of others, but then outwardly pretend like we welcome criticism and deny it whenever we are praised. To be honest, I think this is very sad and very silly. I remember in AP Chinese, we were taught to deny everything whenever we received a compliment. And that was actually the first time I learned the word for humility in Chinese. I thought it was very silly back then, and I still think it’s very silly. First of all, it’s very dishonest. Second, I think it displays a very Chinese humility that has nothing to do with Christian humility. I think a genuinely self-forgetful person welcomes both criticism and praise. Somebody who <i>isn’t</i> self-forgetful either gets destroyed by criticism or totally ignores criticism. Somebody who <i>isn’t</i> self-forgetful is going pretend to be humble while secretly living for praise and affirmation. But the self-forgetful person loves to receive both praise and criticism, because he knows that who he is or what he’s done is not ultimately about him. His world revolves around God and not himself. Every praise is an opportunity to give thanks for God’s grace in him, and every criticism is an opportunity for improvement. I wonder how much happier we’d be if we could all live like this. 
+        <br><br>
+        Third, what does humility look like in work and vocation? Jesus tells us that we need to be a servant of all, but for many of us, what we do eight hours a day doesn’t seem to have anything to do with Jesus’ command. But even though the content of our work may not have anything to do with serving others, I think the manner in which we approach our work can be deeply meaningful. What if work was not about our personal advancement, but the success and flourishing of our coworkers or the people we lead? What if we reject projects and fields of work that are harmful to society? What if we refuse to participate in corrupt and immoral corporate practices, even if this comes at great personal cost? What if we give 110% even when nobody’s watching, simply because we work to honor God and not ourselves? These are just some preliminary questions. But I also have some questions to ask those people in the room who <i>do</i> have the freedom to choose their future line of work. Kids, what if you decided your future career not on the basis of what will net you the most money, but based on what most glorifies God and serves others? What if you looked at your talents not as tools with which to compete with others, but as gifts that God has called you to steward well for his glory? What if you rejected the false idols of comfort and stability and chose to live a life of radical simplicity, obedience, and sacrifice instead? I hope you understand that I am asking you not to dream smaller but to dream bigger. I’ll tell you a little story about this. I remember back when I was in high school, I was one of the top 20 physics students in the country, and so we got to go to Capitol Hill and meet a bunch of Senators and Congressmen. And something that one particular congressman said to us really stood out, and I still remember it. He was a particle physicist before quitting to go into politics, and so he would meet with us physics students every year. So just imagine 20 of us kids packed into his office—18 Asian boys, 1 white guy, and 1 girl. And it was the end of a long day, so we were kind of just relaxing in there and listening to him tell stories about his career. But at the end of his little talk, he said something that really stood out to me. He said, “All of you are going to wind up being very successful. Some of you will go on to be very prominent professors in academia, some of you will make important contributions in industry, and some of you will go to Silicon Valley and make a lot of money. But there will come a time in your careers—I promise—when you look back over the course of your life’s work and ask yourself how much of it was done in service to your fellow man.” Now, this guy was not a Christian, but I’ve taken his words to heart, and I think you should too. We don’t want to waste our lives gratifying ourselves. The world doesn’t revolve around us. There is always a bigger picture.
+        <br><br>
+        <h3>How Is True Humility Cultivated?</h3>
+        Finally, we must think about how it is that we cultivate humility in our lives. By now, the answer should be clear. Humility can only come from looking to the cross. 
+        <br><br>
+        I find it to be a very unfortunate fact that many Christians and churches today are neglecting the cross in their doctrine and ministry. I don’t know if you have also observed this. They celebrate the cross once a year on Good Friday and hold to a cross-less gospel (which is not a gospel at all). They are very excited to talk about almost anything except the cross. They would love to teach you how to become happy, or how to become a better parent, or how to live a more fulfilling life. They want to make you feel welcomed, grow closer to God, and experience the love of God. All of that is great, but where is the cross? Where is the Christian’s only hope and ground of salvation? I’m afraid that many churches treat the cross as Christianity 101 and then move on from there. But the cross is nothing other than the burning flame of Christian spirituality. Take it away, and you have nothing more than a pile of twigs. 
+        <br><br>
+        There is a reason why the cross has been the universal symbol of the church since its inception. In fact, even the very earliest piece of artwork depicting Jesus testifies to this fact. I recently learned this, but the very earliest artwork depicting Jesus is actually a piece of Roman graffiti dating back to around 200 AD. Apparently, it was etched into a wall by somebody who was mocking his Christian friend. Do you know what it shows? It’s a picture of a young man worshiping a donkey-headed figure hanging from a cross. And then do you know what it says below the picture? It says, “Alexamenos worships his God.” [<a href="#n6" id="l6">6</a>]  Even in those earliest days, the cross was Christianity’s most striking and most ridiculed teaching. Paul writes in 1 Corinthians 1, “The word of the cross is folly to those who are perishing, but to us who are being saved it is the power of God” (1:18). And then he says, “I decided to know nothing among you except Jesus Christ and him crucified” (2:2). I wonder what Paul would think of us. I wonder whether he would see his gospel being taught by our churches today. I wonder whether he would see his gospel being lived out by our Christians today. The cross is all we have. The cross is all we need.
+        <br><br>
+        If this is true for all of the Christian life, then it is certainly true for how we cultivate humility. 
+        <br><br>
+        First, the cross is our example of humility. I have already made this clear previously. The way of the Christian is the way of the cross. Your life will either be the way of the cross or the way to hell. Every thought and every action is to be submitted to the pattern of the cross. The Christian is one who takes up his cross and lays down his life to follow Christ. The Christian is the one who has been crucified with Christ, such that it is no longer he who lives but Christ who lives in him. 
+        <br><br>
+        Second, and more importantly, the cross gives the <i>power</i> for our humility. On the one hand, the cross tells us that we are so sinful that we deserve the wrath of God—that we are totally unable to save ourselves. But the cross also tells us that we are more loved, more accepted, and more secure than we could ever imagine. When the light of the cross shines in our life, self-centeredness just evaporates. It can’t continue. On the cross, Christ became a curse on our behalf, so that we could be accepted before God. All our sin was credited to him, and all of his righteousness was credited to us. Christ was damned so that we could be forgiven. Christ was crushed so that we could be loved. And if you’re here today and you haven’t received this salvation, I urge you to place your faith and hope in Christ and Christ alone. He is the way, the truth, and the life. There is salvation in no other place except at the foot of his cross. But if you’re here and you are a Christian, then I hope it’s clear to you how the cross is really the only possible foundation for true humility. A person who lacks humility is always concerned about himself—whether he’s good enough, what others think of him, or whether he’s satisfied enough in life. But a person who is in Christ doesn’t need to worry about himself anymore. On the cross, Christ paid it all. We can’t add to it or subtract from it by what we do. It was finished. Our status was secured for all eternity. The cross is what frees us to be self-forgetful. We don’t need to be selfish, because we have already received all that we need. We can’t be prideful, because all that we are before God comes from another. And yet we can’t be self-loathing either, because all our guilt is taken away and God sees us with the righteousness of Christ. At the cross, every enemy of humility is defeated. No more pride, no more anxiety. No more self. Only Christ and the glory of God. The more we sink ourselves into these truths and preach it to ourselves daily, the more we will find ourselves inevitably growing in humility.
+        <br><br>
+        <h3>Rejoice that Your Names Are Written in Heaven</h3>
+        I’ll close with a brief story that I love from the last years of the life of Martyn Lloyd-Jones. If you don’t know, Martyn Lloyd-Jones was one of the greatest preachers of the 20th century. He famously spent 13 years preaching just through the book of Romans and 8 years preaching just through Ephesians. He was often described as a lion in the pulpit. People would come from all over the country to hear him. If anybody experienced greatness in the ministry, it was him. And so, at the end of his life, when he lay in bed dying of cancer, sometimes people would feel sorry for him. They would ask him, “How do you keep from being discouraged, with your health being so poor and not being able to preach anymore?” Lloyd-Jones would simply respond with Luke 10:20, Jesus’ response to the 72 disciples after they enthusiastically came back from ministering to others and casting out many demons. “Nevertheless, do not rejoice in this, that the spirits are subject to you, but rejoice that your names are written in heaven.” [<a href="#n7" id="l7">7</a>]  I think that is the only path to Christian humility. To be assured that, at the end of the day, what <i>really</i> matters is not anything in ourselves, but merely the fact that we are children of God, no more and no less, with our names written in heaven. 
+        <br><br>
+
+
+
+        <br><br><br><br>
+
+        <div id="footnotes">
+          [<a href="#l1" id="n1">1</a>] Courtney Anderson, <i>To the Golden Shore: The Life of Adoniram Judson</i> (Valley Forge, PA: Judson Press, 1987), 52. <br>
+          [<a href="#l2" id="n2">2</a>] Anderson, <i>To the Golden Shore</i>, 359. <br>
+          [<a href="#l3" id="n3">3</a>] Timothy J. Keller, <i>The Freedom of Self-Forgetfulness: The Path to True Christian Joy</i> (United Kingdom: 10Publishing, 2012), 32. Emphasis added. <br>
+          [<a href="#l4" id="n4">4</a>] C. S. Lewis, <i>Mere Christianity</i> (New York: Macmillan, 1952; Pomodoro Books, 2024), 124. <br>
+          [<a href="#l5" id="n5">5</a>] Keller, <i>The Freedom of Self-Forgetfulness</i>, 32. <br>
+          [<a href="#l6" id="n6">6</a>] <a href="https://en.wikipedia.org/wiki/Alexamenos_graffito">https://en.wikipedia.org/wiki/Alexamenos_graffito</a> <br>
+          [<a href="#l7" id="n7">7</a>] Jason C. Meyer, “5 Lessons I’ve Learned from Martyn Lloyd-Jones’s Preaching,” Crossway, last modified April 28, 2018, accessed June 13, 2025, <a href="https://www.crossway.org/articles/5-lessons-ive-learned-from-martyn-lloyd-joness-preaching/">https://www.crossway.org/articles/5-lessons-ive-learned-from-martyn-lloyd-joness-preaching/</a>. See Iain H. Murray, <i>The Life of Martyn Lloyd-Jones</i> (Edinburgh: The Banner of Truth Trust, 2013), chapter 31.<br>
+
+        </div>
+
+        <br><br>
+
+        <h2 id="chinese">中文翻译</h2>
+        马可福音 9:30–37
+        <br><br>
+        <div id="scr">
+          
+
+
+
+
+
+          <sup>30&nbsp;</sup>他们离开那地方，经过加利利；耶稣不愿意人知道。<sup>31&nbsp;</sup>于是教训门徒，说：「人子将要被交在人手里，他们要杀害他；被杀以后，过三天他要复活。」<sup>32&nbsp;</sup>门徒却不明白这话，又不敢问他。
+
+
+          <br><br>
+
+
+
+          <sup>33&nbsp;</sup>他们来到迦百农。耶稣在屋里问门徒说：「你们在路上议论的是什么？」<sup>34&nbsp;</sup>门徒不作声，因为他们在路上彼此争论谁为大。<sup>35&nbsp;</sup>耶稣坐下，叫十二个门徒来，说：「若有人愿意作首先的，他必作众人末后的，作众人的用人。」<sup>36&nbsp;</sup>于是领过一个小孩子来，叫他站在门徒中间，又抱起他来，对他们说：<sup>37&nbsp;</sup>「凡为我名接待一个像这小孩子的，就是接待我；凡接待我的，不是接待我，乃是接待那差我来的。」
+
+        </div>
+            
+        <br><br>
+
+        什么是真正的伟大？
+        阿多尼拉·贾德逊（Adoniram Judson）的故事让我们看到，这个问题并不简单。
+        贾德逊是美国第一位海外宣教士，也是第一位把圣经翻译成缅甸语的人。
+        在他成为基督徒之前，其实是个非常有野心的年轻人。
+        他从小就追求伟大、梦想出人头地。
+        他努力读书，并以第一名的成绩从布朗大学毕业。
+        这可不是件小事，因为他的同学中有未来的国会议员，还有总统内阁成员。
+        按世俗的标准来看，贾德逊注定会是个大人物。
+        但他信主之后，一切都变了。
+        他的传记里写道：“他从此放弃了一切文学与政治上的野心。
+        他问自己：我要怎样安排我的人生，才能让神喜悦？”
+        于是，他成为第一位奉献一生去海外宣教的美国人。
+        你可以想象，一个布朗大学的高材生，来到缅甸的街头讲道，是多么大的反差。
+        贾德逊的生命表明，神眼中的伟大，跟世人眼中的伟大完全不一样。
+        <br><br>
+        我今天讲这个故事，不仅仅是为了说明这一点。
+        我想讲的是他生命中的另一段经历，这段经历更清楚地揭示了：就算是最谦卑、最舍己的人，也可能在心里隐藏骄傲。
+        贾德逊在缅甸十三年艰苦事奉，其中两年是在监狱里度过。期间他的第一任妻子和他们唯一的孩子都去世了，他因此陷入严重的抑郁。
+        亲人离世让他深深自责，并且意识到自己心里面藏有骄傲
+        他开始觉得，自己从小追求伟大的倾向可能一直都没有消失。
+        传记里写道：他开始怀疑，自己成为宣教士的真正动机并不是出于谦卑和舍己，而是出于野心
+        想当美国的第一个海外宣教士，
+        第一个去缅甸的宣教士，
+        第一个把圣经翻译成缅甸语的人，
+        在自己和别人的眼中都成为“第一”。
+        他一直都知道自己性格里有过于自负，喜欢出风头的缺点，
+        现在他怀疑，这些不仅仅是缺点，
+        而是让他整个宣教生涯成了一种“伪善”：用属灵的方式来获取他人的称赞，只是自己没看清。
+        他骗了自己，
+        但他骗不了神。
+        也许，神让这些亲人离世，就是为了教导他真正的谦卑。
+        这些想法让他更加沮丧，他开始自己“惩罚”自己的骄傲。
+        他把所有的积蓄都捐了出去。
+        布朗大学要颁给他一个荣誉博士，他公开拒绝。
+        他让家人把他过去所有的书信和手稿全部烧毁，不愿意留下任何遗物。
+        他离开其他宣教士，独自住进一个有老虎出没的丛林草屋里，只读圣经，与世隔绝。
+        有一次，他甚至挖好了自己的坟墓，连续几天坐在旁边。
+        <br><br>
+        当然，我并不是鼓励大家模仿他那样极端的行为，但我讲这个故事，是想提醒我们：就算是最伟大的神的仆人，也仍然会受到诱惑，想成就世俗意义上的伟大。
+        骄傲“伏在门前”（创世记4:7），我们要胜过它。
+        我们不是要追求世人眼中的伟大，而是要追求神眼中的伟大。
+        换句话说，我们要活出基于福音的谦卑。
+        这，就是我今天讲道的主题。
+        <br><br>
+        在我们进入今天的经文之前，先来了解一点背景。
+        马可福音的结构其实非常清晰。
+        整本书的前半部分，都是在介绍耶稣就是弥赛亚，也就是基督。
+        这在马可福音第八章，彼得对基督的信仰告白中达到高潮——彼得在该撒利亚腓立比宣告耶稣是基督。
+        但在这个事件之后，故事的色调开始发生显著的转变。
+        耶稣从北边的该撒利亚腓立比一路走向南边的耶路撒冷——那里正是犹太宗教领袖反对祂的中心地带。
+        这时的重点，不再是耶稣是不是弥赛亚，而是祂作为弥赛亚到底意味着什么。
+        我们在这里看到，弥赛亚是那位受苦的仆人。
+        所以我们也明白，跟随弥赛亚就意味着要跟祂一同走十字架的道路——要受苦、要舍己。
+        在马可福音第九和第十章，耶稣走向耶路撒冷的路上，我们读到关于祂受死和复活最详细的教导。
+        <br><br>
+        特别值得注意的是，在这两章中，马可三次记录耶稣预言自己的受死和复活。
+        今天我们要看的这段，是耶稣第二次的预告。
+        在这三次预言当中，门徒每一次都听不懂耶稣到底在说什么。
+        而且这三次的预言之后，耶稣都会紧接着教导门徒，什么才是真正的门徒。
+        我们可以很清楚地看见：门徒的身份和十字架，是分不开的。
+        耶稣让祂的门徒明白，祂当然是得胜的王，但祂的得胜，是因为祂先被钉在十字架上。
+        所以今天当我们思想“谦卑”与“真正的伟大”时，我们必须带着十字架的眼光来思考这些问题。
+        <br><br>
+        我们从第31节开始。
+        耶稣教导门徒说：“人子将要被交在人手里，他们要杀害他；
+        被杀以后，过三天他要复活。”
+        如果你是刚开始接触圣经，“人子”这个词，是耶稣常用来称呼祂自己的。
+        在这里，耶稣预告祂自己将要被钉死、三天后从死里复活——而这些预言都成就了，被记载在马可福音的最后一章。
+        <br><br>
+        奇怪的是，虽然耶稣讲得非常直白，门徒们却还是听不懂祂在说什么。
+        原因在于，虽然门徒相信耶稣是弥赛亚，但他们不理解“弥赛亚”到底意味着什么。
+        如果你是刚开始接触圣经，那么理解“弥赛亚”这个词的涵义也至关重要。
+        “弥赛亚”是希伯来文，翻成希腊文就是“基督”，意思就是“受膏者”。
+        在耶稣出生之前的几百年里，犹太人一直在期待一位弥赛亚的到来——一位大卫王的后代，来复兴以色列、给世界带来和平的君王。
+        几乎所有犹太先知都预言过这位弥赛亚和祂将来统领的国度。
+        而耶稣时代的以色列，已经在外族政权下生活了将近六百年，百姓对弥赛亚的盼望非常强烈。
+        所以，当门徒认定耶稣是弥赛亚的时候，他们心里充满期待。
+        他们所期待的是一位伟大的君王或政治领袖，能将以色列从罗马帝国的压迫中解救出来，给他们带来和平。
+        当耶稣说祂要被杀，门徒当然无法接受。
+        事实上，耶稣第一次这么说的时候，彼得就拉着他劝他。
+        结果我们都知道，耶稣转身责备彼得，说他是撒但。
+        所以当耶稣第二次再说自己将要被杀，门徒学聪明了，没有多嘴，但还是不明白祂的意思。
+        <br><br>
+        接着我们来看第33，34节，门徒们彼此争论谁为最大。
+        这两个小段落紧密相连、不可分割。
+        门徒对“谁为最大”的误解，正是因为他们不明白耶稣作为弥赛亚到底意味着什么。
+        他们对耶稣的错误认识，也导致了他们对自己的错误认识。
+        <br><br>
+        耶稣当然知道他们心里在想什么，于是他坐下来开始教导他们。
+        请注意，耶稣并没有责备他们渴望伟大。
+        “伟大”本身并不是错。
+        错的是门徒们对“伟大”的理解。
+        无论门徒们以为什么是真正的伟大，耶稣教导的是完全不同的内容。
+        他在第35节说：“若有人愿意作首先的，他必作众人末后的，作众人的用人。”
+        换句话说，如果你想在神的国度里成为伟大的人，你就要愿意为别人放下自己，谦卑自己。
+        你必须成为一个仆人。
+        耶稣的国度，颠覆常规。
+        世俗的国度关注的是掌控、自我高举、争权夺势和赢得关注。
+        而神的国却完全不同。
+        在神的国里，“虚心的人有福了，因为天国是他们的”（太5:3）。
+        在神的国里，“温柔的人有福了，因为他们必承受地土”（太5:5）。
+        耶稣自己的生命最清楚地显明了这一点。
+        耶稣是成为伟大的真榜样，因为他为别人舍命。
+        这正是为什么第33到37节紧跟在30到32节之后。
+        耶稣死在十字架上成就了他的伟大，因为他愿意成为“众人末后的、众人的用人”。
+        保罗在腓立比书第二章对此描写得非常清楚。
+        如果你手上有圣经，请翻到腓立比书第二章。
+        他从第5节写道：“你们当以基督耶稣的心为心：他本有 神的形像，不以自己与 神同等为强夺的，反倒虚己，取了奴仆的形像，成为人的样式。
+        既有人的样子，就自己卑微，存心顺服，以至于死，且死在十字架上。
+        所以 神将他升为至高，又赐给他那超乎万名之上的名，叫一切在天上的、地上的和地底下的，因耶稣的名无不屈膝，无不口称耶稣基督为主，使荣耀归与父 神。”
+        即使耶稣本有神的本质，他却愿意成为人，来到这个世界上。
+        不仅如此，他还经历了十字架的羞辱，为一切悔改归向他的人而死。
+        他这样做，是出于对世人的爱，也是出于对天父上帝的顺服。
+        而正是因为这种顺服和谦卑——愿意“作众人末后的、众人的用人”——神才将他升为至高，使他成为万有之主。
+        所以，耶稣正是在十字架上显明了何为“作首先的”，就是先愿意作“末后的”。
+        这正是基督徒被呼召去效法、去体现的谦卑与服侍。
+        <br><br>
+        最后，在第36，37节，耶稣给了门徒一个关于“作仆人”最清楚不过的例子。
+        他叫过一个小孩子来，把孩子放在门徒中间，然后把他抱在怀里。
+        耶稣这样做，是为了表明，真正伟大的人，是愿意关心并与卑微者同在的人。
+        真正伟大的人，愿意以爱心接纳最卑微的人。
+        如果你熟悉圣经，这一幕应该会让你想到马太福音25章里关于绵羊与山羊的比喻。
+        耶稣在那段教导中告诉我们：我们如何对待最卑微的人，就是如何对待耶稣基督。
+        而那真正接待了基督的人，就是接待了差基督来的那一位——天父上帝。
+        <br><br>
+        现在，当我们来思考这段经文的应用时，我想特别讲一讲这种“谦卑”的本质与实践。
+        我将从三个角度来谈：
+        首先，我们要弄清楚什么是真正的谦卑；
+        第二，我们来看真正的谦卑在生活中的体现；
+        最后，让我们思考：如何在生活中培养这种谦卑。
+        所以，第一点，什么是真正的谦卑？
+        我们先来谈一个对“谦卑”的最常见的误解。
+        最常见的误解来自于文化而不是出于圣经。
+        这个误解就是：谦卑等于“自我贬低”。
+        但从基督徒的角度来看，这种理解并不准确。
+        所谓“自我贬低”，指的是一个人老是在想自己哪里不好、哪里失败、哪里不行。
+        诚然，基督徒生活中确实需要有这种反省的时刻。
+        基督徒需要认罪，也需要清楚自己有哪些软弱和亏欠。
+        正如保罗在罗马书第十二章中所说的：“我对你们各人说：不要看自己过于所当看的，要照着神所分给各人信心的大小，看得合乎中道”（罗12:3）。
+        换句话说，我们需要对自己有一个正确的评估，不要自高自大。
+        但这并不是今天经文所讲的“谦卑”。
+        用一个很简单的办法来说明：耶稣自己不可能实践这种“自我贬低式”的谦卑。
+        如果耶稣是我们谦卑的榜样，那他所活出来的谦卑就不可能是“自我贬低”，因为他没有任何罪、没有任何缺点。
+        他在一切良善上是完美的，在神性中是全能的。
+        我想，如果你遇见耶稣，你不会觉得他像我们通常以为的“谦卑的人”。
+        <br><br> 
+        真正合乎圣经的谦卑，是看重他人的益处而把自己看得不那么重要。
+        这就是保罗在腓立比书第2章所说的：“凡事不可结党，不可贪图虚浮的荣耀，只要存心谦卑，各人看别人比自己强”（腓2:3）。
+        事实上，真正的谦卑可以说是一种“忘我”（self-forgetfulness）。
+        这里我借用了提姆·凯勒在他的《忘我之自由》（The Freedom of Self-Forgetfulness）一书中所用的词，他对“谦卑”的定义我十分认同。
+        他写道：“以福音为中心的谦卑不是想着我自己有多好，也不是想着我自己有多差，而是我不再去想我自己。”
+        不是“看轻自己”，而是“不去想自己”。
+        因此，“忘我”是一个非常贴切的词，能很好地描述真正的基督徒谦卑。
+        你可以很清楚地看到，这种谦卑和“自我贬低”是很不一样的。
+        我觉得这点在亚裔教会特别需要被强调。
+        一方面，一个骄傲自大的人当然不谦卑；
+        但另一方面，一个常常自我贬低的人，也可能不是真的谦卑。
+        因为他可能完全被自己的缺陷和不足占据，以至于根本没有心思去关心别人。
+        他可能太在意别人对自己的看法，
+        或者因为自觉不够格而逃避基督徒应当承担的责任。
+        再次澄清，我并不是说“自我贬低”在基督徒生命中没有任何位置。
+        我要说的是：自我贬低不等于谦卑。极端情况下，二者甚至可能对立。
+        在《返璞归真》（Mere Christianity）一书中，C.S.路易斯写道：“当你遇见一个真正谦卑的人时，不要期待他会是大多数人以为的‘谦卑’的样子。
+        他不会是那种油腔滑调、总说自己一文不值的人。
+        你对他的印象可能仅仅是：他是个愉快、聪明，真的对你说的话很有兴趣的人。
+        如果你不喜欢他，可能是因为你嫉妒他，为什么能那么轻松地享受生活。
+        他不会去想谦卑这件事，因为他根本不会去想自己。”
+        路易斯说得没错。
+        这种谦卑显然很具有吸引力。
+        真正的谦卑不但合神心意，而且是一种释放。
+        真正的谦卑，是脱离骄傲与羞耻，从而获得自由。
+        真正的谦卑，是从“自我”中释放出来，从而获得自由。
+        再次引用提姆·凯勒的话：“福音意义上的谦卑，是我不再把每一次经历、每一段对话都和自己挂钩。
+        我不再想着我自己。
+        [谦卑就是]忘我的自由。
+        [谦卑就是]进入只有‘忘我’才能带来的，那种蒙福的安息。”
+        有了这个定义，我们来思想：这种谦卑在实际生活中是如何表现出来的。
+        <br><br>
+        我们该如何操练基督徒的谦卑呢？
+        这个问题可以从许多角度来思考，我想聚焦在三个方面，尽量简洁明了。
+        第一，我们如何在服事他人时操练谦卑？
+        第二，我们如何在接受批评和鼓励时操练谦卑？
+        第三，我们如何在工作和职场中操练谦卑？
+        首先，在服事他人时，怎样才是谦卑？
+        我们要先认识到，所有谦卑的人都会服事他人，但并不是所有服事他人的人都是谦卑的。
+        我们服事他人可能有许多动机，有些动机跟谦卑一点关系都没有。
+        我们可能是为了得到别人的认可而服事。
+        也可能是因为责任感或义务感而服事。
+        甚至我们可能觉得自己理当有机会发挥自己的恩赐而服事。
+        我觉得这种现象很常见，所以我想解释一下。
+        有些人非常确定自己有某种属灵恩赐，所以觉得若教会没有好好使用这些恩赐，那就是浪费了。
+        于是当他们觉得自己“被冷落”时，就开始抱怨，甚至考虑换教会。
+        但如果我们变成这样的人，那就完全误解了属灵恩赐的意义。
+        即使我们服事得再辛苦、再牺牲，心里可能仍然是以自我为中心的。
+        我们把服事变成了一种权利，而不是一种恩典。
+        我们忘了我们的恩赐不是为了高举我们自己，而是为了建立教会。
+        所以，谦卑服事的终极核心原则就是：爱。
+        我们每个人都要省察自己的心。
+        如果我们的服事不是出于爱，那我们真正服事的其实是自己，而不是弟兄姊妹。
+        不过，我也想说，作为你们的弟兄，我亲眼看到你们当中很多人所展现出的谦卑服事，真的非常激励我。
+        无论是那些默默在幕后服事的人，还是带领各样事工的人，或者是那些花时间去关怀他人的，我都由衷地感恩。
+        虽然没有一个教会是完美的，但我真的感谢神，这间教会有基督的生命，活出了充满喜乐的谦卑。
+        我真心希望，这种谦卑能延续下去，并且随着时间的推移越来越深。
+        <br><br>
+        第二，我们在接受赞美与批评时，谦卑应当是怎样的呢？
+        这个问题其实挺有意思的。
+        我们作为罪人，内心的本能是讨厌被批评、渴望被称赞，但在外面又要装作乐意接受批评、并且否认别人对我们的称赞。
+        或许在中国文化里，这种情况特别明显。
+        我还记得在高中上AP中文课的时候，老师教我们说，如果有人夸你，你得全部否认。
+        那也是我第一次学到“谦虚”这个词的中文。
+        当时我觉得很荒谬，现在还是觉得很荒谬。
+        首先，那种谦虚其实是很不诚实的。
+        其次，那种“谦虚”反映的是一种中国式的文化谦卑，而不是圣经中所讲的基督徒的谦卑。
+        我认为，真正“忘我”的人，既乐意接受批评，也乐意接受称赞。
+        一个不能“忘我”的人，会因为受到批评而崩溃，或者完全忽视别人的批评。
+        一个不能“忘我”的人，会假装自己很谦虚，其实内心却是活在别人的称赞与肯定中。
+        但一个真正“忘我”的人，喜爱听到称赞，也喜爱听到批评。因为他知道，他是谁、他做了什么，最终都不是关乎他自己。
+        他的世界关乎神，而不是关乎自己。
+        每一句称赞都是一个机会，可以感谢神的恩典；每一句批评都是一个机会，可以让他更像基督。
+        如果我们每个人都能做到那样，那将会是多么棒的一件事！。
+        <br><br>
+        第三，职场中表现出的谦卑是怎样的呢？
+        耶稣告诉我们要作众人的仆人，但对很多人来说，我们每天花八小时做的事情，好像和耶稣的这个命令没什么直接关系。
+        然而，虽然工作的内容可能和“服侍他人”没有直接关系，我们对待工作的态度和方式却可能充满深远的意义。
+        如果我们做事不是为了个人晋升，而是为了同事的成功和团队的兴盛
+        如果我们拒绝那些对社会有害的项目和行业
+        如果我们拒绝参与那些腐败和不道德的企业行为，即便这样做会付出个人很大的代价
+        如果即使没有人看见，我们依然全力以赴，只因为我们工作是为荣耀神而不是荣耀自己
+        这些问题只是初步的探讨。
+        我也想鼓励在座有机会选择未来职业的年轻朋友们：
+        如果你选择未来的职业，不是基于哪个能赚最多的钱，而是基于哪个能最荣耀神、最服侍他人
+        如果你看待自己的才能，不是用来与人竞争的工具，而是神所给的恩赐，叫你好好管理、为祂的荣耀而用
+        如果你拒绝舒适和安稳这两个虚假偶像，选择活出极简、顺服和牺牲的生命
+        我希望你明白，这么做不是让你们的梦想更小，而是梦想更大。
+        讲个我自己的小故事：
+        我高中时期参加物理竞赛，成绩排在全美国前20名，因此有机会去国会山访问一些参议员和国会议员。
+        其中一位议员说的话我至今难忘。
+        他从政之前是粒子物理学家，后来辞职从政，每年都会和物理竞赛名列前茅的学生见面。
+        想象一下，20个学生挤在他的办公室里——18个亚裔男孩，1个白人男孩和1个女孩。
+        那天见面是在傍晚，我们轻松地听他分享职业生涯中经历的趣事。
+        在讲完后，他说了句让我印象深刻的话：
+        他说，“你们都将会非常成功，
+        有人会成为著名学者，有人会在工业界做出重要贡献，还有人会去硅谷赚大钱。
+        但是你们职业生涯中会有那么一刻——我保证——你们会回顾自己一生的工作，问自己：这些工作中有多少是为了服务他人？”
+        他本人不是基督徒，但我一直铭记他的话，也希望在座的各位可以思考这个问题。
+        我们不要把生命浪费在自我满足上。
+        这个世界不围绕我们转。
+        还有更大的使命。
+        <br><br>
+        最后，我们必须思考如何在生活中培养谦卑。
+        现在，答案应该很清楚了——
+        谦卑只能来自于仰望十字架。
+        <br><br>
+        遗憾的是，今天许多基督徒和教会在教义和事工上忽视了十字架。
+        不知道你有没有注意到这一点。
+        一年中只在受难日纪念十字架，日常传讲的福音却几乎没有十字架（那根本不是福音）。
+        他们热衷于谈论除了十字架之外的几乎任何事。
+        他们愿意教你如何快乐，如何成为更好的父母，如何过更有意义的生活。
+        他们想让你感到被接纳，更亲近神，体验神的爱。
+        这些都很好，但十字架在哪儿呢？
+        基督徒唯一的盼望和得救的根基在哪儿呢？
+        恐怕很多教会只是把十字架当成基督教入门课，然后就再也不提了。
+        但十字架正是基督徒灵命的燃烧之火。
+        没有它，你的信仰不过是一堆枯柴。
+        <br><br>
+        十字架自教会起源以来一直是普世教会的标志，这其中有深刻的原因。
+        甚至最早描绘耶稣的艺术作品也证明了这一点。
+        我最近才知道，最早描绘耶稣的艺术实际上是一幅约公元200年的罗马涂鸦。
+        这幅画是某人刻在墙上的，用来嘲笑他的基督徒朋友。
+        你知道画上画了什么吗？
+        画的是一个年轻人敬拜一个挂在十字架上的驴头形象。
+        你知道下面写了什么吗？
+        下面写着，“Alexamenos敬拜他的神。”
+        即便在最早的时代，十字架就是基督教最显著、最受嘲讽的教义。
+        保罗在哥林多前书1章写道：“十字架的道理在灭亡的人为愚拙，在我们得救的人却为神的大能。”（1:18）
+        又说，“我决定在你们中间，只知道耶稣基督，并他钉十字架。”（2:2）
+        我不知道保罗会如何看待我们，
+        我不知道他是否会看到他的福音今天正被我们的教会传讲，
+        我不知道他是否会看到他的福音正在我们的基督徒生活中活出来。
+        十字架是我们所拥有的一切。
+        十字架是我们所需要的一切。
+        如果十字架对基督徒的生命而言如此真实，那么对我们如何培养谦卑，更应如此。
+        <br><br>
+        首先，十字架是谦卑的榜样。
+        我之前已经讲得很清楚了。
+        基督徒的道路就是十字架的道路。
+        你的生命要么是跟随十字架的道路，要么就是通向地狱的道路。
+        我们的每一个思想和行动都应当顺服十字架的样式。
+        基督徒是那个背起十字架、舍己跟随基督的人。
+        基督徒是与基督同钉十字架的人，因着这缘故，不再是自己活着，而是基督在他里面活着。
+        <br><br>
+        其次，更为重要的是，十字架赐下谦卑的力量。
+        一方面，十字架告诉我们，我们罪孽深重，配受神的愤怒，我们完全无力自救。
+        但十字架也告诉我们，我们被爱得更多，被接纳得更多，比我们想象的更有保障。
+        当十字架的光照进我们生命，自我中心就会消散，
+        无法继续存在。
+        在十字架上，基督代替我们成为了咒诅，使我们能在神面前被接纳。
+        我们所有的罪归在他身上，他所有的义归在我们身上。
+        基督受罚，使我们得赦免。
+        基督被压碎，使我们得着爱。
+        如果你今天在这里，还没有接受这救恩，我邀请你将信心和盼望全然交托給耶稣基督。
+        他是道路、真理、生命。
+        除他之外没有救恩。
+        如果你是基督徒，我希望你明白，十字架才是真正谦卑的唯一根基。
+        缺乏谦卑的人总是关心自己——是否足够好，别人怎么看他，是否对生活满意。
+        但在基督里的人不再为自己忧虑。
+        基督在十字架上成就了一切。
+        我们无法靠行为加添或减少这恩典。
+        成了，完全成了。
+        我们有永恒的确据。
+        十字架释放我们，使我们能忘我。
+        我们无需自私，因为我们已拥有一切所需。
+        我们无法骄傲，因为我们在神面前的一切都是来自他。
+        我们也不会自怨自艾，因为我们的罪愆都被除去，神看我们是因着基督的义。
+        在十字架上，谦卑的一切敌人都被击败。
+        不再有骄傲，不再有焦虑。
+        不再有自我。
+        只有基督和神的荣耀。
+        我们越是扎根于这些真理，每天对自己宣讲这些真理，我们就必然会在谦卑中成长。
+        <br><br>
+        我想用一个我非常喜欢的故事来结束，这个故事发生在马丁·劳埃德-琼斯生命的最后几年。
+        马丁·劳埃德-琼斯是20世纪最伟大的讲道家之一。
+        他用13年时间只讲《罗马书》，用8年时间只讲《以弗所书》，并以此而闻名。
+        他常被形容为讲台上的狮子。
+        许多人从全国各地赶来听他讲道。
+        如果说谁在事工上经历过伟大，那一定是他。
+        在他生命的尽头，他因癌症躺在床上奄奄一息，有时人们会为他感到难过。
+        有人这么问他：“你现在健康这么差，不能再讲道了，你怎么能做到不灰心丧气呢？”
+        劳埃德-琼斯就引用路加福音10章20节，当70个门徒兴冲冲地从传道和赶鬼归来后，耶稣对他们所说的话：
+        “只是不要因鬼服了你们就欢喜，要因你们的名字写在天上欢喜。”
+        我想，这就是通向基督徒谦卑的唯一道路。
+        到头来，真正重要的不是我们自己有什么，而仅仅是我们是神的儿女，我们的名字写在天上，仅此而已。
+
+
+
+
+
+
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
