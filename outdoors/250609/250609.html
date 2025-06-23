@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>250609</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Little Lakes Valley (June 9–10, 2025)</h1>
+
+On this trip, I was testing out a new tent, the Durston X-Mid 1. I loved it! It is so light (28 oz), so easy to set up (just 4–6 stakes), and so sturdy. I was such a fan that I went ahead and bought a pack from Durston right after the trip. What an awesome company with awesome design. But, onto the trip itself.
+
+<br><br>
+
+<h3>Day 0</h3>
+
+After church and a meeting for VBS the following week, I started the long drive from the Bay Area to the trailhead, camping for the night at Sonora Pass. I am not too sure if camping is allowed at the pass (perhaps I need to go farther away from the trailhead next time for it to be legal), but I enjoy camping here the night before a trip for acclimatization. The air was crisp and chilly, a sweet respite from the heat of the Central Valley. I was feeling a bit congested from my Panda Express dinner (yum!), but nothing was coming out no matter how hard I tried. (I feel like when I squat #2, I can't get the "leverage" that I need. Is it just me?) After a bit of dawdling about, I hit the sack for the night in my new <i>Durston X-Mid 1</i>, and I was soon fast asleep.
+
+<br><br>
+
+<h3>Day 1</h3>
+
+I awoke to the soft sunrise light shining on my new <i>Durston X-Mid 1</i> and kept sleeping for an extra twenty minutes. Thankfully, it was not too cold, and I was able to get packed up fairly quickly. I started driving at around 7:00 am, and my first stop was Tioga Gas Mart. (Countless memories of this pretty little gas station!) I brushed my teeth in the bathroom (hopefully nobody was annoyed by me), threw away my trash, and I was on my way.
+
+<br><br>
+
+I got to Mosquito Flat trailhead by around 9:00 am or so, and after filtering a bit of water in the stream, I was on the trail by 9:30 am. It was a beautiful day—a Monday without too many day-hikers—and I took my time to slowly enjoy the trail, taking a few minutes to stop at each lake. The trail was muddy from the snowmelt, and the creek crossing before Long Lake was well beyond the normal levels. (Thankfully, there were some logs to cross on slightly upstream.) 
+
+<br><br>
+
+<a href="1.jpg" data-lightbox="1"><img src="1.jpg"></a>
+<p>Marsh Lake, where I stopped for a little snack</p>
+
+<br><br>
+
+<a href="2.jpg" data-lightbox="1"><img src="2.jpg"></a>
+<p>Box Lake, I think</p>
+
+<br><br>
+
+Long Lake was where I encountered my first snow patch. On the way back the next day, it was melted enough for me to avoid it, but on the way up, I had to walk on top of it. You can see this in this photo:
+
+<br><br>
+
+<a href="3.jpg" data-lightbox="1"><img src="3.jpg"></a>
+
+<br><br>
+
+I especially enjoyed looking at the beautiful metamorphic-looking rock bands on what I think is Treasure Peak? Correct me if I'm wrong:
+
+<br><br>
+
+<a href="4.jpg" data-lightbox="1"><img src="4.jpg"></a>
+
+<br><br>
+
+I had a relaxing break for lunch at the grassy shore of Long Lake, watching the little trout flit back and forth in the clear water. I had graham crackers and some dried mango chunks. It was beautiful, and filling!
+
+<br><br>
+
+<a href="5.jpg" data-lightbox="1"><img src="5.jpg"></a>
+<p>At Long Lake</p>
+
+<br><br>
+
+At the trail junction for Chickenfoot Lake, I stashed my bear can and all my camping gear to set off on a little day hike to Gem Lakes and Treasure Lakes. On the way to Gem Lake, I encountered the first serious snow of the day, and it was rapidly getting soft, it now being around noontime. This made for some unpleasant travel, and I was plunging into the snow every other step.
+
+<br><br>
+
+<a href="6.jpg" data-lightbox="1"><img src="6.jpg"></a>
+<p>On the way to Gem Lake, with Pyramid Peak and Rosy Finch Peak up above</p>
+
+<br><br>
+
+<a href="7.jpg" data-lightbox="1"><img src="7.jpg"></a>
+<p>The junction for Morgan Pass</p>
+
+<br><br>
+
+After a short while, I was happily at Gem Lakes with feet soaking wet, and I was treated to a wonderfully beautiful sight of its deep turquoise color surrounded by snowfields that plunged into the lake. I spent a while just marvelling at its exquisite color:
+
+<br><br>
+
+<a href="8.jpg" data-lightbox="1"><img src="8.jpg"></a>
+
+<br><br>
+
+<a href="9.jpg" data-lightbox="1"><img src="9.jpg"></a>
+
+<br><br>
+
+I circled around the north side of the lake, trying to find the easiest way to ascend the ridge dividing Gem Lakes from Treasure Lakes. This was not too difficult, and I simply referenced the slope angle shading on my Caltopo map. It was steep and rocky, but I soon topped out with a nice view of Treasure Lakes, which was still frozen over and surrounded by snow. There was too much snow, so I didn't bother going down to the lakes themselves. Originally, I had hoped to make my way up to Dade Lake as well, but the snow was too soft for efficient travel, so I scrapped this idea and decided to head back. Unfortunately, my way back was less than ideal. I could have headed directly down Rock Creek, but it was covered in snow and I did <i>not</i> want to risk falling into any snow bridges. I elected to, according to my plan, simply head directly down the ridge northeast of Treasure Lakes towards Chickenfoot Lake. 
+
+<br><br>
+
+<a href="10.jpg" data-lightbox="1"><img src="10.jpg"></a>
+<p>Looking back at Treasure Lakes with Bear Creek Spire in the background</p>
+
+<br><br>
+
+<a href="11.jpg" data-lightbox="1"><img src="11.jpg"></a>
+<p>A moody looking Mt. Dade underneath afternoon Sierra clouds</p>
+
+<br><br>
+
+<a href="12.jpg" data-lightbox="1"><img src="12.jpg"></a>
+<p>A more happy looking Bear Creek Spire</p>
+
+<br><br>
+
+<a href="13.jpg" data-lightbox="1"><img src="13.jpg"></a>
+<p>Looking down the valley to Long Lake</p>
+
+<br><br>
+
+
+
+
+The snow was starting to be so soft that I didn't know whether I would plunge six inches or six feet on my next step. Unfortunately, there was no way back that involved only travel on dry ground. Furthermore, some parts of the descent were snowfields that were around 45 degrees steep. This was very annoying, and I was pissed at myself for doing this, because my legs were starting to get tired. It seemed like I was getting cliffed out every way that I went. After what seemed like hours, I finally was able to make it down to the grassy meadows south of Long Lake.
+
+<br><br>
+
+<a href="14.jpg" data-lightbox="1"><img src="14.jpg"></a>
+<p>A sample of some of my post-holing</p>
+
+<br><br>
+
+<a href="15.jpg" data-lightbox="1"><img src="15.jpg"></a>
+<p>The meadow south of Long Lake, near the junction to Chickenfoot Lake, looking north to Mt. Starr</p>
+
+<br><br>
+
+I rejoined the trail and started looking for my stashed gear, hiking almost all the way down to Long Lake before realizing that all my stuff was <i>south</i> of where I rejoined the trail. I picked up my stuff and headed to the northwest shore of Chickenfoot Lake, where I found a nice little campground. Unfortunately, there was an illegal fire pit too.
+
+<br><br>
+
+<a href="16.jpg" data-lightbox="1"><img src="16.jpg"></a>
+<p>Incredible colors on Chickenfoot Lake in the afternoon light</p>
+
+<br><br>
+
+I had a few hours to spare, so I took a quick "shower." (Basically, I filled one water bottle with soapy water and another with clean water. [The soap was biodegradable of course.] Then I just poured soapy water onto my hair, rubbed it in, and rinsed. This was, of course, done away from the lake itself. It didn't work that well, since my hair was still pretty oily, but I felt reasonably refreshed and somewhat clean.) I set up my ground tarp, leaned against my bear canister, and read for a few hours—<i>Faithful Reason: Natural Law Ethics for God's Glory and Our Good</i> by Andrew T. Walker, a book for my Christian Ethics class.
+
+<br><br>
+
+That night, I had Mountain House Chicken Fried Rice. It was delicious, but in the future I am considering switching to Peak Refuel meals, because they have more calories per bag.
+
+<br><br>
+
+Somehow, there was this one lone mosquito (I had not seen any the entire trip) that proceeded to bite me on the wrist. How annoying. It quickly received a deserved smite, and this lone ranger mosquito was swiftly brought to justice. 
+
+<br><br>
+
+After a pleasant and quiet evening, I went to bed that night listening to Debussy, along with a choir of frogs croaking from the nearby pond. 
+
+<br><br>
+
+<a href="17.jpg" data-lightbox="1"><img src="17.jpg"></a>
+<p>Pip-Squeak Spire</p>
+
+<br><br>
+
+<a href="18.jpg" data-lightbox="1"><img src="18.jpg"></a>
+<p>Rosy Finch Peak</p>
+
+<br><br>
+
+<a href="19.jpg" data-lightbox="1"><img src="19.jpg"></a>
+<p>Bear Creek Spire</p>
+
+<br><br>
+
+<a href="20.jpg" data-lightbox="1"><img src="20.jpg"></a>
+<p>After sunset</p>
+
+<br><br>
+
+<h3>Day 2</h3>
+
+I was up at the crack of dawn and on the trail by 6:30 am. Originally, I had planned to climb Mt. Starr, but I was exhausted, my legs were sore, and I was craving actual food. So much for grit and determination. The thought of Panda Express sent me flying down the trail, and I was back at the car by around 8:00 am, and back at Panda Express at around 1:30 pm. This was a wonderful way to end this short little trip in some very scenic backcountry.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
