@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Is It Ever Permissible to Lie?</title>
+  <meta property="og:image" content="250628-large.jpg">
+  <meta property="og:description" content="In this paper, I argue that lying is a sin in every circumstance.">
+  <meta name="description" content="In this paper, I argue that lying is a sin in every circumstance.">
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Is It Ever Permissible to Lie?</h1>
+        <p>
+          June 28, 2025
+        </p>
+
+        <img src="250628-large.jpg">
+        <br><br>
+        
+        <i>This was a paper submitted for my Intro Ethics class taught by Dr. Jason Thacker at SBTS. Apologies for the choppiness of the writing—I had a 1250 word count limit.</i> 
+
+        <br><br>
+
+        The question of whether it is ever right to lie or misdirect is a challenging ethical dilemma. Scripture clearly teaches: “You shall not bear false witness against your neighbor” (Ex 20:16; cf. Matt 19:18). However, there are situations where telling the truth can compromise somebody else’s safety. Is it right to lie under these extreme circumstances? Some say that lying is necessary in such circumstances because one must act according to the higher moral good. Others argue that lying is only considered a sin if it is intended to harm one’s neighbor or promote one’s own interests. In this paper, I will argue that knowingly telling a falsehood is never permissible. I will justify this by appealing to the fundamental truthfulness of God, pointing out the inadequacies of a consequentialist ethic, and, finally, addressing some potential biblical counterexamples.  
+
+        <br><br>
+
+
+        <h3>Other Possible Views</h3>
+        Some believe that, in a fallen world, there are situations in which it is impossible to do the right thing and that one must perform the lesser evil—an approach known as <i>conflicting absolutism</i>. [<a href="#n1" id="l1">1</a>] Ethicists who hold to this view appeal to the inherent fallenness of this world, in which there arise situations where it is impossible to not sin. 
+        <br><br>
+        A similar view is known as <i>graded absolutism</i>, which agrees with conflicting absolutism in that moral norms do indeed conflict. However, graded absolutism is different in that it claims breaking lower moral norms for higher moral norms is <i>not</i> considered sin. Norman Geisler, a notable proponent of this view, writes, “.&nbsp;.&nbsp;. moral laws sometimes come into unavoidable moral conflict; In such conflicts we are obligated to follow the higher moral law; When we follow the higher moral law we are not held responsible for not keeping the lower one.” [<a href="#n2" id="l2">2</a>] 
+        <br><br>
+        Finally, a third view is known as <i>non-conflicting absolutism</i>, which holds that there is no real conflict between moral norms. When a moral norm appears to be in conflict with another, this only means that we have not understood “the scope and meaning of its terms.” [<a href="#n3" id="l3">3</a>] For example, in the scenario where one must lie to protect another person’s life, telling a falsehood in this case would not be a sin because “the sin of false witness is that of distorting the facts in such a way as to harm one’s neighbor.” [<a href="#n4" id="l4">4</a>] 
+        <br><br>
+        <h3>Lying as a Sin in Every Circumstance</h3>
+        I will now argue for what is the most theologically consistent position, which is that lying is a sin no matter what the circumstance may be. This is a view that has been held by many important theologians in the history of the church, including Augustine and Calvin. 
+        <br><br>
+        Augustine believed that lying in any circumstance was wrong. He wrote a treatise titled <i>Against Lying</i> (<i>Contra Mendacium</i>), which addressed the problem of certain Catholics pretending to be Priscillianists (a secretive Christian sect) in order to “penetrate their lurking places” and expose them as heretics. They believed that they were justified in their deception. Augustine argues that such people are in sin, despite lying with a good intention. [<a href="#n5" id="l5">5</a>] He argues that the Hebrew midwives and Rahab sinned when they lied and should have been willing to suffer death for telling the truth. [<a href="#n6" id="l6">6</a>] Calvin is in agreement, commenting on Rahab’s deception that “it never can be lawful to lie, because that cannot be right which is contrary to the nature of God. And God is truth.” Nevertheless, Calvin does not deny the fact that Rahab was celebrated for her faith in God in hiding the spies (Heb 11:31), writing that “the <i>principal action</i> was agreeable to God” though she sinned in the lying. [<a href="#n7" id="l7">7</a>] Commenting on the deception of the Hebrew midwives, Calvin similarly writes: “whatever is opposed to the nature of God is sinful; and on this ground all dissimulation, whether in word or deed, is condemned .&nbsp;.&nbsp;.&nbsp;.” [<a href="#n8" id="l8">8</a>]
+        <br><br>
+        Calvin rightly grounds the foundation of Christian ethics in the nature and being of God. God is truth (John 3:33; 14:6) and never lies (Num 23:19; Tit 1:2; Heb 6:18), which means that knowingly telling a falsehood is always a sin. When we use our speech to distort the truth or to tell lies, we are failing to “be imitators of God” (Eph 5:1) because God would never do such a thing. God’s speech is always truthful, which means that our speech must be likewise truthful. 
+        <br><br>
+        Ultimately, the belief that lying is justified in certain situations is rooted in a consequentialist ethic. The standard of right and wrong has become the result or consequence of the action. Lying in those situations is justified <i>because</i> it saves a life, or <i>because</i> it grants a missionary access into a closed country. However, as most Christian ethicists would agree, consequentialism is problematic because it can lead to the justification of all kinds of moral evil. [<a href="#n9" id="l9">9</a>]
+        <br><br>
+        In response to the position that lying is always a sin, many point to biblical examples such as the Hebrew midwives and Rahab, both of whom were celebrated for their fear of God and faith in him (Ex 1:21; Heb 11:31). However, this is an inadequate response, because they were never celebrated for their deception. The Hebrew midwives feared God in that they chose to obey God over Pharoah by sparing the babies (Ex 1:17). Rahab was celebrated for giving “a friendly welcome to the spies” (Heb 11:31) and “[sending] them out by another way” (Jas 2:25). Like the Hebrew midwives, Rahab was never commended for her lying. 
+        <br><br>
+        <h3>Conclusion</h3>
+        Lying is always a sin because it is a fundamental transgression against the truthfulness of God himself. Our God is a speaking God who never speaks falsely, and as Christians called to be “imitators of God” (Eph 5:1), we are not to speak falsely in any circumstance. Attempting to justify lying by appealing to the “intention” of the lie or some higher moral good is a slippery moral slope that can be used to justify many different kinds of falsehoods. Ultimately, Calvin himself said it best: “those who hold what is called a dutiful lie to be altogether excusable, do not sufficiently consider how precious truth is in the sight of God.” [<a href="#n10" id="l10">10</a>]
+
+
+
+        <br><br><br><br>
+
+        <div id="footnotes">
+
+          [<a href="#l1" id="n1">1</a>] David W. Jones, <i>An Introduction to Biblical Ethics</i> (Nashville, TN: B&H Publishing, 2013), 88.
+          <br>
+          [<a href="#l2" id="n2">2</a>] Norman L. Geisler, <i>Options in Christian Ethics</i> (Grand Rapids: Baker, 1981), 132. Quoted in Jones, <i>An Introduction to Biblical Ethics</i>, 93.
+          <br>
+          [<a href="#l3" id="n3">3</a>] Oliver O’Donovan, “Christian Moral Reasoning,” in <i>New Dictionary of Christian Ethics and Pastoral Theology</i>, ed. David J. Atkinson and David H. Field (Downers Grove, IL: InterVarsity Press, 1995), 125. Quoted in Jones, <i>An Introduction to Biblical Ethics</i>, 98.
+          <br>
+          [<a href="#l4" id="n4">4</a>] John Frame, <i>The Doctrine of the Christian Life</i> (Phillipsburg, NJ: P&R Publishing, 2008), 830–35. Quoted in Jones, <i>An Introduction to Biblical Ethics</i>, 104.
+          <br>
+          [<a href="#l5" id="n5">5</a>] Augustine, <i>Against Lying</i>, in <i>Nicene and Post-Nicene Fathers</i>, ed. Philip Schaff, trans. H. Browne, vol. 3, First Series (Grand Rapids: Eerdmans, 1886), <a href="https://ccel.org/ccel/schaff/npnf103/npnf103.v.vi.html">https://ccel.org/ccel/schaff/npnf103/npnf103.v.vi.html</a>, “Translator’s Preface.”
+          <br>
+          [<a href="#l6" id="n6">6</a>] Augustine, <i>Against Lying</i>, NPNF1 vol. 3, sec. 34. 
+          <br>
+          [<a href="#l7" id="n7">7</a>] John Calvin, <i>Commentary on the Book of Joshua</i>, trans. Henry Beveridge (Bellingham, WA: Logos Bible Software, 2010), 47. Emphasis added.
+          <br>
+          [<a href="#l8" id="n8">8</a>] John Calvin, <i>Commentaries on the Four Last Books of Moses Arranged in the Form of a Harmony</i>, trans. Charles Bingham, vol. 1 (Bellingham, WA: Logos Bible Software, 2010), 35.
+          <br>
+          [<a href="#l9" id="n9">9</a>] Dennis P. Hollinger, <i>Choosing the Good: Christian Ethics in a Complex World</i> (Grand Rapids: Baker Academic, 2002), 27–36.
+          <br>
+          [<a href="#l10" id="n10">10</a>] Calvin, <i>Commentary on the Book of Joshua</i>, 47.
+
+        </div>
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
