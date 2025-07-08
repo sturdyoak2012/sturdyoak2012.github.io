@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>250630</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Lake Reflection, Upper Kern Basin, Forester Pass (June 30–July 2, 2025)</h1>
+
+<h3>Day 0</h3>
+I decided to make my way to the Eastern Sierra by way of I-5 and 395 this time, stopping for my usual Panda Express (but in Tehachapi) and arriving at the trailhead campground at around 8:00 pm. I set up my tent with the last remaining daylight. The campground was busier than anticipated, with some nice dogs and some not-so-nice campers who started to play music at 9 pm. I read Psalm 62 and Jeremiah 29, and I also continued reading C. J. Mahaney’s book <i>Humility</i>. I also decided to restart my project of memorizing through Ephesians, which I had postponed a few months back for reasons that I forgot. 
+<br><br>
+Having slept too late and probably having worn too many layers to bed, I woke up in a sweat at around 1:30 am. But exiting my tent to take a midnight leak, I was treated to a stunning moonless sky overhead, a view which never grows old. Whenever I look at the night sky in this true, unblemished form, I feel that I actually understand what it means for Abraham’s offspring to be “as the stars of heaven and as the sand that is on the seashore” (Gen 22:17). Or what it meant for David to declare that “The heavens declare the glory of God, and the sky above proclaims his handiwork” (Ps 19:1). The stars, like their Maker, possess a certain infinitude and uncontainable-ness. Yet, could it also be that, despite their insurmountable distance, they present themselves to us as being close enough to almost touch? 
+<br><br>
+<div id="scr">
+Can you bind the chains of the Pleiades <br>
+&nbsp;&nbsp;&nbsp;&nbsp;or loose the cords of Orion? <br>
+Can you lead forth the Mazzaroth in their season, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;or can you guide the Bear with its children? <br>
+Do you know the ordinances of the heavens? <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Can you establish their rule on the earth?<br><br>
+Job 38:31-33
+</div>
+<br><br>
+<h3>Day 1</h3>
+I had a little bit of a later start than planned, waking up at 6:30 instead of 5:30. I moved my car from the campground to the parking lot, got some stretches in, filtered some water from the creek, and started up the trail to Kearsarge Pass. The trail was very nicely graded, and I made quick progress, stopping only to filter some more water at Gilbert Lake. Soon, I was huffing and puffing my way above treeline, and I got my first glimpse of Kearsarge Pass at 11,800’. 
+<br><br>
+<a href="3.jpg" data-lightbox="1"><img src="3.jpg"></a>
+<p>Gilbert Lake</p>
+<br><br>
+<a href="4.jpg" data-lightbox="1"><img src="4.jpg"></a>
+<p>Heart Lake (aptly named)</p>
+<br><br>
+<a href="5.jpg" data-lightbox="1"><img src="5.jpg"></a>
+<p>Looking up to Kearsarge Pass</p>
+<br><br>
+<a href="6.jpg" data-lightbox="1"><img src="6.jpg"></a>
+<p>Big Pothole Lake (also aptly named)</p>
+<br><br>
+
+At the top of the pass, I had a short chat with a few JMT thruhikers (shoutout to Summer Sausage and Rox), all of whom warned about the snow on the north side of Forester Pass. They recommended crossing in the morning to avoid post-holing, which made me rethink my current plans which had me crossing Forester in the late afternoon. I considered reversing my current route to cross Forester in the morning of the second day, but this would mean descending Little Joe’s Pass instead of ascending it, which I knew would be much more difficult. I kept this idea in the back of my mind as I descended from the pass. 
+<br><br>
+<a href="7.jpg" data-lightbox="1"><img src="7.jpg"></a>
+<p>Ascending to the pass</p>
+<br><br>
+<a href="8.jpg" data-lightbox="1"><img src="8.jpg"></a>
+<p>Me at the top of the pass, looking west</p>
+<br><br>
+<a href="9.jpg" data-lightbox="1"><img src="9.jpg"></a>
+<p>Looking west from the pass. The Kearsarge Pinnacles are in the foreground, with the Mt. Brewer range in the back. Mt. Brewer is the prominent peak at the center in the background.</p>
+<br><br>
+<a href="10.jpg" data-lightbox="1"><img src="10.jpg"></a>
+<p>Kearsarge Pinnacles and Kearsarge Lakes</p>
+<br><br>
+Below the pass and overlooking Kearsarge Lakes, I stopped to filter more water and have a bite to eat. The view of the Kearsarge Pinnacles overlooking the lake was gorgeous. I continued on through the wooded meadows to Bullfrog Lake, where I was treated to a wonderful view of East Vidette in the background of the Lake, across the canyon below. The view of East Vidette from the JMT above Vidette Meadow was similarly stunning.
+<br><br>
+<a href="11.jpg" data-lightbox="1"><img src="11.jpg"></a>
+<p>The grassy northeast shore of Bullfrog Lake</p>
+<br><br>
+<a href="12.jpg" data-lightbox="1"><img src="12.jpg"></a>
+<p>East Vidette (left) and Bullfrog Lake</p>
+<br><br>
+<a href="13.jpg" data-lightbox="1"><img src="13.jpg"></a>
+<p>The Videttes (East on the left) as seen from the JMT descending into Bubbs Creek Canyon</p>
+<br><br>
+
+Making my way down Bubbs Creek to Junction Meadow, the descent was starting to get hard on my knees and feet, but I appreciated the view of Mt. Brewer in the distance with Bubbs Creek rushing down in the canyon below.
+<br><br>
+<a href="14.jpg" data-lightbox="1"><img src="14.jpg"></a>
+<p>Bubbs Creek, with Mt. Brewer in the distance</p>
+<br><br>
+<a href="15.jpg" data-lightbox="1"><img src="15.jpg"></a>
+<p>Bubbs Creek above Junction Meadow</p>
+<br><br>
+
+
+At Junction Meadow, I was hit by the first serious wave of mosquitos all day, and the mosquitos would only get worse as I progressed up East Creek. I located the fork in the trail that brought me to the Bubbs Creek crossing. The flow was high, so the creek was split into two sections at Junction Meadow, the north one being the smaller one. Although I had camped here back in 2018, I didn’t remember it looking anything like this at all. Everything was overgrown, and there were downed trees everywhere. I took off my shoes and crossed the first creek, which was only shin deep, but when I came to the second (main) creek, I realized that it was far too swift and deep for my comfort. I couldn’t clearly see the bottom, but I estimated it to be about waist deep, a risk that I did not want to take. I decided to head further west and check out the creek where I knew it would be a little wider and hopefully slower and shallower. I walked about 500 feet west down the Bubbs Creek trail to where there was a meadow. I crossed the first creek in my crocs, walked through the thick grassy meadow, and came to a rocky outcropping on the south end of the meadow overlooking the main creek. It was evidently shallower, although I could see that one section was still quite deep and swift. However, it was at least safer than the normal crossing, so I decided to take the chance and cross here. The water was so fast and deep that could barely even hold down my trekking poles in the water, but I managed to keep my footing and make it to the other side. However, when I was on the other side, I realized that the brush was so thick that it was essentially impassable, and I would not be able to navigate even the few hundred feet back to the trail. I decided simply to cross back and walk up the stream in my crocs instead of trying to pass through the brush. After around 100 feet or so, I came across a nice rocky bank, where I realized the stream crossing was perfect. The water was still deep (about mid-thigh), but the flow was slow and calm because the stream was wide here. I recommend this as the ideal place to cross—safe but also close enough to the trail that you don’t need to bushwhack your way there. 
+<br><br>
+<a href="16.jpg" data-lightbox="1"><img src="16.jpg"></a>
+<p>The easy crossing of the first Bubbs Creek at Junction Meadow</p>
+<br><br>
+<a href="17.jpg" data-lightbox="1"><img src="17.jpg"></a>
+<p>The must swifter and deeper second Bubbs Creek at Junction Meadow</p>
+<br><br>
+<a href="18.jpg" data-lightbox="1"><img src="18.jpg"></a>
+<br><br>
+<a href="20.jpg" data-lightbox="1"><img src="20.jpg"></a>
+<p>Looking north at the meadow I crossed, a couple hundred feet west of the normal Bubbs Creek crossing</p>
+<br><br>
+<a href="19.jpg" data-lightbox="1"><img src="19.jpg"></a>
+<p>The creek is wider here, although the north side still has a deep and swift channel, around thigh-deep</p>
+<br><br>
+<a href="21.jpg" data-lightbox="1"><img src="21.jpg"></a>
+<p>The place where I ultimately crossed. The water is thigh-deep but much slower, and there are rocky banks on both sides</p>
+<br><br>
+<a href="22.jpg" data-lightbox="1"><img src="22.jpg"></a>
+<p>The location of the crossing in the previous picture</p>
+<br><br>
+
+
+
+
+I quickly made my way back to the East Creek trail, which was seriously overgrown. It was clear that this trail had not been maintained for years. (I don’t remember it being this bad back in 2018, but my memory may be wrong.) Trees had fallen, blocking the trail, and several places had a lot of brush obscuring the trail. Nevertheless, I at least did not have difficulty locating the trail, and I slowly made my way up to East Lake. My goal was to camp at Lake Reflection, but the sun was already going down, and I decided that East Lake was sufficient for today. The mosquitos were intense. I had wanted to camp on the north side of the lake for the view, but I struggled to find a suitable site. So, I simply camped on the south side of the lake, where there was a flat area with a bear box. I cooked and ate inside my tent (Peak Refuel Beef Pasta Marinara, yum!) and went to bed.
+<br><br>
+<a href="23.jpg" data-lightbox="1"><img src="23.jpg"></a>
+<p>East Lake from the north shore</p>
+<br><br>
+<h3>Day 2</h3>
+At daybreak, I quickly packed up and head up the East Creek trail. The mosquitos were quickly out in force, so I had to hike with a head net. Unfortunately, the trail was even more overgrown the further up I went, especially the closer it ran next to the creek. I lost the trail at several points, although there were some helpful cairns ever so often. Nevertheless, the brush was never overly dense, and I made it to the outlet pond at the north end of Lake Reflection by around 8:30 am. This was a gorgeous and familiar view, and I stopped to eat breakfast and filter water for the cross country section ahead. 
+<br><br>
+<a href="24.jpg" data-lightbox="1"><img src="24.jpg"></a>
+<p>Somewhere along the trail to Lake Reflection, looking north back down the trail</p>
+<br><br>
+<a href="25.jpg" data-lightbox="1"><img src="25.jpg"></a>
+<p>Beautiful Lake Reflection, unfortunately without any reflections</p>
+<br><br>
+
+At around 9 am, I headed east up the hill from the outlet of Lake Reflection, towards the small tarn that sits at around 10,400’. This was a steep climb through the trees, and it was hard to keep my footing through the soft soil. This flattened out at 10,400’, and I then made my way south towards the base of the chute to Little Joe’s Pass. (If you look at the slope angle shading on CalTopo, you can see that the easiest way is to traverse the eastern side of Lake Reflection at roughly 10,320’, where the slope becomes flat. This is the path that I followed.)
+<br><br>
+<a href="26.jpg" data-lightbox="1"><img src="26.jpg"></a>
+<p>Traversing the eastern shore of the lake</p>
+<br><br>
+<a href="27.jpg" data-lightbox="1"><img src="27.jpg"></a>
+<p>Looking back towards the outlet of Lake Reflection</p>
+<br><br>
+
+As I neared the creek that flows into the eastern shore of Lake Reflection, I proceeded up the hill towards the pass. By now, the correct chute that I needed to find myself in was clear, and I just needed to navigate between the various talus fields to the base. (The correct chute is not difficult to spot. It is the one that looks “shiniest” or “whitest,” because it contains an extended section of granite slabs at the 1/3-1/2 mark. You can also see that it splits in two near the top. Be sure to turn right where it splits.)
+<br><br>
+<a href="28.jpg" data-lightbox="1"><img src="28.jpg"></a>
+<br><br>
+<a href="29.jpg" data-lightbox="1"><img src="29.jpg"></a>
+<br><br>
+When I came to the base of the chute, I realized just how steep it was, and 1,600’ feet of this was a daunting prospect. I took a short break next to the tiny cliffs at the base of the chute and then pressed on. 
+<br><br>
+<a href="30.jpg" data-lightbox="1"><img src="30.jpg"></a>
+<br><br>
+I soon realized that navigating up the chute was not as straightforward as I expected. Thankfully, I checked the GPS periodically to verify my position. Otherwise, I may have wound up in the wrong chute at least two or three times. I was very grateful for the CalTopo slope angle shading feature, which clearly indicated the right way up. 
+<br><br>
+At around 11,200’, I nearly made a wrong turn, choosing to head left instead of right, wanting to avoid the slick granite slabs on the right. However, I realized that I had to go up the steep slabs if I didn’t want to get sidetracked. (Were these avoidable? I don’t know.) I felt that these were the crux of the route, because there weren’t many convenient handholds or footholds. 
+<br><br>
+<a href="31.jpg" data-lightbox="1"><img src="31.jpg"></a>
+<p>The slabs in question. (Note also the pointy rock outcropping at the top in the center of the photo. This is a helpful guide up the chute. Make sure it is always in sight, and at the end, go to the right of this outcropping.)</p>
+<br><br>
+At this point, I was exhausted and also scared, because I was uncomfortable with the steepness and exposure. I kept repeating to myself: don’t think, just go, which seemed to help with my nerves. But at some point, the winds began to pick up, and there were times when the gusts were so intense that I felt myself being pressed into the face of the mountain. About halfway up, I just couldn’t take it anymore, and I found a rock with some wind protection and just sat next to it, telling myself that I should have never even dared coming up this pass. Too scared to go up or down, I sat there and spent several minutes praying and trying to collect myself.
+<br><br>
+<a href="32.jpg" data-lightbox="1"><img src="32.jpg"></a>
+<p>Looking down at the lake below. You can see that Longley Pass in the right-center of this photo is impassable covered in its usual early-season cornice. </p>
+
+After fifteen or twenty minutes and a few bites of food, I willed myself to press on. The rest of the chute was an exhausting blur from which I do not remember much. I will note that there are two other important points at which one must be careful not to get sidetracked into neighboring chutes: 11,720’ and 11,900’. When in doubt, always go right. At around 12,300’, I found myself too far left, but thankfully, this was easy to correct with some traversing. 
+<br><br>
+<a href="33.jpg" data-lightbox="1"><img src="33.jpg"></a>
+<p>Looking north towards the mountains in the distance. I couldn't recognize any.</p>
+<br><br>
+Finally, at around 2 pm, around 4 hours after entering the chute, I found myself at the top, filled with relief and gratitude. Besides a short glance down the chute from which I had come, I did not stop to linger and look back. Well, I couldn’t even if I wanted to, because as soon as I topped out, I was greeted with a blast of continuous 40 mph wind right in my face, being funneled up to me from the Kern River Canyon. I could barely stand up straight, and I quickly found refuge behind a tiny boulder. 
+<br><br>
+<a href="34.jpg" data-lightbox="1"><img src="34.jpg"></a>
+<p>At the top, looking back down into the chute. There was a tiny cairn, though I do not know how noticeable it was.</p>
+<br><br>
+<a href="35.jpg" data-lightbox="1"><img src="35.jpg"></a>
+<p>The daunting Ericsson crags and Mt. Ericsson</p>
+<br><br>
+I continued down the gentle, sandy slope down to the lakes of the Upper Kern Basin. These were undeniably scenic, but the high winds combined with my exhaustion made it all difficult to enjoy and drink in. I tried to get to lower elevations as quickly as possible so that I could get out of the wind, so I didn’t really stop for a break until I reached the chain of lakes at 11,600’. Here, I spent about half an hour to do some foot care, eat a few bites, and filter some water. The wind was annoying, but this at least meant that I did not have to deal with bugs. 
+<br><br>
+<a href="36.jpg" data-lightbox="1"><img src="36.jpg"></a>
+<p>Mt. Genevra (I think) and the lake at 12,000' (I think)</p>
+<br><br>
+<a href="37.jpg" data-lightbox="1"><img src="37.jpg"></a>
+<p>The lake at 11,800' (I think)</p>
+<br><br>
+<a href="38.jpg" data-lightbox="1"><img src="38.jpg"></a>
+<p>One of the lakes at 11,600', where I took a long break</p>
+<br><br>
+As I proceeded to descend to the lake at 11,400’, I briefly hit upon a use trail. At the lake, the wind died down, and I was hit with a thick cloud of hungry mosquitos. I put the head net back on and traversed my way to the trail heading up to Lake South America. 
+<br><br>
+<a href="39.jpg" data-lightbox="1"><img src="39.jpg"></a>
+<p>One of the small tarns on the way back to the trail. </p>
+<br><br>
+I was thankful to be back on the trail, but I was not happy to have to go uphill again. My legs were starting to give out from exhaustion, so my pace was slow and arduous. I slowly made my way up the sandy incline to the pass south of Lake South America. The south side of the pass was sandy and steep, with a few troublesome snowfields that had almost melted away. With the sun setting, I made my way down the switchbacks into the grassy valley. The spongy grass was a delight for my sore feet. I admired the last shades of pink on Mt. Whitney in the distance. 
+<br><br>
+<a href="40.jpg" data-lightbox="1"><img src="40.jpg"></a>
+<p>Mt. Ericsson from the small lake south of Lake South America</p>
+<br><br>
+<a href="41.jpg" data-lightbox="1"><img src="41.jpg"></a>
+<p>From the top of the pass south of Lake South America, looking towards Mt. Whitney</p>
+<br><br>
+<a href="42.jpg" data-lightbox="1"><img src="42.jpg"></a>
+<p>Looking south from the meadows after the pass</p>
+<br><br>
+<a href="43.jpg" data-lightbox="1"><img src="43.jpg"></a>
+<p>Last light on Mt. Torchbearer</p>
+<br><br>
+
+
+
+With light fading fast, I left the trail before the descent to Tyndall Creek and camped near the outlet of the lake at 11,400’, where I had a beautiful view of Mt. Tyndall to the east. There were conveniently flat and sandy sites to sent up my tent at the outlet, the only downside being the lack of protection from the wind.
+<br><br>
+<a href="2.jpg" data-lightbox="1"><img src="2.jpg"></a>
+<p>Mt. Tyndall and the lake at 11,400' where I camped for the night </p>
+<br><br>
+<h3>Day 3</h3>
+That night, I tried to sleep, but I was awakened by winds making the tent walls flap. I had set up the tent with the short end facing south, which was where the winds had been coming from all day, but now the winds were coming from the east and catching the long side of the tent. I got out of the tent to set up a guyline, which made the flapping stop, but I could not fall asleep after that. Knowing that I had a huge day ahead of me, having to make around 25 miles if I wanted to get back to the trailhead, I decided to just pack up and start walking. 
+<br><br>
+I set off at around 4 am in the pitch black, walking off trail and hoping to hit the JMT as I contoured along the hillside east of the lake. After around 15 minutes, I was happily on the JMT and making good progress in the dark. The trail was perfectly graded at a soft uphill, and I made very steady progress. I hit a few big snowfields that I had to detour around at around 11,800’, but by this time, the sky was beginning to brighten. As the sun rose, many clouds began to form in the sky, and I surmised that there would be rain later in the afternoon. This made me nervous, but I set the thought aside for now.
+<br><br>
+<a href="44.jpg" data-lightbox="1"><img src="44.jpg"></a>
+<p>Looking south from the trail up to Forester Pass</p>
+<br><br>
+<a href="45.jpg" data-lightbox="1"><img src="45.jpg"></a>
+<p>Looking up to Forester Pass</p>
+<br><br>
+Temperatures were cold, and most of the puddles on the trail were frozen solid. The winds began to pick up a little bit, and I tried to stay moving in the cold. I could now see Forester Pass ahead of me. I couldn’t believe anybody would even dare building a trail through there! This made me realize just how impassable the Kings-Kern divide truly was, that the JMT route designers would choose Forester Pass of all places to build a trail. 
+<br><br>
+<a href="46.jpg" data-lightbox="1"><img src="46.jpg"></a>
+<p>Ascending the switchbacks to Forester Pass</p>
+<br><br>
+I filtered water at the stream right before the pass and then made my up the pass. I could really feel the altitude beginning to slow me down, and I had to catch my breath every few steps. However, the freezing cold prevented me from taking breaks any more than a few seconds. The view looking south was gorgeous, and I also appreciated the sky pilot flowers that studded the switchbacks. I made it to the top at around 7:00 am and quickly headed down the other side. 
+<br><br>
+<a href="47.jpg" data-lightbox="1"><img src="47.jpg"></a>
+<p>Sky Pilots on the way up to Forester Pass, looking west to Caltech Peak (left)</p>
+<br><br>
+<a href="48.jpg" data-lightbox="1"><img src="48.jpg"></a>
+<p>Traversing the notorious chute at the top of the south side of Forester Pass. Thankfully, the snow had melted by now.</p>
+<br><br>
+<a href="1.jpg" data-lightbox="1"><img src="1.jpg"></a>
+<p>The beautiful view from the top of Forester Pass looking south</p>
+<br><br>
+I could see all the snowfields that others had warned about, but they did not seem too troublesome, and the reports about their difficulty seemed exaggerated. However, they were tricky to navigate for the sole reason that they were as slippery as ice (it being so early in the morning), and it was hard to get any kind of traction without spikes on my feet. I had to be very careful with my footing, lest I take a big tumble down the slope. It was incredible how deep some of the sun cups were – some at least 4 feet deep by my estimation. I also had to be very careful not to step on any of the ice on the trail. This slowed my descent significantly and sapped up a lot of my remaining energy.
+<br><br>
+<a href="49.jpg" data-lightbox="1"><img src="49.jpg"></a>
+<p>Forester Pass looking north</p>
+<br><br>
+<a href="50.jpg" data-lightbox="1"><img src="50.jpg"></a>
+<p>The intensely suncupped snow fields</p>
+<br><br>
+<a href="51.jpg" data-lightbox="1"><img src="51.jpg"></a>
+<p>Weather beginning to build up on the descent from Forester Pass</p>
+<br><br>
+<a href="52.jpg" data-lightbox="1"><img src="52.jpg"></a>
+<p>An intriguingly clear turquoise tarn that caught my eye</p>
+<br><br>
+The clouds were starting to seriously build up, and I could see some heavy rain in the distance. Above me, it began to lightly snow, but not more than a few tiny pellets. I tried to descend as fast as possible, but my legs were starting to get sore and fatigued. At around 9:30 am, I encountered the first people I had seen since Bubbs Creek, a welcome sight. I could barely get words out of my mouth, having not spoken in nearly 48 hours. Heading back below treeline, the views of Mt. Stanford above the alpine meadows were beautiful. The clouds had lifted, so it was sunny and warm. Unfortunately, I was too fatigued to really appreciate this much. 
+<br><br>
+<a href="53.jpg" data-lightbox="1"><img src="53.jpg"></a>
+<p>Mt. Stanford</p>
+<br><br>
+The rest of the way to Vidette Meadow was mind-numbing, and I was eager for the day just to be over. I reached the trail junction at around 1 pm. The clouds were starting to thicken overhead, and I knew that I would have to either set up camp to avoid the rain or hike through the rain. (I also forgot to pack my poncho, because the forecast didn’t show rain. My mistake.) I decided to just push through the rain.
+<br><br>
+I labored my way up into the Kearsarge Lakes basin. When I reached Bullfrog Lake, it began to hail, and I could hear thunderstorms out west. There are no photos after this point, because I put my phone into my Ziploc bag to keep it dry. The temperatures began to drop seriously, and the wind also started to pick up. I could not stop walking, because I knew that I would freeze if I stopped. Kearsarge Pass was covered in clouds, and I reached the top at around 4:30, almost unable to take another step. (I don’t know exactly because my phone was stowed away.)
+<br><br>
+At this point, I had already been walking for 12 hours straight, having covered roughly 15–20 miles. The thought of McDonald’s and a warm bed was pretty much the only thing that kept me going at this point. Descending the trail from Kearsarge Pass was pretty much a controlled fall, allowing gravity to just propel me down the trail. Each step was like a stab in my soles – so bruised were my feet. Hail turned into rain, which did not stop but only got worse. Thankfully, the wind at least died down as I got below treeline. The last mile, even though I was in sight of the car, I simply could not take another step, and I nearly broke down in tears from the pain and exhaustion. I had eaten around 500 calories all day, and I had simply nothing left in the tank. A thousand feet away from my car, I sat down, prayed, and ate a few pieces of dried mango, which gave me enough strength to finish the hike. I staggered my way through the parking lot with jubilation, changed into dry shoes in the car, and drove down the mountain, finishing my hike at around 7:30 pm. 
+<br><br>
+That evening, I had a double-double, 20 chicken nuggets, and an ice cream at the McDonald’s in Lone Pine. I checked into the Mt. Whitney motel, which was run by a nice Indian family. I was astonished to find a blister the size of a grape (okay, a slight exaggeration) on the inner side of my big toe. The sole of my left foot was so bruised that I could barely put weight on it. I showered, carefully popped the blister, and had a wonderful night’s sleep, my mind set on the gracious, sweet providence of my God. Whether through storm or through strife, my life is upheld not by chance but by the kindly hand of my heavenly Father. 
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+  function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+  //Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
