@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Mathematics and the God of Scripture</title>
+  <meta property="og:image" content="250802-large.jpg">
+  <meta property="og:description" content="DESCRIPTION">
+  <meta name="description" content="DESCRIPTION">
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Mathematics and the God of Scripture</h1>
+        <p>
+          August 2, 2025
+        </p>
+
+        <img src="250802-large.jpg">
+        <br><br>
+        <div id="scr">
+          <i>How precious to me are your thoughts, O God! <br>
+          How vast is the sum of them! <br>
+          If I would count them, they are more than the sand.</i> <br>
+          Psalm 139:17–18a
+        </div>
+        <br>
+        I begin with a simple question. Where and when does two plus two equal four? This is not a trick question. Two plus two equals four at every place and at every time. This much is clear. 
+        <br><br>
+        Now, you might say that things are different in China, because there they don’t know what “two” means and what “plus” means. There, they say 二加二等于四. But of course, the underlying mathematical principle is the same—it is only the language and symbolic convention that is different. 
+        <br><br>
+        Or, you might say that things were different before humans (and other animals) walked the earth. Back then, when there were only trees and jellyfish, there was no concept of “two” and no concept of “four,” because there was no mind to think those concepts into reality. But even in those early days, two plus two still equaled four. After all, just because there was no mind to count them, that doesn’t mean two rocks and two rocks ever made five rocks. Two plus two always equals four. 
+        <br><br>
+        So, two plus two equals four at every place and at every time. Now, this is an observation that is true of other facts of life as well: opposite charges always attract and the speed of light is always <i>c</i>, at every place and at every time.
+        <br><br>
+        But how about <i>outside</i> of our space, and <i>outside</i> of our time? Suppose there is another universe parallel to ours that is entirely different. Suppose that in this universe (let’s call it Flatland), there are only two dimensions, there is no such thing as gravity, and you can even travel back in time! Instead of quarks and electrons, Flatland is just an infinite sea of neutral particles that we’ll call flatons, noodling around in space without doing very much at all. Clearly, many facts of our universe are not true in Flatland. There is no concept of gravity, and the speed of light isn’t <i>c</i> because there is no light! But does two plus two equal four? In Flatland, do two flatons and two flatons make four flatons? They certainly do. 
+        <br><br>
+        So, two plus two equals four, irrespective of place, time, or even <i>universe</i>. More fundamental even than physical laws, mathematical truth is <i>omnipresent and eternal, transcending even the natural order</i>. 
+        <br><br>
+        [Now, when we say it like <i>that</i>, the Christian is inevitably on the edge of his seat, immediately thinking of ways to weaponize this for his next evangelistic encounter, while the atheist is probably looking nervously for the nearest exit. But, the eternality and transcendence of mathematics is not quite a direct proof of the existence of God. Mathematical truth is not itself God—or at least not God as we traditionally understand God. Mathematics is not <i>personal</i>—it does not think or act. Therefore, there are plausible non-theistic theories for why mathematics should exist. Yet, the eternality and transcendence of mathematics should give the atheist or the naturalist significant pause. You cannot touch mathematics. You cannot put it under the microscope or run experiments on it. It is not something that we can contain, whether in a cage or a collider. But it exists—and more than that, it intricately coheres with and upholds the observable world around us. Isn’t this at least a hint that the atheistic worldview has serious deficiencies? That there is more to this life than the world we see with our own eyes around us?] 
+        <br><br>
+        When viewed in relation to God, mathematics is fundamentally different from all the other disciplines. That is because mathematics (if we include logic under its umbrella) is the only discipline that exists independently of creation. The sciences and the humanities do not exist without the world that we have around us. There is no physics without the Sun and the planets, there is no biology without the plants and the animals, and there is no literature without the tumultuous drama of human life. But mathematics is unique because it is eternal and unbound by time. It describes creation and creation depends on it, but it does not depend on creation. Mathematics is an eternal, uncreated reality. (If you disagree, simply think about whether 1 + 1 + 1 = 3 was true before the creation of the world.)
+        <br><br>
+        But from a theological perspective, this could be a thorny conclusion for some. If mathematics is uncreated, then is it God? After all, there is no uncreated object except God himself—if there was, then either God would depend on it (a denial of his aseity) or it would be another god (a denial of his oneness and supremacy). Now, as we know, mathematics is of course not God. Mathematics is not personal. It cannot think, speak, or act. Mathematics cannot simply be identified with God. Rather (and this is my thesis), as an uncreated reality, mathematics is best understood as a part of <i>the eternal thoughts in the mind of God</i>. 
+        <br><br>
+        Let us use love as an example. Is love created? Is the concept or metaphysical reality of love a part of the temporal, created realm? The answer is a clear no. Love is eternal. There was never a time when love was not. We see this most clearly in Jesus’ high priestly prayer. Praying on behalf of all believers, he says, “Father, I desire that they also, whom you have given me, may be with me where I am, to see my glory that you have given me because <i>you loved me before the foundation of the world</i>” (John 17:24). Before the creation of the world, in all eternity, the Father loved the Son in their unchanging, intra-Trinitarian fellowship. Love is as eternal and uncreated as the Trinity. But is love the same as God? No, love is not God. But nor is it some metaphysical reality external to God. Rather, <i>God is love</i> (1 John 4:8). As one of his attributes, love is who he is. He does not create love, nor does he adhere to love as some sort of external standard. Love emerges from his essence as simply as wetness emerges from the essence of water. Water does not need to <i>do</i> anything to generate the concept of wetness, nor could wetness exist without the existence of water. Wetness is a meaningful concept simply by virtue of water being water. Love is a meaningful concept simply by virtue of God being God. 
+        <br><br>
+        Now, mathematics is a set of concepts that exists in relation to God in a way very similar to the concept of love. Mathematics is not created. It emerges from the very essence of God. In the same way that love is unchanging because it emerges from the eternal relations of the Godhead, the truths of mathematics are unchanging because they arise from his <i>mind</i> as eternal <i>thoughts</i>. Just as truth only takes on significance and reality in connection to a mind which thinks it, mathematics exists because God <i>thinks </i>it. Mathematics is the wisdom of God. It does not change because God does not change. It proceeds forth eternally from the mind of God as a stream springs forth from a fountain. To know mathematics is to perceive somewhat of the infinite wisdom of God. To enjoy it is to bask in the timeless radiance of God’s own mind. 
+        <br><br>
+        So, the next time we see a child doing her times tables in the sand at the beach, we should know that she is doing something far more profound than when she is listening to her bedtime stories or learning about why the sky is blue. Those other things are all well and good—they tell us of God and his glory as revealed in the created order. They allow us to know God through his works in time and space. But to study mathematics—from arithmetic to abstract algebra—is to participate in the very thought life of God that has been going on for all eternity. All of our other creaturely interactions with God come through his creation. When we think about mathematics, we are meeting God outside of space and time in the eternality of his own mind. We are, to borrow Kepler’s phrase, “thinking God’s thoughts after him.” What could be more profound?
+        <br><br>
+
+        <br><br>
+        Finally, I would be remiss if I did not discuss how mathematics points to Christ. It should not surprise us that mathematics shares many similarities to Jesus Christ. After all, as I have just argued, mathematics proceeds from the essence of God as his <i>thought</i>. In a similar but albeit greater way, Christ is begotten of the Father as the eternal Son and proceeds from him as the eternal <i>Word</i>—Christ Jesus “who became to us <i>wisdom from God</i>” (1 Cor 1:30). What are the connections? Here are two: 
+        <br><br>
+        First, we see in physics that it is mathematics which describes the world and upholds its natural processes. But Scripture tells us that it is Christ, the true wisdom of God, in whom “all things hold together” (Col 1:17), who “upholds the universe by the word of his power” (Heb 1:3). If mathematics is the glue of the <i>physical</i> world, then it is Christ who is the glue of the <i>entire</i> world. Our understanding that mathematics makes the world go round should point us to a deeper mystery: Christ the <i>ultimate</i> governor and sustainer of creation.
+        <br><br>
+        Second, we see in how we interact with it that mathematics is both transcendent and immanent. It is transcendent in that it is eternal and contains mystery beyond the comprehension of any human. But though it is unfathomable, it is not unknowable. Much like God, mathematics is immanent in that we can actually comprehend it and apply it to our situations. Two plus two equals four is a transcendent truth, but sometimes it is also as mundane as saying that two and two apples make four apples. Is this not also how we understand Christ? Christ Jesus is the infinitely transcendent one—“the radiance of the glory of God” (Heb 1:3). But he condescended to humanity: “the Word became flesh and dwelt among us” (John 1:14). And when his Spirit comes upon us and renews our hearts, he applies the intimacy of his very own presence to our souls. If there is one takeaway here, it should be this: the fact that mathematics is intelligible to us is a sign (if not a proof) that God is transcendent but not distant. We are, to put it one way, “on the same wavelength.” If even children can probe the thoughts of God in two plus two equals four, should we not search for other ways in which God has made himself known to us? 
+        <br><br>
+         
+        <br><br>
+        <h3>Bibliography</h3>
+        Anderson, James N., and Greg Welty. “The Lord of Noncontradiction: An Argument for God from Logic.” <i>Philosophia Christi</i> 13, no. 2 (2011): 321–38.
+        <br>
+        Poythress, Vern S. “A Biblical View of Mathematics.” In <i>Foundations of Christian Scholarship: Essays in the Van Til Perspective</i>, edited by Gary North. Ross House Books, 1976.
+        <br>
+        Poythress, Vern S. <i>Redeeming Mathematics: A God-Centered Approach</i>. Crossway, 2015.
+        <br><br>
+
+        <br><br>
+
+
+
+
+        <br><br><br><br>
+
+        <div id="footnotes">
+
+        </div>
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
