@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>251011</title>
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Love One Another</h1>
+        <p>
+        Saturday, October 11, 2025, Academy of Music and Arts for Special Education (AMASE) Praise Night, Home of Christ Cupertino
+        <br>
+        John 15:12–13<br>
+        </p>
+
+        <div id="scr">
+          This is my commandment, that you love one another as I have loved you. Greater love has no one than this, that someone lay down his life for his friends.
+        </div>
+
+        <br><br>
+        My text for this evening comes from the 15th chapter of the Gospel according to John, verses 12 and 13. If you’re unfamiliar with the Bible, the Gospel of John was written by one of Jesus’s disciples named John, and this book was John’s eyewitness account of some of the things that Jesus said and did, leading up to his death on the cross and culminating in his resurrection. 
+        <br><br>
+        Now, these verses come from what we call the Upper Room Discourse, where Jesus gathered all his disciples together and gave his last teachings the night before his death. Of course, as you might know, even for normal people, we place a great importance on the words that were said right before their death. We tend to think that these words represent a person’s greatest or most profound reflections upon their own life. 
+        So here, we ought to pay special attention. 
+        <br><br>
+        In this final sermon of his, Jesus talked about a lot of different things. He taught his disciples about the importance of believing in him. He also taught his disciples that he alone was the way to know God. But perhaps most of all, Jesus taught about love—the love that he had for his disciples, and the love that his disciples ought to have for one another. 
+        <br><br>
+        That happens to be the main message of the two verses we are looking at this evening, which I will read once again. Jesus said, “This is my commandment, that you love one another as I have loved you. Greater love has no one than this, that someone lay down his life for his friends.”
+        <br><br>
+        Here’s the main point: Love is both the way and the message of the Christian faith. It is the life that God requires of us. And it is the story of what God has done for us. And so, we’ll spend the next ten minutes or so unpacking what that means.
+        <br><br>
+        Let’s look at the first verse, verse 12. First, Jesus says that this is a “commandment.” When he calls love a “commandment,” Jesus is not just giving helpful advice or wisdom. Jesus is telling us what the law of God is. Jesus is telling us the standard of God to which we will be held accountable to. Listen to what Paul writes in the book of Romans. It is “the one who loves another [who] has fulfilled the law. For the commandments . . . are summed up in this word: ‘You shall love your neighbor as yourself’” (Rom 13:8–9). 
+        <br><br>
+        Now, that may feel fairly obvious to some of us, but just stop and think about how radical that is. Take a look at the world around us, this world that God has made for his glory. I fear that sometimes all we see is a bleak landscape of people who care about nothing except themselves—people driven by ambition, lust, fear, and anxiety. But better yet, take a look at your own life. How much of what you do is simply motivated by what <i>you</i> want? The comfort that <i>you</i> desire? The approval that <i>you</i> need from others in order to feel at peace? Even for the good things that we do—those things that make us pleased with ourselves, those things that make us feel so selfless and sacrificial—sometimes even with those things all we need to do is pull back the curtain, pop open the hood, and all we hear is that faint voice crying out, “Me, me, me, me, me. It’s all about me.” 
+        <br><br>
+        But listen to the way that Paul describes love in 1 Corinthians 13: “Love is patient and kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful; it does not rejoice at wrongdoing, but rejoices with the truth. Love bears all things, believes all things, hopes all things, endures all things” (1 Cor 13:4–7).
+        <br><br>
+        And so I wonder, do you have this kind of love for the people that God has placed in your life? Have you loved your family? Have you loved your friends? Have you loved your enemies? Have your words been pleasing to God? Have your thoughts been pleasing to God?
+        <br><br>
+        Jesus gives us a way that is totally different than the world’s way. The world says, “Love yourself!” Jesus says, “Deny yourself.” The world says, “Be happy!” Jesus says, “Blessed is the one who is poor in spirit.” The world says, “Find yourself!” Jesus says, “Follow me.” There are two ways to live, and one of those ways is being sold to you every moment of your waking existence. And your job as a person created by God for his glory is to <i>not buy it</i>. The way of the world is worthless. But the way of the kingdom of God is everything.
+        <br><br>
+
+        <br><br>
+        Next, Jesus tells the disciples <i>how</i> they are to love others. They are to love others <i>as he has loved them</i>. In the Christian faith, the love of <i>God</i> is the proper example and origin of our love for one another. If we were to liken our love to a stream, then we would have to say that God is the fountain. Jesus loved his disciples. Jesus loves us. 
+        <br><br>
+        “Greater love has no one than this, that someone lay down his life for his friends.” Now, the book of John is famous for including many statements with double meanings, and this statement here is no exception. On the one hand, Jesus is telling us how we ought to love one another. We ought to lay down our lives for one another. But on the other hand, Jesus is also foretelling the way that he would soon fulfill the love that he has had for us. Ultimately, Jesus was speaking about his own death, and the central message of Christianity—what we might call the “gospel”—is explaining why such a thing had to happen—why Christ died for sinners such as ourselves. Why did God become man, and why did that man have to die?
+        <br><br>
+        To answer this question, we need to know the Bible’s declaration of who God is, and the Bible’s fundamental assessment of what humanity is like. First, the Bible tells us that God is good, that he is holy, that he is righteous, and that he is just. He is all-knowing, all-powerful, and all-glorious. Second, the Bible tells us that we, as God’s created people, have broken his law. It tells us that we have sinned and dishonored our Creator. For our sin and disobedience and rebellion against him, we deserve nothing but his holy wrath and righteous judgment. 
+        <br><br>
+        Now, you might disagree. You might think that humans are fundamentally good and that we <i>deserve</i> God’s blessing and favor. The Bible would say otherwise. The Bible says, “all have sinned and fall short of the glory of God” (Rom 3:23). It also says, “The heart is deceitful above all things, and desperately sick” (Jer 17:9). In other words, whereas you might say that you are a fundamentally good person who just occasionally sins, the Bible says that you are fundamentally a sinner who only occasionally does a few good things. 
+        <br><br>
+        Now, I’ve been a seminary student for the past three years, but I also work as a high school math teacher. And if you think that people are fundamentally good, I would challenge you to work for just a month as a teacher, and I’ll personally guarantee that you’ll change your mind. As a teacher, I am regularly lied to, students are always trying to take shortcuts, and if not for the preventative measures that I put in place, pretty much every student would cheat on every exam. And let me tell you this, one of the hardest parts of my job is being disrespected every day and still having to treat these students with gentleness and care every time I’m with them. I have a roster of student names, and I try to spend time every day praying through it name by name, and I wish I could tell you that I love doing it. Because I don’t. It is not easy to love people who have not given you the honor that you deserve.  
+        <br><br>
+        But God is not like that. He is not like me. He bears patiently with a sinful world that hates him. He comes to a people that reject him, a people that want only to kill him, a people that deserve nothing but his wrath and punishment, and he sends his only begotten Son to die on their behalf so that if they would only turn and believe in him, they would be saved from judgment. In one of the most beautiful statements of Scripture, Paul writes, “One will scarcely die for a righteous person—though perhaps for a good person one would dare even to die—but God shows his love for us in that while we were still sinners, Christ died for us” (Rom 5:7–8).
+        <br><br>
+        My message for today is about the love of God, but the message of the love of God is the message of the cross. God forgives a sinful race by giving them a King—not to conquer them, but to be their Substitute. Christ died for our sins. “He was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed” (Isa 53:5). Our sins, our failures, our shame, our iniquity—Christ bore it all. And the wrath of God was poured out upon our righteous King standing in our place, who died and rose again, thus “cancelling the record of debt that stood against us” (Col 2:14). Jesus paid it all. “[God] made him to be sin who knew no sin, so that in him we might become the righteousness of God” (2 Cor 5:21). Our sin became his, so that his righteousness would become ours. And <i>that</i> is the meaning of our text today. 
+        <br><br>
+
+        “Greater love has no one than this, that someone lay down his life for his friends.” But what does he say next? “<i>You</i> are <i>my</i> friends if you do what I command you” (John 15:14). The Father loves us by sending his Son. And the Son loves us by dying for us. 
+        <br><br>
+        But we must note also that Christ died to save not all, but specifically those sinners who would turn to him and trust in him. The Bible tells us that it is by faith in Christ that we can escape the wrath of God that we rightly deserve and receive the right to become children of God, who are born not of blood nor of the will of the flesh nor of the will of man, but of God (John 1:12–13). If you’ve not yet trusted in him, the Bible calls you to turn from your sin and believe in Jesus, and you will be saved. 
+        <br><br>
+        That’s pretty much all that I have to say today, and so <i>my</i> job is done, but yours is not. You’ve heard this message from the word of God, and it’s up to you how you’re going to respond. The way I see things, there are essentially two ways. You could forget about this passage and go the way of the world and live for yourself. You could focus on just getting what you want, and you’d probably be reasonably happy, if not for the judgment of God that awaits you. Or you could choose the way of God. You could turn from your sin and trust in his Son, who loved you and gave himself for you. And you could deny yourself, love others, and live for God forever. Two ways—the wide gate and the narrow gate. But I’ll leave it to you to decide.
+        <br><br>
+
+
+
+
+
+
+
+
+
+
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
