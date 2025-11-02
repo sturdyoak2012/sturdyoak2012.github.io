@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Initial Reflections on Teaching—Part 1: Blessings and Trials of Being at a Christian School</title>
+  <meta property="og:image" content="251102-large.jpg">
+  <meta property="og:description" content="The first half of the semester here at Valley Christian has just ended, and so I thought it would be an appropriate time to write down a few reflections about my experience so far. (As I write this, my students are taking their Chapter 4 trigonometry test!)">
+  <meta name="description" content="The first half of the semester here at Valley Christian has just ended, and so I thought it would be an appropriate time to write down a few reflections about my experience so far. (As I write this, my students are taking their Chapter 4 trigonometry test!)">
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Initial Reflections on Teaching—Part 1: Blessings and Trials of Being at a Christian School</h1>
+        <p>
+          November 2, 2025
+        </p>
+
+        <img src="251102-large.jpg">
+        <br><br>
+        
+        The first half of the semester here at Valley Christian has just ended, and so I thought it would be an appropriate time to write down a few reflections about my experience so far. (As I write this, my students are taking their Chapter 4 trigonometry test!)
+        <br>
+<h3>How I Got into Teaching</h3>
+I did not ever plan on becoming a teacher. Rather, after I was transitioning away from a ministry role last spring, I simply intended to substitute teach for a while as I wrapped up my studies at Southern Seminary. I thought it would be a decent paying job that would let me (hopefully) study a little bit on the job, kind of like the hotel front desk work that I was doing right when I first started seminary. After all, I was simply looking for some light work that would help me pay my tuition. 
+<br><br>
+Long story short, there were open substitute teaching positions at Valley Christian, and so in May, I began helping them proctor their AP exams. Going into the fall, I thought that I would just keep subbing, potentially taking on some long-term sub work for the physics classes. However, in June, a position opened up in the math department that I was invited to apply for, and many interviews later, I got the job. 
+<br><br>
+And so, after a (very helpful) two week new teacher training program in the summer, I started teaching high school precalculus and calculus. 
+<br>
+<h3>The Transition</h3>
+Surprisingly (or, in some ways, perhaps not surprisingly) I did not find the transition difficult at all. There were some aspects of teaching that made me nervous at first, such as meeting 125 new students in two days and making a decent first impression. There were also things that I was fairly confident with, including my grasp of the material and my ability to communicate it clearly (although my students are better judges of that). Other “features” of the job caught me more by surprise. For example, I did not anticipate how mind-numbing it would be to lecture on the same material four times. (I’ve found that it helps if I just try to turn my mind off while I lecture.) I also didn’t anticipate how the “personality” of each class period would be so unique, requiring me to take on different “teaching personalities” myself. 
+<br><br>
+But in general, I’ve found that I feel suited for this role. This is not to say that I am particularly good at it. (Note the word “feel.”) But it does play well to some of my strengths. And at least for this season of my life, I think it is also a natural synthesis of my personal interests. 
+<br><br>
+Now, here and hopefully in some future posts, I will share some of the various thoughts that have been floating in my mind as I reflect on this first quarter of teaching.
+<br>
+<h3>Blessings and Trials of Being at a Christian School</h3>
+I teach at a Christian school, and this has both blessings and trials. Most importantly, this allows me to share my faith openly. (In fact, I am somewhat <i>required</i> to if I want to keep my job!) Valley Christian is an evangelical institution, and although there are many different Protestant denominations represented among the faculty and staff, we share the fundamentals of the gospel in common, which is what counts. We are committed to the inerrancy of Scripture, the exclusivity of Christ and his substitutionary atonement, and the necessity of repentance and faith for salvation. Every member of the faculty is committed to the ministry of the gospel here. For that I praise God. I, personally, would be reluctant to teach at an institution where I could not openly proclaim the gospel and “the unsearchable riches of Christ.” (I say “personally” because it is still important for there to be Christians who are teaching in our public schools.)  
+<br><br>
+Now, I thought this would be my favorite part of the job, but the reality is more complicated.
+<br><br>
+For starters, Valley Christian has more of a “missional” approach towards Christian education. That is, unlike the “discipleship” model, it seeks to bring in a lot of non-believing families as a way of sharing the gospel with more people outside of the faith. Whether through strong academics or top-notch athletic programs, a lot of families are drawn to the school for reasons other than its Christian ethos. According to my own surveys, only half of my students have believing parents, and even fewer are committed to the Christian faith themselves. From a “missional” standpoint, this seems like a glorious opportunity for ministry, and it is.
+<br><br>
+But that does not mean that ministry is always easy or exciting here. Instead, I have observed that the constant exposure to Christianity has led most students to be utterly apathetic towards God and the gospel. This is not the fault of the school—much less is it the fault of the gospel itself. Instead, I have come to realize that this is the natural outworking of the word of God. What I mean by this is that the word of God carrying out the mighty work of God is not only an instrument of salvation and enlightenment, but also an instrument of separation, hardening, and condemnation. 
+<br><br>
+By this I am referring to the important but oft-overlooked theme in Scripture of separation—separation between those who receive Christ and those who choose to reject him. We recall the parables of Jesus—the parable of the wheat and tares, the parable of the soils, the parable of the sheep and goats. We are even reminded of the <i>purpose</i> of the parables, how they were meant <i>not to enlighten </i>but rather <i>to separate and distinguish</i> (Matt 13:11–15; Mark 4:11–12). The word of God is prophetic in that it does not save all of its hearers—it brings salvation to those who choose to obey, and it brings judgment upon those who choose to ignore.
+<br><br>
+On a campus where students hear about God and Christ and the Scriptures multiple times a day from their teachers—where non-believing students far outnumber believing students—the overwhelming effect I have observed is not growth but rather abject apathy. Perhaps this is not surprising, and to some extent, I am not unsympathetic. Bible classes and chapels are required. Prayer happens every class period. From a Reformed perspective, with a biblical understanding of the unregenerate heart, this is exactly what we should expect. There are no people who are simply ambivalent towards God. There are only people who are “dead in trespasses and sins” and “haters of God.” The word of God never has a “neutral” effect. It stimulates, arouses, and inflames the hearts of those who trust in Christ, but it antagonizes, offends, and even bores the hearts of those who have chosen not to stand with him. The cumulative effect of the word of God is <i>separation</i>, as God works out his plan of salvation through judgment. Whether for redemption or for condemnation, the word of God does not return to him empty.
+<br><br>
+Though I cannot but trust in God and the power of his word, this has not exactly been encouraging. I have never seen students who are so <i>bored</i> by God. As somebody who has always been at schools where the Christians formed a somewhat repugnant and counter-cultural minority, I suppose this is the first time I have ever experienced a nominally “majority” Christian environment. To me, the gospel has always been fresh, bewildering, and offensive (in all the right ways). Even as a non-believer, I knew that if Christianity were to be true, it would be life-altering. But I never in my life imagined it could be <i>boring</i>. This is a new ministry context that I find myself needing to adjust to.
+<br><br>
+Thankfully, not everything has been so bleak. There are pockets of spiritual interest among the unbelieving students, though rare. There is also vibrant and faithful spirituality among many of the believing students, though they are a minority on campus. But my overall sense, based on my “boots on the ground” perspective of this student body, simply leads me to pray and yearn that God might have mercy upon many of these students who, by their apathy, are squandering this opportunity to receive the only guarantee of hope in this world.
+<br><br>
+In some subsequent posts, I hope to share more reflections that I haven’t yet had the opportunity to type up. 
+
+
+
+        <br><br><br><br>
+
+        <div id="footnotes">
+
+        </div>
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
