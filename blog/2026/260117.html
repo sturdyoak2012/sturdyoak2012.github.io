@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Thoughts on Romans 7:21–23</title>
+  <meta property="og:image" content="250602-large.jpg">
+  <meta property="og:description" content="How should Christians understand their relationship to sin as they live as exiles on this earth—saints and sojourners awaiting the glory of heaven yet bogged down by the weight of the flesh?">
+  <meta name="description" content="How should Christians understand their relationship to sin as they live as exiles on this earth—saints and sojourners awaiting the glory of heaven yet bogged down by the weight of the flesh?">
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Thoughts on Romans 7:21–23</h1>
+        <p>
+          January 17, 2026
+        </p>
+
+        <img src="260117-large.jpg">
+        <br><br>
+
+        <div id="scr">
+          <sup>21&nbsp;</sup>So I find it to be a law that when I want to do right, evil lies close at hand. <sup>22&nbsp;</sup>For I delight in the law of God, in my inner being, <sup>23&nbsp;</sup>but I see in my members another law waging war against the law of my mind and making me captive to the law of sin that dwells in my members.
+        </div>
+        <br><br>
+
+        How should Christians understand their relationship to sin as they live as exiles on this earth—saints and sojourners awaiting the glory of heaven yet bogged down by the weight of the flesh? This is the experience that Paul describes in this famous passage from the book of Romans. He reveals that the earthly life of the Christian is characterized not by tranquility but by a fierce battle with the flesh and the devices of Satan. 
+        <br><br>
+        It is natural for us to wonder, sometimes, why the Lord does not bring us to sinless glory immediately—why we sometimes feel as though we have been forgiven in Christ and then left to fend for ourselves against our own sins and the temptations that assail us. We ask the Lord: If you indeed love me, if I indeed have the Spirit abiding in me, then why is it that I still must deal with this struggle with lust, or anger, or apathy, or joylessness? Couldn’t heaven come sooner than this?
+        <br><br>
+        This is a good and godly plea to have, but one must still remember that, until Christ returns, God’s conquest over this world is actually slow and gradual (we think of the parables of the mustard seed and the leaven). It is in this way that the church emerges—through the slow, organic, and ordinary preaching of the Word—and it is also in this way that the soul matures in conformity to the image of Christ. After all, the life and growth of the Christian is slow, tedious, discouraging, and ofttimes imperceptible. Even the soul which has been born again must undergo this long process of sanctification. There are days when the losses seem to outnumber the wins, when every step forward is accompanied by five steps back. Sometimes the poison darts of the Devil seem to all but overtake us; other times the dark curtains of despond threaten to drown us in despair. Yet the promise of the kingdom of God is that the battle may be lost, but the outcome of the war is certain. We may think in our finitude that the way ought not be so hard, yet the Lord often chooses to work through our trials and our ineptitudes and our many falterings, even our fleshly snares—sometimes to humble us, sometimes to chasten us, and yet other times that we may look back upon the winding courses of our trials and think more fondly of his guiding hand: invisible in the moment, yet, in retrospect, all but certain. It is perhaps in this way that our sins will one day become sweet and our trials precious—on that day when wounds become testimonies and scars become glory. 
+        <br><br>
+        Yet as we wait upon that hope, our job is not to sit idly by but to take upon the armor of God, wielding the sword of the Spirit and bearing the shield of faith, remembering that we are not citizens but exiles: strangers and sojourners in a foreign country, groaning in our earthly homes and called to strain forward to what lies ahead, that we may not fall short. After all, it is war that we find ourselves in. It is not a war that we have chosen, nor one that will wait for us, and yet it is our calling nonetheless. We must fight the good fight of the faith. The fight against sin is sometimes like fighting a many-headed beast, where we sink one only for another to rise. Yet as long as we have breath in our lungs, we must put a fresh dagger in our sin each day, even if it be for the thousandth time. And we must also recall that a spiritual war requires spiritual weapons. We cannot neglect God’s ordained means of grace: daily time spent in the Word, time in prayer, fellowship with other saints, confession of sin before others, and devotion to Christ’s church. It is thus and thus only that we will pass through our earthly pilgrimage into the future glory which has been prepared for us. 
+
+
+
+
+        <div style="height:30vh"></div>
+
+
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
