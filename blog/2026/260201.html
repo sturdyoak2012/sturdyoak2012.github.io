@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>Calvin's Theology of Unanswered Prayer</title>
+  <meta property="og:image" content="250602-large.jpg">
+  <meta property="og:description" content="In this paper, I will show that Calvin’s theology of God’s meticulous sovereignty, God’s fatherhood, and the role of faith in the life of the believer all come together as he addresses the question of why godly prayers made in faith go unanswered.">
+  <meta name="description" content="In this paper, I will show that Calvin’s theology of God’s meticulous sovereignty, God’s fatherhood, and the role of faith in the life of the believer all come together as he addresses the question of why godly prayers made in faith go unanswered.">
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+  <link rel="stylesheet" href="../../style.css">
+  <link href="../../lib/css/lightbox.css" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+      authDomain: "jacobnie-4a6fd.firebaseapp.com",
+      databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+      projectId: "jacobnie-4a6fd",
+      storageBucket: "jacobnie-4a6fd.appspot.com",
+      messagingSenderId: "202057575155"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://ipapi.co/json', true);
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+      // Success!
+        var data = JSON.parse(request.responseText);
+
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+            visits:(snapshot.val()||0) + 1,
+            data:data,
+            lastVisit:{
+              page:window.location.pathname,
+              timestamp:new Date() + ""
+            }
+          });
+          firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+            page:window.location.pathname,
+            timestamp:new Date() + ""
+          });
+        })
+
+      }
+    };
+    request.onerror = function () {
+    // There was a connection error of some sort
+    };
+    request.send();
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="menu">
+      <a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+      <a href='../../about.html'><div id='pages'><p>about</p></div></a>
+      <a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+      <a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+  <a href='../../blog.html'><div id='pages'><p>blog</p></div></a>
+          <a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+    </div>
+
+    <div class="topnav">
+      <a href='../../index.html' class="active">Jacob Nie</a>
+      <div id="myLinks">
+        <a href="../../about.html">about</a>
+        <a href="../../pictures.html">pictures</a>
+        <a href="../../outdoors.html">outdoors</a>
+    <a href="../../blog.html">blog</a>
+            <a href="../../misc.html">misc.</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="page">
+      <div class="trip">
+        <h1>Calvin's Theology of Unanswered Prayer</h1>
+        <p>
+          February 1, 2026
+        </p>
+
+        <img src="260201-large.jpg">
+        <br><br>
+
+        <p>This was a final paper for a class on Calvin and the Reformed Tradition taught by Dr. Shawn Wright at SBTS.</p>
+
+        <br>
+
+
+        The question of unanswered prayer is a perennial one that is faced by all believers at some point or another. Scripture seems to offer, in many places, unconditional promises that whatever we ask of the Father will be given to us. For example, Jesus says in Mark 11:24: “whatever you ask in prayer, believe that you have received it, and it will be yours” (ESV). In John 16:23, he says, “whatever you ask the Father in my name, he will give it to you.” However, the common experience of believers is that many prayers actually go unanswered by God. For example, we may pray for the salvation of non-believing friends, who ultimately end up dying without Christ. Such requests are guaranteed to go unanswered by God, because there is no possibility of salvation after death. This seems to be clarified by 1 John 5:14, which adds the condition that we must ask according to God’s will. However, this only introduces more questions. If John refers to God’s <i>preceptive</i> will, then the experience of unanswered prayer seems to disprove this statement. If John refers to God’s <i>decretive</i> will, which is guaranteed to happen, then it seems that prayer is useless—that is, the only answered prayers are those that were already going to happen anyways. 
+        <br><br>
+        Calvin was a theologian deeply interested in the matter of prayer. His chapter on prayer in his <i>Institutes</i> is one of the longest.[<a href="#n1" id="l1">1</a>] However, because he was also very committed to the certainty of God’s will, given his high view of providence, it is very helpful for us to seek to comprehend his understanding of the relationship between God’s will and unanswered prayer. In this paper, I will show that Calvin’s theology of God’s meticulous sovereignty, God’s fatherhood, and the role of faith in the life of the believer all come together as he addresses the question of why godly prayers made in faith go unanswered. Through his <i>Institutes</i>, his commentaries, and his sermons, I will show how Calvin teaches that unanswered prayers should cause believers to examine the content of their prayers, persevere in faith, and lean upon the “indirect disagreements” of their requests with the will of God. 
+        <br><br>
+        <h3>The Proper Content of Prayer</h3>
+        Calvin emphasizes, in line with Scripture, that the nature of what we pray for matters to God. God is not pleased to answer those prayers that are against his will. In his <i>Institutes</i>, he teaches that even though we are encouraged to pour out our hearts before God, we must also not allow our emotions to reign over our prayers. We sin when we make requests of God according to our improprieties and “impudently present before his throne whatever in dreams has struck [our] fancy.” We must subject our wishes to God’s power and bridle.[<a href="#n2" id="l2">2</a>] At the same time, he does concede that, in reality, the prayers of the saints are a “mixture of faith and error,” and that, despite this, they are not nullified. However, these prayers are not meant to be examples for us.[<a href="#n3" id="l3">3</a>] 
+        <br><br>
+        He makes this point repeatedly in his commentaries as well. Commenting on Christ’s prayer in Gethsemane, he says, “if even Christ was under the necessity of holding his will captive, in order to subject it to the government of God, .&nbsp;.&nbsp;. how carefully ought we to repress the violence of our feelings, which are always inconsiderate, and rash, and full of rebellion?”[<a href="#n4" id="l4">4</a>] Commenting on John 15:7, he writes, “[God] does not give us leave to form wishes according to our own fancy. .&nbsp;.&nbsp;. he limits the wishes of his people to the rule of praying in a right manner.”[<a href="#n5" id="l5">5</a>] Commenting on 1 John 5:14–15, one of the most important passages concerning this idea of asking according to the will of God, Calvin writes that God has “prescribed to [his people] a low according to which they are to pray.” This is because it would be very bad if God were to grant all of our wishes.[<a href="#n6" id="l6">6</a>] Looking towards the prayers of the psalmists, Calvin makes this observation in several places. Commenting on Psalm 89:47, Calvin notes that saints must “keep themselves within the bounds of modesty, and, restraining the impetuosity of their affections, yield themselves wholly to his will.” At the same time, there is grace when this rule is not followed, because our prayers naturally “proceed not from a settled and an undisturbed state of mind.”[<a href="#n7" id="l7">7</a>] On Psalm 145:18, Calvin writes, “we have not a license of universal appetency, as if [God’s] people might frowardly clamour for whatever their corrupt desires listed, but before God says that he will hear their prayers, he enjoins the law of moderation and submission upon their affections.”[<a href="#n8" id="l8">8</a>] Christians must pay close attention to what they pray for, if they are to have their prayers heard and answered.
+        <br><br>
+        The Spirit and the Word are essential components of Calvin’s theology, and that is no less true when it comes to his theology of prayer. The Spirit and the Word are the powers that enable us to pray rightly, with our passions appropriately bridled. In the <i>Institutes</i>, Calvin writes, with reference to Romans 8:26, that “God gives us the Spirit as our teacher in prayer, to tell us what is right and temper our emotions.”[<a href="#n9" id="l9">9</a>] Calvin describes the Spirit and the Word as a “twofold remedy,” where “he teaches us by his word what he would have us to ask, and he has also set over us his Spirit as our guide and ruler, to restrain our feelings.”[<a href="#n10" id="l10">10</a>] It is the Word that determines the rule of our prayer, and it is the Spirit that enables us to abide by that rule.
+        <br><br>
+        The topic of praying according to the will of God raises an important question: does this refer to God’s decretive will, or to his preceptive will? As mentioned in the introduction, if this refers to God’s secret will of decree, then it seems that either prayer is superfluous or that it is impossible to know what to rightly pray for, given the unknowability of God’s decretive will. Calvin does not seem to offer a clear answer on this point. It is unclear whether he even makes a distinction between God’s decretive and preceptive wills in his writings. On the one hand, in his discussion of the will of God in the Lord’s Prayer, he does seem to make this distinction: “Here [in the Lord’s Prayer] it is not a question of [God’s] secret will, by which he controls all things and directs them to their end. .&nbsp;.&nbsp;. here God’s other will is to be noted—namely, that to which voluntary obedience corresponds.”[<a href="#n11" id="l11">11</a>] On the other hand, in another part of the <i>Institutes</i>, Calvin seems to insist on the <i>unity</i> of God’s will despite the apparent discord between God’s secret and revealed will. He opposes those who claim that God must have “two contrary wills, .&nbsp;.&nbsp;. [decreeing] what he has openly forbidden by his law.” Instead, he teaches that God’s will is “one and simple,” appearing “manifold to us .&nbsp;.&nbsp;. on account of our mental incapacity.”[<a href="#n12" id="l12">12</a>] Given this lack of distinction, it seems that Calvin generally understands God’s will to refer to God’s secret will of decree. In the <i>Institutes</i>, Calvin notes that the saints in Scripture sometimes “seek from God what is against his decree” and that God does not nullify these prayers, and yet Calvin adds that this is not “a valid example for imitation” and that “they exceeded due measure.” He reminds the reader that “where no certain promise shows itself, we must ask of God conditionally.”[<a href="#n13" id="l13">13</a>] In similar fashion, when commenting on Paul’s prayer in 2 Corinthians 12:8, Calvin enjoins: 
+        <br><br>
+        <div id="scr">
+        We ask in simple terms those things as to which we have an express promise—as, for example, the perfecting of God’s kingdom, and the hallowing of his name, the remission of our sins, and every thing that is advantageous to us; but, when we think that the kingdom of God can, nay must be advanced, in this particular manner, or in that, and that this thing, or that, is necessary for the hallowing of his name, we are often mistaken in our opinion. .&nbsp;.&nbsp;. Hence we ask those former things confidently, and without any reservation, while it does not belong to us to prescribe the means. If, however, we specify the means, there is always a condition implied, though not expressed.[<a href="#n14" id="l14">14</a>] 
+      </div>
+        <br>
+        And again, commenting on Jesus’ prayer in Gethsemane, Calvin says, “when we have no certain and special promise, we ought to abide by this rule, not to ask any thing but on the condition that God shall fulfil what he has decreed.”[<a href="#n15" id="l15">15</a>] Commenting on 1 John 5:14–15, one of the most significant texts regarding this question, Calvin writes, “God in his promises has fixed for us, as it has been said, the right way of praying.”[<a href="#n16" id="l16">16</a>] I will discuss this topic further in the third section, but for now, it suffices to conclude that Calvin would have believers to pray according to God’s will of decree, which means that prayers must be made according to explicit promises found in the Scriptures. Prayers that are more specific are permitted and certainly heard, but they must be made conditionally with deference to God’s decree. 
+        <br><br>
+        Whether this makes prayer superfluous is beyond the scope of this paper, but the answer is no, as has been argued elsewhere.[<a href="#n17" id="l17">17</a>] God ordains prayer as a means for carrying out his decree and, as Calvin reminds us, God ordained prayer “not so much for his own sake as for ours.”[<a href="#n18" id="l18">18</a>] 
+        <br><br>
+        <h3>Faith and Perseverance in Prayer</h3>
+        A second reason that prayer goes unanswered has more to do with the faith behind the prayer. Calvin called prayer the “chief exercise of faith.” The gospel produces faith, and this faith leads us to call upon God as Father and to seek his benefits through prayer. 
+        <br><br>
+        Calvin writes that to have faith in prayer means “to expect, and to be fully assured of obtaining, from God whatever we need.”[<a href="#n19" id="l19">19</a>] Without faith, prayer is “an idle and unmeaning ceremony.”[<a href="#n20" id="l20">20</a>] Calvin especially refuted the Catholic doctrine that prayers should be made with doubt and uncertainty as to God’s answer, going so far as to say that “our prayers are not heard by the Lord, except when we have a confidence that we shall obtain.”[<a href="#n21" id="l21">21</a>] Fruitful prayers must “grasp with both hands this assurance of obtaining what we ask.”[<a href="#n22" id="l22">22</a>] At the same time, this sense of assurance in prayer should not encourage slothfulness in prayer, but it should generate a sense of tranquility in a person after having cast his burdens onto the Lord and “deposited his sighs in the bosom of God.”[<a href="#n23" id="l23">23</a>] 
+        <br><br>
+        Calvin also teaches that God sometimes rebuffs our prayers in order to encourage us to ask with greater faith and persistence. Our unanswered prayers should lead us not to despair but to perseverance. Commenting on the repetition of Christ’s prayers in Gethsemane, Calvin notes that this example teaches us that, based on Christ’s example, it is not superfluous repetition when “we ask a third and fourth time what God appears to have denied.”[<a href="#n24" id="l24">24</a>] Commenting on the example of the Canaanite woman in Matthew 15:23, Calvin interprets the silence of Jesus as being meant “not to extinguish the woman’s faith, but rather to whet her zeal and inflame her ardour.”[<a href="#n25" id="l25">25</a>] There is even a sense in which the faith that responds to unanswered prayer actually brings God glory. On Daniel, Calvin writes that “the saints are said to please God by their sometimes failing to obtain their requests.” Calvin reminds us that we must be patient when our prayers go unanswered, because God may hear us and yet choose to answer us even after our deaths: “when we become anxious in our thoughts, and are induced to despair through the absence of all profit or fruit from our prayers,” we must remember that “Daniel, who was most acceptable to God, was heard at length, without being permitted to see the object of his wishes with his bodily eyes.”[<a href="#n26" id="l26">26</a>] Returning to Christ’s prayers in Gethsemane, Calvin once remarked in a sermon:
+        <br><br>
+        <div id="scr">
+        Those who lose courage when our God does not respond to their first wish show that they do not know what it is to pray. For the certain rule for finding our refuge in God involves perseverance. Thus it is that the principal exercise of our faith is prayer. Now faith cannot exist without waiting. It is not possible for God to humor us as soon as we have opened our mouths and formed the request. But it is needful that He delay and that He let us languish oftentimes so that we may know what it is to call upon Him sincerely and without pretense, so that we may declare that our faith is so founded upon the Word of God that it checks us as a bridle so that we may be patient to endure until the opportune time to help us shall have come.[<a href="#n27" id="l27">27</a>] 
+      </div>
+        <br>
+        Finally, what is the ground of this faith that drives such petitionary prayer? Going back to the ideas from the first section, it is the certainty of the promises found in the Word of God that provides the assurance required for true prayer. Without the Word as a rule to guide the content of prayer, there would be no certainty in prayer. Calvin reminds us that faith “penetrates into the treasures of the grace of God, which are held out to us in the word.” He continues, “Christ demands a firm and undoubting confidence of obtaining an answer; and whence does the human mind obtain that confidence but from the word of God?” [<a href="#n28" id="l28">28</a>] The Word of God not only instills in us the assurance that God is our Father who hears us, but it also delineates the exact promises that believers are encouraged to grasp onto and center their prayers upon. 
+        <br><br>
+        <h3>The “Indirect Disagreements” between Our Prayers and God’s Will</h3>
+        Although I have touched on them previously, Calvin’s comments on Christ’s prayer in Gethsemane have rich implications for the topic of unanswered prayer that should be explored further. He offers unique reflections on how saints can offer prayers that are holy and yet opposed to God’s decree, and he asks how these can ultimately cohere with one another. I will devote this section to piecing together his insights on that passage with his broader theology of prayer.
+        <br><br>
+        First, Calvin argues, correctly, that this passage demonstrates the two wills in Christ, against Monothelitism. Christ had both a divine will and a human will, and his human will submitted in obedience to the divine will of his Father.[<a href="#n29" id="l29">29</a>] However, if we allow for this dual will in Christ, how is it possible for Christ to pray <i>against</i> the eternal decree of God? Calvin is quite clear that the decree of God is immutable: it is “utterly impossible for God to revoke his decree.” Calvin then lists several examples of saints in Scripture who are “carried away hastily by the earnestness of their wishes,” such as Moses, who prayed that he might be blotted out of the book of lfie (Ex 32:32), and Paul, who wished to be accursed and cut off from Christ for the sake of his brothers (Rom 9:3). For Christ, the strength of his grief apparently “took away from him the immediate recollection of the heavenly decree.”
+        <br><br>
+        The obvious question is how Christ’s human will could remain good if it did not agree with the will of God, which is “the only rule of what is good and right.” While one might expect Calvin to make a distinction here between the decretive and preceptive wills of God, he does not. Instead, he argues that 
+        <br><br>
+        <div id="scr">
+        there is a certain kind of indirect disagreement with [the good pleasure of God] which is not faulty, and is not reckoned as sin; if, for example, a person desire to see the Church in a calm and flourishing condition, if he wish that the children of God were delivered from afflictions, that all superstitions were removed out of the world, and that the rage of wicked men were so restrained as to do no injury. These things, being in themselves right, may properly be desired by believers, though it may please God to order a different state of matters: for he chooses that his Son should reign among enemies; that his people should be trained under the cross; and that the triumph of faith and of the Gospel should be rendered more illustrious by the opposing machinations of Satan. We see how those prayers are holy, which appear to be contrary to the will of God; for God does not desire us to be always exact or scrupulous in inquiring what he has appointed, but allows us to ask what is desirable according to the capacity of our senses.[<a href="#n30" id="l30">30</a>] 
+      </div>
+        <br>
+        Calvin continues by insisting upon the harmony between the human will of Christ and the divine will of the Father with this interesting illustration:
+        <br><br>
+        <div id="scr">
+        Nay more, as musical sounds, though various and differing from each other, are so far from being discordant, that they produce sweet melody and fine harmony; so in Christ there was a remarkable example of adaptation between the two wills, the will of God and the will of man, so that they differed from each other without any conflict or opposition.[<a href="#n31" id="l31">31</a>] 
+      </div>
+        <br>
+        These are moving passages, but they raise the question of whether this is consistent with what has been previously highlighted—that Calvin would have believers pray according to God’s will of decree and the specific promises guaranteed in Scripture. Most likely, the solution should be found in Calvin’s differentiation between what can be prayed unconditionally (those things that are specifically promised in God’s Word) and what can only be prayed conditionally (those good and desirable things that are not specifically promised in God’s Word). Christ’s prayer in Gethsemane was an example of a conditional prayer that, though at odds with God’s decree, is still worthy of our emulation. 
+        <br><br>
+        If I were to summarize Calvin’s position, it would be this: In prayer, we should be discerning when we make requests, so that we are not those who ask wrongly to spend on our own passions (Jas 4:3). On the other hand, we should feel free to ask liberally of God our Father, knowing that our prayers are heard even when they are a “mixture of faith and error” due to our finitude. At the same time, we should know how to distinguish between those things that are explicitly promised to us and those things that are only specific means towards those ends, which God may choose to accomplish differently. Nevertheless, the “indirect disagreements” between our desires and God’s decree do not mean that our prayers are unholy, but rather that there is a kind of mysterious harmony between the different expressions of God’s manifold will. 
+        <br><br>
+        <h3>Conclusion</h3>
+        In this paper, I have sought to show that Calvin’s theology of prayer, especially pertaining to the experience of unanswered prayer, brings together his theology of God’s will and decree, God’s fatherhood, and the role of faith in the Christian life. He is able to explain the Christian experience of unanswered prayer in different ways, whether that is the need to bring the proper requests before God, the need to pray with faith and perseverance, or simply the complexity of knowing God’s plan and purposes. In doing so, he is careful to uphold both the certainty of God’s fatherly promise to answer prayer and the immutability and inscrutability of God’s will of decree. All told, this is a call for believers to pray with more discernment, more confidence, more diligence, and more persistence. 
+        <br><br>
+
+
+
+
+
+
+        <div style="height:30vh"></div>
+        <div id="footnotes">
+        [<a href="#l1" id="n1">1</a>] David B. Calhoun, “Prayer: ‘The Chief Exercise of Faith,’” in <i>A Theological Guide to Calvin’s Institutes: Essays and Analysis</i>, ed. David W. Hall and Peter A. Lillback (Phillipsburg, NJ: P&R Publishing, 2008), 347.
+        <br>
+        [<a href="#l2" id="n2">2</a>] John Calvin, <i>Institutes of the Christian Religion</i>, ed. John T. McNeill, trans. Ford Lewis Battles (Louisville, KY: Westminster John Knox Press, 2006), 3.20.5.
+        <br>
+        [<a href="#l3" id="n3">3</a>] Calvin, <i>Institutes of the Christian Religion</i>, 3.20.15.
+        <br>
+        [<a href="#l4" id="n4">4</a>] John Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, trans. William Pringle (Bellingham, WA: Logos Bible Software, 2010), 3:233.
+        <br>
+        [<a href="#l5" id="n5">5</a>] John Calvin, <i>Commentary on the Gospel According to John</i>, trans. William Pringle (Bellingham, WA: Logos Bible Software, 2010), 2:111.
+        <br>
+        [<a href="#l6" id="n6">6</a>] John Calvin, <i>Commentaries on the Catholic Epistles</i>, trans. John Owen (Bellingham, WA: Logos Bible Software, 2010), 266.
+        <br>
+        [<a href="#l7" id="n7">7</a>] John Calvin, <i>Commentary on the Books of Psalms</i>, trans. James N. Anderson (Bellingham, WA: Logos Bible Software, 2010), 3:454.
+        <br>
+        [<a href="#l8" id="n8">8</a>] Calvin, <i>Commentary on the Books of Psalms</i>, 5:282.
+        <br>
+        [<a href="#l9" id="n9">9</a>] Calvin, <i>Institutes of the Christian Religion</i>, 3.20.5.
+        <br>
+        [<a href="#l10" id="n10">10</a>] Calvin, <i>Commentaries on the Catholic Epistles</i>, 266.
+        <br>
+        [<a href="#l11" id="n11">11</a>] Calvin, <i>Institutes of the Christian Religion</i>, 3.20.43.
+        <br>
+        [<a href="#l12" id="n12">12</a>] Calvin, <i>Institutes of the Christian Religion</i>, 1.18.3.
+        <br>
+        [<a href="#l13" id="n13">13</a>] Calvin, <i>Institutes of the Christian Religion</i>, 3.20.15.
+        <br>
+        [<a href="#l14" id="n14">14</a>] John Calvin, <i>Commentaries on the Epistles of Paul the Apostle to the Corinthians</i>, trans. John Pringle (Bellingham, WA: Logos Bible Software, 2010), 2:376–77.
+        <br>
+        [<a href="#l15" id="n15">15</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 3:233.
+        <br>
+        [<a href="#l16" id="n16">16</a>] Calvin, <i>Commentaries on the Catholic Epistles</i>, 266.
+        <br>
+        [<a href="#l17" id="n17">17</a>] Calhoun, “Prayer: ‘The Chief Exercise of Faith,’” 349–52. Joel R. Beeke, “John Calvin on Prayer as Communion with God,” in <i>Taking Hold of God: Reformed and Puritan Perspectives on Prayer</i>, ed. Joel R. Beeke and Brian G. Najapfour (Grand Rapids: Reformation Heritage Books, 2011), 41–42.
+        <br>
+        [<a href="#l18" id="n18">18</a>] Calvin, <i>Institutes of the Christian Religion</i>, 3.20.3.
+        <br>
+        [<a href="#l19" id="n19">19</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 3:19.
+        <br>
+        [<a href="#l20" id="n20">20</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 1:351.
+        <br>
+        [<a href="#l21" id="n21">21</a>] Calvin, <i>Commentaries on the Catholic Epistles</i>, 284 (cf. 265).
+        <br>
+        [<a href="#l22" id="n22">22</a>] Calvin, <i>Institutes of the Christian Religion</i>, 3.20.12.
+        <br>
+        [<a href="#l23" id="n23">23</a>] Calvin, <i>Commentaries on the Catholic Epistles</i>, 267.
+        <br>
+        [<a href="#l24" id="n24">24</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 3:238.
+        <br>
+        [<a href="#l25" id="n25">25</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 2:264.
+        <br>
+        [<a href="#l26" id="n26">26</a>] John Calvin, <i>Commentary on the Book of the Prophet Daniel</i>, trans. Thomas Myers (Bellingham, WA: Logos Bible Software, 2010), 2:194.
+        <br>
+        [<a href="#l27" id="n27">27</a>] John Calvin, <i>Thirty-Six Select Sermons of John Calvin</i> (Monergism Books, 2019).
+        <br>
+        [<a href="#l28" id="n28">28</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 3:19–20.
+        <br>
+        [<a href="#l29" id="n29">29</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 3:233.
+        <br>
+        [<a href="#l30" id="n30">30</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 3:231–32.
+        <br>
+        [<a href="#l31" id="n31">31</a>] Calvin, <i>Commentary on a Harmony of the Evangelists Matthew, Mark, and Luke</i>, 3:233.
+</div>
+
+
+
+        </div>
+        </div>
+        <script src="../../lib/js/jquery.min.js"></script>
+        <script src="../../lib/js/lightbox.min.js"></script>
+        <script>
+          lightbox.option({
+           albumLabel:"Image %1 of %2"
+         })
+       </script>
+     </div>
+     <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+  //Get the button:
+      mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+// When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
