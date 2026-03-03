@@ -1,0 +1,509 @@
+/*#menu {
+	position:fixed;
+	width: 10%;
+	padding: 20px;
+	float: left;
+	border: 3px solid black;
+	background-color: #a0e2ff;
+	margin-top: 20px;
+	margin-left: 10%;
+	border-radius: 15px;
+	text-transform: uppercase;
+	font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue';
+}*/
+body {
+	background-color: #ffffff;
+}
+
+
+#container {
+	width: 800px;
+	position: absolute;
+	margin-left: -400px;
+	left: 50%;
+	
+}
+
+
+#menu {
+	margin-left: -100px;
+	margin-right: -100px;
+}
+
+div #jacob {
+	float: left;
+	width: 200px;
+	margin-right: 350px;
+	margin-top: 50px;
+	height: 40px;
+	text-align: center;
+	color: black;
+}
+
+div #jacob p {
+	font-size: 35px;
+	margin-top: 0px;
+	font-family: 'EB Garamond';
+	font-weight: normal;
+	color: #751313;
+	letter-spacing: 0.03em;
+}
+
+#jacob p:hover {
+	color: #4a4a4a;
+}
+
+
+
+div #pages {
+	float: left;
+	width: fit-content;
+	margin-left: 7px;
+	margin-right: 7px;
+	margin-top: 50px;
+	height: 40px;
+	text-align: right;
+	text-decoration: none;
+	color: black;
+}
+
+div #pages p {
+	font-size: 18px;
+	margin-top: 12px;
+	font-family: 'Lato';
+	text-transform: uppercase;
+	color: black;
+}
+
+#pages p:hover {
+	color: #4a4a4a;
+}
+
+
+
+
+
+
+
+
+
+
+img {
+	width: 85%;
+	display: block;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#page {
+	float: left;
+	width: 100%;
+
+	font-family: "Noto Serif";
+	font-weight: 400;
+	font-optical-sizing: auto;
+	font-size: 18px;
+	line-height: 1.75;
+}
+
+#page a {
+	text-decoration: underline;
+	color: black;
+}
+
+#page a:hover{
+	color: #4a4a4a;
+}
+
+h1 {
+	font-family: 'Noto Serif';
+	line-height: 1.2;
+	font-weight: 600;
+}
+
+h2, h3, h4, h5, h6 {
+	font-family: 'Lato';
+	line-height: 1.2;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+	color: #751313;
+}
+
+#page p {
+	text-align: center;
+	font-size: 16px;
+	font-style: italic;
+}
+
+#footnotes {
+	font-size: 15px;
+}
+
+#scr {
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+#scr sup {
+	font-family: "Lato";
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#sc {
+	font-weight: 500;
+	font-size: 15px;
+}
+
+
+.item {
+
+}
+
+.small {
+	width:50%;
+}
+
+.trip {
+	float: left;
+	margin-top: 10vh;
+	margin-bottom: 30vh;
+}
+
+.lefty {
+	margin-left: 0px;
+}
+
+#btn {
+	font-family: "Lato";
+	border-style: solid;
+	color: black;
+	padding: 10px;
+	font-size: 18px;
+	background-color: #ffffff;
+}
+
+#btn:hover {
+	background-color: #ededed;
+	cursor: pointer;
+}
+
+
+
+
+
+#blog-post {
+	margin-top: 100px;
+}
+
+#post-title a {
+	font-family: 'Noto Serif';
+	text-decoration: none !important;
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 1.0;
+}
+
+#post-date {
+	font-size: 14px;
+	font-family: 'Lato';
+	color: #494949;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+#post-snippet {
+	line-height: 1.5;
+	font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+/* black loading screen for lightbox */
+
+.lb-outerContainer {
+	background-color:black !important;
+}
+.lb-loader {
+	display:none !important;
+}
+
+.lightbox .lb-image {
+
+  border: 4px solid black !important;
+}
+
+/*
+#img{
+	width: auto !important;
+}
+*/
+
+.math {
+	width: 85%;
+	margin: auto;
+
+}
+
+.hidden {
+    display:none;
+}
+
+
+
+
+@media only screen and (max-width: 1030px) {
+	#container {
+		width: 100%;
+		margin-left: 0px;
+		left: 0%;
+	}
+
+	#menu {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	div #jacob {
+		float: left;
+		width: 200px;
+		margin-right: calc(100vw - 680px);
+		margin-top: 50px;
+		height: 40px;
+		text-align: center;
+		color: black;
+	}
+
+	div #jacob p {
+		font-size: 35px;
+		margin-top: 0px;
+		font-family: 'Garamond';
+		font-weight: normal;
+		color: #751313;
+	}
+
+	#jacob p:hover {
+		color: #4a4a4a;
+	}
+
+
+
+	div #pages {
+		float: left;
+		width: fit-content;
+		margin-left: 7px;
+		margin-right: 7px;
+		margin-top: 50px;
+		height: 40px;
+		text-align: center;
+		text-decoration: none;
+		color: black;
+	}
+
+	#page {
+		padding: 40px;
+		width: calc(100vw - 100px);
+	}
+}
+
+@media only screen and (max-aspect-ratio: 3/4) {
+	#menu {
+		display: none;
+		width: 0px;
+	}
+
+	#container {
+		width: 100%;
+		font-size: 30px;
+		margin: 0px;
+		padding: 0px;
+		margin-left: 0px;
+		left: 0%;
+	}
+
+	#page {
+		width: 90%;
+		margin-left: 0px;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 100px;
+		font-size: 25px;
+	}
+
+	#page p {
+		font-size: 20px;
+	}
+
+	#page sup {
+		font-size: 16px;
+	}
+
+
+	.topnav {
+	  background-color: #ffffff;
+	  position: fixed;
+	  font-family: 'EB Garamond';
+	  letter-spacing: 0.05em;
+	  color: #751313;
+	  width: 102%;
+	  margin: -10px;
+	}
+
+	.topnav #myLinks {
+	  display: none;
+	}
+
+	.topnav a {
+		color: #751313;
+	  padding: 30px 30px;
+	  text-decoration: none;
+	  font-size: 50px;
+	  display: block;
+	}
+
+	.topnav a.icon {
+	  background: #ffffff;
+	  display: block;
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	}
+
+	#myBtn {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Fixed/sticky position */
+	  bottom: 30px; /* Place the button at the bottom of the page */
+	  right: 30px; /* Place the button 30px from the right */
+	  z-index: 99; /* Make sure it does not overlap */
+	  border: 5px thick; /* Remove borders */
+	  outline: none; /* Remove outline */
+	  background-color: #ffffff; /* Set a background color */
+	  color: black; /* Text color */
+	  padding: 30px; /* Some padding */
+	  border-radius: 20px; /* Rounded corners */
+	  font-size: 40px; /* Increase font size */
+	  font-family: 'Lato';
+	  font-weight:bold;
+	}
+
+	.caret::before {
+  content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+  font-size:50px;
+	}
+
+}
+
+
+
+@media only screen and (min-aspect-ratio: 3/4) {
+	.topnav {
+		display: none;
+	}
+
+	#myBtn {
+		display: none;
+	}
+
+	#mwarning {
+		display: none;
+	}
+
+	.caret::before {
+		font-size: 15px;
+	}
+}
+
+.rotate90 {
+       -webkit-transform: rotate(90deg);
+       -moz-transform: rotate(90deg);
+
+       -o-transform: rotate(90deg);
+       -ms-transform: rotate(90deg);
+       transform: rotate(90deg);
+      }
+      .rotate180 {
+       -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+       -ms-transform: rotate(180deg);
+       transform: rotate(180deg);
+      }
+      .rotate270 {
+       -webkit-transform: rotate(270deg);
+       -moz-transform: rotate(270deg);
+       -o-transform: rotate(270deg);
+       -ms-transform: rotate(270deg);
+       transform: rotate(270deg);
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Remove default bullets */
+ul, #updates {
+  list-style-type: square;
+}
+
+/* Remove margins and padding from the parent ul */
+#updates li{
+  margin: 0;
+  padding: 5px;
+}
+
+/* Style the caret/arrow */
+.caret {
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::before {
+  content: "\2295";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::before {
+  /*transform: rotate(90deg);*/
+  content: "\229D";
+
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}

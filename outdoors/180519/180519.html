@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>180519</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Mt. Dana - May 2019</h1>
+<br><br>
+
+This was a practice trip for our Mt. Shasta summit attempt in a month's time.  Richard and his dad came along, and we were very lucky to have his dad there to drive us and climb with us!  Got some good time on the snow with <a href="../../misc/8f0.html">Becky</a> (my ice axe). 
+<br><br>
+We drove over there on the Saturday (via 108 which was open) and camped at the junction of Saddlebag Lake Road and Tioga Road.  Just for fun, we drove the extra 3 miles to the pass, and we found this very nice drawing at the toll booth!
+<br><br>
+<a href="img/IMG_1553.jpg" data-lightbox="group"><img src="img/IMG_1553.jpg"></a>
+<br><br>
+<a href="img/IMG_0333.jpg" data-lightbox="group"><img src="img/IMG_0333.jpg"></a>
+<br><br>
+<a href="img/IMG_1555.jpg" data-lightbox="group"><img src="img/IMG_1555.jpg"></a>
+<br><br>
+It was pretty cold that night and I forgot to bring extra socks (noob mistake honestly).  The next morning, all the snow was really hard, and we were happy and cold!
+<br><br>
+<a href="img/IMG_0346.jpg" data-lightbox="group" data-title="Mt. Dana"><img src="img/IMG_0346.jpg"></a>
+<p>Mt. Dana in sunrise</p>
+<br><br>
+We drove to Tioga pass and started.  The initial section had a lot of trees, and as we all know, tree+snow is like death pretty much.  Fortunately, the snow was really hard and we didn't have too much trouble getting through to the slopes.  (This would not be true on the return, when the afternoon sun had thawed out the snow into powder.  Honestly have never felt so close to death...)  Once we were past tree line, the conditions were amazing!  Hard snow made for fast travel (limited by our bad fitness).  
+<br><br>
+<a href="img/IMG_1592.jpg" data-lightbox="group"><img src="img/IMG_1592.jpg"></a>
+<br><br>
+<a href="img/IMG_1600.jpg" data-lightbox="group"><img src="img/IMG_1600.jpg"></a>
+<br><br>
+<a href="img/IMG_0352.jpg" data-lightbox="group"><img src="img/IMG_0352.jpg"></a>
+<br><br>
+After the first 1,500 feet, there's a nice flat area where you get the first view of the summit (which is so beautiful in the snow!) and Richard's dad had to stop there.  Richard and I continued on to the summit.  We met a nice (swiss?) couple coming down while we were going up.  We followed in their footsteps because the snow was starting to get softer by the minute.  By the time we reached the top, we were sinking about shin-deep in powder.  Amazing winter views for my first Sierra summit!  (Mono Lake in the background!)
+<br><br>
+<a href="img/IMG_1665.jpg" data-lightbox="group"><img src="img/IMG_1665.jpg"></a>
+<br><br>
+<a href="img/IMG_0362.jpg" data-lightbox="group"><img src="img/IMG_0362.jpg"></a>
+<br><br>
+<a href="img/IMG_0371.jpg" data-lightbox="group"><img src="img/IMG_0371.jpg"></a>
+<br><br>
+<a href="img/IMG_0381.jpg" data-lightbox="group" data-title="With Mono Lake behind"><img src="img/IMG_0381.jpg"></a>
+<p>With Mono Lake</p>
+<br><br>
+We glissaded most of the descent.  Thrilling!  The weird vibrations gave me a headache for some reason, and it got worse as we went down.  We saw two skiiers plop down the Dana Couloir (they spent a long time just waiting around at the edge, must have had the stage fright!)...  Getting down through the last section in the trees probably took longer than the actual ascent.  My head was pounding so hard I couldn't even get out words towards the end.  A pretty crappy end to an amazing climb!  (Also my pants ripped because they're weak when they're wet?)
+<br><br>
+<a href="img/IMG_1799.jpg" data-lightbox="group"><img src="img/IMG_1799.jpg"></a>
+<br><br><br><br>
+(don't get me started on the massive sunburn I had afterwards...  face peeled like a(n) (orange, banana, apple))
+
+
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+	function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+	//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

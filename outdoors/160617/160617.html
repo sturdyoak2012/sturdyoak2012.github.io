@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>160617</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Sabrina Basin - June 2016</h1>
+<br><br>
+A late shoulder season trip, lots of snow and stuff...
+<br><br>
+As usual, the planned route was so much harder than what we actually did (this seems to be a trend...), here is the route we took: <a href="https://caltopo.com/m/Q0L5">Caltopo</a>
+<br><br>
+We began at Lake Sabrina and hiked all the way to just short of Echo Lake, just at the base of Picture Peak.  Some amazing views of Mt. Haeckel, Picture Peak, Mt. Darwin, ...
+<br><br>
+<a href="img/IMG_1054.JPG" data-lightbox="group" data-title="Trailhead"><img src="img/IMG_1054.JPG"></a>
+<p>Trailhead</p>
+<br><br>
+<a href="img/IMG_1056.JPG" data-lightbox="group" data-title="Lake Sabrina"><img src="img/IMG_1056.JPG"></a>
+<p>Lake Sabrina</p>
+<br><br>
+<a href="img/IMG_1057.JPG" data-lightbox="group" data-title="Lake Sabrina"><img src="img/IMG_1057.JPG"></a>
+<br><br>
+<a href="img/IMG_1063.JPG" data-lightbox="group" data-title="Mt Darwin"><img src="img/IMG_1063.JPG"></a>
+<p>Mt. Darwin</p>
+<br><br>
+<a href="img/IMG_1064.JPG" data-lightbox="group" data-title="Near Blue Lake"><img src="img/IMG_1064.JPG"></a>
+<p>Near Blue Lake</p>
+<br><br>
+<a href="img/IMG_1065.JPG" data-lightbox="group" data-title="Mt. Haeckel"><img src="img/IMG_1065.JPG"></a>
+<p>Mt. Haeckel</p>
+<br><br>
+<a href="img/IMG_1073.JPG" data-lightbox="group" data-title="Picture Peak"><img src="img/IMG_1073.JPG"></a>
+<p>Picture Peak</p>
+<br><br>
+<a href="img/IMG_1080.JPG" data-lightbox="group" data-title="Above Hungry Packer Lake"><img src="img/IMG_1080.JPG"></a>
+<p>Above Hungry Packer Lake</p>
+<br><br>
+<a href="img/IMG_1083.JPG" data-lightbox="group" data-title="Moonlight Lake"><img src="img/IMG_1083.JPG"></a>
+<p>Moonlight Lake</p>
+<br><br>
+<a href="img/IMG_1084.JPG" data-lightbox="group" data-title="Mt. Powell and Point Powell"><img src="img/IMG_1084.JPG"></a>
+<p>Mt. Powell and Point Powell</p>
+<br><br>
+So we camped on the ridge between Hungry Packer and Moonlight Lakes that night, and we could see Echo Lake still frozen.  Originally, we were going to cross Echo Col and hit the John Muir Trail, but we couldn't because there was a lot more snow than we thought.  We didn't have crampons or ice axes.  
+<br><br>
+<a href="img/IMG_1085.JPG" data-lightbox="group" data-title="the next morning"><img src="img/IMG_1085.JPG"></a>
+<p>The next morning</p>
+<br><br>
+<a href="img/IMG_1087.JPG" data-lightbox="group" data-title="morning"><img src="img/IMG_1087.JPG"></a>
+<br><br>
+Since we had to turn back, we extended our trip a night by camping at Blue Lake for one extra night.  Then we left the next day.
+
+</div>
+
+
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+	function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+	//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>

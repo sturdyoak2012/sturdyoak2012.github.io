@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<title>180419</title>
+		<link rel="shortcut icon" type="image/png" href="../../favicon.png"/>
+	<link rel="stylesheet" href="../../style.css">
+	<link href="../../lib/css/lightbox.css" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA7-t4UBOoWgYq65D74vbluIwuuDotKlG8",
+    authDomain: "jacobnie-4a6fd.firebaseapp.com",
+    databaseURL: "https://jacobnie-4a6fd.firebaseio.com",
+    projectId: "jacobnie-4a6fd",
+    storageBucket: "jacobnie-4a6fd.appspot.com",
+    messagingSenderId: "202057575155"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://ipapi.co/json', true);
+  request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      var data = JSON.parse(request.responseText);
+      
+        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("visits").once("value").then(function(snapshot) {
+        	firebase.database().ref("/analytics/").child(btoa(data.ip)).update({
+        		visits:(snapshot.val()||0) + 1,
+        		data:data,
+				lastVisit:{
+	          		page:window.location.pathname,
+	          		timestamp:new Date() + ""
+	          	}
+	        });
+	        firebase.database().ref("/analytics/").child(btoa(data.ip)).child("history").push({
+	          	page:window.location.pathname,
+	          	timestamp:new Date() + ""
+	          });
+        })
+      
+    }
+  };
+  request.onerror = function () {
+    // There was a connection error of some sort
+  };
+  request.send();
+</script>
+</head>
+<body>
+<div id="container">
+<div id="menu">
+	<a href='../../index.html'><div id='jacob'><p>Jacob Nie</p></div></a>
+	<a href='../../about.html'><div id='pages'><p>about</p></div></a>
+	<a href='../../pictures.html'><div id='pages'><p>pictures</p></div></a>
+	<a href='../../outdoors.html'><div id='pages'><p>outdoors</p></div></a>
+	<a href='../../misc.html'><div id='pages'><p>misc.</p></div></a>
+</div>
+
+<div class="topnav">
+  <a href='../../index.html' class="active">Jacob Nie</a>
+  <div id="myLinks">
+    <a href="../../about.html">about</a>
+    <a href="../../pictures.html">pictures</a>
+    <a href="../../outdoors.html">outdoors</a>
+    <a href="../../misc.html">misc.</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<div id="page">
+<div class="trip">
+<h1>Big Sur - April 2018</h1>
+<br><br>
+<a href="https://caltopo.com/m/0QE8">Caltopo Route</a> -- Good solid 40 mile trip over four days!  Lots of bushes, poison oak, the usual Big Sur troubles...  Crew members: myself, Richard, Benjamin, Hagen, Joshua, Max, Brandon, Jeffery, Forest (now at MIT!), Mr. Chen, and Mr. Lian.  Many thanks to Mr. Chen and Mr. Lian for driving and serving as devil's advocate throughout the trip.  The pictures on this trip report were taken by Richard, Benjamin, and Forest, for the most part.
+<br><br>
+<h3>Day 1:</h3>
+We started at the Arroyo Seco trailhead on the east side of the Santa Lucia mountains.  We took the Indians Road for about 13 miles south to our first night's campsite.  It was really nice the first day, and it kind of just got worse day by day from there...  For this reason I was in a pretty bad mood and there are few pictures of me.
+<br><br>
+<a href="IMG_20180419_101042.JPG" data-lightbox="group"><img src="IMG_20180419_101042.JPG"></a>
+<br><br>
+<a href="IMG_1526.JPG" data-lightbox="group"><img src="IMG_1526.JPG"></a>
+<p>The Arroyo Seco</p>
+<br><br>
+<a href="IMG_0229.JPG" data-lightbox="group"><img src="IMG_0229.JPG"></a>
+<p>The arroyo seco</p>
+<br><br>
+<a href="IMG_20180419_105430.JPG" data-lightbox="group"><img src="IMG_20180419_105430.JPG"></a>
+<br><br>
+<a href="IMG_20180419_120423.JPG" data-lightbox="group"><img src="IMG_20180419_120423.JPG"></a>
+<p>Jeffery and Max</p>
+<br><br>
+<a href="IMG_1569.JPG" data-lightbox="group"><img src="IMG_1569.JPG"></a>
+<br><br>
+<a href="IMG_20180419_123231.JPG" data-lightbox="group"><img src="IMG_20180419_123231.JPG"></a>
+<p>the most best road ever?</p>
+<br><br>
+<a href="IMG_1586.JPG" data-lightbox="group"><img src="IMG_1586.JPG"></a>
+<p>Us loosers having lunch</p>
+<br><br>
+<a href="IMG_1590.JPG" data-lightbox="group"><img src="IMG_1590.JPG"></a>
+<br><br>
+<a href="IMG_1611.JPG" data-lightbox="group"><img src="IMG_1611.JPG"></a>
+<br><br>
+The road got a bit dry after a while and our feet weren't feeling so well.  We camped at Escondido campground, which was really developed and had a parking lot, so I guess so much for wilderness trip?  We had an alright fire and it was pretty comfortable with the benches and all.
+<h3>Day 2:</h3>
+Next day wasn't so good?  The guys had their first taste of bushwhacking a couple miles in (I myself am a "veteran" having experienced a good day and night of it before), and we lost about 3 hours looking for the trail in the evening.
+<br><br>
+<a href="IMG_1728.JPG" data-lightbox="group"><img src="IMG_1728.JPG"></a>
+<br><br>
+<a href="IMG_1748.JPG" data-lightbox="group"><img src="IMG_1748.JPG"></a>
+<p>Max crossing a river</p>
+<br><br>
+<a href="IMG_1822.JPG" data-lightbox="group"><img src="IMG_1822.JPG"></a>
+<p>"wow this is pretty real"</p>
+<br><br>
+<a href="IMG_1896.JPG" data-lightbox="group"><img src="IMG_1896.JPG"></a>
+<p>Lost</p>
+<br><br>
+We lost the trail an agonizing couple hundred meters from the Coast Ridge road (we could pretty much see the ocean from where we were), and it was so weird.  We had just bushwhacked some pretty poor trails, so we were looking at the faintest treads and thinking, "wait this could be the trail!" when any normal person would see nothing but bushes.  So when we were looking for the trail we were looking in ALL the wrong places.  Only after 3 hours do we find the trail, and just in time for sunset.
+<br><br>
+<a href="IMG_1925.JPG" data-ligthbox="group"><img src="IMG_1925.JPG"></a>
+<p>"Joy"</p>
+<br><br>
+<a href="IMG_1930.JPG" data-lightbox="group"><img src="IMG_1930.JPG"></a>
+<p>I'm not sure which ocean this is, probably the Pacific.  Either that or the Atlantic..</p>
+<br><br>
+<a href="IMG_1952.JPG" data-lightbox="group"><img src="IMG_1952.JPG"></a>
+<p>Photo from Benjamin Tang</p>
+<br><br>
+I think we camped right on the road that night.  Plenty of dark jokes about getting run over at night by some 4x4 Jeep.
+<h3>Day 3:</h3>
+We liked the third day quite a bit because of the nice ocean views.  We were three thousand feet above the ocean, and also like three thousand feet away, so it was a very nice looking for us.  
+<br><br>
+<a href="IMG_20180421_102849.JPG" data-lightbox="group"><img src="IMG_20180421_102849.JPG"></a>
+<br><br>
+<a href="IMG_1969.JPG" data-lightbox="group"><img src="IMG_1969.JPG"></a>
+<br><br>
+All good things end and we were back in the bushes after a few hours.  This time they came with thorns!!!  I think the valley we were hiking through was filled with some kind of berry bush...
+<br><br>
+<a href="IMG_20180421_161255.JPG" data-lightbox="group"><img src="IMG_20180421_161255.JPG"></a>
+<p>ouch!</p>
+<br><br>
+<a href="IMG_20180421_191302.JPG" data-lightbox="group"><img src="IMG_20180421_191302.JPG"></a>
+<p>Last four miles pretty pleasant aside from the burning pain in my feet</p>
+<br><br>
+Right before we got to our campsite there was a small section where we were pretty much swimming in poison oak, and I was wearing shorts (not good!) and got a ton of it.  Legs looked really bad when I got home.
+<h3>Day 4:</h3>
+More poison oak I guess.
+<br><br>
+<a href="EDA9D67E-2838-4134-8358-0D10FCAF0BC7.JPG" data-lightbox="group"><img src="EDA9D67E-2838-4134-8358-0D10FCAF0BC7.JPG"></a>
+<p>Like twenty river crossings like this one towards the end.  (Also note Brandon listening to what is probably Pentatonix)</p>
+<br><br>
+We had a nice in-n-out stop later to soothe our sunburns!
+<br><br><br><br><br><br>
+
+<br><br>
+</div>
+</div>
+</div>
+<script src="../../lib/js/jquery.min.js"></script>
+<script src="../../lib/js/lightbox.min.js"></script>
+<script>
+    lightbox.option({
+     albumLabel:"Image %1 of %2"
+    })
+</script>
+</div>
+<script>
+	function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+	//Get the button:
+mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+</body>
