@@ -291,7 +291,7 @@ h2, h3, h4, h5, h6 {
 	div #jacob p {
 		font-size: 35px;
 		margin-top: 0px;
-		font-family: 'Garamond';
+		font-family: 'EB Garamond';
 		font-weight: normal;
 		color: #751313;
 	}
@@ -320,7 +320,7 @@ h2, h3, h4, h5, h6 {
 	}
 }
 
-@media only screen and (max-aspect-ratio: 3/4) {
+@media only screen and (max-aspect-ratio: 0.85) {
 	#menu {
 		display: none;
 		width: 0px;
@@ -328,7 +328,7 @@ h2, h3, h4, h5, h6 {
 
 	#container {
 		width: 100%;
-		font-size: 30px;
+		font-size: 18px;
 		margin: 0px;
 		padding: 0px;
 		margin-left: 0px;
@@ -341,25 +341,27 @@ h2, h3, h4, h5, h6 {
 		padding-left: 30px;
 		padding-right: 30px;
 		padding-top: 100px;
-		font-size: 25px;
+		font-size: 18px;
 	}
 
 	#page p {
-		font-size: 20px;
+		font-size: 16px;
 	}
 
 	#page sup {
-		font-size: 16px;
+		font-size: 14px;
 	}
 
 
 	.topnav {
 	  background-color: #ffffff;
-	  position: fixed;
+	  position: sticky;
+	  top: 0px;
+	  left: 0px;
 	  font-family: 'EB Garamond';
 	  letter-spacing: 0.05em;
 	  color: #751313;
-	  width: 102%;
+	  width: 100%;
 	  margin: -10px;
 	}
 
@@ -369,10 +371,12 @@ h2, h3, h4, h5, h6 {
 
 	.topnav a {
 		color: #751313;
-	  padding: 30px 30px;
 	  text-decoration: none;
-	  font-size: 50px;
+	  font-size: 30px;
 	  display: block;
+	  padding-left: 25px;
+	  padding-top: 10px;
+	  padding-bottom: 10px;
 	}
 
 	.topnav a.icon {
@@ -381,6 +385,11 @@ h2, h3, h4, h5, h6 {
 	  position: absolute;
 	  right: 0;
 	  top: 0;
+	  padding-right: 15px;
+	}
+
+	ul {
+		padding-left: 0px;
 	}
 
 	#myBtn {
@@ -393,9 +402,9 @@ h2, h3, h4, h5, h6 {
 	  outline: none; /* Remove outline */
 	  background-color: #ffffff; /* Set a background color */
 	  color: black; /* Text color */
-	  padding: 30px; /* Some padding */
+	  padding: 15px; /* Some padding */
 	  border-radius: 20px; /* Rounded corners */
-	  font-size: 40px; /* Increase font size */
+	  font-size: 25px; /* Increase font size */
 	  font-family: 'Lato';
 	  font-weight:bold;
 	}
@@ -405,14 +414,14 @@ h2, h3, h4, h5, h6 {
   color: black;
   display: inline-block;
   margin-right: 6px;
-  font-size:50px;
+  font-size:25px;
 	}
 
 }
 
 
 
-@media only screen and (min-aspect-ratio: 3/4) {
+@media only screen and (min-aspect-ratio: 0.85) {
 	.topnav {
 		display: none;
 	}
