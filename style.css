@@ -414,7 +414,7 @@ h2, h3, h4, h5, h6 {
   color: black;
   display: inline-block;
   margin-right: 6px;
-  font-size:25px;
+  font-size:20px;
 	}
 
 }
@@ -494,7 +494,7 @@ ul, #updates {
 
 /* Create the caret/arrow with a unicode, and style it */
 .caret::before {
-  content: "\2295";
+  content: "\25B6";
   color: black;
   display: inline-block;
   margin-right: 6px;
@@ -503,7 +503,7 @@ ul, #updates {
 /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
 .caret-down::before {
   /*transform: rotate(90deg);*/
-  content: "\229D";
+  content: "\25BC";
 
 }
 
