@@ -296,6 +296,8 @@
     if (!str) return '';
     let s = str.toLowerCase().replace(/\s+/g, '').replace(/\*/g, '');
     s = s.replace('undefined', 'und');
+    // Replace unicode pi symbol with 'pi' for answer comparison
+    s = s.replace(/π/g, 'pi');
     // Map 'sq' to 'sqrt'
     s = s.replace(/sq(?!rt)/g, 'sqrt');
     // Normalize roots syntax: e.g. 2sqrt3/3 -> 2sqrt(3)/3
@@ -334,7 +336,7 @@
       if (isDegToRad) {
         return { q: `${deg}° in Radians`, a: radString };
       } else {
-        return { q: `${radString} in Degrees`, a: `${deg}` };
+        return { q: `${radString.replace(/pi/g, 'π')} in Degrees`, a: `${deg}` };
       }
     } else {
       // Trig Mode
@@ -363,6 +365,7 @@
           else if (den === 1) angleText = (num === 1 ? "" : num === -1 ? "-" : num) + "pi";
           else angleText = (num === 1 ? "" : num === -1 ? "-" : num) + "pi/" + den;
         }
+        angleText = angleText.replace(/pi/g, 'π');
       }
 
       return { q: `${func}(${angleText})`, a: base[func] };
