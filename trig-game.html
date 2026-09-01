@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trig Practice Game</title>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+    
+    .container { background: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); width: 100%; max-width: 650px; padding: 30px; border: 1px solid var(--border); }
+    .hidden { display: none !important; }
+    
+    h1, h2, h3 { margin-bottom: 12px; text-align: center; }
+    p { margin-bottom: 16px; color: var(--text-muted); font-size: 0.95rem; text-align: center; }
+    
+    .section-box { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #fafafa; }
+    .section-title { font-weight: 600; margin-bottom: 10px; font-size: 1rem; color: var(--text-main); }
+    
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    
+    label { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; user-select: none; }
+    input[type="radio"], input[type="checkbox"] { accent-color: var(--primary); width: 16px; height: 16px; }
+
+    button { width: 100%; background: var(--primary); color: white; border: none; padding: 12px 16px; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s; margin-top: 10px; }
+    button:hover { background: var(--primary-hover); }
+    button.secondary { background: #e2e8f0; color: var(--text-main); }
+    button.secondary:hover { background: #cbd5e1; }
+
+    /* Game Screen */
+    .game-header { display: flex; justify-content: space-between; font-weight: 600; font-size: 1.1rem; padding-bottom: 15px; border-bottom: 2px solid var(--border); margin-bottom: 25px; }
+    .question-box { font-size: 2.5rem; text-align: center; font-weight: 700; margin: 30px 0; color: var(--text-main); }
+    
+    .input-wrapper { position: relative; width: 100%; max-width: 320px; margin: 0 auto 20px auto; }
+    .answer-input { width: 100%; font-size: 1.5rem; padding: 10px 15px; text-align: center; border: 2px solid var(--border); border-radius: 8px; outline: none; }
+    .answer-input:focus { border-color: var(--primary); }
+    .answer-input.error { border-color: var(--danger); animation: shake 0.2s ease-in-out 0s 2; }
+    
+    .error-x { position: absolute; right: -35px; top: 50%; transform: translateY(-50%); color: var(--danger); font-size: 1.8rem; font-weight: bold; }
+    
+    .instructions { font-size: 0.85rem; color: var(--text-muted); background: #f1f5f9; padding: 12px; border-radius: 6px; text-align: left; line-height: 1.5; }
+    .instructions ul { padding-left: 20px; margin-top: 5px; }
+
+    /* Leaderboard Tables */
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); }
+    th { background: #f1f5f9; font-weight: 600; }
+    
+    .text-input { width: 100%; padding: 10px; font-size: 1rem; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 10px; }
+
+    @keyframes shake {
+      0% { transform: translate(0, -50%); }
+      25% { transform: translate(-5px, -50%); }
+      75% { transform: translate(5px, -50%); }
+      100% { transform: translate(0, -50%); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div id="screen-menu">
+    <h1>Trigonometry Practice</h1>
+    <p>Master angle conversions and exact trigonometric evaluations.</p>
+
+    <div class="section-box">
+      <div class="section-title">1. Select Game Mode</div>
+      <div class="grid-2">
+        <label><input type="radio" name="gameMode" value="conversion" checked onclick="toggleGameOptions()"> Unit Conversion</label>
+        <label><input type="radio" name="gameMode" value="trig" onclick="toggleGameOptions()"> Trig Functions</label>
+      </div>
+    </div>
+
+    <div id="options-conversion" class="section-box">
+      <div class="section-title">Conversion Type</div>
+      <div class="grid-3">
+        <label><input type="radio" name="convType" value="d2r" checked> Deg to Rad</label>
+        <label><input type="radio" name="convType" value="r2d"> Rad to Deg</label>
+        <label><input type="radio" name="convType" value="both"> Both</label>
+      </div>
+      <div class="section-title" style="margin-top:12px;">Angle Range</div>
+      <div class="grid-2">
+        <label><input type="radio" name="convRange" value="basic" checked> 0 to 2π</label>
+        <label><input type="radio" name="convRange" value="all"> All</label>
+      </div>
+    </div>
+
+    <div id="options-trig" class="section-box hidden">
+      <div class="section-title">Functions Included</div>
+      <div class="grid-3">
+        <label><input type="checkbox" id="chk-all" onchange="toggleAllTrig(this)"> <b>Select All</b></label>
+        <label><input type="checkbox" class="trig-func" value="sin" checked> sin</label>
+        <label><input type="checkbox" class="trig-func" value="cos" checked> cos</label>
+        <label><input type="checkbox" class="trig-func" value="tan" checked> tan</label>
+        <label><input type="checkbox" class="trig-func" value="csc"> csc</label>
+        <label><input type="checkbox" class="trig-func" value="sec"> sec</label>
+        <label><input type="checkbox" class="trig-func" value="cot"> cot</label>
+      </div>
+      <div class="section-title" style="margin-top:12px;">Angle Units & Range</div>
+      <div class="grid-3" style="margin-bottom:8px;">
+        <label><input type="radio" name="trigUnit" value="deg"> Degrees</label>
+        <label><input type="radio" name="trigUnit" value="rad" checked> Radians</label>
+        <label><input type="radio" name="trigUnit" value="both"> Both</label>
+      </div>
+      <div class="grid-2">
+        <label><input type="radio" name="trigRange" value="basic" checked> 0 to 2π</label>
+        <label><input type="radio" name="trigRange" value="all"> All</label>
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">Game Duration / Target</div>
+      <div class="grid-2" style="margin-bottom:10px;">
+        <label><input type="radio" name="limitType" value="questions" checked onclick="toggleLimitOptions()"> Questions</label>
+        <label><input type="radio" name="limitType" value="time" onclick="toggleLimitOptions()"> Time Limit</label>
+      </div>
+      <div id="limit-questions" class="grid-3">
+        <label><input type="radio" name="qCount" value="5"> 5 Questions</label>
+        <label><input type="radio" name="qCount" value="15" checked> 15 Questions</label>
+        <label><input type="radio" name="qCount" value="50"> 50 Questions</label>
+      </div>
+      <div id="limit-time" class="grid-3 hidden">
+        <label><input type="radio" name="tCount" value="30"> 30 Seconds</label>
+        <label><input type="radio" name="tCount" value="60" checked> 1 Minute</label>
+        <label><input type="radio" name="tCount" value="300"> 5 Minutes</label>
+      </div>
+    </div>
+
+    <button onclick="startGame()">Start Game</button>
+    <!--
+    <button class="secondary" onclick="showGlobalLeaderboards()">View Global Leaderboards</button>-->
+  </div>
+
+  <div id="screen-quiz" class="hidden">
+    <div class="game-header">
+      <div id="display-progress">Question: 0/15</div>
+      <div id="display-timer">Time: 0.00s</div>
+    </div>
+
+    <div class="question-box" id="display-question">sin(π/3)</div>
+
+    <div class="input-wrapper">
+      <input type="text" id="answer-input" class="answer-input" placeholder="Type answer..." autocomplete="off" autofocus>
+      <span id="error-x" class="error-x hidden">✕</span>
+    </div>
+
+    <div class="instructions">
+      <b>Formatting Instructions:</b>
+      <ul>
+        <li>Press <b>Enter</b> to submit your answer.</li>
+        <li>Use <b>pi</b> for π (e.g., <code>2pi/3</code>).</li>
+        <li>Use <b>sq</b> or <b>sqrt</b> for square roots (e.g., <code>sq(3)/2</code> or <code>sqrt3/2</code>).</li>
+        <li>Use <b>und</b> for undefined values.</li>
+        <li>Answers <b>must be simplified</b> and denominators <b>rationalized</b>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="screen-result" class="hidden">
+    <h2>Game Complete!</h2>
+    <p id="result-summary">Score summary goes here.</p>
+
+    <div class="section-box">
+      <div class="section-title">Save Your Score</div>
+      <p id="rank-notice" style="text-align:left; font-size:0.85rem; color: var(--primary); font-weight:600;"></p>
+      <input type="text" id="nickname-input" class="text-input" placeholder="Enter Nickname (3-12 letters/numbers)" maxlength="12">
+      <button onclick="submitScore()">Save Score to Leaderboard</button>
+    </div>
+
+    <div class="grid-2">
+      <button onclick="startGame()">Play Again</button>
+      <button class="secondary" onclick="showMenu()">Main Menu</button>
+    </div>
+
+    <div class="section-box" style="margin-top:20px;">
+      <div class="section-title">Leaderboard (Current Settings)</div>
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>Name</th><th>Score</th></tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <tr><td colspan="3">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="screen-leaderboards" class="hidden">
+    <h2>Leaderboards</h2>
+    <p>Top 5 scores across standard configurations.</p>
+    <div id="global-leaderboards-container">Loading...</div>
+    <button class="secondary" onclick="showMenu()" style="margin-top: 15px;">Back to Menu</button>
+  </div>
+
+</div>
+
+<script>
+  // --- FIREBASE CONFIGURATION ---
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDlHYR7OXTV0kypADw4NZBpOFUEx76mc-g",
+    authDomain: "trig-game-db.firebaseapp.com",
+    projectId: "trig-game-db",
+    storageBucket: "trig-game-db.firebasestorage.app",
+    messagingSenderId: "774647854701",
+    appId: "1:774647854701:web:6f936a3157eba2e14a3164"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  // --- GAME STATE VARIABLES ---
+  let gameState = {
+    mode: 'conversion',
+    settingsKey: '',
+    questions: [],
+    currentIndex: 0,
+    startTime: 0,
+    timerInterval: null,
+    timeElapsed: 0,
+    timeRemaining: 0,
+    isTimed: false,
+    totalQuestions: 15,
+    totalTimeLimit: 60,
+    currentQuestion: null,
+    scoreSubmitted: false
+  };
+
+  const PROFANITY_LIST = ["badword1", "badword2", "admin", "null"]; // Extend as needed
+
+  // Standard unit angles in radians (0 to 2pi)
+  const BASE_ANGLES = [
+    { rad: "0", deg: 0, sin: "0", cos: "1", tan: "0", csc: "und", sec: "1", cot: "und" },
+    { rad: "pi/6", deg: 30, sin: "1/2", cos: "sqrt(3)/2", tan: "sqrt(3)/3", csc: "2", sec: "2sqrt(3)/3", cot: "sqrt(3)" },
+    { rad: "pi/4", deg: 45, sin: "sqrt(2)/2", cos: "sqrt(2)/2", tan: "1", csc: "sqrt(2)", sec: "sqrt(2)", cot: "1" },
+    { rad: "pi/3", deg: 60, sin: "sqrt(3)/2", cos: "1/2", tan: "sqrt(3)", csc: "2sqrt(3)/3", sec: "2", cot: "sqrt(3)/3" },
+    { rad: "pi/2", deg: 90, sin: "1", cos: "0", tan: "und", csc: "1", sec: "und", cot: "0" },
+    { rad: "2pi/3", deg: 120, sin: "sqrt(3)/2", cos: "-1/2", tan: "-sqrt(3)", csc: "2sqrt(3)/3", sec: "-2", cot: "-sqrt(3)/3" },
+    { rad: "3pi/4", deg: 135, sin: "sqrt(2)/2", cos: "-sqrt(2)/2", tan: "-1", csc: "sqrt(2)", sec: "-sqrt(2)", cot: "-1" },
+    { rad: "5pi/6", deg: 150, sin: "1/2", cos: "-sqrt(3)/2", tan: "-sqrt(3)/3", csc: "2", sec: "-2sqrt(3)/3", cot: "-sqrt(3)" },
+    { rad: "pi", deg: 180, sin: "0", cos: "-1", tan: "0", csc: "und", sec: "-1", cot: "und" },
+    { rad: "7pi/6", deg: 210, sin: "-1/2", cos: "-sqrt(3)/2", tan: "sqrt(3)/3", csc: "-2", sec: "-2sqrt(3)/3", cot: "sqrt(3)" },
+    { rad: "5pi/4", deg: 225, sin: "-sqrt(2)/2", cos: "-sqrt(2)/2", tan: "1", csc: "-sqrt(2)", sec: "-sqrt(2)", cot: "1" },
+    { rad: "4pi/3", deg: 240, sin: "-sqrt(3)/2", cos: "-1/2", tan: "sqrt(3)", csc: "-2sqrt(3)/3", sec: "-2", cot: "sqrt(3)/3" },
+    { rad: "3pi/2", deg: 270, sin: "-1", cos: "0", tan: "und", csc: "-1", sec: "und", cot: "0" },
+    { rad: "5pi/3", deg: 300, sin: "-sqrt(3)/2", cos: "1/2", tan: "-sqrt(3)", csc: "-2sqrt(3)/3", sec: "2", cot: "-sqrt(3)/3" },
+    { rad: "7pi/4", deg: 315, sin: "-sqrt(2)/2", cos: "sqrt(2)/2", tan: "-1", csc: "-sqrt(2)", sec: "sqrt(2)", cot: "-1" },
+    { rad: "11pi/6", deg: 330, sin: "-1/2", cos: "sqrt(3)/2", tan: "-sqrt(3)/3", csc: "-2", sec: "2sqrt(3)/3", cot: "-sqrt(3)" }
+  ];
+
+  // --- UI NAVIGATION & TOGGLES ---
+  function toggleGameOptions() {
+    const mode = document.querySelector('input[name="gameMode"]:checked').value;
+    document.getElementById('options-conversion').classList.toggle('hidden', mode !== 'conversion');
+    document.getElementById('options-trig').classList.toggle('hidden', mode !== 'trig');
+  }
+
+  function toggleLimitOptions() {
+    const isTime = document.querySelector('input[name="limitType"]:checked').value === 'time';
+    document.getElementById('limit-questions').classList.toggle('hidden', isTime);
+    document.getElementById('limit-time').classList.toggle('hidden', !isTime);
+  }
+
+  function toggleAllTrig(master) {
+    document.querySelectorAll('.trig-func').forEach(chk => chk.checked = master.checked);
+  }
+
+  function showMenu() {
+    clearInterval(gameState.timerInterval);
+    document.getElementById('screen-menu').classList.remove('hidden');
+    document.getElementById('screen-quiz').classList.add('hidden');
+    document.getElementById('screen-result').classList.add('hidden');
+    document.getElementById('screen-leaderboards').classList.add('hidden');
+  }
+
+  // --- QUESTION GENERATION & CANONICALization ---
+  function normalizeAnswer(str) {
+    if (!str) return '';
+    let s = str.toLowerCase().replace(/\s+/g, '').replace(/\*/g, '');
+    s = s.replace('undefined', 'und');
+    // Map 'sq' to 'sqrt'
+    s = s.replace(/sq(?!rt)/g, 'sqrt');
+    // Normalize roots syntax: e.g. 2sqrt3/3 -> 2sqrt(3)/3
+    s = s.replace(/sqrt(\d+)/g, 'sqrt($1)');
+    return s;
+  }
+
+  function generateQuestion() {
+    const mode = document.querySelector('input[name="gameMode"]:checked').value;
+    
+    if (mode === 'conversion') {
+      const type = document.querySelector('input[name="convType"]:checked').value;
+      const range = document.querySelector('input[name="convRange"]:checked').value;
+      
+      const isDegToRad = (type === 'd2r') || (type === 'both' && Math.random() < 0.5);
+      const base = BASE_ANGLES[Math.floor(Math.random() * BASE_ANGLES.length)];
+      
+      let mult = 0;
+      if (range === 'all') mult = Math.floor(Math.random() * 7) - 2; // Shift by multiples of 2pi (-4pi to 8pi)
+      
+      const deg = base.deg + mult * 360;
+      let radString = "";
+      if (mult === 0) {
+        radString = base.rad;
+      } else {
+        // Compute new fraction for rad
+        const totalDeg = deg;
+        const g = gcd(Math.abs(totalDeg), 180);
+        const num = totalDeg / g;
+        const den = 180 / g;
+        if (num === 0) radString = "0";
+        else if (den === 1) radString = (num === 1 ? "" : num === -1 ? "-" : num) + "pi";
+        else radString = (num === 1 ? "" : num === -1 ? "-" : num) + "pi/" + den;
+      }
+
+      if (isDegToRad) {
+        return { q: `${deg}° in Radians`, a: radString };
+      } else {
+        return { q: `${radString} in Degrees`, a: `${deg}` };
+      }
+    } else {
+      // Trig Mode
+      const selectedFuncs = Array.from(document.querySelectorAll('.trig-func:checked')).map(c => c.value);
+      if (selectedFuncs.length === 0) selectedFuncs.push('sin');
+      const func = selectedFuncs[Math.floor(Math.random() * selectedFuncs.length)];
+      
+      const unit = document.querySelector('input[name="trigUnit"]:checked').value;
+      const range = document.querySelector('input[name="trigRange"]:checked').value;
+      const useDeg = (unit === 'deg') || (unit === 'both' && Math.random() < 0.5);
+      
+      const base = BASE_ANGLES[Math.floor(Math.random() * BASE_ANGLES.length)];
+      let mult = (range === 'all') ? (Math.floor(Math.random() * 7) - 2) : 0;
+      
+      let angleText = "";
+      if (useDeg) {
+        angleText = `${base.deg + mult * 360}°`;
+      } else {
+        if (mult === 0) angleText = base.rad;
+        else {
+          const totalDeg = base.deg + mult * 360;
+          const g = gcd(Math.abs(totalDeg), 180);
+          const num = totalDeg / g;
+          const den = 180 / g;
+          if (num === 0) angleText = "0";
+          else if (den === 1) angleText = (num === 1 ? "" : num === -1 ? "-" : num) + "pi";
+          else angleText = (num === 1 ? "" : num === -1 ? "-" : num) + "pi/" + den;
+        }
+      }
+
+      return { q: `${func}(${angleText})`, a: base[func] };
+    }
+  }
+
+  function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+
+  // --- GAMEPLAY ENGINE ---
+  function startGame() {
+    const mode = document.querySelector('input[name="gameMode"]:checked').value;
+    const limitType = document.querySelector('input[name="limitType"]:checked').value;
+
+    gameState.mode = mode;
+    gameState.isTimed = limitType === 'time';
+    gameState.currentIndex = 0;
+    gameState.scoreSubmitted = false;
+
+    if (gameState.isTimed) {
+      gameState.totalTimeLimit = parseInt(document.querySelector('input[name="tCount"]:checked').value);
+      gameState.timeRemaining = gameState.totalTimeLimit;
+    } else {
+      gameState.totalQuestions = parseInt(document.querySelector('input[name="qCount"]:checked').value);
+    }
+
+    // Build Settings Key for Leaderboards
+    if (mode === 'conversion') {
+      const type = document.querySelector('input[name="convType"]:checked').value;
+      const range = document.querySelector('input[name="convRange"]:checked').value;
+      gameState.settingsKey = `conv_${type}_${range}_${limitType}_${gameState.isTimed ? gameState.totalTimeLimit : gameState.totalQuestions}`;
+    } else {
+      const selectedFuncs = Array.from(document.querySelectorAll('.trig-func:checked')).map(c => c.value).sort().join('-');
+      const unit = document.querySelector('input[name="trigUnit"]:checked').value;
+      const range = document.querySelector('input[name="trigRange"]:checked').value;
+      gameState.settingsKey = `trig_${selectedFuncs || 'all'}_${unit}_${range}_${limitType}_${gameState.isTimed ? gameState.totalTimeLimit : gameState.totalQuestions}`;
+    }
+
+    // UI Updates
+    document.getElementById('screen-menu').classList.add('hidden');
+    document.getElementById('screen-result').classList.add('hidden');
+    document.getElementById('screen-quiz').classList.remove('hidden');
+
+    gameState.startTime = Date.now();
+    startTimer();
+    nextQuestion();
+  }
+
+  function startTimer() {
+    clearInterval(gameState.timerInterval);
+    gameState.timerInterval = setInterval(() => {
+      const now = Date.now();
+      gameState.timeElapsed = (now - gameState.startTime) / 1000;
+
+      if (gameState.isTimed) {
+        gameState.timeRemaining = Math.max(0, gameState.totalTimeLimit - gameState.timeElapsed);
+        document.getElementById('display-timer').textContent = `Time Left: ${gameState.timeRemaining.toFixed(2)}s`;
+        if (gameState.timeRemaining <= 0) endGame();
+      } else {
+        document.getElementById('display-timer').textContent = `Time: ${gameState.timeElapsed.toFixed(2)}s`;
+      }
+    }, 100);
+  }
+
+  function nextQuestion() {
+    if (!gameState.isTimed && gameState.currentIndex >= gameState.totalQuestions) {
+      endGame();
+      return;
+    }
+
+    gameState.currentQuestion = generateQuestion();
+    document.getElementById('display-question').textContent = gameState.currentQuestion.q;
+    
+    const input = document.getElementById('answer-input');
+    input.value = '';
+    input.classList.remove('error');
+    document.getElementById('error-x').classList.add('hidden');
+    input.focus();
+
+    if (gameState.isTimed) {
+      document.getElementById('display-progress').textContent = `Answered: ${gameState.currentIndex}`;
+    } else {
+      document.getElementById('display-progress').textContent = `Question: ${gameState.currentIndex + 1}/${gameState.totalQuestions}`;
+    }
+  }
+
+  document.getElementById('answer-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const inputVal = normalizeAnswer(this.value);
+      const targetVal = normalizeAnswer(gameState.currentQuestion.a);
+
+      if (inputVal === targetVal) {
+        gameState.currentIndex++;
+        nextQuestion();
+      } else {
+        this.value = '';
+        this.classList.add('error');
+        document.getElementById('error-x').classList.remove('hidden');
+        setTimeout(() => this.classList.remove('error'), 300);
+      }
+    }
+  });
+
+  function endGame() {
+    clearInterval(gameState.timerInterval);
+    document.getElementById('screen-quiz').classList.add('hidden');
+    document.getElementById('screen-result').classList.remove('hidden');
+
+    let summaryText = "";
+    if (gameState.isTimed) {
+      summaryText = `You answered ${gameState.currentIndex} questions correctly in ${gameState.totalTimeLimit.toFixed(2)} seconds!`;
+    } else {
+      summaryText = `You completed ${gameState.totalQuestions} questions in ${gameState.timeElapsed.toFixed(2)} seconds!`;
+    }
+    document.getElementById('result-summary').textContent = summaryText;
+
+    fetchLeaderboard();
+  }
+
+  // --- LEADERBOARD & FIREBASE LOGIC ---
+  function fetchLeaderboard() {
+    const tbody = document.getElementById('leaderboard-body');
+    tbody.innerHTML = '<tr><td colspan="3">Loading rankings...</td></tr>';
+
+    const orderField = gameState.isTimed ? 'score' : 'time';
+    const orderDirection = gameState.isTimed ? 'desc' : 'asc';
+
+    db.collection('leaderboards')
+      .doc(gameState.settingsKey)
+      .collection('scores')
+      .orderBy(orderField, orderDirection)
+      .limit(10)
+      .get()
+      .then(snapshot => {
+        tbody.innerHTML = '';
+        let rank = 1;
+
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          const valDisplay = gameState.isTimed ? `${data.score} answers` : `${data.time.toFixed(2)}s`;
+          tbody.innerHTML += `<tr><td>#${rank}</td><td>${escapeHtml(data.name)}</td><td>${valDisplay}</td></tr>`;
+          rank++;
+        });
+
+        if (snapshot.empty) {
+          tbody.innerHTML = '<tr><td colspan="3">No scores yet. Be the first!</td></tr>';
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        tbody.innerHTML = '<tr><td colspan="3">Error loading leaderboard.</td></tr>';
+      });
+  }
+
+  function submitScore() {
+    if (gameState.scoreSubmitted) return alert("Score already submitted!");
+
+    const nameInput = document.getElementById('nickname-input');
+    const name = nameInput.value.trim();
+
+    if (name.length < 3 || name.length > 12) {
+      return alert("Nickname must be between 3 and 12 characters.");
+    }
+
+    if (PROFANITY_LIST.some(p => name.toLowerCase().includes(p))) {
+      return alert("Please choose an appropriate nickname.");
+    }
+
+    const payload = {
+      name: name,
+      score: gameState.currentIndex,
+      time: gameState.timeElapsed,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    db.collection('leaderboards')
+      .doc(gameState.settingsKey)
+      .collection('scores')
+      .add(payload)
+      .then(() => {
+        gameState.scoreSubmitted = true;
+        fetchLeaderboard();
+      })
+      .catch(err => {
+        console.error("Error saving score:", err);
+        alert("Could not save score.");
+      });
+  }
+
+  function showGlobalLeaderboards() {
+    document.getElementById('screen-menu').classList.add('hidden');
+    document.getElementById('screen-leaderboards').classList.remove('hidden');
+
+    const container = document.getElementById('global-leaderboards-container');
+    container.innerHTML = '<p>Loading leaderboards...</p>';
+
+    // Preset keys for popular modes to display
+    const sampleKeys = [
+      { name: "Deg to Rad (0-2π, 15 Qs)", key: "conv_d2r_basic_questions_15", timed: false },
+      { name: "Trig Radians (0-2π, 1 Minute)", key: "trig_cos-csc-cot-sec-sin-tan_rad_basic_time_60", timed: true }
+    ];
+
+    container.innerHTML = '';
+    sampleKeys.forEach(conf => {
+      const orderField = conf.timed ? 'score' : 'time';
+      const orderDir = conf.timed ? 'desc' : 'asc';
+
+      let html = `<div class="section-box"><div class="section-title">${conf.name}</div><table><thead><tr><th>#</th><th>Name</th><th>Score</th></tr></thead><tbody>`;
+
+      db.collection('leaderboards')
+        .doc(conf.key)
+        .collection('scores')
+        .orderBy(orderField, orderDir)
+        .limit(5)
+        .get()
+        .then(snapshot => {
+          let rows = '';
+          let rank = 1;
+          snapshot.forEach(doc => {
+            const data = doc.data();
+            const valDisplay = conf.timed ? `${data.score} ans` : `${data.time.toFixed(2)}s`;
+            rows += `<tr><td>#${rank}</td><td>${escapeHtml(data.name)}</td><td>${valDisplay}</td></tr>`;
+            rank++;
+          });
+          if (snapshot.empty) rows = '<tr><td colspan="3">No scores recorded.</td></tr>';
+          
+          container.innerHTML += html + rows + '</tbody></table></div>';
+        });
+    });
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+</script>
+</body>
+</html>
