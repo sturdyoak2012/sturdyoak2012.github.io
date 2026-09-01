@@ -6,6 +6,7 @@
   <title>Trig Practice Game</title>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bad-words@3.0.4/lib/badwords.js"></script>
 
   <style>
     :root {
@@ -244,7 +245,67 @@
     scoreSubmitted: false
   };
 
-  const PROFANITY_LIST = ["badword1", "badword2", "admin", "null"]; // Extend as needed
+// --- ADVANCED PROFANITY FILTER SETUP ---
+  // Create filter instance
+  let filter;
+  try {
+    filter = new BadWords();
+    filter.addWords('admin', 'moderator', 'null', 'undefined', 'system');
+  } catch(e) {
+    // Fallback dictionary if CDN fails to load
+    filter = null;
+  }
+
+  // Fallback explicit bad words list to guarantee common profanity is blocked
+const FALLBACK_BAD_WORDS = [
+    // Standard Profanity & Vulgarities
+    'fuck', 'fuk', 'ffuck', 'fuckin', 'fucking', 'fucker', 'nigg', 'nigga', 'nigger', 'fk', 'fck',
+    'shit', 'shite', 'shitting', 'shitter', 'bullshit',
+    'bitch', 'bitches', 'bitching', 'bitchy',
+    'ass', 'asshole', 'asses', 'assette', 'jackass', 'smartass',
+    'bastard', 'cunt', 'cunts', 'whore', 'slut', 'sluts', 'hoe', 'twat', 'wanker',
+    'cock', 'cocks', 'cocksucker', 'dick', 'dicks', 'dickhead', 'penis', 'vagina', 'sex',
+    'pussy', 'pussies', 'prick', 'tit', 'tits', 'titties', 'boob', 'boobs',
+    'clit', 'clitoris', 'ejacu', 'cum', 'cumming', 'orgasm', 'dildo', 'jizz',
+
+    // Slurs & Offensive Terms
+    'fag', 'faggot', 'fags', 'dyke', 'nigger', 'nigga', 'niggah', 'nigs',
+    'spic', 'chink', 'kike', 'retard', 'retarded', 'tard',
+
+    // Reserved / System Terms
+    'admin', 'administrator', 'mod', 'moderator', 'system', 'root',
+    'null', 'undefined', 'anonymous', 'official', 'support', 'helpdesk'
+  ];
+  function cleanInput(text) {
+    return text
+      .toLowerCase()
+      .replace(/0/g, 'o')
+      .replace(/1/g, 'i')
+      .replace(/3/g, 'e')
+      .replace(/4/g, 'a')
+      .replace(/5/g, 's')
+      .replace(/7/g, 't')
+      .replace(/@/g, 'a')
+      .replace(/\$/g, 's')
+      .replace(/[^a-z0-9]/g, '')
+      .replace(/(.)\1{2,}/g, '$1');
+  }
+
+  function isBadName(name) {
+    const raw = name.toLowerCase();
+    const cleaned = cleanInput(name);
+
+    // 1. Direct fallback check against explicit list (catches "fuck", "f.u.c.k", "f4ck", etc.)
+    const matchesFallback = FALLBACK_BAD_WORDS.some(bad => raw.includes(bad) || cleaned.includes(bad));
+    if (matchesFallback) return true;
+
+    // 2. Library check if loaded properly
+    if (filter) {
+      return filter.isProfane(name) || filter.isProfane(cleaned);
+    }
+
+    return false;
+  }
 
   // Standard unit angles in radians (0 to 2pi)
   const BASE_ANGLES = [
@@ -529,7 +590,7 @@
       return alert("Nickname must be between 3 and 12 characters.");
     }
 
-    if (PROFANITY_LIST.some(p => name.toLowerCase().includes(p))) {
+    if (isBadName(name)) {
       return alert("Please choose an appropriate nickname.");
     }
 
