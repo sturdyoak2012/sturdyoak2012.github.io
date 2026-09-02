@@ -79,7 +79,7 @@
 
   <div id="screen-menu">
     <h1>Trigonometry Practice</h1>
-    <p>Master angle conversions and exact trigonometric evaluations.</p>
+    <p>Master angle conversions and exact trigonometric evaluations. Try to beat Mr. Nie!</p>
 
     <div class="section-box">
       <div class="section-title">1. Select Game Mode</div>
@@ -334,12 +334,10 @@
       return ["und", "undefined"];
     }
 
-    // Single number / simple fraction answers
     if (/^-?\d+(\.\d+)?$/.test(raw) || raw === "1/2" || raw === "-1/2") {
       return [raw];
     }
 
-    // Root-based expressions mapping
     const rootMap = {
       "sqrt(3)/2": ["sqrt3/2", "sqrt(3)/2", "sq3/2", "sq(3)/2", "1/2sqrt3", "1/2sqrt(3)", "1/2sq3", "1/2sq(3)", "1/2*sqrt3", "1/2*sqrt(3)", "sqrt3*1/2", "sqrt(3)*1/2"],
       "-sqrt(3)/2": ["-sqrt3/2", "-sqrt(3)/2", "-sq3/2", "-sq(3)/2", "-1/2sqrt3", "-1/2sqrt(3)", "-1/2sq3", "-1/2sq(3)", "-1/2*sqrt3", "-1/2*sqrt(3)", "-sqrt3*1/2", "-sqrt(3)*1/2"],
@@ -359,7 +357,6 @@
       return rootMap[raw];
     }
 
-    // Radian parsing logic (N*pi/D)
     if (raw.includes("pi") || raw === "0") {
       let N = 1, D = 1;
       let sign = raw.startsWith("-") ? "-" : "";
@@ -493,7 +490,6 @@
     updateMenuLeaderboard();
   }
 
-  // Attach change event listeners to all option inputs on menu screen
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('#screen-menu input').forEach(input => {
       input.addEventListener('change', updateMenuLeaderboard);
@@ -512,7 +508,19 @@
       const isDegToRad = (type === 'd2r') || (type === 'both' && Math.random() < 0.5);
       const base = BASE_ANGLES[Math.floor(Math.random() * BASE_ANGLES.length)];
       
-      let mult = (range === 'all') ? (Math.floor(Math.random() * 7) - 2) : 0;
+      let mult = 0;
+      if (range === 'all') {
+        if (isDegToRad) {
+          // Degree question unit: restrict degree angle to [-360, 360]
+          const options = [-1, 0];
+          if (base.deg === 0) options.push(1);
+          mult = options[Math.floor(Math.random() * options.length)];
+        } else {
+          // Radian question unit: Radians stay as is (-4pi to 8pi)
+          mult = Math.floor(Math.random() * 7) - 2;
+        }
+      }
+      
       const deg = base.deg + mult * 360;
       let radString = "";
 
@@ -543,7 +551,18 @@
       const useDeg = (unit === 'deg') || (unit === 'both' && Math.random() < 0.5);
       
       const base = BASE_ANGLES[Math.floor(Math.random() * BASE_ANGLES.length)];
-      let mult = (range === 'all') ? (Math.floor(Math.random() * 7) - 2) : 0;
+      let mult = 0;
+      if (range === 'all') {
+        if (useDeg) {
+          // Trig in Degrees: restrict degree angle to [-360, 360]
+          const options = [-1, 0];
+          if (base.deg === 0) options.push(1);
+          mult = options[Math.floor(Math.random() * options.length)];
+        } else {
+          // Trig in Radians: Radians stay as is
+          mult = Math.floor(Math.random() * 7) - 2;
+        }
+      }
       
       let angleText = "";
       if (useDeg) {
@@ -608,7 +627,7 @@
       } else {
         document.getElementById('display-timer').textContent = `Time: ${gameState.timeElapsed.toFixed(2)}s`;
       }
-    }, 100);
+    }, 10);
   }
 
   function nextQuestion() {
@@ -678,7 +697,6 @@
       .doc(gameState.settingsKey)
       .collection('scores')
       .orderBy(orderField, orderDirection)
-      .limit(10)
       .get()
       .then(snapshot => {
         tbody.innerHTML = '';
