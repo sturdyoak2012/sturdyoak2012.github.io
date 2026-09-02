@@ -59,8 +59,8 @@
     .instructions ul { padding-left: 20px; margin-top: 5px; }
 
     /* Leaderboard Tables */
-    table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
-    th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
     th { background: #f1f5f9; font-weight: 600; }
     
     .text-input { width: 100%; padding: 10px; font-size: 1rem; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 10px; }
@@ -144,9 +144,20 @@
       </div>
     </div>
 
+    <!-- Real-time Top 5 Leaderboard for Selected Settings -->
+    <div class="section-box">
+      <div class="section-title">Top 5 Leaderboard (Selected Settings)</div>
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>Name</th><th>Score</th></tr>
+        </thead>
+        <tbody id="menu-leaderboard-body">
+          <tr><td colspan="3" style="text-align:center;">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <button onclick="startGame()">Start Game</button>
-    <!--
-    <button class="secondary" onclick="showGlobalLeaderboards()">View Global Leaderboards</button>-->
   </div>
 
   <div id="screen-quiz" class="hidden">
@@ -166,8 +177,8 @@
       <b>Formatting Instructions:</b>
       <ul>
         <li>Press <b>Enter</b> to submit your answer.</li>
-        <li>Use <b>pi</b> for π (e.g., <code>2pi/3</code>).</li>
-        <li>Use <b>sq</b> or <b>sqrt</b> for square roots (e.g., <code>sq(3)/2</code> or <code>sqrt3/2</code>).</li>
+        <li>Use <b>pi</b> or <b>π</b> for radians (e.g., <code>2pi/3</code>, <code>3/2pi</code>, or <code>pi*3/2</code>).</li>
+        <li>Use <b>sq</b> or <b>sqrt</b> for square roots (e.g., <code>sqrt3/2</code> or <code>1/3sqrt3</code>).</li>
         <li>Use <b>und</b> for undefined values.</li>
         <li>Answers <b>must be simplified</b> and denominators <b>rationalized</b>.</li>
       </ul>
@@ -214,7 +225,6 @@
 
 <script>
   // --- FIREBASE CONFIGURATION ---
-
   const firebaseConfig = {
     apiKey: "AIzaSyDlHYR7OXTV0kypADw4NZBpOFUEx76mc-g",
     authDomain: "trig-game-db.firebaseapp.com",
@@ -224,7 +234,6 @@
     appId: "1:774647854701:web:6f936a3157eba2e14a3164"
   };
 
-  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
 
@@ -245,20 +254,16 @@
     scoreSubmitted: false
   };
 
-// --- ADVANCED PROFANITY FILTER SETUP ---
-  // Create filter instance
+  // --- ADVANCED PROFANITY FILTER SETUP ---
   let filter;
   try {
     filter = new BadWords();
     filter.addWords('admin', 'moderator', 'null', 'undefined', 'system');
   } catch(e) {
-    // Fallback dictionary if CDN fails to load
     filter = null;
   }
 
-  // Fallback explicit bad words list to guarantee common profanity is blocked
-const FALLBACK_BAD_WORDS = [
-    // Standard Profanity & Vulgarities
+  const FALLBACK_BAD_WORDS = [
     'fuck', 'fuk', 'ffuck', 'fuckin', 'fucking', 'fucker', 'nigg', 'nigga', 'nigger', 'fk', 'fck',
     'shit', 'shite', 'shitting', 'shitter', 'bullshit',
     'bitch', 'bitches', 'bitching', 'bitchy',
@@ -267,47 +272,29 @@ const FALLBACK_BAD_WORDS = [
     'cock', 'cocks', 'cocksucker', 'dick', 'dicks', 'dickhead', 'penis', 'vagina', 'sex',
     'pussy', 'pussies', 'prick', 'tit', 'tits', 'titties', 'boob', 'boobs',
     'clit', 'clitoris', 'ejacu', 'cum', 'cumming', 'orgasm', 'dildo', 'jizz',
-
-    // Slurs & Offensive Terms
-    'fag', 'faggot', 'fags', 'dyke', 'nigger', 'nigga', 'niggah', 'nigs',
-    'spic', 'chink', 'kike', 'retard', 'retarded', 'tard',
-
-    // Reserved / System Terms
-    'admin', 'administrator', 'mod', 'moderator', 'system', 'root',
-    'null', 'undefined', 'anonymous', 'official', 'support', 'helpdesk'
+    'fag', 'faggot', 'fags', 'dyke', 'spic', 'chink', 'kike', 'retard', 'retarded', 'tard',
+    'admin', 'administrator', 'mod', 'moderator', 'system', 'root', 'null', 'undefined', 'anonymous'
   ];
+
   function cleanInput(text) {
     return text
       .toLowerCase()
-      .replace(/0/g, 'o')
-      .replace(/1/g, 'i')
-      .replace(/3/g, 'e')
-      .replace(/4/g, 'a')
-      .replace(/5/g, 's')
-      .replace(/7/g, 't')
-      .replace(/@/g, 'a')
-      .replace(/\$/g, 's')
-      .replace(/[^a-z0-9]/g, '')
-      .replace(/(.)\1{2,}/g, '$1');
+      .replace(/0/g, 'o').replace(/1/g, 'i').replace(/3/g, 'e').replace(/4/g, 'a')
+      .replace(/5/g, 's').replace(/7/g, 't').replace(/@/g, 'a').replace(/\$/g, 's')
+      .replace(/[^a-z0-9]/g, '').replace(/(.)\1{2,}/g, '$1');
   }
 
   function isBadName(name) {
     const raw = name.toLowerCase();
     const cleaned = cleanInput(name);
-
-    // 1. Direct fallback check against explicit list (catches "fuck", "f.u.c.k", "f4ck", etc.)
     const matchesFallback = FALLBACK_BAD_WORDS.some(bad => raw.includes(bad) || cleaned.includes(bad));
     if (matchesFallback) return true;
-
-    // 2. Library check if loaded properly
     if (filter) {
       return filter.isProfane(name) || filter.isProfane(cleaned);
     }
-
     return false;
   }
 
-  // Standard unit angles in radians (0 to 2pi)
   const BASE_ANGLES = [
     { rad: "0", deg: 0, sin: "0", cos: "1", tan: "0", csc: "und", sec: "1", cot: "und" },
     { rad: "pi/6", deg: 30, sin: "1/2", cos: "sqrt(3)/2", tan: "sqrt(3)/3", csc: "2", sec: "2sqrt(3)/3", cot: "sqrt(3)" },
@@ -327,21 +314,174 @@ const FALLBACK_BAD_WORDS = [
     { rad: "11pi/6", deg: 330, sin: "-1/2", cos: "sqrt(3)/2", tan: "-sqrt(3)/3", csc: "-2", sec: "2sqrt(3)/3", cot: "-sqrt(3)" }
   ];
 
-  // --- UI NAVIGATION & TOGGLES ---
+  // --- WHITELIST ANSWER VALIDATION ---
+  function cleanUserInput(str) {
+    if (!str) return '';
+    let s = str.toLowerCase().trim();
+    s = s.replace(/π/g, 'pi');
+    s = s.replace(/\s+/g, '');
+    s = s.replace(/°/g, '');
+    s = s.replace(/sq(?!rt)/g, 'sqrt');
+    s = s.replace(/sqrt\((\d+)\)/g, 'sqrt$1');
+    return s;
+  }
+
+  function getAnswerWhitelist(target) {
+    const raw = target.toString().trim();
+    let variants = [];
+
+    if (raw === "und" || raw === "undefined") {
+      return ["und", "undefined"];
+    }
+
+    // Single number / simple fraction answers
+    if (/^-?\d+(\.\d+)?$/.test(raw) || raw === "1/2" || raw === "-1/2") {
+      return [raw];
+    }
+
+    // Root-based expressions mapping
+    const rootMap = {
+      "sqrt(3)/2": ["sqrt3/2", "sqrt(3)/2", "sq3/2", "sq(3)/2", "1/2sqrt3", "1/2sqrt(3)", "1/2sq3", "1/2sq(3)", "1/2*sqrt3", "1/2*sqrt(3)", "sqrt3*1/2", "sqrt(3)*1/2"],
+      "-sqrt(3)/2": ["-sqrt3/2", "-sqrt(3)/2", "-sq3/2", "-sq(3)/2", "-1/2sqrt3", "-1/2sqrt(3)", "-1/2sq3", "-1/2sq(3)", "-1/2*sqrt3", "-1/2*sqrt(3)", "-sqrt3*1/2", "-sqrt(3)*1/2"],
+      "sqrt(2)/2": ["sqrt2/2", "sqrt(2)/2", "sq2/2", "sq(2)/2", "1/2sqrt2", "1/2sqrt(2)", "1/2sq2", "1/2sq(2)", "1/2*sqrt2", "1/2*sqrt(2)", "sqrt2*1/2", "sqrt(2)*1/2"],
+      "-sqrt(2)/2": ["-sqrt2/2", "-sqrt(2)/2", "-sq2/2", "-sq(2)/2", "-1/2sqrt2", "-1/2sqrt(2)", "-1/2sq2", "-1/2sq(2)", "-1/2*sqrt2", "-1/2*sqrt(2)", "-sqrt2*1/2", "-sqrt(2)*1/2"],
+      "sqrt(3)/3": ["sqrt3/3", "sqrt(3)/3", "sq3/3", "sq(3)/3", "1/3sqrt3", "1/3sqrt(3)", "1/3sq3", "1/3sq(3)", "1/3*sqrt3", "1/3*sqrt(3)", "sqrt3*1/3", "sqrt(3)*1/3"],
+      "-sqrt(3)/3": ["-sqrt3/3", "-sqrt(3)/3", "-sq3/3", "-sq(3)/3", "-1/3sqrt3", "-1/3sqrt(3)", "-1/3sq3", "-1/3sq(3)", "-1/3*sqrt3", "-1/3*sqrt(3)", "-sqrt3*1/3", "-sqrt(3)*1/3"],
+      "2sqrt(3)/3": ["2sqrt3/3", "2sqrt(3)/3", "2sq3/3", "2sq(3)/3", "2/3sqrt3", "2/3sqrt(3)", "2/3sq3", "2/3sq(3)", "2/3*sqrt3", "2/3*sqrt(3)", "sqrt3*2/3", "sqrt(3)*2/3", "2*sqrt3/3", "2*sqrt(3)/3"],
+      "-2sqrt(3)/3": ["-2sqrt3/3", "-2sqrt(3)/3", "-2sq3/3", "-2sq(3)/3", "-2/3sqrt3", "-2/3sqrt(3)", "-2/3sq3", "-2/3sq(3)", "-2/3*sqrt3", "-2/3*sqrt(3)", "-sqrt3*2/3", "-sqrt(3)*2/3", "-2*sqrt3/3", "-2*sqrt(3)/3"],
+      "sqrt(3)": ["sqrt3", "sqrt(3)", "sq3", "sq(3)", "1sqrt3", "1sqrt(3)"],
+      "-sqrt(3)": ["-sqrt3", "-sqrt(3)", "-sq3", "-sq(3)", "-1sqrt3", "-1sqrt(3)"],
+      "sqrt(2)": ["sqrt2", "sqrt(2)", "sq2", "sq(2)", "1sqrt2", "1sqrt(2)"],
+      "-sqrt(2)": ["-sqrt2", "-sqrt(2)", "-sq2", "-sq(2)", "-1sqrt2", "-1sqrt(2)"]
+    };
+
+    if (rootMap[raw]) {
+      return rootMap[raw];
+    }
+
+    // Radian parsing logic (N*pi/D)
+    if (raw.includes("pi") || raw === "0") {
+      let N = 1, D = 1;
+      let sign = raw.startsWith("-") ? "-" : "";
+      let s = raw.replace("-", "");
+
+      if (s === "0") return ["0", "0pi"];
+      if (s === "pi") { N = 1; D = 1; }
+      else if (s.includes("pi/")) {
+        const parts = s.split("pi/");
+        N = parts[0] === "" ? 1 : parseInt(parts[0]);
+        D = parseInt(parts[1]);
+      } else if (s.includes("pi")) {
+        N = parseInt(s.replace("pi", ""));
+        D = 1;
+      }
+
+      const absN = Math.abs(N);
+      if (D === 1) {
+        if (absN === 1) variants = [`${sign}pi`, `${sign}1pi`, `${sign}1*pi`];
+        else variants = [`${sign}${absN}pi`, `${sign}${absN}*pi`, `${sign}pi*${absN}`, `${sign}pi${absN}`];
+      } else {
+        if (absN === 1) {
+          variants = [
+            `${sign}pi/${D}`, `${sign}1/${D}pi`, `${sign}1/${D}*pi`, `${sign}pi*1/${D}`, `${sign}1pi/${D}`
+          ];
+        } else {
+          variants = [
+            `${sign}${absN}pi/${D}`, `${sign}${absN}/${D}pi`, `${sign}${absN}/${D}*pi`,
+            `${sign}${absN}*pi/${D}`, `${sign}pi*${absN}/${D}`, `${sign}pi${absN}/${D}`
+          ];
+        }
+      }
+      return variants;
+    }
+
+    return [raw];
+  }
+
+  function isAnswerCorrect(userInput, targetAnswer) {
+    const userClean = cleanUserInput(userInput);
+    const whitelist = getAnswerWhitelist(targetAnswer).map(cleanUserInput);
+    return whitelist.includes(userClean);
+  }
+
+  // --- UI NAVIGATION & SETTINGS KEYS ---
+  function getSelectedSettings() {
+    const mode = document.querySelector('input[name="gameMode"]:checked').value;
+    const limitType = document.querySelector('input[name="limitType"]:checked').value;
+    const isTimed = limitType === 'time';
+    const limitVal = isTimed ? 
+      document.querySelector('input[name="tCount"]:checked').value : 
+      document.querySelector('input[name="qCount"]:checked').value;
+
+    let key = "";
+    if (mode === 'conversion') {
+      const type = document.querySelector('input[name="convType"]:checked').value;
+      const range = document.querySelector('input[name="convRange"]:checked').value;
+      key = `conv_${type}_${range}_${limitType}_${limitVal}`;
+    } else {
+      const selectedFuncs = Array.from(document.querySelectorAll('.trig-func:checked')).map(c => c.value).sort().join('-');
+      const unit = document.querySelector('input[name="trigUnit"]:checked').value;
+      const range = document.querySelector('input[name="trigRange"]:checked').value;
+      key = `trig_${selectedFuncs || 'all'}_${unit}_${range}_${limitType}_${limitVal}`;
+    }
+
+    return { key, isTimed };
+  }
+
+  function updateMenuLeaderboard() {
+    const tbody = document.getElementById('menu-leaderboard-body');
+    if (!tbody) return;
+
+    const { key, isTimed } = getSelectedSettings();
+    const orderField = isTimed ? 'score' : 'time';
+    const orderDirection = isTimed ? 'desc' : 'asc';
+
+    tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Loading...</td></tr>';
+
+    db.collection('leaderboards')
+      .doc(key)
+      .collection('scores')
+      .orderBy(orderField, orderDirection)
+      .limit(5)
+      .get()
+      .then(snapshot => {
+        if (snapshot.empty) {
+          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center; color: var(--text-muted);">None</td></tr>';
+          return;
+        }
+        let html = '';
+        let rank = 1;
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          const valDisplay = isTimed ? `${data.score} ans` : `${data.time.toFixed(2)}s`;
+          html += `<tr><td>#${rank}</td><td>${escapeHtml(data.name)}</td><td>${valDisplay}</td></tr>`;
+          rank++;
+        });
+        tbody.innerHTML = html;
+      })
+      .catch(err => {
+        console.error("Error fetching menu leaderboard:", err);
+        tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">None</td></tr>';
+      });
+  }
+
   function toggleGameOptions() {
     const mode = document.querySelector('input[name="gameMode"]:checked').value;
     document.getElementById('options-conversion').classList.toggle('hidden', mode !== 'conversion');
     document.getElementById('options-trig').classList.toggle('hidden', mode !== 'trig');
+    updateMenuLeaderboard();
   }
 
   function toggleLimitOptions() {
     const isTime = document.querySelector('input[name="limitType"]:checked').value === 'time';
     document.getElementById('limit-questions').classList.toggle('hidden', isTime);
     document.getElementById('limit-time').classList.toggle('hidden', !isTime);
+    updateMenuLeaderboard();
   }
 
   function toggleAllTrig(master) {
     document.querySelectorAll('.trig-func').forEach(chk => chk.checked = master.checked);
+    updateMenuLeaderboard();
   }
 
   function showMenu() {
@@ -350,22 +490,18 @@ const FALLBACK_BAD_WORDS = [
     document.getElementById('screen-quiz').classList.add('hidden');
     document.getElementById('screen-result').classList.add('hidden');
     document.getElementById('screen-leaderboards').classList.add('hidden');
+    updateMenuLeaderboard();
   }
 
-  // --- QUESTION GENERATION & CANONICALization ---
-  function normalizeAnswer(str) {
-    if (!str) return '';
-    let s = str.toLowerCase().replace(/\s+/g, '').replace(/\*/g, '');
-    s = s.replace('undefined', 'und');
-    // Replace unicode pi symbol with 'pi' for answer comparison
-    s = s.replace(/π/g, 'pi');
-    // Map 'sq' to 'sqrt'
-    s = s.replace(/sq(?!rt)/g, 'sqrt');
-    // Normalize roots syntax: e.g. 2sqrt3/3 -> 2sqrt(3)/3
-    s = s.replace(/sqrt(\d+)/g, 'sqrt($1)');
-    return s;
-  }
+  // Attach change event listeners to all option inputs on menu screen
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('#screen-menu input').forEach(input => {
+      input.addEventListener('change', updateMenuLeaderboard);
+    });
+    updateMenuLeaderboard();
+  });
 
+  // --- QUESTION GENERATION ---
   function generateQuestion() {
     const mode = document.querySelector('input[name="gameMode"]:checked').value;
     
@@ -376,15 +512,13 @@ const FALLBACK_BAD_WORDS = [
       const isDegToRad = (type === 'd2r') || (type === 'both' && Math.random() < 0.5);
       const base = BASE_ANGLES[Math.floor(Math.random() * BASE_ANGLES.length)];
       
-      let mult = 0;
-      if (range === 'all') mult = Math.floor(Math.random() * 7) - 2; // Shift by multiples of 2pi (-4pi to 8pi)
-      
+      let mult = (range === 'all') ? (Math.floor(Math.random() * 7) - 2) : 0;
       const deg = base.deg + mult * 360;
       let radString = "";
+
       if (mult === 0) {
         radString = base.rad;
       } else {
-        // Compute new fraction for rad
         const totalDeg = deg;
         const g = gcd(Math.abs(totalDeg), 180);
         const num = totalDeg / g;
@@ -400,7 +534,6 @@ const FALLBACK_BAD_WORDS = [
         return { q: `${radString.replace(/pi/g, 'π')} in Degrees`, a: `${deg}` };
       }
     } else {
-      // Trig Mode
       const selectedFuncs = Array.from(document.querySelectorAll('.trig-func:checked')).map(c => c.value);
       if (selectedFuncs.length === 0) selectedFuncs.push('sin');
       const func = selectedFuncs[Math.floor(Math.random() * selectedFuncs.length)];
@@ -437,11 +570,12 @@ const FALLBACK_BAD_WORDS = [
 
   // --- GAMEPLAY ENGINE ---
   function startGame() {
-    const mode = document.querySelector('input[name="gameMode"]:checked').value;
+    const { key, isTimed } = getSelectedSettings();
     const limitType = document.querySelector('input[name="limitType"]:checked').value;
 
-    gameState.mode = mode;
-    gameState.isTimed = limitType === 'time';
+    gameState.mode = document.querySelector('input[name="gameMode"]:checked').value;
+    gameState.settingsKey = key;
+    gameState.isTimed = isTimed;
     gameState.currentIndex = 0;
     gameState.scoreSubmitted = false;
 
@@ -452,19 +586,6 @@ const FALLBACK_BAD_WORDS = [
       gameState.totalQuestions = parseInt(document.querySelector('input[name="qCount"]:checked').value);
     }
 
-    // Build Settings Key for Leaderboards
-    if (mode === 'conversion') {
-      const type = document.querySelector('input[name="convType"]:checked').value;
-      const range = document.querySelector('input[name="convRange"]:checked').value;
-      gameState.settingsKey = `conv_${type}_${range}_${limitType}_${gameState.isTimed ? gameState.totalTimeLimit : gameState.totalQuestions}`;
-    } else {
-      const selectedFuncs = Array.from(document.querySelectorAll('.trig-func:checked')).map(c => c.value).sort().join('-');
-      const unit = document.querySelector('input[name="trigUnit"]:checked').value;
-      const range = document.querySelector('input[name="trigRange"]:checked').value;
-      gameState.settingsKey = `trig_${selectedFuncs || 'all'}_${unit}_${range}_${limitType}_${gameState.isTimed ? gameState.totalTimeLimit : gameState.totalQuestions}`;
-    }
-
-    // UI Updates
     document.getElementById('screen-menu').classList.add('hidden');
     document.getElementById('screen-result').classList.add('hidden');
     document.getElementById('screen-quiz').classList.remove('hidden');
@@ -514,10 +635,10 @@ const FALLBACK_BAD_WORDS = [
 
   document.getElementById('answer-input').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
-      const inputVal = normalizeAnswer(this.value);
-      const targetVal = normalizeAnswer(gameState.currentQuestion.a);
+      const inputVal = this.value;
+      const targetVal = gameState.currentQuestion.a;
 
-      if (inputVal === targetVal) {
+      if (isAnswerCorrect(inputVal, targetVal)) {
         gameState.currentIndex++;
         nextQuestion();
       } else {
@@ -613,48 +734,6 @@ const FALLBACK_BAD_WORDS = [
         console.error("Error saving score:", err);
         alert("Could not save score.");
       });
-  }
-
-  function showGlobalLeaderboards() {
-    document.getElementById('screen-menu').classList.add('hidden');
-    document.getElementById('screen-leaderboards').classList.remove('hidden');
-
-    const container = document.getElementById('global-leaderboards-container');
-    container.innerHTML = '<p>Loading leaderboards...</p>';
-
-    // Preset keys for popular modes to display
-    const sampleKeys = [
-      { name: "Deg to Rad (0-2π, 15 Qs)", key: "conv_d2r_basic_questions_15", timed: false },
-      { name: "Trig Radians (0-2π, 1 Minute)", key: "trig_cos-csc-cot-sec-sin-tan_rad_basic_time_60", timed: true }
-    ];
-
-    container.innerHTML = '';
-    sampleKeys.forEach(conf => {
-      const orderField = conf.timed ? 'score' : 'time';
-      const orderDir = conf.timed ? 'desc' : 'asc';
-
-      let html = `<div class="section-box"><div class="section-title">${conf.name}</div><table><thead><tr><th>#</th><th>Name</th><th>Score</th></tr></thead><tbody>`;
-
-      db.collection('leaderboards')
-        .doc(conf.key)
-        .collection('scores')
-        .orderBy(orderField, orderDir)
-        .limit(5)
-        .get()
-        .then(snapshot => {
-          let rows = '';
-          let rank = 1;
-          snapshot.forEach(doc => {
-            const data = doc.data();
-            const valDisplay = conf.timed ? `${data.score} ans` : `${data.time.toFixed(2)}s`;
-            rows += `<tr><td>#${rank}</td><td>${escapeHtml(data.name)}</td><td>${valDisplay}</td></tr>`;
-            rank++;
-          });
-          if (snapshot.empty) rows = '<tr><td colspan="3">No scores recorded.</td></tr>';
-          
-          container.innerHTML += html + rows + '</tbody></table></div>';
-        });
-    });
   }
 
   function escapeHtml(str) {
